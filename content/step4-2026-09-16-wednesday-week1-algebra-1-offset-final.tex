@@ -118,7 +118,7 @@ The ring of integers embeds naturally into the Gaussian integers via the inclusi
 Let $p \in \{2, 3, 5, 7, 11, 13, \dots\}$ be an ordinary prime in $\mathbb{Z}$. When viewed as an element of $\mathbb{Z}[i]$, does $p$ remain prime (irreducible)?
 
 \par\vspace{1ex}\noindent
-To investigate whether $p$ factors non-trivially in $\mathbb{Z}[i]$, suppose there exists a divisor that is neither a unit nor an associate of $p$:
+To investigate whether $p$ factors non-trivially in $\mathbb{Z}[i]$, suppose there exists a non-unit divisor:
 \begin{equation}\label{eq:gaussian-divisor}
 (a + bi) \mid p \quad \text{in } \mathbb{Z}[i] \quad (a, b \in \mathbb{Z}).
 \end{equation}
@@ -175,7 +175,7 @@ Using the field norm $N(x + yi) = x^2 + y^2 = (x + yi)(x - yi)$, which is multip
 \[
 N(p) = p^2 = N(a + bi) \cdot N(z) = (a^2 + b^2) \cdot N(z).
 \]
-Since $p$ is a prime in $\mathbb{Z}$, the integer $a^2 + b^2$ dividing $p^2$ is $1$, $p$ or $p^2$. But $a^2 + b^2 = 1$ would make $a + bi$ a unit (as $(a + bi)(a - bi) = 1$), and $a^2 + b^2 = p^2$ would force $N(z) = 1$, making $z$ a unit and $a + bi = p z^{-1}$ an associate of $p$. Both are excluded in \eqref{eq:gaussian-divisor}, so:
+Since $p$ is a prime in $\mathbb{Z}$, the integer $a^2 + b^2$ dividing $p^2$ is $1$, $p$ or $p^2$. But $a^2 + b^2 = 1$ would make $a + bi$ a unit (as $(a + bi)(a - bi) = 1$), and $a^2 + b^2 = p^2$ would force $N(z) = 1$, making $z$ a unit and $a + bi = p z^{-1}$ an associate of $p$. So if $a + bi$ is neither a unit nor an associate of $p$, then:
 \begin{equation}\label{eq:sum-of-squares-condition}
 a^2 + b^2 = p.
 \end{equation}
@@ -465,7 +465,7 @@ Let $R$ be a ring and $a \in R$. For any integer $n \in \mathbb{Z}$, the element
 \begin{align*}
 0 \cdot a &:= 0_R, \\
 (n + 1) \cdot a &:= (n \cdot a) + a \quad \text{for } n \ge 0, \\
-(-n) \cdot a &:= -(n \cdot a) \quad \text{for } n > 0.
+(-n) \cdot a &:= -(n \cdot a) = n \cdot (-a) \quad \text{for } n > 0.
 \end{align*}
 In particular, for $n \in \mathbb{N}_{>0}$:
 \[
@@ -474,7 +474,7 @@ n \cdot a = \underbrace{a + a + \dots + a}_{n \text{ times}}.
 \end{definition}
 
 \begin{remark}[Two Ways to Form $-17 \cdot a$]\label[remark]{rem:negative-multiples}
-For $n > 0$, also $n \cdot (-a) = -(n \cdot a)$: adding $-a$ to itself $n$ times gives the same element as adding $a$ to itself $n$ times and taking the additive inverse, because $(n \cdot a) + (n \cdot (-a)) = n \cdot \bigl(a + (-a)\bigr) = 0$ by commutativity and associativity of $+$. This is the lecturer's \qt{they're the same}.
+The equality $n \cdot (-a) = -(n \cdot a)$ in the definition holds for $n > 0$: adding $-a$ to itself $n$ times gives the same element as adding $a$ to itself $n$ times and taking the additive inverse, because $(n \cdot a) + (n \cdot (-a)) = n \cdot \bigl(a + (-a)\bigr) = 0$ by commutativity and associativity of $+$. This is what the lecturer means by \qt{they're the same}.
 \end{remark}
 
 \begin{steps}[A Harmless Clash of Notation]
@@ -794,7 +794,7 @@ and their single-variable polynomial rings:
 \begin{equation}\label{eq:poly-inclusions}
 \mathbb{Z}[x] \hookrightarrow \mathbb{Q}[x] \hookrightarrow \mathbb{R}[x] \hookrightarrow \mathbb{C}[x]
 \end{equation}
-are all injective ring homomorphisms. More generally, for any subring $S \subseteq R$ (defined formally in Week~2, \cref{def:subring}), the inclusion map $\iota \colon S \hookrightarrow R$ defined by $\iota(s) = s$ is a ring homomorphism because $S$ inherits the operations and the unit $1_S = 1_R$ directly from $R$.
+are all injective ring homomorphisms. For any subring $S \subseteq R$ (defined formally in Week~2, \cref{def:subring}), the inclusion map $\iota \colon S \hookrightarrow R$ defined by $\iota(s) = s$ is a ring homomorphism because $S$ inherits the operations and the unit $1_S = 1_R$ directly from $R$.
 \end{example}
 \end{content}
 
@@ -934,9 +934,9 @@ Those are all properties enjoyed by the kernel. And those properties can be said
 Let $f \colon R_1 \to R_2$ be a ring homomorphism. The kernel $\ker(f) \subseteq R_1$ satisfies the following properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity:} $0_{R_1} \in \ker(f)$.
-    \item \textbf{Additive Closure:} if $a, b \in \ker(f)$, then $a + b \in \ker(f)$.
-    \item \textbf{Inverses:} if $a \in \ker(f)$, then $-a \in \ker(f)$.
-    \item \textbf{Multiplicative Absorption (Ideal Property):} if $a \in \ker(f)$ and $r \in R_1$, then $r \cdot a \in \ker(f)$.
+    \item \textbf{Additive Closure:} $\forall a, b \in \ker(f) \implies a + b \in \ker(f)$.
+    \item \textbf{Inverses:} $\forall a \in \ker(f) \implies -a \in \ker(f)$.
+    \item \textbf{Multiplicative Absorption (Ideal Property):} $\forall a \in \ker(f), \forall r \in R_1 \implies r \cdot a \in \ker(f)$.
 \end{enumerate}
 \end{proposition}
 
@@ -989,12 +989,12 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
     \item \textbf{Additive Subgroup:} $(I, +, 0)$ is an abelian subgroup of $(R, +, 0)$:
     \begin{itemize}
         \item $0 \in I$,
-        \item $a + b \in I$ for all $a, b \in I$,
-        \item $-a \in I$ for all $a \in I$.
+        \item $\forall a, b \in I \implies a + b \in I$,
+        \item $\forall a \in I \implies -a \in I$.
     \end{itemize}
     \item \textbf{Multiplicative Absorption (Ideal Condition):}
     \begin{equation}\label{eq:ideal-absorption}
-    r \cdot a \in I \quad \text{for all } a \in I \text{ and all } r \in R.
+    \forall a \in I, \ \forall r \in R \implies r \cdot a \in I.
     \end{equation}
 \end{enumerate}
 \end{definition}
@@ -1167,7 +1167,7 @@ Because $\ker(f) = \{0\}$, field homomorphisms into non-zero rings are always em
 The lecturer's humorous pedagogical quip --- that \qt{fields are sellouts because they have lost all their ideals} --- highlights an essential contrast between field theory and ring theory:
 \begin{itemize}
     \item In a field, the abundance of units ($F^\times = F \setminus \{0\}$) destroys all non-trivial ideals, as any non-zero element immediately pulls the entire structure into the ideal ($1 \in I \implies I = F$).
-    \item In general rings, the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., $n\mathbb{Z} \trianglelefteq \mathbb{Z}$, which are all the ideals of $\mathbb{Z}$ by \cref{thm:ideals-of-z-are-principal}), which form the foundational building blocks for quotient rings $R/I$ and algebraic geometry.
+    \item In general rings, the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., the ideals $n\mathbb{Z} \trianglelefteq \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$), which form the foundational building blocks for quotient rings $R/I$ and algebraic geometry.
 \end{itemize}
 \end{insight}
 

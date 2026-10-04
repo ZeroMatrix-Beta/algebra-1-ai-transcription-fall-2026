@@ -727,7 +727,7 @@ And another way to think about it is if there's an isomorphism, then that means 
 \end{speech}
 
 \begin{content}[Review of Ring Homomorphisms and Isomorphisms]
-\recap{Ring homomorphisms were defined in Week~1 (\cref{def:ring-homomorphism}), where it was also shown that $f(0) = 0$ follows from additivity (\cref{prop:homomorphism-preserves-zero}) while $f(1) = 1$ must be required (\cref{ex:zero-map-non-unital}). The lecturer repeats the definition, now read through the group language of this lecture.}
+\recap{Ring homomorphisms were defined in Week~1 (\cref{def:ring-homomorphism}), where it was also shown that $f(0) = 0$ follows from additivity (\cref{prop:homomorphism-preserves-zero}) while $f(1) = 1$ must be required (\cref{ex:zero-map-non-unital}). The lecturer repeats the definition and now phrases it with the group notions of this lecture.}
 
 \begin{definition}[Ring Homomorphism]\label[definition]{def:ring-homomorphism-w2}
 Let $(R, +, \cdot, 0, 1)$ and $(\hat{R}, +, \cdot, \hat{0}, \hat{1})$ be rings. A map $f \colon R \to \hat{R}$ is a \newterm{ring homomorphism} if for all $a, b \in R$:
@@ -762,18 +762,18 @@ So, what about the image? Is the image an ideal? What is the image? The answer i
 \end{speech}
 
 \begin{content}[Ideals in Rings and the Kernel as an Ideal]
-\recap{Ideals were defined in Week~1 (\cref{def:ideal}), and the kernel of a ring homomorphism was shown to be one (\cref{prop:kernel-is-ideal}). The lecturer restates both; with the group language of this lecture, the additive half of the proof becomes a one-liner.}
+\recap{Ideals were defined in Week~1 (\cref{def:ideal}), and the kernel of a ring homomorphism was shown to be one (\cref{prop:kernel-is-ideal}). The lecturer restates both; with the group notions of this lecture, the additive half of the proof becomes a one-liner.}
 
 \begin{definition}[Ideal]\label[definition]{def:ideal-w2}
 Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is called an \newterm{ideal} (denoted $I \trianglelefteq R$) if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup:} $(I, +, 0)$ is a subgroup of $(R, +, 0)$ (\cref{def:subgroup}), i.e.,
     \[
-    0 \in I, \qquad x + y \in I \text{ for all } x, y \in I, \qquad -x \in I \text{ for all } x \in I.
+    0 \in I, \quad \forall x, y \in I \implies x + y \in I, \quad \text{and} \quad \forall x \in I \implies -x \in I.
     \]
     \item \textbf{Multiplicative Absorption (Ideal Property):} For every element of the ring $r \in R$ and every element of the ideal $x \in I$, the product belongs to $I$:
     \[
-    r \cdot x \in I \quad \text{for all } r \in R \text{ and all } x \in I.
+    \forall r \in R, \ \forall x \in I \implies r \cdot x \in I.
     \]
 \end{enumerate}
 \end{definition}
@@ -799,8 +799,8 @@ Therefore, $\ker(f) \trianglelefteq R$.
 \begin{insight}[Broken Symmetry: Subrings vs. Ideals]
 In group theory and linear algebra, substructures are uniform: the kernel and image of a homomorphism are both subgroups (or vector subspaces). In ring theory, this symmetry is broken:
 \begin{itemize}
-    \item The \textbf{kernel} $\ker(f)$ is an \textbf{ideal} (it absorbs multiplication by the entire ring, but does not contain $1$ unless $\hat{R} = \{0\}$, since $f(1) = \hat{1}$).
-    \item The \textbf{image} $\operatorname{Im}(f)$ is a \textbf{subring} (it contains $\hat{1}$, but in general does not absorb multiplication by elements outside the image).
+    \item The \textbf{kernel} $\ker(f)$ is an \textbf{ideal} (it absorbs multiplication from the entire ring, but does not contain $1$ unless $\hat{R} = \{0\}$).
+    \item The \textbf{image} $\operatorname{Im}(f)$ is a \textbf{subring} (it contains the identity $1$, but in general does not absorb multiplication from outside the image).
 \end{itemize}
 \end{insight}
 
@@ -1315,7 +1315,7 @@ We now analyze the remainder $r$:
     \item Therefore, we must have $r = 0$.
 \end{itemize}
 Setting $r = 0$ in \eqref{eq:division-algorithm} gives $y = q \cdot n \in n\mathbb{Z}$. Since $y \in I$ was arbitrary, $I \subseteq n\mathbb{Z}$.
-Combining both inclusions yields $I = n\mathbb{Z}$. Uniqueness of $n \ge 0$: for $I = \{0\}$ only $n = 0$ works, and otherwise $n$ is recovered as the least positive element of $I$.
+Combining both inclusions yields $I = n\mathbb{Z}$. The integer $n \ge 0$ is unique: for $I = \{0\}$ it must be $0$, and otherwise it is the least positive element of $I$.
 \end{content}
 
 \end{proofWrapper}
