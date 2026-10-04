@@ -16,7 +16,7 @@
 % Primary Language: English
 % End of the video: 00:42:33
 
-\lecturechapter[2]{Wednesday}{23. Sep}{23 September 2026}{Category Theory Basics, Integral Domains, and Groups of Units}
+\lecturechapter[2]{Wednesday}{23 Sep}{23 September 2026}{Category Theory Basics, Integral Domains, and Groups of Units}
 % Old chapter title: Category Theory Basics \& Integral Domains
 
 \begin{overview}[Lecture Overview \& Context]
@@ -64,7 +64,9 @@ So... \inlinemetanote{writes on board} Okay, that's the data. So, is there any q
 \end{speech}
 
 \begin{content}[Constituents of a Category: Data]
-\begin{definition}[Category Data]\label[definition]{def:category-data}
+\recap{Categories were introduced the day before, mixed in with examples (\cref{def:category-foundations}, \cref{def:category-full}). The lecturer now repeats the abstract definition on its own.}
+
+\begin{definition}[Category Data]\label[definition]{def:category-data-w2wed}
 A \newterm{category} $\mathcal{C}$ consists of the following mathematical data:
 \begin{itemize}
     \item \textbf{Objects:} A class of objects, denoted $\operatorname{Obj}(\mathcal{C})$. We write $A \in \operatorname{Obj}(\mathcal{C})$ (or simply $A \in \mathcal{C}$) to denote that $A$ is an object of $\mathcal{C}$.
@@ -97,7 +99,7 @@ And then the second is the axioms about the identity, which is roughly: if I do 
 \end{speech}
 
 \begin{content}[Associativity and Identity Axioms]
-\begin{definition}[Category Axioms]\label[definition]{ax:category-axioms}
+\begin{definition}[Category Axioms]\label[definition]{ax:category-axioms-w2wed}
 The data of a category $\mathcal{C}$ must satisfy the following two fundamental axioms:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Associativity of Composition:} For all objects $A, B, C, D \in \operatorname{Obj}(\mathcal{C})$ and all morphisms $f \in \operatorname{Hom}(A, B)$, $g \in \operatorname{Hom}(B, C)$, and $h \in \operatorname{Hom}(C, D)$, composition is associative:
@@ -143,7 +145,9 @@ So, that's the abstract definition of isomorphism. And in all of the categories 
 \end{speech}
 
 \begin{content}[Categorical Isomorphism]
-\begin{definition}[Isomorphism]\label[definition]{def:categorical-isomorphism}
+\recap{The categorical isomorphism was defined the day before (\cref{def:categorical-isomorphism}); the lecturer restates it.}
+
+\begin{definition}[Isomorphism]\label[definition]{def:categorical-isomorphism-w2wed}
 Let $\mathcal{C}$ be a category and let $f \in \operatorname{Hom}(A, B)$ (written $f \colon A \to B$). The morphism $f$ is an \newterm{isomorphism} if and only if there exists a morphism $g \in \operatorname{Hom}(B, A)$ (written $g \colon B \to A$) such that:
 \begin{align}
     f \circ g &= \operatorname{Id}_B, \label{eq:isom-right-inverse} \\
@@ -160,14 +164,15 @@ If such a morphism $g$ exists, it is uniquely determined, called the \newterm{in
     \draw[->, thick, RoyalBlue] (A) to[bend left=25] node {$f$} (B);
     \draw[->, thick, BurntOrange] (B) to[bend left=25] node {$g = f^{-1}$} (A);
 
-    \node at (1.5, -0.6) {\footnotesize $f \circ g = \operatorname{Id}_B \quad \text{and} \quad g \circ f = \operatorname{Id}_A$};
+    % caption below the label of the lower arc (arc dips to y = -0.33, its label to about y = -0.55)
+    \node at (1.5, -1.15) {\footnotesize $f \circ g = \operatorname{Id}_B \quad \text{and} \quad g \circ f = \operatorname{Id}_A$};
 \end{tikzpicture}\par}
 
 \begin{steps}[Consistency across Concrete Categories]
 In concrete categories where objects are sets endowed with structure and morphisms are structure-preserving maps (homomorphisms):
 \begin{itemize}
     \item In $\mathbf{Set}$, isomorphisms are precisely bijective functions.
-    \item In $\mathbf{Grp}$, $\mathbf{Ring}$, and $\mathbf{Vect}_K$, isomorphisms are bijective homomorphisms.
+    \item In $\mathbf{Grp}$, $\mathbf{Ring}$, and $\mathbf{Vect}_K$, isomorphisms are bijective homomorphisms (for groups: \cref{prop:isomorphism-inverse-characterization}).
 \end{itemize}
 The power of the categorical definition is that it never inspects elements $x \in A$; it characterizes invertibility purely through diagrammatic composition.
 \end{steps}
@@ -176,7 +181,7 @@ The power of the categorical definition is that it never inspects elements $x \i
 \begin{hidden}
 % timestamp: 00:05:35
 % topic: Abstract Definition of Category, Axioms, and Isomorphism
-% board_state: def:category-data, ax:category-axioms, def:categorical-isomorphism
+% board_state: def:category-data-w2wed, ax:category-axioms-w2wed, def:categorical-isomorphism-w2wed
 % next_goal: Introduce monomorphisms and epimorphisms as categorical analogues of injectivity and surjectivity
 % open_loops: none
 \end{hidden}
@@ -221,7 +226,8 @@ f \circ g_1 = f \circ g_2 \implies g_1 = g_2.
     \draw[->, thick] (X) to[bend right=25] node[below] {$g_2$} (A);
     \draw[->, thick, ForestGreen] (A) to node {$f$} (B);
 
-    \node at (2.2, -0.7) {\footnotesize $f \circ g_1 = f \circ g_2 \implies g_1 = g_2 \quad (\text{Categorical Injective})$};
+    % caption below the g_2 label (lower arc dips to y = -0.24, its label to about y = -0.5)
+    \node at (2.2, -1.0) {\footnotesize $f \circ g_1 = f \circ g_2 \implies g_1 = g_2 \quad (\text{Categorical Injective})$};
 \end{tikzpicture}\par}
 
 \begin{steps}[Why Monomorphisms Characterize Injectivity]
@@ -282,12 +288,17 @@ g_1 \circ f = g_2 \circ f \implies g_1 = g_2.
     \draw[->, thick] (B) to[bend left=25] node {$g_1$} (X);
     \draw[->, thick] (B) to[bend right=25] node[below] {$g_2$} (X);
 
-    \node at (2.2, -0.7) {\footnotesize $g_1 \circ f = g_2 \circ f \implies g_1 = g_2 \quad (\text{Categorical Surjective})$};
+    % caption below the g_2 label (lower arc dips to y = -0.24, its label to about y = -0.5)
+    \node at (2.2, -1.0) {\footnotesize $g_1 \circ f = g_2 \circ f \implies g_1 = g_2 \quad (\text{Categorical Surjective})$};
 \end{tikzpicture}\par}
 \end{content}
 
+\begin{aiNote}[Epimorphisms Need Not Be Surjective]
+The lecturer says that for the examples we know, epimorphism means surjectivity. This holds in $\mathbf{Set}$, $\mathbf{Grp}$ and $\mathbf{Vect}_K$, but not in $\mathbf{Ring}$: the inclusion $\iota \colon \mathbb{Z} \hookrightarrow \mathbb{Q}$ is an epimorphism without being surjective. Indeed, if $g_1, g_2 \colon \mathbb{Q} \to R$ are ring homomorphisms with $g_1 \circ \iota = g_2 \circ \iota$, then for $b \neq 0$ the element $g_k(b)$ is invertible with inverse $g_k(\frac{1}{b})$, so $g_1(\frac{a}{b}) = g_1(a) \, g_1(b)^{-1} = g_2(a) \, g_2(b)^{-1} = g_2(\frac{a}{b})$. For monomorphisms the slogan is safe: in $\mathbf{Set}$, $\mathbf{Grp}$, $\mathbf{Ring}$ and $\mathbf{Vect}_K$ they are exactly the injective homomorphisms.
+\end{aiNote}
+
 \begin{insight}[Categorical Duality: Reversing Arrows]
-Monomorphisms and epimorphisms represent our first concrete encounter with **categorical duality**. If we construct the opposite category $\mathcal{C}^{\text{op}}$ by reversing all morphism arrows ($f^{\text{op}} \colon B \to A$ for every $f \colon A \to B$), then:
+Monomorphisms and epimorphisms represent our first concrete encounter with \newterm{categorical duality}. If we construct the opposite category $\mathcal{C}^{\text{op}}$ by reversing all morphism arrows ($f^{\text{op}} \colon B \to A$ for every $f \colon A \to B$), then:
 \[
 f \text{ is a monomorphism in } \mathcal{C} \iff f^{\text{op}} \text{ is an epimorphism in } \mathcal{C}^{\text{op}}.
 \]
@@ -301,7 +312,7 @@ Every theorem or statement about monomorphisms immediately yields an identical, 
 \begin{speech}[00:10:35 - 00:12:35]
 So, let us return to rings now. This was kind of a foundational side note.
 
-So, we have this ring $(R, +, \cdot, 0, 1)$ (assumed commutative with unity $1 \neq 0$).
+So, we have this ring $(R, +, \cdot, 0, 1)$.
 
 And the rings here, there's kind of a different flavor of rings: there are the rings that are like $\mathbb{Z}$, where when you have things that are non-zero and you multiply them, they stay non-zero. That's one of the principles of $\mathbb{Z}$. But it's not true for rings like $\mathbb{Z}/6\mathbb{Z}$, this ring.
 
@@ -421,10 +432,12 @@ So, it is part of the definition: a ring $R$ which is not the zero ring ($R \neq
 \end{speech}
 
 \begin{content}[Correction: Exclusion of the Zero Ring]
+The lecturer corrects \cref{def:integral-domain-prelim} by adding condition (i):
+
 \begin{definition}[Integral Domain (Formal Standard Definition)]\label[definition]{def:integral-domain}
 A commutative ring $R$ is an \newterm{integral domain} (or \newterm{domain}) if:
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item $R \not\cong \{0\}$ (that is, $1_R \neq 0_R$, excluding the zero ring).
+    \item $R \not\cong \{0\}$ (that is, $1_R \neq 0_R$, excluding the zero ring; cf.\ \cref{prop:zero-ring}).
     \item For all $a, b \in R$:
     \[
     a \neq 0 \quad \text{and} \quad b \neq 0 \implies a \cdot b \neq 0.
@@ -435,10 +448,6 @@ A commutative ring $R$ is an \newterm{integral domain} (or \newterm{domain}) if:
 \begin{steps}[Why the Zero Ring Satisfies the Conditional Vacuously]
 In the zero ring $R = \{0\}$, the only element is $0$. Therefore, there exist no non-zero elements $a, b \in R$. The premise $(a \neq 0 \land b \neq 0)$ is vacuously false for all elements, making the logical implication $(a \neq 0 \land b \neq 0 \implies ab \neq 0)$ vacuously true! To avoid having the degenerate zero ring classified as a domain, mathematicians add $R \neq 0$ explicitly by fiat.
 \end{steps}
-
-\begin{aiNote}[Commutativity in Integral Domains]
-By definition, an \newterm{integral domain} is strictly required to be \textbf{commutative}. A non-commutative ring without zero divisors ($a \neq 0 \land b \neq 0 \implies ab \neq 0$) is commonly referred to in advanced algebra as a \emph{domain} or an \emph{entire ring} (e.g., division rings such as the real quaternions $\mathbb{H}$ or free associative algebras). In this course, following standard convention, the terms \qt{domain} and \qt{integral domain} are interchangeable and presuppose commutativity.
-\end{aiNote}
 \end{content}
 
 \begin{content}[Proposition: When Residue Class Rings are Domains]
@@ -478,7 +487,7 @@ Okay? So, this says that if $m$ is not prime, there is no way for it to be a dom
 \begin{content}[Proof of Proposition: Direction 1 (Non-Prime Case)]
 \textbf{Direction 1: \texorpdfstring{$m$}{m} Not Prime \texorpdfstring{$\implies \mathbb{Z}/m\mathbb{Z}$}{=> Z/mZ} Not a Domain.}
 
-Suppose $m$ is not prime (composite with $m > 1$). Then $m$ admits a proper non-trivial factorization in $\mathbb{Z}$:
+Suppose $m$ is not prime. If $m = 1$, then $\mathbb{Z}/1\mathbb{Z} = \{\bar{0}\}$ is the zero ring, which is not a domain by condition (i) of \cref{def:integral-domain} (see also \cref{rem:boundary-cases-mod-rings}). Otherwise $m > 1$ is composite and admits a proper non-trivial factorization in $\mathbb{Z}$:
 \begin{align}
     m &= a \cdot b, \label{eq:composite-m-factor} \\
     1 &< a < m, \nonumber \\
@@ -580,7 +589,7 @@ This has to do with every ring, so let's take a ring $R$.
 
 And this is now related to last week; in fact, it was the point of the discussion last week. So, there we discussed the ring $\mathbb{Z}$, but now you can take any ring.
 
-So, the definition here is that if we have elements $a$ and $b$ in the ring ($a, b \in R$), then we say --- this is the definition of the term ---, we say \qt{a divides b}. What this means is there exists some element of the ring, $c$ ($c \in R$), such that $a \cdot c = b$ (in a commutative ring, the order does not matter: $a \cdot c = c \cdot a = b$).
+So, the definition here is that if we have elements $a$ and $b$ in the ring ($a, b \in R$), then we say --- this is the definition of the term ---, we say \qt{a divides b}. What this means is there exists some element of the ring, $c$ ($c \in R$), such that $a \cdot c = b$.
 
 Okay, that's just the actual definition of division, and it's the same definition as with the integers.
 
@@ -601,10 +610,6 @@ a \cdot c = b.
 \end{equation}
 In this case, we also say that $b$ is a \newterm{multiple} of $a$, or that $a$ is a \newterm{divisor} of $b$.
 \end{definition}
-
-\begin{aiNote}[Divisibility and Commutativity]
-In non-commutative rings, divisibility splits into \emph{left divisibility} ($b = a \cdot c$) and \emph{right divisibility} ($b = c' \cdot a$). Under our standing convention that $R$ is a commutative ring, left and right divisibility coincide ($a \cdot c = c \cdot a = b$), ensuring that divisibility is a well-defined, order-independent binary relation.
-\end{aiNote}
 
 \begin{steps}[Connection with Principal Ideals]
 In ideal-theoretic language, $a \mid b$ in a commutative ring $R$ is equivalent to the statement that the principal ideal generated by $b$ is contained in the principal ideal generated by $a$:
@@ -699,7 +704,7 @@ In mathematical English, the word \qt{unit} carries three distinct grammatical u
 \subsection{The Group of Units of a Ring}
 
 \begin{speech}[00:28:16 - 00:29:11]
-Okay, so we discussed the units of the Gaussian integers, and now, since everything is defined, I recommend proving what the units of the Gaussian integers are. We wrote them last time.
+Okay, so we discussed the units of the Gaussian integers (Recall: $\pm 1, \pm i$, Week~1, \cref{def:gaussian-integers}), and now, since everything is defined, I recommend proving what the units of the Gaussian integers are. We wrote them last time.
 
 But let's do something else now.
 
@@ -715,6 +720,8 @@ Prove that the units of the ring of Gaussian integers $\mathbb{Z}[i] = \{a + bi 
 U(\mathbb{Z}[i]) = \{\pm 1, \pm i\}.
 \end{equation}
 \end{exercise}
+
+The lecturer writes out this proof in Week~3 (\cref{prop:units-gaussian-integers}).
 
 \begin{steps}[Proof Strategy via the Multiplicative Norm]
 Consider the field norm $N \colon \mathbb{Q}(i) \to \mathbb{Q}$ defined by $N(a + bi) = a^2 + b^2$. For all $z, w \in \mathbb{Z}[i]$, the norm is multiplicative:
@@ -752,7 +759,7 @@ So, that's the proof of this. This is a good thing to think about: this is alway
 
 \begin{content}[The Group of Units]
 \begin{proposition}[Group of Units]\label[proposition]{prop:group-of-units}
-Let $R$ be a (commutative) ring with unity $1_R$, and let $U(R)$ (also denoted $U_R$ or $R^\times$) be the set of units of $R$:
+Let $R$ be a ring with unity $1_R$, and let $U(R)$ (also denoted $U_R$ or $R^\times$) be the set of units of $R$:
 \begin{equation}\label{eq:unit-set-def}
 U(R) := \{u \in R \mid \exists w \in R \colon u \cdot w = 1_R\}.
 \end{equation}
@@ -771,15 +778,8 @@ We verify the group axioms for $(U(R), \cdot, 1_R)$:
     \item \textbf{Identity Element:} Since $1_R \cdot 1_R = 1_R$, the unity $1_R$ is its own inverse, so $1_R \in U(R)$. For all $u \in U(R)$, $1_R \cdot u = u$.
     \item \textbf{Existence of Inverses:} For any $u \in U(R)$, there exists $w \in R$ such that $u w = 1_R$. By symmetry of the relation $w u = 1_R$, $w$ is also invertible with inverse $u$, so $w = u^{-1} \in U(R)$.
 \end{itemize}
-Hence, $(U(R), \cdot, 1_R)$ is a group. If $R$ is commutative, $U(R)$ is an abelian group.
+Hence, $(U(R), \cdot, 1_R)$ is a group in the sense of \cref{def:group}. If $R$ is commutative, $U(R)$ is an abelian group.
 \end{proof}
-
-\begin{aiNote}[The Units Group in Commutative vs. Non-Commutative Rings]
-\begin{itemize}
-    \item \textbf{Commutative Rings (Course Setting):} Because all rings in this course are commutative by default, the group of units $(U(R), \cdot, 1_R)$ is always an \textbf{abelian} group.
-    \item \textbf{General Non-Commutative Rings:} In general non-commutative ring theory, an element $u$ is a unit if and only if it possesses a two-sided inverse ($u w = w u = 1_R$). In that broader setting, $(U(R), \cdot, 1_R)$ is still a group (with $(u_1 u_2)^{-1} = u_2^{-1} u_1^{-1}$), but it is generally non-abelian (e.g., $U(M_n(K)) = \mathrm{GL}_n(K)$ for $n \ge 2$).
-\end{itemize}
-\end{aiNote}
 \end{content}
 
 \subsection{Characterization of Units in \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ}}
@@ -840,11 +840,11 @@ So, let me do an example.
 
 \begin{content}[Units of the Quotient Ring \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ}]
 \begin{theorem}[Units in $\mathbb{Z}/m\mathbb{Z}$]\label[theorem]{thm:units-z-mod-m}
-Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \mathbb{Z}/m\mathbb{Z}$ is a unit if and only if $x$ and $m$ are coprime:
+Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \mathbb{Z}/m\mathbb{Z}$ is a unit if and only if $x$ and $m$ are coprime (this does not depend on the representative $x$, since $\operatorname{gcd}(x + km, m) = \operatorname{gcd}(x, m)$):
 \begin{equation}\label{eq:units-z-mod-m}
 U(\mathbb{Z}/m\mathbb{Z}) = (\mathbb{Z}/m\mathbb{Z})^\times = \left\{ \bar{x} \in \mathbb{Z}/m\mathbb{Z} \;\big|\; \operatorname{gcd}(x, m) = 1 \right\}.
 \end{equation}
-The order of this group is given by Euler's totient function $\varphi(m) := |U(\mathbb{Z}/m\mathbb{Z})|$.
+The order of this group is given by Euler's totient function $\phi(m) := |U(\mathbb{Z}/m\mathbb{Z})|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
 \end{theorem}
 
 \begin{proof}
@@ -914,7 +914,7 @@ Consequently, the group of units is:
 \begin{equation}\label{eq:units-z7z-set}
 U(\mathbb{Z}/7\mathbb{Z}) = (\mathbb{Z}/7\mathbb{Z})^\times = \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
 \end{equation}
-The order of the unit group is $|U(\mathbb{Z}/7\mathbb{Z})| = \varphi(7) = 7 - 1 = 6$.
+The order of the unit group is $|U(\mathbb{Z}/7\mathbb{Z})| = \phi(7) = 7 - 1 = 6$.
 \end{example}
 \end{content}
 
@@ -1058,7 +1058,7 @@ since $a^6 = \bar{1}$. Applying the map $\Phi$:
 \[
 \Phi(a^j \cdot a^k) = \overline{j + k} = \bar{j} + \bar{k} = \Phi(a^j) + \Phi(a^k) \in \mathbb{Z}/6\mathbb{Z}.
 \]
-Hence, $\Phi$ is a group homomorphism. Because $\Phi$ maps the generator $a$ of order $6$ to the generator $\bar{1}$ of order $6$, $\Phi$ is a bijective homomorphism, establishing the isomorphism.
+Hence, $\Phi$ is a group homomorphism. By the table of powers, $a^0, \dots, a^5$ are exactly the six units, and $\Phi$ sends them to the six distinct classes $\bar{0}, \dots, \bar{5}$; so $\Phi$ is bijective, which establishes the isomorphism.
 \end{proof}
 
 \begin{steps}[Disambiguating Residue Class Notations Across Groups]
@@ -1086,6 +1086,6 @@ The lecturer references the celebrated quote by the Hungarian mathematician Paul
     \end{itemize}
     \item \textbf{Integral Domains:} A commutative ring with $1 \neq 0$ having no zero divisors ($a \neq 0 \land b \neq 0 \implies ab \neq 0$). The quotient ring $\mathbb{Z}/m\mathbb{Z}$ is an integral domain if and only if $m$ is prime.
     \item \textbf{Units and Divisibility:} An element $u \in R$ is a unit if $u \mid 1$, i.e., $u$ has a multiplicative inverse. The units form a multiplicative group $U(R)$.
-    \item \textbf{Units of Residue Class Rings:} $U(\mathbb{Z}/m\mathbb{Z}) = \{ \bar{x} \in \mathbb{Z}/m\mathbb{Z} \mid \operatorname{gcd}(x, m) = 1 \}$ with order $\varphi(m)$. For prime $p = 7$, $U(\mathbb{Z}/7\mathbb{Z}) \cong (\mathbb{Z}/6\mathbb{Z}, +)$ generated by $\bar{3}$.
+    \item \textbf{Units of Residue Class Rings:} $U(\mathbb{Z}/m\mathbb{Z}) = \{ \bar{x} \in \mathbb{Z}/m\mathbb{Z} \mid \operatorname{gcd}(x, m) = 1 \}$ with order $\phi(m)$. For prime $p = 7$, $U(\mathbb{Z}/7\mathbb{Z}) \cong (\mathbb{Z}/6\mathbb{Z}, +)$ generated by $\bar{3}$.
 \end{itemize}
 \end{overview}

@@ -16,7 +16,7 @@
 % Primary Language: English
 % End of the video: 01:30:00
 
-\lecturechapter[3]{Tuesday}{29. Sep}{29. September 2026}{Groups of Units, Fields of Fractions, and Polynomial Rings}
+\lecturechapter[3]{Tuesday}{29 Sep}{29 September 2026}{Groups of Units, Fields of Fractions, and Polynomial Rings}
 % Old chapter title: Rings, Groups of Units, and Fields of Fractions
 
 \begin{overview}[Course Content Overview]
@@ -46,7 +46,7 @@ If you think the quiz was too easy, or too hard, or too medium, tell us. As I sa
 \subsection{The Group of Units of a Ring}
 
 \begin{speech}[00:00:32 - 00:01:51]
-Last week we discussed rings, and associated to a ring there's an additive group. This is easy, because it's part of the definition, but there's another group which was also discussed in the last lecture, which is the group of units. 
+Last week we discussed rings, and associated to a ring there's an additive group. This is easy, because it's part of the definition, but there's another group which was also discussed in the last lecture (Recall: \cref{prop:group-of-units}), which is the group of units. 
 
 And I remind you of this group... \inlinemetanote{writes on the board} Various people use different notation for describing it, but here I just say $\operatorname{Unit} R$ so there's no question: it's the group of units of the ring $R$. It's those elements such that there exists somebody else where the product is $1$, so it's those elements with a multiplicative inverse. And this is a group --- we discussed this last week. 
 
@@ -56,11 +56,13 @@ Whenever you see a ring, you immediately have these two groups. And this one is,
 \end{speech}
 
 \begin{content}[The Group of Units]
+\recap{Units and the group of units were introduced in Week~2 as $U(R)$ (\cref{def:unit-ring}, \cref{prop:group-of-units}); the lecturer now writes $\operatorname{Unit}(R)$.}
+
 Let $(R, +, \cdot, 0, 1)$ be a ring with unity. Associated with $R$ are two natural canonical groups:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{The Additive Group:} $(R, +, 0)$, which forms an abelian group by the ring axioms.
     \item \textbf{The Group of Units:} The set of multiplicatively invertible elements in $R$:
-    \begin{equation}\label{eq:unit-group-def}
+    \begin{equation}\label{eq:unit-group-def-w3}
     \operatorname{Unit}(R) := \{ x \in R \mid \exists y \in R \text{ such that } xy = 1 \}.
     \end{equation}
 \end{enumerate}
@@ -75,7 +77,7 @@ The group of units is closed under multiplication: if $x, z \in \operatorname{Un
 \subsection{Units in the Integers and Gaussian Integers}
 
 \begin{speech}[00:01:51 - 00:03:03]
-We've seen this --- I just review, but you know this --- if you take $\mathbb{Z}$, the units are $\pm 1$. And I said this many times, but maybe since I didn't actually ever give a proof: in $\mathbb{Z}[i]$, the units are $\pm 1, \pm i$. 
+We've seen this --- I just review, but you know this --- if you take $\mathbb{Z}$, the units are $\pm 1$. And I said this many times, but maybe since I didn't actually ever give a proof: in $\mathbb{Z}[i]$, the units are $\pm 1, \pm i$ (Recall: the exercise \cref{exer:units-gaussian-integers}). 
 
 If you're taking complex analysis, you should be able to prove this, but let's actually write a proof. I don't think I ever wrote the proof for this. 
 
@@ -113,7 +115,9 @@ That's a nice fact, and if you draw them, they look like this \inlinemetanote{dr
 \end{speech}
 
 \begin{content}[Classification of Units in the Gaussian Integers]
-\begin{example}[Units of the Integers]\label[example]{ex:units-integers}
+\recap{The units of $\mathbb{Z}$ were determined in Week~2 (\cref{ex:units-of-integers}), and those of $\mathbb{Z}[i]$ were stated in Week~1 and set as an exercise (\cref{exer:units-gaussian-integers}). The proof below settles that exercise.}
+
+\begin{example}[Units of the Integers]\label[example]{ex:units-integers-w3}
 For the ring of integers $\mathbb{Z}$:
 \[
 \operatorname{Unit}(\mathbb{Z}) = \mathbb{Z}^* = \{1, -1\}.
@@ -179,7 +183,7 @@ Conversely, $1 \cdot 1 = 1$, $(-1)(-1) = 1$, and $i(-i) = 1$, so all four elemen
 \end{center}
 
 \begin{steps}[Algebraic Meaning of the Norm]
-The field norm $N(a+bi) = a^2 + b^2$ is multiplicative: $N(zw) = N(z)N(w)$. Since $N(z) \in \mathbb{Z}_{\ge 0}$ for any Gaussian integer, any invertible element must divide $N(1) = 1$, forcing $N(z) = 1$. The only lattice points on the circle of radius $1$ are the four points shown above.
+The field norm $N(a+bi) = a^2 + b^2$ is multiplicative: $N(zw) = N(z)N(w)$. Since $N(z) \in \mathbb{Z}_{\ge 0}$ for any Gaussian integer, the norm of any invertible element must divide $N(1) = 1$, forcing $N(z) = 1$. The only lattice points on the circle of radius $1$ are the four points shown above.
 \end{steps}
 \end{content}
 
@@ -188,9 +192,9 @@ The field norm $N(a+bi) = a^2 + b^2$ is multiplicative: $N(zw) = N(z)N(w)$. Sinc
 \begin{speech}[00:05:14 - 00:07:21]
 We did a much more interesting example last time, which was also with proof, but since various people asked me about it afterwards, I want to do just another example. And that was this ring: $\mathbb{Z}/m\mathbb{Z}$. 
 
-That's a nice ring, and so it has a group of units, $\operatorname{Unit}(\mathbb{Z}/m\mathbb{Z})$. This was a result I proved last time: the units are equal to those classes such that this is equal to $1$. And as I said, it's standard here to say $m \ge 2$, so we're not dealing with the zero ring, okay? 
+That's a nice ring, and so it has a group of units, $\operatorname{Unit}(\mathbb{Z}/m\mathbb{Z})$. This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units are equal to those classes such that this (i.e., $\gcd(x, m)$) is equal to $1$. And as I said, it's standard here to say $m \ge 2$, so we're not dealing with the zero ring, okay? 
 
-So, that's the units, and these are the residue classes which are relatively prime. I did an example last time. This is a very interesting thing to study; it's just not a trivial thing, in the sense that one might say that if I take the additive structure here, this is very simple to think about. It's just adding up integers mod $m$. In some sense, most people learn about this in one name or the other in school. 
+So, that's the units, and these are the residue classes which are relatively prime. I did an example last time (Recall: $\mathbb{Z}/7\mathbb{Z}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing, in the sense that one might say that if I take the additive structure here, this is very simple to think about. It's just adding up integers mod $m$. In some sense, most people learn about this in one name or the other in school. 
 
 But the units are more complicated, more interesting. And so I wanted to do another... there were various people who asked me some questions. So, let's try this: $\mathbb{Z}/10\mathbb{Z}$, just to say a little bit...
 
@@ -222,7 +226,9 @@ Yeah, $7$, because $7 \times 3$ is $21$, and so on. So, anyway, you can play wit
 \end{hidden}
 
 \begin{content}[Units in \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ} and the Example \texorpdfstring{$\mathbb{Z}/10\mathbb{Z}$}{Z/10Z}]
-\begin{proposition}[Units in the Residue Class Ring]\label[proposition]{prop:units-mod-m}
+\recap{This characterization was proved in Week~2 (\cref{thm:units-z-mod-m}); the lecturer restates it with the notation $(\mathbb{Z}/m\mathbb{Z})^*$.}
+
+\begin{proposition}[Units in the Residue Class Ring]\label[proposition]{prop:units-mod-m-w3}
 Let $m \in \mathbb{Z}_{\ge 2}$. The group of units of the residue class ring $\mathbb{Z}/m\mathbb{Z}$ (frequently denoted by $(\mathbb{Z}/m\mathbb{Z})^*$ or $R^*$ for general rings) consists of those residue classes whose representatives are coprime to $m$:
 \begin{equation}\label{eq:units-mod-m}
 (\mathbb{Z}/m\mathbb{Z})^* = \operatorname{Unit}(\mathbb{Z}/m\mathbb{Z}) = \{ \bar{x} \in \mathbb{Z}/m\mathbb{Z} \mid \gcd(x, m) = 1 \}.
@@ -326,7 +332,7 @@ Let $p$ be a prime number. Then:
 \begin{proof}
 We evaluate the number of coprime residue classes in each case:
 \begin{itemize}
-    \item \textbf{For a prime $p$:} The representatives are $\{0, 1, 2, \dots, p - 1\}$. The only representative sharing a non-trivial factor with $p$ is $0$. Thus, the remaining $p - 1$ elements are all coprime to $p$, giving $\phi(p) = p - 1$.
+    \item \textbf{For a prime $p$:} The representatives are $\{0, 1, 2, \dots, p - 1\}$. The only representative sharing a non-trivial factor with $p$ is $0$. Thus, the remaining $p - 1$ elements are all coprime to $p$, giving $\phi(p) = p - 1$ (e.g., $\phi(7) = 6$, as in \cref{ex:units-z7z}).
     \item \textbf{For $p^2$:} The representatives are $\{0, 1, 2, \dots, p^2 - 1\}$. An element $x$ shares a non-trivial factor with $p^2$ if and only if $p \mid x$. The multiples of $p$ in this range are:
     \[
     0, \ p, \ 2p, \ \dots, \ (p - 1)p.
@@ -420,6 +426,8 @@ Then there exists a unique field homomorphism $g \colon \mathbb{Q} \to F$ such t
 that is, $g|_{\mathbb{Z}} = f$, meaning $g(x) = f(x)$ for all $x \in \mathbb{Z}$. Furthermore, $g$ is automatically injective.
 \end{theorem}
 
+Why injectivity is automatic: a homomorphism out of a field into a non-zero ring has kernel $\{0\}$, by \cref{thm:ideals-in-a-field} (Week~1) and the steps after it.
+
 \begin{steps}[Universal Property as Categorical Minimality]
 In category theory, this universal mapping property identifies $\mathbb{Q}$ as the initial object among all field extensions receiving $\mathbb{Z}$. Any field $F$ containing a copy of $\mathbb{Z}$ must necessarily contain a subfield isomorphic to $\mathbb{Q}$, showing that $\mathbb{Q}$ cannot be compressed or embedded into any strictly smaller field.
 \end{steps}
@@ -477,7 +485,7 @@ The inverse $f(y)^{-1}$ exists in $F$ if and only if $f(y) \ne 0_F$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Non-Zero Denominator:} In the rational representation $\frac{x}{y}$, we require $y \ne 0$ in $\mathbb{Z}$.
     \setcounter{enumi}{1} \item \textbf{Injectivity of Ring Embedding:} Since $f \colon \mathbb{Z} \to F$ is an injective ring homomorphism, its kernel is trivial: $\ker(f) = \{0\}$.
-    \setcounter{enumi}{2} \item \textbf{Non-Vanishing Image:} It follows immediately that $y \ne 0 \implies f(y) \ne f(0) = 0_F$. Since $F$ is a field, every non-zero element has a unique multiplicative inverse $f(y)^{-1} \in F$.
+    \setcounter{enumi}{2} \item \textbf{Non-Vanishing Image:} It follows immediately that $y \ne 0 \implies f(y) \ne f(0) = 0_F$ (\cref{prop:homomorphism-preserves-zero}). Since $F$ is a field, every non-zero element has a unique multiplicative inverse $f(y)^{-1} \in F$.
 \end{enumerate}
 \end{steps}
 \end{content}
@@ -550,7 +558,7 @@ Since $y_1, y_2 \ne 0$ and $f$ is injective, $f(y_1) \ne 0$ and $f(y_2) \ne 0$. 
 \end{align}
 
 \textbf{3. Conclusion:}
-By \eqref{eq:cross-mult-z}, $x_1 y_2 - x_2 y_1 = 0 \in \mathbb{Z}$. Since any ring homomorphism maps $0$ to $0$:
+By \eqref{eq:cross-mult-z}, $x_1 y_2 - x_2 y_1 = 0 \in \mathbb{Z}$. Since any ring homomorphism maps $0$ to $0$ (\cref{prop:homomorphism-preserves-zero}):
 \[
 f(x_1 y_2 - x_2 y_1) = f(0) = 0_F.
 \]
@@ -623,7 +631,7 @@ Bringing both terms over the common denominator $f(y_1)f(y_2)$ in the field $F$:
 \[
 \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)} = \frac{f(x_1)f(y_2) + f(x_2)f(y_1)}{f(y_1)f(y_2)}.
 \]
-Both expressions coincide identically, establishing \eqref{eq:g-add}. The multiplicative identity \eqref{eq:g-mult} and unit preservation \eqref{eq:g-unit} follow analogously.
+Both expressions coincide identically, establishing \eqref{eq:g-add}. The computation uses a chosen name of $q_1 + q_2$; by \cref{clm:g-well-defined}, any other name gives the same value. Multiplicativity \eqref{eq:g-mult} and unit preservation \eqref{eq:g-unit} follow analogously.
 \end{proof}
 \end{content}
 
@@ -638,7 +646,7 @@ So, we could ask: can we construct this relationship for other rings? Because we
 
 Suppose $R$ is an integral domain. It turns out that this is kind of extremely important, and we will see in the definition --- it may not be clear from the discussion so far --- but let's say $R$ is an integral domain. Can we find the \qt{smallest} field containing $R$?
 
-Already in this language, if we find a field containing $R$, that means $R$ has to be a domain. Because domain means that when two elements are non-zero, their product stays non-zero; so if you're inside a field, that's always the case, okay? This is one of the reasons why we're talking only about integral domains.
+Already in this language, if we find a field containing $R$, that means $R$ has to be a domain (Recall: \cref{def:integral-domain}). Because domain means that when two elements are non-zero, their product stays non-zero; so if you're inside a field, that's always the case, okay? This is one of the reasons why we're talking only about integral domains.
 
 So, that's the question: if you find on the street an integral domain, can you put it in its smallest field? That's the question. And the answer is yes, and that construction is called the field of fractions. And I will show you how to do it.
 \end{speech}
@@ -667,7 +675,7 @@ If a commutative ring $R$ embeds into a field $F$ via an injective homomorphism 
 \[
 a, b \in R \setminus \{0\} \implies \iota(a), \iota(b) \ne 0 \implies \iota(ab) = \iota(a)\iota(b) \ne 0 \implies ab \ne 0.
 \]
-Thus, the property of being an \newterm{integral domain} is a strictly necessary prerequisite for any ring to be embedded into a field of fractions.
+Moreover, $R$ is not the zero ring: $\iota(1) = 1 \neq 0 = \iota(0)$ in $F$, so $1 \neq 0$ in $R$. Thus, the property of being an \newterm{integral domain} (\cref{def:integral-domain}) is a strictly necessary prerequisite for any ring to be embedded into a field of fractions.
 \end{remark}
 
 \begin{highlight}{MidnightBlue}[The Goal: Field of Fractions]
@@ -751,17 +759,17 @@ The quotient set $T/\!\equiv$ denotes the set of \newterm{equivalence classes}, 
     \node[MidnightBlue, font=\bfseries] at (2.5, 2.1) {$T_2 = [x_2]$};
     \node[MidnightBlue, font=\bfseries] at (4.2, 2.1) {$T_3 = [x_3]$};
 
-    % Representative dots
-    \fill (0.5, 1.0) circle (1.5pt) node[below] {\footnotesize $a$};
-    \fill (1.1, 0.7) circle (1.5pt) node[below] {\footnotesize $b$};
+    % Representative dots: labels left of the first and right of the second point, away from the arrows
+    \fill (0.5, 1.0) circle (1.5pt) node[left] {\footnotesize $a$};
+    \fill (1.1, 0.7) circle (1.5pt) node[right] {\footnotesize $b$};
     \draw[<->, shorten <=2pt, shorten >=2pt, thick, ForestGreen] (0.5, 1.0) -- (1.1, 0.7);
 
-    \fill (2.2, 1.2) circle (1.5pt) node[below] {\footnotesize $c$};
-    \fill (2.8, 0.9) circle (1.5pt) node[below] {\footnotesize $d$};
+    \fill (2.2, 1.2) circle (1.5pt) node[left] {\footnotesize $c$};
+    \fill (2.8, 0.9) circle (1.5pt) node[right] {\footnotesize $d$};
     \draw[<->, shorten <=2pt, shorten >=2pt, thick, ForestGreen] (2.2, 1.2) -- (2.8, 0.9);
 
-    \fill (3.8, 1.1) circle (1.5pt) node[below] {\footnotesize $e$};
-    \fill (4.5, 0.6) circle (1.5pt) node[below] {\footnotesize $f$};
+    \fill (3.8, 1.1) circle (1.5pt) node[left] {\footnotesize $e$};
+    \fill (4.5, 0.6) circle (1.5pt) node[right] {\footnotesize $f$};
     \draw[<->, shorten <=2pt, shorten >=2pt, thick, ForestGreen] (3.8, 1.1) -- (4.5, 0.6);
 
     \node[below, font=\small] at (2.5, -0.2) {Partition of $T$ into disjoint equivalence classes $T/\!\equiv$};
@@ -851,7 +859,7 @@ is reflexive and symmetric.
 \begin{proof}
 Let $(x_1, y_1), (x_2, y_2) \in S$:
 \begin{itemize}
-    \item \textbf{Reflexivity:} By commutativity of multiplication in the ring $R$, $x_1 y_1 = x_1 y_1$, which by \eqref{eq:equiv-def-recap} immediately implies:
+    \item \textbf{Reflexivity:} Trivially $x_1 y_1 = x_1 y_1$, which by \eqref{eq:equiv-def-recap} immediately implies:
     \[
     (x_1, y_1) \equiv (x_1, y_1).
     \]
@@ -975,7 +983,7 @@ Thus, $(x_1, y_1) \equiv (x_3, y_3)$, which completes the proof.
 \end{proof}
 
 \begin{steps}[Why Integral Domains Are Essential for Transitivity]
-Notice where the ring axioms alone would fail: equation \eqref{eq:trans-factored} holds in any commutative ring. However, to deduce $x_1 y_3 = x_3 y_1$ from $(x_1 y_3 - x_3 y_1)y_2 = 0$, we must divide out and cancel the non-zero element $y_2$. If $R$ had zero divisors (for instance, in $\mathbb{Z}/6\mathbb{Z}$ with $y_2 = 2$ and $x_1 y_3 - x_3 y_1 = 3$), the relation $\equiv$ would \emph{fail} to be transitive.
+Notice where the ring axioms alone would fail: equation \eqref{eq:trans-factored} holds in any commutative ring. However, to deduce $x_1 y_3 = x_3 y_1$ from $(x_1 y_3 - x_3 y_1)y_2 = 0$, we must divide out and cancel the non-zero element $y_2$. If $R$ has zero divisors, the relation $\equiv$ can \emph{fail} to be transitive. For instance, in $\mathbb{Z}/6\mathbb{Z}$ (with $y_2 = \bar{2}$ and $x_1 y_3 - x_3 y_1 = \bar{3}$): $(\bar{3}, \bar{1}) \equiv (\bar{0}, \bar{2})$ since $\bar{3} \cdot \bar{2} = \bar{0} = \bar{0} \cdot \bar{1}$, and $(\bar{0}, \bar{2}) \equiv (\bar{0}, \bar{1})$ since $\bar{0} \cdot \bar{1} = \bar{0} = \bar{0} \cdot \bar{2}$, but $(\bar{3}, \bar{1}) \not\equiv (\bar{0}, \bar{1})$ since $\bar{3} \cdot \bar{1} = \bar{3} \neq \bar{0} = \bar{0} \cdot \bar{1}$.
 \end{steps}
 \end{content}
 
@@ -1012,7 +1020,7 @@ $(r, 1)$?
 \begin{speech}[00:52:39 - 00:53:41]
 Yeah, that's a good idea: $(r, 1)$.
 
-It has some advantages: $1 \ne 0$, because an integral domain is never the zero ring. So, this is legal, this is an element of $S$, and then we can take its equivalence class.
+It has some advantages: $1 \ne 0$, because an integral domain is never the zero ring (Recall: \cref{def:integral-domain}). So, this is legal, this is an element of $S$, and then we can take its equivalence class.
 
 I'm not going to write equivalence classes like $[(r, 1)]$ everywhere because it becomes too complicated. You could say formally take its equivalence class like this, but if you start doing this, you get committed to writing things like $[(3, 4)]$ for rational numbers, and no one ever does that. So, we don't want to do it, but this would be kind of more logically correct.
 
@@ -1079,7 +1087,7 @@ Therefore, $i$ is injective.
 \end{proof}
 
 \begin{steps}[Why $1_R \ne 0_R$ Is Guaranteed]
-For the pair $(r, 1)$ to belong to $S$, the denominator must satisfy $1 \ne 0$. By standard ring-theoretic convention, an integral domain must satisfy $1_R \ne 0_R$ (i.e., it cannot be the trivial zero ring). Hence, $(r, 1) \in S$ is unconditionally valid for every $r \in R$.
+For the pair $(r, 1)$ to belong to $S$, the denominator must satisfy $1 \ne 0$. By condition (i) of \cref{def:integral-domain}, an integral domain must satisfy $1_R \ne 0_R$ (i.e., it cannot be the trivial zero ring). Hence, $(r, 1) \in S$ is unconditionally valid for every $r \in R$.
 \end{steps}
 \end{content}
 
@@ -1249,6 +1257,8 @@ Multiplication on $F$ is well-defined and independent of the choice of represent
 \end{proposition}
 
 \begin{proof}
+The pair $(x_1 x_2, y_1 y_2)$ lies in $S$, since $y_1 y_2 \neq 0$ in the integral domain $R$ (as for addition, \cref{prop:addition-well-defined}).
+
 Let $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$ and $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$ in $S$. By definition of $\equiv$:
 \begin{equation}\label{eq:mult-hyp}
 x_1 \hat{y}_1 = \hat{x}_1 y_1 \quad \text{and} \quad x_2 \hat{y}_2 = \hat{x}_2 y_2.
@@ -1401,7 +1411,7 @@ Yeah, so the answer is this: $\mathbb{Q}(i)$, which is equal to the set of $a + 
 
 It's correct, but now to check this is correct, you have to do a bunch of things: one is you have to show this is a field (you can invert), and then you have to show that this sits inside, and everything here is a ratio of that. It's all true, but that's the answer here, and it requires some checking. All right, this is correct. 
 
-What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. This ring is the set of $a/3^b$, where $a \in \mathbb{Z}$ and $b$ is some integer greater than or equal to $0$, right? We discussed this last week: the subrings that sit in between. I hope you remember. 
+What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. This ring is the set of $a/3^b$, where $a \in \mathbb{Z}$ and $b$ is some integer greater than or equal to $0$, right? We discussed this last week (Recall: \cref{ex:dyadic-rationals-subring}): the subrings that sit in between. I hope you remember. 
 
 Do you remember? 
 
@@ -1440,8 +1450,8 @@ For the ring of Gaussian integers $\mathbb{Z}[i] = \{ a + bi \mid a, b \in \math
 The field $\mathbb{Q}(i)$ is called the field of \newterm{Gaussian rationals}.
 \end{example}
 
-\begin{example}[Dyadic and Triadic Rationals]\label[example]{ex:frac-triadic}
-Consider the ring of triadic fractions $\mathbb{Z}[\frac{1}{3}]$, defined by:
+\begin{example}[Triadic Rationals]\label[example]{ex:frac-triadic}
+Consider the ring of triadic fractions $\mathbb{Z}[\frac{1}{3}]$ (the case $m = 3$ of \cref{ex:dyadic-rationals-subring}), defined by:
 \[
 \mathbb{Z}\left[\frac{1}{3}\right] := \left\{ \frac{a}{3^b} \;\middle|\; a \in \mathbb{Z}, \ b \in \mathbb{Z}_{\ge 0} \right\} \subset \mathbb{Q}.
 \]
@@ -1483,7 +1493,7 @@ Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subseteq R \subseteq \m
 \end{center}
 
 \begin{steps}[Why All Intermediate Subrings Yield $\mathbb{Q}$]
-By categorical minimality, $\operatorname{Frac}(R)$ is the smallest field containing $R$. Since $\mathbb{Z} \subseteq R$, any field containing $R$ must contain $\mathbb{Z}$, and hence must contain $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$. Since $R \subseteq \mathbb{Q}$, $\mathbb{Q}$ is already a field containing $R$. Therefore, $\operatorname{Frac}(R)$ cannot be strictly larger or smaller than $\mathbb{Q}$, forcing $\operatorname{Frac}(R) = \mathbb{Q}$.
+By categorical minimality, $\operatorname{Frac}(R)$ is the smallest field containing $R$. Since $\mathbb{Z} \subseteq R$, any field containing $R$ must contain $\mathbb{Z}$, and hence must contain a copy of $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$ (\cref{thm:universal-property-q}). Since $R \subseteq \mathbb{Q}$, $\mathbb{Q}$ is already a field containing $R$. Therefore, $\operatorname{Frac}(R)$ cannot be strictly larger or smaller than $\mathbb{Q}$, forcing $\operatorname{Frac}(R) = \mathbb{Q}$.
 \end{steps}
 \end{content}
 
@@ -1502,7 +1512,7 @@ Maybe a compromise: on half the exam they should just guess everything. But I th
 \begin{speech}[01:14:49 - 01:15:25]
 A kind of stranger question is: suppose I start with a field. Suppose $R$ is a field. \inlinemetanote{writes on the board}
 
-Then, of course, it's still an integral domain, because every field is an integral domain. Then what is the field of fractions? \inlinemetanote{writes on the board}
+Then, of course, it's still an integral domain, because every field is an integral domain (Recall: \cref{ex:fields-are-domains}). Then what is the field of fractions? \inlinemetanote{writes on the board}
 
 What do you think the field of fractions is going to be here? 
 
@@ -1564,7 +1574,7 @@ The next topic this week is about polynomial rings. These are really fun. We'll 
 
 Again, this material, in some sense, you've been using all of this already in the first year, but here we take a formal approach. 
 
-The idea is: if I take $R$ as a ring --- and now, no assumptions, meaning not necessarily an integral domain, so this just means commutative for us: a commutative ring with unit. That's our basic ring: when we say ring with no assumptions, we mean a commutative ring with unit. In particular, for everything today so far, $R$ was an integral domain. Now, I don't care if it's an integral domain; it's just a commutative ring with unit. 
+The idea is: if I take $R$ as a ring --- and now, no assumptions, meaning not necessarily an integral domain, so this just means commutative for us: a commutative ring with unit. That's our basic ring: when we say ring with no assumptions, we mean a commutative ring with unit (Recall: \cref{rem:ring-convention}). In particular, for everything today so far, $R$ was an integral domain. Now, I don't care if it's an integral domain; it's just a commutative ring with unit. 
 
 Then I can make a new ring here: $R[x]$. 
 
@@ -1598,6 +1608,8 @@ In particular, I don't really mean anything by this plus: it's just a formal lin
 \end{speech}
 
 \begin{content}[{The Polynomial Ring \texorpdfstring{$R[x]$}{R[x]}: Informal Formulation}]
+\recap{Polynomial rings were already used informally: $\mathbb{Z}[x] \subseteq \mathbb{Q}[x] \subseteq \mathbb{R}[x] \subseteq \mathbb{C}[x]$ in Week~1 (\cref{ex:inclusions-standard-rings}) and $\mathbb{Z}[x^2] \subset \mathbb{Z}[x]$ in Week~2 (\cref{ex:even-polynomials-subring}). Here they are defined formally.}
+
 \begin{definition}[Polynomial Ring over a Commutative Ring]\label[definition]{def:poly-ring-informal}
 Let $R$ be a commutative ring with unit $1_R$. The \newterm{polynomial ring in one variable} (or indeterminate) $x$ with coefficients in $R$, denoted $R[x]$, is defined as the set of formal expressions:
 \begin{equation}\label{eq:poly-set-def}
@@ -1710,19 +1722,21 @@ Under the sequence model \eqref{eq:poly-formal-sequence}:
         \node[gray!70] at (\x*1.2 + 0.5, 0.4) {\label};
     }
 
-    % Indices
-    \node[below, font=\footnotesize] at (0.5, 0) {$k=0$};
-    \node[below, font=\footnotesize] at (1.7, 0) {$k=1$};
-    \node[below, font=\footnotesize] at (2.9, 0) {$k=2$};
-    \node[below, font=\footnotesize] at (5.3, 0) {$k=N$};
-    \node[below, font=\footnotesize] at (6.5, 0) {$k=N+1$};
-    \node[below, font=\footnotesize] at (7.7, 0) {$k=N+2$};
+    % Indices: boxes are 1.0 wide with 0.2 gaps (1.2 tikz units = 1.44 cm per slot), so each label must stay
+    % narrower than that; "k =" is written once at the left and the slots carry only the index
+    \node[left, font=\footnotesize] at (0, -0.2) {$k =$};
+    \node[below, font=\footnotesize] at (0.5, 0) {$0$};
+    \node[below, font=\footnotesize] at (1.7, 0) {$1$};
+    \node[below, font=\footnotesize] at (2.9, 0) {$2$};
+    \node[below, font=\footnotesize] at (5.3, 0) {$N$};
+    \node[below, font=\footnotesize] at (6.5, 0) {$N+1$};
+    \node[below, font=\footnotesize] at (7.7, 0) {$N+2$};
 
-    % Annotations
-    \draw[thick, BrickRed, decorate, decoration={brace, amplitude=6pt, mirror}] (0, -0.4) -- (5.8, -0.4)
+    % Annotations: braces at y = -0.55, below the index labels (which end near y = -0.35)
+    \draw[thick, BrickRed, decorate, decoration={brace, amplitude=6pt, mirror}] (0, -0.55) -- (5.8, -0.55)
         node[midway, below=8pt, text=BrickRed, font=\small\bfseries] {Arbitrary coefficients in $R$};
 
-    \draw[thick, ForestGreen, decorate, decoration={brace, amplitude=6pt, mirror}] (6.0, -0.4) -- (9.4, -0.4)
+    \draw[thick, ForestGreen, decorate, decoration={brace, amplitude=6pt, mirror}] (6.0, -0.55) -- (9.4, -0.55)
         node[midway, below=8pt, text=ForestGreen, font=\small\bfseries] {All zero for $m > N$};
 \end{tikzpicture}
 \end{center}
@@ -1840,6 +1854,7 @@ Let $R$ be a commutative ring with unit $1_R$. The polynomial ring $(R[x], +, \c
     f \cdot g = \bigl( a_0 b_0, \ a_0 b_1 + a_1 b_0, \ a_0 b_2 + a_1 b_1 + a_2 b_0, \ \dots \bigr).
     \end{equation}
 \end{enumerate}
+Both results are again almost-zero sequences: if $a_k = 0$ for $k > N$ and $b_k = 0$ for $k > M$, then $a_k + b_k = 0$ for $k > \max(N, M)$, and $c_k = 0$ for $k > N + M$ (each term $a_i b_{k-i}$ has $i > N$ or $k - i > M$).
 \end{definition}
 
 \begin{center}
@@ -1861,17 +1876,20 @@ Let $R$ be a commutative ring with unit $1_R$. The polynomial ring $(R[x], +, \c
         }
     }
 
-    % Anti-diagonal lines for Cauchy product: i + j = k
-    \draw[ultra thick, BrickRed] (0, 0) circle (3pt) node[below left, font=\footnotesize, text=BrickRed] {$c_0 = a_0 b_0$};
-    
+    % Anti-diagonal lines for Cauchy product: i + j = k. Each diagonal ends at (0, k) on the j-axis, and its
+    % label c_k sits just left of that point (anchored east at (-0.35, k)), outside the grid, so no label
+    % overlaps a lattice point, an a_i b_j label or another diagonal.
+    \draw[ultra thick, BrickRed] (0, 0) circle (3pt);
+    \node[text=BrickRed, font=\footnotesize, left] at (-0.35, 0) {$c_0 = a_0 b_0$};
+
     \draw[very thick, BurntOrange, dashed] (1, 0) -- (0, 1);
-    \node[text=BurntOrange, font=\footnotesize, above right] at (0.5, 0.5) {$c_1 = a_1 b_0 + a_0 b_1$};
+    \node[text=BurntOrange, font=\footnotesize, left] at (-0.35, 1) {$c_1 = a_1 b_0 + a_0 b_1$};
 
     \draw[very thick, ForestGreen, dashed] (2, 0) -- (0, 2);
-    \node[text=ForestGreen, font=\footnotesize, above right] at (1.0, 1.0) {$c_2 = a_2 b_0 + a_1 b_1 + a_0 b_2$};
+    \node[text=ForestGreen, font=\footnotesize, left] at (-0.35, 2) {$c_2 = a_2 b_0 + a_1 b_1 + a_0 b_2$};
 
     \draw[very thick, MidnightBlue, dashed] (3, 0) -- (0, 3);
-    \node[text=MidnightBlue, font=\footnotesize, above right] at (1.5, 1.5) {$c_3 = \sum_{i+j=3} a_i b_j$};
+    \node[text=MidnightBlue, font=\footnotesize, left] at (-0.35, 3) {$c_3 = \sum_{i+j=3} a_i b_j$};
 \end{tikzpicture}
 \end{center}
 
@@ -1893,7 +1911,7 @@ The formula $c_k = \sum_{i=0}^k a_i b_{k-i}$ exactly mirrors:
     \item \textbf{The Group of Units $\operatorname{Unit}(R)$:} The set of multiplicatively invertible elements $R^* = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\mathbb{Z}/m\mathbb{Z})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
     \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\mathbb{Z}/m\mathbb{Z})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
-    \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and well-definedness of addition and multiplication crucially rely on the zero-divisor-free property of $R$.
+    \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
     \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i)$, $\operatorname{Frac}(\mathbb{Z}[\frac{1}{3}]) = \mathbb{Q}$, and $\operatorname{Frac}(K) \cong K$ for any existing field $K$.
     \item \textbf{Polynomial Rings $R[x]$:} For a commutative ring with unity $R$, the polynomial ring $R[x]$ is formally defined as the ring of almost-zero sequences $(a_k)_{k \in \mathbb{N}_0}$ in $R^{\mathbb{N}_0}$. It is equipped with componentwise addition and Cauchy product (convolution) multiplication $c_k = \sum_{i=0}^k a_i b_{k-i}$, with indeterminate $x = (0, 1, 0, 0, \dots)$.
 \end{itemize}

@@ -66,13 +66,13 @@ Could there be another $\hat{e} \in G$ that has the neutrality property? And the
 
 \begin{content}[Definition of a Group and Uniqueness of the Identity]
 \begin{definition}[Group]\label[definition]{def:group}
-A \newterm{group} is a triple $(G, \cdot, e)$, consisting of a set $G$ (non-empty, since it contains $e$), a binary operation $\cdot \colon G \times G \to G$, and a distinguished element $e \in G$ (called the \newterm{identity} or \newterm{neutral element}), satisfying the following three group axioms:
+A \newterm{group} is a triple $(G, \cdot, e)$, consisting of a non-empty set $G$, a binary operation $\cdot \colon G \times G \to G$, and a distinguished element $e \in G$ (called the \newterm{identity} or \newterm{neutral element}), satisfying the following three group axioms:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Associativity:} For all $a, b, c \in G$,
     \[
     (a \cdot b) \cdot c = a \cdot (b \cdot c).
     \]
-    \item \textbf{Neutral Element:} The element $e$ is neutral: for all $a \in G$,
+    \item \textbf{Existence of a Neutral Element:} There exists an element $e \in G$ such that for all $a \in G$,
     \[
     a \cdot e = e \cdot a = a.
     \]
@@ -184,7 +184,7 @@ In this course, the multiplication is moreover commutative (\cref{rem:ring-conve
 \begin{definition}[Field]\label[definition]{def:field}
 A \newterm{field} is a commutative ring $(F, +, \cdot, 0, 1)$ with $1 \neq 0$ in which every non-zero element possesses a multiplicative inverse:
 \[
-\text{for every } x \in F \setminus \{0\} \text{ there is } x^{-1} \in F \text{ with } x \cdot x^{-1} = 1.
+\forall x \in F \setminus \{0\}, \ \exists x^{-1} \in F \text{ such that } x \cdot x^{-1} = 1.
 \]
 Equivalently, $(F \setminus \{0\}, \cdot, 1)$ is an abelian group under multiplication.
 \end{definition}
@@ -197,7 +197,6 @@ Algebra organizes mathematical systems by layering structural axioms:
     \item \textbf{Rings $(R, +, \cdot, 0, 1)$:} Two operations where $(R, +, 0)$ is an abelian group, multiplication is associative with $1$ (and, in this course, commutative), and the operations are tied together via the distributive laws.
     \item \textbf{Fields $(F, +, \cdot, 0, 1)$:} Commutative rings where $(F \setminus \{0\}, \cdot, 1)$ is also an abelian group.
 \end{itemize}
-Groups and rings are separate structures, related through the additive group $(R, +, 0)$ of a ring; fields are special rings.
 \end{insight}
 
 \section{Group Homomorphisms and Isomorphisms}
@@ -444,8 +443,8 @@ f(-1) = 1.
 Comparing \eqref{eq:f-of-one} and \eqref{eq:f-of-minus-one}, we obtain $f(1) = f(-1) = 1$. Since $1 \neq -1$ in $\mathbb{R}^*$, this contradicts the injectivity of $f$. Consequently, no such isomorphism can exist.
 \end{proof}
 
-\begin{steps}[Counting Square Roots of $1$]
-The lecturer's argument counts solutions of $t^2 = 1$: there are two in $\mathbb{R}^*$ ($t = \pm 1$) but only one in $\mathbb{R}_{>0}^*$. A homomorphism maps solutions to solutions, and a bijective one would match them up one-to-one, which is impossible. Going beyond the lecture: this is an instance of an \newterm{isomorphism invariant}. An element $x \neq e$ with $x^2 = e$ has \newterm{order $2$}, isomorphisms preserve the order of elements, and $\mathbb{R}^*$ has an element of order $2$ while $\mathbb{R}_{>0}^*$ has none, although both sets have the same cardinality.
+\begin{steps}[Algebraic Invariants: Torsion Elements]
+This proof illustrates the power of \newterm{algebraic invariants}: an algebraic property preserved by all isomorphisms. In $(\mathbb{R}^*, \cdot, 1)$, the element $-1$ is an element of order $2$ (an element $x \neq e$ such that $x^2 = e$; elements of finite order are called \newterm{torsion elements}). However, $(\mathbb{R}_{>0}^*, \cdot, 1)$ contains no elements of order $2$. Since an isomorphism must map elements of order $k$ to elements of order $k$, the two groups cannot be isomorphic despite having the same uncountable cardinality ($2^{\aleph_0}$) as sets.
 \end{steps}
 \end{content}
 
@@ -611,7 +610,7 @@ Thus, $f(x^{-1}) = \hat{e}$, which demonstrates that $x^{-1} \in \ker(f)$.
 \end{proof}
 
 \begin{definition}[Subgroup]\label[definition]{def:subgroup}
-Let $(G, \cdot, e)$ be a group, and let $H \subseteq G$ be a subset (non-empty by condition (1)). $H$ is called a \newterm{subgroup} of $G$ (denoted $H \le G$) if it satisfies the following three conditions:
+Let $(G, \cdot, e)$ be a group, and let $H \subseteq G$ be a non-empty subset. $H$ is called a \newterm{subgroup} of $G$ (denoted $H \le G$) if it satisfies the following three conditions:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity Element:} $e \in H$.
     \item \textbf{Closure under Multiplication:} For all $a, b \in H$, $a \cdot b \in H$.
@@ -740,12 +739,8 @@ Let $(R, +, \cdot, 0, 1)$ and $(\hat{R}, +, \cdot, \hat{0}, \hat{1})$ be rings. 
 \end{definition}
 
 \begin{definition}[Ring Isomorphism]\label[definition]{def:ring-isomorphism}
-A ring homomorphism $f \colon R \to \hat{R}$ is called a \newterm{ring isomorphism} if $f$ is bijective.
+A ring homomorphism $f \colon R \to \hat{R}$ is called a \newterm{ring isomorphism} if $f$ is bijective. Equivalently, $f$ is an isomorphism if and only if there exists a ring homomorphism $g \colon \hat{R} \to R$ such that $g \circ f = \operatorname{id}_R$ and $f \circ g = \operatorname{id}_{\hat{R}}$ (as for groups, \cref{prop:isomorphism-inverse-characterization}).
 \end{definition}
-
-\begin{steps}[Inverse Characterization]
-As for groups (\cref{prop:isomorphism-inverse-characterization}), $f$ is a ring isomorphism if and only if there is a ring homomorphism $g \colon \hat{R} \to R$ with $g \circ f = \operatorname{id}_R$ and $f \circ g = \operatorname{id}_{\hat{R}}$. The proof is the same: the inverse map $g = f^{-1}$ respects $+$ and $\cdot$ by the computation given there, and $g(\hat{1}) = g(f(1)) = 1$.
-\end{steps}
 \end{content}
 
 \subsection{The Kernel of a Ring Homomorphism and Ideals}
@@ -770,7 +765,7 @@ So, what about the image? Is the image an ideal? What is the image? The answer i
 \recap{Ideals were defined in Week~1 (\cref{def:ideal}), and the kernel of a ring homomorphism was shown to be one (\cref{prop:kernel-is-ideal}). The lecturer restates both; with the group language of this lecture, the additive half of the proof becomes a one-liner.}
 
 \begin{definition}[Ideal]\label[definition]{def:ideal-w2}
-Let $(R, +, \cdot, 0, 1)$ be a ring. A subset $I \subseteq R$ is called an \newterm{ideal} (denoted $I \trianglelefteq R$) if it satisfies:
+Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is called an \newterm{ideal} (denoted $I \trianglelefteq R$) if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup:} $(I, +, 0)$ is a subgroup of $(R, +, 0)$ (\cref{def:subgroup}), i.e.,
     \[
@@ -834,13 +829,9 @@ Let $(R, +, \cdot, 0, 1)$ be a ring. A subset $S \subseteq R$ is called a \newte
     \[
     a + b \in S \quad \text{and} \quad a \cdot b \in S.
     \]
-    \item \textbf{Ring Axioms:} $(S, +, \cdot, 0, 1)$ is itself a ring with the induced operations.
+    \item \textbf{Ring Axioms (Closure under Additive Inverses):} $(S, +, \cdot, 0, 1)$ is itself a ring with the induced operations (in particular, $-a \in S$ for all $a \in S$).
 \end{enumerate}
 \end{definition}
-
-\begin{steps}[What Condition (iii) Adds]
-By (i) and (ii), the operations of $R$ restrict to $S$. Associativity, commutativity and the distributive laws are then inherited from $R$, because they are identities that hold for all elements of $R$. The only axiom that can fail is the existence of additive inverses, so (iii) amounts to: $-a \in S$ for all $a \in S$. For example, $\mathbb{N}_0 \subseteq \mathbb{Z}$ satisfies (i) and (ii) but not (iii).
-\end{steps}
 
 \begin{proposition}[The Image of a Ring Homomorphism is a Subring]\label[proposition]{prop:image-ring-hom-subring}
 Let $f \colon R \to \hat{R}$ be a ring homomorphism. Then the image $\operatorname{Im}(f) \subseteq \hat{R}$ is a subring of $\hat{R}$.
@@ -859,7 +850,7 @@ We check the subring conditions for $\operatorname{Im}(f)$:
     \]
     \item \textbf{Additive Inverses:} For $\hat{a} = f(a) \in \operatorname{Im}(f)$, $-\hat{a} = -f(a) = f(-a) \in \operatorname{Im}(f)$; here $f(-a) = -f(a)$ because group homomorphisms preserve inverses (shown in the proof of \cref{prop:image-is-subgroup}).
 \end{enumerate}
-By the steps after \cref{def:subring}, this suffices: $\operatorname{Im}(f)$ is a subring of $\hat{R}$.
+The remaining ring axioms (associativity, commutativity, distributivity) are identities in $\hat{R}$ and hold in particular on $\operatorname{Im}(f)$. Thus, $\operatorname{Im}(f)$ is a subring of $\hat{R}$.
 \end{proof}
 \end{content}
 
@@ -954,7 +945,7 @@ Define the set of \newterm{dyadic rationals} $S = \mathbb{Z}[\frac{1}{2}]$ by:
 S := \left\{ \frac{a}{2^n} \;\middle|\; a \in \mathbb{Z}, \ n \in \mathbb{N}_{\ge 0} \right\} \subset \mathbb{Q}.
 \end{equation}
 \begin{itemize}
-    \item \textbf{Proper Inclusions:} $S \supsetneq \mathbb{Z}$ since $\frac{3}{2} \in S \setminus \mathbb{Z}$, and $S \subsetneq \mathbb{Q}$ since $\frac{2}{3} \notin S$: from $\frac{2}{3} = \frac{a}{2^n}$ we would get $2^{n+1} = 3a$, but $3 \nmid 2^{n+1}$.
+    \item \textbf{Proper Inclusions:} $S \supsetneq \mathbb{Z}$ since $\frac{1}{2} = \frac{1}{2^1} \in S \setminus \mathbb{Z}$, and $S \subsetneq \mathbb{Q}$ since $\frac{1}{3} \notin S$ (powers of $2$ cannot produce a denominator divisible by $3$).
     \item \textbf{Subring Verification:}
     \begin{enumerate}[label=\textbf{(\roman*)}]
         \item $0 = \frac{0}{2^0} \in S$ and $1 = \frac{1}{2^0} \in S$.
@@ -966,7 +957,7 @@ S := \left\{ \frac{a}{2^n} \;\middle|\; a \in \mathbb{Z}, \ n \in \mathbb{N}_{\g
         \item Closed under additive inverses: $-\left(\frac{a}{2^n}\right) = \frac{-a}{2^n} \in S$.
     \end{enumerate}
 \end{itemize}
-Thus, $\mathbb{Z}[\frac{1}{2}]$ is a subring of $\mathbb{Q}$ (allowing $n \in \mathbb{Z}$, as the lecturer does, gives the same set, since $\frac{a}{2^{-k}} = \frac{a \cdot 4^k}{2^k}$). More generally, for any $m \in \mathbb{Z}_{\ge 2}$, prime or not (e.g., $m = 17$), the same computation shows that $\mathbb{Z}[\frac{1}{m}] := \{ \frac{a}{m^n} \mid a \in \mathbb{Z}, n \ge 0 \}$ is a subring with $\mathbb{Z} \subsetneq \mathbb{Z}[\frac{1}{m}] \subsetneq \mathbb{Q}$: it contains $\frac{1}{m}$, and it misses $\frac{1}{q}$ for any prime $q \nmid m$, since $\frac{1}{q} = \frac{a}{m^n}$ would give $q \mid m^n$. The case $m = 3$ returns in Week~3 (\cref{ex:frac-triadic}).
+Thus, $\mathbb{Z}[\frac{1}{2}]$ is a subring of $\mathbb{Q}$. More generally, for any $m \in \mathbb{Z}_{\ge 2}$ (e.g., $m = 17$), the localized ring $\mathbb{Z}[\frac{1}{m}] := \{ \frac{a}{m^n} \mid a \in \mathbb{Z}, n \ge 0 \}$ forms a proper intermediate subring $\mathbb{Z} \subsetneq \mathbb{Z}[\frac{1}{m}] \subsetneq \mathbb{Q}$. The case $m = 3$ returns in Week~3 (\cref{ex:frac-triadic}).
 \end{example}
 \end{content}
 
@@ -1031,13 +1022,13 @@ Let $R = \mathbb{Z}[x]$ be the polynomial ring over $\mathbb{Z}$, and consider t
 \end{equation}
 \begin{itemize}
     \item \textbf{$\mathbb{Z}[x^2]$ is a Subring of $\mathbb{Z}[x]$ (\textcolor{ForestGreen}{YES}):}
-    $0, 1 \in \mathbb{Z}[x^2]$; sums and negatives of polynomials with only even powers again have only even powers; and products do too, since $x^{2k} \cdot x^{2\ell} = x^{2(k+\ell)}$. Thus, $\mathbb{Z}[x^2] \le \mathbb{Z}[x]$. (Note: $\mathbb{Z}[x^2]$ is not the set of polynomials of even \emph{degree}; $x^2 + x$ has even degree but is not in $\mathbb{Z}[x^2]$.)
+    $0, 1 \in \mathbb{Z}[x^2]$, the sum and difference of even polynomials are even, and the product of even powers yields even powers ($x^{2k} \cdot x^{2\ell} = x^{2(k+\ell)}$). Thus, $\mathbb{Z}[x^2] \le \mathbb{Z}[x]$.
     \item \textbf{$\mathbb{Z}[x^2]$ is NOT an Ideal of $\mathbb{Z}[x]$ (\textcolor{BrickRed}{NO}):}
     Taking $r = x \in \mathbb{Z}[x]$ and $p(x) = x^2 \in \mathbb{Z}[x^2]$, their product is:
     \[
     r \cdot p(x) = x \cdot x^2 = x^3 \notin \mathbb{Z}[x^2]
     \]
-    since $x^3$ is an odd power of $x$. Thus, $\mathbb{Z}[x^2]$ fails the multiplicative absorption property.
+    since $x^3$ has an odd degree. Thus, $\mathbb{Z}[x^2]$ fails the multiplicative absorption property.
 \end{itemize}
 \end{example}
 \end{content}
@@ -1090,7 +1081,7 @@ Combining these, $S$ contains all integers $\mathbb{Z} \subseteq S$. Since $S \s
 This result highlights the sharp contrast between subrings and ideals in the ring of integers $\mathbb{Z}$:
 \begin{itemize}
     \item \textbf{Subrings of $\mathbb{Z}$:} There is only \textbf{one} subring, namely $\mathbb{Z}$ itself (because a subring must contain $1$, which generates all of $\mathbb{Z}$ additively).
-    \item \textbf{Ideals of $\mathbb{Z}$:} There are \textbf{infinitely many} distinct ideals of $\mathbb{Z}$, namely the sets $n\mathbb{Z}$ for $n \in \mathbb{N}_{\ge 0}$ (because an ideal does not need to contain $1$); that there are no others is \cref{thm:ideals-of-z-are-principal} below.
+    \item \textbf{Ideals of $\mathbb{Z}$:} There are \textbf{infinitely many} distinct ideals of $\mathbb{Z}$, each of the form $n\mathbb{Z} = \langle n \rangle$ for $n \in \mathbb{N}_{\ge 0}$ (because an ideal does not need to contain $1$; see \cref{thm:ideals-of-z-are-principal} below).
 \end{itemize}
 \end{steps}
 \end{content}
@@ -1121,20 +1112,21 @@ Comment 2: it's not sensitive to whether you put $+n$ or $-n$ here, because insi
 So, typically when you write $n\mathbb{Z}$, you should take $n \ge 0$. You don't have to, but that's the convention. In the literature, you'll never see minus... it's just a weird thing to do. There's no reason...
 \end{speech}
 
-\begin{content}[The Ideals $n\mathbb{Z}$ of the Integers]
-\recap{The set $n\mathbb{Z}$ first appeared in Week~1 as the kernel of the reduction map $\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$ (\cref{ex:kernel-of-projection}, \eqref{eq:kernel-zn}).}
+\begin{content}[Principal Ideals of the Integers $\mathbb{Z}$]
+\recap{The set $n\mathbb{Z}$ first appeared in Week~1 as the kernel of the reduction map $\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$ (\cref{ex:kernel-of-projection}).}
 
-\begin{definition}[The Multiples of $n$]\label[definition]{def:principal-ideals-z}
-For each integer $n \in \mathbb{Z}$, the set of integer multiples of $n$ is
+\begin{definition}[Principal Ideals of $\mathbb{Z}$]\label[definition]{def:principal-ideals-z}
+For each integer $n \in \mathbb{Z}$, the set of integer multiples of $n$:
 \begin{equation}\label{eq:n-z-def}
-n\mathbb{Z} := \{ n \cdot k \mid k \in \mathbb{Z} \}.
+n\mathbb{Z} := \{ n \cdot k \mid k \in \mathbb{Z} \}
 \end{equation}
+is an ideal of $\mathbb{Z}$.
 \end{definition}
 
-\begin{remark}[The Lecturer's Two Comments on $n\mathbb{Z}$]\label[remark]{rem:nz-conventions}
+\begin{remark}[Conventions on $n\mathbb{Z}$]\label[remark]{rem:nz-conventions}
 \begin{itemize}
-    \item \textbf{Comment 1, $n\mathbb{Z}$ is an ideal:} as for $2\mathbb{Z}$ (\cref{ex:even-integers-ideal}), $0 = n \cdot 0$, $nk + n\ell = n(k + \ell)$ and $-(nk) = n(-k)$, so $(n\mathbb{Z}, +, 0)$ is a subgroup; and for $r \in \mathbb{Z}$, $x = nk \in n\mathbb{Z}$ we get $r \cdot x = n(rk) \in n\mathbb{Z}$. (For $n \ge 1$, it is also the kernel of $\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$, so \cref{prop:kernel-is-ideal} applies.)
-    \item \textbf{Comment 2, sign invariance:} since $-1 \in \mathbb{Z}$, $(-n)\mathbb{Z} = n\mathbb{Z}$. By convention, one takes $n \in \mathbb{N}_{\ge 0} = \{0, 1, 2, \dots\}$.
+    \item \textbf{Ideals of $\mathbb{Z}$:} For every $n \in \mathbb{Z}$, $(n\mathbb{Z}, +, 0)$ is an additive subgroup of $\mathbb{Z}$, and for any $r \in \mathbb{Z}$ and $x = nk \in n\mathbb{Z}$, $r \cdot x = n(rk) \in n\mathbb{Z}$.
+    \item \textbf{Sign Invariance:} Since $-1 \in \mathbb{Z}$ is a unit, $(-n)\mathbb{Z} = n\mathbb{Z}$. By convention, we restrict the generator index to $n \in \mathbb{N}_{\ge 0} = \{0, 1, 2, \dots\}$.
 \end{itemize}
 \end{remark}
 \end{content}
@@ -1192,28 +1184,23 @@ Okay, so we have to prove something.
 \end{center}
 
 \begin{steps}[Origin of the Term \qt{Ideal}]
-The lecturer's point: in $\mathbb{Z}$, every ideal is given by an honest integer ($I = n\mathbb{Z}$, \cref{thm:ideals-of-z-are-principal}); in other rings, ideals behave like \qt{idealized numbers}.
+The concept of an \newterm{ideal} originated in algebraic number theory with Ernst Kummer (1840s) as \qt{ideal complex numbers} to restore unique prime factorization in rings of algebraic integers such as $\mathbb{Z}[\zeta_p]$, and was later formalized by Richard Dedekind and David Hilbert around 1900. In $\mathbb{Z}$, every ideal is represented by a concrete integer ($I = n\mathbb{Z}$, \cref{thm:ideals-of-z-are-principal}); in more general rings, ideals generalize the behavior of numbers.
 \end{steps}
 \end{content}
 
-\begin{aiNote}[Beyond the Lecture: Kummer and Dedekind]
-% [PERSISTENT, ADDITION]
-The idea goes back to Ernst Kummer's \qt{ideal complex numbers} (1840s), introduced to repair unique factorization in rings such as $\mathbb{Z}[\zeta_p]$; Richard Dedekind turned them into the ideals used today (1870s), and Hilbert's number theory report (1897) made the language standard.
-\end{aiNote}
-
-\subsection{Every Ideal of \texorpdfstring{$\mathbb{Z}$}{Z} Is of the Form \texorpdfstring{$n\mathbb{Z}$}{nZ}}
+\subsection{Proof: Every Ideal in \texorpdfstring{$\mathbb{Z}$}{Z} is Principal}
 
 \begin{content}
-\begin{theorem}[The Ideals of $\mathbb{Z}$]\label[theorem]{thm:ideals-of-z-are-principal}
-Every ideal $I$ of the ring of integers $\mathbb{Z}$ is of the form
+\begin{theorem}[Ideals of $\mathbb{Z}$ are Principal]\label[theorem]{thm:ideals-of-z-are-principal}
+Every ideal $I$ of the ring of integers $\mathbb{Z}$ is of the form:
 \begin{equation}\label{eq:ideal-is-nz}
-I = n\mathbb{Z}
+I = n\mathbb{Z} = \langle n \rangle
 \end{equation}
-for some non-negative integer $n \in \mathbb{N}_{\ge 0}$.
+for a uniquely determined non-negative integer $n \in \mathbb{N}_{\ge 0}$.
 \end{theorem}
 \end{content}
 
-\begin{proofWrapper}[Proof of \cref{thm:ideals-of-z-are-principal}]
+\begin{proofWrapper}[Proof that Every Ideal in $\mathbb{Z}$ is of the Form $n\mathbb{Z}$]
 
 \begin{speech}[00:52:30 - 00:54:10]
 What do we have to prove? 
@@ -1228,9 +1215,11 @@ So, \textbf{Case (2)} is that $I$ has some non-zero element.
 \end{speech}
 
 \begin{content}[Proof: Case 1 and Identification of Positive Elements]
-\textbf{Case 1 ($I = \{0\}$):} Then $I = 0\mathbb{Z}$ with $n = 0$. This settles the degenerate case.
+\textbf{Case 1 ($I = \{0\}$):} \\
+If $I = \{0\}$, then $I = 0\mathbb{Z}$ with $n = 0$. This settles the degenerate case.
 
-\textbf{Case 2 ($I \neq \{0\}$):} Then $I$ contains an element $x \neq 0$:
+\textbf{Case 2 ($I \neq \{0\}$):} \\
+If $I$ contains a non-zero element $x \in I$ with $x \neq 0$:
 \begin{itemize}
     \item If $x > 0$, then $I$ contains a positive integer.
     \item If $x < 0$, since $I$ is an ideal and $-1 \in \mathbb{Z}$, $-x = (-1) \cdot x \in I$, where $-x > 0$.
@@ -1275,7 +1264,8 @@ That is the division, long division.
 \end{speech}
 
 \begin{content}[Application of the Well-Ordering Principle and Division Algorithm]
-\textbf{Selection of $n$:} By the \newterm{Well-Ordering Principle} of $\mathbb{N}$, the non-empty subset $I \cap \mathbb{N}_{>0} \subseteq \mathbb{N}$ contains a unique smallest element:
+\textbf{Selection of the Minimal Generator $n$:} \\
+By the \newterm{Well-Ordering Principle} of $\mathbb{N}$, the non-empty subset $I \cap \mathbb{N}_{>0} \subseteq \mathbb{N}$ contains a unique smallest element:
 \begin{equation}\label{eq:n-least-positive}
 n := \min(I \cap \mathbb{N}_{>0}).
 \end{equation}
@@ -1325,19 +1315,14 @@ We now analyze the remainder $r$:
     \item Therefore, we must have $r = 0$.
 \end{itemize}
 Setting $r = 0$ in \eqref{eq:division-algorithm} gives $y = q \cdot n \in n\mathbb{Z}$. Since $y \in I$ was arbitrary, $I \subseteq n\mathbb{Z}$.
-Combining both inclusions yields $I = n\mathbb{Z}$, which completes Case 2 and the proof of \cref{thm:ideals-of-z-are-principal}.
-
-\begin{steps}[The Two Tools, and Uniqueness of $n$]
-As the lecturer stresses, the proof uses the two standard tools for integers: every non-empty set of positive integers has a least element, and division with remainder. Going beyond the lecture: the $n \ge 0$ in the theorem is unique. For $I = \{0\}$ it is $n = 0$; otherwise $n$ is the least positive element of $I$, because the least positive element of $n\mathbb{Z}$ is $n$ itself.
-\end{steps}
+Combining both inclusions yields $I = n\mathbb{Z}$. Uniqueness of $n \ge 0$: for $I = \{0\}$ only $n = 0$ works, and otherwise $n$ is recovered as the least positive element of $I$.
 \end{content}
 
 \end{proofWrapper}
 
-\begin{aiNote}[Beyond the Lecture: Principal Ideals and PIDs]
-% [PERSISTENT, ADDITION]
-An ideal of the form $aR = \{ar \mid r \in R\}$ is called \newterm{principal}. An integral domain (\cref{def:integral-domain}) in which every ideal is principal is a \newterm{principal ideal domain} (PID); \cref{thm:ideals-of-z-are-principal} says that $\mathbb{Z}$ is one. Both conditions matter: $\mathbb{Z}/6\mathbb{Z}$ has only principal ideals but is not a domain, and $\mathbb{Z}[x]$ is a domain with the non-principal ideal $\{f \in \mathbb{Z}[x] \mid f(0) \text{ is even}\}$.
-\end{aiNote}
+\begin{insight}[Principal Ideal Domains (PIDs)]
+An integral domain (\cref{def:integral-domain}) in which every ideal is generated by a single element (i.e., $I = \langle a \rangle = aR$) is called a \newterm{Principal Ideal Domain} (\newterm{PID}). \Cref{thm:ideals-of-z-are-principal} proves that the ring of integers $\mathbb{Z}$ is a PID.
+\end{insight}
 
 \subsection{Rings of Smooth Functions and Compactly Supported Ideals}
 
@@ -1367,17 +1352,13 @@ The set of infinitely differentiable functions on the real line:
 \begin{equation}\label{eq:c-infty-def}
 C^\infty(\mathbb{R}) := \bigl\{ f \colon \mathbb{R} \to \mathbb{R} \;\big|\; f \text{ is smooth} \bigr\}
 \end{equation}
-is equipped with the pointwise operations
+forms a commutative ring $(C^\infty(\mathbb{R}), +, \cdot, 0, 1)$ under pointwise operations:
 \begin{align*}
 (f + g)(x) &:= f(x) + g(x), \\
 (f \cdot g)(x) &:= f(x) \cdot g(x),
 \end{align*}
-the zero function $0(x) \equiv 0$ and the constant function $1(x) \equiv 1$.
+with additive identity $0(x) \equiv 0$ and multiplicative identity $1(x) \equiv 1$.
 \end{definition}
-
-\begin{steps}[Why This Is a Ring]
-Sums and products of smooth functions are smooth, so the operations stay in $C^\infty(\mathbb{R})$, and $-f$ is smooth as well. Every ring axiom is an identity that holds pointwise, because it holds in $\mathbb{R}$; e.g., $(f \cdot (g + h))(x) = f(x)\bigl(g(x) + h(x)\bigr) = (f \cdot g + f \cdot h)(x)$. Hence $(C^\infty(\mathbb{R}), +, \cdot, 0, 1)$ is a (commutative) ring.
-\end{steps}
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
@@ -1429,7 +1410,7 @@ The set of smooth functions with \newterm{compact support} on $\mathbb{R}$, deno
 \begin{equation}\label{eq:cc-infty-def}
 C_c^\infty(\mathbb{R}) := \bigl\{ f \in C^\infty(\mathbb{R}) \;\big|\; \operatorname{supp}(f) \text{ is compact} \bigr\},
 \end{equation}
-where $\operatorname{supp}(f) := \overline{\{x \in \mathbb{R} \mid f(x) \neq 0\}}$ is the \newterm{support} of $f$. Since the support is closed, it is compact if and only if it is bounded (Heine--Borel), i.e., if and only if $f(x) = 0$ outside some interval $[-M, M]$.
+where $\operatorname{supp}(f) := \overline{\{x \in \mathbb{R} \mid f(x) \neq 0\}}$ is bounded (i.e., $f(x) = 0$ outside some finite interval $[-M, M]$).
 \end{definition}
 
 \begin{center}
@@ -1438,7 +1419,7 @@ where $\operatorname{supp}(f) := \overline{\{x \in \mathbb{R} \mid f(x) \neq 0\}
     % - Canvas: scale=1.2, x in [-3.5, 3.5], y in [-0.9, 1.9]; y-axis only above the x-axis
     % - Order: (1) axes; (2) flat tails at height 0; (3) smooth bump on [-1.5, 1.5], peak about 1.45;
     %   (4) dashed markers at x = -M, M; (5) brace for the support below the axis
-    % - Labels: f to the right of the bump (x = 1.6, y = 1.2), clear of the y-axis; -M, M below their markers;
+    % - Labels: f to the right of the bump (anchored west at (1.25, 1.15)), clear of the y-axis; -M, M below their markers;
     %   support label under the brace at y = -0.75
     % - Collisions: none; nothing is placed on the y-axis
     % \end{hidden}
@@ -1521,8 +1502,9 @@ J := \bigl\{ f \in C^\infty(\mathbb{R}) \;\big|\; \exists M \in \mathbb{R} \text
     % - Canvas: scale=1.2, x in [-3.5, 3.5], y in [-0.8, 1.9]; y-axis only above the x-axis
     % - Order: (1) axes; (2) curve, non-zero on [-3.2, 1), reaching 0 at M = 1; (3) zero tail on [1, 3.2];
     %   (4) dashed marker at M; (5) labels
-    % - Labels: f at the upper left (x = -3.2, y = 1.75), above the first hump (max about 1.25 there);
-    %   M below its marker; "f = 0 on [M, infinity)" above the tail at (2.2, 0.3)
+    % - Labels: f at the upper left (anchored west at (-3.4, 1.75)), above the first hump (max about 1.25 there);
+    %   M below its marker; "f = 0 on [M, infinity)" just above the tail (anchored south at (2.3, 0.05),
+    %   about 1.8 units wide, so it spans x in [1.4, 3.2], clear of the marker at x = 1 and of the axis label)
     % - Collisions: none; the curve stays below y = 1.55 between x = -1 and x = 0, away from the f label
     % \end{hidden}
     \draw[->, thick, gray!70] (-3.5, 0) -- (3.5, 0) node[right, text=black] {$x$};
@@ -1537,7 +1519,7 @@ J := \bigl\{ f \in C^\infty(\mathbb{R}) \;\big|\; \exists M \in \mathbb{R} \text
     \draw[dashed, gray] (1.0, 0.15) -- (1.0, -0.15);
     \node[gray, below] at (1.0, -0.15) {$M$};
     \node[BurntOrange, right] at (-3.4, 1.75) {$f \in J \setminus C_c^\infty(\mathbb{R})$};
-    \node[gray!80, font=\footnotesize, above] at (2.2, 0.05) {$f(x) = 0$ for all $x \ge M$};
+    \node[gray!80, font=\footnotesize, above] at (2.3, 0.05) {$f = 0$ on $[M, \infty)$};
 \end{tikzpicture}
 \end{center}
 \end{example}
@@ -1569,24 +1551,17 @@ That's properly a question in your analysis class. You can think about that.
 
 \begin{content}[The Restriction Homomorphism on Function Spaces]
 \begin{definition}[Restriction Homomorphism]\label[definition]{def:restriction-homomorphism}
-Let $U \subseteq \mathbb{R}$ be an open subset (here $U = \mathbb{R}_{>0} = (0, \infty)$), and let $C^\infty(U)$ be the ring of smooth functions $U \to \mathbb{R}$ (defined as in \cref{def:smooth-functions-ring}). The \newterm{restriction map} is
+Let $U \subset \mathbb{R}$ be an open subset (e.g., $U = \mathbb{R}_{>0} = (0, \infty)$). The \newterm{restriction mapping}:
 \begin{equation}\label{eq:restriction-map-def}
-\operatorname{res} \colon C^\infty(\mathbb{R}) \to C^\infty(U), \quad f \mapsto f|_U.
+\operatorname{res} \colon C^\infty(\mathbb{R}) \to C^\infty(U), \quad f \mapsto f|_U
 \end{equation}
-\end{definition}
-
-\begin{proposition}[Restriction Is a Ring Homomorphism]\label[proposition]{prop:restriction-is-hom}
-The restriction map $\operatorname{res}$ is a ring homomorphism.
-\end{proposition}
-
-\begin{proof}
-The operations are pointwise, so restricting before or after adding or multiplying gives the same function:
+is a ring homomorphism satisfying:
 \begin{itemize}
     \item $\operatorname{res}(f + g) = (f + g)|_U = f|_U + g|_U = \operatorname{res}(f) + \operatorname{res}(g)$,
     \item $\operatorname{res}(f \cdot g) = (f \cdot g)|_U = f|_U \cdot g|_U = \operatorname{res}(f) \cdot \operatorname{res}(g)$,
-    \item $\operatorname{res}(1) = 1|_U = 1$, the constant function $1$ on $U$.
+    \item $\operatorname{res}(1_{\mathbb{R}}) = 1_U$.
 \end{itemize}
-\end{proof}
+\end{definition}
 \end{content}
 
 \section{Introduction to Category Theory}
@@ -1887,9 +1862,9 @@ Two objects $A$ and $B$ are said to be \newterm{isomorphic} in $\mathcal{C}$ (wr
 \begin{steps}[Arrow-Theoretic Universality of Isomorphisms]
 Notice that \cref{def:categorical-isomorphism} makes \textbf{no reference to internal set elements, injectivity, or surjectivity}. Bijectivity is replaced purely by the existence of a two-sided structural inverse arrow. In concrete categories:
 \begin{itemize}
-    \item In $\mathbf{Grp}$, categorical isomorphisms are precisely bijective group homomorphisms.
-    \item In $\mathbf{Ring}$, categorical isomorphisms are bijective ring homomorphisms.
-    \item In $\mathbf{Vect}_K$, categorical isomorphisms are bijective linear transformations (invertible matrices).
+    \item In $\mathbf{Grp}$, categorical isomorphisms are precisely bijective group homomorphisms (\cref{prop:isomorphism-inverse-characterization}).
+    \item In $\mathbf{Ring}$, categorical isomorphisms are bijective ring homomorphisms (\cref{def:ring-isomorphism}).
+    \item In $\mathbf{Vect}_K$, categorical isomorphisms are bijective linear transformations (invertible matrices, in finite dimension).
 \end{itemize}
 \end{steps}
 \end{content}
@@ -2057,20 +2032,32 @@ defined by:
 
 \begin{center}
 \begin{tikzpicture}[scale=1.4]
-    \node (V) at (0, 2.0) [font=\bfseries] {$V$};
-    \node (W) at (3.5, 2.0) [font=\bfseries] {$W$};
+    % \begin{hidden}
+    % - Canvas: scale=1.4; three rows at y = 2, 1, 0; left column x = 0 (V side), right column x = 3 (W side)
+    % - Order: (1) the six spaces; (2) the maps T, T^*, T^{**} with their names above the arrows;
+    %   (3) dashed "apply (-)^*" arrows on the far left between the rows; (4) descriptions right of the W column
+    % - Labels: only the map names sit on the arrows; the long descriptions start at x = 3.5, right of W, W^*, W^{**}
+    % - Collisions: none; the dashed arrows run at x = -0.7, left of the V column
+    % \end{hidden}
+    \node (V) at (0, 2) {$V$};
+    \node (W) at (3, 2) {$W$};
+    \node (Vs) at (0, 1) {$V^*$};
+    \node (Ws) at (3, 1) {$W^*$};
+    \node (Vss) at (0, 0) {$V^{**}$};
+    \node (Wss) at (3, 0) {$W^{**}$};
+
     \draw[->, thick, RoyalBlue] (V) -- node[above] {$T$} (W);
-    
-    \node (Wstar) at (3.5, 1.0) [font=\bfseries] {$W^*$};
-    \node (Vstar) at (0, 1.0) [font=\bfseries] {$V^*$};
-    \draw[->, thick, BrickRed] (Wstar) -- node[above] {$T^* \text{ (Dual map / Contravariant)}$} (Vstar);
-    
-    \node (Vstarstar) at (0, 0) [font=\bfseries] {$V^{**}$};
-    \node (Wstarstar) at (3.5, 0) [font=\bfseries] {$W^{**}$};
-    \draw[->, thick, ForestGreen] (Vstarstar) -- node[above] {$T^{**} = (T^*)^* \text{ (Double dual / Covariant)}$} (Wstarstar);
-    
-    \draw[|->, dashed, gray!70] (1.75, 1.8) -- (1.75, 1.2);
-    \draw[|->, dashed, gray!70] (1.75, 0.8) -- (1.75, 0.2);
+    \draw[->, thick, BrickRed] (Ws) -- node[above] {$T^*$} (Vs);
+    \draw[->, thick, ForestGreen] (Vss) -- node[above] {$T^{**} = (T^*)^*$} (Wss);
+
+    % Taking duals row by row
+    \draw[|->, dashed, gray!70] (-0.7, 1.8) -- node[left, font=\footnotesize] {$(-)^*$} (-0.7, 1.2);
+    \draw[|->, dashed, gray!70] (-0.7, 0.8) -- node[left, font=\footnotesize] {$(-)^*$} (-0.7, 0.2);
+
+    % Descriptions
+    \node[right, font=\footnotesize, RoyalBlue] at (3.5, 2) {linear map};
+    \node[right, font=\footnotesize, BrickRed] at (3.5, 1) {dual map: arrow reversed (contravariant)};
+    \node[right, font=\footnotesize, ForestGreen] at (3.5, 0) {double dual: direction restored (covariant)};
 \end{tikzpicture}
 \end{center}
 
@@ -2083,7 +2070,7 @@ The composition of two arrow-reversing (contravariant) operations produces an ar
     (T \circ S)^{**} = (S^* \circ T^*)^* = (T^*)^* \circ (S^*)^* = T^{**} \circ S^{**}.
     \]
 \end{itemize}
-This holds for all vector spaces regardless of dimension. When $\dim(V) < \infty$, the canonical evaluation map $\operatorname{ev} \colon V \to V^{**}$, $v \mapsto (\psi \mapsto \psi(v))$ is an isomorphism, making $V \cong V^{**}$ a natural isomorphism of functors.
+This holds for all vector spaces regardless of dimension. When $\dim(V) < \infty$, the canonical evaluation map $\operatorname{ev}_V \colon V \to V^{**}$, $v \mapsto (\psi \mapsto \psi(v))$ is an isomorphism, and the maps $\operatorname{ev}_V$ form a natural isomorphism from the identity functor to $(-)^{**}$ on finite-dimensional spaces.
 \end{steps}
 \end{content}
 

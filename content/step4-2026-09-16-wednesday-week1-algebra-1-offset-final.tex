@@ -727,9 +727,10 @@ is a ring homomorphism.
 \begin{itemize}
     \item \textbf{Preservation of Unit:} $\phi(1) = 1 \cdot 1_R = 1_R$.
     \item \textbf{Additive Compatibility (e.g., $2 + 3 = 5$):}
-    \[
-    \phi(2) + \phi(3) = (1_R + 1_R) + (1_R + 1_R + 1_R) = 1_R + 1_R + 1_R + 1_R + 1_R = \phi(5) = \phi(2 + 3).
-    \]
+    \begin{align*}
+    \phi(2) + \phi(3) &= (1_R + 1_R) + (1_R + 1_R + 1_R) \\
+    &= 1_R + 1_R + 1_R + 1_R + 1_R = \phi(5) = \phi(2 + 3).
+    \end{align*}
     \item \textbf{Multiplicative Compatibility (e.g., $2 \cdot 3 = 6$):}
     Using repeated applications of the distributive laws:
     \begin{align*}
@@ -1022,7 +1023,7 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
 
     % The homomorphism and the image of the kernel
     \draw[->, very thick, RoyalBlue] (2.5, 0.55) to[bend left=20] node[midway, above, font=\small\bfseries] {$f$} (4.25, 0.55);
-    \draw[->, thick, dashed, Fuchsia] (1.45, -0.3) to[bend right=12] node[midway, below, font=\footnotesize] {$f(I) = \{0_{R_2}\}$} (Zero);
+    \draw[->, thick, dashed, Fuchsia] (1.45, -0.3) to[bend right=12] node[pos=0.42, below, font=\footnotesize] {$f(I) = \{0_{R_2}\}$} (Zero);
 \end{tikzpicture}
 \end{center}
 
