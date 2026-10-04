@@ -312,7 +312,7 @@ Every theorem or statement about monomorphisms immediately yields an identical, 
 \begin{speech}[00:10:35 - 00:12:35]
 So, let us return to rings now. This was kind of a foundational side note.
 
-So, we have this ring $(R, +, \cdot, 0, 1)$.
+So, we have this ring $(R, +, \cdot, 0, 1)$ (Recall: commutative with unit, \cref{rem:ring-convention}).
 
 And the rings here, there's kind of a different flavor of rings: there are the rings that are like $\mathbb{Z}$, where when you have things that are non-zero and you multiply them, they stay non-zero. That's one of the principles of $\mathbb{Z}$. But it's not true for rings like $\mathbb{Z}/6\mathbb{Z}$, this ring.
 
@@ -589,7 +589,7 @@ This has to do with every ring, so let's take a ring $R$.
 
 And this is now related to last week; in fact, it was the point of the discussion last week. So, there we discussed the ring $\mathbb{Z}$, but now you can take any ring.
 
-So, the definition here is that if we have elements $a$ and $b$ in the ring ($a, b \in R$), then we say --- this is the definition of the term ---, we say \qt{a divides b}. What this means is there exists some element of the ring, $c$ ($c \in R$), such that $a \cdot c = b$.
+So, the definition here is that if we have elements $a$ and $b$ in the ring ($a, b \in R$), then we say --- this is the definition of the term ---, we say \qt{a divides b}. What this means is there exists some element of the ring, $c$ ($c \in R$), such that $a \cdot c = b$ (in a commutative ring, the order does not matter: $a \cdot c = c \cdot a = b$).
 
 Okay, that's just the actual definition of division, and it's the same definition as with the integers.
 
@@ -759,7 +759,7 @@ So, that's the proof of this. This is a good thing to think about: this is alway
 
 \begin{content}[The Group of Units]
 \begin{proposition}[Group of Units]\label[proposition]{prop:group-of-units}
-Let $R$ be a ring with unity $1_R$, and let $U(R)$ (also denoted $U_R$ or $R^\times$) be the set of units of $R$:
+Let $R$ be a (commutative) ring with unity $1_R$, and let $U(R)$ (also denoted $U_R$ or $R^\times$) be the set of units of $R$:
 \begin{equation}\label{eq:unit-set-def}
 U(R) := \{u \in R \mid \exists w \in R \colon u \cdot w = 1_R\}.
 \end{equation}

@@ -496,15 +496,10 @@ Explicitly, the map sends:
 \end{align*}
 \end{definition}
 
-\begin{steps}[Why the Map Needs No Choices]
-The only data used are the unit $1_R$ and repeated addition: $n \ge 1$ goes to the sum of $n$ copies of $1_R$, and $-n$ goes to its additive inverse. The lecturer shows next that $\phi$ is a ring homomorphism (\cref{ex:canonical-hom-z-to-r}). Going beyond the lecture: no other choice is possible either, since any ring homomorphism $g \colon \mathbb{Z} \to R$ has $g(1) = 1_R$, and additivity then forces $g(n) = n \cdot 1_R$ for all $n \in \mathbb{Z}$.
+\begin{steps}[Universal Initial Property of the Integers $\mathbb{Z}$]
+This map $\phi \colon \mathbb{Z} \to R$ requires absolutely no choices: it is entirely determined by the ring structure of $R$. As we will see next (\cref{ex:canonical-hom-z-to-r}), this map is not merely a set-theoretic function, but a ring homomorphism. Going beyond the lecture: it is even the unique ring homomorphism from $\mathbb{Z}$ to $R$ (any such $g$ has $g(1) = 1_R$, and additivity forces $g(n) = n \cdot 1_R$), establishing that $\mathbb{Z}$ is the \newterm{initial object} in the category of rings with unit (categories: \cref{def:category-full}, Week~2).
 \end{steps}
 \end{content}
-
-\begin{aiNote}[Beyond the Lecture: $\mathbb{Z}$ as Initial Object]
-% [PERSISTENT, ADDITION]
-In the language of category theory (introduced in Week~2, \cref{def:category-full}), $\mathbb{Z}$ is the \newterm{initial object} of the category of rings $\mathbf{Ring}$ (\cref{ex:cat-rings}): every ring $R$ receives exactly one ring homomorphism from $\mathbb{Z}$, namely $\phi$.
-\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:17:10
@@ -531,17 +526,33 @@ And also, you can define rings without units. So, the fancy word for this would 
 
 \begin{content}[Convention: Commutative Rings with Unit]
 \begin{remark}[Standing Convention for Rings in this Course]\label[remark]{rem:ring-convention}
-In the literature, a ring need not have commutative multiplication, and some authors do not even require a unit $1$. In this course, unless explicitly stated otherwise, \newterm{ring} means \textbf{commutative ring with unit}: a ring in the sense of \cref{def:ring} whose multiplication is in addition commutative,
-\[
-a \cdot b = b \cdot a \quad \text{for all } a, b \in R.
-\]
-The zero ring ($1 = 0$, \cref{prop:zero-ring}) remains a ring under this convention.
+In the general mathematical literature, rings are not necessarily required to have commutative multiplication, nor are they always required to possess a multiplicative identity $1$ (sometimes called \newterm{rngs} or pseudo-rings).
+
+\par\vspace{1ex}\noindent
+\textbf{Standing Convention:} In this course, unless explicitly stated otherwise, the term \newterm{ring} will always designate a \textbf{commutative ring with unit}: a ring with unit $1$ in the sense of \cref{def:ring} such that $a \cdot b = b \cdot a$ for all $a, b \in R$. The zero ring ($1 = 0$, \cref{prop:zero-ring}) is still allowed.
 \end{remark}
 \end{content}
 
-\begin{aiNote}[Beyond the Lecture: Conventions in Textbooks]
+\begin{aiNote}[Terminology Across the Literature: Rings vs. Commutative Rings]
 % [PERSISTENT, ADDITION]
-Commutative algebra texts (Atiyah--Macdonald, Eisenbud) use \qt{ring} exactly as this course does; general algebra texts (Lang, Artin) require a unit but not commutativity; in functional analysis, rings without a unit are common. In a commutative ring, the left and right versions of ideals, divisibility and inverses coincide, which is why the later lectures never need to distinguish them.
+Mathematical literature reflects varying conventions:
+\begin{itemize}
+    \item \textbf{Commutative Algebra \& Algebraic Geometry (Atiyah--Macdonald, Eisenbud):} A \qt{ring} implicitly means a commutative ring with multiplicative identity $1$.
+    \item \textbf{General Algebra (Bourbaki, Lang, Artin):} A \qt{ring} possesses a multiplicative identity $1$, but multiplication is not required to be commutative.
+    \item \textbf{Functional Analysis \& Operator Algebras:} Rings often lack a multiplicative identity $1$ (sometimes called \qt{rngs} or pseudo-rings).
+\end{itemize}
+In this course, Prof. Pandharipande adheres to the commutative algebra convention: unless explicitly stated otherwise, all rings are commutative and unital. The zero ring, where $1 = 0$, is allowed (\cref{prop:zero-ring}).
+\end{aiNote}
+
+\begin{aiNote}[Beyond the Lecture: What Changes Without Commutativity]
+% [PERSISTENT, ADDITION]
+Typical non-commutative rings are matrix rings $M_n(K)$ for $n \ge 2$ and endomorphism rings. Because this course assumes commutativity, the following distinctions never come up in the later lectures:
+\begin{itemize}
+    \item \textbf{Ideals (\cref{def:ideal}):} left ideals ($r \cdot x \in I$), right ideals ($x \cdot r \in I$) and two-sided ideals ($r \cdot x \cdot s \in I$) coincide in a commutative ring. In general they differ, and kernels of ring homomorphisms are always two-sided ideals.
+    \item \textbf{Divisibility (\cref{def:divisibility-ring}, Week~2):} in general one distinguishes left divisibility ($b = a \cdot c$) from right divisibility ($b = c' \cdot a$).
+    \item \textbf{Units (\cref{def:unit-ring}, Week~2):} in general a unit must have a two-sided inverse ($u w = w u = 1$). The units still form a group, with $(u_1 u_2)^{-1} = u_2^{-1} u_1^{-1}$, but it can be non-abelian, e.g., $U(M_n(K)) = \mathrm{GL}_n(K)$ for $n \ge 2$.
+    \item \textbf{Integral domains (\cref{def:integral-domain}, Week~2):} the term presupposes commutativity. A non-commutative ring without zero divisors is just called a \emph{domain}, e.g., the real quaternions $\mathbb{H}$.
+\end{itemize}
 \end{aiNote}
 
 \subsection{Definition of a Ring Homomorphism}
@@ -748,6 +759,10 @@ The two computations above are instances of two identities, valid for all $m, n 
     \item \textbf{Multiplicativity:} $(m \cdot 1_R)(n \cdot 1_R) = (mn) \cdot 1_R$. Expanding the left side with the distributive laws gives $m n$ products $1_R \cdot 1_R = 1_R$ (with the sign of $mn$), exactly as in the computation for $2 \cdot 3 = 6$.
 \end{itemize}
 Together with $\phi(1) = 1_R$, this proves that $\phi$ is a ring homomorphism.
+\end{steps}
+
+\begin{steps}[Universal Initial Property of $\mathbb{Z}$]
+In category theory, this property establishes that $\mathbb{Z}$ is the \newterm{initial object} in the category of rings (\cref{ex:cat-rings}): for every ring $R$, there exists a \emph{unique} ring homomorphism from $\mathbb{Z}$ to $R$.
 \end{steps}
 \end{content}
 
