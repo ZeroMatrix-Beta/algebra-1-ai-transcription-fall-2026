@@ -17,7 +17,7 @@
 
 \lecturechapter[1]{Wednesday}{16 Sep}{16 September 2026}{Gaussian Integers, Ring Axioms, Ring Homomorphisms, and Ideals}
 
-\begin{overview}[Course Content Overview: Gaussian Integers, Ring Axioms, Homomorphisms \& Ideals]
+\begin{overview}[{Course Content Overview:\\[0.25ex] Gaussian Integers, Ring Axioms, Homomorphisms \& Ideals}]
 In this lecture, we bridge arithmetic and abstract algebra by exploring the following core themes:
 \begin{itemize}
     \item \textbf{Gaussian Integers and Primes:} Comparing factorization and units in $\mathbb{Z}$ and $\mathbb{Z}[i]$, and establishing how the primality of an ordinary integer prime in $\mathbb{Z}[i]$ connects directly to Fermat's two-square theorem ($p = a^2 + b^2 \iff p \equiv 1 \pmod 4$).
@@ -510,6 +510,16 @@ In the general mathematical literature, rings are not necessarily required to ha
 \par\vspace{1ex}\noindent
 \textbf{Standing Convention:} In this course, unless explicitly stated otherwise, the term \newterm{ring} will always designate a \textbf{commutative ring with unit} ($1 \in R$ such that $a \cdot b = b \cdot a$ for all $a, b \in R$).
 \end{remark}
+
+\begin{aiNote}[Terminology Across the Literature: Rings vs. Commutative Rings]
+Mathematical literature reflects varying conventions:
+\begin{itemize}
+    \item \textbf{Commutative Algebra \& Algebraic Geometry (Atiyah--Macdonald, Eisenbud):} A \qt{ring} implicitly means a commutative ring with multiplicative identity $1$.
+    \item \textbf{General Algebra (Bourbaki, Lang, Artin):} A \qt{ring} possesses a multiplicative identity $1$, but multiplication is not required to be commutative.
+    \item \textbf{Functional Analysis \& Operator Algebras:} Rings often lack a multiplicative identity $1$ (sometimes called \qt{rngs} or pseudo-rings).
+\end{itemize}
+In this course, Prof. Pandharipande adheres to the commutative algebra convention: unless explicitly stated otherwise, all rings are commutative and unital ($1 \neq 0$).
+\end{aiNote}
 \end{content}
 
 \subsection{Definition of a Ring Homomorphism}

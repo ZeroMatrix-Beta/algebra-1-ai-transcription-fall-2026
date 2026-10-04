@@ -1,11 +1,22 @@
 \documentclass{article}
 \usepackage{xcolor}
 \usepackage{fontawesome5}
+\usepackage[nobottomtitles*]{titlesec}
+\renewcommand{\bottomtitlespace}{3.5\baselineskip}
 \usepackage{tcolorbox}
 \tcbuselibrary{skins, breakable}
 
 \definecolor{EnvSpokenBg}{HTML}{F0F8FF}
 \definecolor{EnvSpoken}{HTML}{005580}
+
+\tcbsetforeverylayer{
+  before skip=12pt plus 3pt minus 2pt,
+  after skip=12pt plus 3pt minus 2pt,
+  pad at break=2.5mm,
+  lines before break=2,
+  shrink break goal=2mm,
+  ignore nobreak=true
+}
 
 \newtcolorbox{speech}[1][]{
 enhanced,
@@ -18,7 +29,7 @@ breakable
 }
 
 \begin{document}
-\vspace*{16cm}
+\vspace*{14cm}
 \subsection{The Image of a Group Homomorphism}
 \begin{speech}[00:26:50 - 00:28:30]
 Okay, so that's the investigation of the kernel and the notion of a subgroup. But there's also the image. And so proposition: The image of $ is a subgroup of $.

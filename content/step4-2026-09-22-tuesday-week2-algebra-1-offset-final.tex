@@ -196,6 +196,10 @@ Algebra organizes mathematical systems by layering structural axioms:
 \end{itemize}
 \end{insight}
 
+\begin{aiNote}[Standing Convention: Commutativity of Rings]
+As established in Week 1 (\cref{rem:ring-convention}), unless explicitly stated otherwise, the term \textbf{ring} in this course always refers to a \textbf{commutative ring with unity} ($a \cdot b = b \cdot a$ for all $a, b \in R$). Non-commutative rings (such as matrix algebras $M_n(K)$ or endomorphism rings) are treated as specialized exceptions.
+\end{aiNote}
+
 \section{Group Homomorphisms and Isomorphisms}
 
 \subsection{Definition and Properties of Homomorphisms}
@@ -770,6 +774,10 @@ Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is cal
 \end{enumerate}
 \end{definition}
 
+\begin{aiNote}[Ideals and Commutativity]
+Because $R$ is assumed commutative, left ideals ($r \cdot x \in I$), right ideals ($x \cdot r \in I$), and two-sided ideals ($r \cdot x \cdot s \in I$) coincide. In non-commutative ring theory, these concepts diverge, and kernels of ring homomorphisms are always two-sided ideals.
+\end{aiNote}
+
 \begin{proposition}[The Kernel of a Ring Homomorphism is an Ideal]\label[proposition]{prop:kernel-ring-hom-ideal}
 Let $f \colon R \to \hat{R}$ be a ring homomorphism. Then the kernel $\ker(f) := \{x \in R \mid f(x) = \hat{0}\}$ is an ideal of $R$.
 \end{proposition}
@@ -814,14 +822,14 @@ Okay. So, it's good to have these ideas extremely clear in your head: you have t
 
 \begin{content}[Definition of a Subring and the Image of a Ring Homomorphism]
 \begin{definition}[Subring]\label[definition]{def:subring}
-Let $(R, +, \cdot, 0, 1)$ be a ring. A subset $S \subseteq R$ is called a \newterm{subring} of $R$ (denoted $S \le R$) if:
+Let $(R, +, \cdot, 0, 1)$ be a commutative ring with unity. A subset $S \subseteq R$ is called a \newterm{subring} of $R$ (denoted $S \le R$) if:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Contains Neutral Elements:} $0 \in S$ and $1 \in S$.
     \item \textbf{Closure under Addition and Multiplication:} For all $a, b \in S$,
     \[
     a + b \in S \quad \text{and} \quad a \cdot b \in S.
     \]
-    \item \textbf{Ring Axioms (Closure under Additive Inverses):} $(S, +, \cdot, 0, 1)$ is itself a ring with the induced operations (in particular, $-a \in S$ for all $a \in S$).
+    \item \textbf{Ring Axioms (Closure under Additive Inverses):} $(S, +, \cdot, 0, 1)$ is itself a commutative ring with the induced operations (in particular, $-a \in S$ for all $a \in S$).
 \end{enumerate}
 \end{definition}
 

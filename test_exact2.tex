@@ -225,7 +225,6 @@ pdftitle={Algebra I -- Lecture Notes \& Transcription},
 pdfauthor={Prof. Rahul Pandharipande}
 }
 
-\usepackage{varwidth}
 \usepackage{tcolorbox}
 \tcbuselibrary{skins, breakable, theorems}
 
@@ -250,14 +249,22 @@ pdfauthor={Prof. Rahul Pandharipande}
   }
 }
 
-% --- GLOBAL BOX SPACING & SEAMLESS PAGE-BREAKING ENGINE ---
-\tcbsetforeverylayer{
-  before skip=14pt plus 3pt minus 2pt, 
-  after skip=14pt plus 3pt minus 2pt,
-  pad at break=2.5mm,
-  lines before break=2,
-  shrink break goal=2mm,
-  ignore nobreak=true
+% --- CLEAN SHADOW BREAKS & SPACING ---
+\tcbset{
+  every box/.append style={
+    before skip=16pt plus 4pt minus 2pt, 
+    after skip=16pt plus 4pt minus 2pt,  
+    underlay first={
+      \fill[white] ([xshift=-15pt,yshift=0pt]frame.south west) rectangle ([xshift=15pt,yshift=-15pt]frame.south east);
+    },
+    underlay middle={
+      \fill[white] ([xshift=-15pt,yshift=0pt]frame.south west) rectangle ([xshift=15pt,yshift=-15pt]frame.south east);
+      \fill[white] ([xshift=-15pt,yshift=0pt]frame.north west) rectangle ([xshift=15pt,yshift=15pt]frame.north east);
+    },
+    underlay last={
+      \fill[white] ([xshift=-15pt,yshift=0pt]frame.north west) rectangle ([xshift=15pt,yshift=15pt]frame.north east);
+    }
+  }
 }
 
 % ==========================================
@@ -390,8 +397,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 \usepackage{tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usepackage[nobottomtitles*]{titlesec}
-\renewcommand{\bottomtitlespace}{3.5\baselineskip}
+\usepackage{titlesec}
 \usepackage{titletoc}
 
 \setcounter{secnumdepth}{3}
@@ -578,7 +584,6 @@ enhanced,
 colback=white,
 boxrule=0.5pt,
 dynamic shadow,
-varwidth boxed title*=-30pt,
 code={
   \ifinsideproof
     \tcbset{
@@ -592,10 +597,10 @@ code={
     }
   \fi
 },
-title={\sffamily\bfseries\begin{tabular}[t]{@{}l@{\hspace{0.5em}}l@{}}\faStickyNote & \begin{tabular}[t]{@{}l@{}} #1 \end{tabular}\end{tabular}},
+title={\sffamily\bfseries\faStickyNote\ \ #1},
 coltitle=black,
-attach boxed title to top left={xshift=10pt, yshift*=-\tcboxedtitleheight/2},
-top=16pt,
+attach boxed title to top left={xshift=10pt, yshift=-10pt},
+top=14pt,
 breakable
 }
 
@@ -628,7 +633,6 @@ coltitle=black,
 boxrule=1.5pt,
 arc=4pt,
 dynamic color shadow=#1!30,
-varwidth boxed title*=-30pt,
 code={
   \ifinsideproof
     \tcbset{
@@ -643,7 +647,7 @@ code={
   \fi
 },
 IfValueTF={#2}{
-  title={\settowidth{\dimen0}{\faBox\ \ }\hangindent=\dimen0\hangafter=1\faBox\ \ #2},
+  title={\faBox\ \ #2},
   attach boxed title to top left={xshift=10pt, yshift=-10pt}
 }{
   notitle
@@ -657,11 +661,10 @@ enhanced,
 colback=white,
 fonttitle=\bfseries\sffamily,
 coltitle=black,
-title={\settowidth{\dimen0}{\faBox\ \ }\hangindent=\dimen0\hangafter=1\faBox\ \ ##1},
+title=\faBox\ \ ##1,
 boxrule=1.5pt,
 arc=4pt,
 dynamic color shadow=#3,
-varwidth boxed title*=-30pt,
 attach boxed title to top left={xshift=10pt, yshift=-10pt},
 code={
   \ifinsideproof
@@ -703,11 +706,10 @@ enhanced,
 colback=white,
 fonttitle=\bfseries\sffamily,
 coltitle=black,
-title={\settowidth{\dimen0}{\faSquareRootAlt\ \ }\hangindent=\dimen0\hangafter=1\faSquareRootAlt\ \ ##1},
+title=\faSquareRootAlt\ \ ##1,
 boxrule=1.5pt,
 arc=4pt,
 dynamic color shadow=#3,
-varwidth boxed title*=-30pt,
 attach boxed title to top left={xshift=10pt, yshift=-10pt},
 code={
   \ifinsideproof
@@ -831,48 +833,34 @@ breakable
 % 11. Dynamic Proof Wrappers
 \makeatletter
 
-\newcommand{\qedbadge}{%
-  \tikz[baseline=(Q.base)]\node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};%
-}
-
 % SHORT PROOF 
-\renewenvironment{proof}[1][Proof]{%
-    \par\addvspace{2ex plus 0.5ex minus 0.2ex}%
+\renewenvironment{proof}[1][Proof]{
+    \par\addvspace{2ex plus 0.5ex minus 0.2ex}
     \insideprooftrue 
     \noindent\textcolor{ProofTint}{\faPenNib}\hspace{0.5em}%
     {\normalfont\sffamily\bfseries\color{ProofTint}#1}%
-    \par\nobreak\vspace{1ex plus .2ex}\vspace{-\parskip}%
+    \par\nobreak\vspace{1ex plus .2ex}\vspace{-\parskip}
     \@afterindentfalse\@afterheading
-}{%
-    \ifmmode
-      \mathqed
-    \else
-      \ifhmode
-        \unskip\nobreak\hfill\penalty50\hskip2em\hbox{}\nobreak\hfill\qedbadge\par\vspace{2ex}%
-      \else
-        \par\vspace{-\parskip}\noindent\hfill\qedbadge\par\vspace{2ex}%
-      \fi
-    \fi
+}{
+    \par\vspace{-2ex}\hfill 
+    \tikz[baseline=(Q.base)]\node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};
+    \par\vspace{2ex}
 }
 
 % LONG PROOF 
-\newenvironment{proofWrapper}[1][Proof]{%
-    \par\addvspace{3.5ex plus 1ex minus .2ex}%
+\newenvironment{proofWrapper}[1][Proof]{
+    \par\addvspace{3.5ex plus 1ex minus .2ex}
     \insideprooftrue 
     \noindent\makebox[0pt][r]{\textcolor{ProofTint}{\faPenNib}\hspace{10pt}}%
     {\normalfont\sffamily\Large\bfseries\color{ProofTint}#1}%
-    \par\nobreak\vspace{1.5ex plus .2ex}\vspace{-\parskip}%
+    \par\nobreak\vspace{1.5ex plus .2ex}\vspace{-\parskip}
     \@afterindentfalse\@afterheading
-}{%
-    \ifmmode
-      \mathqed
-    \else
-      \ifhmode
-        \unskip\nobreak\hfill\penalty50\hskip2em\hbox{}\nobreak\hfill\qedbadge\par\vspace{2ex}%
-      \else
-        \par\vspace{-\parskip}\noindent\hfill\qedbadge\par\vspace{2ex}%
-      \fi
-    \fi
+}{
+    \par\vspace{-4ex}\hfill 
+    \tikz[baseline=(Q.base)]{
+        \node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};
+    }
+    \par\vspace{2ex}
 }
 \makeatother
 
@@ -968,7 +956,7 @@ breakable
   \markboth{\chaptername\ \thechapter\ \ ---\ \ #2 #4\ \ ---\ \ #5}{}%
 }
 
-\titlespacing*{\chapter}{0pt}{-20pt}{18pt plus 4pt minus 2pt}
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
 
 \titleformat{\chapter}[display]
 {\normalfont\sffamily\Large\bfseries\color{ChapTitleText}}
@@ -1075,76 +1063,44 @@ breakable
 %  ai-async-board-update, ai-kinetic-emphasis.
 
 
-\makeatletter
-\AddToHook{enddocument/afterlastpage}{%
-  \def\@@input#1{\relax}%
-}
-\makeatother
+\tcbset{every box/.append style={shrink break goal=0pt}}
 
 \begin{document}
+\subsection{The Kernel and the Image as Subgroups}
 
-\begin{titlepage}
-\thispagestyle{empty}
-\begin{tikzpicture}[remember picture, overlay]
-  % Dezent geometrische Akzentformen oben rechts
-  \fill[ThemeSecondary!12, rounded corners=18pt] ($(current page.north east) + (-6.5cm,-2.5cm)$) rectangle ($(current page.north east) + (-1.2cm,-7.8cm)$);
-  \fill[ThemeWeekNumber!20, rounded corners=12pt] ($(current page.north east) + (-4.8cm,-4.2cm)$) rectangle ($(current page.north east) + (-0.6cm,-9.0cm)$);
-\end{tikzpicture}
+\begin{speech}[00:26:00 - 00:26:50]
+So, in particular, this implies that if I take $H$ and I take the group law, which makes sense on $H$ because $H$ is closed under it, and I take the zero, which also makes sense because zero's in $H$, that this is a group.
 
-\vspace*{4.5cm}
-\noindent\begin{minipage}{\textwidth}
-    {\sffamily\fontsize{40pt}{48pt}\selectfont\bfseries\color{ThemePrimary!95!black} Algebra I \par}
-    \vspace{1.2cm}
-    {\color{ThemeWeekNumber}\rule{\linewidth}{2.5pt}\par}
-    \vspace{0.2cm}
-    {\color{ThemeAccent1}\rule{0.6\linewidth}{1.5pt}\par}
-    \vspace{2.0cm}
-    {\sffamily\fontsize{18pt}{24pt}\selectfont\bfseries\color{TextEmphColor} Lecture Notes \& Transcription \par}
-    \vspace{0.6cm}
-    {\sffamily\fontsize{15pt}{22pt}\selectfont\color{TextBoldColor} Course: \textbf{Algebra I} \par}
-    \vspace{0.3cm}
-    {\sffamily\fontsize{15pt}{22pt}\selectfont\color{TextBoldColor} Lecturer: \textbf{Prof. Rahul Pandharipande} \par}
-    \vspace{0.3cm}
-    {\sffamily\fontsize{14pt}{20pt}\selectfont\color{OliveGreen} Department of Mathematics -- ETH Z{\"u}rich \par}
-    \vspace{2.0cm}
-    {\sffamily\fontsize{14pt}{20pt}\selectfont\bfseries\color{ThemeWeekNumber}\faGraduationCap\quad Fall Semester 2026 \par}
-\end{minipage}
-\vfill
-\noindent\begin{minipage}{\textwidth}
-    \begin{tcolorbox}[
-        arc=6pt,
-        boxrule=0.7pt,
-        colback=MidnightBlue!3!white,
-        colframe=MidnightBlue!30!white,
-        left=10pt, right=10pt, top=8pt, bottom=8pt
-    ]
-    {\sffamily\bfseries\small\color{MidnightBlue!90!black}\faInfoCircle\quad Notice \& Transcription Disclaimer \par}
-    \vspace{0.25cm}
-    \sffamily\small\color{black!75}
-    \begin{itemize}[leftmargin=1.5em, itemsep=3pt, topsep=0pt, parsep=0pt]
-        \item[\textcolor{MidnightBlue!80!black}{\small\faRobot}] \textbf{AI-Generated Notes:} This document was automatically generated using AI/LLM systems from the lecture recordings and board content.
-        \item[\textcolor{MidnightBlue!80!black}{\small\faUserShield}] \textbf{Unofficial Document:} This is \emph{not} official course material of ETH Z{\"u}rich or the lecturers, and has \emph{not} been manually corrected or proofread by the staff (unreviewed draft).
-        \item[\textcolor{MidnightBlue!80!black}{\small\faExclamationTriangle}] \textbf{Disclaimer:} Artificial intelligence can make errors (e.g., in notation, indices, or logical derivations). Use at your own risk --- without warranty of any kind regarding accuracy, completeness, or relevance to exams.
-    \end{itemize}
-    \end{tcolorbox}
-\end{minipage}
-\vspace*{0.5cm}
-\end{titlepage}
+Which is a very nice thing. A subgroup is a group. It'd be terrible if it weren't, right?
 
-\tableofcontents
-\hypersetup{linkcolor=LinkColor}
-\cleardoublepage
+So, that's the definition for a subgroup. And now we've proven a little proposition: The kernel of $f$ is a subgroup of $G$.
 
-% actual content:
+Is that clear?
+\end{speech}
 
-% week1:
-\input{content/step4-2026-09-16-wednesday-week1-algebra-1-offset-final.tex}
+\begin{content}[Subgroup Property of the Kernel]
+\begin{proposition}[Kernel as a Subgroup]\label[proposition]{prop:kernel-is-subgroup}
+Let $f \colon G \to \hat{G}$ be a group homomorphism. Then the kernel $\ker(f)$ is a subgroup of the domain group $G$:
+\begin{equation}\label{eq:kernel-subgroup}
+\ker(f) \le G.
+\end{equation}
+\end{proposition}
 
-% week2:
-\input{content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex}
-\input{content/step4-2026-09-23-wednesday-week2-algebra-1-offset-final.tex}
+\begin{proof}
+By \cref{prop:homomorphism-neutral-element}, $e \in \ker(f)$. By \cref{prop:kernel-properties-part1}, $\ker(f)$ is closed under multiplication. By \cref{prop:kernel-closure-inverses}, $\ker(f)$ is closed under taking inverses. Hence, by \cref{def:subgroup}, $\ker(f) \le G$.
+\end{proof}
+\end{content}
 
-% week3:
-\input{content/step4-2026-09-29-tuesday-week3-algebra-1-offset-final.tex}
+\subsection{The Image of a Group Homomorphism}
+
+\begin{speech}[00:26:50 - 00:28:30]
+Okay, so that's the investigation of the kernel and the notion of a subgroup. But there's also the image. And so proposition --- and I leave this for you, you can prove it ---: The image of $f$ is a subgroup of $\hat{G}$.
+
+So, how do you prove this? You just check that the image contains the neutral element... it has to because the neutral element from the first group goes to the neutral element of the second group, so the image has to contain the neutral element. And then you have to check that if we have two elements in the image, then if I apply the group law for $\hat{G}$, they stay in the image, and the inverse. The proofs are all just the same. You just follow your nose. There's only one thing you can do, and you can do it.
+
+All right. So, this is a nice situation for groups, that the understanding of the group is by these very simple axioms. There's lots of examples; in fact, part of this class is the examples for the groups, which will come later. And whenever you have a homomorphism, there's the kernel and the image.
+
+So, this one I leave to you. You can look in the books too, but it's not worth looking in the books. You should read the books, I take it back. But the problem with reading such a simple thing in the book is that you have to learn what notation the author is using and all that. It's much simpler just to write the proof of this yourself.
+\end{speech}
 
 \end{document}
