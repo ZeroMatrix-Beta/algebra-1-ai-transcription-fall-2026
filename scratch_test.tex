@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\definecolor{EnvSpokenBg}{HTML}{F0F8FF}
+\definecolor{EnvSpoken}{HTML}{005580}
+
+\newtcolorbox{speech}[1][]{
+enhanced,
+frame hidden,
+colback=EnvSpokenBg,
+code={\tcbset{borderline west={3pt}{0pt}{EnvSpoken}}},
+title={\sffamily\bfseries\textcolor{EnvSpoken}{\faMicrophone\ \ Spoken Transcript\ifblank{#1}{}{ [#1]}}},
+attach title to upper={\par\vspace{1ex}},
+breakable
+}
+
+\begin{document}
+\vspace*{16cm}
+\subsection{The Image of a Group Homomorphism}
+\begin{speech}[00:26:50 - 00:28:30]
+Okay, so that's the investigation of the kernel and the notion of a subgroup. But there's also the image. And so proposition: The image of $ is a subgroup of $.
+
+So, how do you prove this? You just check that the image contains the neutral element... it has to because the neutral element from the first group goes to the neutral element of the second group, so the image has to contain the neutral element. And then you have to check that if we have two elements in the image, then if I apply the group law, they stay in the image, and the inverse. The proofs are all just the same. You just follow your nose. There's only one thing you can do, and you can do it.
+
+All right. So, this is a nice situation for groups, that the understanding of the group is by these very simple axioms. There's lots of examples; in fact, part of this class is the examples for the groups, which will come later. And whenever you have a homomorphism, there's the kernel and the image.
+
+So, this one I leave to you. You can look in the books too, but it's not worth looking in the books. You should read the books, I take it back. But the problem with reading such a simple thing in the book is that you have to learn what notation the author is using and all that. It's much simpler just to write the proof of this yourself.
+\end{speech}
+\end{document}
