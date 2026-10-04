@@ -444,6 +444,9 @@ pdfauthor={Prof. Rahul Pandharipande}
 % Custom text commands
 \newcommand{\newterm}[1]{\textcolor{QuoteRed}{``}\textcolor{TextBoldColor}{\textit{#1}}\textcolor{QuoteRed}{''}}
 \newcommand{\inlinemetanote}[1]{\textit{[\textcolor{TextMetaNote}{#1}]}}
+% Recap line placed right before a definition or result the lecturer states again in a later
+% lecture. The restated version carries the label of the first one plus a week tag (def:ring-w2).
+\newcommand{\recap}[1]{\par\smallskip\noindent{\sffamily\bfseries\color{EnvRemark}\faHistory\ Recap:}\ #1\par\smallskip}
 
 % Custom Theorem Styles: one per family, each with its own icon and color (after ta-notes).
 % \NewIconThmStyle{<style>}{<color>}{<icon>}
@@ -1074,12 +1077,6 @@ breakable
 %  ai-phonetic-dump, ai-modality-conflict, ai-off-camera-state,
 %  ai-async-board-update, ai-kinetic-emphasis.
 
-
-\makeatletter
-\AddToHook{enddocument/afterlastpage}{%
-  \def\@@input#1{\relax}%
-}
-\makeatother
 
 \begin{document}
 
