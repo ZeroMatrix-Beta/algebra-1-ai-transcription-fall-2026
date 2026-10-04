@@ -1,0 +1,1061 @@
+% ==========================================
+% LatexRefinement Step Output: step4-2026-09-30-wednesday-week3-algebra-1-offset-final.tex
+% Input: step3-2026-09-30-wednesday-week3-algebra-1-offset-speech_refined.tex (gemini-3.8-flash)
+% Step 4 pass: done manually by Claude (claude-opus-5-5) following last-refinement.md,
+%              because the Gemini step 4 run did not complete
+% Processed on: 2026-10-04
+% ==========================================
+
+% Primary Language: English
+% End of the video: 00:42:50
+
+\lecturechapter[3]{Wednesday}{30 Sep}{30 September 2026}{Field of Fractions, Polynomial Rings, and Formal Power Series}
+
+\begin{overview}[Context]
+Continuing from the previous lecture, we review the construction and intuitive arithmetic of the field of fractions $\operatorname{Frac}(R)$ for an integral domain $R$. We then return to the polynomial ring $R[x]$ over an arbitrary commutative ring with identity, establish its universal mapping property, and determine its units when $R$ is an integral domain. Finally, we introduce the formal power series ring $R[[x]]$, define its ring operations, and characterize its units via formal geometric series.
+\end{overview}
+
+\section{Field of Fractions and Ring Constructions}
+
+\subsection{Field of Fractions of an Integral Domain}
+
+\begin{speech}[00:00:00 - 00:01:02]
+Did it start?
+
+Okay, we start. The topic this week was... the first part was: $R$ is an integral domain, and then the construction of the field of fractions of $R$ (Recall: \cref{def:field-of-fractions}). Sometimes this is denoted by $\operatorname{Frac}(R)$, or...
+
+And then the other two topics are: if $R$ is any ring --- which for us is commutative with unit ---, then there's the construction of the polynomials --- we started that, I'll say more --- and also of the power series.
+
+This is the universal symbol for polynomial, and this is the universal mathematical way of describing power series, the power series ring.
+
+I'll talk about these topics. I'll just say one more thing about the field of fractions.
+\end{speech}
+
+\begin{content}[Topic Overview: Integral Domains and Ring Constructions]
+\begin{itemize}
+    \item \textbf{Field of Fractions:} If $R$ is an integral domain, there exists an embedding into a field:
+    \[
+    R \subseteq F := \operatorname{Frac}(R),
+    \]
+    where $F$ is called the \newterm{field of fractions} of $R$.
+    \item \textbf{Polynomial and Power Series Rings:} If $R$ is any commutative ring with identity $1$, we construct:
+    \begin{itemize}
+        \item $R[x]$: the \newterm{polynomial ring} in the indeterminate $x$ with coefficients in $R$,
+        \item $R[[x]]$: the \newterm{formal power series ring} in the indeterminate $x$ with coefficients in $R$.
+    \end{itemize}
+\end{itemize}
+\end{content}
+
+\begin{speech}[00:01:02 - 00:01:46]
+I gave you this very formal way to think about the field of fractions, which is: you take some set $S$ of pairs... I won't review the whole thing now. Set $S$ of pairs, then you have an equivalence relation, and you look at the objects in this field of fractions as being equivalence classes in this equivalence relation.
+
+And then you can define everything at this formal level and check all the properties, and that is the underlying mathematical formalism of the field of fractions. Meaning that if you're ever thinking about the field of fractions and you're wondering about something, you can always resolve it foundationally by saying, \qt{I know what the definition is: it's this, this, and this, precisely.}
+\end{speech}
+
+\begin{content}[Formal Construction of the Field of Fractions]
+\recap{The field of fractions was constructed in the previous lecture: the set of pairs (\cref{def:set-of-pairs-s}), the equivalence relation (\cref{def:equiv-relation-S}, \cref{prop:equiv-on-S}) and the quotient set (\cref{def:field-of-fractions}). The lecturer summarizes it again.}
+
+Let $R$ be an integral domain. To construct the field of fractions formally:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Set of Pairs:} Consider the Cartesian product $S := R \times (R \setminus \{0\}) \subset R^2$.
+    \setcounter{enumi}{1} \item \textbf{Equivalence Relation:} Define the relation $\equiv$ on $S$ by:
+    \[
+    (r, s) \equiv (t, w) \iff rw - st = 0.
+    \]
+    \setcounter{enumi}{2} \item \textbf{Equivalence Classes:} The field of fractions is defined as the quotient set:
+    \[
+    F = \operatorname{Frac}(R) := S / {\equiv}.
+    \]
+\end{enumerate}
+\end{content}
+
+\begin{speech}[00:01:46 - 00:03:24]
+No one ever thinks about it that way. The way you think about it is: if $R$ is an integral domain, if you have some elements in $R$, $r$ and $s$, then for an element of the field of fractions, you just say this is $r$ over $s$ ($r/s$) --- that's it, you know? And when you do this, you make sure $s$ is not zero, because that was the second condition there, just like you would with rational numbers.
+
+And if you want to add, multiply, all of this, you just use the rules you did with rational numbers. Like if you want to add $r$ over $s$ and $t$ over $w$, you know how to add fractions; you just do it here, it's just the right answer: it's this.
+
+And so on. If you multiply, then you multiply fractions. Whatever rules you use to manipulate fractions, they're just correct here.
+
+In particular, why is this a field? If I take $r$ over $s$, if this is not zero, that implies that $r$ is not zero. If $r$ were zero, then that's the zero element of this. And you can go check by the definitions that if $r$ is zero, this is the zero element. So, if this is not zero, $r$ must not be equal to zero, and then it has an inverse, and that's the multiplicative inverse. And it's legal because $r$ is not zero, so I can put him downstairs.
+
+Anyway, the way you think about it --- I mean, you get to think about it however you want ---, the way typically people think about the field of fractions is you just write the fractions; that's why it's called the field of fractions! And you just go forward.
+
+And the rules of this formalism are designed so that this actually works.
+
+Okay.
+\end{speech}
+
+\begin{content}[Intuitive Arithmetic in the Field of Fractions]
+\recap{These fraction rules were already listed in the previous lecture (\cref{eq:frac-eq,eq:frac-add,eq:frac-mult,eq:frac-inv}).}
+
+In mathematical practice, elements of $\operatorname{Frac}(R)$ are represented as formal fractions $\frac{r}{s}$ with $r, s \in R$ and $s \neq 0$:
+\begin{align}
+    \operatorname{Frac}(R) &= \left\{ \frac{r}{s} \;\middle|\; r, s \in R, \ s \neq 0 \right\}. \label{eq:frac-field-elements}
+\end{align}
+The field operations are defined analogously to elementary fraction arithmetic:
+\begin{align}
+    \text{\textbf{Addition:}} && \frac{r}{s} + \frac{t}{w} &= \frac{rw + st}{sw}, \label{eq:frac-field-add} \\
+    \text{\textbf{Multiplication:}} && \frac{r}{s} \cdot \frac{t}{w} &= \frac{rt}{sw}, \label{eq:frac-field-mult} \\
+    \text{\textbf{Multiplicative Inverse:}} && \left( \frac{r}{s} \right)^{-1} &= \frac{s}{r} \qquad \left(\text{valid whenever } \frac{r}{s} \neq 0 \text{, i.e., } r \neq 0\right). \label{eq:frac-field-inv}
+\end{align}
+
+\begin{steps}[Why the Integral Domain Assumption Is Essential]
+For the denominator $sw$ in \eqref{eq:frac-field-add} and \eqref{eq:frac-field-mult} to be non-zero, we must have:
+\[
+s \neq 0 \text{ and } w \neq 0 \implies sw \neq 0.
+\]
+This property holds if and only if $R$ has no zero divisors, which is precisely the defining condition of an \textbf{integral domain} (\cref{def:integral-domain}). Furthermore, the zero element of $\operatorname{Frac}(R)$ is $\frac{0}{1} = \frac{0}{s}$ (\cref{def:neutral-elements-F}). Thus, $\frac{r}{s} \neq 0$ implies $r \neq 0$, guaranteeing that $\left(\frac{r}{s}\right)^{-1} = \frac{s}{r}$ is a well-defined fraction with non-zero denominator.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:03:24 - 00:04:44]
+This is a basic issue that comes up very often in math education about how to think about it. The first time this comes up --- which you've already passed --- is the real numbers.
+
+To define the real numbers is complicated. You have to either define them as Cauchy sequences or Dedekind cuts, and that's pretty complicated to define. And then you have to check that it satisfies the properties. That's all fine; that's kind of like some kind of logical underlayer. But no one thinks about real numbers that way.
+
+And it's just that that's part of learning mathematics: there's some kind of logical underlayer, and then there's the way you think about it, and usually they have nothing to do with each other.
+
+Okay, that's maybe an exaggeration, but... Actually, about the real numbers, I can't help now but comment that these Dedekind cuts were discovered by Richard Dedekind, who had moved to Zurich in the second part of the 19th century, and he's an algebraist. He's a very famous mathematician. He's, of course, passed away by now.
+
+And he was assigned to teach analysis. And he writes it very beautifully in this book that he wrote about the real numbers. He was assigned to teach analysis, and he's an algebraist, and he said, \qt{Well, I have this difficult time teaching analysis because I don't know what a real number is!} And then he spends the class constructing the real numbers. It's kind of amazing to read the introduction to that. You can find it.
+\end{speech}
+
+\begin{insight}[The Logical Underlayer vs. Working Mathematical Intuition]
+The lecturer highlights a fundamental pedagogical dichotomy in abstract mathematics: the distinction between the \emph{foundational underlayer} and the \emph{working mathematical intuition}. 
+
+Whether constructing $\mathbb{R}$ via Dedekind cuts or Cauchy sequences, or constructing $\operatorname{Frac}(R)$ via quotient sets of ordered pairs $S / {\equiv}$, the foundational machinery serves solely to establish rigorous existence and soundness. Once established, mathematicians operate with the intuitive rules (e.g., standard fraction manipulations $\frac{r}{s}$) without thinking of the underlying equivalence classes.
+\end{insight}
+
+\begin{aiNote}[Beyond the Lecture: Dedekind's Book on the Real Numbers]
+% [PERSISTENT, ADDITION]
+The book the lecturer refers to is Richard Dedekind's \emph{Stetigkeit und irrationale Zahlen} (\qt{Continuity and Irrational Numbers}, 1872). In its preface Dedekind recalls teaching the differential calculus at the Polytechnikum in Zurich (today's ETH) in 1858 and feeling the lack of a truly rigorous foundation of arithmetic; the book introduces what are now called Dedekind cuts.
+\end{aiNote}
+
+\section{Polynomial Rings}
+
+\subsection{Definition and Structure of \texorpdfstring{$R[x]$}{R[x]}}
+
+\begin{speech}[00:04:45 - 00:06:23]
+Okay, so we go to polynomials.
+
+I explained yesterday (Recall: \cref{def:poly-ring-informal}) that the way to think about polynomials is just the way you always think about polynomials. Elements of this ring... I advise you to think about them this way. But, in all things, you get your own choice how to think about them.
+
+They're polynomials that have this formal variable $x$ that's denoted here, and you consider polynomials in $x$ with coefficients in $R$.
+
+And this polynomial ring, that's the set, and it has addition. The addition is: you add it like polynomials. So, whatever power, you keep the power the same, and you add the coefficients of that power. You know how to add polynomials; you just do it here.
+
+Multiplying polynomials is more complicated. But you already know how to multiply polynomials, and you just do it here. You can define it formally, which I did last time (Recall: \cref{def:poly-ring-operations}), but you just do it. And it has the zero polynomial and the one polynomial, and this is the ring of polynomials --- the ring of polynomials in the variable $x$ with coefficients in $R$.
+
+So, we can do this for any ring. I said that. This is important to keep track of: sometimes we make assumptions on rings, sometimes not. Here we needed the assumption (i.e., $R$ an integral domain) \inlinemetanote{points to the left board for the field of fractions} --- that's kind of crucial. Here we don't need the assumption.
+\end{speech}
+
+\begin{content}[The Polynomial Ring over a Commutative Ring]
+\recap{The polynomial ring was introduced in the previous lecture, informally (\cref{def:poly-ring-informal}) and as sequences of coefficients (\cref{def:poly-rigorous-sequences}, \cref{def:poly-ring-operations}). The lecturer recalls it.}
+
+\begin{definition}[Polynomial Ring]\label[definition]{def:polynomial-ring-w3wed}
+Let $R$ be an arbitrary commutative ring with identity $1$. The \newterm{polynomial ring} in the variable $x$ with coefficients in $R$, denoted $R[x]$, is the set of formal sums:
+\begin{equation}\label{eq:polynomial-set-def}
+R[x] := \left\{ a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \;\middle|\; n \in \mathbb{N}, \ a_i \in R \right\}.
+\end{equation}
+Equipped with the standard polynomial addition and Cauchy multiplication:
+\begin{align}
+    \left( \sum_{i=0}^n a_i x^i \right) + \left( \sum_{i=0}^n b_i x^i \right) &:= \sum_{i=0}^n (a_i + b_i) x^i, \label{eq:poly-addition-w3wed} \\
+    \left( \sum_{i=0}^n a_i x^i \right) \cdot \left( \sum_{j=0}^m b_j x^j \right) &:= \sum_{k=0}^{n+m} \left( \sum_{i+j=k} a_i b_j \right) x^k, \label{eq:poly-multiplication-w3wed}
+\end{align}
+the structure $(R[x], +, \cdot, 0, 1)$ forms a commutative ring with identity $1 \in R \subset R[x]$ and zero element $0 \in R \subset R[x]$.
+\end{definition}
+
+\begin{steps}[Generality of the Polynomial Construction]
+Unlike the construction of the field of fractions $\operatorname{Frac}(R)$, which strictly requires $R$ to be an integral domain, the polynomial ring $R[x]$ is well-defined for \textbf{any} commutative ring with identity $R$. Zero divisors in $R$ do not obstruct the definition of polynomial addition or multiplication.
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:06:23
+% topic: Review of field of fractions and definition of polynomial rings
+% board_state: def:field-of-fractions, def:polynomial-ring-w3wed
+% next_goal: Universal property of polynomial rings (extension theorem)
+% open_loops: none
+\end{hidden}
+
+\subsection{The Universal Property of Polynomial Rings}
+
+\begin{speech}[00:06:29 - 00:08:59]
+Okay, so, properties of this polynomial ring.
+
+The first is --- this is somehow the most basic property of polynomial rings: Suppose $R$ and $S$ are rings --- which, as I say, are commutative rings with unit, just for us --- and I have an element $y$ in $S$.
+
+Then, given any homomorphism --- so you have some homomorphism $\phi$ from $R$ to $S$, a homomorphism of rings ---, there exists a unique extension --- I will say what this means in a moment: an extension from the polynomial ring to $S$ --- which satisfies these properties. Two properties.
+
+Property \textbf{(1)} is that if I take a constant polynomial --- so this is just the constant polynomial, which is to say that $R$ sits inside $R[x]$ as the constants, okay? ---, if I take a constant polynomial, this should just be the value that I've already specified here: $\phi(r)$.
+
+And the second property is: I have to say what happens to $x$, because that's not specified here. And I just say $x$ goes to $y$.
+
+So, that's the claim.
+
+If I start with these two rings --- there's the ring where my maps are starting, and the ring where the target map, where the homomorphism is ending --- and I pick an element $y \in S$, I can take any homomorphism from $R$ to $S$ and I can extend it to the polynomial ring by just setting $x$ to $y$.
+\end{speech}
+
+\begin{content}[The Universal Property of Polynomial Rings]
+\begin{theorem}[{Universal Mapping Property of $R[x]$}]\label[theorem]{thm:universal-property-polynomial-ring}
+Let $R$ and $S$ be commutative rings with identity, let $\phi \colon R \to S$ be a ring homomorphism, and let $y \in S$.
+Then there exists a unique ring homomorphism $\hat{\phi} \colon R[x] \to S$ extending $\phi$ such that:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Extension of Constants:} For every constant polynomial $r \in R \subset R[x]$:
+    \begin{equation}\label{eq:univ-prop-constants}
+    \hat{\phi}(r) = \phi(r).
+    \end{equation}
+    \setcounter{enumi}{1} \item \textbf{Evaluation at $y$:} The indeterminate $x$ is mapped to $y$:
+    \begin{equation}\label{eq:univ-prop-indeterminate}
+    \hat{\phi}(x) = y.
+    \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{steps}[Evaluation Homomorphism and Factorization]
+Going beyond the lecture: the map $\hat{\phi}$ is often called the \newterm{evaluation homomorphism} associated with $\phi$ and $y$. In the special case where $S = R$ and $\phi = \operatorname{id}_R$, $\hat{\phi}$ is simply the evaluation map $\operatorname{ev}_y \colon R[x] \to R$ given by $f(x) \mapsto f(y)$. 
+
+The universal property states that $R[x]$ is the \qt{freest} ring containing $R$ and an additional generator $x$: mapping $R[x]$ to any ring $S$ requires only choosing a base ring homomorphism $\phi \colon R \to S$ and choosing where to send $x$. It is the same kind of statement as the universal property of $\mathbb{Q}$ from the previous lecture (\cref{thm:universal-property-q}): a homomorphism defined on a smaller ring extends uniquely to the bigger one (for $R[x]$, once the image of $x$ has been chosen).
+\end{steps}
+\end{content}
+
+\begin{proofWrapper}[Proof of \cref{thm:universal-property-polynomial-ring}]
+
+\begin{speech}[00:09:00 - 00:09:41]
+Okay, and the proof of this is just by the formula.
+
+I have to define $\hat{\phi}$ on any polynomial. A polynomial looks like this...
+
+And I have to define it. Formally, I would have to first define it, then I have to check that it's a homomorphism --- because I say it extends to a homomorphism ---: define it, check it's a homomorphism, and then show it satisfies these two properties. That's the task at hand, so to speak.
+
+So, how am I going to define this?
+
+Yeah?
+\end{speech}
+
+\begin{student}[Student Answer]
+Apply $\phi$ to the coefficients, and then send each $x$ to $y$?
+\end{student}
+
+\begin{speech}[00:09:53 - 00:12:19]
+This is the definition: I have to somehow take this data and get to $S$.
+
+Any element here --- these $a_i$'s, that's part of the definition of a polynomial --- is in $R$. And I only have on the board one way to ship elements from $R$ to $S$: it's here \inlinemetanote{points to $\phi \colon R \to S$}. I can't make up another one.
+
+So, all these coefficients I just move by the only way I know how to get to $S$. That's the constant coefficient, then I move this coefficient to $S$, because this result has to be in $S$. And then the question is: how do I move $x$ to $S$? Well, I know one element of $S$, that's $y$.
+
+And then I do this: $\phi(a_2) y^2$, and so on, $\phi(a_n) y^n$. So, I just define that. The first thing you have to accept is that this definition makes sense.
+
+When you define a map, usually, if I define it so that whenever you give me anything, I tell you what the answer is, that's the definition of the map --- as long as it takes any possibility here, which it does.
+
+In the case where you have equivalence classes, the matter is a little subtle, because in equivalence classes things have different names, and you have to be careful. But that's not what's going on here! This is not equivalence classes. The field of fractions was equivalence classes, but the polynomial ring is not an equivalence class. I tell you specifically who is a polynomial, and everyone has just one name.
+
+So, that's the definition.
+
+But is that the end? No, I have to check that it satisfies this property on constant polynomials. But for constant polynomials, well, it does satisfy that property --- that would just mean there's none of this higher part, so just by definition it satisfies that property.
+
+And I have to check $x$. What is $\hat{\phi}(x)$ by this definition? Well, that would be just $1 \cdot x$ here, and everything else is $0$ or $1$. Formally, I'd have to put $\phi(0)$ and $\phi(1)$. I'm not going to write that, but you could write that. But $\phi(0)$ is $0$ and $\phi(1)$ is $1$, so you don't have to write it. This is just $y$.
+
+So, I have now checked these things, but the one thing I haven't checked is that it's a homomorphism. Let's think about how you'd check that.
+\end{speech}
+
+\begin{content}[Definition of \texorpdfstring{$\hat{\phi}$}{phi-hat} and Verification of Conditions]
+\textbf{1. Definition of the Candidate Map:}
+Let $f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \in R[x]$ with $a_i \in R$. We define the map $\hat{\phi} \colon R[x] \to S$ by:
+\begin{equation}\label{eq:phi-hat-def}
+\hat{\phi}(a_0 + a_1 x + \dots + a_n x^n) \stackrel{\text{def}}{:=} \phi(a_0) + \phi(a_1) y + \phi(a_2) y^2 + \dots + \phi(a_n) y^n.
+\end{equation}
+Since every polynomial in $R[x]$ has a unique representation as a formal sum of powers of $x$ (unlike equivalence classes in $\operatorname{Frac}(R)$, there are no ambiguous representatives), $\hat{\phi}$ is unconditionally well-defined.
+
+\textbf{2. Verification of Properties \textbf{(1)} and \textbf{(2)}:}
+\begin{itemize}
+    \item \textbf{Constant Polynomials:} If $f(x) = r \in R$, then $a_0 = r$ and $a_i = 0$ for all $i \ge 1$. Hence:
+    \[
+    \hat{\phi}(r) = \phi(r).
+    \]
+    \item \textbf{Image of $x$:} For $f(x) = x$, we have $a_0 = 0$, $a_1 = 1$, and $a_i = 0$ for all $i \ge 2$. Since $\phi(0) = 0$ and $\phi(1) = 1$:
+    \[
+    \hat{\phi}(x) = \phi(0) + \phi(1) y = 0 + 1 \cdot y = y.
+    \]
+\end{itemize}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:12:19
+% topic: Proving the universal property of polynomial rings
+% board_state: thm:universal-property-polynomial-ring, eq:phi-hat-def
+% next_goal: Verify additivity and multiplicativity of the extension homomorphism
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:12:24 - 00:13:30]
+\inlinemetanote{The lecturer pushes the middle blackboard up and continues on the lower board.}
+
+To check it's a homomorphism, you have to check some things about zero going to zero, and one goes to one, which it certainly does. So, the main thing to check is that $\hat{\phi}$ of two polynomials --- so $f$ and $g$ now are my polynomials --- equals $\hat{\phi}(f) + \hat{\phi}(g)$.
+
+For this, you need to know how to... sorry, these are $f$, right? This is $g$. So, you need to know how to add the polynomials here, and then you need to know how to add elements of $S$. This addition is addition of polynomials, and this addition is addition in $S$, right?
+\end{speech}
+
+\begin{speech}[00:13:30 - 00:15:10]
+And the way this thing works is: what are we going to do here? Let's say that we take this $\hat{\phi}$... If $f$ is given by $a$'s, it's $a_0 + a_1 x$, let's say --- let's say that's $f$, just a linear one --- plus $b_0 + b_1 x$.
+
+If we add them first in polynomials, then this is $(a_0 + b_0) + (a_1 + b_1) x$, okay? And then, if we go over by the definition, this is $\phi(a_0 + b_0) + \phi(a_1 + b_1) y$, right?
+
+And here, I can now use the homomorphism property of $R$, and write this as $\phi(a_0) + \phi(a_1) y + \phi(b_0) + \phi(b_1) y$ --- I don't know if this is really worth doing all out, but: $\phi(b_0) + \phi(b_1) y$. And that, at the end, is $\hat{\phi}(a_0 + a_1 x) + \hat{\phi}(b_0 + b_1 x)$.
+\end{speech}
+
+\begin{content}[Verification of Additivity]
+\textbf{3. Verification of Additivity ($\hat{\phi}(f + g) = \hat{\phi}(f) + \hat{\phi}(g)$):}
+Let $f, g \in R[x]$. We verify additivity explicitly for linear polynomials $f(x) = a_0 + a_1 x$ and $g(x) = b_0 + b_1 x$:
+\begin{align}
+    \hat{\phi}(f + g) &= \hat{\phi}\bigl( (a_0 + a_1 x) + (b_0 + b_1 x) \bigr) \nonumber \\
+    &= \hat{\phi}\bigl( (a_0 + b_0) + (a_1 + b_1) x \bigr) && \text{(addition in $R[x]$)} \nonumber \\
+    &= \phi(a_0 + b_0) + \phi(a_1 + b_1) y && \text{(by definition of $\hat{\phi}$)} \nonumber \\
+    &= \bigl(\phi(a_0) + \phi(b_0)\bigr) + \bigl(\phi(a_1) + \phi(b_1)\bigr) y && \text{($\phi \colon R \to S$ is a homomorphism)} \nonumber \\
+    &= \bigl(\phi(a_0) + \phi(a_1) y\bigr) + \bigl(\phi(b_0) + \phi(b_1) y\bigr) && \text{(reordering in ring $S$)} \nonumber \\
+    &= \hat{\phi}(a_0 + a_1 x) + \hat{\phi}(b_0 + b_1 x) \nonumber \\
+    &= \hat{\phi}(f) + \hat{\phi}(g). \label{eq:additivity-check}
+\end{align}
+The same argument works for polynomials of arbitrary degree: writing $f = \sum_{i=0}^n a_i x^i$ and $g = \sum_{i=0}^n b_i x^i$ (padding the shorter one with zero coefficients),
+\[
+\hat{\phi}(f + g) = \sum_{i=0}^n \phi(a_i + b_i) \, y^i = \sum_{i=0}^n \phi(a_i) \, y^i + \sum_{i=0}^n \phi(b_i) \, y^i = \hat{\phi}(f) + \hat{\phi}(g).
+\]
+\end{content}
+
+\begin{speech}[00:15:11 - 00:16:43]
+What did I do here? I just expanded out by the definition, and at a certain point I have to use the homomorphism property of $R$.
+
+Nothing happened here, actually; it was just a lot of waste of chalk. But at a certain point, I have to use the homomorphism property of $R$. There.
+
+And I did this with linear polynomials, but it's just the same with more coefficients.
+
+And then you have to check something that's more complicated with the indices: that if I take $f \cdot g$, this is equal to $\hat{\phi}(f) \cdot \hat{\phi}(g)$. Again, this follows from the same expansion.
+
+I tried to do some checking for you, but in the end, I don't know how successful that was. The fact of the matter is: I give you the definition, and then you have to check the compatibility. And when you check the compatibility, all you use is the homomorphism property of this.
+
+That's one abstract property of polynomial rings: if you can map $R$ to something, then you can pick any landing point for $x$, and it gives you a homomorphism.
+
+Sometimes this is called the universal property of polynomial rings.
+\end{speech}
+
+\begin{content}[Verification of Multiplicativity and Uniqueness]
+\textbf{4. Verification of Multiplicativity ($\hat{\phi}(f \cdot g) = \hat{\phi}(f) \cdot \hat{\phi}(g)$):}
+Let $f(x) = \sum_{i=0}^n a_i x^i$ and $g(x) = \sum_{j=0}^m b_j x^j$. Using the Cauchy product in $R[x]$:
+\begin{align}
+    \hat{\phi}(f \cdot g) &= \hat{\phi}\left( \sum_{k=0}^{n+m} \left( \sum_{i+j=k} a_i b_j \right) x^k \right) \nonumber \\
+    &= \sum_{k=0}^{n+m} \phi\left( \sum_{i+j=k} a_i b_j \right) y^k && \text{(by definition of $\hat{\phi}$)} \nonumber \\
+    &= \sum_{k=0}^{n+m} \left( \sum_{i+j=k} \phi(a_i) \phi(b_j) \right) y^k && \text{($\phi$ is a ring homomorphism)} \nonumber \\
+    &= \left( \sum_{i=0}^n \phi(a_i) y^i \right) \cdot \left( \sum_{j=0}^m \phi(b_j) y^j \right) && \text{(distributivity and Cauchy product in $S$)} \nonumber \\
+    &= \hat{\phi}(f) \cdot \hat{\phi}(g). \label{eq:multiplicativity-check}
+\end{align}
+Furthermore, $\hat{\phi}(1) = \phi(1) = 1_S$. Thus, $\hat{\phi}$ is a ring homomorphism.
+
+\textbf{5. Uniqueness:}
+Any ring homomorphism $\psi \colon R[x] \to S$ satisfying conditions \textbf{(1)} and \textbf{(2)} of \cref{thm:universal-property-polynomial-ring} must preserve sums and products:
+\[
+\psi\left( \sum_{i=0}^n a_i x^i \right) = \sum_{i=0}^n \psi(a_i) \psi(x)^i = \sum_{i=0}^n \phi(a_i) y^i = \hat{\phi}\left( \sum_{i=0}^n a_i x^i \right).
+\]
+Hence $\psi = \hat{\phi}$, proving uniqueness.
+\end{content}
+
+\end{proofWrapper}
+
+\subsection{Units in the Polynomial Ring over an Integral Domain}
+
+\begin{speech}[00:16:45 - 00:18:16]
+We know that if you have rings, you can think about their units. So, we can ask: what are the units in a polynomial ring? That's a very reasonable question.
+
+And that question actually turns out to have some wrinkles. Let's start with: Suppose $R$ is an integral domain.
+
+Then the question is: what are the units in the polynomial ring? Which is to say: which elements of this polynomial ring have a multiplicative inverse?
+
+What do you think the answer to this is? If I have some $f$ in the polynomial ring, $f = a_0 + a_1 x + \dots + a_n x^n$, and if it's a unit, that means there exists a multiplicative inverse. There exists $g = b_0 + b_1 x + \dots + b_m x^m$, and I multiply them so that I get $1$, the constant polynomial. That would mean that if $f$ is a unit, then there exists $g$ such that when I multiply them, I get the constant polynomial $1$.
+
+How could this happen?
+
+Yeah?
+\end{speech}
+
+\begin{student}[Student Question]
+If there is an element in $R$, you can plug it in and then it goes to zero?
+\end{student}
+
+\begin{speech}[00:18:21 - 00:18:25]
+There exists an element of... Sorry, you have to speak louder.
+\end{speech}
+
+\begin{student}[Student Question, continued]
+Like, when there exists an element in $R$...
+\end{student}
+
+\begin{hidden}
+% timestamp: 00:18:27
+% topic: Determining the units in the polynomial ring R[x]
+% board_state: def:units-polynomial-ring, eq:poly-invertible-condition
+% next_goal: Prove that Unit(R[x]) = Unit(R) when R is an integral domain
+% open_loops: student suggested evaluating at elements of R; lecturer clarifies x cannot be replaced
+\end{hidden}
+
+\begin{speech}[00:18:27 - 00:18:56]
+This $x$ stays! You can't replace $x$. We're talking about this polynomial ring.
+
+Actually, the discussion is kind of simpler: if I multiply this $f$ with $g$, I get another polynomial. And for it to be $1$, all of its higher terms have to somehow cancel, right? So, the question is: can you arrange it so all the higher terms cancel? That's the real question.
+
+Yeah?
+\end{speech}
+
+\begin{student}[Student Answer]
+I suppose if it's a constant term?
+\end{student}
+
+\begin{speech}[00:18:59 - 00:20:09]
+Yeah, so one way to do it is: the answer is that a unit... if I take the polynomial to be a constant, $f$ equals a constant polynomial and this happens to be a unit for $R$, right?
+
+He's saying: we could have just the constants --- take that to be a constant polynomial, and if I further choose that to be a unit, then I know it has a friend, because it has an inverse in $R$.
+
+So, this part I hope is good: the units of the original ring sit inside the units of this polynomial ring, and they sit inside as the constant polynomials.
+
+I hope that's clear.
+
+Could there be any more units here?
+
+And you should, in the way I presented this, be sensitive to the fact that I didn't take any ring: I took an integral domain. So, you might want to think: why did I do that?
+
+Yeah?
+\end{speech}
+
+\begin{content}[Constant Units in the Polynomial Ring]
+Let $R$ be a commutative ring with identity, and consider $R[x]$:
+\begin{itemize}
+    \item A polynomial $f(x) \in R[x]$ is a \newterm{unit} (\cref{def:unit-ring}) if there exists $g(x) \in R[x]$ such that:
+    \begin{equation}\label{eq:poly-unit-condition}
+    f(x) \cdot g(x) = 1.
+    \end{equation}
+    \item Any unit $u \in \operatorname{Unit}(R)$ has an inverse $u^{-1} \in R$. Considered as constant polynomials in $R[x]$:
+    \[
+    u \cdot u^{-1} = 1 \implies u \in \operatorname{Unit}(R[x]).
+    \]
+    Thus, the units of $R$ always embed into the units of $R[x]$:
+    \begin{equation}\label{eq:units-embedding}
+    \operatorname{Unit}(R) \subseteq \operatorname{Unit}(R[x]) \quad \text{(as constant polynomials)}.
+    \end{equation}
+\end{itemize}
+\end{content}
+
+\begin{student}[Student Answer]
+Because there are no more units?
+\end{student}
+
+\begin{speech}[00:20:11 - 00:20:37]
+Yes! The answer here is that there are no more. It's actually equal.
+
+The answer is that there are no more units: the units in $R$ equal the units in $R[x]$.
+
+And I just remind you, because otherwise it's going to be wrong: $R$ is an integral domain.
+
+How are you going to use this condition?
+\end{speech}
+
+\begin{student}[Student Answer]
+So, you have the general form of $f$ and $g$, and if we multiply them, then the term with the highest power...
+\end{student}
+
+\begin{speech}[00:20:45 - 00:22:13]
+Yeah, that is the right answer. When you multiply polynomials --- and as I said, you must have had some years of experience multiplying polynomials, and you should not forget those years of experience.
+
+If you multiply polynomials, in the middle is a complicated mess of things. You have to add up all the terms; it's some complicated mess. But there are two terms which are very simple.
+
+If you want the constant polynomial of the product, that's the product of the constants, right? And if you want the highest term in the product, that's the product of the highest terms.
+
+With polynomials, if you're multiplying them, before you do all the multiplication, you should think: is what I'm thinking about resolved by understanding what happens to the constants or the highest term? Because those are the easiest ones, since there's not a big sum there.
+
+The constant term of $fg$ is just equal to $a_0 b_0$. And the highest term --- meaning the highest degree term in $x$ --- comes from the highest term of $f$ times the highest term of $g$.
+\end{speech}
+
+\begin{content}[Leading and Constant Terms in Polynomial Multiplication]
+Let $R$ be a commutative ring with identity, and let $f(x), g(x) \in R[x]$ be non-zero polynomials represented in canonical form:
+\begin{align}
+    f(x) &= a_0 + a_1 x + \dots + a_n x^n, \quad a_n \neq 0 \ (\deg(f) = n), \label{eq:poly-f-rep} \\
+    g(x) &= b_0 + b_1 x + \dots + b_m x^m, \quad b_m \neq 0 \ (\deg(g) = m). \label{eq:poly-g-rep}
+\end{align}
+When multiplying $f(x)$ and $g(x)$, the extremal coefficients take an uncomplicated form:
+\begin{align}
+    \text{\textbf{Constant Term:}} && \operatorname{const}(fg) &= a_0 b_0, \label{eq:const-term-fg} \\
+    \text{\textbf{Highest Degree Term:}} && \operatorname{highest}(fg) &= (a_n x^n)(b_m x^m) = a_n b_m x^{n+m}. \label{eq:highest-term-fg}
+\end{align}
+\end{content}
+
+\begin{speech}[00:22:13 - 00:23:23]
+Usually, when people write polynomials --- but you have to be careful about the conventions of whatever author you're reading ---, the typical thing is: when you write a polynomial like this, you could say $a_n$ is not zero, because if it were zero, you wouldn't have written it. So, it's kind of standard that when you write a polynomial like this, the highest term you say is not zero. And this one is not zero, because otherwise I wouldn't have to write it.
+
+If I take these polynomials, then this is the highest term, and that's the highest term. This would be the highest term here: $a_n x^n$; that would be the highest term there: $b_m x^m$. And the highest term would be $a_n \cdot b_m \cdot x^{n+m}$. That would be the highest term.
+
+And if we're in an integral domain, this product --- if they start out to be non-zero --- ends up being non-zero. So, this would still be non-zero if $R$ is an integral domain.
+\end{speech}
+
+\begin{content}[Units of the Polynomial Ring over an Integral Domain]
+\begin{theorem}[{Units in $R[x]$ for an Integral Domain $R$}]\label[theorem]{thm:units-polynomial-ring-integral-domain}
+Let $R$ be an integral domain. Then the units of the polynomial ring $R[x]$ are precisely the units of the base ring $R$, regarded as constant polynomials:
+\begin{equation}\label{eq:units-rx-equals-units-r}
+\operatorname{Unit}(R[x]) = \operatorname{Unit}(R).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The inclusion $\operatorname{Unit}(R) \subseteq \operatorname{Unit}(R[x])$ holds trivially because any unit $u \in \operatorname{Unit}(R)$ has an inverse $u^{-1} \in R$, which satisfies $u \cdot u^{-1} = 1$ in $R[x]$ as constant polynomials.
+
+Conversely, suppose $f(x) \in \operatorname{Unit}(R[x])$. Then there exists an inverse polynomial $g(x) \in R[x]$ such that:
+\begin{equation}\label{eq:unit-inverse-rel}
+f(x) \cdot g(x) = 1.
+\end{equation}
+Both $f$ and $g$ are non-zero, since $f g = 1 \neq 0$ (an integral domain has $1 \neq 0$). Write $f(x) = \sum_{i=0}^n a_i x^i$ with $a_n \neq 0$ and $g(x) = \sum_{j=0}^m b_j x^j$ with $b_m \neq 0$.
+The leading term of the product is given by:
+\[
+\operatorname{highest}(f \cdot g) = a_n b_m x^{n+m}.
+\]
+Because $R$ is an \textbf{integral domain}, the absence of non-trivial zero divisors ensures:
+\[
+a_n \neq 0 \text{ and } b_m \neq 0 \implies a_n b_m \neq 0 \quad \text{in } R.
+\]
+On the other hand, the constant polynomial $1$ has degree $0$. Thus, comparing degrees on both sides of \eqref{eq:unit-inverse-rel} yields:
+\[
+n + m = \deg(fg) = \deg(1) = 0.
+\]
+Since $n, m \in \mathbb{N} = \{0, 1, 2, \dots\}$, this forces:
+\[
+n = 0 \quad \text{and} \quad m = 0.
+\]
+Therefore, $f(x) = a_0$ is a constant polynomial. The constant term relation gives:
+\[
+\operatorname{const}(fg) = a_0 b_0 = 1 \implies a_0 \in \operatorname{Unit}(R).
+\]
+This proves that every unit in $R[x]$ is a constant polynomial coming from $\operatorname{Unit}(R)$.
+\end{proof}
+
+\begin{steps}[Degree Formula in Integral Domains]
+The proof relies on the fundamental degree formula:
+\[
+\deg(f \cdot g) = \deg(f) + \deg(g),
+\]
+which holds for all non-zero polynomials $f, g \in R[x]$ if and only if $R$ has no zero divisors. If $R$ possessed non-trivial zero divisors, the leading coefficient $a_n b_m$ could vanish, causing $\deg(f \cdot g) < \deg(f) + \deg(g)$.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:23:23 - 00:24:13]
+This means that if you ever take a polynomial which has a positive-degree part --- meaning it's not the constant polynomial, meaning one of these coefficients with $x$'s is not zero ---, you will never be able to find an inverse. Because when you multiply it by somebody else, you'll always have a term in $n+m$, and if one of them is at least one, this will never be zero. This will never be a constant term.
+
+Does that make sense? In other words, if your ring is an integral domain, when you multiply two polynomials with $x$'s, the $x$'s will never go away, because you can always look at the highest one, and that will persist.
+
+So, the answer is: if it's an integral domain, you'll have no more units.
+\end{speech}
+
+\begin{speech}[00:24:13 - 00:25:00]
+Of course, this begs the question: what happens when it's not?
+
+\inlinemetanote{The lecturer writes on the lower right board: \qt{What happens when $R$ is not an integral domain?}}
+
+I leave this to you to think about. That's kind of a fun thing. Well, maybe we'll discuss it later.
+
+You should either prove that this argument somehow can be fixed, or you should find a ring that's not an integral domain where there are more units. Those are the two possible solutions.
+\end{speech}
+
+\begin{content}[The Non-Integral Domain Question]
+\begin{center}
+\textbf{Question posed by the lecturer:}
+\emph{What happens when $R$ is not an integral domain?}
+\end{center}
+\end{content}
+
+\begin{aiNote}[{Beyond the Lecture: Non-Constant Units in $R[x]$}]
+% [PERSISTENT, ADDITION]
+When $R$ is not an integral domain, $R[x]$ can have non-constant units. In general, a polynomial $f(x) = a_0 + a_1 x + \dots + a_n x^n \in R[x]$ is a unit if and only if $a_0 \in \operatorname{Unit}(R)$ and all higher coefficients $a_1, \dots, a_n \in R$ are nilpotent. 
+
+For a concrete counterexample, consider the ring $R = \mathbb{Z}/4\mathbb{Z}$ (which is not an integral domain since $2 \cdot 2 = 0$). In $(\mathbb{Z}/4\mathbb{Z})[x]$, consider the linear polynomial $f(x) = 1 + 2x$. We compute:
+\[
+(1 + 2x)^2 = 1 + 4x + 4x^2 \equiv 1 \pmod 4.
+\]
+Thus $f(x) = 1 + 2x$ is a unit of degree $1$ with $f(x)^{-1} = 1 + 2x$.
+\end{aiNote}
+
+\begin{speech}[00:25:01 - 00:25:19]
+My memory from school --- which was really a long time ago --- was that there were a lot of polynomials in school, weren't there?
+
+You should have some experience adding, subtracting, and multiplying polynomials, and as I said, all that experience is directly applicable here.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:25:20
+% topic: Units of polynomial rings R[x] over integral domains
+% board_state: thm:units-polynomial-ring-integral-domain, eq:units-rx-equals-units-r
+% next_goal: Formal definition and operations of formal power series rings R[[x]]
+% open_loops: student reflection on units in R[x] when R is not an integral domain
+\end{hidden}
+
+\section{Formal Power Series Rings}
+
+\subsection{Definition and Ring Operations in \texorpdfstring{$R[[x]]$}{R[[x]]}}
+
+\begin{speech}[00:25:20 - 00:27:01]
+\inlinemetanote{The lecturer pushes the lower board up and starts writing on the newly revealed lower board.}
+
+Okay, so the next thing is power series. And you may have less experience manipulating power series, I don't know. But it's a beautiful thing.
+
+Here, I have to define for you the power series ring. And the reason there are two brackets here somehow is because there are a lot more $x$'s, you know?
+
+An element of the power series ring... As with polynomial rings, there are two ways to think about it: the formal way, or the way people actually think about it.
+
+In the formal way, before, a polynomial was given by a sequence of elements of $R$, and that sequence had a highest term and an infinite number of zeros afterwards. That was the definition of a polynomial, if you remember from yesterday (Recall: \cref{def:poly-rigorous-sequences}). You could add these, subtract these, multiply them, and it would just be the same thing as the $x$'s; that's the abstract discussion.
+
+From this point of view, power series are easy: you just don't put this condition of zeros. It's just infinite elements.
+
+From this abstract point of view, elements of the power series ring are infinite lists --- infinite vectors of elements of $R$. Before, we had lists that eventually become all zero, but now we just lift that condition. You can do anything you want.
+\end{speech}
+
+\begin{content}[Formal Definition of Power Series as Sequences]
+\begin{definition}[Formal Power Series Ring]\label[definition]{def:power-series-ring-formal}
+Let $R$ be a commutative ring with identity $1$. 
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Sequence Perspective:} Formally, a \newterm{formal power series} with coefficients in $R$ is an infinite sequence of elements of $R$:
+    \begin{equation}\label{eq:power-series-sequence}
+    (a_0, a_1, a_2, \dots, a_n, \dots) \in R^{\mathbb{N}}.
+    \end{equation}
+    In contrast to polynomials in $R[x]$ (which require $a_k = 0$ for all sufficiently large $k$), no vanishing condition is imposed on the terms of a formal power series.
+    \setcounter{enumi}{1} \item \textbf{Notation:} The set of all formal power series in the indeterminate $x$ with coefficients in $R$ is denoted by:
+    \begin{equation}\label{eq:power-series-ring-symbol}
+    R[[x]].
+    \end{equation}
+\end{enumerate}
+\end{definition}
+\end{content}
+
+\begin{speech}[00:27:02 - 00:27:57]
+In the way to think about it as power series, all this means is that before, for polynomials, we had the condition that eventually you stop --- that's a polynomial ---; and for power series, you just don't stop. You can go forever.
+
+It's hard to go forever, so typically you would write the following: the elements of the power series ring are the sum from $i = 0$ to infinity of $a_i x^i$, where the $a_i$'s are in $R$.
+
+You can see this is exactly the same data as that. The $x$, as I said, is just the variable. It's not influencing the $a$'s. Like here, it just makes clear that $x$ is just a placeholder, right? And that's all it's doing here also.
+
+So, that's a power series. And you must have had a whole class on power series.
+\end{speech}
+
+\begin{content}[Representation as Formal Sums]
+Every formal power series $(a_n)_{n \in \mathbb{N}} \in R[[x]]$ is represented as a formal infinite sum:
+\begin{equation}\label{eq:power-series-sum-notation}
+a_0 + a_1 x + a_2 x^2 + \dots = \sum_{i=0}^\infty a_i x^i, \quad a_i \in R.
+\end{equation}
+
+\begin{steps}[Algebraic Meaning of the Infinite Sum]
+In algebra, the expression $\sum_{i=0}^\infty a_i x^i$ is purely a formal symbol representing the sequence of coefficients $(a_0, a_1, a_2, \dots)$. There are no questions of convergence, metrics, or limits involved, and the symbol $x$ serves solely as an algebraic placeholder tracking positions.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:27:58 - 00:29:02]
+Which is good, because I'm not going to teach you about them in that way.
+
+Do you know how to add power series, multiply power series?
+
+The zero is just the zero power series. That's where every coefficient forever is zero. The one power series is just a one and then everybody else is zero.
+
+\inlinemetanote{The lecturer writes $(R[[x]], +, \cdot, 0, 1)$ on the board, followed by $(0, 0, 0, \dots) = 0$ and $(1, 0, 0, \dots) = 1$.}
+
+You know how to add power series, and I say that you do know how to add power series. In every analysis class, I think you add power series.
+
+Here's the rule, which will surprise no one:
+
+\inlinemetanote{The lecturer writes the addition formula on the board.}
+
+It's a lot of work to write all of these things. That's the exciting rule: it's componentwise addition.
+\end{speech}
+
+\begin{content}[{Ring Structure and Addition in \texorpdfstring{$R[[x]]$}{R[[x]]}}]
+The formal power series ring is equipped with a ring structure $(R[[x]], +, \cdot, 0, 1)$:
+\begin{itemize}
+    \item \textbf{Additive Identity ($0$):}
+    \begin{equation}\label{eq:power-series-zero}
+    0_{R[[x]]} := (0, 0, 0, \dots) = \sum_{i=0}^\infty 0 \cdot x^i.
+    \end{equation}
+    \item \textbf{Multiplicative Identity ($1$):}
+    \begin{equation}\label{eq:power-series-one}
+    1_{R[[x]]} := (1, 0, 0, \dots) = 1 + \sum_{i=1}^\infty 0 \cdot x^i.
+    \end{equation}
+    \item \textbf{Addition:} Defined componentwise:
+    \begin{equation}\label{eq:power-series-addition}
+    \sum_{i=0}^\infty a_i x^i + \sum_{i=0}^\infty b_i x^i \stackrel{\text{def}}{=} \sum_{i=0}^\infty (a_i + b_i) x^i.
+    \end{equation}
+\end{itemize}
+\end{content}
+
+\begin{speech}[00:29:03 - 00:30:12]
+More complicated is: how do you multiply power series?
+
+That's a definition, by the way. I must say that I really dislike indices in mathematics somehow.
+
+We have to define this. How are we going to define this? You define it to be the sum from $i = 0$ to infinity of $c_i x^i$. And then I have to define what $c_i$ is.
+
+Let's say $c_k$ is... you can write this as a sum from $i = 0$ to $k$, and I write $a_{k-i} b_i$.
+
+\inlinemetanote{The lecturer writes $c_k = \sum_{i=0}^k a_{k-i} b_i$ on the board.}
+
+All right, I did it. But you know this. This is how you multiply power series.
+\end{speech}
+
+\begin{content}[{Cauchy Multiplication in \texorpdfstring{$R[[x]]$}{R[[x]]}}]
+\begin{definition}[Cauchy Product of Power Series]\label[definition]{def:power-series-multiplication}
+Let $\sum_{i=0}^\infty a_i x^i$ and $\sum_{i=0}^\infty b_i x^i$ be formal power series in $R[[x]]$. Their product is defined by:
+\begin{equation}\label{eq:power-series-mult}
+\left( \sum_{i=0}^\infty a_i x^i \right) \cdot \left( \sum_{i=0}^\infty b_i x^i \right) \stackrel{\text{def}}{=} \sum_{k=0}^\infty c_k x^k,
+\end{equation}
+where each coefficient $c_k \in R$ is given by the Cauchy convolution formula:
+\begin{equation}\label{eq:cauchy-coeff-formula}
+c_k := \sum_{i=0}^k a_{k-i} b_i = \sum_{i+j=k} a_i b_j.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Finiteness of Each Coefficient Calculation]
+Notice that to determine any individual coefficient $c_k$ of the product, only the finite collection of coefficients $\{a_0, \dots, a_k\}$ and $\{b_0, \dots, b_k\}$ is involved. The sum in \eqref{eq:cauchy-coeff-formula} has exactly $k+1$ terms in $R$, meaning that no infinite sums in the base ring $R$ are required to define the product.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:30:13 - 00:31:25]
+That is a ring. Is it a ring? Formally, you have to check all the axioms.
+
+The specific axiom that probably you don't see in your head immediately --- unless you've thought about it --- is you have to check the associativity. It's kind of obvious this is associative, commutative, everything for addition, because all we're doing is componentwise; really nothing's happening there.
+
+This one may be more interesting if you haven't thought about it. This is somehow a slightly strange rule that tells you how to get the new power series from the old power series. You have to check that this is associative, etcetera.
+
+Commutative is kind of obvious, even though I've broken the symmetry here; but if you think about it, it's kind of clear that it's commutative. But then you have to check it's associative.
+
+Formally, you have to check it, unless somehow you already know that it's true. The formal way to check it is: you have to multiply three things in two different ways, look at the coefficients, and it's an identity. And it will work out.
+
+You have to decide how you interact with math, but formally, if you want to say you understand what a power series ring is, you have to check that the multiplication is associative.
+\end{speech}
+
+\begin{note}[Board Transition and Cleaning]
+The lecturer takes a wet sponge and squeegee and thoroughly cleans the lower blackboard to prepare for the discussion of units in $R[[x]]$, while the upper board displays the definitions and operations of $R[[x]]$.
+\end{note}
+
+\begin{speech}[00:31:29 - 00:32:34]
+One of the issues about power series rings is that if you want to communicate to someone else an element of the power series ring, it's a lot harder than in the polynomial ring. In the polynomial ring, you just write it; it's a finite amount of data. You just write seven coefficients, and that's it.
+
+In a power series ring, a priori, there's an infinite amount of data there. So, if you want to communicate it, you have to give some rule or something like that. We'll do some examples eventually, but it's somehow a more complicated ring.
+
+When you encounter power series in analysis, they could be like the Taylor expansion of trigonometric functions, and they have rules; that's a way to explain it.
+
+Anyway, if you have not encountered these before, you should make yourself comfortable with the idea of polynomials in $R$, power series in $R$, how to add, multiply, and how to manipulate them.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:32:34
+% topic: Ring structure and operations of formal power series R[[x]]
+% board_state: def:power-series-ring-formal, def:power-series-multiplication
+% next_goal: Determine the units of the formal power series ring R[[x]]
+% open_loops: none
+\end{hidden}
+
+\subsection{Units in the Formal Power Series Ring}
+
+\begin{speech}[00:32:38 - 00:33:50]
+Let's ask this question: what are the units of this ring?
+
+\inlinemetanote{The lecturer writes on the clean lower board: \qt{What are unit $R[[x]]$?}}
+
+Again, that means we start with a particular power series $f$:
+\[
+f = a_0 + a_1 x + a_2 x^2 + \dots
+\]
+and it goes forever. In principle... of course, it could also all be zero. A polynomial is a power series; it's just one that doesn't last too long. Because zero is fine.
+\[
+g = b_0 + b_1 x + b_2 x^2 + \dots
+\]
+For this to be a unit, if $f$ is a unit, then there exists $g$ such that $f \cdot g = 1$.
+
+And to be $1$ is dramatic. It means when you multiply this, the rule in principle gives you infinitely many terms; if it's $1$, it means almost all of them are zero.
+\end{speech}
+
+\begin{content}[{Setting up the Invertibility Condition in \texorpdfstring{$R[[x]]$}{R[[x]]}}]
+Let $f(x) \in R[[x]]$ be a formal power series:
+\begin{equation}\label{eq:f-series-def}
+f(x) = a_0 + a_1 x + a_2 x^2 + \dots = \sum_{i=0}^\infty a_i x^i.
+\end{equation}
+By definition, $f(x)$ is a \newterm{unit} in $R[[x]]$ if and only if there exists an inverse series $g(x) = \sum_{j=0}^\infty b_j x^j \in R[[x]]$ such that:
+\begin{equation}\label{eq:fg-equals-one}
+f(x) \cdot g(x) = 1_{R[[x]]} = 1 + 0 \cdot x + 0 \cdot x^2 + \dots
+\end{equation}
+\end{content}
+
+\begin{speech}[00:33:51 - 00:35:06]
+If we multiply them, $f$ times $g$, we get the first term: $a_0 b_0$.
+
+The second term is $a_1 b_0 + a_0 b_1$, times $x$.
+
+\inlinemetanote{The lecturer writes $fg = a_0 b_0 + (a_1 b_0 + a_0 b_1) x + (a_2 b_0 + a_1 b_1 + a_0 b_2) x^2 + \dots$ on the board.}
+
+You can tell I've been spending too much time in Europe, because I say \qt{nought} all the time, right?
+
+Here: $a_2$... That was a complicated joke.
+
+That's how the power series multiplication works, right?
+
+How is it possible that this could be $1$? Could this be $1$?
+
+$1$, I remind you, is $1 + 0 \cdot x + 0 \cdot x^2$, and so on.
+
+The only way it can be $1$ is if this first term is $1$. This would imply that $a_0 b_0 = 1$.
+
+So, this means that the constant term of $f$ is a unit, right?
+\end{speech}
+
+\begin{content}[The Constant Term Invertibility Condition]
+Multiplying $f(x)$ and $g(x)$ via Cauchy multiplication:
+\begin{align}
+    f(x) \cdot g(x) &= a_0 b_0 + (a_1 b_0 + a_0 b_1) x + (a_2 b_0 + a_1 b_1 + a_0 b_2) x^2 + \dots \nonumber \\
+    &\stackrel{!}{=} 1 + 0 \cdot x + 0 \cdot x^2 + \dots \label{eq:fg-expansion-matched}
+\end{align}
+Equating coefficients power by power, the constant term yields:
+\begin{equation}\label{eq:const-coeff-relation}
+a_0 b_0 = 1 \implies a_0 = \operatorname{const}(f) \in \operatorname{Unit}(R).
+\end{equation}
+Thus, a necessary condition for $f(x)$ to be invertible in $R[[x]]$ is that its constant term $a_0$ is a unit in the base ring $R$.
+\end{content}
+
+\begin{speech}[00:35:07 - 00:36:18]
+What about all this other stuff? What's your feeling about that?
+
+Of course, it's also true that the constants... if we take the units of $R$, they sit inside the units of the power series by just sending the unit $a$ to the constant power series $a$.
+
+\inlinemetanote{The lecturer writes $\operatorname{Unit}(R) \subset \operatorname{Unit}(R[[x]])$, $a \mapsto a$ on the board.}
+
+That's also true, right?
+
+So, the same question as above: is this an equality?
+
+And now we come to something interesting. What was the argument before (i.e., the proof of \cref{thm:units-polynomial-ring-integral-domain})? The argument before was that --- at least when $R$ was an integral domain --- you go to the two polynomials, take their highest piece, and multiply them together.
+
+That was a great argument for polynomials; it absolutely fails for power series, because power series have no highest piece. So, this is problematic from the point of view of using that argument.
+\end{speech}
+
+\begin{speech}[00:36:18 - 00:36:51]
+Since we don't have so much time, maybe I'll tell you the answer, which I'm always reluctant to do. It is part of my job actually, but I'm still reluctant.
+
+Something that's kind of surprising here is:
+
+\inlinemetanote{The lecturer writes on the board: \qt{$f$ is a unit in $R[[x]]$ iff $\operatorname{const}(f)$ is a unit in $R$.}}
+
+$f$ is a unit in $R[[x]]$ if and only if the constant term is a unit in $R$.
+
+All I have to do to check whether it's a unit is check whether the constant term is a unit.
+\end{speech}
+
+\begin{content}[{Characterization of Units in \texorpdfstring{$R[[x]]$}{R[[x]]}}]
+\begin{theorem}[Units in the Formal Power Series Ring]\label[theorem]{thm:units-power-series-ring}
+Let $R$ be an arbitrary commutative ring with identity $1$. A formal power series $f(x) = \sum_{i=0}^\infty a_i x^i \in R[[x]]$ is a unit if and only if its constant term $a_0 = \operatorname{const}(f)$ is a unit in $R$:
+\begin{equation}\label{eq:units-power-series-characterization}
+f(x) \in \operatorname{Unit}(R[[x]]) \iff a_0 \in \operatorname{Unit}(R).
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Striking Contrast with Polynomial Rings]
+Recall from \cref{thm:units-polynomial-ring-integral-domain} that in $R[x]$ (over an integral domain), a polynomial is a unit if and only if it is a constant unit: no positive-degree terms may appear. 
+
+In radical contrast, in $R[[x]]$, a power series can have completely arbitrary non-zero coefficients $a_1, a_2, a_3, \dots$ for all higher powers of $x$ without restriction; as long as the single scalar $a_0$ is invertible in $R$, the entire infinite series $f(x)$ possesses an exact multiplicative inverse in $R[[x]]$!
+\end{steps}
+\end{content}
+
+\begin{speech}[00:36:51 - 00:37:44]
+That's a weird thing, isn't it? But it shouldn't surprise you if you played with polynomials.
+
+I wanted to give two proofs. We will see. You should always be suspicious when a mathematician says that they will give you two proofs: it usually means both will be sloppy.
+
+By the way, since people didn't seem to recognize this Euler note (Recall: the old 10-franc note from the previous lecture), I brought some copies, so you can see if you're interested: the Swiss franc Euler note from the previous century.
+\inlinemetanote{The lecturer holds up and shows a historical Swiss 10-franc banknote featuring Leonhard Euler.}
+
+When I came to Switzerland, I went to a used coin shop and bought a booklet of them.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:37:45
+% topic: Proving the unit criterion for formal power series R[[x]]
+% board_state: thm:units-power-series-ring, eq:units-power-series-characterization
+% next_goal: Construct the inverse series via reduction to 1 and geometric series expansion
+% open_loops: none
+\end{hidden}
+
+\begin{proofWrapper}[Proof of \cref{thm:units-power-series-ring}]
+
+\begin{speech}[00:37:45 - 00:39:06]
+Okay, so I will try to prove this. I want to prove this statement at the end.
+
+Suppose $f$ has the form $a_0 + a_1 x + a_2 x^2 + \dots$, where $a_0 \in R$ is a unit.
+
+\inlinemetanote{The lecturer writes: \qt{Suppose $f = a_0 + a_1 x + a_2 x^2 + \dots$}, \qt{$a_0 \in R$ is a unit}.}
+
+That means there exists some $y \in R$ such that $a_0 y = 1$ in $R$, right?
+
+\inlinemetanote{The lecturer writes $\exists y \in R, \ a_0 y = 1 \text{ in } R$.}
+
+The first thing I can do is just multiply $f$ by $y$.
+
+Whenever I think about this, $y$ is now the constant power series. Are you happy with this?
+
+And who knows what I get here, but I know one thing: it starts with $1$. Because when I multiply by a constant power series, it just multiplies all these coefficients by $y$, right?
+
+So, whatever it is, it starts with $1$, and then it's like $(a_1 y) x$...
+
+\inlinemetanote{The lecturer writes $fy = 1 + (a_1 y) x + (a_2 y) x^2 + \dots$ on the board.}
+
+$y$ is an element of the ring; there's nothing to do with $x$. Then $(a_2 y) x^2$, and so on.
+
+The first step is: I use the fact it's a unit, multiply by something in $R$, and make this constant term $1$.
+\end{speech}
+
+\begin{content}[Step 1: Normalization to Constant Term 1]
+\textbf{1. Forward Implication ($\Rightarrow$):}
+As established in \eqref{eq:const-coeff-relation}, if $f(x) \cdot g(x) = 1$, then $\operatorname{const}(f) \cdot \operatorname{const}(g) = a_0 b_0 = 1$, forcing $a_0 \in \operatorname{Unit}(R)$.
+
+\textbf{2. Reverse Implication ($\Leftarrow$) --- Normalization:}
+Suppose $a_0 \in \operatorname{Unit}(R)$. Then there exists an inverse element $y \in R$ such that:
+\begin{equation}\label{eq:y-inverse-a0}
+a_0 y = 1 \quad \text{in } R.
+\end{equation}
+Multiplying $f(x)$ by the constant power series $y \in R \subset R[[x]]$:
+\begin{align}
+    f(x) \cdot y &= (a_0 + a_1 x + a_2 x^2 + \dots) \cdot y \nonumber \\
+    &= a_0 y + (a_1 y) x + (a_2 y) x^2 + \dots \nonumber \\
+    &= 1 + (a_1 y) x + (a_2 y) x^2 + \dots \label{eq:normalized-series-fy}
+\end{align}
+Because $y \in \operatorname{Unit}(R) \subset \operatorname{Unit}(R[[x]])$, $f(x)$ is invertible if and only if the normalized series $f(x) \cdot y$ is invertible. Indeed, if $(f(x) \cdot y)^{-1}$ exists, then $f(x)^{-1} = y \cdot (f(x) \cdot y)^{-1}$.
+\end{content}
+
+\begin{speech}[00:39:07 - 00:40:42]
+Then it's enough to invert this.
+
+Inversion means that there's somebody else I multiply to get $1$. It's sufficient to find $g \in R[[x]]$ such that $g$ times this result --- $1$ plus... and now I just make these coefficients $b$'s, because I don't want to write $a_1 y$, and I don't know anything about it anyway, so I just make it $b$:
+\[
+1 + b_1 x + b_2 x^2 + \dots
+\]
+equals $1$.
+
+\inlinemetanote{The lecturer writes: \qt{Sufficient to find $g \in R[[x]]$, $g(1 + b_1 x + b_2 x^2 + \dots) = 1$}.}
+
+It's sufficient to find $g$ such that whenever I have something of this form --- which is what I have there ---, this is equal to $1$.
+
+Meaning, I only have to invert such things. All I've done is use the fact it's a unit to change the first coefficient to $1$. And then it's sufficient to invert that, because once I invert that, I can just multiply it by $y$, and then we're done.
+
+So, I have to invert this:
+
+\inlinemetanote{The lecturer writes $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$.}
+
+You never finish writing, so maybe it's like this: I have to invert this.
+
+Now, you know how to do this, right? You definitely know how to do this. It's somehow in your brain; you have to bring it out.
+\end{speech}
+
+\begin{content}[Step 2: Reduction to Inverting $1 + \gamma$]
+Setting $b_k := a_k y \in R$ for all $k \ge 1$, it suffices to demonstrate that any power series of the form:
+\begin{equation}\label{eq:one-plus-b-series}
+1 + b_1 x + b_2 x^2 + b_3 x^3 + \dots
+\end{equation}
+possesses a multiplicative inverse in $R[[x]]$.
+\end{content}
+
+\begin{speech}[00:40:43 - 00:41:21]
+You write this whole thing as $\gamma$.
+
+$\gamma$ is equal to this power series:
+
+\inlinemetanote{The lecturer brackets $b_1 x + b_2 x^2 + \dots$ and labels it $\gamma = b_1 x + b_2 x^2 + \dots$.}
+
+And this power series has $x$'s in it.
+
+So, you can say: I want to invert this: $1 + \gamma$.
+
+\inlinemetanote{The lecturer writes $(1 + \gamma)^{-1}$.}
+
+And if I write this as $1 / (1 + \gamma)$, surely you know how to invert this:
+\[
+1 - \gamma + \gamma^2 - \gamma^3 + \dots
+\]
+
+\inlinemetanote{The lecturer writes $= \frac{1}{1+\gamma} = 1 - \gamma + \gamma^2 - \gamma^3 + \dots$.}
+
+That's the answer! This actually proves it's invertible.
+\end{speech}
+
+\begin{content}[Step 3: The Formal Geometric Series]
+Define the auxiliary power series $\gamma(x) \in R[[x]]$ consisting of all higher-degree terms:
+\begin{equation}\label{eq:gamma-def}
+\gamma := b_1 x + b_2 x^2 + b_3 x^3 + \dots = \sum_{k=1}^\infty b_k x^k.
+\end{equation}
+The expression to invert is simply $1 + \gamma$. Inspired by the classical geometric series $\frac{1}{1 - z} = \sum_{k=0}^\infty z^k$, we substitute $z = -\gamma$ to propose the candidate inverse formula:
+\begin{equation}\label{eq:geometric-series-gamma}
+(1 + \gamma)^{-1} \stackrel{\text{formal}}{=} \frac{1}{1 + \gamma} = 1 - \gamma + \gamma^2 - \gamma^3 + \gamma^4 - \dots = \sum_{k=0}^\infty (-1)^k \gamma^k.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:41:22 - 00:42:16]
+Why does it prove it? You know this; this is some identity from your previous life.
+
+I just write it, and I claim this is the formula for the inverse.
+
+The reason is that this thing makes sense. It looks like an infinite sum, but this $\gamma$ has $x$'s in it. $\gamma$ is divisible by $x$: $x$ divides $\gamma$. That means $x^2$ divides $\gamma^2$, and $x^k$ divides $\gamma^k$.
+
+\inlinemetanote{The lecturer writes $x \mid \gamma \implies x^2 \mid \gamma^2 \dots x^k \mid \gamma^k$.}
+
+When I expand this, if I want the coefficient in the power series of any particular power of $x$, only finitely many of these terms enter.
+
+The whole point of this argument is that this thing is a well-defined element of the power series ring.
+
+\inlinemetanote{The lecturer writes \qt{well defined elem of $R[[x]]$} on the board.}
+\end{speech}
+
+\begin{content}[Step 4: Well-Definedness via Divisibility by Powers of $x$]
+\textbf{Why the Infinite Sum of Power Series Is Algebraically Sound:}
+In an arbitrary ring, infinite sums are not defined. However, because $\gamma$ has no constant term (its lowest degree term is $b_1 x$), $x$ divides $\gamma$:
+\begin{equation}\label{eq:x-divisibility-chain}
+x \mid \gamma \implies x^2 \mid \gamma^2 \implies \dots \implies x^k \mid \gamma^k.
+\end{equation}
+Consequently, the lowest power of $x$ appearing with non-zero coefficient in $\gamma^k$ is at least $x^k$:
+\[
+\gamma^k = (b_1 x + b_2 x^2 + \dots)^k = b_1^k x^k + (\text{terms of degree } \ge k+1).
+\]
+Now consider the coefficient of $x^N$ in the formal sum $\sum_{k=0}^\infty (-1)^k \gamma^k$:
+\begin{itemize}
+    \item For every $k > N$, every term in $\gamma^k$ has degree at least $k > N$.
+    \item Therefore, terms with $k > N$ contribute strictly $0$ to the coefficient of $x^N$!
+\end{itemize}
+Hence, for any fixed power $x^N$, only the finitely many terms $k \in \{0, 1, \dots, N\}$ contribute to its coefficient:
+\begin{equation}\label{eq:finite-coeff-contribution}
+[x^N]\left( \sum_{k=0}^\infty (-1)^k \gamma^k \right) = [x^N]\left( \sum_{k=0}^N (-1)^k \gamma^k \right) \in R.
+\end{equation}
+Because every individual coefficient of the resulting power series is computed as a finite sum of elements in $R$, the series:
+\[
+g(x) := \sum_{k=0}^\infty (-1)^k \gamma(x)^k
+\]
+is a rigorous, well-defined element of $R[[x]]$. Multiplying by $(1 + \gamma)$ explicitly cancels all terms by telescoping:
+\[
+(1 + \gamma) \cdot \sum_{k=0}^\infty (-1)^k \gamma^k = \sum_{k=0}^\infty (-1)^k \gamma^k + \sum_{k=0}^\infty (-1)^k \gamma^{k+1} = 1.
+\]
+This manipulation of infinite sums is legitimate because it can be checked coefficient by coefficient: for the coefficient of $x^N$, only the finitely many terms with $k \le N$ contribute, and for these the identity is the finite telescoping sum $(1 + \gamma) \sum_{k=0}^{N} (-1)^k \gamma^k = 1 + (-1)^N \gamma^{N+1}$, whose last term has no $x^N$ component.
+Thus, $(1 + \gamma)$ is invertible, completing the proof that $f(x)$ is a unit in $R[[x]]$.
+\end{content}
+
+\end{proofWrapper}
+
+\begin{speech}[00:42:17 - 00:42:50]
+That is what you have to convince yourself of: it's just that it makes sense to write this. I gave you the argument, but that's different than you accepting the argument.
+
+It just says that if you do this, every one of these terms is well-defined. You're not allowed to add infinitely many things in algebra. But since the powers of $x$ get bigger and bigger, you don't have to do it.
+
+Maybe we'll talk a little bit more about that next time.
+\inlinemetanote{lecturer takes off microphone, class applauds, video ends}
+\end{speech}
+
+\begin{overview}[Summary of Key Concepts]
+\begin{itemize}
+    \item \textbf{Field of Fractions:} For an integral domain $R$, $\operatorname{Frac}(R)$ is formally the set of equivalence classes of pairs $(r, s) \in R \times (R \setminus \{0\})$ with $(r, s) \equiv (t, w) \iff rw = st$. In practice one computes with fractions $\frac{r}{s}$ by the usual rules; the integral domain property guarantees that the denominators $sw$ stay non-zero, and every $\frac{r}{s} \neq 0$ has the inverse $\frac{s}{r}$.
+    \item \textbf{Polynomial Rings:} $R[x]$ exists for every commutative ring $R$ with unit. Its universal property: for every ring homomorphism $\phi \colon R \to S$ and every $y \in S$, there is a unique ring homomorphism $\hat{\phi} \colon R[x] \to S$ with $\hat{\phi}|_R = \phi$ and $\hat{\phi}(x) = y$, namely $\hat{\phi}\bigl(\sum a_i x^i\bigr) = \sum \phi(a_i) y^i$.
+    \item \textbf{Units of $R[x]$:} If $R$ is an integral domain, then $\operatorname{Unit}(R[x]) = \operatorname{Unit}(R)$, because the leading coefficient of a product is the product of the leading coefficients. Without this assumption there can be more units, e.g., $1 + 2x$ in $(\mathbb{Z}/4\mathbb{Z})[x]$.
+    \item \textbf{Formal Power Series:} $R[[x]]$ consists of all sequences $(a_0, a_1, a_2, \dots)$ of elements of $R$, written $\sum_{i \ge 0} a_i x^i$, with componentwise addition and the Cauchy product $c_k = \sum_{i=0}^k a_{k-i} b_i$; every coefficient of a product is a finite sum.
+    \item \textbf{Units of $R[[x]]$:} For every commutative ring $R$ with unit, $f \in R[[x]]$ is a unit if and only if its constant term is a unit in $R$. After normalizing the constant term to $1$, the inverse of $1 + \gamma$ is the formal geometric series $\sum_{k \ge 0} (-1)^k \gamma^k$, which is well-defined because $x^k \mid \gamma^k$.
+\end{itemize}
+\end{overview}
