@@ -901,7 +901,7 @@ And who knows what I get here, but I know one thing: it starts with $1$. Because
 
 So, whatever it is, it starts with $1$, and then it's like $(a_1 y) x$...
 
-\inlinemetanote{The lecturer writes $fy = 1 + (a_1 y) x + (a_2 y) x^2 + \dots$ on the board.}
+\inlinemetanote{The lecturer writes $f \cdot y = 1 + (a_1 y) x + (a_2 y) x^2 + \dots$ on the board.}
 
 $y$ is an element of the ring; there's nothing to do with $x$. Then $(a_2 y) x^2$, and so on.
 
@@ -935,7 +935,7 @@ Inversion means that there's somebody else I multiply to get $1$. It's sufficien
 \]
 equals $1$.
 
-\inlinemetanote{The lecturer writes: \qt{Sufficient to find $g \in R[[x]]$, $g(1 + b_1 x + b_2 x^2 + \dots) = 1$}.}
+\inlinemetanote{The lecturer writes: \qt{Sufficient to find $g \in R[[x]]$}, $g \cdot (1 + b_1 x + b_2 x^2 + \dots) = 1$.}
 
 It's sufficient to find $g$ such that whenever I have something of this form --- which is what I have there ---, this is equal to $1$.
 
@@ -951,11 +951,11 @@ Now, you know how to do this, right? You definitely know how to do this. It's so
 \end{speech}
 
 \begin{content}[Step 2: Reduction to Inverting $1 + \gamma$]
-Setting $b_k := a_k y \in R$ for all $k \ge 1$, it suffices to demonstrate that any power series of the form:
+Setting $b_k := a_k y \in R$ for all $k \ge 1$, the normalized series \eqref{eq:normalized-series-fy} reads $1 + b_1 x + b_2 x^2 + \dots$. It is therefore sufficient to find $g \in R[[x]]$ such that:
 \begin{equation}\label{eq:one-plus-b-series}
-1 + b_1 x + b_2 x^2 + b_3 x^3 + \dots
+g \cdot (1 + b_1 x + b_2 x^2 + \dots) = 1,
 \end{equation}
-possesses a multiplicative inverse in $R[[x]]$.
+that is, to show that the inverse $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$ exists in $R[[x]]$. Then $f^{-1} = y \cdot g$.
 \end{content}
 
 \begin{speech}[00:40:43 - 00:41:21]
@@ -999,7 +999,7 @@ I just write it, and I claim this is the formula for the inverse.
 
 The reason is that this thing makes sense. It looks like an infinite sum, but this $\gamma$ has $x$'s in it. $\gamma$ is divisible by $x$: $x$ divides $\gamma$. That means $x^2$ divides $\gamma^2$, and $x^k$ divides $\gamma^k$.
 
-\inlinemetanote{The lecturer writes $x \mid \gamma \implies x^2 \mid \gamma^2 \dots x^k \mid \gamma^k$.}
+\inlinemetanote{The lecturer writes $x \mid \gamma \quad x^2 \mid \gamma^2, \ x^k \mid \gamma^k$.}
 
 When I expand this, if I want the coefficient in the power series of any particular power of $x$, only finitely many of these terms enter.
 
