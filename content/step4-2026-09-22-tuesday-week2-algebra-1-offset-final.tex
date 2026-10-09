@@ -765,7 +765,7 @@ So, what about the image? Is the image an ideal? What is the image? The answer i
 \recap{Ideals were defined in Week~1 (\cref{def:ideal}), and the kernel of a ring homomorphism was shown to be one (\cref{prop:kernel-is-ideal}). The lecturer restates both; with the group notions of this lecture, the additive half of the proof becomes a one-liner.}
 
 \begin{definition}[Ideal]\label[definition]{def:ideal-w2}
-Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is called an \newterm{ideal} (denoted $I \trianglelefteq R$) if it satisfies:
+Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is called an \newterm{ideal} if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup:} $(I, +, 0)$ is a subgroup of $(R, +, 0)$ (\cref{def:subgroup}), i.e.,
     \[
@@ -792,7 +792,7 @@ We verify the two ideal conditions for $\ker(f)$:
     \]
     Thus, $r \cdot x \in \ker(f)$.
 \end{enumerate}
-Therefore, $\ker(f) \trianglelefteq R$.
+Therefore, $\ker(f)$ is an ideal of $R$.
 \end{proof}
 \end{content}
 
@@ -961,7 +961,7 @@ Thus, $\mathbb{Z}[\frac{1}{2}]$ is a subring of $\mathbb{Q}$. More generally, fo
 \end{example}
 \end{content}
 
-\subsection{Polynomial Subrings: \texorpdfstring{$\mathbb{Z}[x^2] \subset \mathbb{Z}[x]$}{Z[x^2] in Z[x]}}
+\subsection{Polynomial Subrings: \texorpdfstring{$\mathbb{Z}[x^2] \subset \mathbb{Z}[x]$}{Z[x\texttwosuperior] in Z[x]}}
 
 \begin{speech}[00:44:10 - 00:45:05]
 Okay, so another example. 
@@ -2078,7 +2078,7 @@ This holds for all vector spaces regardless of dimension. When $\dim(V) < \infty
 This lecture established foundational concepts across modern abstract algebra and category theory:
 \begin{itemize}
     \item \textbf{Groups, Rings, and Fields:} Reviewed core definitions, proving the uniqueness of identity elements and inverses. Explored the exponential isomorphism $(\mathbb{R}, +) \cong (\mathbb{R}_{>0}^*, \cdot)$ and proved $(\mathbb{R}^*, \cdot) \not\cong (\mathbb{R}_{>0}^*, \cdot)$ via torsion invariants.
-    \item \textbf{Structure-Preserving Maps:} Formalized group and ring homomorphisms/isomorphisms. Analyzed how symmetry breaks between rings and groups: for group homomorphisms, kernels and images are subgroups; for ring homomorphisms, the kernel is an \emph{ideal} while the image is a \emph{subring}.
+    \item \textbf{Structure-Preserving Maps:} Formalized group and ring homomorphisms\slash\hspace{0pt}isomorphisms. Analyzed how symmetry breaks between rings and groups: for group homomorphisms, kernels and images are subgroups; for ring homomorphisms, the kernel is an \emph{ideal} while the image is a \emph{subring}.
     \item \textbf{Substructures and Ideals:} Investigated subrings and ideals of $\mathbb{Z}$ (proving that $\mathbb{Z}$ is a Principal Ideal Domain where every ideal is $n\mathbb{Z}$) and smooth function rings $C^\infty(\mathbb{R})$ (where compactly supported functions $C_c^\infty(\mathbb{R})$ form an ideal).
     \item \textbf{Category Theory:} Introduced categories $\mathcal{C}$ (objects, hom-sets, composition, identity laws) and arrows-only definitions of categorical isomorphisms. Defined covariant functors $F \colon \mathcal{C} \to \mathcal{D}$ with canonical examples: the additive forgetful functor $\mathbf{Ring} \to \mathbf{Grp}$ and the double dual endofunctor $(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \to \mathbf{Vect}_{\mathbb{C}}$.
 \end{itemize}

@@ -48,9 +48,9 @@ If you think the quiz was too easy, or too hard, or too medium, tell us. As I sa
 \begin{speech}[00:00:32 - 00:01:51]
 Last week we discussed rings, and associated to a ring there's an additive group. This is easy, because it's part of the definition, but there's another group which was also discussed in the last lecture (Recall: \cref{prop:group-of-units}), which is the group of units. 
 
-And I remind you of this group... \inlinemetanote{writes on the board} Various people use different notation for describing it, but here I just say $\operatorname{Unit} R$ so there's no question: it's the group of units of the ring $R$. It's those elements such that there exists somebody else where the product is $1$, so it's those elements with a multiplicative inverse. And this is a group --- we discussed this last week. 
+And I remind you of this group... \inlinemetanote{writes \qt{the group of unit} $\operatorname{Unit}_R = \{ x \mid \exists y, xy = 1 \}$} Various people use different notation for describing it, but here I just say $\operatorname{Unit} R$ so there's no question: it's the group of units of the ring $R$. It's those elements such that there exists somebody else where the product is $1$, so it's those elements with a multiplicative inverse. And this is a group --- we discussed this last week. 
 
-So, this group here is $\operatorname{Unit} R$, and it has, well, the units by this definition, multiplication, and $1$. 
+So, this group here is $\operatorname{Unit} R$, and it has, well, the units by this definition, multiplication, and $1$. \inlinemetanote{writes $\operatorname{Unit}_R = (\text{Units}, \cdot, 1)$}
 
 Whenever you see a ring, you immediately have these two groups. And this one is, you know, often the more complicated one to think about, because it's not part of the definition in some sense.
 \end{speech}
@@ -581,7 +581,7 @@ And the checks are all the same, so you can do it yourself. That's the end of wh
 \end{speech}
 
 \begin{speech}[00:30:32 - 00:32:18]
-Okay, so I leave this to you. We're going to have to do things like this anyway, and it's all just unraveling the definitions. Meaning you have to check... \inlinemetanote{writes on the board} You have to check something like $g(x_1/y_1) + g(x_2/y_2) = g(x_1/y_1 + x_2/y_2)$.
+Okay, so I leave this to you. We're going to have to do things like this anyway, and it's all just unraveling the definitions. Meaning you have to check... \inlinemetanote{writes You have to check $g(\frac{x_1}{y_1}) + g(\frac{x_2}{y_2}) = g(\frac{x_1}{y_1} + \frac{x_2}{y_2})$} You have to check something like $g(x_1/y_1) + g(x_2/y_2) = g(x_1/y_1 + x_2/y_2)$.
 
 You have to go check that; that's what you have to check. And you can see, when you write this, that this side... Okay, I'm going to do part of it for you. I don't know why I'm feeling compassionate today here.
 
@@ -606,32 +606,56 @@ g(1_\mathbb{Q}) &= 1_F. \label{eq:g-unit}
 \end{align}
 \end{claim}
 
-\begin{proof}[Verification of Additivity]
+\begin{proof}
 Let $q_1 = \frac{x_1}{y_1}$ and $q_2 = \frac{x_2}{y_2}$ with $x_i, y_i \in \mathbb{Z}$ and $y_i \ne 0$.
 
-\textbf{1. Evaluating the Sum Inside $\mathbb{Q}$:}
+\paragraph{1. Verification of Additivity \eqref{eq:g-add}:}
 Adding fractions according to standard rational arithmetic:
 \[
 q_1 + q_2 = \frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}.
 \]
-Applying the definition of $g$:
+Applying the definition of $g$ and the ring homomorphism properties of $f$:
 \begin{align*}
-g\left(\frac{x_1}{y_1} + \frac{x_2}{y_2}\right) &= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right) \\
+g(q_1 + q_2) &= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right) \\
 &= \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)} \\
 &= \frac{f(x_1)f(y_2) + f(x_2)f(y_1)}{f(y_1)f(y_2)}.
 \end{align*}
-
-\textbf{2. Evaluating the Sum in $F$:}
 On the other hand, evaluating the sum of images in the field $F$:
 \begin{align*}
-g\left(\frac{x_1}{y_1}\right) + g\left(\frac{x_2}{y_2}\right) &= \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)} \\
+g(q_1) + g(q_2) &= \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)} \\
 &= f(x_1)f(y_1)^{-1} + f(x_2)f(y_2)^{-1}.
 \end{align*}
 Bringing both terms over the common denominator $f(y_1)f(y_2)$ in the field $F$:
 \[
 \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)} = \frac{f(x_1)f(y_2) + f(x_2)f(y_1)}{f(y_1)f(y_2)}.
 \]
-Both expressions coincide identically, establishing \eqref{eq:g-add}. The computation uses a chosen name of $q_1 + q_2$; by \cref{clm:g-well-defined}, any other name gives the same value. Multiplicativity \eqref{eq:g-mult} and unit preservation \eqref{eq:g-unit} follow analogously.
+Both expressions coincide identically, establishing \eqref{eq:g-add}. By \cref{clm:g-well-defined}, this value is independent of the choice of fraction representatives.
+
+\paragraph{2. Verification of Multiplicativity \eqref{eq:g-mult}:}
+Multiplying fractions inside $\mathbb{Q}$:
+\[
+q_1 \cdot q_2 = \frac{x_1}{y_1} \cdot \frac{x_2}{y_2} = \frac{x_1 x_2}{y_1 y_2}.
+\]
+Applying the definition of $g$ and the multiplicativity of $f$:
+\begin{align*}
+g(q_1 \cdot q_2) &= g\left(\frac{x_1 x_2}{y_1 y_2}\right) \\
+&= \frac{f(x_1 x_2)}{f(y_1 y_2)} \\
+&= \frac{f(x_1) f(x_2)}{f(y_1) f(y_2)} \\
+&= \frac{f(x_1)}{f(y_1)} \cdot \frac{f(x_2)}{f(y_2)} \\
+&= g(q_1) \cdot g(q_2),
+\end{align*}
+establishing \eqref{eq:g-mult}.
+
+\paragraph{3. Preservation of Multiplicative Identity \eqref{eq:g-unit}:}
+Representing $1_\mathbb{Q} \in \mathbb{Q}$ as $\frac{1_\mathbb{Z}}{1_\mathbb{Z}}$:
+\[
+g(1_\mathbb{Q}) = g\left(\frac{1_\mathbb{Z}}{1_\mathbb{Z}}\right) = \frac{f(1_\mathbb{Z})}{f(1_\mathbb{Z})}.
+\]
+Since $f \colon \mathbb{Z} \to F$ is a unital ring homomorphism, $f(1_\mathbb{Z}) = 1_F$. Thus:
+\[
+g(1_\mathbb{Q}) = \frac{1_F}{1_F} = 1_F,
+\]
+establishing \eqref{eq:g-unit}. Thus $g$ is a field homomorphism.
 \end{proof}
 \end{content}
 
@@ -1034,15 +1058,15 @@ So, the set $S$, is it the whole $R \times R$, or is it just any subset of $R \t
 \end{student}
 
 \begin{speech}[00:53:50 - 00:55:47]
-No, the set $S$ was very precisely defined on the previous board: $S$ is equal to those elements in $R \times R$ where $y \ne 0$. That's $S$. \inlinemetanote{writes $S = \{ (x, y) \in R \times R \mid y \ne 0 \}$ on the board}
+No, the set $S$ was very precisely defined on the previous board: $S$ is equal to those elements in $R \times R$ where $y \ne 0$. That's $S$. \inlinemetanote{writes $S = \{ (x, y) \mid x, y \in R, \ y \neq 0 \}$ on the board}
 
 And this is an element of $S$ because $1 \ne 0$; and $1 \ne 0$ because $R$ is an integral domain, and an integral domain is by definition not the zero ring. That's the full logical certificate, if you want it.
 
 Still, we'd like more: we'd like this to be an injection. \inlinemetanote{writes \qt{Is $i$ injective?} on the board}
 
-This means: when are $(r, 1)$ and $(\hat{r}, 1)$ in the same equivalence class of $S$, right? \inlinemetanote{writes on the board} That's what injectivity is about.
+This means: when are $(r, 1)$ and $(\hat{r}, 1)$ in the same equivalence class of $S$, right? \inlinemetanote{writes When are $(r, 1)$ and $(\hat{r}, 1)$ in the same equivalence class of $S$} That's what injectivity is about.
 
-How do we check this? The answer is that these are in the same equivalence class if and only if that equivalence class identity holds: if and only if $r \cdot 1 = \hat{r} \cdot 1$, which is if and only if $r = \hat{r}$. This is great for us, because it shows that this is an injection. \inlinemetanote{writes on the board and puts a checkmark}
+How do we check this? The answer is that these are in the same equivalence class if and only if that equivalence class identity holds: if and only if $r \cdot 1 = \hat{r} \cdot 1$, which is if and only if $r = \hat{r}$. This is great for us, because it shows that this is an injection. \inlinemetanote{writes $r \cdot 1 = \hat{r} \cdot 1 \iff r = \hat{r}$ and puts a checkmark}
 
 We've constructed... there's a lot of things to do in this, like a big house where you have to build all the pieces of it. This shows that now we have not only defined $F$, we've defined $i$, and we've put $R$ inside $F$. And this placement is injective, okay?
 \end{speech}
@@ -1099,13 +1123,13 @@ As I said, this is just the beginning of the story. $R$ already is born with all
 \end{speech}
 
 \begin{speech}[00:57:04 - 00:58:39]
-We have to start talking about all the structures for $F$ as a field. And for many of them, we don't have any choice: the zero in $F$ has to correspond to the zero in $R$ for it to be a homomorphism. So, the zero in $F$ has to be $(0, 1)$. \inlinemetanote{writes on the board}
+We have to start talking about all the structures for $F$ as a field. And for many of them, we don't have any choice: the zero in $F$ has to correspond to the zero in $R$ for it to be a homomorphism. So, the zero in $F$ has to be $(0, 1)$. \inlinemetanote{writes Zero in $F$ has to be $(0, 1)$}
 
-And also the unit: the unit in $F$ has to be $(1, 1)$, because of course it has to correspond to the unit in $R$ by the rule of getting $R$ to $F$. \inlinemetanote{writes on the board}
+And also the unit: the unit in $F$ has to be $(1, 1)$, because of course it has to correspond to the unit in $R$ by the rule of getting $R$ to $F$. \inlinemetanote{writes unit in $F$ has to be $(1, 1)$}
 
-We don't really have any choice in this matter. But we have to define plus and multiplication on $F$. \inlinemetanote{writes on the board} That's something that we have to construct: we have to define it, check it's compatible with $R$, check it satisfies the field axioms --- and it's a lot of long and boring work.
+We don't really have any choice in this matter. But we have to define plus and multiplication on $F$. \inlinemetanote{writes We have to define $+, \cdot$ on $F$} That's something that we have to construct: we have to define it, check it's compatible with $R$, check it satisfies the field axioms --- and it's a lot of long and boring work.
 
-The interesting part to start with is that we have to define it. If we have an element here, $(x_1, y_1) \in S$, and we have another one, $(x_2, y_2) \in S$, then we have to define this operation. This is up to us; we must define it. \inlinemetanote{writes on the board}
+The interesting part to start with is that we have to define it. If we have an element here, $(x_1, y_1) \in S$, and we have another one, $(x_2, y_2) \in S$, then we have to define this operation. This is up to us; we must define it. \inlinemetanote{writes $(x_1, y_1) + (x_2, y_2)$ with \qt{We must define} under the $+$}
 
 That's the problem. So, what's the solution? How are we going to define this? What do you think? 
 
@@ -1125,7 +1149,7 @@ This is the definition, nothing more, nothing less.
 
 Now, is it a legal definition? There's an easy part: for it to be legal, the denominator better not be zero, because in our set $S$, the one in the basement always has to be non-zero.
 
-We have here that this guy's non-zero, that guy's non-zero, and that implies their product is non-zero, because it is an integral domain. \inlinemetanote{writes on the board} Is that clear? Otherwise, if this were zero, this would not be legal.
+We have here that this guy's non-zero, that guy's non-zero, and that implies their product is non-zero, because it is an integral domain. \inlinemetanote{draws an arrow to $y_1 y_2$ and writes \qt{non zero, $R$ is an int dom}} Is that clear? Otherwise, if this were zero, this would not be legal.
 \end{speech}
 
 \begin{speech}[01:00:00 - 01:01:45]
@@ -1162,7 +1186,7 @@ The zero element and multiplicative unit in $F$ are defined by:
 \end{definition}
 
 \begin{definition}[Addition on $F$]\label[definition]{def:addition-F}
-For any two equivalence classes $[(x_1, y_1)], [(x_2, y_2)] \in F$, addition is defined by:
+For any two equivalence classes $[(x_1, y_1)]$, $[(x_2, y_2)] \in F$, addition is defined by:
 \begin{equation}\label{eq:addition-F-formula}
 [(x_1, y_1)] + [(x_2, y_2)] := [(x_1 y_2 + x_2 y_1, y_1 y_2)].
 \end{equation}
@@ -1209,19 +1233,19 @@ You also have to do it with multiplication. Multiplication is a bit easier; addi
 \[
 (x_1, y_1) \cdot (x_2, y_2) = (x_1 x_2, y_1 y_2),
 \]
-which will surprise no one, okay? \inlinemetanote{writes on the board} That's the definition, right?
+which will surprise no one, okay? \inlinemetanote{writes Also define $\cdot$: $(x_1, y_1) \cdot (x_2, y_2) \overset{\text{def}}{=} (x_1 x_2, y_1 y_2)$} That's the definition, right?
 
 And again, next is the check of compatibility with the equivalence classes. This check is easy, so I'll do it since it's easy.
 \end{speech}
 
 \begin{speech}[01:03:17 - 01:05:40]
-Suppose we have that $(x_1, y_1)$ is in the same equivalence class as $(\hat{x}_1, \hat{y}_1)$, and $(x_2, y_2)$ is in the same equivalence class as $(\hat{x}_2, \hat{y}_2)$. \inlinemetanote{writes on the board}
+Suppose we have that $(x_1, y_1)$ is in the same equivalence class as $(\hat{x}_1, \hat{y}_1)$, and $(x_2, y_2)$ is in the same equivalence class as $(\hat{x}_2, \hat{y}_2)$. \inlinemetanote{writes $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$, $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$}
 
-Then we have to show --- that's the input, right? --- we must show that $(x_1 x_2, y_1 y_2)$ is in the same equivalence class as if we chose the other representatives: $(\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$. \inlinemetanote{writes on the board} That's what we have to do.
+Then we have to show --- that's the input, right? --- we must show that $(x_1 x_2, y_1 y_2)$ is in the same equivalence class as if we chose the other representatives: $(\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$. \inlinemetanote{writes We must show $(x_1 x_2, y_1 y_2) \equiv (\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$} That's what we have to do.
 
-What we know is this: the equation that these are in the same equivalence class is $x_1 \hat{y}_1 = \hat{x}_1 y_1$, and this equation is $x_2 \hat{y}_2 = \hat{x}_2 y_2$, all very confusing. \inlinemetanote{writes on the board}
+What we know is this: the equation that these are in the same equivalence class is $x_1 \hat{y}_1 = \hat{x}_1 y_1$, and this equation is $x_2 \hat{y}_2 = \hat{x}_2 y_2$, all very confusing. \inlinemetanote{writes $x_1 \hat{y}_1 = \hat{x}_1 y_1$, $x_2 \hat{y}_2 = \hat{x}_2 y_2$}
 
-And now we just multiply them together! These are what we know, and then we have these two equations: we can multiply them all together, and we get $x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$. \inlinemetanote{writes on the board}
+And now we just multiply them together! These are what we know, and then we have these two equations: we can multiply them all together, and we get $x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$. \inlinemetanote{writes $\implies x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$}
 
 That equation is exactly the certificate that these things are in the same equivalence class, okay? This implies that.
 
@@ -1229,9 +1253,9 @@ This shows that if I pick different equivalence classes here, the result doesn't
 \end{speech}
 
 \begin{speech}[01:05:40 - 01:06:50]
-Then you have to check that these definitions are compatible with $R$. I mean, they're just all defined that way, meaning we have to check that this inclusion $i$ is a homomorphism of rings. \inlinemetanote{writes on the board}
+Then you have to check that these definitions are compatible with $R$. I mean, they're just all defined that way, meaning we have to check that this inclusion $i$ is a homomorphism of rings. \inlinemetanote{writes Check $i \colon R \to F$ is a hom of rings}
 
-And again, there's really nothing to this: it means that if you take $r + \hat{r}$, and then you go by $i$, you get $(r + \hat{r}, 1)$. \inlinemetanote{writes on the board}
+And again, there's really nothing to this: it means that if you take $r + \hat{r}$, and then you go by $i$, you get $(r + \hat{r}, 1)$. \inlinemetanote{writes $r + \hat{r} \xrightarrow{i} (r + \hat{r}, 1)$ and below it $= (r, 1) + (\hat{r}, 1)$}
 
 Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, and that's the same by the definition that we used there. But you have to check it, and you have to also check it for multiplication. So, it's just a bunch of checking. Here, all the cards are played, and you just have to check everything, okay?
 \end{speech}
@@ -1322,7 +1346,7 @@ There are different ways to try to learn this material, but the way that's found
 
 You can read the book, too. I think that doesn't help so much, because then you just read what the author has written, and it's just a bunch of things with equalities. You can convince yourself of anything if you read what someone else did. So, the best thing is to go through all of it yourself; then you'll understand it once in your life. 
 
-And that's the construction, so we're done with this construction. I'll just summarize here: \inlinemetanote{writes on the lower left chalkboard}
+And that's the construction, so we're done with this construction. I'll just summarize here: \inlinemetanote{writes on the lower left chalkboard: \qt{Construction}, \qt{Start with $R$ int domain}, \qt{Construct $F$ = field of fractions}, $R \hookrightarrow F$, $r \to (r, 1)$}
 
 We start with $R$ as an integral domain, and then we construct explicitly --- that's as explicit a mathematical construction as you get. You just take $R$, and you make some sets and equivalence classes and relations; it's totally explicit. We construct this $F$, which is the field of fractions. 
 
@@ -1510,9 +1534,9 @@ Maybe a compromise: on half the exam they should just guess everything. But I th
 \end{speech}
 
 \begin{speech}[01:14:49 - 01:15:25]
-A kind of stranger question is: suppose I start with a field. Suppose $R$ is a field. \inlinemetanote{writes on the board}
+A kind of stranger question is: suppose I start with a field. Suppose $R$ is a field. \inlinemetanote{writes Suppose $R$ is field}
 
-Then, of course, it's still an integral domain, because every field is an integral domain (Recall: \cref{ex:fields-are-domains}). Then what is the field of fractions? \inlinemetanote{writes on the board}
+Then, of course, it's still an integral domain, because every field is an integral domain (Recall: \cref{ex:fields-are-domains}). Then what is the field of fractions? \inlinemetanote{writes $R$ is int domain, $\implies$ What is the field of fraction?}
 
 What do you think the field of fractions is going to be here? 
 
@@ -1570,7 +1594,7 @@ Every element of $\operatorname{Frac}(K)$ is the image of the element $x y^{-1} 
 \subsection{Definition of the Polynomial Ring in One Indeterminate}
 
 \begin{speech}[01:16:00 - 01:18:16]
-The next topic this week is about polynomial rings. These are really fun. We'll talk about polynomial rings \inlinemetanote{writes on the board}, and in some sense even more fun than polynomial rings are power series rings. 
+The next topic this week is about polynomial rings. These are really fun. We'll talk about polynomial rings \inlinemetanote{writes \qt{Polynomials rings, Power series rings}}, and in some sense even more fun than polynomial rings are power series rings. 
 
 Again, this material, in some sense, you've been using all of this already in the first year, but here we take a formal approach. 
 
@@ -1645,7 +1669,7 @@ If I were to be dishonest and formally correct, the way you define these polynom
 \end{speech}
 
 \begin{speech}[01:22:28 - 01:24:00]
-You say a polynomial, an element of $R[x]$, is a tuple of elements of $R$, $(a_0, a_1, a_2, \dots)$ --- an infinite tuple --- such that there exists some $N$ such that for all $m > N$, the element in this tuple is zero, okay? \inlinemetanote{writes on the board}
+You say a polynomial, an element of $R[x]$, is a tuple of elements of $R$, $(a_0, a_1, a_2, \dots)$ --- an infinite tuple --- such that there exists some $N$ such that for all $m > N$, the element in this tuple is zero, okay? \inlinemetanote{writes \qt{an element of $R[x]$ is a tuple of elements of $R$} $(a_0, a_1, a_2, \dots)$ such that $\exists N \ \forall m > N, a_m = 0$}
 
 That's a formal definition of a polynomial in one variable, where I just give you the coefficients. The coefficients are $a_0, a_1, a_2, \dots$; they're all elements of $R$. 
 
@@ -1906,9 +1930,14 @@ The formula $c_k = \sum_{i=0}^k a_i b_{k-i}$ exactly mirrors:
 \end{steps}
 \end{content}
 
+\begin{aiNote}[Outlook: Formal Power Series in the Next Lecture]
+% [PERSISTENT]
+In the lecture introduction, the professor remarked that \qt{in some sense even more fun than polynomial rings are power series rings}. This lecture formalized the polynomial ring $R[x]$ as sequences of coefficients with finite support (almost-zero sequences). Dropping the finite support requirement leads directly to the ring of \newterm{formal power series} $R[[x]]$, consisting of arbitrary infinite sequences $(a_0, a_1, a_2, \dots)$ equipped with the same Cauchy product multiplication, which is systematically investigated at the start of the next lecture (\cref{def:power-series-ring-formal}).
+\end{aiNote}
+
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{The Group of Units $\operatorname{Unit}(R)$:} The set of multiplicatively invertible elements $R^* = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\mathbb{Z}/m\mathbb{Z})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
+    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $R^\times = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\mathbb{Z}/m\mathbb{Z})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
     \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\mathbb{Z}/m\mathbb{Z})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.

@@ -48,11 +48,16 @@
 \doublehyphendemerits=10000
 \finalhyphendemerits=5000
 \tolerance=1500
+\hbadness=1500 % report underfull lines only when they exceed the tolerance allowed above
 \emergencystretch=3em
 \hfuzz=1pt
+% The English patterns only allow "monomor-phism"; this break avoids a stretched speech line (Week 2).
+\babelhyphenation[english]{mono-mor-phism mono-mor-phisms}
 
 \usepackage{amsmath, amssymb, amsthm, mathtools, environ, etoolbox} 
 \usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % ragged-right paragraph column for tables that would run into the margin
 \usepackage{listings} % code listings (lstlisting)
 \usepackage{capt-of}  % \captionof for figures outside floats
 \usepackage{fontawesome5}
@@ -257,7 +262,10 @@ pdfauthor={Prof. Rahul Pandharipande}
   pad at break=2.5mm,
   lines before break=2,
   shrink break goal=2mm,
-  ignore nobreak=true
+  % false: when a breakable box right after a heading cannot start on the current page,
+  % tcolorbox moves the heading to the next page with it instead of leaving it orphaned
+  % at the bottom ("Using nobreak failed").
+  ignore nobreak=false
 }
 
 % ==========================================
@@ -443,7 +451,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 
 % Custom text commands
 \newcommand{\newterm}[1]{\textcolor{QuoteRed}{``}\textcolor{TextBoldColor}{\textit{#1}}\textcolor{QuoteRed}{''}}
-\newcommand{\inlinemetanote}[1]{\textit{[\textcolor{TextMetaNote}{#1}]}}
+\newcommand{\inlinemetanote}[1]{\textit{\textcolor{TextMetaNote}{[#1]}}}
 % Recap line placed right before a definition or result the lecturer states again in a later
 % lecture. The restated version carries the label of the first one plus a week tag (def:ring-w2).
 \newcommand{\recap}[1]{\par\smallskip\noindent{\sffamily\bfseries\color{EnvRemark}\faHistory\ Recap:}\ #1\par\smallskip}
@@ -1008,9 +1016,12 @@ breakable
 \hspace{10pt}%
 }
 
-\titleformat{\section}{\normalfont\sffamily\Large\bfseries\color{\ifinsideproof SecTitleColorProof\else SecTitleColor\fi}}{}{0pt}{\makebox[0pt][r]{\sectionbar}}
-\titleformat{\subsection}{\normalfont\sffamily\large\bfseries\color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleColor\fi}}{}{0pt}{\makebox[0pt][r]{\subsectionbar}}
-\titleformat{\subsubsection}{\normalfont\sffamily\normalsize\bfseries\color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleColor\fi}}{}{0pt}{\makebox[0pt][r]{\subsubsectionbar}}
+% The \color sits in the before-code (horizontal mode), not in the format argument: there it
+% would add a color whatsit to the vertical list, and the glue after it is a legal page break,
+% which let a \section heading be separated from the \subsection directly below it.
+\titleformat{\section}{\normalfont\sffamily\Large\bfseries}{}{0pt}{\color{\ifinsideproof SecTitleColorProof\else SecTitleColor\fi}\makebox[0pt][r]{\sectionbar}}
+\titleformat{\subsection}{\normalfont\sffamily\large\bfseries}{}{0pt}{\color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleColor\fi}\makebox[0pt][r]{\subsectionbar}}
+\titleformat{\subsubsection}{\normalfont\sffamily\normalsize\bfseries}{}{0pt}{\color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleColor\fi}\makebox[0pt][r]{\subsubsectionbar}}
 
 \titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{3ex plus 1ex minus .2ex}{1.2ex plus .2ex}
@@ -1080,6 +1091,9 @@ breakable
 
 \begin{document}
 
+% The title page and the first TOC page are both page 1; without this, hyperref
+% creates the anchor page.1 twice ("destination with the same identifier").
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
@@ -1127,6 +1141,7 @@ breakable
 \end{minipage}
 \vspace*{0.5cm}
 \end{titlepage}
+\hypersetup{pageanchor=true}
 
 \tableofcontents
 \hypersetup{linkcolor=LinkColor}
@@ -1147,5 +1162,6 @@ breakable
 
 % week 4:
 \input{content/step4-2026-10-06-tuesday-week4-algebra-1-offset-final.tex}
+\input{content/step4-2026-10-07-wednesday-week4-algebra-1-offset-final.tex}
 
 \end{document}
