@@ -1369,6 +1369,18 @@ Therefore, every non-zero element in $F$ possesses a multiplicative inverse $[(x
 \end{steps}
 \end{content}
 
+\begin{aiNote}[Beyond the Lecture: The Remaining Field Axioms]
+% [PERSISTENT, ADDITION]
+The lecture checks that the operations are well-defined and that non-zero elements have inverses; the other axioms of a field reduce to computations in $R$ on representatives. The key tool is that $(x s, y s) \equiv (x, y)$ for every $s \neq 0$, since $x s \cdot y = x \cdot y s$: a common non-zero factor can be cancelled.
+\begin{itemize}
+    \item \textbf{Commutativity} of $+$ and $\cdot$ is visible in the formulas of \cref{def:addition-F} and \cref{def:multiplication-F}, since $R$ is commutative.
+    \item \textbf{Associativity:} both $\bigl([(x_1, y_1)] + [(x_2, y_2)]\bigr) + [(x_3, y_3)]$ and $[(x_1, y_1)] + \bigl([(x_2, y_2)] + [(x_3, y_3)]\bigr)$ equal $[(x_1 y_2 y_3 + x_2 y_1 y_3 + x_3 y_1 y_2, \, y_1 y_2 y_3)]$; both products equal $[(x_1 x_2 x_3, \, y_1 y_2 y_3)]$.
+    \item \textbf{Neutral elements and negatives:} $[(x, y)] + [(0, 1)] = [(x, y)]$, $[(x, y)] \cdot [(1, 1)] = [(x, y)]$, and $[(x, y)] + [(-x, y)] = [(0, y^2)] = [(0, 1)]$.
+    \item \textbf{Distributivity:} $[(x_1, y_1)] \cdot \bigl([(x_2, y_2)] + [(x_3, y_3)]\bigr) = [(x_1 x_2 y_3 + x_1 x_3 y_2, \, y_1 y_2 y_3)]$, while $[(x_1, y_1)][(x_2, y_2)] + [(x_1, y_1)][(x_3, y_3)] = [(x_1 x_2 y_1 y_3 + x_1 x_3 y_1 y_2, \, y_1^2 y_2 y_3)]$, which is the same class after cancelling the factor $y_1 \neq 0$.
+    \item \textbf{$0_F \neq 1_F$:} $(0, 1) \not\equiv (1, 1)$, since $0 \cdot 1 \neq 1 \cdot 1$ in the integral domain $R$.
+\end{itemize}
+\end{aiNote}
+
 \subsection{Summary of the Field of Fractions Construction}
 
 \begin{speech}[01:07:25 - 01:08:00]
@@ -1545,7 +1557,11 @@ Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subseteq R \subseteq \m
 \end{center}
 
 \begin{steps}[Why All Intermediate Subrings Yield $\mathbb{Q}$]
-By categorical minimality, $\operatorname{Frac}(R)$ is the smallest field containing $R$. Since $\mathbb{Z} \subseteq R$, any field containing $R$ must contain $\mathbb{Z}$, and hence must contain a copy of $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$ (\cref{thm:universal-property-q}). Since $R \subseteq \mathbb{Q}$, $\mathbb{Q}$ is already a field containing $R$. Therefore, $\operatorname{Frac}(R)$ cannot be strictly larger or smaller than $\mathbb{Q}$, forcing $\operatorname{Frac}(R) = \mathbb{Q}$.
+The universal property was only proved for $\mathbb{Z}$ (\cref{thm:universal-property-q}), so here is a direct argument. Since $R \subseteq \mathbb{Q}$, a formal fraction $\frac{r}{s} \in \operatorname{Frac}(R)$ can be read as an actual rational number, which gives a map
+\[
+\Phi \colon \operatorname{Frac}(R) \to \mathbb{Q}, \qquad [(r, s)] \mapsto r s^{-1}.
+\]
+It is well-defined: $(r, s) \equiv (r', s')$ means $r s' = r' s$, hence $r s^{-1} = r' s'^{-1}$ in $\mathbb{Q}$. It is a ring homomorphism, because the operations of $\operatorname{Frac}(R)$ (\cref{def:addition-F}, \cref{def:multiplication-F}) are the usual fraction rules of $\mathbb{Q}$. As a homomorphism out of a field into a non-zero ring it is injective (\cref{thm:ideals-in-a-field} and the steps after it). It is surjective, since every rational number is $\frac{p}{q}$ with $p, q \in \mathbb{Z} \subseteq R$, $q \neq 0$. Hence $\Phi$ is an isomorphism, $\operatorname{Frac}(R) \cong \mathbb{Q}$.
 \end{steps}
 \end{content}
 
@@ -1742,7 +1758,7 @@ It's a good question. That's the reason why thinking about it this way is slight
 
 \begin{content}[Formal Definition of Polynomials as Sequences with Finite Support]
 \begin{definition}[{Rigorous Definition of $R[x]$ via Coefficient Tuples}]\label[definition]{def:poly-rigorous-sequences}
-Let $R$ be a commutative ring with unit. The polynomial ring $R[x]$ is formally defined as the set of sequences $(a_k)_{k \in \mathbb{N}_0}$ of elements in $R$ with \newterm{finite support} (almost-zero sequences):
+Let $R$ be a commutative ring with unit. The polynomial ring $R[x]$ is formally defined as the set of sequences $(a_k)_{k \in \mathbb{N}_0}$ of elements in $R$ (elements of $R^{\mathbb{N}_0}$, \cref{not:pre-notation}) with \newterm{finite support} (almost-zero sequences):
 \begin{equation}\label{eq:poly-formal-sequence}
 R[x] := \left\{ (a_0, a_1, a_2, \dots) \in R^{\mathbb{N}_0} \;\middle|\; \exists N \in \mathbb{N}_0 \ \forall m > N \colon a_m = 0 \right\}.
 \end{equation}

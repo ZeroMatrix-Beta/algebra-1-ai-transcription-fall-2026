@@ -218,7 +218,7 @@ The general identity follows by induction on $n$. For $n = 0$, both sides equal 
 &= x^{n+1} + \sum_{k=1}^n \left[ \binom{n}{k} + \binom{n}{k-1} \right] x^{n+1-k} y^k + y^{n+1} \\
 &= \sum_{k=0}^{n+1} \binom{n+1}{k} x^{n+1-k} y^k,
 \end{align*}
-using Pascal's identity $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$.
+using Pascal's identity $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$ (\cref{fact:pre-binomial}).
 \end{steps}
 \end{content}
 
@@ -247,7 +247,7 @@ Recall the algebraic formula:
 \[
 \binom{p}{a} = \frac{p!}{a! (p-a)!} \implies a! (p-a)! \binom{p}{a} = p! = p \cdot (p-1)!.
 \]
-Thus, $p$ divides the product $a! (p-a)! \binom{p}{a}$. Since $1 \le a \le p-1$, every factor occurring in the factorials $a! = 1 \cdot 2 \dots a$ and $(p-a)! = 1 \cdot 2 \dots (p-a)$ is strictly less than $p$. Because $p$ is prime, $\operatorname{gcd}(a! (p-a)!, p) = 1$. By Euclid's lemma, $p$ must divide the remaining factor $\binom{p}{a}$.
+Thus, $p$ divides the product $a! (p-a)! \binom{p}{a}$. Since $1 \le a \le p-1$, every factor occurring in the factorials $a! = 1 \cdot 2 \dots a$ and $(p-a)! = 1 \cdot 2 \dots (p-a)$ is strictly less than $p$. Because $p$ is prime, Euclid's lemma (\cref{fact:pre-euclid}), applied factor by factor, shows that $p$ does not divide $a! (p-a)!$. By Euclid's lemma once more, $p$ must divide the remaining factor $\binom{p}{a}$.
 \end{proof}
 
 \begin{proposition}[Frobenius Identity]\label[proposition]{prop:frobenius-identity}
@@ -1886,6 +1886,7 @@ In particular, the remainder $r(x)$ is a linear polynomial with rational coeffic
 r(x) = r_1 x + r_2, \qquad r_1, r_2 \in \mathbb{Q}.
 \end{equation}
 \end{lemma}
+This is the case $K = \mathbb{Q}$, $g = x^2 + 1$ of division with remainder for polynomials (\cref{fact:pre-poly-division}); the lecture uses it without proof.
 \end{content}
 
 \begin{speech}[01:28:30 - 01:29:15]

@@ -7,6 +7,9 @@
 % Extended on 2026-10-11 (same model): images and preimages, induction and the binomial theorem,
 % the Euclidean algorithm, Hom-sets, and quotient vector spaces with the linear first isomorphism
 % theorem, each because a lecture uses it without stating it.
+% Extended on 2026-10-12 (same model), after a review of the lectures: the order of an element and
+% cyclic groups, open sets and closure in R, smooth functions vanishing on a half-line, division
+% with remainder for polynomials, and the notations N_0 and R^{N_0}.
 % ==========================================
 
 % Primary Language: English
@@ -25,11 +28,12 @@ This chapter is not part of the lectures. It collects what the lectures take for
 
 \begin{notation}[Number Sets and Inclusions]\label[notation]{not:pre-notation}
 \begin{itemize}
-    \item $\mathbb{N} = \{0, 1, 2, \dots\}$, and $\mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$. Subscripts restrict a set: $\mathbb{Z}_{>0} = \{1, 2, 3, \dots\}$, $\mathbb{Z}_{\ge 2}$, $\mathbb{R}_{>0}$.
+    \item $\mathbb{N} = \{0, 1, 2, \dots\}$, also written $\mathbb{N}_0$ to stress that $0$ is included, and $\mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$. Subscripts restrict a set: $\mathbb{Z}_{>0} = \{1, 2, 3, \dots\}$, $\mathbb{Z}_{\ge 2}$, $\mathbb{R}_{>0}$.
     \item For a field $K$, $K^* = K \setminus \{0\}$; for a ring, $R^*$ often denotes its units instead (Week~3, \cref{prop:units-mod-m-w3}).
     \item $A \subset B$ means that every element of $A$ lies in $B$; equality is allowed, as in the lecturer's usage. A proper inclusion is written $A \subsetneq B$.
     \item $|X|$ (or $\# X$) is the number of elements of a finite set $X$; for a finite group it is called the \newterm{order}.
     \item $X \times Y = \{ (x, y) \mid x \in X, \ y \in Y \}$ is the \newterm{Cartesian product}. A binary operation on $X$ is a map $X \times X \to X$; the set of pairs used for the field of fractions (\cref{def:set-of-pairs-s}) is a subset of $R \times R$.
+    \item $Y^X$ is the set of all maps $X \to Y$. In particular $R^{\mathbb{N}_0}$ is the set of all sequences $(a_0, a_1, a_2, \dots)$ with entries in $R$; polynomials and power series are defined as such sequences (\cref{def:poly-rigorous-sequences}, \cref{def:power-series-ring-formal}).
 \end{itemize}
 \end{notation}
 
@@ -167,6 +171,10 @@ A \newterm{group} $(G, \cdot, e)$ is a set $G$ with an associative operation $\c
 A map $f \colon G \to H$ between groups is a \newterm{homomorphism} if $f(a b) = f(a) f(b)$ for all $a, b \in G$, and an \newterm{isomorphism} if it is moreover bijective (Week~2, \cref{def:group-homomorphism}).
 \end{definition}
 
+\begin{definition}[Order of an Element, Cyclic Groups]\label[definition]{def:pre-cyclic}
+Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} of $a$ is the least $n \ge 1$ with $a^n = e$ (or $\infty$ if there is none); in additive notation the condition reads $n a = 0$. The group $G$ is \newterm{cyclic}, with \newterm{generator} $a$, if every element of $G$ is a power $a^k$, $k \in \mathbb{Z}$. A finite group $G$ is cyclic with generator $a$ exactly when $a$ has order $|G|$, and then $G = \{e, a, a^2, \dots, a^{|G|-1}\}$. Example: $(\mathbb{Z}/n\mathbb{Z}, +, \bar{0})$ is cyclic with generator $\bar{1}$. An isomorphism maps elements of order $n$ to elements of order $n$; the lectures use this in Week~2 (\cref{prop:r-star-not-isom-r-pos}, \cref{prop:z7z-cyclic-isomorphism}).
+\end{definition}
+
 \begin{definition}[Field]\label[definition]{def:pre-field}
 A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\mathbb{Z}/p\mathbb{Z}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). The lecturer restates fields in Week~2 (\cref{def:field}).
 \end{definition}
@@ -194,6 +202,14 @@ For a linear map $T \colon V \to W$, $\ker(T) \subset V$ and $\operatorname{im}(
 
 \begin{fact}[Bases]\label[fact]{fact:pre-basis}
 Every vector space spanned by finitely many vectors has a finite basis, and all its bases have the same number of elements, its \newterm{dimension}. That every vector space has a basis is proved with Zorn's lemma, which the course takes up itself (Week~1, \cref{q:vector-space-basis}).
+\end{fact}
+
+\begin{fact}[Division with Remainder for Polynomials]\label[fact]{fact:pre-poly-division}
+Let $K$ be a field, $f, g \in K[x]$ polynomials with coefficients in $K$, and $g \neq 0$. There are unique $q, r \in K[x]$ with
+\[
+f = q g + r \quad \text{and} \quad r = 0 \text{ or } \deg(r) < \deg(g).
+\]
+This is long division of polynomials: as long as $\deg(f) \ge \deg(g)$, subtracting $\frac{a}{b} x^{\deg f - \deg g} \, g$, where $a$ and $b$ are the leading coefficients of $f$ and $g$, lowers the degree of $f$; dividing by $b$ is where $K$ has to be a field. It is the polynomial analogue of \cref{fact:pre-division}; the lectures use it for $g = x^2 + 1$ (Week~4, \cref{lem:poly-division-algorithm}).
 \end{fact}
 
 \begin{definition}[Quotient Vector Space]\label[definition]{def:pre-quotient-space}
@@ -230,8 +246,20 @@ $\mathbb{R}$ is a complete ordered field: every non-empty subset that is bounded
 The exponential function $\exp \colon \mathbb{R} \to \mathbb{R}_{>0}$ is a strictly increasing bijection with $\exp(0) = 1$ and $\exp(x + y) = \exp(x) \exp(y)$; its inverse is the natural logarithm $\ln \colon \mathbb{R}_{>0} \to \mathbb{R}$ (Week~2, \cref{prop:exp-isomorphism}).
 \end{fact}
 
+\begin{definition}[Open Sets and Closure in $\mathbb{R}$]\label[definition]{def:pre-open-closure}
+A subset $U \subset \mathbb{R}$ is \newterm{open} if around each of its points it contains a whole interval $(x - \varepsilon, x + \varepsilon)$, $\varepsilon > 0$; examples are open intervals and $\mathbb{R}_{>0}$. A subset is \newterm{closed} if its complement is open. The \newterm{closure} $\overline{A}$ of $A \subset \mathbb{R}$ is the smallest closed set containing $A$: the set of all limits of convergent sequences in $A$. The lectures use these notions for the support of a function and for restricting functions to an open set (Week~2, \cref{def:compact-support-ideal}, \cref{def:restriction-hom}).
+\end{definition}
+
 \begin{fact}[Compact Sets and Smooth Functions]\label[fact]{fact:pre-compact}
 A subset of $\mathbb{R}$ is \newterm{compact} if and only if it is closed and bounded (Heine--Borel); finite unions of compact sets, and closed subsets of a compact set, are compact. $C^\infty(\mathbb{R})$ denotes the infinitely differentiable functions $\mathbb{R} \to \mathbb{R}$; sums and products of such functions are again infinitely differentiable (Week~2, \cref{def:smooth-functions-ring}).
+\end{fact}
+
+\begin{fact}[Smooth Functions Vanishing on a Half-Line]\label[fact]{fact:pre-flat-function}
+The function
+\[
+h(x) = \begin{cases} e^{-1/x} & x > 0, \\ 0 & x \le 0 \end{cases}
+\]
+lies in $C^\infty(\mathbb{R})$: all its derivatives tend to $0$ as $x \to 0^+$, because $e^{-1/x}$ goes to $0$ faster than any power of $x$. So $h$ vanishes exactly on $(-\infty, 0]$; the function $x \mapsto h(-x)$ vanishes exactly on $[0, \infty)$, and $h(x - a) \, h(b - x)$ is a smooth function that is non-zero exactly on $(a, b)$ (a \newterm{bump function}). Such functions show that the ideals of $C^\infty(\mathbb{R})$ in Week~2 are not zero and differ from each other (\cref{prop:compact-support-ideal}, \cref{prop:larger-ideal-smooth}).
 \end{fact}
 
 \begin{fact}[Geometric Series and Cauchy Product]\label[fact]{fact:pre-series}

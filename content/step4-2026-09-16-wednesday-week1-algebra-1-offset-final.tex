@@ -110,7 +110,7 @@ If $\alpha \in \mathbb{Z}[i]$ is a unit, there exists $\beta \in \mathbb{Z}[i]$ 
 \[
 N(\alpha) N(\beta) = N(\alpha \beta) = N(1) = 1.
 \]
-Since $N(\alpha), N(\beta) \in \mathbb{Z}_{\ge 0}$, we must have $N(\alpha) = a^2 + b^2 = 1$. The only integer solutions to $a^2 + b^2 = 1$ are $(a, b) \in \{(\pm 1, 0), (0, \pm 1)\}$, corresponding precisely to $\pm 1$ and $\pm i$. That $\mathbb{Z}[i]$ has no further units is formalized within the general theory of Euclidean domains in Week~3 (\cref{prop:units-gaussian-integers}).
+Since $N(\alpha), N(\beta) \in \mathbb{Z}_{\ge 0}$, we must have $N(\alpha) = a^2 + b^2 = 1$. The only integer solutions to $a^2 + b^2 = 1$ are $(a, b) \in \{(\pm 1, 0), (0, \pm 1)\}$, corresponding precisely to $\pm 1$ and $\pm i$. The lecturer writes out this argument in Week~3, there with the complex modulus $|a + bi| = \sqrt{N(a + bi)}$ (\cref{prop:units-gaussian-integers}).
 \end{steps}
 \end{content}
 
@@ -443,7 +443,7 @@ Are you happy with this? You can also look in the book; there'll be a couple of 
 \begin{definition}[The Element $-1$ and the Notation $-a$]\label[definition]{def:negative-elements}
 Let $R$ be a ring.
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item We denote by $-1 \in R$ the unique additive inverse (\cref{prop:uniqueness-inverse}) of the multiplicative identity $1 \in R$, so that:
+    \item We denote by $-1 \in R$ the unique additive inverse (\cref{prop:uniqueness-inverse}, Week~2) of the multiplicative identity $1 \in R$, so that:
     \[
     1 + (-1) = 0.
     \]
@@ -775,7 +775,7 @@ Together with $\phi(1) = 1_R$, this proves that $\phi$ is a ring homomorphism.
 \end{steps}
 
 \begin{steps}[Universal Initial Property of $\mathbb{Z}$]
-In category theory, this property establishes that $\mathbb{Z}$ is the \newterm{initial object} in the category of rings (\cref{ex:cat-rings}): for every ring $R$, there exists a \emph{unique} ring homomorphism from $\mathbb{Z}$ to $R$.
+In category theory, this property establishes that $\mathbb{Z}$ is the \newterm{initial object} in the category of rings (\cref{ex:cat-rings}, Week~2): for every ring $R$, there exists a \emph{unique} ring homomorphism from $\mathbb{Z}$ to $R$.
 \end{steps}
 \end{content}
 
@@ -1069,7 +1069,7 @@ In ring theory, kernels of ring homomorphisms are \newterm{ideals}: they are clo
 
 \begin{aiNote}[Notation: Ideals in the Lecture and in Textbooks]
 % [PERSISTENT]
-Many textbooks write $I \trianglelefteq R$ (or $I \lhd R$) for \qt{$I$ is an ideal of $R$}. The lecture does not use this symbol: on the board, the lecturer writes $I \subset R$ and says in words that $I$ is an ideal (\qt{Def: Ideal $I \subset R$}). These notes follow the board. His $\subset$ allows equality, like $\subseteq$; he explains this convention when he defines maximal ideals (\cref{def:maximal-ideal}).
+Many textbooks write $I \trianglelefteq R$ (or $I \lhd R$) for \qt{$I$ is an ideal of $R$}. The lecture does not use this symbol: on the board, the lecturer writes $I \subset R$ and says in words that $I$ is an ideal (\qt{Def: Ideal $I \subset R$}). These notes follow the board. His $\subset$ allows equality, like $\subseteq$; he explains this convention when he defines maximal ideals (\cref{def:maximal-ideal}, Week~4).
 \end{aiNote}
 
 \subsection{The Kernel as an Ideal}
@@ -1197,11 +1197,6 @@ The lecturer's humorous pedagogical quip --- that \qt{fields are sellouts becaus
     \item In general rings (such as $\mathbb{Z}$ or polynomial rings), the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., the ideals $n\mathbb{Z} \subset \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$), which form the foundational building blocks for quotient rings $R/I$ and algebraic geometry.
 \end{itemize}
 \end{insight}
-
-\begin{aiNote}[Beyond the Lecture: Homomorphisms out of a Field]
-% [PERSISTENT, ADDITION]
-Every ring homomorphism $f \colon F \to R$ from a field $F$ into a non-zero ring $R$ is injective: $\ker(f)$ is an ideal of $F$, so by \cref{thm:ideals-in-a-field}, either $\ker(f) = \{0\}$ or $\ker(f) = F$. Since $f(1_F) = 1_R \neq 0_R$, $1_F \notin \ker(f)$, which forces $\ker(f) = \{0\}$.
-\end{aiNote}
 
 \section{Outlook: Zorn's Lemma and Vector Space Bases}
 \subsection{Existence of Bases in Infinite-Dimensional Vector Spaces}
