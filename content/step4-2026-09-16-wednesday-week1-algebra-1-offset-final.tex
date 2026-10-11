@@ -39,15 +39,15 @@ If you spent last night thinking about the Gaussian integers \inlinemetanote{wri
 
 As I said in the previous lecture, we discussed $\mathbb{Z}$ and its factorization properties. And I said you can discuss the same thing for the Gaussian integers. It will be part of the theory of the course, but it's nice to think about the example.
 
-The first thing is: what are... for $\mathbb{Z}$ \inlinemetanote{writes $\mathbb{Z}$}, there were the units, that's $\pm 1$ \inlinemetanote{writes units: $\pm 1$}. And those confused our multiplication always, because you could always put in as many $-1$'s and $+1$'s as you want.
+The first thing is: what are... for $\mathbb{Z}$ \inlinemetanote{writes $\mathbb{Z}$}, there were the units, that's $\pm 1$ \inlinemetanote{writes $\{\pm 1\}$}. And those confused our multiplication always, because you could always put in as many $-1$'s and $+1$'s as you want.
 
-So, what's the analogue here? What are the units, what are the invertible elements in here? Well, of course, there's still $\pm 1$ \inlinemetanote{writes $\pm 1$}, but there's also $\pm i$ \inlinemetanote{writes $\pm i$}. These are also invertible, because $i^2 = -1$, and then you can multiply it by $1$ (i.e., $(-i) \cdot i = 1$).
+So, what's the analogue here? What are the units, what are the invertible elements in here? Well, of course, there's still $\pm 1$, but there's also $\pm i$ \inlinemetanote{writes $\{\pm 1, \pm i\}$}. These are also invertible, because $i^2 = -1$, and then you can multiply it by $1$ (i.e., $(-i) \cdot i = 1$).
 
 Is that clear that these four objects play in some sense the role of the two there? Is that clear?
 
 So, these are the units. It means if you write down any multiplication, like any unique factorization into primes, before you had to worry about $\pm 1$; now you have to worry about more, okay?
 
-In particular, the notion of prime here was that $p$ is prime \inlinemetanote{writes $p$ is prime} if the factors are $\pm 1$ and $\pm p$ \inlinemetanote{writes if the factors are $\pm 1$ and $\pm p$}. That's on the $\mathbb{Z}$ side. Here, if we have some element --- maybe I call it $q$ is prime \inlinemetanote{writes $q$ is prime} --- then we can consider factorizations here; but now there's a lot more: there's four choices, there could be any one of these. $\pm 1$ and $\pm i$ are factors, and also $\pm q$ and $\pm i q$ \inlinemetanote{writes $\pm 1, \pm i, \pm q, \pm i q$}. These are all factors. That's the analogous statement.
+In particular, the notion of prime here was that $p$ is prime \inlinemetanote{writes $p$ prime} if the factors are $\pm 1$ and $\pm p$ \inlinemetanote{writes $\{\pm 1, \pm p\}$}. That's on the $\mathbb{Z}$ side. Here, if we have some element --- maybe I call it $q$ is prime \inlinemetanote{writes $q$ prime} --- then we can consider factorizations here; but now there's a lot more: there's four choices, there could be any one of these. $\pm 1$ and $\pm i$ are factors, and also $\pm q$ and $\pm i q$ \inlinemetanote{writes $\{\pm 1, \pm q, \pm i, \pm i q\}$ in two rows}. These are all factors. That's the analogous statement.
 
 This is all some kind of nonsense. It's just saying that, you know, this is more confusion with these extra $i$'s.
 \end{speech}
@@ -151,9 +151,9 @@ To investigate whether $p$ factors non-trivially in $\mathbb{Z}[i]$, suppose the
 \subsection{Complex Conjugation and the Sum of Two Squares}
 
 \begin{speech}[00:04:08 - 00:05:18]
-But now we try to think about it mathematically. We have $p$, and we have to consider whether it's divisible in the Gaussian integers. So, we think, okay, maybe it's divisible. How do I do that? Well, maybe that means $a + bi$ divides $p$ \inlinemetanote{writes $(a+bi) \mid p$} in the Gaussian integers. Let's try to think what that means. Now, if $a + bi$ divides $p$, that means $a + bi$ times something equals $p$ --- that's the definition of divisibility. If that happened, I could just complex conjugate the whole thing. So, if this happens --- you have to think about this --- then $a - bi$ also divides $p$ \inlinemetanote{writes $(a-bi) \mid p$}.
+But now we try to think about it mathematically. We have $p$, and we have to consider whether it's divisible in the Gaussian integers. So, we think, okay, maybe it's divisible. How do I do that? Well, maybe that means $a + bi$ divides $p$ \inlinemetanote{writes $(a+bi) \mid p$} in the Gaussian integers. Let's try to think what that means. Now, if $a + bi$ divides $p$, that means $a + bi$ times something equals $p$ --- that's the definition of divisibility. If that happened, I could just complex conjugate the whole thing. So, if this happens --- you have to think about this --- then $a - bi$ also divides $p$ \inlinemetanote{writes $\Downarrow$ and below it $(a-bi) \mid p$}.
 
-Do you believe that statement? This has to do with complex conjugation, and it depends on what your feeling is for the complex numbers. If you don't understand the statement, you should think about it, because what does this mean? This means $p$ is equal to something something something times $a + bi$ \inlinemetanote{writes $p = \dots \cdot (a+bi)$}. That's what divisibility means. And I just take the complex conjugate of everything. But the complex conjugate of $p$ is $p$, and all the something something something gets complex con--- I don't care, but at the end, this one becomes that \inlinemetanote{points to $a-bi$ and writes $p = \overline{\dots} \cdot (a-bi)$}. So, that means that that also happens, right?
+Do you believe that statement? This has to do with complex conjugation, and it depends on what your feeling is for the complex numbers. If you don't understand the statement, you should think about it, because what does this mean? This means $p$ is equal to something something something times $a + bi$ \inlinemetanote{writes $p = \dots (a+bi)$}. That's what divisibility means. And I just take the complex conjugate of everything. But the complex conjugate of $p$ is $p$, and all the something something something gets complex con--- I don't care, but at the end, this one becomes that \inlinemetanote{points to $a-bi$ and writes $p = \overline{\dots}\,(a-bi)$}. So, that means that that also happens, right?
 \end{speech}
 
 \begin{content}[Complex Conjugation of Divisors]
@@ -182,7 +182,7 @@ which proves that $(a - bi) \mid p$ in $\mathbb{Z}[i]$.
 \end{content}
 
 \begin{speech}[00:05:18 - 00:06:08]
-Then you might think --- and this is the kind of thing we will make precise in this class --- that actually then both of them divide \inlinemetanote{writes $(a+bi)(a-bi) \mid p$}. That already requires some statement about unique factorization. And this is now a nice integer: $a^2 + b^2$ divides $p$ \inlinemetanote{writes $a^2 + b^2 \mid p$}. If it's an integer, then $p$ has to be of the form $a^2 + b^2$ \inlinemetanote{writes $p = a^2 + b^2$}. So, it has to be a prime that's a sum of two squares.
+Then you might think --- and this is the kind of thing we will make precise in this class --- that actually then both of them divide \inlinemetanote{draws a curved arrow and writes $(a+bi)(a-bi) \mid p$}. That already requires some statement about unique factorization. And this is now a nice integer: $a^2 + b^2$ divides $p$ \inlinemetanote{writes $\Downarrow$ and $a^2 + b^2 \mid p$}. If it's an integer, then $p$ has to be of the form $a^2 + b^2$ \inlinemetanote{writes $p = a^2 + b^2$}. So, it has to be a prime that's a sum of two squares.
 
 This argument will show that if you want $p$ to stay prime... so, if $p$ factors, then it's a sum of two squares. And this now connects to this world of trying to express primes as a sum of two squares, and there's facts about this.
 \end{speech}
@@ -233,9 +233,9 @@ The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product
 \subsection{Fermat's Theorem on Sums of Two Squares}
 
 \begin{speech}[00:06:08 - 00:08:12]
-And now, this connects to this world of trying to express primes as a sum of two squares, and there are facts about this. The simple fact is that if $p$ is congruent to $3 \pmod 4$ \inlinemetanote{writes If $p \equiv 3 \pmod 4$}, this is impossible \inlinemetanote{writes this is impossible}. You can never write a prime that is $3 \pmod 4$ as a sum of two squares. That's easy to prove; I think it's part of the exercise, I'm not sure.
+The simple fact is that if $p$ is congruent to $3 \pmod 4$ \inlinemetanote{writes If $p \equiv 3 \pmod 4$}, this is impossible \inlinemetanote{writes this is impossible}. You can never write a prime that is $3 \pmod 4$ as a sum of two squares. That's easy to prove; I think it's part of the exercise, I'm not sure.
 
-But the one that's tricky is: if $p$ is congruent to $1 \pmod 4$ \inlinemetanote{writes If $p \equiv 1 \pmod 4$}, then you can \inlinemetanote{writes then you can}. You can solve \inlinemetanote{writes you can solve} $p = a^2 + b^2$ \inlinemetanote{writes $p = a^2 + b^2$} in the integers \inlinemetanote{writes in the integers}. This is a theorem that's due to Fermat \inlinemetanote{writes Fermat}. And this is one of the problems on the problem set.
+But the one that's tricky is: if $p$ is congruent to $1 \pmod 4$ \inlinemetanote{writes If $p \equiv 1 \pmod 4$}, then you can. You can solve \inlinemetanote{writes then you can solve} $p = a^2 + b^2$ \inlinemetanote{writes $p = a^2 + b^2$} in the integers. This is a theorem that's due to Fermat \inlinemetanote{writes (Fermat)}. And this is one of the problems on the problem set.
 
 So, the answer to this question finally is that if you have a prime, and you want to know whether it stays prime in the Gaussian integers, the whole thing that matters is whether $p$ is equal to $1$ or $3 \pmod 4$. It's kind of an interesting question.
 
@@ -303,7 +303,7 @@ All right. So, then the main direction of the lecture last time was about rings,
 
 So, we go back to rings and the foundational material. I had defined a ring: $R$ with multiplication, $0$, and $1$ \inlinemetanote{writes $(R, +, \cdot, 0, 1)$}. This is a ring \inlinemetanote{writes is a ring}. And the axioms, if we rewrite them now differently: there's the axioms for $+$, and this axiom for $+$, we can say just that $(R, +, 0)$ is an abelian group \inlinemetanote{writes $+ \implies (R, +, 0) \text{ abelian group}$}. This is just the same axioms written differently; those are just the group axioms. Is that clear?
 
-Then there's the axiom for multiplication \inlinemetanote{writes $\cdot \implies$}, and these were --- now I don't have a more efficient way to say this --- it's associative \inlinemetanote{writes associative}, and then there's the axiom of the unit \inlinemetanote{writes $1 \cdot a = a \cdot 1 = a$}. And then there's the axioms together \inlinemetanote{writes $+,\cdot \implies$}, and these are two times the distributive law \inlinemetanote{writes $\times 2 \text{ Dist}$}, which I don't write, okay?
+Then there's the axiom for multiplication \inlinemetanote{writes $\cdot \implies$}, and these were --- now I don't have a more efficient way to say this --- it's associative \inlinemetanote{writes associative}, and then there's the axiom of the unit \inlinemetanote{writes $1 \cdot a = a \cdot 1 = 1$, a slip for $= a$}. And then there's the axioms together \inlinemetanote{writes $+,\cdot \implies$}, and these are two times the distributive law \inlinemetanote{writes $\times 2 \text{ Dist}$}, which I don't write, okay?
 
 This is just the definition which we've seen and you've seen before. And the only thing I've done now is abbreviated the $+$ as saying that if I look at the additive structure, it's an abelian group, because that's what the axioms were.
 \end{speech}
@@ -476,15 +476,15 @@ Since $a + \bigl((-1) \cdot a\bigr) = 0$, the element $(-1) \cdot a$ satisfies t
 \subsection{Integer Multiples and the Canonical Map \texorpdfstring{$\mathbb{Z} \to R$}{Z -> R}}
 
 \begin{speech}[00:15:05 - 00:17:10]
-Another convention about a ring is: I said that if I have $a$ as an element of the ring \inlinemetanote{writes $a \in R$}, $-a$ \inlinemetanote{writes $-a$} we just write as $-a$, and by definition $-a$ is just $(-1) \times a$ \inlinemetanote{writes $-a = -1 \cdot a$}, and it's a canonical element of the ring.
+Another convention about a ring is: I said that if I have $a$ as an element of the ring \inlinemetanote{writes $a \in R$}, $-a$ \inlinemetanote{writes $-a \in R$} we just write as $-a$, and by definition $-a$ is just $(-1) \times a$, and it's a canonical element of the ring.
 
-There's something else: we can also look at $a + a$ \inlinemetanote{writes $a + a$}, and this is defined as $2a$ \inlinemetanote{writes $= 2a$}. You can take $a + a + a$ \inlinemetanote{writes $a + a + a$} $n$ times \inlinemetanote{writes underbrace with $n$ times}; this is what this term $na$ is defined to be \inlinemetanote{writes $= na$}.
+There's something else: we can also look at $a + a$ \inlinemetanote{writes $a + a$}, and this is defined as $2a$ \inlinemetanote{writes $= 2a$}. You can take $a + a + a$ \inlinemetanote{writes $a + a + a$} $n$ times \inlinemetanote{draws an underbrace labeled $n$}; this is what this term $na$ is defined to be \inlinemetanote{writes $= na$}.
 
 So, in any ring, if I have an element $a$ in a ring \inlinemetanote{writes $a \in R$}, I can take $17$ times that element \inlinemetanote{writes $17a \in R$}. That is an element of the ring, and I just mean you add $a$ to itself $17$ times. It's well-defined, just using the ring structure. You have no objections?
 
 And I can also do $-17$ times \inlinemetanote{writes $-17a \in R$}, because I just, you know, either add $-a$ to itself $17$ times, or I add $a$ to itself $17$ times and take the minus, and they're the same. All right?
 
-In particular, there's a map from $\mathbb{Z}$ to the ring \inlinemetanote{writes $\mathbb{Z} \to R$}. And this map requires no choices. This map sends $0$ to $0$ \inlinemetanote{writes $0 \mapsto 0$}, sends $1$ to $1$ \inlinemetanote{writes $1 \mapsto 1$}, sends $2$ to $1 + 1$ \inlinemetanote{writes $2 \mapsto 1 + 1$}, sends $3$ to $1 + 1 + 1$ \dots whatever \inlinemetanote{writes $3 \mapsto 1 + 1 + 1$}, okay? And it sends $-1$ to the additive inverse \inlinemetanote{writes $-1 \mapsto -1$}.
+In particular, there's a map from $\mathbb{Z}$ to the ring \inlinemetanote{writes $\mathbb{Z} \xrightarrow{\phi} R$}. And this map requires no choices. This map sends $0$ to $0$ \inlinemetanote{writes $0 \mapsto 0$}, sends $1$ to $1$ \inlinemetanote{writes $1 \mapsto 1$}, sends $2$ to $1 + 1$ \inlinemetanote{writes $2 \mapsto 1 + 1$}, sends $3$ to $1 + 1 + 1$ \dots whatever \inlinemetanote{writes $3 \mapsto 1 + 1 + 1$}, okay? And it sends $-1$ to the additive inverse \inlinemetanote{writes $-1 \mapsto -1$}.
 
 So, if you give me a ring, I know how to map $\mathbb{Z}$ to that ring. There's nothing going on with this map: I just map $1$ to $1$, and then everything else I just add up.
 
@@ -588,7 +588,7 @@ Typical non-commutative rings are matrix rings $M_n(K)$ for $n \ge 2$ and endomo
 \subsection{Definition of a Ring Homomorphism}
 
 \begin{speech}[00:18:44 - 00:20:03]
-Okay, so, the definition of a homomorphism: a homomorphism \inlinemetanote{writes A homomorphism} $f$ from $R_1$ to $R_2$ \inlinemetanote{writes $f \colon R_1 \to R_2$} --- maybe I put here: a ring homomorphism \inlinemetanote{writes Ring in front of homomorphism} --- is defined to satisfy some properties.
+Okay, so, the definition of a homomorphism: a homomorphism \inlinemetanote{writes A homomorphism} $f$ from $R_1$ to $R_2$ \inlinemetanote{writes $f \colon R_1 \to R_2$} --- maybe I put here: a ring homomorphism \inlinemetanote{writes Ring above homomorphism} --- is defined to satisfy some properties.
 
 The first is that $f(a + b) = f(a) + f(b)$ \inlinemetanote{writes (i) $f(a+b) = f(a) + f(b)$}. This is saying that this map respects the linear structure, the additive structure of the two rings. So, this should remind you from linear algebra class: there's the idea of linear homomorphisms of vector spaces, and it has this linear condition --- that's this linear condition.
 
@@ -626,11 +626,11 @@ Condition \textbf{(i)} asserts that $f$ is a group homomorphism between the addi
 \begin{speech}[00:20:03 - 00:22:25]
 There are some puzzling aspects about this definition. You could say, \qt{Well, why don't I say it respects the zero?} That's a very reasonable question. So, you could say: what about $f(0)$ \inlinemetanote{writes What about $f(0)$?}?
 
-Well, we can write $f(0 + 0)$ \inlinemetanote{writes $f(0+0)$}. I want to use property \textbf{(i)}: $f(0 + 0) = f(0) + f(0)$ \inlinemetanote{writes $= f(0) + f(0)$}, right? That's just applying condition \textbf{(i)} of the homomorphism \inlinemetanote{writes condition (i) of homomorphism}. But now, $0 + 0$ is $0$, we know that, because $0$ is the neutral element for addition. So, I can rewrite this as $f(0) = f(0) + f(0)$ \inlinemetanote{writes $f(0) = f(0) + f(0)$}, okay?
+Well, we can write $f(0 + 0)$ \inlinemetanote{writes $f(0+0)$}. I want to use property \textbf{(i)}: $f(0 + 0) = f(0) + f(0)$ \inlinemetanote{writes $= f(0) + f(0)$}, right? That's just applying condition \textbf{(i)} of the homomorphism \inlinemetanote{writes Condition (i) $\implies$ in front of it}. But now, $0 + 0$ is $0$, we know that, because $0$ is the neutral element for addition. So, I can rewrite this as $f(0) = f(0) + f(0)$ \inlinemetanote{writes $f(0) = f(0) + f(0)$}, okay?
 
-And then I can use left cancellation by taking the inverse. I've said that several times, and I hope you know what I mean by that: if I take such an equation... Let me just do it once formally, because I said it several times. I have one $f(0)$ here and two $f(0)$'s here, and I want to get rid of the $f(0)$ on both sides. So, what I do --- and this is what I mean by left cancellation --- is that there exists some $b \in R_2$ \inlinemetanote{writes $\exists b \in R_2$} such that $b + f(0) = 0$ \inlinemetanote{writes such that $b + f(0) = 0$}. That's the group property on $R_2$.
+And then I can use left cancellation by taking the inverse. I've said that several times, and I hope you know what I mean by that: if I take such an equation... Let me just do it once formally, because I said it several times. I have one $f(0)$ here and two $f(0)$'s here, and I want to get rid of the $f(0)$ on both sides. So, what I do --- and this is what I mean by left cancellation --- is that there exists some $b \in R_2$ \inlinemetanote{writes $\exists b \in R_2$} such that $b + f(0) = 0$ \inlinemetanote{writes $, b + f(0) = 0$}. That's the group property on $R_2$.
 
-And then I just add $b$ to both sides of this. So, I get $b + f(0) = b + f(0) + f(0)$ \inlinemetanote{writes $b + f(0) = (b + f(0)) + f(0)$}. I use this cancellation, I use the additive inverse of $f(0)$ on both sides, and then, since that equals $0$, this is $0$ \inlinemetanote{writes $0$ under $b+f(0)$}, that's $0$ \inlinemetanote{writes $0$ under $(b+f(0))$}, and finally I conclude that $f(0) = 0$ \inlinemetanote{writes $0 = f(0)$ and boxes $f(0) = 0$}.
+And then I just add $b$ to both sides of this. So, I get $b + f(0) = b + f(0) + f(0)$ \inlinemetanote{writes $b + f(0) = b + f(0) + f(0)$}. I use this cancellation, I use the additive inverse of $f(0)$ on both sides, and then, since that equals $0$, this is $0$ \inlinemetanote{writes $0$ under $b+f(0)$}, that's $0$ \inlinemetanote{writes $= 0 + f(0)$ under the right side}, and finally I conclude that $f(0) = 0$ \inlinemetanote{writes $\boxed{f(0) = 0}$}.
 
 So, it is true that $f(0) = 0$ (i.e., $f(0_{R_1}) = 0_{R_2}$), but I don't have to put it here. It's just traditional not to. You could put it here, it wouldn't make any difference.
 \end{speech}
@@ -670,23 +670,23 @@ Yeah, it has to do with the fact that I cannot... I mean, maybe this is what you
 
 This is about the definitions, and as I said, the strange thing about mathematics is that when it's taught, the definitions are first, but somehow when it's understood, the definitions are last. So, it's somehow a constant difficulty. \inlinemetanote{erases more board space and begins writing}
 
-So, the point is: we don't have \inlinemetanote{writes We don't have} multiplicative inverses \inlinemetanote{writes mult. inverses} --- we don't always have multiplicative inverses \inlinemetanote{inserts always} --- in $R_1$ \inlinemetanote{writes in $R_1$}, and so, we can't \inlinemetanote{writes so we can't} use this argument \inlinemetanote{writes use this argument} --- the one that's in the corner there (i.e., the cancellation argument for $f(0) = 0$, \cref{prop:homomorphism-preserves-zero}) \inlinemetanote{points at the proof of $f(0)=0$ in the corner of the board}.
+So, the point is: we don't have \inlinemetanote{writes We don't have} multiplicative inverses \inlinemetanote{writes mult. inverses} --- we don't always have multiplicative inverses --- in $R_1$ \inlinemetanote{writes in $R$}, and so, we can't \inlinemetanote{writes so we can't} use this argument \inlinemetanote{writes use that argument and an arrow pointing to it} --- the one that's in the corner there (i.e., the cancellation argument for $f(0) = 0$, \cref{prop:homomorphism-preserves-zero}) \inlinemetanote{points at the proof of $f(0)=0$ in the corner of the board}.
 
 So, to fix that, we just say at the beginning: $f(1) = 1$. We don't leave it to chance. You could hope, maybe, that even though we couldn't use this argument, maybe you could find some different argument. You could hope that, but it's not true.
 \end{speech}
 
 \begin{speech}[00:24:16 - 00:25:08]
-For example, I could take a bad example \inlinemetanote{writes A bad example}: I could take $R$ and map it to... sorry, I could take $R_1 \to R_2$ \inlinemetanote{writes $R_1 \to R_2$} and map it so everything goes to zero. Say they're both healthy rings --- in fact, they could both be $\mathbb{Z}$ \inlinemetanote{writes $\mathbb{Z}$ above $R_1$ and $\mathbb{Z}$ above $R_2$}. I could map every element to zero \inlinemetanote{writes $a \mapsto 0$}.
+For example, I could take a bad example \inlinemetanote{writes A bad example}: I could take $R$ and map it to... sorry, I could take $R_1 \to R_2$ \inlinemetanote{writes $R_1 \to R_2$} and map it so everything goes to zero. Say they're both healthy rings --- in fact, they could both be $\mathbb{Z}$ \inlinemetanote{writes $\mathbb{Z}$ above $R_1$ and $\mathbb{Z}$ above $R_2$}. I could map every element to zero.
 
 If you map every element to zero, you certainly are not mapping $1$ to $1$. But you won't get a contradiction with every element being zero; all the other properties will be satisfied.
 
-So, it's not a good idea to think about this, but the fact of the matter is: we need to just assume it. \inlinemetanote{erases the bad example} Okay.
+So, it's not a good idea to think about this, but the fact of the matter is: we need to just assume it. \inlinemetanote{crosses out the bad example} Okay.
 \end{speech}
 
 \begin{content}[The Asymmetry Between Addition and Multiplication]
 \textbf{Board State Note:}
 \begin{center}
-\qt{We don't have mult.\ inverses in $R_2$, so we can't use this argument.}
+\qt{We don't have mult.\ inverses in $R$, so we can't use that argument.}
 \end{center}
 
 \begin{proposition}[Multiplicative Idempotence of \texorpdfstring{$f(1)$}{f(1)}]\label[proposition]{prop:f1-idempotent}
@@ -729,9 +729,9 @@ Then there's lots of examples \inlinemetanote{writes Examples} of these ring hom
 
 For example, the thing I said here (i.e., the canonical map of \cref{def:canonical-map-z}): $\mathbb{Z}$ goes to $R$ \inlinemetanote{writes $\mathbb{Z} \xrightarrow{\phi} R$}, this basic map $\phi$. This is a ring homomorphism \inlinemetanote{writes This is a ring hom.}. Not only does $\mathbb{Z}$ map to $R$ by just seeing where $1$ goes, it's actually a homomorphism. And to check it's a homomorphism, you have to do something.
 
-I'm not going to do this for you, you have to do it, because it's some kind of internal tautology about addition... Where does $2$ go? We said $2$ goes to $1 + 1$ \inlinemetanote{writes $2 \mapsto 1+1$}. Where does $3$ go? $3$ goes to $1 + 1 + 1$ \inlinemetanote{writes $3 \mapsto 1+1+1$}. So, then we'd have to check that if I add these two, $5$ goes to five $1$'s, which looks pretty good \inlinemetanote{writes $2+3 = 5 \mapsto (1+1) + (1+1+1)$}.
+I'm not going to do this for you, you have to do it, because it's some kind of internal tautology about addition... Where does $2$ go? We said $2$ goes to $1 + 1$ \inlinemetanote{writes $2 \mapsto 1+1$}. Where does $3$ go? $3$ goes to $1 + 1 + 1$ \inlinemetanote{writes $3 \mapsto 1+1+1$}. So, then we'd have to check that if I add these two, $5$ goes to five $1$'s, which looks pretty good.
 
-And then you'd also have to check: where does $6$ go? $6$ is $2 \times 3$, and this goes to $(1+1) \times (1+1+1)$ \inlinemetanote{writes $6 = 2 \cdot 3 \mapsto (1+1)(1+1+1)$}. And now you'd use the distributive law a lot of times. If you use the distributive law a lot of times, you'll get this to be $1 + 1 + 1 + 1 + 1 + 1$ \inlinemetanote{writes $= 1+1+1+1+1+1$}, which is the definition of where $6$ goes. Okay?
+And then you'd also have to check: where does $6$ go? $6$ is $2 \times 3$, and this goes to $(1+1) \times (1+1+1)$ \inlinemetanote{writes $2 \cdot 3 \mapsto (1+1)(1+1+1)$}. And now you'd use the distributive law a lot of times. If you use the distributive law a lot of times, you'll get this to be $1 + 1 + 1 + 1 + 1 + 1$ \inlinemetanote{writes $= (1+1+1+1+1+1)$}, which is the definition of where $6$ goes. Okay?
 
 So, if you do this, you'll see that there's essentially nothing going on except understanding that the distributive law is making this a homomorphism.
 
@@ -790,7 +790,7 @@ In category theory, this property establishes that $\mathbb{Z}$ is the \newterm{
 \subsection{Inclusion Homomorphisms and Subrings}
 
 \begin{speech}[00:27:20 - 00:28:24]
-That's a very simple example of a homomorphism, but in fact there's lots of... all the ones we've seen so far: if you take $\mathbb{Z}$ inside $\mathbb{Q}$ \inlinemetanote{writes $\mathbb{Z} \subset \mathbb{Q}$}, if you view this as a map --- just the embedding map, if you view an integer as a rational number --- then this gives me a homomorphism. And that's a homomorphism inside $\mathbb{R}$ \inlinemetanote{writes $\subset \mathbb{R}$}, and this is a homomorphism inside $\mathbb{C}$ \inlinemetanote{writes $\subset \mathbb{C}$}. So, these inclusions are all homomorphisms. And I can also include this inside the ring of polynomials \inlinemetanote{writes $\mathbb{Z}[x] \subset \mathbb{Q}[x] \subset \mathbb{R}[x] \subset \mathbb{C}[x]$} --- polynomials in one variable \inlinemetanote{writes in one variable}.
+That's a very simple example of a homomorphism, but in fact there's lots of... all the ones we've seen so far: if you take $\mathbb{Z}$ inside $\mathbb{Q}$ \inlinemetanote{writes $\mathbb{Z} \subset \mathbb{Q}$}, if you view this as a map --- just the embedding map, if you view an integer as a rational number --- then this gives me a homomorphism. And that's a homomorphism inside $\mathbb{R}$ \inlinemetanote{writes $\subset \mathbb{R}$}, and this is a homomorphism inside $\mathbb{C}$ \inlinemetanote{writes $\subset \mathbb{C}$}. So, these inclusions are all homomorphisms. And I can also include this inside the ring of polynomials \inlinemetanote{writes $\cap$ under each ring and below them $\mathbb{Z}[x] \subset \mathbb{Q}[x] \subset \mathbb{R}[x] \subset \mathbb{C}[x]$} --- polynomials in one variable.
 
 These are many of the rings that we will study, but if you start at the bottom, $\mathbb{Z}$, they just include, and all these inclusions are homomorphisms. Because they all respect... you know, whenever I include, I'm not changing the definition of addition or multiplication for the smaller object, and $1$ is always going to $1$.
 
@@ -891,7 +891,7 @@ So, this is an interesting object. Here we have: let...
 \end{speech}
 
 \begin{speech}[00:32:06 - 00:32:56]
-Let $f$ from $R_1$ to $R_2$ \inlinemetanote{writes Let $f \colon R_1 \to R_2$} be a homomorphism of rings \inlinemetanote{writes be a hom. of rings}. Then we define the kernel of $f$ \inlinemetanote{writes Then we define the kernel of $f$}: $\ker(f)$ \inlinemetanote{writes $\ker(f) =$} --- it's those elements in the first ring, because the kernel lives in the first ring \inlinemetanote{writes $\{a \in R_1 \mid$}, such that $f(a)$ is equal to zero \inlinemetanote{writes $f(a) = 0\}$}. Okay? I hope this definition is clear: it's everybody that goes to zero.
+Let $f$ from $R_1$ to $R_2$ \inlinemetanote{writes Let $f \colon R_1 \to R_2$} be a homomorphism of rings \inlinemetanote{writes be a hom. of rings}. Then we define the kernel of $f$: $\ker(f)$ \inlinemetanote{writes $\ker(f) =$} --- it's those elements in the first ring, because the kernel lives in the first ring \inlinemetanote{writes $\{a \in R_1 \mid$}, such that $f(a)$ is equal to zero \inlinemetanote{writes $f(a) = 0\}$}. Okay? I hope this definition is clear: it's everybody that goes to zero.
 
 In particular, you could say: what is the kernel of this? \inlinemetanote{writes $\ker(f) \subset \mathbb{Z} \xrightarrow{f} \mathbb{Z}/n\mathbb{Z}$} What is the kernel here?
 \end{speech}
@@ -901,7 +901,7 @@ Multiples of $n$.
 \end{student}
 
 \begin{speech}[00:32:57 - 00:33:17]
-Yeah. The kernel here is exactly all multiples of $n$, and this is often denoted $n\mathbb{Z}$ \inlinemetanote{writes $n\mathbb{Z}$ under $\ker(f)$}. This is equal to the set of multiples of $n$ \inlinemetanote{writes \qt{mults of $n$}}. That's the kernel.
+Yeah. The kernel here is exactly all multiples of $n$, and this is often denoted $n\mathbb{Z}$ \inlinemetanote{writes $n\mathbb{Z}$ under $\ker(f)$}. This is equal to the set of multiples of $n$ \inlinemetanote{writes $\subset$ \qt{mults of $n$}}. That's the kernel.
 \end{speech}
 
 \begin{content}[Definition of the Kernel of a Ring Homomorphism]
@@ -991,7 +991,7 @@ In the additive closure proof (Property (2)), both $f(a)$ and $f(b)$ had to be z
 \begin{speech}[00:36:11 - 00:38:07]
 Those properties can be said in a more concise way, which is a more natural way to say it, and it comes with a definition: the definition of an ideal. \inlinemetanote{pushes up the board and erases the lower board} This is the definition of an ideal $I$ in $R$ \inlinemetanote{writes Def: Ideal $I \subset R$}.
 
-The properties are: $0$ must be in $I$ \inlinemetanote{writes $\bullet \ 0 \in I$}. And the second way to say things is that if I take $I$, and I take the $+$ from $R$, and I take the $0$, this is an abelian group \inlinemetanote{writes $\bullet \ (I, +, 0) \text{ abelian group}$}. Remember, whenever I write $R$, I always mean $R$ with the two operations and this data \inlinemetanote{writes $I \subset R = (R, +, \cdot, 0, 1)$}. So, to be an ideal, you have to have zero, and then when I consider this subset with $+$ and $0$, it should be an abelian group. This means it's closed under addition, and it's closed under additive inverses, okay?
+The properties are: $0$ must be in $I$ \inlinemetanote{writes $\bullet \ 0 \in I$}. And the second way to say things is that if I take $I$, and I take the $+$ from $R$, and I take the $0$, this is an abelian group \inlinemetanote{writes $\bullet \ (I, +, 0) \text{ abelian group}$}. Remember, whenever I write $R$, I always mean $R$ with the two operations and this data \inlinemetanote{writes $= (R, +, \cdot, 0, 1)$ after $I \subset R$}. So, to be an ideal, you have to have zero, and then when I consider this subset with $+$ and $0$, it should be an abelian group. This means it's closed under addition, and it's closed under additive inverses, okay?
 
 And the second thing is that for every $a$ in $I$ and for every $r$ in $R$, $ra$ remains in $I$ \inlinemetanote{writes $\bullet \ \forall a \in I, \forall r \in R \implies ra \in I$}. Okay? That's the ideal condition.
 
@@ -1083,7 +1083,7 @@ That's what we've proven on the board up there (\cref{prop:properties-of-kernel}
 
 What about a field? I'll just say one more thing about this. Is that clear?
 
-We have lots of examples of rings and lots of examples of ideals, but suppose $F$ is a field \inlinemetanote{writes $F = \text{field}$}, $(F, +, \cdot, 0, 1)$ \inlinemetanote{writes $(F, +, \cdot, 0, 1)$}. What are its ideals? \inlinemetanote{writes What are the ideals?}
+We have lots of examples of rings and lots of examples of ideals, but suppose $F$ is a field \inlinemetanote{writes $F$ is field}, $(F, +, \cdot, 0, 1)$ \inlinemetanote{writes $(F, +, \cdot, 0, 1)$}. What are its ideals? \inlinemetanote{writes What are the ideals?}
 \end{speech}
 
 \begin{content}[The Kernel is an Ideal]
@@ -1146,7 +1146,7 @@ Okay, so, this argument is correct. So, the claim is: for a field, these are the
 \end{speech}
 
 \begin{speech}[00:40:37 - 00:42:20]
-Which is an important thing to always keep in mind. And the reason is the argument he said: suppose that I have an ideal, and suppose this ideal is not this silly zero ideal \inlinemetanote{writes $I \neq (0)$}. That means there exists somebody in the ideal that's not zero \inlinemetanote{writes $\exists \ a \in I \text{ s.t. } a \neq 0$}. That somebody, because it's a field, has a multiplicative inverse \inlinemetanote{writes $\exists \ a^{-1}$}. There exists an $a^{-1}$, so that $a^{-1} \cdot a$ is also in the ideal \inlinemetanote{writes $a^{-1} a \in I$}, because you're allowed to take anybody and multiply --- this is anybody, and this is somebody in the ideal. So, if we start with $a$ in the ideal, I can multiply by anybody; in particular, I can multiply by its inverse. But then this is one \inlinemetanote{writes $1 \in I$ above $a^{-1}a$, joined by $=$}!
+Which is an important thing to always keep in mind. And the reason is the argument he said: suppose that I have an ideal, and suppose this ideal is not this silly zero ideal \inlinemetanote{writes $I \neq (0)$}. That means there exists somebody in the ideal that's not zero \inlinemetanote{writes $\exists \ a \in I$, $a \neq 0$}. That somebody, because it's a field, has a multiplicative inverse \inlinemetanote{writes $\exists \ a^{-1}$ so that}. There exists an $a^{-1}$, so that $a^{-1} \cdot a$ is also in the ideal \inlinemetanote{writes $a^{-1} a \in I$}, because you're allowed to take anybody and multiply --- this is anybody, and this is somebody in the ideal. So, if we start with $a$ in the ideal, I can multiply by anybody; in particular, I can multiply by its inverse. But then this is one \inlinemetanote{writes $1 \in I$ above $a^{-1}a$, joined by $=$}!
 
 Once I have one in the ideal, then I can easily get anybody in the ideal, because I can just take any $r \times 1$. Okay?
 
@@ -1234,6 +1234,16 @@ Let $V$ be a vector space over a field $k$. Does $V$ always have a basis?
 For finite-dimensional vector spaces, the existence of a basis is constructive via Gaussian elimination or the Steinitz exchange lemma. For arbitrary, infinite-dimensional vector spaces (such as function spaces $C(\mathbb{R}, \mathbb{R})$ or sequence spaces $\mathbb{R}^\mathbb{N}$), the assertion that \emph{every vector space possesses a basis} (known as a \newterm{Hamel basis}) cannot be proven constructively in Zermelo--Fraenkel set theory ($\text{ZF}$). It is logically equivalent to the \newterm{Axiom of Choice} ($\text{AC}$) and is standardly established by applying \newterm{Zorn's Lemma} to the poset of linearly independent subsets ordered by inclusion.
 \end{remark}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: How Zorn's Lemma Gives a Basis]
+% [PERSISTENT, ADDITION]
+Zorn's lemma says: if $P$ is a non-empty partially ordered set in which every chain (totally ordered subset) has an upper bound in $P$, then $P$ has a maximal element. For a vector space $V$ over a field $k$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item Let $P$ be the set of linearly independent subsets of $V$, ordered by inclusion. It is non-empty, since $\emptyset \in P$.
+    \item The union of a chain in $P$ is again linearly independent: a linear relation involves only finitely many vectors, and these all lie in one member of the chain. So every chain has an upper bound in $P$.
+    \item Zorn's lemma gives a maximal element $B \in P$. If some $v \in V$ were not in the span of $B$, then $B \cup \{v\}$ would be linearly independent and strictly larger than $B$. Hence $B$ spans $V$, and $B$ is a basis.
+\end{enumerate}
+\end{aiNote}
 
 \begin{speech}[00:43:29 - 00:44:01]
 Did you consider this question in your first year?
