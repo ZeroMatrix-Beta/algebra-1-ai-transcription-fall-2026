@@ -53,7 +53,7 @@ In this lecture, we explore the algebraic architecture of quotient rings and the
 \begin{speech}[00:00:05 - 00:01:10]
 Okay, so we start. And I remind you of yesterday --- it wasn't a long time ago, so you probably haven't forgotten.
 
-So, if we have an ideal inside a ring... Typically, when I write $R$, it's a ring; $I$ is an ideal, so it's an ideal \inlinemetanote{writes $I \subset R$, ideal in a ring} in a ring.
+So, if we have an ideal inside a ring... Typically, when I write $R$, it's a ring; $I$ is an ideal, so it's an ideal \inlinemetanote{writes $I \subset R$, with an arrow from $I$ to \qt{ideal} and one from $R$ to \qt{ring}} in a ring.
 
 Then I want to say there are three main things to take away from yesterday. The first \inlinemetanote{writes (i) Construction of $R/I$} is the construction of the quotient $R/I$ (Recall: \cref{thm:quotient-ring-structure}) --- and we went through this rather carefully, not fully; there were things to check that are left to you, but this is equal to, as a set, the set of equivalence classes of this relation $\equiv_I$ \inlinemetanote{writes $= \text{set of equiv. classes of } \equiv_I$}. And then we defined on top of that --- I don't review it here, but --- we defined addition, multiplication; there's a zero element and a one element (Recall: \cref{def:addition-quotient,def:multiplication-quotient,def:distinguished-elements}). \inlinemetanote{writes $(R/I, +, \cdot, \bar{0}, \bar{1})$}
 \end{speech}
@@ -283,7 +283,7 @@ Thus, direct images under ring homomorphisms generally fail to absorb external r
 \end{content}
 
 \begin{speech}[00:10:33 - 00:12:45]
-Okay, so let's try to prove this. Let $x$ and $y$ be in $f^{-1}(J)$, right? \inlinemetanote{writes Proof: Let $x, y \in f^{-1}(J)$} This means that $f(x)$ is in $J$ and $f(y)$ is in $J$ \inlinemetanote{writes $\implies f(x) \in J, f(y) \in J$}. That's what it means to be in $f^{-1}(J)$.
+Okay, so let's try to prove this. Let $x$ and $y$ be in $f^{-1}(J)$, right? \inlinemetanote{writes Proof: Let $x, y \in f^{-1}(J)$} This means that $f(x)$ is in $J$ and $f(y)$ is in $J$ \inlinemetanote{writes $\Updownarrow$ and below it $f(x) \in J, f(y) \in J$}. That's what it means to be in $f^{-1}(J)$.
 
 And to check that $f^{-1}(J)$ is an ideal, I have to show that if I pick any two elements in $f^{-1}(J)$, then certain properties are closed. There's a list of properties, and we'll start them.
 
@@ -428,6 +428,30 @@ Let $R$ be a ring and $K \subset R$ an ideal. There is a canonical bijection:
 \end{equation}
 That is, the ideals of the quotient ring $R/K$ are in exact one-to-one correspondence with the ideals of $R$ that contain $K$.
 \end{proposition}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=Stealth]
+% \begin{hidden}
+% - Canvas: scale 1.2, x in [-4.3, 4.3], y in [-1.2, 1.2]; two boxes, two arrows between them
+% - Left box Id_K(R) centred at (-2.9, 0), right box Id(R/K) centred at (2.9, 0), each 3.2cm x 2.2cm
+%   (node sizes do not scale): centres at +-3.48cm, inner edges at +-1.88cm
+% - Pullback arrow at y = 0.45 from x = 1.25 to x = -1.25 (+-1.5cm, pointing left), label above;
+%   image arrow at y = -0.45 from x = -1.25 to x = 1.25 (pointing right), label below; labels about 2cm wide fit the 3cm
+% - Collisions: the arrows are 0.9 apart; each label sits on the outer side of its arrow
+% \end{hidden}
+    \node[draw, thick, rounded corners, fill=MidnightBlue!10, minimum width=3.2cm, minimum height=2.2cm, align=center] at (-2.9, 0) {
+        $\operatorname{Id}_K(R)$\\[4pt]
+        \footnotesize ideals $I \subset R$\\
+        \footnotesize with $K \subset I$
+    };
+    \node[draw, thick, rounded corners, fill=ForestGreen!10, minimum width=3.2cm, minimum height=2.2cm, align=center] at (2.9, 0) {
+        $\operatorname{Id}(R/K)$\\[4pt]
+        \footnotesize ideals $J \subset R/K$
+    };
+    \draw[->, thick, BrickRed] (1.25, 0.45) -- node[above, font=\small] {$q^{-1}(J) \leftarrow J$} (-1.25, 0.45);
+    \draw[->, thick, BurntOrange] (-1.25, -0.45) -- node[below, font=\small] {$I \mapsto q(I)$} (1.25, -0.45);
+\end{tikzpicture}
+\end{center}
 
 \begin{steps}[Conceptual Meaning of the Bijection]
 This theorem reveals the internal structure of quotient rings:
