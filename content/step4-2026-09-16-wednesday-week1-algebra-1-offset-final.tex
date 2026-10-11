@@ -169,7 +169,7 @@ By definition of divisibility in $\mathbb{Z}[i]$, $(a + bi) \mid p$ means there 
 \[
 p = z \cdot (a + bi).
 \]
-Applying the complex conjugation automorphism to both sides yields:
+Applying the complex conjugation automorphism (\cref{fact:pre-complex}) to both sides yields:
 \[
 \overline{p} = \overline{z \cdot (a + bi)} = \overline{z} \cdot \overline{(a + bi)}.
 \]
@@ -227,7 +227,7 @@ This algebraic deduction establishes a profound bridge:
 \end{content}
 
 \begin{aiNote}[Intermediate Steps Added by Transcriber]
-The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product $a^2 + b^2$ divides $p$, and remarks that this step \qt{already requires some statement about unique factorization}. The norm computation above reaches \eqref{eq:sum-of-squares-condition} without that statement: it only uses $N(zw) = N(z) \, N(w)$ and the primality of $p$ in $\mathbb{Z}$.
+The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product $a^2 + b^2$ divides $p$, and remarks that this step \qt{already requires some statement about unique factorization} (\cref{fact:pre-unique-factorization}, or Euclid's lemma, \cref{fact:pre-euclid}). The norm computation above reaches \eqref{eq:sum-of-squares-condition} without that statement: it only uses $N(zw) = N(z) \, N(w)$ and the primality of $p$ in $\mathbb{Z}$.
 \end{aiNote}
 
 \subsection{Fermat's Theorem on Sums of Two Squares}
@@ -831,7 +831,7 @@ equipped with modular addition and multiplication:
 \[
 \bar{a} + \bar{b} := \overline{a + b}, \quad \bar{a} \cdot \bar{b} := \overline{a \cdot b},
 \]
-with additive identity $\bar{0}$ and multiplicative identity $\bar{1}$. Here $\bar{a}$ denotes the residue class of $a \in \mathbb{Z}$, and $\bar{a} = \bar{b}$ if and only if $n \mid (a - b)$.
+with additive identity $\bar{0}$ and multiplicative identity $\bar{1}$. Here $\bar{a}$ denotes the residue class of $a \in \mathbb{Z}$, and $\bar{a} = \bar{b}$ if and only if $n \mid (a - b)$ (congruence modulo $n$, \cref{def:pre-congruence,fact:pre-residue-classes}).
 \end{definition}
 
 \begin{steps}[Why the Operations Are Well-Defined]
@@ -924,7 +924,7 @@ Since $f$ respects addition and $f(0_{R_1}) = 0_{R_2}$ (\cref{prop:homomorphism-
 \end{steps}
 
 \begin{insight}[Kernels versus Images in Ring Theory]
-In linear algebra, the kernel and image of a linear map $T \colon V \to W$ enjoy a symmetric status: both are vector subspaces, connected by the rank-nullity theorem $\dim V = \dim \ker(T) + \dim \operatorname{im}(T)$.
+In linear algebra, the kernel and image of a linear map $T \colon V \to W$ enjoy a symmetric status: both are vector subspaces, connected by the rank-nullity theorem $\dim V = \dim \ker(T) + \dim \operatorname{im}(T)$ (\cref{fact:pre-rank-nullity}).
 
 In ring theory, however, their algebraic roles diverge profoundly:
 \begin{itemize}
@@ -1231,7 +1231,7 @@ Let $V$ be a vector space over a field $k$. Does $V$ always have a basis?
 \end{steps}
 
 \begin{remark}[Infinite-Dimensional Vector Spaces and the Axiom of Choice]\label[remark]{rem:zorns-lemma-basis}
-For finite-dimensional vector spaces, the existence of a basis is constructive via Gaussian elimination or the Steinitz exchange lemma. For arbitrary, infinite-dimensional vector spaces (such as function spaces $C(\mathbb{R}, \mathbb{R})$ or sequence spaces $\mathbb{R}^\mathbb{N}$), the assertion that \emph{every vector space possesses a basis} (known as a \newterm{Hamel basis}) cannot be proven constructively in Zermelo--Fraenkel set theory ($\text{ZF}$). It is logically equivalent to the \newterm{Axiom of Choice} ($\text{AC}$) and is standardly established by applying \newterm{Zorn's Lemma} to the poset of linearly independent subsets ordered by inclusion.
+For finite-dimensional vector spaces, the existence of a basis is constructive via Gaussian elimination or the Steinitz exchange lemma (\cref{fact:pre-basis}). For arbitrary, infinite-dimensional vector spaces (such as function spaces $C(\mathbb{R}, \mathbb{R})$ or sequence spaces $\mathbb{R}^\mathbb{N}$), the assertion that \emph{every vector space possesses a basis} (known as a \newterm{Hamel basis}) cannot be proven constructively in Zermelo--Fraenkel set theory ($\text{ZF}$). It is logically equivalent to the \newterm{Axiom of Choice} ($\text{AC}$) and is standardly established by applying \newterm{Zorn's Lemma} to the poset of linearly independent subsets ordered by inclusion.
 \end{remark}
 \end{content}
 

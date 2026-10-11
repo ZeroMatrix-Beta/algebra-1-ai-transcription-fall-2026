@@ -317,7 +317,7 @@ So, this is a complete argument that if I take $J$ here and I consider $f^{-1}(J
 Let $f \colon R \to S$ be a ring homomorphism and $J \subset S$ an ideal. To prove that $f^{-1}(J)$ is an ideal of $R$, we verify the ideal axioms (\cref{def:ideal}):
 
 \textbf{1. Closure under Addition:}
-Let $x, y \in f^{-1}(J)$. By definition of the preimage:
+Let $x, y \in f^{-1}(J)$. By definition of the preimage (\cref{def:pre-image-preimage}):
 \[
 f(x) \in J \quad \text{and} \quad f(y) \in J.
 \]
@@ -675,7 +675,7 @@ q(q^{-1}(J)) = J.
 \end{equation}
 This equality holds purely set-theoretically because the quotient map $q \colon R \to R/K$ is \textbf{surjective}:
 \begin{itemize}
-    \item \textbf{Inclusion $(\subseteq)$:} The relation $q(q^{-1}(J)) \subseteq J$ always holds by the general definition of the preimage.
+    \item \textbf{Inclusion $(\subseteq)$:} The relation $q(q^{-1}(J)) \subseteq J$ always holds by the general definition of the preimage (\cref{fact:pre-image-preimage}).
     \item \textbf{Inclusion $(\supseteq)$:} Conversely, let $\bar{y} \in J$. By surjectivity of $q$, there exists $x \in R$ such that $q(x) = \bar{y}$. Thus $x \in q^{-1}(J)$, which implies $\bar{y} = q(x) \in q(q^{-1}(J))$.
 \end{itemize}
 
@@ -766,7 +766,7 @@ Let $I \in \operatorname{Id}_K(R)$ be an ideal containing $K$ (so $K \subset I \
 \begin{equation}\label{eq:composition-step-b}
 q^{-1}(q(I)) = I.
 \end{equation}
-The inclusion $I \subseteq q^{-1}(q(I))$ always holds set-theoretically.
+The inclusion $I \subseteq q^{-1}(q(I))$ always holds set-theoretically (\cref{fact:pre-image-preimage}).
 For the reverse inclusion, let $y \in q^{-1}(q(I))$.
 By definition of the preimage:
 \[

@@ -198,7 +198,7 @@ Actually, about the real numbers, I can't help now but comment that Dedekind cut
 \begin{insight}[The Logical Underlayer vs. Working Mathematical Intuition]
 The lecturer highlights a fundamental pedagogical dichotomy in abstract mathematics: the distinction between the \emph{foundational underlayer} and the \emph{working mathematical intuition}. 
 
-Whether constructing $\mathbb{R}$ via Dedekind cuts or Cauchy sequences, or constructing $\operatorname{Frac}(R)$ via quotient sets of ordered pairs $S / {\equiv}$, the foundational machinery serves solely to establish rigorous existence and soundness. Once established, mathematicians operate with the intuitive rules (e.g., standard fraction manipulations $\frac{r}{s}$) without thinking of the underlying equivalence classes.
+Whether constructing $\mathbb{R}$ via Dedekind cuts or Cauchy sequences (\cref{fact:pre-reals}), or constructing $\operatorname{Frac}(R)$ via quotient sets of ordered pairs $S / {\equiv}$ (\cref{def:equiv-relation-S,def:pre-quotient-set}), the foundational machinery serves solely to establish rigorous existence and soundness. Once established, mathematicians operate with the intuitive rules (e.g., standard fraction manipulations $\frac{r}{s}$) without thinking of the underlying equivalence classes.
 \end{insight}
 
 \begin{aiNote}[Beyond the Lecture: Dedekind's Book on the Real Numbers]
@@ -773,7 +773,7 @@ c_k := \sum_{i=0}^k a_{k-i} b_i = \sum_{i+j=k} a_i b_j.
 \end{definition}
 
 \begin{steps}[Finiteness of Each Coefficient Calculation]
-Notice that to determine any individual coefficient $c_k$ of the product, only the finite collection of coefficients $\{a_0, \dots, a_k\}$ and $\{b_0, \dots, b_k\}$ is involved. The sum in \eqref{eq:cauchy-coeff-formula} has exactly $k+1$ terms in $R$, meaning that no infinite sums in the base ring $R$ are required to define the product.
+Notice that to determine any individual coefficient $c_k$ of the product, only the finite collection of coefficients $\{a_0, \dots, a_k\}$ and $\{b_0, \dots, b_k\}$ is involved. The sum in \eqref{eq:cauchy-coeff-formula} has exactly $k+1$ terms in $R$, meaning that no infinite sums in the base ring $R$ are required to define the product (unlike the Cauchy product of analytic power series in $\mathbb{C}$, \cref{fact:pre-series}, no convergence issues arise).
 \end{steps}
 \end{content}
 

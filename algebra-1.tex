@@ -432,10 +432,12 @@ pdfauthor={Prof. Rahul Pandharipande}
   {}
   {}
 
-% Level 1 (Chapter): Individual Lecture
+% Level 1 (Chapter): Individual Lecture. The icon is a macro so that the prerequisites chapter can
+% switch it inside the .toc (\prerequisiteschapter writes the switch and the switch back).
+\newcommand{\tocchaptericon}{\faCalendarDay}
 \titlecontents{chapter}[0ex]
   {\addvspace{2.2ex}\hypersetup{linkcolor=TocChapColor}\sffamily\bfseries\normalsize\color{TocChapColor}}
-  {\color{ThemePrimary!85!black}\faCalendarDay\hspace{0.6em}}
+  {\color{ThemePrimary!85!black}\tocchaptericon\hspace{0.6em}}
   {}
   {\color{HeaderFooterLine}\titlerule*[0.6pc]{.}\color{ThemeWeekNumber}\contentspage}
 
@@ -1002,11 +1004,28 @@ breakable
   \markboth{\chaptername\ \thechapter\ \ ---\ \ #2 #4\ \ ---\ \ #5}{}%
 }
 
+% Chapter 0 for the background the lectures assume (content/prerequisites.tex): its own part line
+% "Prerequisites" in the TOC, a book icon instead of the calendar, and "PREREQUISITES" instead of
+% "WEEK n" above the title. Sections and results are numbered 0.x.
+% \prerequisiteschapter{Subtitle}{Title}
+\newcommand{\chapterlabel}{\MakeUppercase{\chaptertitlename}\ \thechapter}
+\NewDocumentCommand{\prerequisiteschapter}{ m m }{%
+  \phantomsection
+  \addcontentsline{toc}{part}{Prerequisites}%
+  \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faBook}}%
+  \setcounter{chapter}{-1}%
+  \renewcommand{\chapterlabel}{\MakeUppercase{Prerequisites}}%
+  \chapter[#2]{{\Large\color{ChapSubtitleText}#1} \texorpdfstring{\\[1ex]}{--- } {\LARGE #2}}%
+  \renewcommand{\chapterlabel}{\MakeUppercase{\chaptertitlename}\ \thechapter}%
+  \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faCalendarDay}}%
+  \markboth{Prerequisites\ \ ---\ \ #2}{}%
+}
+
 \titlespacing*{\chapter}{0pt}{-20pt}{18pt plus 4pt minus 2pt}
 
 \titleformat{\chapter}[display]
 {\normalfont\sffamily\Large\bfseries\color{ChapTitleText}}
-{\raggedleft\large\color{ChapNumberText}\MakeUppercase{\chaptertitlename}\ \thechapter}
+{\raggedleft\large\color{ChapNumberText}\chapterlabel}
 {1ex}
 {\color{ChapLine}\rule{\textwidth}{1.5pt}\endgraf\nopagebreak\vspace{2ex}\raggedleft} 
 [\endgraf\nopagebreak\vspace{1ex}\color{ChapLine}\rule{\textwidth}{1.5pt}]
@@ -1171,6 +1190,9 @@ breakable
 \cleardoublepage
 
 % actual content:
+
+% prerequisites (chapter 0, not a lecture):
+\input{content/prerequisites.tex}
 
 % week1:
 \input{content/step4-2026-09-16-wednesday-week1-algebra-1-offset-final.tex}

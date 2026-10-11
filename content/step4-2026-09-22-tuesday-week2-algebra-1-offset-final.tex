@@ -378,7 +378,7 @@ A map $f \colon G \to \hat{G}$ is a group isomorphism if and only if there exist
 \begin{equation}\label{eq:isom-inverses}
 g \circ f = 1_G \quad \text{and} \quad f \circ g = 1_{\hat{G}},
 \end{equation}
-where $1_G = \operatorname{id}_G$ denotes the identity map of $G$.
+where $1_G = \operatorname{id}_G$ denotes the identity map of $G$. (For maps of sets, this is the characterization of bijections in \cref{fact:pre-inverse-map}; the new point is that $g$ is again a homomorphism.)
 \end{proposition}
 
 \begin{proof}
@@ -591,7 +591,7 @@ f(x) := \exp(x) = e^x.
 \]
 We verify that $f$ is a group isomorphism:
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item \textbf{Homomorphism Property:} For any $x, y \in \mathbb{R}$, by the fundamental exponent law:
+    \item \textbf{Homomorphism Property:} For any $x, y \in \mathbb{R}$, by the fundamental exponent law (\cref{fact:pre-exp}):
     \[
     f(x + y) = \exp(x + y) = \exp(x) \cdot \exp(y) = f(x) \cdot f(y).
     \]
@@ -1453,7 +1453,7 @@ Yeah, it has a least positive integer. That's the next line: \inlinemetanote{mov
 \end{speech}
 
 \begin{content}[Application of the Well-Ordering Principle]
-By the \newterm{Well-Ordering Principle} of $\mathbb{N}$ (every non-empty subset of positive integers possesses a least element), the non-empty set $I \cap \mathbb{Z}_{>0}$ contains a unique minimum element:
+By the \newterm{Well-Ordering Principle} of $\mathbb{N}$ (every non-empty subset of positive integers possesses a least element, \cref{fact:pre-well-ordering}), the non-empty set $I \cap \mathbb{Z}_{>0}$ contains a unique minimum element:
 \begin{equation}\label{eq:n-minimal-pos}
 n := \min(I \cap \mathbb{Z}_{>0}).
 \end{equation}
@@ -1473,7 +1473,7 @@ And the important part of this remainder term is that $0 \le r < n$: \inlinemeta
 We show $I = n\mathbb{Z}$:
 \begin{itemize}
     \item \textbf{Inclusion $n\mathbb{Z} \subseteq I$:} Since $n \in I$ and $I$ is an ideal, by multiplicative absorption $\forall k \in \mathbb{Z} \implies kn \in I$, so $n\mathbb{Z} \subseteq I$.
-    \item \textbf{Inclusion $I \subseteq n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{Euclidean Division Algorithm}, there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
+    \item \textbf{Inclusion $I \subseteq n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{Euclidean Division Algorithm} (\cref{fact:pre-division}), there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
     \begin{equation}\label{eq:division-remainder}
     y = q \cdot n + r \quad \text{with} \quad 0 \le r < n.
     \end{equation}
@@ -1615,7 +1615,7 @@ forms a commutative ring $(C^\infty(\mathbb{R}), +, \cdot, 0, 1)$ under pointwis
 (f + g)(x) &:= f(x) + g(x), \\
 (f \cdot g)(x) &:= f(x) \cdot g(x),
 \end{align*}
-with additive identity $0(x) \equiv 0$ and multiplicative identity $1(x) \equiv 1$.
+with additive identity $0(x) \equiv 0$ and multiplicative identity $1(x) \equiv 1$. Sums and products of smooth functions are smooth (\cref{fact:pre-compact}), so the operations stay inside $C^\infty(\mathbb{R})$.
 \end{definition}
 
 \begin{center}
@@ -1655,6 +1655,7 @@ The set of smooth functions with compact support is denoted:
 \[
 C_c^\infty(\mathbb{R}) := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact in } \mathbb{R} \}.
 \]
+By Heine--Borel, $\operatorname{supp}(f)$ is compact if and only if it is bounded (\cref{fact:pre-compact}).
 \end{definition}
 
 \begin{center}
@@ -2443,7 +2444,7 @@ defined by:
     \[
     V \longmapsto V^{**} := (V^*)^*, \quad \text{where } V^* := \operatorname{Hom}_{\mathbb{C}}(V, \mathbb{C}).
     \]
-    \item \textbf{On Morphisms:} For any linear map $f \colon V \to W$, the dual map $f^* \colon W^* \to V^*$ reverses direction:
+    \item \textbf{On Morphisms:} For any linear map $f \colon V \to W$, the dual map $f^* \colon W^* \to V^*$ (\cref{def:pre-dual-space}) reverses direction:
     \[
     f^*(\varphi) := \varphi \circ f \quad \forall \varphi \in W^*.
     \]
@@ -2490,7 +2491,7 @@ defined by:
     (f \circ g)^{**} = (g^* \circ f^*)^* = f^{**} \circ g^{**}.
     \]
     \item \textbf{Double Dual is Covariant:} Dualizing twice reverses the arrows twice, so $(-)^{**}$ preserves morphism directions ($f \colon V \to W \implies f^{**} \colon V^{**} \to W^{**}$), forming a valid covariant functor.
-    \item \textbf{Finite vs.\ Infinite Dimensions:} For finite-dimensional vector spaces, the evaluation mapping $\operatorname{ev} \colon V \to V^{**}$, $v \mapsto (\varphi \mapsto \varphi(v))$, is a canonical isomorphism ($V \cong V^{**}$). For infinite-dimensional spaces, $\operatorname{ev}$ remains an injective linear map, but is generally not surjective. The functorial construction $V \mapsto V^{**}$, however, is universally defined across all vector spaces regardless of dimension.
+    \item \textbf{Finite vs.\ Infinite Dimensions:} For finite-dimensional vector spaces, the evaluation mapping $\operatorname{ev} \colon V \to V^{**}$, $v \mapsto (\varphi \mapsto \varphi(v))$, is a canonical isomorphism ($V \cong V^{**}$, \cref{fact:pre-double-dual}). For infinite-dimensional spaces, $\operatorname{ev}$ remains an injective linear map, but is generally not surjective. The functorial construction $V \mapsto V^{**}$, however, is universally defined across all vector spaces regardless of dimension.
 \end{itemize}
 \end{steps}
 \end{content}

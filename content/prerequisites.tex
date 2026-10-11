@@ -1,0 +1,243 @@
+% ==========================================
+% Prerequisites (chapter 0), written by Claude (claude-opus-5-5) on 2026-10-11.
+% Not part of the lectures: the background the lectures take for granted, with the notation of
+% these notes. Results are stated as `fact` without proof, except Bézout's identity and Euclid's
+% lemma, which get a short argument because the lectures build on them. The lectures point here
+% with \cref{...}, which prints numbers 0.x.
+% Extended on 2026-10-11 (same model): images and preimages, induction and the binomial theorem,
+% the Euclidean algorithm, Hom-sets, and quotient vector spaces with the linear first isomorphism
+% theorem, each because a lecture uses it without stating it.
+% ==========================================
+
+% Primary Language: English
+
+\prerequisiteschapter{Notation and Facts Assumed by the Lectures}{Background from the First-Year Courses}
+
+\begin{overview}[About This Chapter]
+This chapter is not part of the lectures. It collects what the lectures take for granted from the first-year courses (Linear Algebra, Analysis, and the Foundations course \qt{Grundstrukturen}), together with the notation of these notes. The lectures point here wherever they use one of these facts.
+\begin{itemize}
+    \item Results are stated as \emph{facts}, without proof: they are standard first-year material. Bézout's identity and Euclid's lemma get a two-line argument, because the lectures build on them.
+    \item The first lecture of the course (Tuesday, 15 September) was not recorded. According to the later lectures, it introduced groups, rings and fields and discussed factorization in $\mathbb{Z}$; these notes start with the second lecture. The lecturer restates groups and fields in Week~2 and rings in Week~1.
+\end{itemize}
+\end{overview}
+
+\section{Notation, Sets and Maps}
+
+\begin{notation}[Number Sets and Inclusions]\label[notation]{not:pre-notation}
+\begin{itemize}
+    \item $\mathbb{N} = \{0, 1, 2, \dots\}$, and $\mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$. Subscripts restrict a set: $\mathbb{Z}_{>0} = \{1, 2, 3, \dots\}$, $\mathbb{Z}_{\ge 2}$, $\mathbb{R}_{>0}$.
+    \item For a field $K$, $K^* = K \setminus \{0\}$; for a ring, $R^*$ often denotes its units instead (Week~3, \cref{prop:units-mod-m-w3}).
+    \item $A \subset B$ means that every element of $A$ lies in $B$; equality is allowed, as in the lecturer's usage. A proper inclusion is written $A \subsetneq B$.
+    \item $|X|$ (or $\# X$) is the number of elements of a finite set $X$; for a finite group it is called the \newterm{order}.
+    \item $X \times Y = \{ (x, y) \mid x \in X, \ y \in Y \}$ is the \newterm{Cartesian product}. A binary operation on $X$ is a map $X \times X \to X$; the set of pairs used for the field of fractions (\cref{def:set-of-pairs-s}) is a subset of $R \times R$.
+\end{itemize}
+\end{notation}
+
+\begin{definition}[Maps]\label[definition]{def:pre-maps}
+A map $f \colon X \to Y$ is \newterm{injective} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$, \newterm{surjective} if every $y \in Y$ is of the form $f(x)$, and \newterm{bijective} if it is both. The composition of $f$ with $g \colon Y \to Z$ is $g \circ f \colon X \to Z$, $x \mapsto g(f(x))$; the identity of $X$ is $\id_X$ (also written $1_X$); the restriction of $f$ to $U \subset X$ is $f|_U \colon U \to Y$.
+\end{definition}
+
+\begin{fact}[Inverse Maps]\label[fact]{fact:pre-inverse-map}
+A map $f \colon X \to Y$ is bijective if and only if there is a map $g \colon Y \to X$ with $g \circ f = \id_X$ and $f \circ g = \id_Y$. This $g$ is unique; it is the \newterm{inverse map} $f^{-1}$.
+\end{fact}
+
+\begin{definition}[Image and Preimage of a Subset]\label[definition]{def:pre-image-preimage}
+Let $f \colon X \to Y$ be a map. For $A \subset X$, the \newterm{image} of $A$ is $f(A) = \{ f(a) \mid a \in A \} \subset Y$; the image of $f$ is $\operatorname{im}(f) = f(X)$. For $B \subset Y$, the \newterm{preimage} (or pullback) of $B$ is
+\[
+f^{-1}(B) = \{ x \in X \mid f(x) \in B \} \subset X.
+\]
+\end{definition}
+
+\begin{importantremark}[Two Meanings of $f^{-1}$]\label[importantremark]{rem:pre-preimage-notation}
+The preimage $f^{-1}(B)$ is defined for \emph{every} map $f$, bijective or not; it is a set, possibly empty. Only when $f$ is bijective does $f^{-1}$ also denote the inverse map (\cref{fact:pre-inverse-map}), and then the two readings agree: the preimage of $B$ is the image of $B$ under the inverse map. The kernel of a homomorphism is a preimage, $\ker(f) = f^{-1}(\{0\})$.
+\end{importantremark}
+
+\begin{fact}[Images and Preimages]\label[fact]{fact:pre-image-preimage}
+Let $f \colon X \to Y$ be a map, $A, A' \subset X$ and $B, B' \subset Y$.
+\begin{enumerate}[label=\textbf{(\roman*)}]
+    \item Preimages respect inclusions, intersections and unions: $B \subset B' \implies f^{-1}(B) \subset f^{-1}(B')$, $f^{-1}(B \cap B') = f^{-1}(B) \cap f^{-1}(B')$, $f^{-1}(B \cup B') = f^{-1}(B) \cup f^{-1}(B')$. Images respect inclusions and unions, but in general not intersections.
+    \item $f(f^{-1}(B)) \subset B$, with equality for every $B$ if and only if $f$ is surjective.
+    \item $A \subset f^{-1}(f(A))$, with equality for every $A$ if and only if $f$ is injective.
+\end{enumerate}
+The Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}, Week~4) uses (ii) for the surjective quotient map, and replaces injectivity in (iii) by the hypothesis that the ideal contains the kernel.
+\end{fact}
+
+\section{Equivalence Relations}
+
+\begin{definition}[Equivalence Relation]\label[definition]{def:pre-equivalence-relation}
+An \newterm{equivalence relation} on a set $T$ is a relation $\equiv$ on $T$ that is
+\begin{enumerate}[label=\textbf{(\roman*)}]
+    \item \textbf{reflexive:} $x \equiv x$ for all $x \in T$;
+    \item \textbf{symmetric:} $x \equiv y \implies y \equiv x$;
+    \item \textbf{transitive:} $x \equiv y$ and $y \equiv z \implies x \equiv z$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Equivalence Classes and Quotient Set]\label[definition]{def:pre-quotient-set}
+The \newterm{equivalence class} of $x \in T$ is $[x] = \{ y \in T \mid y \equiv x \}$, and the \newterm{quotient set} $T/{\equiv}$ (written $T_{\equiv}$ on the lecturer's board) is the set of all equivalence classes. Two classes are either equal or disjoint, $[x] = [y]$ holds exactly when $x \equiv y$, and the classes cover $T$: they form a \newterm{partition} of $T$.
+\end{definition}
+
+\begin{steps}[Maps Defined on Classes]
+A rule that defines a value for a class through one of its elements (a \newterm{representative}) defines a map on $T/{\equiv}$ only if equivalent representatives give the same value; the rule is then called \newterm{well-defined}. The lectures carry out this check for the operations of $\mathbb{Z}/n\mathbb{Z}$ (\cref{def:residue-class-ring}), for the extension $g \colon \mathbb{Q} \to F$ (\cref{clm:g-well-defined}) and for the field of fractions (\cref{prop:addition-well-defined}).
+\end{steps}
+
+\section{The Integers}
+
+\begin{fact}[Well-Ordering Principle]\label[fact]{fact:pre-well-ordering}
+Every non-empty subset of $\mathbb{N}$ has a least element. (This is equivalent to the principle of induction, \cref{fact:pre-induction}.) The lectures use it to find the generator of an ideal of $\mathbb{Z}$ (\cref{thm:ideals-of-z-are-principal}).
+\end{fact}
+
+\begin{fact}[Induction]\label[fact]{fact:pre-induction}
+Let $P(n)$ be a statement for each $n \in \mathbb{N}$. If $P(0)$ holds, and $P(n)$ implies $P(n+1)$ for every $n$, then $P(n)$ holds for all $n \in \mathbb{N}$. The same holds with any starting value $n_0 \in \mathbb{Z}$ in place of $0$.
+\end{fact}
+
+\begin{fact}[Binomial Theorem]\label[fact]{fact:pre-binomial}
+For $n \in \mathbb{N}$ and $0 \le a \le n$, the \newterm{binomial coefficient} $\binom{n}{a} = \frac{n!}{a! \, (n-a)!}$ is a positive integer, and $\binom{n}{a} = \binom{n-1}{a-1} + \binom{n-1}{a}$ for $1 \le a \le n - 1$ (Pascal's rule). For all $x, y \in \mathbb{C}$,
+\[
+(x + y)^n = \sum_{a=0}^{n} \binom{n}{a} x^a y^{n-a},
+\]
+by induction on $n$ using Pascal's rule. The proof uses only commutativity and distributivity, so the formula holds in every commutative ring (\cref{thm:binomial-formula}, Week~4).
+\end{fact}
+
+\begin{fact}[Division with Remainder]\label[fact]{fact:pre-division}
+For $y \in \mathbb{Z}$ and $n \in \mathbb{Z}_{>0}$ there are unique integers $q, r$ with
+\[
+y = q n + r \quad \text{and} \quad 0 \le r < n.
+\]
+\end{fact}
+
+\begin{definition}[Divisibility, Greatest Common Divisor, Primes]\label[definition]{def:pre-divisibility}
+For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\gcd(a, b)$ is the largest integer dividing both; the lecturer also writes $(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\gcd(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
+\end{definition}
+
+\begin{fact}[Bézout's Identity]\label[fact]{fact:pre-bezout}
+For $a, b \in \mathbb{Z}$, not both $0$, there are $x, y \in \mathbb{Z}$ with
+\[
+a x + b y = \gcd(a, b).
+\]
+In particular, $a$ and $b$ are coprime if and only if $a x + b y = 1$ for some $x, y \in \mathbb{Z}$.
+\end{fact}
+
+\begin{steps}[Why It Holds]
+The set $I = \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence $d = \gcd(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
+\end{steps}
+
+\begin{fact}[Euclid's Lemma]\label[fact]{fact:pre-euclid}
+Let $p$ be a prime. If $p \mid a b$, then $p \mid a$ or $p \mid b$.
+\end{fact}
+
+\begin{steps}[Why It Holds]
+If $p \nmid a$, then $\gcd(a, p) = 1$, since the only positive divisors of $p$ are $1$ and $p$. By Bézout, $a x + p y = 1$ for some $x, y \in \mathbb{Z}$, so $b = a b \, x + p \, b y$, and $p$ divides both terms on the right.
+\end{steps}
+
+\begin{example}[The Euclidean Algorithm]\label[example]{ex:pre-euclidean-algorithm}
+The coefficients in Bézout's identity can be computed. Since $\gcd(y, n) = \gcd(n, r)$ whenever $y = q n + r$, repeated division with remainder (\cref{fact:pre-division}) shrinks the pair until the remainder is $0$; the last non-zero remainder is the gcd. For $a = 252$, $b = 198$:
+\[
+\begin{aligned}
+252 &= 1 \cdot 198 + 54, &\qquad 198 &= 3 \cdot 54 + 36, \\
+54 &= 1 \cdot 36 + 18, & 36 &= 2 \cdot 18 + 0,
+\end{aligned}
+\]
+so $\gcd(252, 198) = 18$. Solving the equations backwards for the remainders,
+\[
+18 = 54 - 36 = 54 - (198 - 3 \cdot 54) = 4 \cdot 54 - 198 = 4 \cdot (252 - 198) - 198 = 4 \cdot 252 - 5 \cdot 198.
+\]
+If $\gcd(a, m) = 1$, the same back-substitution gives $a x + m y = 1$, so $\bar{x}$ is the inverse of $\bar{a}$ in $\mathbb{Z}/m\mathbb{Z}$ (\cref{thm:units-z-mod-m}).
+\end{example}
+
+\begin{fact}[Unique Factorization in $\mathbb{Z}$]\label[fact]{fact:pre-unique-factorization}
+Every integer $n \ge 2$ is a product of primes, and this product is unique up to the order of the factors.
+\end{fact}
+
+\begin{definition}[Congruence Modulo $n$]\label[definition]{def:pre-congruence}
+Let $n \in \mathbb{Z}_{>0}$. Integers $a, b$ are \newterm{congruent modulo $n$}, written $a \equiv b \pmod n$, if $n \mid a - b$.
+\end{definition}
+
+\begin{fact}[Residue Classes]\label[fact]{fact:pre-residue-classes}
+Congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$, and it is compatible with the operations: $a \equiv a'$ and $b \equiv b'$ imply $a + b \equiv a' + b'$ and $a b \equiv a' b' \pmod n$. Its classes are the \newterm{residue classes} $\bar{a} = a + n\mathbb{Z}$; by division with remainder there are exactly $n$ of them, $\bar{0}, \bar{1}, \dots, \overline{n-1}$. The lecturer recalls the resulting ring $\mathbb{Z}/n\mathbb{Z}$ in Week~1 (\cref{def:residue-class-ring}).
+\end{fact}
+
+\section{Groups, Fields and the Complex Numbers}
+
+\begin{definition}[Group]\label[definition]{def:pre-group}
+A \newterm{group} $(G, \cdot, e)$ is a set $G$ with an associative operation $\cdot$, a neutral element $e$ ($e a = a e = a$ for all $a$), and an inverse for every element ($a b = b a = e$ for some $b$). It is \newterm{abelian} if $a b = b a$ for all $a, b$; an abelian group is often written additively as $(G, +, 0)$, with inverses $-a$. Examples: $(\mathbb{Z}, +, 0)$ and $(\mathbb{R}^*, \cdot, 1)$. The lecturer restates the definition in Week~2 (\cref{def:group}).
+\end{definition}
+
+\begin{definition}[Group Homomorphism]\label[definition]{def:pre-group-hom}
+A map $f \colon G \to H$ between groups is a \newterm{homomorphism} if $f(a b) = f(a) f(b)$ for all $a, b \in G$, and an \newterm{isomorphism} if it is moreover bijective (Week~2, \cref{def:group-homomorphism}).
+\end{definition}
+
+\begin{definition}[Field]\label[definition]{def:pre-field}
+A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\mathbb{Z}/p\mathbb{Z}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). The lecturer restates fields in Week~2 (\cref{def:field}).
+\end{definition}
+
+\begin{fact}[Complex Conjugation and Modulus]\label[fact]{fact:pre-complex}
+For $z = a + b i \in \mathbb{C}$ ($a, b \in \mathbb{R}$, $i^2 = -1$), the \newterm{complex conjugate} is $\bar{z} = a - b i$ and the \newterm{modulus} is $|z| = \sqrt{a^2 + b^2}$. For all $z, w \in \mathbb{C}$:
+\[
+\overline{z + w} = \bar{z} + \bar{w}, \qquad \overline{z w} = \bar{z} \, \bar{w}, \qquad z \bar{z} = |z|^2, \qquad |z w| = |z| \, |w|,
+\]
+and $\bar{z} = z$ exactly when $z \in \mathbb{R}$. So conjugation respects sums and products, and under multiplication the lengths of complex numbers multiply (and their angles add).
+\end{fact}
+
+\section{Linear Algebra}
+
+\begin{definition}[Linear Map, Kernel and Image]\label[definition]{def:pre-linear-map}
+Let $V, W$ be vector spaces over a field $K$. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) = \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{im}(T) = T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
+\end{definition}
+
+\begin{fact}[Kernel, Image and Rank--Nullity]\label[fact]{fact:pre-rank-nullity}
+For a linear map $T \colon V \to W$, $\ker(T) \subset V$ and $\operatorname{im}(T) \subset W$ are subspaces, and $T$ is injective if and only if $\ker(T) = \{0\}$. If $V$ is finite-dimensional,
+\[
+\dim V = \dim \ker(T) + \dim \operatorname{im}(T).
+\]
+\end{fact}
+
+\begin{fact}[Bases]\label[fact]{fact:pre-basis}
+Every vector space spanned by finitely many vectors has a finite basis, and all its bases have the same number of elements, its \newterm{dimension}. That every vector space has a basis is proved with Zorn's lemma, which the course takes up itself (Week~1, \cref{q:vector-space-basis}).
+\end{fact}
+
+\begin{definition}[Quotient Vector Space]\label[definition]{def:pre-quotient-space}
+Let $U \subset V$ be a subspace. The relation $v \equiv w \iff v - w \in U$ is an equivalence relation on $V$, with classes the cosets $v + U$. The \newterm{quotient space} $V/U$ is the set of these cosets with
+\[
+(v + U) + (w + U) = (v + w) + U, \qquad \lambda (v + U) = \lambda v + U;
+\]
+these operations are well-defined, $V/U$ is a vector space, and the projection $\pi \colon V \to V/U$, $v \mapsto v + U$, is linear and surjective with $\ker(\pi) = U$. If $V$ is finite-dimensional, $\dim V/U = \dim V - \dim U$.
+\end{definition}
+
+\begin{fact}[First Isomorphism Theorem for Linear Maps]\label[fact]{fact:pre-linear-first-iso}
+For a linear map $T \colon V \to W$, the map $\bar{T} \colon V/\ker(T) \to \operatorname{im}(T)$, $v + \ker(T) \mapsto T(v)$, is a well-defined isomorphism of vector spaces. With $\dim V/\ker(T) = \dim V - \dim \ker(T)$ this gives rank--nullity again (\cref{fact:pre-rank-nullity}).
+\end{fact}
+
+\begin{steps}[The Model for Quotient Rings]
+The quotient ring $R/I$ of Week~4 follows this pattern step by step, with the ideal $I$ in the role of the subspace $U$: congruence modulo $I$ (\cref{def:congruence-modulo-ideal}), the set of classes (\cref{def:quotient-set}), well-defined operations (\cref{prop:quotient-addition-well-defined}, \cref{prop:multiplication-well-defined}), and the First Isomorphism Theorem $R/\ker(f) \cong \operatorname{im}(f)$ (\cref{thm:first-isomorphism-theorem-statement}). The new ingredient is multiplication: a subspace only has to absorb scalars, an ideal has to absorb all of $R$, and that is exactly what makes the product of classes well-defined.
+\end{steps}
+
+\begin{definition}[Dual Space and Dual Map]\label[definition]{def:pre-dual-space}
+The \newterm{dual space} of a vector space $V$ over $K$ is $V^* = \operatorname{Hom}_K(V, K)$, the vector space of linear maps $V \to K$. A linear map $T \colon V \to W$ has the \newterm{dual map} $T^* \colon W^* \to V^*$, $T^*(\varphi) = \varphi \circ T$; it satisfies $(S \circ T)^* = T^* \circ S^*$ and $(\id_V)^* = \id_{V^*}$.
+\end{definition}
+
+\begin{fact}[The Double Dual]\label[fact]{fact:pre-double-dual}
+For every vector space $V$, the map $\operatorname{ev} \colon V \to V^{**}$, $v \mapsto (\varphi \mapsto \varphi(v))$, is linear and injective. If $V$ is finite-dimensional, then $\dim V^* = \dim V$ and $\operatorname{ev}$ is an isomorphism. (Used in Week~2, \cref{ex:double-dual-functor}.)
+\end{fact}
+
+\section{Analysis}
+
+\begin{fact}[The Real Numbers]\label[fact]{fact:pre-reals}
+$\mathbb{R}$ is a complete ordered field: every non-empty subset that is bounded above has a supremum, and every Cauchy sequence converges. It can be constructed from $\mathbb{Q}$ by Cauchy sequences or by Dedekind cuts (Week~3, Wednesday).
+\end{fact}
+
+\begin{fact}[Exponential Function and Logarithm]\label[fact]{fact:pre-exp}
+The exponential function $\exp \colon \mathbb{R} \to \mathbb{R}_{>0}$ is a strictly increasing bijection with $\exp(0) = 1$ and $\exp(x + y) = \exp(x) \exp(y)$; its inverse is the natural logarithm $\ln \colon \mathbb{R}_{>0} \to \mathbb{R}$ (Week~2, \cref{prop:exp-isomorphism}).
+\end{fact}
+
+\begin{fact}[Compact Sets and Smooth Functions]\label[fact]{fact:pre-compact}
+A subset of $\mathbb{R}$ is \newterm{compact} if and only if it is closed and bounded (Heine--Borel); finite unions of compact sets, and closed subsets of a compact set, are compact. $C^\infty(\mathbb{R})$ denotes the infinitely differentiable functions $\mathbb{R} \to \mathbb{R}$; sums and products of such functions are again infinitely differentiable (Week~2, \cref{def:smooth-functions-ring}).
+\end{fact}
+
+\begin{fact}[Geometric Series and Cauchy Product]\label[fact]{fact:pre-series}
+For $z \in \mathbb{C}$ with $|z| < 1$,
+\[
+\sum_{k=0}^\infty z^k = \frac{1}{1 - z}.
+\]
+If $\sum_{n} a_n$ and $\sum_{n} b_n$ converge absolutely, then so does their \newterm{Cauchy product} $\sum_{n} c_n$ with $c_n = \sum_{i=0}^{n} a_i b_{n-i}$, and $\sum_n c_n = \bigl(\sum_n a_n\bigr)\bigl(\sum_n b_n\bigr)$. The lectures use the same coefficient formula to multiply polynomials and formal power series, where no convergence is involved (\cref{def:poly-ring-operations}, \cref{def:power-series-multiplication}).
+\end{fact}

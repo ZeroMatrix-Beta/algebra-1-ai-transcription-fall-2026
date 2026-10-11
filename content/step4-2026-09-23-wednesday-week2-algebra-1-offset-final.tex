@@ -433,7 +433,7 @@ So, there are these two differences, and there's a definition for this.
 Let $(R, +, \cdot, 0, 1)$ be a commutative ring (\cref{rem:ring-convention}).
 
 \begin{example}[Multiplication in \texorpdfstring{$\mathbb{Z}/6\mathbb{Z}$}{Z/6Z}]\label[example]{ex:z6z-zero-divisors}
-In the ring of residue classes modulo $6$, denoted $\mathbb{Z}/6\mathbb{Z}$ (or $\mathbb{Z}_6$):
+In the ring of residue classes modulo $6$ (\cref{def:residue-class-ring}), denoted $\mathbb{Z}/6\mathbb{Z}$ (or $\mathbb{Z}_6$):
 \begin{align*}
     \bar{2} &\neq \bar{0}, \\
     \bar{3} &\neq \bar{0}.
@@ -646,7 +646,7 @@ By definition of modular multiplication, this implies $\overline{a \cdot b} = \b
 \begin{equation}\label{eq:divisible-by-p}
 a \cdot b = d \cdot p \implies p \mid (a \cdot b).
 \end{equation}
-By Euclid's Lemma (which holds whenever $p$ is prime):
+By Euclid's Lemma (which holds whenever $p$ is prime, \cref{fact:pre-euclid}):
 \begin{equation}\label{eq:euclids-lemma}
 p \mid (a \cdot b) \implies p \mid a \quad \text{or} \quad p \mid b.
 \end{equation}
@@ -861,7 +861,7 @@ Let $R$ be a (commutative) ring with unity $1_R$, and let $\mathcal{U}_R$ (also 
 \begin{equation}\label{eq:unit-set-def}
 \mathcal{U}_R := \{u \in R \mid \exists w \in R \colon u \cdot w = 1_R\}.
 \end{equation}
-Then $(\mathcal{U}_R, \cdot, 1_R)$ is a group under the multiplication of $R$.
+Then $(\mathcal{U}_R, \cdot, 1_R)$ is a group (\cref{def:group}) under the multiplication of $R$.
 \end{proposition}
 
 \begin{proof}
@@ -943,7 +943,7 @@ We establish the equivalence by unwinding the definition of divisibility:
     x y = 1 + d \cdot m \iff x y - d \cdot m = 1.
     \]
     Any common divisor $g \in \mathbb{Z}$ of $x$ and $m$ must divide the linear combination $x y - d m = 1$. Therefore, $g \mid 1$, which forces $\operatorname{gcd}(x, m) = 1$.
-    \item \textbf{Reverse Direction ($\impliedby$):} Conversely, suppose $\operatorname{gcd}(x, m) = 1$. By Bézout's Identity, there exist integers $y, k \in \mathbb{Z}$ such that:
+    \item \textbf{Reverse Direction ($\impliedby$):} Conversely, suppose $\operatorname{gcd}(x, m) = 1$. By Bézout's Identity (\cref{fact:pre-bezout}; computed in \cref{ex:pre-euclidean-algorithm}), there exist integers $y, k \in \mathbb{Z}$ such that:
     \[
     x \cdot y + m \cdot k = 1 \implies x \cdot y \equiv 1 \pmod m.
     \]

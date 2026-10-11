@@ -834,20 +834,20 @@ Whenever we have a set with an equivalence relation, that equivalence relation d
 
 \begin{content}[The Set of Pairs and General Equivalence Relations]
 \begin{definition}[The Set of Formal Fractions $S$]\label[definition]{def:set-of-pairs-s}
-Let $R$ be an integral domain. We define the set of formal numerator-denominator pairs $S$ by:
+Let $R$ be an integral domain. On the Cartesian product $R \times R$ (\cref{not:pre-notation}), we define the set of formal numerator-denominator pairs $S$ by:
 \begin{equation}\label{eq:set-of-pairs}
 S := \{ (x, y) \in R \times R \mid y \ne 0 \} \subset R \times R.
 \end{equation}
 \end{definition}
 
 \begin{remark}[Review: Equivalence Relations and Partitions]\label[remark]{rem:equivalence-relation-review}
-An \newterm{equivalence relation} $\equiv$ on a set $T$ is a binary relation satisfying three foundational axioms:
+An \newterm{equivalence relation} $\equiv$ on a set $T$ is a binary relation satisfying three foundational axioms (\cref{def:pre-equivalence-relation}):
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Reflexivity:} $\forall x \in T \colon x \equiv x$.
     \item \textbf{Symmetry:} $\forall x, y \in T \colon x \equiv y \implies y \equiv x$.
     \item \textbf{Transitivity:} $\forall x, y, z \in T \colon (x \equiv y \land y \equiv z) \implies x \equiv z$.
 \end{enumerate}
-The quotient set $T/\!\equiv$ denotes the set of \newterm{equivalence classes}, which partitions $T$ into mutually disjoint subsets.
+The quotient set $T/\!\equiv$ denotes the set of \newterm{equivalence classes} (\cref{def:pre-quotient-set}), which partitions $T$ into mutually disjoint subsets.
 \end{remark}
 
 \begin{center}
@@ -1921,7 +1921,7 @@ The formula $c_k = \sum_{i=0}^k a_i b_{k-i}$ exactly mirrors:
     \left(\sum_{i=0}^n a_i x^i\right)\left(\sum_{j=0}^m b_j x^j\right) = \sum_{i=0}^n \sum_{j=0}^m a_i b_j x^{i+j} = \sum_{k=0}^{n+m} \left(\sum_{i+j=k} a_i b_j\right) x^k.
     \]
     The powers of the indeterminate $x$ naturally collect all terms where the sum of indices equals $k$.
-    \item \textbf{Cauchy Product of Power Series:} In analysis, the product of two absolutely convergent power series $\sum a_n x^n$ and $\sum b_n x^n$ is given by the exact same convolution formula.
+    \item \textbf{Cauchy Product of Power Series:} In analysis, the product of two absolutely convergent power series $\sum a_n x^n$ and $\sum b_n x^n$ is given by the exact same convolution formula (\cref{fact:pre-series}).
 \end{enumerate}
 \end{steps}
 \end{content}
