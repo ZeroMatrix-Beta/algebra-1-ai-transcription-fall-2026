@@ -769,7 +769,7 @@ is a ring homomorphism.
 The two computations above are instances of two identities, valid for all $m, n \in \mathbb{Z}$:
 \begin{itemize}
     \item \textbf{Additivity:} $(m + n) \cdot 1_R = m \cdot 1_R + n \cdot 1_R$. For $m, n \ge 0$ both sides are a sum of $m + n$ copies of $1_R$ (associativity of $+$); the cases with negative $m$ or $n$ follow by adding inverses on both sides (\cref{def:integer-multiples}, \cref{rem:negative-multiples}).
-    \item \textbf{Multiplicativity:} $(m \cdot 1_R)(n \cdot 1_R) = (mn) \cdot 1_R$. Expanding the left side with the distributive laws gives $m n$ products $1_R \cdot 1_R = 1_R$ (with the sign of $mn$), exactly as in the computation for $2 \cdot 3 = 6$.
+    \item \textbf{Multiplicativity:} $(m \cdot 1_R)(n \cdot 1_R) = (mn) \cdot 1_R$. Expanding the left side with the distributive laws gives $|mn|$ products $1_R \cdot 1_R = 1_R$, taken with the sign of $mn$, exactly as in the computation for $2 \cdot 3 = 6$.
 \end{itemize}
 Together with $\phi(1) = 1_R$, this proves that $\phi$ is a ring homomorphism.
 \end{steps}
@@ -982,7 +982,7 @@ We verify each property directly using the axioms of a ring homomorphism:
 \end{proof}
 
 \begin{steps}[Why Multiplicative Absorption Works: Additive vs. Multiplicative Absorption]
-In the additive closure proof (Property (2)), both $f(a)$ and $f(b)$ had to be zero because the sum of two elements is zero only when one is the additive inverse of the other ($0 + 0 = 0$). In contrast, for Property (4), multiplication by zero in a ring is absorbing: as soon as one factor in a product is zero, the entire product vanishes ($f(r) \cdot 0_{R_2} = 0_{R_2}$), regardless of whether $f(r)$ is zero or not. Thus, multiplying an element of $\ker(f)$ by \emph{any} element $r \in R_1$ from the ambient ring keeps the result inside $\ker(f)$. This strong absorption property distinguishes ring kernels from mere subrings (\cref{def:subring}, Week~2).
+In the additive closure proof (Property (2)), both $f(a)$ and $f(b)$ had to be zero: knowing only $f(a) = 0$ would leave the sum $f(a) + f(b) = f(b)$ arbitrary. In contrast, for Property (4), multiplication by zero in a ring is absorbing: as soon as one factor in a product is zero, the entire product vanishes ($f(r) \cdot 0_{R_2} = 0_{R_2}$), regardless of whether $f(r)$ is zero or not. Thus, multiplying an element of $\ker(f)$ by \emph{any} element $r \in R_1$ from the ambient ring keeps the result inside $\ker(f)$. This strong absorption property distinguishes ring kernels from mere subrings (\cref{def:subring}, Week~2).
 \end{steps}
 \end{content}
 
