@@ -278,7 +278,16 @@ pdfauthor={Prof. Rahul Pandharipande}
   % false: when a breakable box right after a heading cannot start on the current page,
   % tcolorbox moves the heading to the next page with it instead of leaving it orphaned
   % at the bottom ("Using nobreak failed").
-  ignore nobreak=false
+  ignore nobreak=false,
+  % No shadow at a page break: the parts of a broken box get their shadow along the cut edges
+  % too, so white patches cover it there (underlays are drawn after the shadow).
+  underlay first={%
+    \fill[white] ([xshift=-15pt]frame.south west) rectangle ([xshift=15pt,yshift=-15pt]frame.south east);},
+  underlay middle={%
+    \fill[white] ([xshift=-15pt]frame.south west) rectangle ([xshift=15pt,yshift=-15pt]frame.south east);
+    \fill[white] ([xshift=-15pt]frame.north west) rectangle ([xshift=15pt,yshift=15pt]frame.north east);},
+  underlay last={%
+    \fill[white] ([xshift=-15pt]frame.north west) rectangle ([xshift=15pt,yshift=15pt]frame.north east);}
 }
 
 % ==========================================
