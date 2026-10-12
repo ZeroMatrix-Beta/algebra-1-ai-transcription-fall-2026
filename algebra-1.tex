@@ -245,7 +245,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 
 \usepackage{varwidth}
 \usepackage{tcolorbox}
-\tcbuselibrary{skins, breakable, theorems}
+\tcbuselibrary{skins, breakable, theorems, hooks} % hooks: before title app
 
 % --- DYNAMIC PROOF STYLING ENGINE ---
 \newif\ifinsideproof
@@ -279,6 +279,8 @@ pdfauthor={Prof. Rahul Pandharipande}
   % tcolorbox moves the heading to the next page with it instead of leaving it orphaned
   % at the bottom ("Using nobreak failed").
   ignore nobreak=false,
+  % \textbf in a box title takes the title's color: blue bold on a red title bar is unreadable
+  before title app={\colorlet{TextBoldColor}{.}},
   % No shadow at a page break: the parts of a broken box get their shadow along the cut edges
   % too, so white patches cover it there (underlays are drawn after the shadow).
   underlay first={%
@@ -732,7 +734,9 @@ code={
 },
 IfValueTF={#2}{
   title={\settowidth{\dimen0}{\faBox\ \ }\hangindent=\dimen0\hangafter=1\faBox\ \ #2},
-  attach boxed title to top left={xshift=10pt, yshift=-10pt}
+  attach boxed title to top left={xshift=10pt, yshift=-10pt},
+  % the attached title reaches 10pt into the box: keep the first line clear of it (as overview)
+  top=14pt
 }{
   notitle
 }
