@@ -527,8 +527,10 @@ pdfauthor={Prof. Rahul Pandharipande}
 % Custom text commands
 \newcommand{\newterm}[1]{\textcolor{QuoteRed}{``}\textcolor{TextBoldColor}{\textit{#1}}\textcolor{QuoteRed}{''}}
 \newcommand{\inlinemetanote}[1]{\textit{\textcolor{TextMetaNote}{[#1]}}}
-% Recap line placed right before a definition or result the lecturer states again in a later
-% lecture. The restated version carries the label of the first one plus a week tag (def:ring-w2).
+% Recap line: a definition or result from an earlier lecture (or from earlier in this one) that the
+% lecturer states again. Before a restatement on the board it cites the first version, and the
+% restated one carries its label plus a week tag (def:ring-w2). A recap the lecturer only speaks
+% gets a line of its own; that is the use the transcription prompt teaches.
 \newcommand{\recap}[1]{\par\smallskip\noindent{\sffamily\bfseries\color{EnvRemark}\faHistory\ Recap:}\ #1\par\smallskip}
 
 % Custom Theorem Styles: one per family, each with its own icon and color (after ta-notes).
