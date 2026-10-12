@@ -1374,9 +1374,20 @@ Therefore, every non-zero element in $F$ possesses a multiplicative inverse $[(x
 The lecture checks that the operations are well-defined and that non-zero elements have inverses; the other axioms of a field reduce to computations in $R$ on representatives. The key tool is that $(x s, y s) \equiv (x, y)$ for every $s \neq 0$, since $x s \cdot y = x \cdot y s$: a common non-zero factor can be cancelled.
 \begin{itemize}
     \item \textbf{Commutativity} of $+$ and $\cdot$ is visible in the formulas of \cref{def:addition-F} and \cref{def:multiplication-F}, since $R$ is commutative.
-    \item \textbf{Associativity:} both $\bigl([(x_1, y_1)] + [(x_2, y_2)]\bigr) + [(x_3, y_3)]$ and $[(x_1, y_1)] + \bigl([(x_2, y_2)] + [(x_3, y_3)]\bigr)$ equal $[(x_1 y_2 y_3 + x_2 y_1 y_3 + x_3 y_1 y_2, \, y_1 y_2 y_3)]$; both products equal $[(x_1 x_2 x_3, \, y_1 y_2 y_3)]$.
+    \item \textbf{Associativity:} both ways of bracketing a sum of three classes give the same class,
+    \begin{align*}
+    \bigl([(x_1, y_1)] + [(x_2, y_2)]\bigr) + [(x_3, y_3)]
+    &= [(x_1 y_2 y_3 + x_2 y_1 y_3 + x_3 y_1 y_2, \, y_1 y_2 y_3)] \\
+    &= [(x_1, y_1)] + \bigl([(x_2, y_2)] + [(x_3, y_3)]\bigr),
+    \end{align*}
+    and both ways of bracketing a product give $[(x_1 x_2 x_3, \, y_1 y_2 y_3)]$.
     \item \textbf{Neutral elements and negatives:} $[(x, y)] + [(0, 1)] = [(x, y)]$, $[(x, y)] \cdot [(1, 1)] = [(x, y)]$, and $[(x, y)] + [(-x, y)] = [(0, y^2)] = [(0, 1)]$.
-    \item \textbf{Distributivity:} $[(x_1, y_1)] \cdot \bigl([(x_2, y_2)] + [(x_3, y_3)]\bigr) = [(x_1 x_2 y_3 + x_1 x_3 y_2, \, y_1 y_2 y_3)]$, while $[(x_1, y_1)][(x_2, y_2)] + [(x_1, y_1)][(x_3, y_3)] = [(x_1 x_2 y_1 y_3 + x_1 x_3 y_1 y_2, \, y_1^2 y_2 y_3)]$, which is the same class after cancelling the factor $y_1 \neq 0$.
+    \item \textbf{Distributivity:} expanding both sides gives
+    \begin{align*}
+    [(x_1, y_1)] \cdot \bigl([(x_2, y_2)] + [(x_3, y_3)]\bigr) &= [(x_1 x_2 y_3 + x_1 x_3 y_2, \, y_1 y_2 y_3)], \\
+    [(x_1, y_1)] \cdot [(x_2, y_2)] + [(x_1, y_1)] \cdot [(x_3, y_3)] &= [(x_1 x_2 y_1 y_3 + x_1 x_3 y_1 y_2, \, y_1^2 y_2 y_3)],
+    \end{align*}
+    and the two right-hand sides are the same class after cancelling the factor $y_1 \neq 0$.
     \item \textbf{$0_F \neq 1_F$:} $(0, 1) \not\equiv (1, 1)$, since $0 \cdot 1 \neq 1 \cdot 1$ in the integral domain $R$.
 \end{itemize}
 \end{aiNote}
