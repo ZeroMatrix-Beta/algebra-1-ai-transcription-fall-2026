@@ -72,7 +72,14 @@
 \usepackage{cancel}                   % \cancel, \bcancel, \cancelto
 \usepackage{braket}                   % \bra, \ket, \braket, \set
 \usepackage{derivative}               % \odv, \pdv
-\usepackage[only, llbracket, rrbracket, mapsfrom, longmapsfrom]{stmaryrd} % only these, the rest would override amssymb
+\usepackage{faktor}                   % \faktor{R}{I}, a quotient as a slanted fraction
+\usepackage{xfrac}                    % \sfrac{1}{2}, a number fraction written slanted
+\usepackage{dsfont}                   % \mathds{1}, the indicator function or identity
+\usepackage[normalem]{ulem}           % \sout{...}, a word struck out on the board (normalem keeps \emph)
+\usepackage{polynom}                  % \polylongdiv, polynomial long division
+\usepackage{array, tabularx, multirow, diagbox, colortbl} % tables: \multirow, \diagbox corner cell (Cayley tables), \cellcolor
+\usepackage{nicematrix}               % matrices with dotted lines, augmented-matrix bars, row-operation labels
+\usepackage[only, llbracket, rrbracket, mapsfrom, longmapsfrom, lightning]{stmaryrd} % only these, the rest would override amssymb; \lightning is the board's contradiction mark
 \usepackage{algorithm, algpseudocode} % pseudocode (computer science)
 
 % Setzt global "Week" anstelle von "Chapter" (angepasst an english)
@@ -526,6 +533,19 @@ pdfauthor={Prof. Rahul Pandharipande}
   {\vcenter{\hbox{\scalebox{1.2}{$\scriptstyle\times$}}}}
   {\vcenter{\hbox{\scalebox{1.2}{$\scriptscriptstyle\times$}}}}}\displaylimits}
 \providecommand{\dv}{\odv} % the physics package's name for an ordinary derivative
+% Operators and delimiters Gemini commonly writes; transcription.md lists them as preloaded.
+\providecommand{\rank}{\operatorname{rank}}
+\providecommand{\Hom}{\operatorname{Hom}}
+\providecommand{\End}{\operatorname{End}}
+\providecommand{\Aut}{\operatorname{Aut}}
+\providecommand{\sgn}{\operatorname{sgn}}
+\providecommand{\diag}{\operatorname{diag}}
+\providecommand{\tr}{\operatorname{tr}}
+\providecommand{\Span}{\operatorname{span}}
+\providecommand{\im}{\operatorname{im}}
+\providecommand{\lcm}{\operatorname{lcm}}
+\ifdefined\abs\else\DeclarePairedDelimiter\abs{\lvert}{\rvert}\fi   % \abs{x}, \abs*{x} grows
+\ifdefined\norm\else\DeclarePairedDelimiter\norm{\lVert}{\rVert}\fi % \norm{v}
 
 % Custom text commands
 \newcommand{\newterm}[1]{\textcolor{QuoteRed}{``}\textcolor{TextBoldColor}{\textit{#1}}\textcolor{QuoteRed}{''}}
