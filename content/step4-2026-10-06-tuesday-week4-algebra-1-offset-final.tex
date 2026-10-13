@@ -1693,7 +1693,7 @@ Is the quotient ring $\mathbb{Q}[x]/(x^2 + 1)$ an integral domain?
 
 \begin{answer}
 \textbf{Yes! In fact, it is a field.}
-Notice that the factorization $x^2 + 1 = (x + i)(x - i)$ used over $\mathbb{C}$ is unavailable in $\mathbb{Q}[x]$, because $i \notin \mathbb{Q}$. In fact, $x^2 + 1$ is \newterm{irreducible} over $\mathbb{Q}$. We will prove that $\mathbb{Q}[x]/(x^2 + 1)$ is isomorphic to the field of Gaussian rationals $\mathbb{Q}[i]$.
+Notice that the factorization $x^2 + 1 = (x + i)(x - i)$ used over $\mathbb{C}$ is unavailable in $\mathbb{Q}[x]$, because $i \notin \mathbb{Q}$. In fact, $x^2 + 1$ is \newterm{irreducible} over $\mathbb{Q}$: it is not a product of two non-constant polynomials in $\mathbb{Q}[x]$, because such a factorization would consist of two linear factors and give a rational root of $x^2 + 1$. We will prove that $\mathbb{Q}[x]/(x^2 + 1)$ is isomorphic to the field of Gaussian rationals $\mathbb{Q}[i]$.
 \end{answer}
 \end{content}
 
@@ -1807,7 +1807,7 @@ Applying the First Isomorphism Theorem (\cref{thm:first-isomorphism-theorem-stat
 \begin{equation}\label{eq:isom-qi-statement}
 \frac{\mathbb{Q}[x]}{\ker(f)} \cong \operatorname{Im}(f) = \mathbb{Q}[i].
 \end{equation}
-Since $\mathbb{Q}[i]$ is a subfield of $\mathbb{C}$, the quotient $\mathbb{Q}[x]/\ker(f)$ is an integral domain and a field.
+Since $\mathbb{Q}[i]$ is a subfield of $\mathbb{C}$ (\cref{def:pre-field}), the quotient $\mathbb{Q}[x]/\ker(f)$ is an integral domain and a field.
 \end{theorem}
 \end{content}
 

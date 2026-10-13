@@ -411,7 +411,7 @@ R = \{0\}.
 \end{proof}
 
 \begin{remark}[The Zero Ring in Abstract Algebra]
-The trivial ring $R = \{0\}$ is often called the \newterm{zero ring}. While fields strictly require $1 \neq 0$, the general definition of a ring intentionally admits $1 = 0$ so that the category of rings has a terminal object (the zero ring) and quotient rings $R/I$ remain rings even when $I = R$. Definitions that must exclude it say so explicitly, as for integral domains (\cref{def:integral-domain}, Week~2).
+The trivial ring $R = \{0\}$ is often called the \newterm{zero ring}. While fields strictly require $1 \neq 0$, the general definition of a ring intentionally admits $1 = 0$ so that the category of rings has a terminal object (the zero ring: every ring has exactly one homomorphism to it) and quotient rings $R/I$ remain rings even when $I = R$. Definitions that must exclude it say so explicitly, as for integral domains (\cref{def:integral-domain}, Week~2).
 \end{remark}
 \end{content}
 
@@ -576,7 +576,7 @@ In this course, Prof. Pandharipande adheres to the commutative algebra conventio
 
 \begin{aiNote}[Beyond the Lecture: What Changes Without Commutativity]
 % [PERSISTENT, ADDITION]
-Typical non-commutative rings are matrix rings $M_n(K)$ for $n \ge 2$ and endomorphism rings. Because this course assumes commutativity, the following distinctions never come up in the later lectures:
+Typical non-commutative rings are matrix rings $M_n(K)$ for $n \ge 2$ (\cref{fact:pre-matrices}) and endomorphism rings. Because this course assumes commutativity, the following distinctions never come up in the later lectures:
 \begin{itemize}
     \item \textbf{Ideals (\cref{def:ideal}):} left ideals ($r \cdot x \in I$), right ideals ($x \cdot r \in I$) and two-sided ideals ($r \cdot x \cdot s \in I$) coincide in a commutative ring. In general they differ, and kernels of ring homomorphisms are always two-sided ideals.
     \item \textbf{Divisibility (\cref{def:divisibility-ring}, Week~2):} in general one distinguishes left divisibility ($b = a \cdot c$) from right divisibility ($b = c' \cdot a$).
@@ -701,7 +701,7 @@ Thus, $f(1_{R_1})$ is an \newterm{idempotent} element in $R_2$. However, because
 One might wonder why $f(1) = 1$ is required as an explicit axiom in \cref{def:ring-homomorphism}, whereas $f(0) = 0$ is a provable theorem.
 \begin{itemize}
     \item \textbf{Additive Case:} In the additive group $(R_2, +)$, every element has an additive inverse. Hence, from $f(0) = f(0) + f(0)$, we can subtract $f(0)$ to obtain $f(0) = 0$.
-    \item \textbf{Multiplicative Case:} Using multiplicativity, we know that $f(1) = f(1 \cdot 1) = f(1) \cdot f(1)$. However, in a general ring $R_2$, $f(1)$ does not necessarily possess a multiplicative inverse! While $x^2 = x$ in a division ring (or field) implies $x \in \{0, 1\}$, in a general ring there can be non-trivial idempotents ($e^2 = e$ with $e \neq 0, 1$), or $f(1)$ could simply equal $0$.
+    \item \textbf{Multiplicative Case:} Using multiplicativity, we know that $f(1) = f(1 \cdot 1) = f(1) \cdot f(1)$. However, in a general ring $R_2$, $f(1)$ does not necessarily possess a multiplicative inverse! While $x^2 = x$ in a field (or in a division ring, where every non-zero element is invertible but multiplication need not commute) implies $x \in \{0, 1\}$, in a general ring there can be non-trivial idempotents ($e^2 = e$ with $e \neq 0, 1$), or $f(1)$ could simply equal $0$.
 \end{itemize}
 No cleverer argument can help either: the zero map in \cref{ex:zero-map-non-unital} satisfies the first two conditions but not $f(1) = 1$.
 \end{steps}
@@ -1232,7 +1232,7 @@ For finite-dimensional vector spaces, the existence of a basis is constructive v
 
 \begin{aiNote}[Beyond the Lecture: How Zorn's Lemma Gives a Basis]
 % [PERSISTENT, ADDITION]
-Zorn's lemma says: if $P$ is a non-empty partially ordered set in which every chain (totally ordered subset) has an upper bound in $P$, then $P$ has a maximal element. For a vector space $V$ over a field $k$:
+Zorn's lemma says: if $P$ is a non-empty partially ordered set (\cref{def:pre-partial-order}) in which every chain (totally ordered subset) has an upper bound in $P$, then $P$ has a maximal element. For a vector space $V$ over a field $k$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item Let $P$ be the set of linearly independent subsets of $V$, ordered by inclusion. It is non-empty, since $\emptyset \in P$.
     \item The union of a chain in $P$ is again linearly independent: a linear relation involves only finitely many vectors, and these all lie in one member of the chain. So every chain has an upper bound in $P$.

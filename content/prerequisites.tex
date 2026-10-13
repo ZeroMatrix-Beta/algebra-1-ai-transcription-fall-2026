@@ -10,6 +10,9 @@
 % Extended on 2026-10-12 (same model), after a review of the lectures: the order of an element and
 % cyclic groups, open sets and closure in R, smooth functions vanishing on a half-line, division
 % with remainder for polynomials, and the notations N_0 and R^{N_0}.
+% Extended on 2026-10-13 (same model), after checking every term the lectures use without defining
+% it: cardinality, partial orders and maximal elements, span and linear independence, matrices,
+% subfields, limits and continuity, and the notations for the group of units.
 % ==========================================
 
 % Primary Language: English
@@ -29,7 +32,7 @@ This chapter is not part of the lectures. It collects what the lectures take for
 \begin{notation}[Number Sets and Inclusions]\label[notation]{not:pre-notation}
 \begin{itemize}
     \item $\mathbb{N} = \{0, 1, 2, \dots\}$, also written $\mathbb{N}_0$ to stress that $0$ is included, and $\mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$. Subscripts restrict a set: $\mathbb{Z}_{>0} = \{1, 2, 3, \dots\}$, $\mathbb{Z}_{\ge 2}$, $\mathbb{R}_{>0}$.
-    \item For a field $K$, $K^* = K \setminus \{0\}$; for a ring, $R^*$ often denotes its units instead (Week~3, \cref{prop:units-mod-m-w3}).
+    \item For a field $K$, $K^* = K \setminus \{0\}$. The group of units of a ring $R$ (Week~2, \cref{prop:group-of-units}) appears in these notes as $\mathcal{U}_R$, $U(R)$, $\operatorname{Unit}(R)$, $R^\times$ and, from Week~3 on, $R^*$ (\cref{prop:units-mod-m-w3}). For a field the two meanings of $K^*$ agree, since its units are exactly its non-zero elements.
     \item $A \subset B$ means that every element of $A$ lies in $B$; equality is allowed, as in the lecturer's usage. A proper inclusion is written $A \subsetneq B$.
     \item $|X|$ (or $\# X$) is the number of elements of a finite set $X$; for a finite group it is called the \newterm{order}.
     \item $X \times Y = \{ (x, y) \mid x \in X, \ y \in Y \}$ is the \newterm{Cartesian product}. A binary operation on $X$ is a map $X \times X \to X$; the set of pairs used for the field of fractions (\cref{def:set-of-pairs-s}) is a subset of $R \times R$.
@@ -43,6 +46,10 @@ A map $f \colon X \to Y$ is \newterm{injective} if $f(x_1) = f(x_2)$ implies $x_
 
 \begin{fact}[Inverse Maps]\label[fact]{fact:pre-inverse-map}
 A map $f \colon X \to Y$ is bijective if and only if there is a map $g \colon Y \to X$ with $g \circ f = \id_X$ and $f \circ g = \id_Y$. This $g$ is unique; it is the \newterm{inverse map} $f^{-1}$.
+\end{fact}
+
+\begin{fact}[Cardinality]\label[fact]{fact:pre-cardinality}
+Two sets have the same \newterm{cardinality} if there is a bijection between them. A set is \newterm{countable} if it is finite or has the cardinality of $\mathbb{N}$: $\mathbb{Z}$ and $\mathbb{Q}$ are countable, while $\mathbb{R}$ is \newterm{uncountable} (Cantor's diagonal argument). The sets $\mathbb{R}_{>0}$ and $\mathbb{R}^* = \mathbb{R} \setminus \{0\}$ have the same cardinality as $\mathbb{R}$; for $\mathbb{R}_{>0}$, a bijection is $\exp$ (\cref{fact:pre-exp}). A bijection says nothing about algebraic structure: the groups $(\mathbb{R}^*, \cdot)$ and $(\mathbb{R}_{>0}, \cdot)$ have the same cardinality but are not isomorphic (Week~2, \cref{prop:r-star-not-isom-r-pos}).
 \end{fact}
 
 \begin{definition}[Image and Preimage of a Subset]\label[definition]{def:pre-image-preimage}
@@ -66,7 +73,7 @@ Let $f \colon X \to Y$ be a map, $A, A' \subset X$ and $B, B' \subset Y$.
 The Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}, Week~4) uses (ii) for the surjective quotient map, and replaces injectivity in (iii) by the hypothesis that the ideal contains the kernel.
 \end{fact}
 
-\section{Equivalence Relations}
+\section{Equivalence Relations and Partial Orders}
 
 \begin{definition}[Equivalence Relation]\label[definition]{def:pre-equivalence-relation}
 An \newterm{equivalence relation} on a set $T$ is a relation $\equiv$ on $T$ that is
@@ -84,6 +91,10 @@ The \newterm{equivalence class} of $x \in T$ is $[x] = \{ y \in T \mid y \equiv 
 \begin{steps}[Maps Defined on Classes]
 A rule that defines a value for a class through one of its elements (a \newterm{representative}) defines a map on $T/{\equiv}$ only if equivalent representatives give the same value; the rule is then called \newterm{well-defined}. The lectures carry out this check for the operations of $\mathbb{Z}/n\mathbb{Z}$ (\cref{def:residue-class-ring}), for the extension $g \colon \mathbb{Q} \to F$ (\cref{clm:g-well-defined}) and for the field of fractions (\cref{prop:addition-well-defined}).
 \end{steps}
+
+\begin{definition}[Partial Orders and Maximal Elements]\label[definition]{def:pre-partial-order}
+A \newterm{partial order} on a set $P$ is a relation $\le$ that is reflexive, transitive and \newterm{antisymmetric} ($x \le y$ and $y \le x$ imply $x = y$). Two elements need not be comparable; the standard example is a set of subsets, ordered by inclusion. A \newterm{chain} is a subset in which any two elements are comparable (a totally ordered subset). An \newterm{upper bound} of $A \subset P$ is an element $b \in P$ with $a \le b$ for all $a \in A$. An element $m \in P$ is \newterm{maximal} if nothing in $P$ lies strictly above it: $m \le x$ implies $x = m$. A maximal element need not be a largest element, and there can be several. The lectures use these notions for Zorn's lemma (Week~1, \cref{rem:zorns-lemma-basis}) and for maximal ideals, which are the maximal elements of the set of proper ideals ordered by inclusion (Week~4, \cref{def:maximal-ideal}); $\mathbb{Z}$ has infinitely many of them, the ideals $p\mathbb{Z}$ for primes $p$.
+\end{definition}
 
 \section{The Integers}
 
@@ -176,7 +187,7 @@ Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} o
 \end{definition}
 
 \begin{definition}[Field]\label[definition]{def:pre-field}
-A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\mathbb{Z}/p\mathbb{Z}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). The lecturer restates fields in Week~2 (\cref{def:field}).
+A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\mathbb{Z}/p\mathbb{Z}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). A \newterm{subfield} of a field is a subring (Week~2, \cref{def:subring}) that is itself a field, such as $\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$ or the Gaussian rationals $\mathbb{Q}(i) \subset \mathbb{C}$ (Week~3, \cref{ex:frac-gaussian-integers}). The lecturer restates fields in Week~2 (\cref{def:field}).
 \end{definition}
 
 \begin{fact}[Complex Conjugation and Modulus]\label[fact]{fact:pre-complex}
@@ -200,8 +211,12 @@ For a linear map $T \colon V \to W$, $\ker(T) \subset V$ and $\operatorname{im}(
 \]
 \end{fact}
 
-\begin{fact}[Bases]\label[fact]{fact:pre-basis}
-Every vector space spanned by finitely many vectors has a finite basis, and all its bases have the same number of elements, its \newterm{dimension}. That every vector space has a basis is proved with Zorn's lemma, which the course takes up itself (Week~1, \cref{q:vector-space-basis}).
+\begin{fact}[Span, Linear Independence and Bases]\label[fact]{fact:pre-basis}
+A family of vectors of $V$ \newterm{spans} $V$ if every vector of $V$ is a finite linear combination of them, and it is \newterm{linearly independent} if the only finite linear combination of them that equals $0$ is the one with all coefficients $0$; a \newterm{basis} is a linearly independent family that spans $V$. Every vector space spanned by finitely many vectors has a finite basis, and all its bases have the same number of elements, its \newterm{dimension}. That every vector space has a basis is proved with Zorn's lemma, which the course takes up itself (Week~1, \cref{q:vector-space-basis}).
+\end{fact}
+
+\begin{fact}[Matrices]\label[fact]{fact:pre-matrices}
+The $n \times n$ matrices with entries in a field $K$ form a ring $M_n(K)$ under matrix addition and multiplication, with the identity matrix as its $1$; for $n \ge 2$ it is not commutative. Its units are the invertible matrices, those with non-zero determinant, and they form the group $\mathrm{GL}_n(K)$. Linear maps $K^n \to K^n$ correspond to matrices and composition to the matrix product, so a linear map between vector spaces of the same finite dimension is an isomorphism exactly when its matrix with respect to bases is invertible. The lectures meet matrix rings only as examples of non-commutative rings (Week~1) and of isomorphisms in $\mathbf{Vect}_K$ (Week~2, \cref{def:categorical-isomorphism}).
 \end{fact}
 
 \begin{fact}[Division with Remainder for Polynomials]\label[fact]{fact:pre-poly-division}
@@ -243,7 +258,7 @@ $\mathbb{R}$ is a complete ordered field: every non-empty subset that is bounded
 \end{fact}
 
 \begin{fact}[Exponential Function and Logarithm]\label[fact]{fact:pre-exp}
-The exponential function $\exp \colon \mathbb{R} \to \mathbb{R}_{>0}$ is a strictly increasing bijection with $\exp(0) = 1$ and $\exp(x + y) = \exp(x) \exp(y)$; its inverse is the natural logarithm $\ln \colon \mathbb{R}_{>0} \to \mathbb{R}$ (Week~2, \cref{prop:exp-isomorphism}).
+The exponential function $\exp \colon \mathbb{R} \to \mathbb{R}_{>0}$ is a continuous, strictly increasing bijection with $\exp(0) = 1$ and $\exp(x + y) = \exp(x) \exp(y)$; its inverse is the natural logarithm $\ln \colon \mathbb{R}_{>0} \to \mathbb{R}$ (Week~2, \cref{prop:exp-isomorphism}).
 \end{fact}
 
 \begin{definition}[Open Sets and Closure in $\mathbb{R}$]\label[definition]{def:pre-open-closure}
@@ -252,6 +267,10 @@ A subset $U \subset \mathbb{R}$ is \newterm{open} if around each of its points i
 
 \begin{fact}[Compact Sets and Smooth Functions]\label[fact]{fact:pre-compact}
 A subset of $\mathbb{R}$ is \newterm{compact} if and only if it is closed and bounded (Heine--Borel); finite unions of compact sets, and closed subsets of a compact set, are compact. $C^\infty(\mathbb{R})$ denotes the infinitely differentiable functions $\mathbb{R} \to \mathbb{R}$; sums and products of such functions are again infinitely differentiable (Week~2, \cref{def:smooth-functions-ring}).
+\end{fact}
+
+\begin{fact}[Limits and Continuity]\label[fact]{fact:pre-continuity}
+A function $f \colon U \to \mathbb{R}$ on an open set $U \subset \mathbb{R}$ is \newterm{continuous} at $a \in U$ if $\lim_{x \to a} f(x) = f(a)$, and continuous if this holds at every point of $U$. Sums, products and compositions of continuous functions are continuous, and every differentiable function is continuous, so the functions in $C^\infty(\mathbb{R})$ are continuous. If $g \colon \mathbb{R} \to \mathbb{R}$ is continuous, the one-sided limit $\lim_{x \to 0^+} g(x)$ exists and equals $g(0)$. So a function on $\mathbb{R}_{>0}$ with no limit at $0^+$, such as $x \mapsto \sin(1/x)$, is not the restriction of a continuous function on $\mathbb{R}$ (Week~2, \cref{prop:res-not-surjective}).
 \end{fact}
 
 \begin{fact}[Smooth Functions Vanishing on a Half-Line]\label[fact]{fact:pre-flat-function}

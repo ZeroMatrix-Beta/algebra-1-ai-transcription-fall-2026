@@ -551,7 +551,7 @@ This implies $f(-1) = f(1) = 1$. Since $-1 \neq 1$, $f$ cannot be injective, con
 \end{proof}
 
 \begin{steps}[Algebraic Invariants: Elements of Order $2$]
-The proof uses an \newterm{algebraic invariant}, a property preserved by every isomorphism. In $(\mathbb{R}^*, \cdot, 1)$, the element $-1$ has order $2$ ($x \neq e$ with $x^2 = e$, \cref{def:pre-cyclic}), while $(\mathbb{R}^*_{>0}, \cdot, 1)$ has no element of order $2$. An isomorphism maps elements of order $2$ to elements of order $2$, so the two groups are not isomorphic, although as sets they have the same cardinality.
+The proof uses an \newterm{algebraic invariant}, a property preserved by every isomorphism. In $(\mathbb{R}^*, \cdot, 1)$, the element $-1$ has order $2$ ($x \neq e$ with $x^2 = e$, \cref{def:pre-cyclic}), while $(\mathbb{R}^*_{>0}, \cdot, 1)$ has no element of order $2$. An isomorphism maps elements of order $2$ to elements of order $2$, so the two groups are not isomorphic, although as sets they have the same cardinality (\cref{fact:pre-cardinality}).
 \end{steps}
 \end{content}
 
@@ -1140,7 +1140,7 @@ As observed by the lecturer, the prime $2$ can be replaced by any integer $k \ge
 \[
 \mathbb{Z}\left[\frac{1}{k}\right] := \left\{ \frac{a}{k^n} \;\middle|\; a \in \mathbb{Z}, \ n \ge 0 \right\}
 \]
-forms a valid intermediate subring between $\mathbb{Z}$ and $\mathbb{Q}$. In abstract algebra, this construction represents the simplest instance of the \newterm{localization} of a commutative ring at a multiplicative set. The case $k = 3$ returns in Week~3 (\cref{ex:frac-triadic}).
+forms a valid intermediate subring between $\mathbb{Z}$ and $\mathbb{Q}$. In abstract algebra, this construction represents the simplest instance of the \newterm{localization} of a commutative ring at a multiplicative set, here $\{1, k, k^2, \dots\}$: the elements of that set are made invertible. The case $k = 3$ returns in Week~3 (\cref{ex:frac-triadic}).
 \end{steps}
 \end{content}
 
@@ -1982,7 +1982,7 @@ Consider the function $f \colon \mathbb{R}_{>0} \to \mathbb{R}$ defined by:
 \[
 f(x) := \sin\left(\frac{1}{x}\right).
 \]
-By standard calculus rules, $f$ is infinitely differentiable on $(0, \infty)$, so $f \in C^\infty(\mathbb{R}_{>0})$. However, as $x \to 0^+$, $f(x)$ oscillates infinitely often between $-1$ and $1$, so $\lim_{x \to 0^+} f(x)$ does not exist. Consequently, $f$ cannot even be extended continuously to $x = 0$, let alone smoothly to all of $\mathbb{R}$. Thus, $f \notin \operatorname{Im}(\operatorname{Res})$.
+By standard calculus rules, $f$ is infinitely differentiable on $(0, \infty)$, so $f \in C^\infty(\mathbb{R}_{>0})$. However, as $x \to 0^+$, $f(x)$ oscillates infinitely often between $-1$ and $1$, so $\lim_{x \to 0^+} f(x)$ does not exist. Consequently, $f$ cannot even be extended continuously to $x = 0$ (\cref{fact:pre-continuity}), let alone smoothly to all of $\mathbb{R}$. Thus, $f \notin \operatorname{Im}(\operatorname{Res})$.
 \end{proof}
 
 \begin{center}
@@ -2245,7 +2245,7 @@ In standard concrete algebra, an isomorphism is typically introduced as a \emph{
 \begin{itemize}
     \item In $\mathbf{Grp}$, categorical isomorphisms are precisely bijective group homomorphisms (\cref{prop:isomorphism-inverse-characterization}).
     \item In $\mathbf{Ring}$, categorical isomorphisms are bijective ring homomorphisms (\cref{def:ring-isomorphism}).
-    \item In $\mathbf{Vect}_K$, categorical isomorphisms are bijective linear transformations (invertible matrices, in finite dimension).
+    \item In $\mathbf{Vect}_K$, categorical isomorphisms are bijective linear transformations (invertible matrices in finite dimension, \cref{fact:pre-matrices}).
 \end{itemize}
 \end{steps}
 \end{content}
