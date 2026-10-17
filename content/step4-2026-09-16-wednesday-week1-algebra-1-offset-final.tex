@@ -114,6 +114,11 @@ Since $N(\alpha), N(\beta) \in \mathbb{Z}_{\ge 0}$, we must have $N(\alpha) = a^
 \end{steps}
 \end{content}
 
+\begin{aiNote}[Beyond the Lecture: Prime vs.\ Irreducible Elements]
+% [PERSISTENT, ADDITION — Gemini 4 Argon]
+In general commutative algebra, a non-zero non-unit $q$ in an integral domain $R$ whose only divisors are units and associates ($q = xy \implies x \in R^\times$ or $y \in R^\times$) is called \newterm{irreducible}, whereas $q$ is called \newterm{prime} if $q \mid xy \implies q \mid x$ or $q \mid y$. Every prime element is irreducible, but in an arbitrary integral domain the converse can fail. In unique factorization domains such as $\mathbb{Z}$ and $\mathbb{Z}[i]$ (studied later in the course), the two notions coincide, which is why the lecture uses \qt{prime} for both.
+\end{aiNote}
+
 \subsection{When Does a Rational Prime Remain Prime in \texorpdfstring{$\mathbb{Z}[i]$}{Z[i]}?}
 
 \begin{speech}[00:02:48 - 00:04:08]
@@ -227,7 +232,8 @@ This algebraic deduction establishes a profound bridge:
 \end{content}
 
 \begin{aiNote}[Intermediate Steps Added by Transcriber]
-The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product $a^2 + b^2$ divides $p$, and remarks that this step \qt{already requires some statement about unique factorization} (\cref{fact:pre-unique-factorization}, or Euclid's lemma, \cref{fact:pre-euclid}). The norm computation above reaches \eqref{eq:sum-of-squares-condition} without that statement: it only uses $N(zw) = N(z) \, N(w)$ and the primality of $p$ in $\mathbb{Z}$.
+% [Refined by Gemini 4 Argon]
+The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product $a^2 + b^2$ divides $p$, and remarks that this step \qt{already requires some statement about unique factorization} (\cref{fact:pre-unique-factorization}, or Euclid's lemma, \cref{fact:pre-euclid}). Even with unique factorization in $\mathbb{Z}[i]$, deducing $z \bar{z} \mid p$ from $z \mid p$ and $\bar{z} \mid p$ for an irreducible $z = a + bi$ additionally requires that $z$ and $\bar{z}$ are not associates (for instance, $3 \mid 3$ and $\bar{3} = 3 \mid 3$, yet $3 \cdot \bar{3} = 9 \nmid 3$; and for $p = 2$, $1 + i$ and $1 - i = -i(1 + i)$ are associates, with $(1 + i)(1 - i) = 2 \mid 2$ holding only because $2 = -i(1 + i)^2$ is ramified). The norm computation above reaches \eqref{eq:sum-of-squares-condition} directly without either requirement: it only uses $N(zw) = N(z) \, N(w)$ and the primality of $p$ in $\mathbb{Z}$.
 \end{aiNote}
 
 \subsection{Fermat's Theorem on Sums of Two Squares}

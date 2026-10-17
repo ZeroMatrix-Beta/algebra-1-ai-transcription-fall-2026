@@ -1060,6 +1060,15 @@ Thus, $(1 + \gamma)$ is invertible, completing the proof that $f(x)$ is a unit i
 
 \end{proofWrapper}
 
+\begin{aiNote}[Beyond the Lecture: The Recursive Coefficient-by-Coefficient Proof]
+% [PERSISTENT, ADDITION — Gemini 4 Argon]
+At timestamp 00:36:51, the lecturer mentions a second proof of \cref{thm:units-power-series-ring}. Instead of substituting $\gamma$ into the geometric series, one can solve $\bigl(\sum_{n=0}^\infty a_n x^n\bigr)\bigl(\sum_{n=0}^\infty b_n x^n\bigr) = 1$ directly for the coefficients $b_n \in R$ by induction on $n$, using the Cauchy product (\cref{def:power-series-multiplication}):
+\begin{itemize}
+    \item \textbf{Base case ($n = 0$):} $a_0 b_0 = 1$, which has the unique solution $b_0 = a_0^{-1} \in R$ since $a_0 \in \operatorname{Unit}(R)$.
+    \item \textbf{Inductive step ($n \ge 1$):} Having uniquely determined $b_0, \dots, b_{n-1} \in R$, the $x^n$-coefficient of the product is $\sum_{k=0}^n a_k b_{n-k} = a_0 b_n + \sum_{k=1}^n a_k b_{n-k} = 0$, which uniquely determines $b_n = -a_0^{-1} \sum_{k=1}^n a_k b_{n-k} \in R$.
+\end{itemize}
+\end{aiNote}
+
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
     \item \textbf{Field of Fractions:} For an integral domain $R$, $\operatorname{Frac}(R)$ is formally the set of equivalence classes of pairs $(r, s) \in R \times (R \setminus \{0\})$ with $(r, s) \equiv (t, w) \iff rw = st$. In practice one computes with fractions $\frac{r}{s}$ by the usual rules; the integral domain property guarantees that the denominators $sw$ stay non-zero, and every $\frac{r}{s} \neq 0$ has the inverse $\frac{s}{r}$.
