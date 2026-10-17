@@ -1,0 +1,2052 @@
+% ==========================================
+% Step 4/4 - Final refinement (refinement step 3)
+% Output: step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex
+% Input: step3-2026-10-14-tuesday-week5-algebra-1-offset-speech_refined.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-16 22:52:36
+% Thought summaries: step4-2026-10-14-tuesday-week5-algebra-1-offset-final-thoughts.md
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 77’068 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 77’068 (neu verrechneter Input)
+%   - Output Tokens       : 42’655 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 15’219 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 3/4 - Speech refinement (refinement step 2)
+% Output: step3-2026-10-14-tuesday-week5-algebra-1-offset-speech_refined.tex
+% Input: step2-2026-10-14-tuesday-week5-algebra-1-offset-merged.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-16 22:41:41
+% Thought summaries: step3-2026-10-14-tuesday-week5-algebra-1-offset-speech_refined-thoughts.md
+% ------------------------------------------
+% Token Usage (2 Request(s)):
+%   - Total Prompt Tokens : 510’931 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 52’158 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 458’773 (neu verrechneter Input)
+%   - Output Tokens       : 44’714 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 48’811 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 2/4 - Merge & timestamp alignment (refinement step 1)
+% Output: step2-2026-10-14-tuesday-week5-algebra-1-offset-merged.tex
+% Input: step1-2026-10-14-tuesday-week5-algebra-1-all-offset.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.4
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-16 22:06:49
+% Thought summaries: step2-2026-10-14-tuesday-week5-algebra-1-offset-merged-thoughts.md
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 213’047 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 213’047 (neu verrechneter Input)
+%   - Output Tokens       : 46’551 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 13’885 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 1/4 - Transcription, 4 part(s) combined
+% Output: step1-2026-10-14-tuesday-week5-algebra-1-all-offset.tex
+% Source video: 2026-10-14-tuesday-week5-algebra-1.mp4
+% Model: gemini-3.8-flash
+% Temperature: 0.36
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Processed on: 2026-10-16 21:49:37
+% ------------------------------------------
+% Parts:
+%   - Part 1: 2026-10-14-tuesday-week5-algebra-1-part1.mp4 | start 00:00:00 | model gemini-3.8-flash | processed 2026-10-16 21:23:52 | prompt 345’284 | output 12’876 | thinking 22’157
+%   - Part 2: 2026-10-14-tuesday-week5-algebra-1-part2.mp4 | start 00:21:48 | model gemini-3.8-flash | processed 2026-10-16 21:32:13 | prompt 357’780 | output 13’431 | thinking 20’728
+%   - Part 3: 2026-10-14-tuesday-week5-algebra-1-part3.mp4 | start 00:43:36 | model gemini-3.8-flash | processed 2026-10-16 21:41:06 | prompt 364’516 | output 14’527 | thinking 14’884
+%   - Part 4: 2026-10-14-tuesday-week5-algebra-1-part4.mp4 | start 01:05:24 | model gemini-3.8-flash | processed 2026-10-16 21:49:37 | prompt 371’821 | output 15’453 | thinking 32’276
+% ------------------------------------------
+% Token Usage of this run (4 Request(s)):
+%   - Total Prompt Tokens : 1’439’401 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 1’439’401 (neu verrechneter Input)
+%   - Output Tokens       : 56’287 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 90’045 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+
+% Primary Language: English
+% End of the video: 01:31:12
+
+\lecturechapter[5]{Tuesday}{14 Oct}{14 October 2026}{Quotient Rings, Maximal and Prime Ideals, and the Chinese Remainder Theorem}
+
+\begin{overview}[Course Content Overview]
+In this lecture, we explore the structural theory of ideals in commutative rings and their corresponding quotient rings:
+\begin{itemize}
+    \item \textbf{The Ideal Correspondence and Third Isomorphism Theorem:} We review the bijection between ideals of $R$ containing $K$ and ideals of the quotient $\faktor{R}{K}$, proving the Third Isomorphism Theorem for rings: $\faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)} \cong \faktor{R}{I}$.
+    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ and prove that $\faktor{R}{M}$ is a field if and only if $M$ is maximal. Furthermore, we establish Krull's Theorem---that every non-zero commutative ring contains at least one maximal ideal---via Zorn's Lemma, discussing its non-constructive foundational nature.
+    \item \textbf{Prime Ideals and Integral Domains:} In parallel, we define prime ideals and establish that $\faktor{R}{P}$ is an integral domain if and only if $P$ is prime, deducing that every maximal ideal is prime. We examine non-prime ideals via smooth functions with compact support $C_c^\infty(\mathbb{R}) \subset C^\infty(\mathbb{R})$.
+    \item \textbf{The Chinese Remainder Theorem for Rings:} We define ideal arithmetic (sums and products) and comaximality ($I + J = (1)$), formulating the general Chinese Remainder Theorem as a ring isomorphism $\phi \colon \faktor{R}{IJ} \xrightarrow{\sim} \faktor{R}{I} \times \faktor{R}{J}$ and completing the proof of injectivity.
+\end{itemize}
+\end{overview}
+
+\section{Ideals in Quotient Rings and the Third Isomorphism Theorem}
+
+\subsection{The Correspondence Theorem for Ideals}
+
+\begin{speech}[00:00:01 - 00:01:36]
+Okay, so, we will start. And I remind you, last week we had this correspondence: If $R$ is a ring and $K$ inside $R$ is an ideal \inlinemetanote{writes $K \subset R \text{ ideal}$}, then we constructed last week this quotient map $q$ to $R \bmod K$ \inlinemetanote{writes $R \xrightarrow{q} \faktor{R}{K}$}, so that was one. And then there was this correspondence, which I remind you. For algebraists, this correspondence --- it's the correspondence of ideals, and it's really deep in the brain of an algebraist, like almost to the reptilian brain.
+
+This correspondence says: If we take here the ideals of $R$ \inlinemetanote{writes $\operatorname{cl}_K(R)$} --- and this is the set of ideals inside $R$, so $I$ is an ideal \inlinemetanote{writes $\{ I \subset R \mid I \text{ ideal}\}$}, and $K$ is inside $I$ \inlinemetanote{writes $K \subset I \}$} --- on one hand, and on the other hand we take the ideals of $R \bmod K$ \inlinemetanote{writes $\operatorname{cl}(\faktor{R}{K})$}, and this is just every ideal \inlinemetanote{writes $\{ J \subset \faktor{R}{K} \mid J \text{ is an ideal} \}$}.
+
+And the correspondence we proved last time, which I said, it's just absolutely fundamental. Almost for an algebraist, if you see a ring and this quotient map, this correspondence is so fundamental, one basically identifies these two sets in your brain --- just identify they're the same set.
+\end{speech}
+
+\begin{content}[The Correspondence Theorem for Ideals: Setup]
+Let $R$ be a ring and $K \subset R$ an ideal. Consider the canonical quotient projection map:
+\begin{equation}\label{eq:canonical-quotient-map}
+q \colon R \to \faktor{R}{K}, \quad x \mapsto [x] = x + K.
+\end{equation}
+
+We define the following sets of ideals:
+\begin{align}
+\operatorname{cl}_K(R) &:= \left\{ I \subset R \;\middle|\; I \text{ is an ideal of } R \text{ with } K \subset I \right\}, \label{eq:ideals-containing-k} \\
+\operatorname{cl}\left(\faktor{R}{K}\right) &:= \left\{ J \subset \faktor{R}{K} \;\middle|\; J \text{ is an ideal of } \faktor{R}{K} \right\}. \label{eq:ideals-in-quotient}
+\end{align}
+\end{content}
+
+\begin{aiNote}[Notation: $\operatorname{cl}$ vs. $\operatorname{Id}$]
+% [PERSISTENT]
+Some textbooks denote the set of ideals of a ring $R$ by $\operatorname{Id}(R)$ or $\mathcal{I}(R)$. The lecture consistently uses the notation $\operatorname{cl}(R)$ (and $\operatorname{cl}_K(R)$ for ideals containing $K$).
+\end{aiNote}
+
+\begin{speech}[00:01:36 - 00:02:37]
+The bijection which we discussed last time is this: There's a bijection here \inlinemetanote{writes $\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}(\faktor{R}{K})$} to ideals of $R \bmod K$, and it takes a $J$ here, this way goes to $q^{-1}(J)$ \inlinemetanote{writes $q^{-1}(J) \mathrel{\reflectbox{$\mapsto$}} J$}, and if you take an $I$ here which contains $K$, this goes to $q(I)$ \inlinemetanote{writes $I \mapsto q(I)$}. Sometimes this $q(I)$ is called $I \bmod K$ \inlinemetanote{writes $= \faktor{I}{K}$}.
+
+Okay, so, that's the correspondence. We discussed this extremely carefully because I thought it wasn't really explained so carefully in the book.
+
+So, one more step of this is that this is a way to just, if you have ideals here, it's the same thing as certain ideals there. All right? Are there any questions about this? As I said, this is absolutely fundamental; it's just used all the time. And as I said, for the algebraist, these sets are so strongly identified, they're just viewed as like the same set. Yeah.
+\end{speech}
+
+\begin{content}[The Correspondence Theorem for Ideals: Bijection]
+\begin{theorem}[Ideal Correspondence Theorem]\label[theorem]{thm:ideal-correspondence}
+Let $R$ be a ring and $K \subset R$ an ideal, with canonical projection $q \colon R \to \faktor{R}{K}$. The assignment:
+\begin{equation}\label{eq:ideal-bijection}
+\begin{aligned}
+\Phi \colon \operatorname{cl}_K(R) &\longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right) \\
+I &\longmapsto q(I) = \faktor{I}{K} \\
+q^{-1}(J) &\mathrel{\reflectbox{$\longmapsto$}} J
+\end{aligned}
+\end{equation}
+is an inclusion-preserving bijection between the set of ideals of $R$ containing $K$ and the set of all ideals of the quotient ring $\faktor{R}{K}$.
+\end{theorem}
+
+\begin{steps}[Properties of the Correspondence Map]
+Under this bijection, the following structural properties hold for any $I \in \operatorname{cl}_K(R)$ and $J \in \operatorname{cl}(\faktor{R}{K})$:
+\begin{itemize}
+    \item \textbf{Pre-image of an Ideal:} For any ideal $J \subset \faktor{R}{K}$, the full pre-image $q^{-1}(J) = \{ x \in R \mid q(x) \in J \}$ is an ideal of $R$ that automatically contains $\ker(q) = K$.
+    \item \textbf{Forward Image of an Ideal:} For any ideal $I \subset R$ containing $K$, the image $q(I) = \{ x + K \mid x \in I \}$ is an ideal of $\faktor{R}{K}$, commonly denoted as $\faktor{I}{K}$.
+    \item \textbf{Order Preservation:} For ideals $I_1, I_2 \in \operatorname{cl}_K(R)$, one has $I_1 \subseteq I_2 \iff q(I_1) \subseteq q(I_2)$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Quotients of Quotients: The Third Isomorphism Theorem}
+
+\begin{speech}[00:02:37 - 00:03:48]
+So, you could ask, for example: What happens if I take a $J$ over here, an ideal $J$ in $R \bmod K$? \inlinemetanote{writes What happens $J \subset \faktor{R}{K} \text{ ideal}$} We know that from this, I can construct a quotient: \inlinemetanote{writes $\to \faktor{(\faktor{R}{K})}{J}$} $R \bmod K$, that's the ring, and that's an ideal, so this is the quotient.
+
+This is confusing notation sometimes, but this is the ring, this is an ideal in the ring, so I can construct the quotient.
+
+That's on this side of the correspondence: If I have an ideal in this ring, I can construct the quotient. You can ask: Well, what is that on the other side of the correspondence?
+
+To understand that: What is this quotient on the other side of the correspondence? \inlinemetanote{writes What is this quotient on the other side of the corr.?} Because for this quotient, I picked an ideal here, now I'm taking the quotient, and you can view that on the $R \bmod K$ side of the correspondence. So, what is that construction on the $R$ side of the correspondence?
+
+And that has a very nice answer. The answer for this \inlinemetanote{writes Ans:} is we look at this quotient map: We have a quotient map $R$ to $R \bmod K$ \inlinemetanote{writes $R \xrightarrow{q} \faktor{R}{K}$}.
+\end{speech}
+
+\begin{content}[Quotient of a Quotient Ring: Problem Setup]
+Given an ideal $J \subset \faktor{R}{K}$, the quotient ring $\faktor{(\faktor{R}{K})}{J}$ is well-defined.
+\begin{question}
+What is the structural meaning of the double quotient $\faktor{(\faktor{R}{K})}{J}$ in terms of the original ring $R$? That is, what does this quotient correspond to on the $R$-side of the ideal correspondence?
+\end{question}
+\end{content}
+
+\begin{speech}[00:03:48 - 00:05:06]
+That's realizing $R \bmod K$ as a quotient of $R$, and we can compose that with another quotient map \inlinemetanote{writes $\xrightarrow{\hat{q}} \faktor{(\faktor{R}{K})}{J}$} to $(R \bmod K) \bmod J$. This is the quotient map: Since $J$ is an ideal of $R \bmod K$, I can consider that quotient map, and I can consider the composition.
+
+Let me consider this composition. For $f$, I do $q$ first and then I do $\hat{q}$ \inlinemetanote{writes $f = \hat{q} \circ q$}. So, this is $f$ going from $R$ all the way to $(R \bmod K) \bmod J$ \inlinemetanote{writes $f \colon R \to \faktor{(\faktor{R}{K})}{J}$}. And since both of these are surjective --- $q$ was surjective, $\hat{q}$ is surjective ---, this $f$ is surjective. Is that clear? \inlinemetanote{writes $f$ is surjective since both $q, \hat{q}$ are}
+
+Okay. So...
+\end{speech}
+
+\begin{content}[Composition of the Canonical Quotient Maps]
+We consider the two canonical surjective quotient homomorphisms:
+\begin{align}
+q &\colon R \longrightarrow \faktor{R}{K}, \quad x \longmapsto x + K, \label{eq:first-quotient-map} \\
+\hat{q} &\colon \faktor{R}{K} \longrightarrow \faktor{\left(\faktor{R}{K}\right)}{J}, \quad y + K \longmapsto (y + K) + J. \label{eq:second-quotient-map}
+\end{align}
+Their composition is defined by:
+\begin{equation}\label{eq:composed-homomorphism}
+f := \hat{q} \circ q \colon R \longrightarrow \faktor{\left(\faktor{R}{K}\right)}{J}.
+\end{equation}
+
+Since both $q$ and $\hat{q}$ are surjective ring homomorphisms, their composition $f$ is also surjective:
+\begin{equation}\label{eq:f-surjective}
+f \text{ is surjective since both } q, \hat{q} \text{ are surjective}.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:05:06 - 00:06:29]
+In order to understand this ring homomorphism --- we already know it's surjective --- we'd like to know what the kernel is. Because if we knew what the kernel is, then we could use our first isomorphism theorem.
+
+So, the question here: What is the kernel? What is the kernel of $f$? \inlinemetanote{writes What is the $\ker(f) = ?$} We'd like to know that. The question is: If I have some person in $R$, and you know, I go all the way to the right object, when does that person go to zero? Well, that's the question of the kernel.
+
+If I have somebody here \inlinemetanote{writes $x$ under $R$}, when does this person go all the way to zero here? \inlinemetanote{writes $0$ under $\faktor{(\faktor{R}{K})}{J}$} Well, that happens... I can take $q(x)$, and then $q(x)$ should be in the kernel \inlinemetanote{writes $q(x) \in \ker(\hat{q})$}. So, if $x$ goes all the way to zero here, that means $q(x)$ is in the kernel of this one, right?
+
+What is the kernel of that map? Well, we know the kernel of that map is $J$ \inlinemetanote{writes $= J$}, because that's the quotient map; the kernel of the quotient map is $J$. So, the only way $x$ can get to zero here is if $q(x)$ is in $J$.
+\end{speech}
+
+\begin{content}[Kernel Computation for the Composed Map]
+To apply the First Isomorphism Theorem to $f$, we determine its kernel:
+\[
+\ker(f) = \{ x \in R \mid f(x) = 0 \}.
+\]
+Tracking an element $x \in R$ across the composition:
+\begin{equation}\label{eq:kernel-derivation-diagram}
+\begin{aligned}
+R &\xrightarrow{\quad q \quad} \faktor{R}{K} \xrightarrow{\quad \hat{q} \quad} \faktor{\left(\faktor{R}{K}\right)}{J} \\
+x &\longmapsto q(x) \longmapsto \hat{q}(q(x)) = 0
+\end{aligned}
+\end{equation}
+By the definition of the quotient map $\hat{q}$, we have:
+\[
+\hat{q}(q(x)) = 0 \iff q(x) \in \ker(\hat{q}) = J.
+\]
+Thus, an element $x \in R$ satisfies $f(x) = 0$ if and only if $q(x) \in J$, which means:
+\begin{equation}\label{eq:ker-f-preimage}
+x \in q^{-1}(J).
+\end{equation}
+\end{content}
+
+\begin{speech}[00:06:29 - 00:07:38]
+Okay? That tells us what the kernel is in this correspondence. Sorry.
+
+The answer is, the kernel of $f$ is $q^{-1}(J)$, which is that correspondence \inlinemetanote{writes $\ker(f) = q^{-1}(J)$}. The kernel is exactly those people in $R$ where, when I move them to $R \bmod K$ with $q$, I end up in $J$, which is exactly $q^{-1}(J)$. Okay?
+
+Then, using that first isomorphism theorem, \inlinemetanote{writes First Isom Theorem $\implies$} we can answer this question. The first isomorphism theorem says that if I take the image, which is the whole thing, it's isomorphic to that modulo the kernel.
+
+The first isomorphism theorem says this: \inlinemetanote{writes $\faktor{R}{\ker(f)} \cong \faktor{(\faktor{R}{K})}{J}$} $R$ modulo the kernel of $f$ is isomorphic to $(R \bmod K) \bmod J$. Are you happy that's just recalling what that is?
+
+Now we know what the kernel of $f$ is, so we can restate that as saying $R \bmod q^{-1}(J)$ is isomorphic to $(R \bmod K) \bmod J$ \inlinemetanote{writes $\faktor{R}{q^{-1}(J)} \cong \faktor{(\faktor{R}{K})}{J}$}. So, we've proven that.
+\end{speech}
+
+\begin{content}[Application of the First Isomorphism Theorem]
+From \eqref{eq:ker-f-preimage}, we obtain:
+\begin{equation}\label{eq:kernel-f-identity}
+\ker(f) = q^{-1}(J).
+\end{equation}
+
+By the First Isomorphism Theorem for rings applied to the surjective homomorphism $f \colon R \to \faktor{(\faktor{R}{K})}{J}$:
+\begin{equation}\label{eq:first-isom-quotient}
+\faktor{R}{\ker(f)} \cong \operatorname{Im}(f) = \faktor{\left(\faktor{R}{K}\right)}{J}.
+\end{equation}
+Substituting $\ker(f) = q^{-1}(J)$ yields:
+\begin{equation}\label{eq:third-isom-j-form}
+\faktor{R}{q^{-1}(J)} \cong \faktor{\left(\faktor{R}{K}\right)}{J}.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:07:38 - 00:09:12]
+It just used an understanding of quotients and the first isomorphism theorem.
+
+It's usually not written this way \inlinemetanote{draws a box around $\faktor{R}{q^{-1}(J)} \cong \faktor{(\faktor{R}{K})}{J}$}. It's usually written on the $I$ side. Equivalently, I can take $q^{-1}(J)$ and call that $I$. This is just another way of writing it, starting on the $I$ side: This is isomorphic to $(R \bmod K) \bmod q(I)$ \inlinemetanote{writes $\faktor{R}{I} \cong \faktor{(\faktor{R}{K})}{q(I)}$}.
+
+This is just writing the same thing, because if we say $q^{-1}(J)$ is equal to some ideal $I$, this $I$ has to be some ideal that contains $K$. This is writing it, so to speak, starting with the $J$ side; this is writing it starting with $I$ \inlinemetanote{boxes $\faktor{R}{I} \cong \faktor{(\faktor{R}{K})}{q(I)}$}. Okay?
+
+So, you'll see both formulations. And the way you normally see this is you use this notation $q(I) = I \bmod K$, which is a very sensible notation. Then the way you normally see this in books is: $R \bmod I$ is equal to $(R \bmod K) / (I \bmod K)$ \inlinemetanote{writes $\faktor{R}{I} \cong \faktor{\faktor{R}{K}}{\faktor{I}{K}}$}. That's exactly a third way of expressing the same thing, just in new notation. Okay?
+
+And this is very convenient, because you can try to prove it by saying $R/K$ times $K/I$ is equal to $R/I$ \inlinemetanote{writes $\frac{R}{K} \cdot \frac{K}{I} = \frac{R}{I}$}. That's a very convenient mnemonic for it. It's not exactly a proof, but you know, the notation works perfectly.
+
+We shouldn't write these things during the lectures, so maybe I cross this out \inlinemetanote{crosses out $\frac{R}{K} \cdot \frac{K}{I} = \frac{R}{I}$}. But that's why the notation works perfectly.
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Third Isomorphism Theorem for Rings]\label[theorem]{thm:third-isomorphism-theorem}
+Let $R$ be a ring and let $K \subseteq I \subseteq R$ be ideals of $R$. Then $\faktor{I}{K}$ is an ideal of $\faktor{R}{K}$, and there is a canonical ring isomorphism:
+\begin{equation}\label{eq:third-isomorphism-theorem}
+\faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)} \cong \faktor{R}{I}.
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Three Equivalent Formulations]
+Depending on whether one starts from the ideal $J \subset \faktor{R}{K}$ or the ideal $I \subset R$ containing $K$, the isomorphism is expressed as:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Formulation starting with $J \subset \faktor{R}{K}$:}
+    \[
+    \boxed{\faktor{R}{q^{-1}(J)} \cong \faktor{\left(\faktor{R}{K}\right)}{J}}
+    \]
+    \setcounter{enumi}{1} \item \textbf{Formulation starting with $I \subset R$ ($K \subset I$):}
+    \[
+    \boxed{\faktor{R}{I} \cong \faktor{\left(\faktor{R}{K}\right)}{q(I)}}
+    \]
+    \setcounter{enumi}{2} \item \textbf{Standard Textbook Formulation (writing $q(I) = \faktor{I}{K}$):}
+    \[
+    \faktor{R}{I} \cong \faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)}
+    \]
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{overview}[On the Board: Informal Fraction Mnemonic]
+The lecturer writes down an informal arithmetic mnemonic to remember the cancellation of quotient rings:
+\[
+\sout{\frac{R}{K} \cdot \frac{K}{I} = \frac{R}{I}}
+\]
+While algebraically suggestive (formally mimicking the cancellation of fractions), the lecturer crosses it out immediately, emphasizing that it serves only as a mental mnemonic rather than a valid mathematical deduction.
+\end{overview}
+
+\begin{speech}[00:09:12 - 00:09:28]
+All right, so, that's this correspondence. And as I said, this is really an extremely basic thing that if you study mathematics, it will also go to your reptilian brain eventually, if it's not there already. \inlinemetanote{takes sponge and begins wiping the middle and right boards}
+\end{speech}
+
+\begin{note}[Board Cleaning]
+The lecturer wipes the middle and right chalkboard panels clean with a wet sponge and squeegee from 00:09:28 to 00:10:10, preparing the board for the discussion on maximal ideals.
+\end{note}
+
+\section{Maximal Ideals}
+
+\subsection{Definition of Maximal Ideals}
+
+\begin{speech}[00:10:11 - 00:11:04]
+Okay, so, the other topic that we started last week was that of maximal ideals. We will prove some theorems about this now.
+
+Let $R$ be a ring \inlinemetanote{writes Let $R$ be a ring}. We have this notation now $\operatorname{cl}(R)$ --- this is the set of all ideals ---, but I want this new set $\operatorname{cl}^*(R)$ \inlinemetanote{writes $\operatorname{cl}^*(R)$}: This is the set of ideals $I$ in $R$ where $I$ is a proper ideal \inlinemetanote{writes $\{ I \subset R \mid I \text{ is proper ideal} \}$}.
+
+Or equivalently, this just means that $I$ is an ideal not equal to the whole ring, okay? \inlinemetanote{writes $I \neq R$} We had this definition last time. So, this is of course a subset of all ideals \inlinemetanote{writes $\operatorname{cl}^*(R) \subset \operatorname{cl}(R)$}, and more or less, I throw out the ideal which is the whole ring. All right?
+\end{speech}
+
+\begin{content}[Proper Ideals]
+Let $R$ be a ring. The set of all ideals of $R$ is denoted by $\operatorname{cl}(R)$. We denote the collection of all \newterm{proper ideals} of $R$ by:
+\begin{equation}\label{eq:proper-ideals-def}
+\operatorname{cl}^*(R) := \{ I \subset R \mid I \text{ is a proper ideal} \} = \{ I \in \operatorname{cl}(R) \mid I \neq R \}.
+\end{equation}
+Clearly, $\operatorname{cl}^*(R) \subset \operatorname{cl}(R)$ is obtained by excluding the unit ideal $R$ itself.
+\end{content}
+
+\begin{speech}[00:11:04 - 00:12:36]
+And then we say --- and this is a definition ---: $M$ \inlinemetanote{writes $M \subset R$ is a maximal ideal} is a maximal ideal if it satisfies two properties. The first is that $M$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes 1. $M \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $M$ is not the full ring, okay? \inlinemetanote{writes $(M \neq R)$}
+
+Maximal ideals are not allowed to be the full ring. This is a source of standard confusion, but it's really important in the definition. Maximal ideals are not the full ring --- that's cheating for a maximal ideal.
+
+And the second is it's maximal: That means that for any other ideal in here \inlinemetanote{writes 2. $\forall \hat{M} \in \operatorname{cl}^*(R)$}, if $\hat{M}$ contains $M$, this means that $\hat{M} = M$ \inlinemetanote{writes if $\hat{M} \supset M \implies \hat{M} = M$}. Okay?
+
+So, if you view this set of ideals as some kind of tournament where one ideal is a better player than the other if it contains that ideal, then this maximal ideal says you're kind of at the top: No one beats you; no one's on top of you. If anyone tries to be on top of you, they have to be equal.
+
+And you can see why we throw out $R$ here, because $R$ would be on top of everybody, and this whole definition would be kind of silly if we involved $R$. Is that clear? Because $R$ would just be... I mean, there'd only be one maximal ideal, $R$, and we don't want that.
+\end{speech}
+
+\begin{content}
+\recap{Maximal ideals were defined in the previous lecture (\cref{def:maximal-ideal}); the lecturer restates the definition here.}
+
+\begin{definition}[Maximal Ideal]\label[definition]{def:maximal-ideal-w5}
+Let $R$ be a ring. An ideal $M \subset R$ is called a \newterm{maximal ideal} if it satisfies the following two conditions:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Properness:} $M \in \operatorname{cl}^*(R)$, i.e., $M \neq R$.
+    \setcounter{enumi}{1} \item \textbf{Maximality:} For every proper ideal $\hat{M} \in \operatorname{cl}^*(R)$,
+    \[
+    \text{if } \hat{M} \supseteq M \implies \hat{M} = M.
+    \]
+\end{enumerate}
+Equivalently, there are no ideals strictly between $M$ and $R$: if $I$ is an ideal of $R$ with $M \subseteq I \subseteq R$, then $I = M$ or $I = R$.
+\end{definition}
+\end{content}
+
+\begin{insight}[The \qt{Tournament} Intuition for Maximal Ideals]
+The lecturer visualizes the partially ordered set of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ as a tournament: an ideal $\hat{M}$ \qt{beats} $M$ if $\hat{M} \supset M$. A maximal ideal is an undefeated player at the very top: no proper ideal strictly contains it. The entire ring $R$ is excluded from the competition by definition; otherwise, $R$ would trivialise the concept by containing every ideal.
+\end{insight}
+
+\subsection{Fields and the Zero Ideal}
+
+\begin{speech}[00:12:36 - 00:13:28]
+Okay, so, that's the definition of maximal ideal. We had some examples last time, but now we go...
+
+So, here we have a proposition: \inlinemetanote{writes Prop. $R$ is a field $\iff (0) \subset R$ is a max ideal} $R$ is a field if and only if $(0)$ in $R$ is a maximal ideal.
+
+This is relating the idea of a field --- some rings are fields ---, so it's a field if and only if zero is a maximal ideal. Now there are some edge cases here which it's good to think about carefully.
+
+Let's just do this.
+\end{speech}
+
+\begin{content}[Characterization of Fields via the Zero Ideal]
+\begin{proposition}\label[proposition]{prop:field-zero-maximal}
+Let $R$ be a ring. Then $R$ is a field if and only if the zero ideal $(0) \subset R$ is a maximal ideal.
+\end{proposition}
+\end{content}
+
+\begin{speech}[00:13:28 - 00:14:48]
+Let's try to prove this. This is not hard, but you have to say the words carefully. Proof: We're going to do the first direction, so, assume $R$ is a field \inlinemetanote{writes Proof: Assume $R$ is a field}. Okay.
+
+We have --- and this is the edge case business --- for a field, you're not allowed to be the zero ring, right? So in particular, $R$ is not the zero ring \inlinemetanote{writes $(R \neq 0 \text{ ring})$}.
+
+And then the set of ideals of $R$ consists of two ideals: There's the zero ideal and there's the full ideal \inlinemetanote{writes The $\operatorname{cl}(R) = \{ (0), R \}$}. And these are different ideals, because $R$ is not the zero ring.
+
+If you take $\operatorname{cl}^*(R)$ here, it consists of just the zero ideal \inlinemetanote{writes The $\operatorname{cl}^*(R) = \{ (0) \}$}. Okay?
+
+And so, this of course means that $(0)$ is a maximal ideal \inlinemetanote{writes $\implies (0) \subset R$ is a max ideal}. Because the set $\operatorname{cl}^*(R)$ only has one element, it's this. And so certainly no one beats it --- there's no one there to beat it, anyway.
+
+There's a small meeting of definitions here... I mean, you should think about these edge cases: They're all treated perfectly. When it's a field, it's not the zero ring.
+\end{speech}
+
+\begin{content}[Proof of Proposition: Forward Implication]
+\begin{proof}[Proof of \cref{prop:field-zero-maximal} ($\implies$)]
+Assume $R$ is a field. By convention, a field is not the zero ring ($R \neq \{0\}$, so $1 \neq 0$).
+
+Since every non-zero element $x \in R \setminus \{0\}$ has a multiplicative inverse $x^{-1}$, any ideal $I \subseteq R$ containing a non-zero element $x$ also contains $1 = x^{-1} x$, which implies $I = R$. 
+
+Hence, the only ideals of $R$ are the zero ideal and the whole ring:
+\begin{equation}\label{eq:field-ideals-w5}
+\operatorname{cl}(R) = \{ (0), R \}.
+\end{equation}
+Excluding the improper ideal $R$, the set of proper ideals contains exactly one element:
+\begin{equation}\label{eq:field-proper-ideals}
+\operatorname{cl}^*(R) = \{ (0) \}.
+\end{equation}
+Since $(0)$ is the unique element in $\operatorname{cl}^*(R)$, it cannot be strictly contained in any proper ideal. Thus, $(0) \subset R$ is a maximal ideal.
+\end{proof}
+\end{content}
+
+\begin{speech}[00:14:48 - 00:15:02]
+Now let's do the other way. There's nothing to these proofs here; it's just somehow organizing the definitions in your head correctly. \inlinemetanote{takes sponge to clean the rightmost board panel}
+\end{speech}
+
+\begin{note}[Board Cleaning]
+The lecturer cleans the rightmost chalkboard panel with a sponge from 00:15:02 to 00:15:58.
+\end{note}
+
+\begin{speech}[00:15:58 - 00:16:17]
+Okay, so, now the other way: We suppose $(0)$ in $R$ is a maximal ideal \inlinemetanote{writes Suppose $(0) \subset R$ is a max ideal}. We want to prove $R$ is a field then. Yeah?
+\end{speech}
+
+\begin{student}[Student Question]
+I wanted to ask before, for the definition of a maximal ideal, does it always exist? Or can you have two disjoint ideals, or like partially disjoint ideals, where their union would also be an ideal, and therefore you wouldn't have a maximal ideal?
+\end{student}
+
+\begin{speech}[00:16:30 - 00:16:51]
+Yeah. It's a good question; we're going to prove it. The question is --- maybe I say it ---: If $R$ is a ring, does there always exist a maximal ideal? Is that your question? That's a good question; we're going to prove it. The answer is going to be yes.
+
+But you might be disappointed. You might nevertheless be disappointed, maybe I'll say.
+\end{speech}
+
+\begin{aiNote}[Beyond the Lecture: Krull's Theorem on the Existence of Maximal Ideals]
+% [PERSISTENT, ADDITION]
+The assertion that every non-zero unital commutative ring possesses at least one maximal ideal is known as \emph{Krull's Theorem}. Its proof requires Zorn's Lemma (and is in fact equivalent to the Axiom of Choice), which is why the lecturer hints that the student \qt{might nevertheless be disappointed} by its non-constructive nature.
+\end{aiNote}
+
+\begin{speech}[00:16:51 - 00:18:05]
+Suppose $(0)$ is a maximal ideal. I want to prove that $R$ is a field; that's what I have to do here. Do you agree?
+
+And now the edge case is that since $(0)$ is a maximal ideal, this implies that $(0)$ is not $R$ \inlinemetanote{writes $(0) \neq R$}, because $R$ is not a maximal ideal. So, this implies that $R$ is not the zero ring \inlinemetanote{writes $\implies R \neq 0 \text{ ring}$}. Which is good, because we're going to have to prove that $R$ is a field, and in particular it can't be the zero ring. I'm just trying to point out the edge cases matching here. Okay.
+
+We must prove that $R$ is a field \inlinemetanote{writes We must prove that $R$ is a field}. How do I show something is a field if it's already a ring? I have to show the existence of multiplicative inverses for non-zero elements, right?
+
+So, let $x \in R$ be non-zero \inlinemetanote{writes Let $x \in R$, $x \neq 0$}. Okay?
+\end{speech}
+
+\begin{content}[Reverse Implication: Setup]
+Assume $(0) \subset R$ is a maximal ideal.
+\begin{itemize}
+    \item \textbf{Non-triviality of $R$:} By definition of a maximal ideal, $(0) \in \operatorname{cl}^*(R)$, meaning $(0) \neq R$. Therefore, $R$ is not the zero ring ($R \neq 0$).
+    \item \textbf{Goal:} To show that $R$ is a field, we must establish that every non-zero element $x \in R \setminus \{0\}$ has a multiplicative inverse in $R$.
+\end{itemize}
+\end{content}
+
+\begin{speech}[00:18:05 - 00:19:16]
+And I have to produce a multiplicative inverse for this person $x$, just from the assumptions. So, what can I do here?
+
+Well, I have this ideal $(0)$. Since $x$ is not zero, I can make an ideal that's generated... so I can take the ideal generated by $x$ \inlinemetanote{writes $0 \subset (x)$}. We discussed this symbol last time. So, I just take the ideal generated by $x$ \inlinemetanote{writes $(x) \text{ ideal gen by } x$}. It's given by all linear combinations and multiples of $x$, right? In this case, just all multiples of $x$.
+
+This is an ideal, because that is always an ideal: the ideal generated by some elements. It's definitely not the zero ideal, because $x$ is not zero. Okay?
+
+So, what can it be?
+\end{speech}
+
+\begin{content}[Reverse Implication: Principal Ideal Generation]
+Let $x \in R$ with $x \neq 0$. Consider the principal ideal generated by $x$:
+\begin{equation}\label{eq:principal-ideal-x}
+(x) := \{ z x \mid z \in R \}.
+\end{equation}
+Since $x \in (x)$ and $x \neq 0$, the ideal $(x)$ strictly contains $(0)$:
+\begin{equation}\label{eq:zero-strictly-in-x}
+(0) \subsetneq (x).
+\end{equation}
+\end{content}
+
+\begin{speech}[00:19:16 - 00:20:21]
+$(0)$ is a maximal ideal, so it's an ideal that's on top of it. There are no proper ideals on top of it. So, it has to be this \inlinemetanote{writes $(x) = R$}: That's by the assumption of $(0)$ being maximal \inlinemetanote{writes $0 \subset (x) \implies (x) = R \text{ by max}$}.
+
+That's kind of the crucial step of this argument: $(0)$ is a maximal ideal, this is some ideal, it's not zero, it's bigger than zero, it certainly contains zero, so it has to be the whole thing. Because our assumption is a very strong assumption: $(0)$ is a maximal ideal.
+
+If it's the whole thing, then this has to be the unit ideal. It has to be $R$. So, in particular, $1 \in (x)$ \inlinemetanote{writes $1 \in (x)$}.
+
+And as I said, $(x)$ is defined to be all the elements that look like $z x$ where $z \in R$ \inlinemetanote{writes $(x) = \{ z x \mid z \in R \}$}. That's the ideal generated by $x$, that's it. And $1$ is in it.
+
+Since $1 \in (x)$ \inlinemetanote{writes Since $1 \in (x)$}, that means there must exist some $z$ such that $z x = 1$ \inlinemetanote{writes $\exists z$ such that $z x = 1$}. And that's the multiplicative inverse.
+
+So, $z$ is the multiplicative inverse \inlinemetanote{writes $z$ is the multiplicative inverse}.
+\end{speech}
+
+\begin{content}[Reverse Implication: Invertibility and Conclusion]
+Since $(0)$ is a maximal ideal and $(0) \subsetneq (x)$, the ideal $(x)$ cannot be a proper ideal. Therefore:
+\begin{equation}\label{eq:x-equals-r}
+(x) = R.
+\end{equation}
+Because $1 \in R = (x)$, there exists some $z \in R$ such that:
+\begin{equation}\label{eq:mult-inverse-z}
+z x = 1.
+\end{equation}
+Thus, $z$ is the multiplicative inverse of $x$. Since every non-zero element $x \in R \setminus \{0\}$ has a multiplicative inverse, $R$ is a field.
+\end{content}
+
+\subsection{Quotients by Maximal Ideals}
+
+\begin{speech}[00:20:21 - 00:21:28]
+So, that's the proof the other way. If I assume that zero is a maximal ideal, I can use this maximality assumption to show that all non-zero elements have a multiplicative inverse.
+
+I have now proven this proposition: $R$ is a field if and only if $(0)$ is a maximal ideal.
+
+The next proposition, which is a kind of strengthening of that one, is: \inlinemetanote{writes Prop: $R/M$ is a field $\iff M \subset R$ is a maximal ideal} $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal.
+
+That's a strengthening of this statement: That says $R$ is a field if zero is a maximal ideal; actually I say it for any ideal here: This is a field if and only if that's a maximal ideal. Okay?
+
+In particular, if I take this statement and specialize to $M = (0)$, I get that statement \inlinemetanote{writes specialize to $M = 0$}, because $R \bmod (0)$ is $R$. So, this is the more general one; we prove this next.
+\end{speech}
+
+\begin{content}[Characterization of Maximal Ideals via Field Quotients]
+\begin{proposition}\label[proposition]{prop:quotient-field-maximal}
+Let $R$ be a ring and $M \subset R$ an ideal. Then the quotient ring $\faktor{R}{M}$ is a field if and only if $M$ is a maximal ideal of $R$.
+\end{proposition}
+
+\begin{steps}[Specialization to $M = (0)$]
+Notice that \cref{prop:quotient-field-maximal} directly generalizes \cref{prop:field-zero-maximal}: specializing $M = (0)$ yields:
+\[
+\faktor{R}{(0)} \cong R \text{ is a field} \iff (0) \subset R \text{ is a maximal ideal}.
+\]
+\end{steps}
+\end{content}
+
+\begin{speech}[00:21:28 - 00:21:49]
+This is somehow one of the reasons that maximal ideals are very important, because they are those ideals such that the quotient is a field. It's just another way of saying what a maximal ideal is.
+\end{speech}
+
+\begin{note}[Board Transition]
+The lecturer pauses and wipes the upper-right board panel clean with a sponge from 00:21:50 to 00:22:36.
+\end{note}
+
+\begin{speech}[00:22:36 - 00:23:14]
+Okay, so, we want to prove that.
+
+The proof is: \inlinemetanote{writes Proof: on upper board} $R \bmod M$ is a field \inlinemetanote{writes $R/M$ is a field} if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod M$ is a maximal ideal \inlinemetanote{writes $\iff (0) \subset R/M$ is a max ideal}.
+
+We've proven this --- already proven, right? \inlinemetanote{writes already proven} I just use this proposition here for $R \bmod M$. Okay? Yeah.
+\end{speech}
+
+\begin{student}[Student Question]
+Could you say what you wrote down as specialize?
+\end{student}
+
+\begin{speech}[00:23:17 - 00:23:57]
+Specialize this thing to the ideal $M = (0)$. If you specialize to $(0)$, then $R$ at the top is $R \bmod (0)$, which is $R$, and it says $R$ is a field if and only if $(0)$ is a maximal ideal, which is what we have here. So, that's strictly more general than this.
+
+But we're going to use this --- that's why I strategically left it on the board. With my years of professorial experience, you know. \inlinemetanote{laughter}
+
+So, here $R \bmod M$ is a field, and we just use the statement for a field: This is a field if and only if $(0)$ is a maximal ideal. All right?
+\end{speech}
+
+\begin{speech}[00:23:57 - 00:25:02]
+Now, the next statement is that $(0)$ is a maximal ideal here if and only if $M$ is a maximal ideal in $R$ \inlinemetanote{writes $\iff M \subset R$ is a max ideal}.
+
+And this statement is the bijection that I said should be deep in your brain. Because ideals in this quotient correspond to ideals in $R$ which contain $M$, right? So, if this is maximal, there's nothing over zero, and this means that there's nothing here over $M$.
+
+Because of that bijection that I started this lecture with, which we proved last time. Okay? So, this has to do with the bijection \inlinemetanote{writes $\iff$ bijection}.
+
+The bijection says any ideal here corresponds to ideals here that contain $M$. And this is saying that if this is a maximal ideal, then there aren't any ideals here above zero, and there's nothing here above $M$. It's just exactly the bijection.
+
+So, that's the proof of this proposition.
+\end{speech}
+
+\begin{content}[Proof of Proposition: Characterization of Maximal Ideals]
+\begin{proof}[Proof of \cref{prop:quotient-field-maximal}]
+We combine \cref{prop:field-zero-maximal} with the Ideal Correspondence Theorem (\cref{thm:ideal-correspondence}):
+\begin{align*}
+\faktor{R}{M} \text{ is a field} &\iff (0) \subset \faktor{R}{M} \text{ is a maximal ideal} && (\text{by \cref{prop:field-zero-maximal} applied to } \faktor{R}{M}) \\
+&\iff M \subset R \text{ is a maximal ideal} && (\text{by \cref{thm:ideal-correspondence}}).
+\end{align*}
+\end{proof}
+
+\begin{steps}[Why the Bijection Yields the Equivalence]
+Under the canonical projection $q \colon R \to \faktor{R}{M}$, the bijection:
+\[
+\operatorname{cl}_M(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{M}\right)
+\]
+preserves strict inclusions and identifies the zero ideal $(0) \in \operatorname{cl}(\faktor{R}{M})$ with $M = q^{-1}((0)) \in \operatorname{cl}_M(R)$.
+Therefore:
+\begin{itemize}
+    \item $(0)$ is maximal in $\faktor{R}{M} \iff$ there are no ideals strictly between $(0)$ and $\faktor{R}{M}$.
+    \item By the correspondence, there are no ideals strictly between $M$ and $R \iff M$ is maximal in $R$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{speech}[00:25:02 - 00:26:03]
+And that's one of the ways that the idea of a maximal ideal is important. If you have a ring $R$ --- this is another way to say it --- you have this ring $R$ \inlinemetanote{writes $R$}, you have this set of proper ideals $\operatorname{cl}^*(R)$ \inlinemetanote{writes $\operatorname{cl}^*(R)$}, and the ones in here, the maximal ideals here \inlinemetanote{writes $\text{max ideals}$}, are exactly those ideals \inlinemetanote{writes are exactly those ideals} for which the quotient is a field \inlinemetanote{writes for which $\faktor{R}{M} \text{ is a field}$}.
+
+That's actually a very normal way of thinking about it. You could take this as the definition, even.
+
+So, of all these ideals in your ring, some of them have quotients which are fields: Those are exactly the maximal ideals.
+\end{speech}
+
+\begin{content}[Summary Diagram: Maximal Ideals and Field Quotients]
+On the blackboard, the lecturer summarizes the characterization of maximal ideals within the collection of proper ideals:
+\begin{align*}
+R \qquad \operatorname{cl}^*(R) \qquad & \\
+&\Big\downarrow \\
+&\text{max ideals here are exactly those ideals for which } \faktor{R}{M} \text{ is a field.}
+\end{align*}
+
+\begin{definition}[Alternative Characterization of Maximal Ideals]\label[definition]{def:maximal-ideal-quotient-char}
+Let $R$ be a ring. The set of maximal ideals of $R$ is precisely the collection of proper ideals whose quotient ring is a field:
+\begin{equation}\label{eq:max-ideals-field-quotients}
+\operatorname{MaxSpec}(R) = \left\{ M \in \operatorname{cl}^*(R) \;\middle|\; \faktor{R}{M} \text{ is a field} \right\}.
+\end{equation}
+\end{definition}
+\end{content}
+
+\begin{note}[Board Transition \& Pushing Blackboard]
+At 00:26:03, the lecturer pushes the lower blackboard upward and wipes the newly revealed lower blackboard panel clean with a sponge, preparing to introduce partially ordered sets and Zorn's Lemma.
+\end{note}
+
+\section{Zorn's Lemma and the Existence of Maximal Ideals}
+
+\subsection{Partially Ordered Sets (Posets)}
+
+\begin{speech}[00:26:28 - 00:27:00]
+This existence has to do with chains and posets and Zorn. This is maybe the first time I'll say things clearly about Zorn.
+
+The first thing is: Do you remember what a poset is? Or do you know what a poset is? I will define it anyway, but this comes up in the foundations class, or where have you learned what a poset is? Yeah?
+\end{speech}
+
+\begin{student}[Student Remark]
+Maybe not with this name, but we definitely know about partially ordered sets.
+\end{student}
+
+\begin{speech}[00:27:04 - 00:28:38]
+Ah, yeah! Right. Yeah, you could call it a partially ordered set. But the standard mathematical English is poset.
+
+What is a poset? \inlinemetanote{writes What is a poset? POSet} This means partially ordered set. You see, one of the things I teach you here is also mathematical English, which happens to be a language I know. As I get older, I feel like it's the only language I know. \inlinemetanote{laughter}
+
+What is a poset? A poset $S$ \inlinemetanote{writes $S$} is a set \inlinemetanote{writes is a set}, and it has what's called a partial ordering \inlinemetanote{writes and partial ordering}.
+
+The partial ordering means that I might be able to compare two elements. So, a partial ordering means if I have $x$ and $y$ in $S$ \inlinemetanote{writes $x, y \in S$}, I might have this \inlinemetanote{writes $x \le y$}, I might have that \inlinemetanote{writes $y \le x$}, or they could be not comparable \inlinemetanote{writes (or could be incomparable)} --- incomparable \inlinemetanote{writes incomparable}.
+
+And this incomparability is getting to the worry of the question.
+
+It satisfies some properties. I could say this formally: The standard thing for any kind of relation is it's a subset of the product, and the subset of the product says it has... you know. I'll give you an example. But is this okay? I have a set and I have this relation, that's the partial ordering; sometimes I'm allowed to use it, sometimes I'm not. We'll do an example in a second.
+\end{speech}
+
+\begin{speech}[00:28:38 - 00:29:58]
+Maybe the crucial example here is if I take $R$ a ring \inlinemetanote{writes $R$}, and I take my set to be the set of all proper ideals \inlinemetanote{writes $S = \operatorname{cl}^*(R)$}, and I take the partial ordering to be set inclusion \inlinemetanote{writes set inclusion}, the subset condition \inlinemetanote{writes subset}. So, it means if I have ideals $I$ and $J$ that are proper ideals \inlinemetanote{writes $I, J \in \operatorname{cl}^*(R)$}, then the partial ordering is... the definition \inlinemetanote{writes defn is} is: $I$ is a subset of $J$ \inlinemetanote{writes $I \subset J$}.
+
+That's kind of a standard partial ordering. Because if I have two ideals, one might be a subset of the other, the other might be a subset of the first, or they may have no subset relation at all. That's why it's called a partial ordering: I cannot always compare two elements. That's the partial part of the partial ordering.
+
+This is the abstract poset; this is ours. This is going to be the one that plays a role: It's the set of proper ideals with the subset relation. Okay?
+\end{speech}
+
+\begin{content}
+\begin{definition}[Partially Ordered Set / Poset]\label[definition]{def:poset}
+A \newterm{partially ordered set} (or \newterm{poset}) is a pair $(S, \le)$ consisting of a set $S$ and a binary relation $\le$ on $S$ such that for any two elements $x, y \in S$, one of three mutually non-exclusive situations may occur:
+\begin{itemize}
+    \item $x \le y$ ($x$ precedes or is equal to $y$),
+    \item $y \le x$ ($y$ precedes or is equal to $x$),
+    \item $x$ and $y$ are \newterm{incomparable} (neither $x \le y$ nor $y \le x$ holds).
+\end{itemize}
+\end{definition}
+
+\begin{example}[The Canonical Poset of Proper Ideals]\label[example]{ex:poset-proper-ideals}
+Let $R$ be a ring. The primary poset of interest is the set of all proper ideals of $R$ ordered by set inclusion:
+\begin{equation}\label{eq:poset-proper-ideals}
+S = \operatorname{cl}^*(R) = \{ I \in \operatorname{cl}(R) \mid I \neq R \},
+\end{equation}
+equipped with the partial order:
+\begin{equation}\label{eq:poset-inclusion-order}
+I \le J \iff I \subseteq J \quad (\text{written on the board as } I \subset J).
+\end{equation}
+Two proper ideals $I, J \in \operatorname{cl}^*(R)$ are incomparable if neither $I \subseteq J$ nor $J \subseteq I$ holds (for instance, in $\mathbb{Z}$, the ideals $(2)$ and $(3)$ are incomparable).
+\end{example}
+\end{content}
+
+\begin{aiNote}[Notation: $\subset$ vs. $\subseteq$ for Set Inclusion]
+% [PERSISTENT]
+The lecturer consistently writes $\subset$ on the blackboard for set inclusion, but explicitly clarifies verbally that this symbol allows for equality ($I \subseteq J$).
+\end{aiNote}
+
+\begin{speech}[00:29:58 - 00:31:18]
+And now, of course, partial orderings are axiomatic. They have three axiomatic properties. So, the axioms of a poset... \inlinemetanote{writes Axioms of a poset}
+
+You've never heard the term poset? \inlinemetanote{laughter}
+
+Okay, the axioms of a poset: \textbf{(1)} is that if I take any element, you can compare it to itself, all right? \inlinemetanote{writes (1) $x \le x$}
+
+And let's just check that our poset here satisfies it. That says if I have an ideal, it's a subset of itself, which is true, right? \inlinemetanote{writes $S = \operatorname{cl}^*(R), I \subset I$}
+
+Do we agree on this symbol? \inlinemetanote{points to $\subset$} It means subset. It leaves open the possibility of being equal, right?
+
+The second one is --- this is sometimes called antisymmetry, I don't know --- it says if you have this, if you're so fortunate that you can compare that one and the other way, then it implies that they're equal. \inlinemetanote{writes (2) $x \le y \land y \le x \implies x = y$}
+
+That's the second axiom of a poset. How is that here? That says that if I have $I$ and $J$ such that $I$ is inside $J$ and $J$ is inside $I$, then they're equal, which is true, right? \inlinemetanote{writes $I \subset J, J \subset I \implies I = J$} So, we also satisfy that.
+\end{speech}
+
+% [TIMESTAMP-SUSPECT: estimated without audio — original: 00:31:18 - 00:32:23]
+\begin{speech}[00:31:18 - 00:31:22]
+And the third axiom of a poset: What am I going to write here? Yeah?
+\end{speech}
+
+\begin{student}[Student Answer]
+Transitivity.
+\end{student}
+
+% [TIMESTAMP-SUSPECT: estimated without audio — original: 00:31:18 - 00:32:23]
+\begin{speech}[00:31:24 - 00:32:23]
+Transitivity, which says that if I'm so fortunate that I can compare $x$ and $y$, and $y$ and $z$ in this order, then this implies that $x \le z$ in the poset. \inlinemetanote{writes (3) $x \le y, y \le z \implies x \le z$}
+
+Those are the full axioms of a poset. A poset is a very simple mathematical structure: It's a set with a partial ordering that satisfies \textbf{(1)}, \textbf{(2)}, and \textbf{(3)}. That's what a poset is.
+
+And for this proof, we're going to use this: It's very important that our set of proper ideals is a poset. It's the proper ideals, and the partial ordering is the subset relation. Certainly $I$ is a subset of itself; in this order we get equality; and this one is also equally simple: If $I$ is inside $J$ and $J$ is inside $K$, this of course implies that $I$ is inside $K$. \inlinemetanote{writes $I \subset J, J \subset K \implies I \subset K$}
+
+So, we've checked all the poset relations.
+
+Okay, so, we've done nothing really; this is just saying that the set of proper ideals is a poset.
+\end{speech}
+
+\begin{content}[Axioms of a Poset and Verification for Ideals]
+\begin{definition}[Axioms of a Partially Ordered Set]\label[definition]{def:poset-axioms}
+A binary relation $\le$ on a set $S$ is a \newterm{partial order} if it satisfies the following three axioms for all $x, y, z \in S$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Reflexivity:} $x \le x$.
+    \setcounter{enumi}{1} \item \textbf{Antisymmetry:} If $x \le y$ and $y \le x$, then $x = y$.
+    \setcounter{enumi}{2} \item \textbf{Transitivity:} If $x \le y$ and $y \le z$, then $x \le z$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Verification of Poset Axioms for Proper Ideals]\label[example]{ex:ideal-poset-verification}
+For the set $S = \operatorname{cl}^*(R)$ equipped with the subset relation $\subseteq$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Reflexivity:} For any ideal $I \in \operatorname{cl}^*(R)$, clearly $I \subseteq I$.
+    \setcounter{enumi}{1} \item \textbf{Antisymmetry:} For any $I, J \in \operatorname{cl}^*(R)$, if $I \subseteq J$ and $J \subseteq I$, then $I = J$ by definition of set equality.
+    \setcounter{enumi}{2} \item \textbf{Transitivity:} For any $I, J, K \in \operatorname{cl}^*(R)$, if $I \subseteq J$ and $J \subseteq K$, then $I \subseteq K$.
+\end{enumerate}
+Thus, $(\operatorname{cl}^*(R), \subseteq)$ is rigorously a poset.
+\end{example}
+\end{content}
+
+\begin{note}[Board Transition \& Board Elevation]
+The lecturer pushes the lower blackboard upward, displaying the axioms on the upper board, and cleans the new lower board panel with a sponge.
+\end{note}
+
+\subsection{Maximal Elements in Posets}
+
+\begin{speech}[00:32:38 - 00:33:55]
+Now, in posets, there's a notion of a maximal element of a poset. And that, in our example, is going to correspond exactly to the notion of a maximal ideal of a ring.
+
+If $S$ is an abstract poset --- we have here $(S, \le)$ is a poset \inlinemetanote{writes $(S, \le) \text{ is a Poset}$} --- there's a definition of a maximal element: $x \in S$ is a maximal element of $S$ \inlinemetanote{writes $x \in S \text{ is a max element of } S$}. And the definition for that --- and again, you can guess this --- the definition \inlinemetanote{writes defn is} is: If somebody is on top of $x$, then this implies actually $x = y$ \inlinemetanote{writes if $x \le y \implies x = y$}.
+
+No one is on top of it. That's what it means. Okay? That's the definition of a maximal element: In any poset you can define a maximal element; it means that there's nobody on top of it here.
+\end{speech}
+
+\begin{speech}[00:33:55 - 00:34:33]
+And in our case, the poset here \inlinemetanote{writes $\operatorname{cl}^*(R), \subset$}, the notion of maximal element \inlinemetanote{writes max element} of this poset \inlinemetanote{writes of this Poset} is the same as a maximal ideal \inlinemetanote{writes $= \text{max ideal}$}.
+
+It's just the same definition. If I take this as my poset and I use the abstract definition of maximal element, then that means my element is a maximal ideal. Is that clear? It's just saying there's nobody on top of it here. Okay?
+\end{speech}
+
+\begin{content}
+\begin{definition}[Maximal Element of a Poset]\label[definition]{def:maximal-element-poset}
+Let $(S, \le)$ be a partially ordered set. An element $x \in S$ is called a \newterm{maximal element} of $S$ if:
+\begin{equation}\label{eq:maximal-element-def}
+\forall y \in S \colon \quad x \le y \implies x = y.
+\end{equation}
+In words: no element in $S$ is strictly greater than $x$.
+\end{definition}
+
+\begin{proposition}[Equivalence with Maximal Ideals]\label[proposition]{prop:max-element-ideal-equiv}
+Let $R$ be a ring. An ideal $M \subset R$ is a maximal ideal of $R$ in the sense of \cref{def:maximal-ideal-w5} if and only if $M$ is a maximal element of the poset $(\operatorname{cl}^*(R), \subseteq)$.
+\end{proposition}
+
+\begin{steps}[Maximal Element vs. Maximum / Greatest Element]
+It is crucial to distinguish between a \textbf{maximal element} and a \textbf{greatest element} (or maximum):
+\begin{itemize}
+    \item \textbf{Greatest Element (Maximum):} An element $m \in S$ such that $y \le m$ for \emph{all} $y \in S$. A greatest element must be comparable to every element in the poset.
+    \item \textbf{Maximal Element:} An element $x \in S$ such that \emph{no} element strictly exceeds it ($x \le y \implies x = y$). There can be multiple incomparable maximal elements in a poset!
+\end{itemize}
+In $(\operatorname{cl}^*(R), \subseteq)$, there is generally no greatest element, but there can be many distinct maximal ideals (e.g., in $\mathbb{Z}$, the ideals $(2), (3), (5), \dots$ are all maximal elements of $\operatorname{cl}^*(\mathbb{Z})$).
+\end{steps}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=Stealth]
+% \begin{hidden}
+% - Canvas: scale=1.2, width ~6cm, height ~4cm.
+% - Elements: Hasse diagram of a poset showing maximal elements and incomparable branches.
+% - Points: Base 0 at (2,0); elements a at (1,1.3), b at (3,1.3); elements m1 at (0.4,2.7), m2 at (1.6,2.7), m3 at (3.2,2.7).
+% - Edges: bot -> a, bot -> b; a -> m1, a -> m2; b -> m3.
+% - Colors: Base gray, internal nodes NavyBlue, maximal elements BrickRed.
+% \end{hidden}
+    \node[circle, draw, fill=gray!20, inner sep=1.5pt, label=below:{\footnotesize bottom}] (bot) at (2, 0) {$\bot$};
+    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (a) at (1, 1.3) {$a$};
+    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (b) at (3, 1.3) {$b$};
+    
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m1) at (0.4, 2.7) {$m_1$};
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m2) at (1.6, 2.7) {$m_2$};
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m3) at (3.2, 2.7) {$m_3$};
+    
+    \draw[thick] (bot) -- (a);
+    \draw[thick] (bot) -- (b);
+    \draw[thick, NavyBlue] (a) -- (m1);
+    \draw[thick, NavyBlue] (a) -- (m2);
+    \draw[thick, NavyBlue] (b) -- (m3);
+\end{tikzpicture}
+\end{center}
+\end{content}
+
+\begin{speech}[00:34:33 - 00:36:33]
+This existence of a maximal ideal, that was the question. Question of existence \inlinemetanote{writes Question: existence in $\operatorname{cl}^*(R)$ of a max ideal} in $\operatorname{cl}^*(R)$ of a maximal ideal: This is really the same as some kind of abstract question of existence of maximal elements of posets \inlinemetanote{writes Question of existence of max elts of Posets}.
+
+And we haven't done anything yet, because not all posets have maximal elements.
+
+There is a tool, which is essentially in foundations and logic, about when posets have maximal elements, and that's Zorn's lemma \inlinemetanote{writes Zorn's Lemma}.
+
+Presumably you've all heard of Zorn's lemma? I don't know if you've heard it in this context, but I will explain it, because it's crucial here.
+
+And this is why I would view this whole answer as kind of disappointing, because it's hard to like Zorn's lemma. \inlinemetanote{laughter}
+
+Actually, his name is Max Zorn, which is kind of ironic, but... \inlinemetanote{laughter}
+\end{speech}
+
+\begin{note}[Board Preparation]
+The lecturer wipes a portion of the right lower board clean, chuckling about Max Zorn's first name, before formulating Zorn's Lemma.
+\end{note}
+
+\subsection{Zorn's Lemma and Chains}
+
+\begin{speech}[00:36:33 - 00:38:18]
+What does Zorn say? Zorn's lemma tells you: If you have a poset that satisfies what's called a chain condition, then it always has a maximal element. Let's first say what that is.
+
+Zorn: \inlinemetanote{writes Zorn: Let $(S, \le), S \neq \emptyset$} Let $(S, \le)$ be a poset in which every --- I have to explain it --- every chain is bounded \inlinemetanote{writes be a Poset in which every chain is bounded}... Somehow my handwriting has deteriorated a bit... every chain is bounded.
+
+I have to explain chain and bounded.
+
+Zorn: We have an abstract poset --- I've already explained poset --- in which every chain is bounded, then $S$ must contain a maximal element \inlinemetanote{writes then $S$ must contain a max element}.
+
+And there's one more thing: $S$ not empty, of course, because that would be silly, all right? \inlinemetanote{writes $S \neq \emptyset$} So, you have a non-empty poset in which every chain is bounded, then $S$ must contain a maximal element. That's Zorn's lemma.
+
+To explain it...
+
+And by the way, foundationally this is some manifestation of the Axiom of Choice \inlinemetanote{writes (Axiom of Choice)}. And if you make the right hypothesis, it's equivalent to the Axiom of Choice.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Zorn's Lemma]\label[lemma]{lem:zorns-lemma}
+Let $(S, \le)$ be a non-empty partially ordered set ($S \neq \emptyset$). If every chain in $S$ is bounded (i.e., has an upper bound in $S$), then $S$ contains at least one maximal element.
+\end{lemma}
+\end{content}
+
+\begin{aiNote}[Beyond the Lecture: Zorn's Lemma and the Axiom of Choice]
+% [PERSISTENT, ADDITION]
+Within Zermelo--Fraenkel set theory ($\text{ZF}$), Zorn's Lemma is logically equivalent to the Axiom of Choice ($\text{AC}$) and the Well-Ordering Theorem ($\text{WOT}$). Max Zorn formulated this maximum principle in 1935, although equivalent formulations were independently discovered earlier by Kazimierz Kuratowski (1922).
+\end{aiNote}
+
+\begin{speech}[00:38:18 - 00:39:26]
+Okay, so, I have to explain what \qt{every chain is bounded} means.
+
+Let $T$ be a subset of $S$ \inlinemetanote{writes Let $T \subset S$} of our poset. Then $T$ is a chain \inlinemetanote{writes $T$ is a chain} --- that's a definition --- if for all elements $x$ and $y$ in $T$ \inlinemetanote{writes if $\forall x, y \in T$}, either $x \le y$ or $y \le x$ \inlinemetanote{writes either $x \le y$ or $y \le x$}.
+
+This means, for a poset, not all elements are comparable, as we've discussed. So, a subset is a chain if every two elements are comparable. Okay?
+
+We say it's a chain because then you kind of view them all being in an order, because you can compare them all and you can sort them and put them in order. And remember, when I say \qt{either/or}, the proper mathematical usage of that in English allows for both things to be true; it's not exclusive.
+
+It's not \qt{entweder \dots oder}, which would be wrong if I wrote that, but in English this is correct: either that or that.
+\end{speech}
+
+\begin{speech}[00:39:26 - 00:40:43]
+This is a chain. What is a chain here in our poset of proper ideals? A chain is a set $T$ \inlinemetanote{writes $\operatorname{cl}^*(R), T = \{ \dots \}$} of ideals such that if I take any two of them, $I \in T$ and $J \in T$ \inlinemetanote{writes $I, J \in T$}, we either have one inside the other \inlinemetanote{writes $I \subset J$} or the other inside one \inlinemetanote{writes $J \subset I$}.
+
+You view this chain as basically... this is not correct, because the index set could be uncountable numbers and all that nonsense from whatever foundations class you took, but the way you think about it is, a chain is like this: \inlinemetanote{writes $I_1 \subset I_2 \subset \dots$}
+
+A chain here is a sequence of ideals where they just kind of grow, because what a chain means is that for any two of them, one is inside the other. So, you can think of a chain like this. Of course, as an object it's much more general, because this would be like a countable chain, but I could consider uncountable chains, or the first uncountable ordinal, or whatever you want.
+
+That's the definition of a chain. That's the abstract definition of a chain, and this is what it means to be here.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Chain / Totally Ordered Subset]\label[definition]{def:chain-poset}
+Let $(S, \le)$ be a partially ordered set. A subset $T \subseteq S$ is called a \newterm{chain} (or \newterm{totally ordered subset}) if every two elements in $T$ are comparable:
+\begin{equation}\label{eq:chain-condition}
+\forall x, y \in T \colon \quad x \le y \quad \lor \quad y \le x.
+\end{equation}
+\end{definition}
+
+\begin{example}[Chains of Proper Ideals]\label[example]{ex:chain-proper-ideals}
+In the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$, a chain is a collection of proper ideals $T \subseteq \operatorname{cl}^*(R)$ such that for any $I, J \in T$:
+\begin{equation}\label{eq:ideal-chain-condition}
+I \subseteq J \quad \lor \quad J \subseteq I.
+\end{equation}
+Heuristically, one often visualizes a chain as an ascending nested sequence of ideals:
+\[
+I_1 \subseteq I_2 \subseteq I_3 \subseteq \dots \subseteq I_n \subseteq \dots,
+\]
+although a chain may be arbitrarily infinite and uncountably indexed.
+\end{example}
+\end{content}
+
+\begin{speech}[00:40:43 - 00:42:03]
+Now, for a chain to be bounded: A chain $T$ in $S$ is bounded \inlinemetanote{writes a chain $T \subset S$ is bounded} --- now, this is the definition of bounded --- means there exists a $z \in S$ \inlinemetanote{writes $\exists z \in S$} such that $z$ beats everybody, such that for every $x$ on the chain, $x \le z$ \inlinemetanote{writes s.t. $\forall x \in T, x \le z$}.
+
+So, $z$ is on top of everybody in the chain. That's what a chain being bounded is. What's important here is this $z$ need only be in $S$; it doesn't have to be in the chain. Okay?
+
+This is saying that whenever I have this chain, I can find somebody that contains all of them. That's what it means.
+
+Are you happy with this?
+
+For an abstract poset, I have a notion of poset, I have a notion of chain --- chain is just a subset where everybody is ordered ---, and this chain is bounded if I can reach into $S$ somewhere, find somebody who's on top of everybody in that chain.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Bounded Chain / Upper Bound]\label[definition]{def:bounded-chain}
+Let $(S, \le)$ be a poset and $T \subseteq S$ a chain. The chain $T$ is said to be \newterm{bounded} (above) in $S$ if there exists an element $z \in S$ such that:
+\begin{equation}\label{eq:upper-bound-def}
+\forall x \in T \colon \quad x \le z.
+\end{equation}
+Such an element $z$ is called an \newterm{upper bound} for $T$. Crucially, $z$ must belong to the parent poset $S$, but $z$ is \emph{not} required to belong to the chain $T$ itself.
+\end{definition}
+\end{content}
+
+\subsection{Proof of the Existence of Maximal Ideals}
+
+\begin{speech}[00:42:03 - 00:42:52]
+Now we come to the first question in this discussion which isn't nonsense: If I have this poset of proper ideals, I have a notion of chain: Are chains bounded here? That's actually the crucial thing; this really cuts to the heart of the matter.
+
+\inlinemetanote{writes on board: Are chains in $(\operatorname{cl}^*(R), \subset)$ bounded?}
+
+That means: If I take any chain, can I find another ideal that's on top of all of them? This is actually the only part that isn't formal here.
+
+How would I do that? Yeah?
+\end{speech}
+
+\begin{student}[Student Answer]
+I think we can take their union.
+\end{student}
+
+\begin{speech}[00:42:54 - 00:44:24]
+Yeah! This is the only idea in the whole application of Zorn: just one single idea!
+
+You have this $T$, that's a chain. I want somebody to beat all of them, so, I'll call it $K$, and $K$ is the ideal which is the union over all the ideals in $T$ of $I$ \inlinemetanote{writes $K = \bigcup_{I \in T} I \subset R$}. That's inside $R$. Okay?
+
+That's a set-theoretic thing: I just take my chain and I take the union of everybody. But then I have to prove --- or whoever asserted it has to prove --- this $K$ is an element of $\operatorname{cl}^*(R)$ \inlinemetanote{writes I have to prove $K \in \operatorname{cl}^*(R)$}.
+
+And that's kind of fun!
+
+First, you have to prove this $K$ is an ideal. Now, how do you prove that $K$ is an ideal? Well, it should have zero, but all the ideals have zero. If $a$ and $b$ are in $K$, we need to show that their sum is in $K$. That means $a$ is in some $I$ and $b$ is in some $I'$, but either $I \subset I'$ or $I' \subset I$ \inlinemetanote{writes $a \in I, b \in I', I \subset I' \text{ or } I' \subset I$}. So, you take the bigger one, and then their sum is in the bigger one, so it's okay also. And also for closing on the product property.
+
+Finally, to be in here it has to be a proper ideal. Why is this a proper ideal?
+\end{speech}
+
+\begin{student}[Student Question]
+Does it contain $1$?
+\end{student}
+
+\begin{speech}[00:44:26 - 00:45:20]
+Yeah, because none of these contain $1$, so this doesn't contain $1$. And if it were not a proper ideal, it would contain $1$, it would contain everything. So, it's also a proper ideal.
+
+So, there's a little lemma here which is fun to do. It says that this element $K$, the union --- that's the only part of this that isn't formal ---: If I take this poset of proper ideals, in that poset every chain is bounded, and it's by just this construction.
+
+And so, then we can apply Zorn's lemma! In our poset, we satisfy all the conditions here: It's a poset in which every chain is bounded, then it must contain a maximal element, and that's a maximal ideal.
+
+So, that's the official proof that every ring has a maximal ideal. It's an application of Zorn's lemma, and for every mathematician I would view this as deeply disappointing.
+
+Okay, that's it.
+\end{speech}
+
+\begin{content}[Bounding Chains of Ideals and the Existence of Maximal Ideals]
+\begin{lemma}[Chains of Proper Ideals Are Bounded]\label[lemma]{lem:chains-ideals-bounded}
+Let $R$ be a non-zero ring and let $T \subseteq \operatorname{cl}^*(R)$ be a chain of proper ideals. Then the union:
+\begin{equation}\label{eq:union-of-chain-ideals}
+K := \bigcup_{I \in T} I
+\end{equation}
+is a proper ideal of $R$ ($K \in \operatorname{cl}^*(R)$) and serves as an upper bound for $T$ under inclusion.
+\end{lemma}
+
+\begin{proof}
+We verify that $K = \bigcup_{I \in T} I$ satisfies the required conditions:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{$K$ is non-empty:} Since $T$ is non-empty and every ideal $I \in T$ contains $0$, we have $0 \in K$.
+    \item \textbf{Additive Closure:} Let $a, b \in K$. By definition of the union, there exist ideals $I, I' \in T$ such that $a \in I$ and $b \in I'$. Since $T$ is a chain, either $I \subseteq I'$ or $I' \subseteq I$. Assume without loss of generality that $I \subseteq I'$. Then both $a, b \in I'$. Since $I'$ is an ideal, $a + b \in I' \subseteq K$.
+    \item \textbf{Absorption (Ideal Property):} Let $r \in R$ and $a \in K$. Then $a \in I$ for some $I \in T$. Since $I$ is an ideal, $ra \in I \subseteq K$.
+    \item \textbf{Properness ($K \neq R$):} Since every ideal $I \in T$ is a proper ideal ($I \in \operatorname{cl}^*(R)$), none of them contains the multiplicative identity $1$ (for if $1 \in I$, then $I = R$). Therefore, $1 \notin \bigcup_{I \in T} I = K$. Since $1 \notin K$, it follows that $K \neq R$, so $K \in \operatorname{cl}^*(R)$.
+\end{enumerate}
+Finally, for every $I \in T$, clearly $I \subseteq K$. Hence, $K$ is an upper bound for $T$ in the poset $(\operatorname{cl}^*(R), \subseteq)$.
+\end{proof}
+
+\begin{theorem}[Krull's Theorem on the Existence of Maximal Ideals]\label[theorem]{thm:krulls-theorem-maximal-ideals}
+Every non-zero commutative ring $R \neq 0$ contains at least one maximal ideal.
+\end{theorem}
+
+\begin{proof}
+Let $R \neq 0$ be a non-zero ring. Consider the poset $S = \operatorname{cl}^*(R)$ of proper ideals ordered by inclusion.
+\begin{itemize}
+    \item Since $R \neq 0$, the zero ideal $(0)$ is a proper ideal ($(0) \neq R$), so $S = \operatorname{cl}^*(R)$ is non-empty.
+    \item By \cref{lem:chains-ideals-bounded}, every chain $T \subseteq S$ has an upper bound in $S$, namely $K = \bigcup_{I \in T} I \in S$.
+\end{itemize}
+By Zorn's Lemma (\cref{lem:zorns-lemma}), the poset $S$ contains at least one maximal element $M$. By \cref{prop:max-element-ideal-equiv}, $M$ is a maximal ideal of $R$.
+\end{proof}
+
+\begin{steps}[Why the Chain Property is Crucial for Unions of Ideals]
+In general, the union of two arbitrary ideals $I_1 \cup I_2$ is almost \textbf{never} an ideal! For example, in $\mathbb{Z}$, the union $(2) \cup (3)$ contains $2$ and $3$, but not $2 + 3 = 5$.
+The union $\bigcup_{I \in T} I$ is an ideal \textbf{if and only if} the collection $T$ is directed, which is guaranteed because $T$ is a chain: any two elements $a, b \in K$ are trapped inside a common larger ideal $I_{\max} \in T$, allowing additive closure to hold.
+\end{steps}
+\end{content}
+
+\subsection{Foundational Discussion and Mathematical Philosophy}
+
+\begin{note}[Board Writing]
+The lecturer pushes the middle blackboard upward and writes the following foundational summary on the lower board panel:
+\[
+\text{Zorn} \implies \text{Every ring } \neq 0 \text{ has a max ideal} \quad \uparrow (\text{Axiom of Choice})
+\]
+\end{note}
+
+\begin{speech}[00:45:22 - 00:46:53]
+Okay, so, because of this Zorn argument, we have the statement here that every ring has a maximal ideal \inlinemetanote{writes Zorn $\implies$ Every ring $\neq 0$ has a max ideal}.
+
+And for this, you of course have to take every ring that's not zero, because for the zero ring, $\operatorname{cl}^*(R)$ is empty, and it doesn't satisfy Max Zorn's condition. So, every non-zero ring has a maximal ideal.
+
+The reason I say the proof is deeply disappointing is because this depended on Zorn, which has to do --- and you know, formally Zorn is proven by the Axiom of Choice --- and so it depends on the foundational organization of mathematics. And it's extremely unfortunate, because maybe you meet a Martian who comes from a different math culture, and the Martians have a different foundation, and it's possible you could have the same definition of rings, where you assert it has a maximal ideal, and the Martian says you can't prove it. That is unfortunate \inlinemetanote{writes $\uparrow$ (Axiom of Choice)}.
+
+There are different ways to think about this, but it is something that I view as unfortunate.
+
+In particular, this argument doesn't give you any hint of how to construct a maximal ideal. It doesn't help you that way. The statement is just that our logical conventions are such that every ring has a maximal ideal. And you know, you could have different logical conventions.
+\end{speech}
+
+\begin{speech}[00:46:52 - 00:47:51]
+Does this affect me practically? No, because I work on... Some people asked about what my own research is, and Lika put some links to some public talks, so you can look at it. Part of what I think about is algebra, and the other half is geometry. Actually, I view myself mostly as a geometer.
+
+This issue about Zorn's lemma doesn't affect me personally.
+
+The reason is because I work in certain classes of rings where, rather than the abstract general ring, if you work in some kind of specialized classes of rings, then you can construct maximal ideals and show their existence by some other methods. You don't use Zorn.
+
+Actually, I don't like the idea that the work in math I do is dependent on these logical foundations. I just don't want to do that kind of math. Other people can, but...
+\end{speech}
+
+\begin{content}[Foundational Summary on Krull's Theorem]
+\begin{center}
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+% \begin{hidden}
+% - Canvas: scale=1.3, width ~8cm, height ~3cm.
+% - Elements: Diagram illustrating the foundational dependency chain from Choice to Zorn to Krull.
+% - Nodes: AC at (0, 1.5), Zorn at (4.2, 1.5), Krull at (4.2, 0).
+% \end{hidden}
+    \node[draw, thick, rounded corners, fill=MidnightBlue!10, inner sep=6pt] (ac) at (0, 1.5) {\textbf{Axiom of Choice ($\text{AC}$)}};
+    \node[draw, thick, rounded corners, fill=BurntOrange!15, inner sep=6pt] (zorn) at (4.2, 1.5) {\textbf{Zorn's Lemma}};
+    \node[draw, thick, rounded corners, fill=ForestGreen!15, inner sep=6pt] (krull) at (4.2, 0) {\textbf{Every Ring $R \neq 0$ Has a Maximal Ideal}};
+    
+    \draw[<->, ultra thick, MidnightBlue] (ac) -- node[above, font=\footnotesize] {$\text{ZF}$-equivalent} (zorn);
+    \draw[->, ultra thick, ForestGreen] (zorn) -- node[right, font=\footnotesize] {applied to $(\operatorname{cl}^*(R), \subseteq)$} (krull);
+\end{tikzpicture}
+\end{center}
+\end{content}
+
+\begin{insight}[The Martian Thought Experiment and Non-Constructive Mathematics]
+The lecturer highlights a fundamental philosophical dilemma in algebra: Krull's Theorem relies intrinsically on Zorn's Lemma, which is logically equivalent to the Axiom of Choice ($\text{AC}$). Consequently, the proof is entirely non-constructive. It asserts that every non-zero commutative ring possesses a maximal ideal, but provides no algebraic algorithm to identify or construct it. A mathematician operating within constructive set theory (such as a hypothetical \qt{Martian} whose foundational framework excludes $\text{AC}$) could not accept this proof. In geometric algebra, however (such as coordinate rings of algebraic varieties), maximal ideals correspond directly to geometric points via Hilbert's Nullstellensatz, enabling explicit constructive proofs without invoking Zorn's Lemma.
+\end{insight}
+
+\section{Prime Ideals}
+
+\subsection{Definition of Prime Ideals}
+
+\begin{speech}[00:47:51 - 00:49:27]
+Okay, so, sorry, that was a small discussion there.
+
+That was the end of our introduction to maximal ideals, and there's now a parallel discussion \inlinemetanote{writes Parallel discussion of prime ideals} of prime ideals. So, this is a new definition: prime ideals.
+
+Let us say it: An ideal $P$ inside our ring is prime \inlinemetanote{writes An ideal $P \subset R$ is prime} --- and this is the definition of prime \inlinemetanote{writes $\Uparrow$ def} --- and there are two properties:
+
+The first property is that $P$ is in our $\operatorname{cl}^*(R)$ \inlinemetanote{writes $* \ P \in \operatorname{cl}^*(R)$}. This means it's an ideal and it's not the whole ring again. It's in the same class. In other words, $P$ is not the whole ring \inlinemetanote{writes $P \neq R$}. Maximal ideals can't be the whole ring, and prime ideals can't either, all right?
+
+The second one is the reason why it's called prime. It says that for all elements $a, b \in R$ \inlinemetanote{writes $* \ \forall a, b \in R$}, if $a \notin P$ \inlinemetanote{writes if $a \notin P$} and $b \notin P$ \inlinemetanote{writes $b \notin P$}, then this implies their product $ab \notin P$ \inlinemetanote{writes $\implies ab \notin P$}. So, that's the condition that has teeth.
+
+All right, so, that's the definition of a prime ideal, and you have to digest it a little bit. The main thing is, a prime ideal is an ideal, it's not the whole ring, and it has this property: If I take two people outside it and multiply, they stay out.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Prime Ideal]\label[definition]{def:prime-ideal}
+Let $R$ be a commutative ring. An ideal $P \subset R$ is called a \newterm{prime ideal} if it satisfies the following two conditions:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Properness:} $P \in \operatorname{cl}^*(R)$, which means:
+    \[
+    P \neq R \quad (\text{equivalently, } 1 \notin P).
+    \]
+    \setcounter{enumi}{1} \item \textbf{Prime Condition:} For all elements $a, b \in R$:
+    \begin{equation}\label{eq:prime-ideal-condition}
+    \text{if } a \notin P \text{ and } b \notin P \implies a b \notin P.
+    \end{equation}
+\end{enumerate}
+\end{definition}
+
+\begin{steps}[Contrapositive Formulation of the Prime Condition]
+The prime condition written on the board:
+\[
+a \notin P \land b \notin P \implies a b \notin P
+\]
+is logically equivalent to its contrapositive:
+\[
+a b \in P \implies a \in P \lor b \in P.
+\]
+This directly mirrors Euclid's Lemma for prime numbers: if a prime $p$ divides a product $a b$, then $p \mid a$ or $p \mid b$.
+\end{steps}
+\end{content}
+
+\subsection{Prime Ideals in the Integers}
+
+\begin{speech}[00:49:27 - 00:50:54]
+All right. And so, why is it called a prime ideal?
+
+You can call it anything you want, but the reason it's called a prime ideal... \inlinemetanote{writes Reason for the name:}
+
+The reason for the name is that if I take this ideal $n$... \inlinemetanote{drops chalk} Oops. You can imagine what the reason is: If I take the ideal generated by $n$ \inlinemetanote{writes $(n) \subset \mathbb{Z}$}, which we sometimes also call $n\mathbb{Z}$ \inlinemetanote{writes $n\mathbb{Z}$} inside $\mathbb{Z}$, then the claim \inlinemetanote{writes Claim:} is that... I mean, zero is always special, and we'll discuss that in a second, but if we have some positive integer \inlinemetanote{writes If $n \in \mathbb{Z}_{\ge 2}$ (or $n \in \mathbb{N}_{\ge 2}$)} greater than or equal to $2$ --- because if $n = 1$, it's not a prime ideal --- so, if you have some integer here with $n \in \{2, 3, 4, \dots\}$ \inlinemetanote{writes $n = \{2, 3, 4, \dots\}$}, then this is a prime ideal \inlinemetanote{writes then $(n)$ is a prime ideal} if and only if $n$ is a prime number \inlinemetanote{writes $\iff n \text{ is a prime number}$}.
+
+There are the boundary cases here: If we take zero, this ideal \inlinemetanote{writes $(0) \subset \mathbb{Z}$}, is this ideal prime or not?
+\end{speech}
+
+\begin{student}[Student Answer]
+It is, because $\mathbb{Z}$ is an integral domain.
+\end{student}
+
+\begin{speech}[00:51:03 - 00:51:36]
+Yeah, the answer is yes: prime \inlinemetanote{writes is PRIME}.
+
+Because it's not all of $\mathbb{Z}$, it passes this condition, and this condition says if I take two elements and they're both not there, then their product is not there. In this case, it says if I take two elements that are not zero, their product is not zero, which is true here, okay? So, that's one special case.
+
+Is this a prime ideal? \inlinemetanote{writes $(1) \subset \mathbb{Z}$}
+\end{speech}
+
+\begin{student}[Student Answer]
+No, it's the whole space.
+\end{student}
+
+\begin{speech}[00:51:37 - 00:53:20]
+Yeah, it's not prime \inlinemetanote{writes is NOT prime}. And that's because it fails this property: It's the whole thing, it's all of $\mathbb{Z}$.
+
+Anyway, once you're out of these special cases, the notion of prime is it's a prime number, and you should make sure you believe this statement, all right?
+
+I'm not going to give you the proof of it. For example, if you take the ideal $(4)$ inside $\mathbb{Z}$, why is it not prime? Because if I take $2$, the number $2$ is not in this ideal, because $2$ is not a multiple of $4$. Actually, maybe I should do $6$ then. \inlinemetanote{erases $4$, writes $(6) \subset \mathbb{Z}$}
+
+$2 \notin (6)$ \inlinemetanote{writes $2 \notin (6)$} and $3 \notin (6)$ \inlinemetanote{writes $3 \notin (6)$}, but if I multiply them, $2 \cdot 3 \in (6)$ \inlinemetanote{writes $2 \cdot 3 \in (6)$}.
+
+This shows that $(6)$ is not prime \inlinemetanote{writes NOT Prime!}, because to be prime, if you take two people outside and multiply, they have to stay outside. And here we don't: You have two people outside, you multiply, and you got inside. That's bad --- you're not prime.
+
+That's an example of this: It's prime if and only if the number is prime; $6$ is not prime. This is essentially a proof if you just think about it. I leave this to you: exercise \inlinemetanote{writes Exercise}.
+
+It's good to understand; that's why it's called a prime ideal. I said that this term ideal comes from the idea of an idealized number: Instead of integers we consider rings, and instead of a number we consider an ideal. This is not perfect, and there are different ways to think about it, but in that way of thinking about the language, this idea of prime corresponds in some sense to a prime number. There are other ways to do it, but that's part of the language.
+\end{speech}
+
+\begin{content}[Prime Ideals in the Ring of Integers $\mathbb{Z}$]
+\begin{claim}\label[claim]{clm:prime-ideals-in-z}
+Let $n \in \mathbb{Z}_{\ge 2}$. The principal ideal $(n) = n\mathbb{Z} \subset \mathbb{Z}$ is a prime ideal if and only if $n$ is a prime number.
+\end{claim}
+
+\textbf{Boundary Cases for Principal Ideals in $\mathbb{Z}$:}
+\begin{itemize}
+    \item \textbf{The Zero Ideal $(0) \subset \mathbb{Z}$ (\textcolor{ForestGreen}{PRIME}):}
+    Since $\mathbb{Z}$ has no zero divisors ($a \neq 0 \land b \neq 0 \implies a b \neq 0$), $(0)$ satisfies \eqref{eq:prime-ideal-condition}. Moreover, $(0) \neq \mathbb{Z}$, so $(0)$ is indeed a prime ideal.
+    \item \textbf{The Unit Ideal $(1) = \mathbb{Z}$ (\textcolor{BrickRed}{NOT PRIME}):}
+    Since $(1) = \mathbb{Z}$, it is not a proper ideal ($(1) \notin \operatorname{cl}^*(\mathbb{Z})$), violating the properness axiom.
+\end{itemize}
+
+\begin{example}[Why $(6) \subset \mathbb{Z}$ is Not Prime]\label[example]{ex:ideal-6-not-prime}
+Consider the principal ideal $(6) = 6\mathbb{Z} \subset \mathbb{Z}$. Taking $a = 2$ and $b = 3$:
+\[
+2 \notin (6) \quad \text{and} \quad 3 \notin (6), \qquad \text{but} \qquad 2 \cdot 3 = 6 \in (6).
+\]
+Because two elements outside the ideal produce a product inside the ideal, $(6)$ is \textbf{not} a prime ideal.
+\end{example}
+
+\begin{exercise}[Characterization of Prime Ideals in $\mathbb{Z}$]\label[exercise]{exer:prime-ideals-in-z}
+Prove \cref{clm:prime-ideals-in-z}: Show that for $n \in \mathbb{N}_{\ge 2}$, $(n)$ is a prime ideal in $\mathbb{Z}$ if and only if $n$ is a prime number.
+\end{exercise}
+\end{content}
+
+\subsection{Quotients by Prime Ideals and Integral Domains}
+
+\begin{speech}[00:53:20 - 00:54:40]
+Then we want to prove a theorem like the field theorem that says: \inlinemetanote{writes Prop: $R/P \text{ is an int. domain} \iff P \subset R \text{ is a prime ideal}$}
+
+$R \bmod P$ is an integral domain --- this is a proposition --- $R \bmod P$ is an integral domain if and only if $P \subset R$ is a prime ideal \inlinemetanote{writes $\iff P \subset R \text{ is a prime ideal}$}.
+
+I want to prove this, and I remind you of the proposition from the first lecture, which I have not had the skill enough to leave on the board: $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal \inlinemetanote{writes Prop: $R/M \text{ is a field} \iff M \subset R \text{ is a max ideal}$}.
+
+This was the statement that we already proved just a few minutes ago, and this is the analogous statement for integral domains. Everything is just analogous: Here we want to consider which ideals have quotients that are fields, and the answer is those are the maximal ideals; and here we ask which ideals have the property that the quotient is an integral domain, and those are the prime ideals, okay? So, we have to prove this one. But the parallelism here should be clear.
+\end{speech}
+
+\begin{content}[Characterization of Prime Ideals via Integral Domains]
+\begin{proposition}\label[proposition]{prop:quotient-integral-domain-prime}
+Let $R$ be a commutative ring and $P \subset R$ an ideal. Then the quotient ring $\faktor{R}{P}$ is an integral domain if and only if $P$ is a prime ideal of $R$.
+\end{proposition}
+
+\begin{overview}[Parallelism: Maximal Ideals vs. Prime Ideals]
+The two fundamental classes of ideals in commutative ring theory correspond precisely to key algebraic properties of their quotient rings:
+\begin{align*}
+\faktor{R}{M} \text{ is a field} &\iff M \subset R \text{ is a maximal ideal}, \\
+\faktor{R}{P} \text{ is an integral domain} &\iff P \subset R \text{ is a prime ideal}.
+\end{align*}
+\end{overview}
+\end{content}
+
+\begin{speech}[00:54:41 - 00:56:19]
+We prove the proposition about prime ideals \inlinemetanote{writes Proof Prop (Prime ideals)}.
+
+We have to start somewhere. Let $P \subset R$ be a prime ideal \inlinemetanote{writes Let $P \subset R$ be a prime ideal}, okay?
+
+Again, we have to think about the ground cases carefully. We must prove that $R \bmod P$ is an integral domain \inlinemetanote{writes $\implies$ we must prove that $R/P$ is an int. domain}.
+
+Now, one of the properties in the definition of integral domains is you cannot be the zero ring. That was one of the properties in the definition: Integral domains by definition are not the zero ring \inlinemetanote{writes (not zero ring)}.
+
+So, the first thing to prove this is an integral domain, we need to know this is not the zero ring. And that's true, because to be prime you can't be the whole ring, okay?
+
+That makes the matching of all of these border cases in the definitions work: To be prime you can't be everything, so that means this thing is not the zero ring. It at least passes that part of the definition. Is that clear?
+
+Okay, but that's not the teeth of the definition of an integral domain.
+\end{speech}
+
+\begin{speech}[00:56:19 - 00:57:18]
+We have to show \inlinemetanote{writes We have to show} that given elements $\bar{x}$ and $\bar{y}$ in $R \bmod P$ \inlinemetanote{writes given $\bar{x}, \bar{y} \in R/P$} --- with $x, y \in R$ \inlinemetanote{writes (with $x, y \in R$)}, these are the equivalence classes of $x$ and $y$ --- such that $\bar{x} \neq \bar{0}$ \inlinemetanote{writes such that $\bar{x} \neq \bar{0}$} and $\bar{y} \neq \bar{0}$ \inlinemetanote{writes and $\bar{y} \neq \bar{0}$}, then I need to show that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes $\implies \bar{x}\bar{y} \neq \bar{0}$}. Is that clear?
+
+Now, I've just used bars everywhere here. Sometimes I do, sometimes I don't, and that's just how it goes. But anyway, in this proof I'm going to use bars everywhere. Yeah?
+\end{speech}
+
+\begin{student}[Student Question]
+I have a question about the prime ideals... If every field is also a ring, wouldn't that field have a prime ideal that covers the whole thing and therefore has to be the zero ring, therefore break this definition? Or does this proposition exclude...
+\end{student}
+
+\begin{speech}[00:57:40 - 00:58:06]
+No, it's okay to be a field. A field is also an integral domain.
+
+\inlinemetanote{Student interjects: \qt{What if $R$ is a field?}}
+Yeah...
+
+\inlinemetanote{Student continues: \qt{Then the prime ideal...}}
+Wait. Maybe we discuss this point afterward. If $R$ is a field, there is only one prime ideal, which is zero, because the prime ideals are never allowed to be everything. Does that answer the question? Okay.
+\end{speech}
+
+\begin{speech}[00:58:07 - 00:58:38]
+I need to prove this statement: We assume it's a prime ideal, and I need to prove that $R \bmod P$ is an integral domain.
+
+And again, there's nothing happening here: This proof has like zero ideas; you just have to unravel the definitions.
+
+We check here these two elements, and assuming that neither of them is zero, we need to know the product is not zero.
+\end{speech}
+
+\begin{speech}[00:58:38 - 01:00:16]
+I warn you in a lot of these proofs that there's nothing happening. It doesn't mean you shouldn't pay attention. It's just that there's a kind of proof and statement in mathematics where nothing is actually happening in it --- it's just kind of unraveling the definitions.
+
+It doesn't mean it's not confusing or it doesn't require concentration; it just means that there's no actual interesting logical motion happening in the proof, and this is one of them.
+
+Sometimes as a student it's useful to know whether that's the case or not.
+
+In this kind of math class, there are a lot of definitions. And these definitions have taken a lot of time to be written in a very careful and concise way. Usually, these definitions come after like a century of mathematical exploration before the absolutely perfect and complete definitions are created.
+
+And these definitions contain a lot. That's why all these proofs just unravel themselves: because the definitions are all perfect.
+
+Another way of saying this is, Nietzsche has this great sentence where he says that \qt{I try to write in ten sentences what other men take a whole book to write.} And you can say this a little bit about mathematics: These definitions in ten sentences take a century to develop.
+
+Nietzsche was also a professor in Basel, if we're keeping track.
+\end{speech}
+
+\begin{note}[Board Cleaning and Nietzsche's Maxim]
+The lecturer cleans the middle and right chalkboard panels with a sponge and squeegee while discussing the nature of mathematical definitions, quoting Friedrich Nietzsche's famous aphorism from \emph{Götzen-Dämmerung} (Twilight of the Idols): \qt{In zehn Sätzen zu sagen, was jeder andere in einem Buche sagt --- was jeder andere in einem Buche \emph{nicht} sagt...}
+\end{note}
+
+\begin{speech}[01:00:16 - 01:01:22]
+Okay, so let's try to prove this. That was a long board erase.
+
+$\bar{x} \neq \bar{0}$ means that $x \notin P$ \inlinemetanote{writes $\bar{x} \neq \bar{0} \implies x \notin P$}. That's what it means to be non-zero in the quotient, right?
+
+The language here is that when I write things without a bar, they're in $R$, and with this bar, they're in $R \bmod P$.
+
+And $\bar{y} \neq \bar{0}$ implies that $y \notin P$ \inlinemetanote{writes $\bar{y} \neq \bar{0} \implies y \notin P$}.
+
+Then I have to check that their product is not zero in the quotient ring. Now we use the fact that $P$ is prime \inlinemetanote{writes $P \text{ prime}$}. This means that $xy \notin P$ \inlinemetanote{writes $xy \notin P$} --- that's actually using the prime property for the first time.
+
+And this means that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes $\implies \bar{x}\bar{y} \neq \bar{0}$}. So, we've shown that $R \bmod P$ is an integral domain \inlinemetanote{writes $R/P \text{ is an int. domain}$}.
+
+You will agree that there was no idea in this proof; it was just unraveling.
+\end{speech}
+
+\begin{speech}[01:01:22 - 01:02:08]
+And I leave the other way for you. Exercise: Do the other arrow \inlinemetanote{writes Ex: $\Longleftarrow$ (same no ideas!)}. You'll find again there's no ideas, just unraveling. The way that prime ideals have been defined just matches perfectly with what it means to be an integral domain.
+
+So, this is an exercise: again, no ideas, which does not mean it's not confusing. It can be very confusing to have no ideas; that's a separate issue. \inlinemetanote{laughter} But I leave this for you to unravel.
+
+All right?
+\end{speech}
+
+\begin{content}[Proof of Proposition: Quotients by Prime Ideals]
+\begin{proof}[Proof of \cref{prop:quotient-integral-domain-prime}]
+Let $R$ be a commutative ring and $P \subset R$ an ideal.
+
+\textbf{Forward Direction ($\implies$): Assume $P$ is a prime ideal.}
+\begin{itemize}
+    \item \textbf{Non-triviality of the Quotient Ring:} Since $P$ is prime, $P \in \operatorname{cl}^*(R)$, meaning $P \neq R$. Therefore, $1 \notin P$, which implies $\bar{1} \neq \bar{0}$ in $\faktor{R}{P}$. Thus, $\faktor{R}{P}$ is not the zero ring.
+    \item \textbf{Absence of Zero Divisors:} Let $\bar{x}, \bar{y} \in \faktor{R}{P}$ with representatives $x, y \in R$. Suppose $\bar{x} \neq \bar{0}$ and $\bar{y} \neq \bar{0}$.
+    By definition of equivalence classes in the quotient ring:
+    \begin{align*}
+    \bar{x} \neq \bar{0} &\implies x \notin P, \\
+    \bar{y} \neq \bar{0} &\implies y \notin P.
+    \end{align*}
+    Since $P$ is a prime ideal, the prime property \eqref{eq:prime-ideal-condition} directly implies:
+    \[
+    x y \notin P.
+    \]
+    Translating this back to the quotient ring:
+    \[
+    x y \notin P \implies \bar{x} \bar{y} = \overline{x y} \neq \bar{0}.
+    \]
+    Hence, $\faktor{R}{P}$ has no zero divisors.
+\end{itemize}
+Combining non-triviality and zero-divisor freeness, $\faktor{R}{P}$ is an integral domain.
+\end{proof}
+
+\begin{exercise}[Reverse Direction of \cref{prop:quotient-integral-domain-prime}]\label[exercise]{exer:quotient-prime-converse}
+Prove the converse implication ($\impliedby$): Assume $\faktor{R}{P}$ is an integral domain.
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item Since $\faktor{R}{P}$ is not the zero ring, deduce that $P \subsetneq R$ (so $P \in \operatorname{cl}^*(R)$).
+    \setcounter{enumi}{1} \item Let $a, b \in R$ with $a b \in P$. Show that $\bar{a} \bar{b} = \bar{0}$ in $\faktor{R}{P}$, and use the integral domain property to conclude that $a \in P$ or $b \in P$.
+\end{enumerate}
+\end{exercise}
+\end{content}
+
+\subsection{Corollaries: Maximal Ideals Are Prime}
+
+\begin{speech}[01:02:08 - 01:03:02]
+Some consequences of this --- and this is maybe related to the question before ---:
+
+From this, you can draw some conclusions.
+
+For example: $M \subset R$ is maximal implies that $M$ is prime \inlinemetanote{writes $M \subset R \text{ is max} \implies M \subset R \text{ is prime}$}.
+
+Because if $M$ is maximal, then $R \bmod M$ is a field, every field is an integral domain, and that means that $M$ must be prime, all right?
+
+This is just a linguistic consequence of these two.
+
+In particular, that's one consequence: Every ring has a prime ideal \inlinemetanote{writes $\implies \text{Every } R \neq 0 \text{ has a prime ideal. (Zorn)}$}.
+
+This is also Zorn, because every ring has a maximal ideal, and a maximal ideal is prime, so in particular every ring has a prime ideal.
+
+All right.
+\end{speech}
+
+\begin{content}[Maximal Ideals are Prime]
+\begin{corollary}[Maximal Ideals are Prime]\label[corollary]{cor:maximal-is-prime}
+Let $R$ be a commutative ring and $M \subset R$ an ideal. If $M$ is a maximal ideal, then $M$ is a prime ideal:
+\begin{equation}\label{eq:max-implies-prime}
+M \text{ maximal} \implies M \text{ prime}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+If $M \subset R$ is a maximal ideal, then by \cref{prop:quotient-field-maximal}, the quotient ring $\faktor{R}{M}$ is a field. Since every field is an integral domain, $\faktor{R}{M}$ is an integral domain. By \cref{prop:quotient-integral-domain-prime}, this implies that $M$ is a prime ideal.
+\end{proof}
+
+\begin{corollary}[Existence of Prime Ideals]\label[corollary]{cor:existence-of-prime-ideals}
+Every non-zero commutative ring $R \neq 0$ contains at least one prime ideal.
+\end{corollary}
+
+\begin{proof}
+By Krull's Theorem (\cref{thm:krulls-theorem-maximal-ideals}), every non-zero commutative ring $R \neq 0$ possesses at least one maximal ideal $M$. By \cref{cor:maximal-is-prime}, $M$ is also a prime ideal.
+\end{proof}
+\end{content}
+
+\begin{speech}[01:03:02 - 01:03:44]
+We'll do some more things with these later, but that's like the basic aspects of maximal and prime ideals.
+
+They correspond just exactly: A summary of this is that every ideal is associated to a quotient ring, and the ideal is maximal if and only if the quotient ring is a field, and an ideal is prime if and only if the quotient ring is an integral domain.
+
+Those notions are perfectly lined up: maximal and field, and integral domain and prime.
+\end{speech}
+
+\subsection{A Non-Prime Ideal: Smooth Functions with Compact Support}
+
+\begin{speech}[01:03:44 - 01:04:41]
+Maybe we do one example.
+
+It was an example on the quiz. By the way, people do very well on the quizzes, so I asked various people whether I should make the quizzes harder, and the uniform answer was no, I should not make the quizzes harder. \inlinemetanote{laughter}
+
+Which is fine with me. As I said, I took almost a decade off from teaching because I had some desk job. But now that I've come back, the world has changed a bit, and you know, I'm not used to these kinds of things.
+
+Actually, it's fun to lecture. I hadn't lectured for a while, and it's kind of fun. Yeah.
+\end{speech}
+
+\begin{speech}[01:04:41 - 01:05:40]
+Okay, so, now we do an example that was related to the quiz.
+
+The example is, I take $C^\infty$ functions on $\mathbb{R}$ \inlinemetanote{writes $C^\infty(\mathbb{R})$}, and I take the ideal of compactly supported functions \inlinemetanote{writes $I \subset C^\infty(\mathbb{R})$, compactly supported functions}.
+
+That was a problem on the quiz. Question now: Is $I$ a prime ideal? \inlinemetanote{writes Is $I \subset C^\infty(\mathbb{R})$ a prime ideal?} This wasn't on the quiz, because... well, is $I$ a prime ideal? I think the quiz question was whether it was a maximal ideal, right? Anyway, we can now ask: Is this a prime ideal?
+\end{speech}
+
+\begin{speech}[01:05:24 - 01:07:17]
+And the answer is no.
+
+To show something is not a prime ideal, it's pretty simple: I have to find two things that are not in the ideal, that when I multiply, become in that ideal. That's what I have to do, right?
+
+I will give you two things: Let $a$ be the function that looks... So, here is $\mathbb{R}$, and this is $0$, $1$... Let $a$ be a smooth function that is non-zero, and then becomes somehow zero here \inlinemetanote{draws graph of $a$}. That's $a$.
+
+And you can imagine what $b$ is going to be; maybe I draw it with another color.
+
+$b$ is the function that comes here and goes like that \inlinemetanote{draws graph of $b$}. That's $b$, all right?
+
+$a$ and $b$ definitely don't have compact support individually. Is that clear? Because the support of $a$ goes all the way that way, and the support of $b$ goes all the way this way.
+
+If I multiply $a \cdot b$ \inlinemetanote{writes $ab$ below the axis}, that function... It's the green function, so that's $a \cdot b$, green: It's zero always here, and then it has some life, and then it goes to zero again. So, that's compact support.
+
+This is an example where $a \notin I$ \inlinemetanote{writes $a \notin I$}, $b \notin I$ \inlinemetanote{writes $b \notin I$}, but $ab \in I$ \inlinemetanote{writes $ab \in I$}. That means that $I$ is not prime \inlinemetanote{writes $\implies I \text{ is not prime}$}.
+
+Okay? That's kind of a fun example.
+\end{speech}
+
+\begin{content}[Counterexample: Compactly Supported Smooth Functions]
+\begin{example}[Compactly Supported Functions Do Not Form a Prime Ideal]\label[example]{ex:compact-support-not-prime-p4}
+Let $R = C^\infty(\mathbb{R})$ be the ring of smooth functions under pointwise operations. Consider the ideal of functions with compact support:
+\begin{equation}\label{eq:compact-support-ideal-p4}
+I = C_c^\infty(\mathbb{R}) := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact} \}.
+\end{equation}
+\begin{question}
+Is $I = C_c^\infty(\mathbb{R})$ a prime ideal of $C^\infty(\mathbb{R})$?
+\end{question}
+\textbf{Answer:} \textcolor{BrickRed}{\textbf{No}}, $I$ is not a prime ideal.
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=Stealth]
+% \begin{hidden}
+% - Canvas: scale 1.2, x-axis from -3.2 to 4.2, y in [-0.4, 1.6]
+% - Order: (1) real axis with ticks at 1 and 2; (2) function a(x) in BrickRed;
+%   (3) function b(x) in NavyBlue; (4) product function (ab)(x) in ForestGreen; (5) labels
+% - Coordinates & formulas:
+%   a(x) = 1 for x <= 1, drops smoothly via cosine bump to 0 on [1, 2], and 0 for x >= 2.
+%   b(x) = 0 for x <= 1, rises smoothly via cosine bump to 1 on [1, 2], and 1 for x >= 2.
+%   (ab)(x) = a(x)*b(x) is identically 0 outside (1, 2), non-zero on (1, 2).
+% - Labels: a(x) above left in BrickRed, b(x) above right in NavyBlue, (ab)(x) centered at bump in ForestGreen.
+% - Collisions: none; paths and labels are well-separated vertically.
+% \end{hidden}
+    \draw[->, thick, gray!70] (-3.2, 0) -- (4.2, 0) node[right, text=black] {$\mathbb{R}$};
+    \draw[thick] (1, 0.08) -- (1, -0.08) node[below, font=\small] {$1$};
+    \draw[thick] (2, 0.08) -- (2, -0.08) node[below, font=\small] {$2$};
+    
+    % Function a(x) in BrickRed
+    \draw[ultra thick, BrickRed, domain=1:2, samples=40] 
+        plot (\x, {0.5 * (1 + cos(deg(pi * (\x - 1))))});
+    \draw[ultra thick, BrickRed] (-3.0, 1.0) -- (1, 1.0);
+    \draw[ultra thick, BrickRed] (2, 0) -- (4.0, 0);
+    \node[BrickRed, font=\bfseries] at (-2.0, 1.3) {$a(x)$};
+    
+    % Function b(x) in NavyBlue
+    \draw[ultra thick, NavyBlue, domain=1:2, samples=40] 
+        plot (\x, {0.5 * (1 - cos(deg(pi * (\x - 1))))});
+    \draw[ultra thick, NavyBlue] (-3.0, 0) -- (1, 0);
+    \draw[ultra thick, NavyBlue] (2, 1.0) -- (4.0, 1.0);
+    \node[NavyBlue, font=\bfseries] at (3.5, 1.3) {$b(x)$};
+    
+    % Product (ab)(x) in ForestGreen
+    \draw[ultra thick, ForestGreen, domain=1:2, samples=50] 
+        plot (\x, {1.8 * 0.25 * (1 + cos(deg(pi * (\x - 1)))) * (1 - cos(deg(pi * (\x - 1))))});
+    \node[ForestGreen, font=\bfseries] at (1.5, 0.75) {$(ab)(x)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{proof}[Verification of Counterexample]
+We construct two smooth functions $a, b \in C^\infty(\mathbb{R})$:
+\begin{align*}
+a(x) &= \begin{cases} > 0 & \text{for } x < 2, \\ 0 & \text{for } x \ge 2, \end{cases} \\
+b(x) &= \begin{cases} 0 & \text{for } x \le 1, \\ > 0 & \text{for } x > 1. \end{cases}
+\end{align*}
+Then:
+\begin{itemize}
+    \item $\operatorname{supp}(a) = (-\infty, 2]$ is unbounded, so $a \notin C_c^\infty(\mathbb{R})$.
+    \item $\operatorname{supp}(b) = [1, \infty)$ is unbounded, so $b \notin C_c^\infty(\mathbb{R})$.
+    \item However, their pointwise product satisfies $(a \cdot b)(x) = 0$ for all $x \notin [1, 2]$. Thus, $\operatorname{supp}(a \cdot b) \subseteq [1, 2]$ is compact, which means:
+    \[
+    a \cdot b \in C_c^\infty(\mathbb{R}).
+    \]
+\end{itemize}
+Since $a \notin I$ and $b \notin I$, yet $a b \in I$, the ideal $I = C_c^\infty(\mathbb{R})$ is not a prime ideal.
+\end{proof}
+\end{content}
+
+\section{The Chinese Remainder Theorem}
+
+\subsection{Elementary Formulation for the Integers}
+
+\begin{speech}[01:07:17 - 01:08:58]
+All right, so, the next topic, which I start today, is the famous Chinese Remainder Theorem.
+
+Do you know this theorem? This is kind of standard: Chinese Remainder Theorem \inlinemetanote{writes Chinese Remainder Theorem}. We're going to do some fancier version of it, but the plain version of it is kind of where we start, because it's common in schools --- I guess particularly in Chinese schools, I don't know.
+
+It's called the Chinese Remainder Theorem because the first shadow of it was found in some manuscript from the fifth century AD in China, I think.
+
+The very basic one, the version you learn in school, is: Let $a$ and $b$ be numbers that are relatively prime. So, $a$ and $b$ are some integers that are relatively prime \inlinemetanote{writes Let $(a, b) = 1, \ a, b \in \mathbb{Z}$}.
+
+Then choose $x, y \in \mathbb{Z}$ to be some other integers \inlinemetanote{writes choose $x, y \in \mathbb{Z}$}.
+
+The Chinese Remainder Theorem is about the solution of a certain system. We want to solve for a third integer $z$ that satisfies the equations: $z \equiv x \pmod a$ \inlinemetanote{writes We want for $z \in \mathbb{Z}, z \equiv x \bmod a$} and $z \equiv y \pmod b$ \inlinemetanote{writes $z \equiv y \bmod b$}.
+
+That's what we have to solve. Is this familiar to you?
+
+And the answer, the Chinese Remainder Theorem: You can always do it \inlinemetanote{writes Ans: You can do it.}.
+\end{speech}
+
+\begin{content}[The Chinese Remainder Theorem over $\mathbb{Z}$ (Classical Form)]
+\begin{theorem}[Classical Chinese Remainder Theorem for Coprime Integers]\label[theorem]{thm:crt-classical-integers}
+Let $a, b \in \mathbb{Z}$ be coprime integers, that is, $\gcd(a, b) = 1$. Then for any integers $x, y \in \mathbb{Z}$, there exists an integer $z \in \mathbb{Z}$ satisfying the simultaneous system of congruences:
+\begin{equation}\label{eq:crt-congruences-classical}
+\begin{aligned}
+z &\equiv x \pmod a, \\
+z &\equiv y \pmod b.
+\end{aligned}
+\end{equation}
+Moreover, the solution $z$ is uniquely determined modulo $ab$.
+\end{theorem}
+\end{content}
+
+\begin{note}[Board Elevation \& Cleaning]
+The lecturer pushes the lower blackboard upward and cleans the lower blackboard panel thoroughly with a sponge and squeegee.
+\end{note}
+
+\begin{speech}[01:09:07 - 01:10:32]
+We would like to pursue this in the context of general rings, and let us try to do it in that context. Maybe do an example first if you haven't seen it --- it's not necessary that you've seen it.
+
+If you haven't seen it, we'll do a small example, and then I'll do the general case. We take here $\bmod 5$, and say we want $z \equiv 2 \pmod 5$ \inlinemetanote{writes $z \equiv 2 \bmod 5$} and $z \equiv 1 \pmod 7$ \inlinemetanote{writes $z \equiv 1 \bmod 7$}.
+
+How do you do this? I look at the numbers $\bmod 5$: There's $2$. What's $2 \bmod 5$? Well, I can add $7$... that doesn't seem to work... $12$... that's more failure... $17$... $22$... Ah, $22$ is pretty good! \inlinemetanote{circles $22$}
+
+So, $22$: $22 \equiv 2 \pmod 5$ and $1 \pmod 7$, see? And the Chinese Remainder Theorem says you can always do this; you'll always succeed.
+\end{speech}
+
+\begin{content}[Numerical Example: Simultaneous Congruences in $\mathbb{Z}$]
+\begin{example}[Solving a System of Two Congruences]\label[example]{ex:crt-numerical-integers}
+We seek an integer $z \in \mathbb{Z}$ satisfying:
+\begin{equation}\label{eq:num-congruence-system}
+\begin{aligned}
+z &\equiv 2 \pmod 5, \\
+z &\equiv 1 \pmod 7.
+\end{aligned}
+\end{equation}
+Since $\gcd(5, 7) = 1$, the Chinese Remainder Theorem guarantees the existence of a unique solution modulo $5 \cdot 7 = 35$.
+
+Testing successive integers congruent to $2 \pmod 5$:
+\[
+z \in \{2, 7, 12, 17, 22, \dots\}
+\]
+Evaluating these candidates modulo $7$:
+\begin{align*}
+2 &\equiv 2 \pmod 7 && (\text{fails}) \\
+7 &\equiv 0 \pmod 7 && (\text{fails}) \\
+12 &\equiv 5 \pmod 7 && (\text{fails}) \\
+17 &\equiv 3 \pmod 7 && (\text{fails}) \\
+22 &\equiv 1 \pmod 7 && (\text{\textcolor{ForestGreen}{success!}})
+\end{align*}
+Thus, $z = 22$ is a solution, and the complete set of solutions in $\mathbb{Z}$ is $z \equiv 22 \pmod{35}$.
+\end{example}
+\end{content}
+
+\subsection{Operations on Ideals: Sum, Product, and Coprimality}
+
+\begin{speech}[01:10:32 - 01:12:09]
+Okay. So, we want to pursue this in the full context of rings. Let $R$ be a ring \inlinemetanote{writes Let $R$ be a ring}, and I want to consider two ideals, $I$ and $J$ \inlinemetanote{writes $I, J \subset R$ ideals}.
+
+In the context here, the ideals would be the ideal generated by $a$ and the ideal generated by $b$. Those are ideals.
+
+The whole idea of the ideal is some kind of idealized number. So, before we even get to the Chinese Remainder Theorem, there are some things to talk about.
+
+This is totally general: If I have a ring with two ideals, there's an ideal which is the sum --- I'm going to define it. I take two ideals, and I can consider their sum. By definition \inlinemetanote{writes $I + J \coloneqq \{ i + j \mid i \in I, j \in J \}$}, this is equal to the set of elements $i + j$, where $i$ is in the first ideal and $j$ is in the second ideal, all right?
+
+Is it clear what this definition is? Then you have to check that this is an ideal. In particular, zero should be here, which it is, because $0 \in I$ and $0 \in J$. Then you have to check that if two things are here, when you add them, they're also in here, and you have to check it's also closed under scalar multiplication. I leave all those checks for you: They're all simple; there's nothing going on in those checks. But this is a very important definition.
+
+Are there any questions about this definition? If I take two ideals, I have the ideal sum, $I + J$.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Sum of Ideals]\label[definition]{def:sum-of-ideals}
+Let $R$ be a ring and let $I, J \subset R$ be ideals. The \newterm{sum} of $I$ and $J$ is defined as:
+\begin{equation}\label{eq:sum-of-ideals-def}
+I + J := \{ i + j \mid i \in I, j \in J \}.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Verification of the Ideal Axioms for $I + J$]
+To confirm that $I + J$ is an ideal of $R$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Non-emptiness and Zero:} Since $0 \in I$ and $0 \in J$, we have $0 = 0 + 0 \in I + J$.
+    \setcounter{enumi}{1} \item \textbf{Additive Closure:} Let $x, y \in I + J$. Then $x = i_1 + j_1$ and $y = i_2 + j_2$ for some $i_1, i_2 \in I$ and $j_1, j_2 \in J$. Using the associativity and commutativity of addition in $R$:
+    \[
+    x + y = (i_1 + i_2) + (j_1 + j_2) \in I + J \quad \text{since } i_1 + i_2 \in I \text{ and } j_1 + j_2 \in J.
+    \]
+    Similarly, $-x = (-i_1) + (-j_1) \in I + J$.
+    \setcounter{enumi}{2} \item \textbf{Absorption under Ring Multiplication:} For any $r \in R$ and $x = i + j \in I + J$:
+    \[
+    r x = r (i + j) = r i + r j \in I + J \quad \text{since } r i \in I \text{ and } r j \in J.
+    \]
+\end{enumerate}
+Thus, $I + J$ is indeed an ideal of $R$. In fact, $I + J$ is the smallest ideal containing both $I$ and $J$.
+\end{steps}
+\end{content}
+
+\begin{speech}[01:12:09 - 01:14:12]
+And you can imagine what I'm going to write next: There's also $IJ$, the ideal product \inlinemetanote{writes $I \cdot J$}. The definition here is slightly more complicated: \inlinemetanote{writes $\coloneqq \{ \sum_{r=1}^m i_r j_r \mid i_r \in I, j_r \in J \}$}
+
+For the ideal product, I take all finite linear combinations of the products, where one element is in one ideal and the other is in the other. Okay? It's slightly different than this one. Here, it's literally the sum of two elements, one in one and the other in the other.
+
+You could say: Why don't I just take this to be the set of elements $ij$ where $i \in I$ and $j \in J$? That's a good question. Are you going to ask this question? You have no curiosity about this fact? Okay, then I... \inlinemetanote{laughter}
+
+The reason is that that is problematic: If I defined it to just be elements $ij$, then I'd have to show that if I take two of them \inlinemetanote{writes $i_1 j_1 + i_2 j_2$}, this is equal to $i_3 j_3$ \inlinemetanote{writes $= i_3 j_3$}, because the ideal should be closed under addition.
+
+So, if my definition was just products, then I'd have to say that if I take a product plus another product, since an ideal should be closed under addition, it should be a product. And that doesn't seem $100\%$ likely, right?
+
+We solve the problem by saying we take all sums of products, because this thing here is a sum of products. This is a subtle point, but it's important to understand.
+
+That's the definition. Take any ring and take two ideals: You can take their ideal sum and the ideal product, all right? There's a slight difference in the definition based on this small issue I said.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Product of Ideals]\label[definition]{def:product-of-ideals}
+Let $R$ be a ring and let $I, J \subset R$ be ideals. The \newterm{product} of $I$ and $J$, denoted by $IJ$ (or $I \cdot J$), is defined as the set of all finite sums of products of elements from $I$ and $J$:
+\begin{equation}\label{eq:product-of-ideals-def}
+I \cdot J := \left\{ \sum_{r=1}^m i_r j_r \;\middle|\; m \in \mathbb{N}, \ i_r \in I, \ j_r \in J \right\}.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Why the Product Ideal Requires Finite Sums]
+A student might naturally ask: \emph{Why not simply define the product ideal as the naive set of single products $\{ i j \mid i \in I, j \in J \}$?}
+\begin{itemize}
+    \item \textbf{Failure of Additive Closure:} The set of simple products $\{ i j \mid i \in I, j \in J \}$ is in general \textbf{not} closed under addition!
+    \item \textbf{The Sum of Products:} If $i_1, i_2 \in I$ and $j_1, j_2 \in J$, the sum:
+    \[
+    i_1 j_1 + i_2 j_2
+    \]
+    cannot generally be factored into a single product $i_3 j_3$ with $i_3 \in I$ and $j_3 \in J$.
+    \item \textbf{Ideal Generation:} To ensure that $IJ$ forms a legitimate ideal that is closed under addition, one must take the additive group generated by all products $\{ij\}$, which consists precisely of all finite sums $\sum_{r=1}^m i_r j_r$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{speech}[01:14:12 - 01:14:51]
+For example, what is the ideal sum here when I consider the ring $\mathbb{Z}$? \inlinemetanote{writes $\mathbb{Z}$, $(3) + (5) = $} What is that?
+\end{speech}
+
+\begin{student}[Student Answer]
+It's the entire $\mathbb{Z}$.
+\end{student}
+
+\begin{speech}[01:14:52 - 01:15:31]
+It's the entire $\mathbb{Z}$, yeah. This is a weird calculus, all right? It's $(1)$ \inlinemetanote{writes $(1)$}, because you can write anything in $\mathbb{Z}$ because they're relatively prime. You have to concentrate when you do this calculus.
+
+What about this: \inlinemetanote{writes $(3) \cdot (5) = $}
+
+I just want an answer: What number is it? \inlinemetanote{laughter}
+\end{speech}
+
+\begin{student}[Student Answer]
+One?
+\end{student}
+
+\begin{speech}[01:15:33 - 01:16:00]
+One? Why? The proposal is $(1)$ \inlinemetanote{writes $(1)$}. Well, why would you say that?
+
+Remember the definition: To be in here, you have to be a multiple of $3$ times a multiple of $5$, and then a sum of things that are multiples of $3$ times multiples of $5$. So, you can't be $1$, because...
+\end{speech}
+
+\begin{student}[Student Answer]
+Is it $15$?
+\end{student}
+
+\begin{speech}[01:16:02 - 01:16:29]
+It's $(15)$, yeah. This one worked, actually. \inlinemetanote{erases $(1)$, writes $(15)$}
+
+You just have to look at this definition: To be in here, you have to be a sum of things that are all multiples of $3$ times multiples of $5$, so, every summand is a multiple of $15$, so the whole thing must be a multiple of $15$; and of course every multiple of $15$ is in there.
+
+Although the definition is somehow more delicate, here it behaves better. Anyway, you have to be careful. That was my exercise in showing you have to be careful.
+\end{speech}
+
+\begin{content}[Examples of Ideal Sums and Products in $\mathbb{Z}$]
+\begin{example}[Ideal Sum vs. Ideal Product for $(3)$ and $(5)$ in $\mathbb{Z}$]\label[example]{ex:ideal-sum-prod-z}
+Consider the principal ideals $(3) = 3\mathbb{Z}$ and $(5) = 5\mathbb{Z}$ in the ring $R = \mathbb{Z}$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Ideal Sum:}
+    \begin{equation}\label{eq:ideal-sum-3-5}
+    (3) + (5) = (1) = \mathbb{Z}.
+    \end{equation}
+    Since $\gcd(3, 5) = 1$, Bézout's identity provides $2 \cdot 3 + (-1) \cdot 5 = 1 \in (3) + (5)$. Because $1 \in (3) + (5)$, the sum is the entire unit ideal $\mathbb{Z}$.
+    \setcounter{enumi}{1} \item \textbf{Ideal Product:}
+    \begin{equation}\label{eq:ideal-prod-3-5}
+    (3) \cdot (5) = (15).
+    \end{equation}
+    Every element in $(3) \cdot (5)$ is a finite sum of terms of the form $(3a)(5b) = 15ab$, which is a multiple of $15$. Conversely, any multiple $15k = 3 \cdot (5k)$ is a product of an element from $(3)$ and an element from $(5)$.
+\end{enumerate}
+\end{example}
+\end{content}
+
+\begin{speech}[01:16:29 - 01:17:39]
+If we go back to the general development: The definition is that $I$ and $J$ in $R$ are called coprime \inlinemetanote{writes Def: $I, J \subset R$ are coprime}.
+
+The definition of this is that $I + J = (1)$ \inlinemetanote{writes $I + J = (1)$}.
+
+When I write the unit ideal here, another way of writing it is just $R$, okay? \inlinemetanote{writes or $= R$} Those are two equivalent things. That's the definition: It's coprime.
+
+This definition makes sense here: If I specialize this to $\mathbb{Z}$, the notion of coprime is the standard notion of coprime.
+
+All right, so, now we can state the Chinese Remainder Theorem in these definitions.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Coprime Ideals / Comaximal Ideals]\label[definition]{def:coprime-ideals}
+Let $R$ be a ring. Two ideals $I, J \subset R$ are called \newterm{coprime} (or \newterm{comaximal}) if their sum is the unit ideal:
+\begin{equation}\label{eq:coprime-ideals-def}
+I + J = (1) = R.
+\end{equation}
+Equivalently, $I$ and $J$ are coprime if and only if there exist elements $i \in I$ and $j \in J$ such that:
+\begin{equation}\label{eq:coprime-elements-identity}
+i + j = 1.
+\end{equation}
+\end{definition}
+
+\begin{steps}[Compatibility with Elementary Coprimality in $\mathbb{Z}$]
+In the ring of integers $\mathbb{Z}$, every ideal is principal: $I = (a)$ and $J = (b)$.
+The sum of two principal ideals is generated by their greatest common divisor:
+\[
+(a) + (b) = (\gcd(a, b)).
+\]
+Thus, $(a) + (b) = (1) \iff \gcd(a, b) = 1$, showing that \cref{def:coprime-ideals} generalizes the elementary notion of coprime numbers to arbitrary rings.
+\end{steps}
+\end{content}
+
+\subsection{The Chinese Remainder Theorem for General Rings}
+
+\begin{note}[Board Elevation \& Cleaning]
+The lecturer pushes the middle blackboard upward, leaving the definitions visible on the upper board, and cleans the lower blackboard panel.
+\end{note}
+
+\begin{speech}[01:18:15 - 01:19:50]
+This is actually a pretty nice theorem in the sense that it's not hard to prove, but there are some ideas. It's not like that vacuous stuff that falls straight from definitions.
+
+For the Chinese Remainder Theorem: We have $I, J \subset R$ \inlinemetanote{writes CRT: $I, J \subset R$}.
+
+These are the assumptions: $I + J = (1)$ \inlinemetanote{writes $I + J = (1)$}.
+
+Then --- and I have to explain this --- there's a natural ring homomorphism from $R \bmod IJ$ \inlinemetanote{writes $\phi \colon \faktor{R}{IJ} \to$}. Given these ideals, there's an ideal which is the product, and I can take its quotient; I'm allowed to do that: This is a ring. Do you accept that?
+
+It turns out there's a homomorphism to $(R \bmod I) \times (R \bmod J)$ \inlinemetanote{writes $\faktor{R}{I} \times \faktor{R}{J}$}. I'll explain all this. And $\phi$ is an isomorphism of rings \inlinemetanote{writes $\phi$ is an isomorphism of rings}.
+
+That's the conclusion of the Chinese Remainder Theorem. You take any two ideals in any ring such that they're coprime, then there is this map, and the conclusion of the Chinese Remainder Theorem is that this is an isomorphism of rings.
+
+What is this map? First of all, we know what these three rings are; they've been defined \inlinemetanote{points at $\faktor{R}{IJ}, \faktor{R}{I}, \faktor{R}{J}$}. These are just our quotients: We have the ideal $I$, we have the ideal $J$, and we have the ideal $IJ$. So, these are well-defined rings. You accept that?
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Chinese Remainder Theorem for Rings]\label[theorem]{thm:crt-general-rings}
+Let $R$ be a commutative ring and let $I, J \subset R$ be coprime ideals ($I + J = (1)$).
+Then there exists a canonical ring isomorphism:
+\begin{equation}\label{eq:crt-general-isomorphism}
+\phi \colon \faktor{R}{IJ} \xrightarrow{\quad \sim \quad} \faktor{R}{I} \times \faktor{R}{J}.
+\end{equation}
+\end{theorem}
+\end{content}
+
+\begin{speech}[01:19:50 - 01:21:59]
+If I have any ring, I can consider the product. This is a new ring \inlinemetanote{writes $\faktor{R}{I} \times \faktor{R}{J} = \{ (\bar{a}, \bar{b}) \mid \bar{a} \in \faktor{R}{I}, \bar{b} \in \faktor{R}{J} \}$}. This ring consists of elements $(\bar{a}, \bar{b})$ where $\bar{a} \in R \bmod I$ and $\bar{b} \in R \bmod J$. And the way you add and multiply them is just componentwise, all right?
+
+We've seen some things like this, but I haven't formally defined it. This definition can be made for any rings: If $S_1$ and $S_2$ are rings \inlinemetanote{writes $(S_1, S_2 \text{ are rings} \implies S_1 \times S_2 \text{ is ring}) \ (\text{cpt. wise})$}, then $S_1 \times S_2$ is a ring in the natural way, where you do componentwise addition, componentwise multiplication, the zero element is of course $(0, 0)$, the identity element is $(1, 1)$, etc., okay?
+
+That's the explanation of what this is: I take the two quotients, and I take the product. And this one you know, so I have to tell you what the map is. This is kind of fun.
+
+I have to tell you, if I start with the equivalence class of some element in $R \bmod IJ$ \inlinemetanote{writes $\phi(\bar{z} \in \faktor{R}{IJ}) \to$}, how to get a product. And it's going to be perfect: It's just $(\bar{z}, \bar{z})$ \inlinemetanote{writes $(\bar{z}, \bar{z})$}.
+
+Actually, you could write this --- and this is maybe a slightly malicious way to write it --- but it's just this: $\phi(\bar{z}) = (\bar{z}, \bar{z})$ \inlinemetanote{writes $\phi(\bar{z}) = (\bar{z}, \bar{z})$}. We'll discuss this in a second. Many people would just write it without the bars: $\phi(z) = (z, z)$ \inlinemetanote{writes $\phi(z) = (z, z)$}. All right?
+
+Let's try to understand what this means. Does it make sense? Because I take an equivalence class here, and I send it to the equivalence class... this is an equivalence class in $R \bmod I$, and this is an equivalence class in $R \bmod J$ \inlinemetanote{writes $\faktor{R}{I}$ under first $\bar{z}$, and $\faktor{R}{J}$ under second $\bar{z}$}. Okay?
+\end{speech}
+
+\begin{content}[Direct Product of Rings and Definition of the Map $\phi$]
+\begin{definition}[Direct Product of Rings]\label[definition]{def:direct-product-rings}
+Let $S_1$ and $S_2$ be rings. The \newterm{direct product} $S_1 \times S_2$ is the Cartesian product equipped with componentwise ring operations:
+\begin{align*}
+(a_1, a_2) + (b_1, b_2) &:= (a_1 + b_1, a_2 + b_2), \\
+(a_1, a_2) \cdot (b_1, b_2) &:= (a_1 \cdot b_1, a_2 \cdot b_2).
+\end{align*}
+The zero element is $0_{S_1 \times S_2} = (0_{S_1}, 0_{S_2})$ and the identity element is $1_{S_1 \times S_2} = (1_{S_1}, 1_{S_2})$.
+\end{definition}
+
+\begin{definition}[The Canonical CRT Homomorphism $\phi$]\label[definition]{def:crt-canonical-homomorphism}
+Let $R$ be a ring and $I, J \subset R$ ideals. The canonical assignment:
+\begin{equation}\label{eq:crt-map-def}
+\begin{aligned}
+\phi \colon \faktor{R}{IJ} &\longrightarrow \faktor{R}{I} \times \faktor{R}{J}, \\
+z + IJ &\longmapsto (z + I, \ z + J),
+\end{aligned}
+\end{equation}
+is denoted concisely on the blackboard as $\phi(\bar{z}) := (\bar{z}, \bar{z})$ (or informally $\phi(z) = (z, z)$).
+\end{definition}
+\end{content}
+
+\begin{note}[Board Preparation]
+The lecturer wipes the lower board clean with a sponge to prepare space for the formal proofs of well-definedness and injectivity.
+\end{note}
+
+\begin{speech}[01:21:59 - 01:24:09]
+Let me say a few words about that. You have to prove it's well-defined, etc. I can say, whatever was on that scroll in the fifth century AD, it wasn't this statement. \inlinemetanote{laughter}
+
+To really understand and get started, we have to be on the same page about this $\phi$. As I said, I take some element $z \in R$, and I get a $\bar{z}$ here --- this is a class in $R \bmod IJ$, right? \inlinemetanote{writes $\phi(\bar{z}) \coloneqq (\bar{z}, \bar{z})$, with $z \in R$, $\bar{z} \in \faktor{R}{IJ}$, and under the tuple: $\faktor{R}{I}, \faktor{R}{J}$}
+
+And I define this to be the class $(\bar{z}, \bar{z})$, where the bars mean different things! That's the confusing thing about this, which I warned you comes: This $\bar{z}$ means this bar is the equivalence class in $R \bmod I$, and this bar is the equivalence class in $R \bmod J$, okay?
+
+Why is this well-defined? Because this guy is only defined up to shifting by some $\gamma \in IJ$, right? \inlinemetanote{writes $\bar{z} = \overline{z + \gamma}, \gamma \in IJ$}
+
+If I shifted it by $\gamma$, this should be the same thing: If I write that, I would get $(\overline{z + \gamma}, \overline{z + \gamma})$ \inlinemetanote{writes $\phi(\overline{z + \gamma}) = (\overline{z + \gamma}, \overline{z + \gamma})$}.
+
+It had better be the case that these shifts respect the different equivalence classes here. And this is okay \inlinemetanote{writes OK because $\gamma \in IJ$ and $IJ \subset I$ and $IJ \subset J$}, because $\gamma \in IJ$, and $IJ \subset I$ and $IJ \subset J$.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Well-Definedness of $\phi$]\label[lemma]{lem:phi-well-defined}
+The mapping $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\phi(z + IJ) = (z + I, z + J)$ is well-defined.
+\end{lemma}
+
+\begin{proof}
+Let $z, z' \in R$ such that $z + IJ = z' + IJ$ in $\faktor{R}{IJ}$.
+Then $z' = z + \gamma$ for some $\gamma \in IJ$.
+To show that $\phi(z' + IJ) = \phi(z + IJ)$, we must verify:
+\[
+(z + \gamma + I, \ z + \gamma + J) = (z + I, \ z + J).
+\]
+This holds if and only if $\gamma \in I$ and $\gamma \in J$.
+Since $IJ \subseteq I$ and $IJ \subseteq J$ (as established in \cref{lem:product-subset-intersection}), we have $\gamma \in I$ and $\gamma \in J$.
+Consequently:
+\[
+z + \gamma + I = z + I \quad \text{and} \quad z + \gamma + J = z + J.
+\]
+Thus, the value of $\phi(z + IJ)$ is independent of the chosen representative $z$.
+\end{proof}
+\end{content}
+
+\begin{speech}[01:24:09 - 01:24:55]
+Why is $IJ$ in $I$? Remember, $IJ$ is equal to sums of the form $i_1 j_1 + i_2 j_2 + \dots + i_k j_k$ \inlinemetanote{writes $IJ = \{ \sum_{r=1}^m i_r j_r \mid i_r \in I, j_r \in J \}$}. Since this is in $I$ and that's something else, each one of these terms is both in $I$ and in $J$.
+
+A very important property of $IJ$ --- I just put it in a box here ---: This is always inside $I$ and it's always inside $J$ \inlinemetanote{draws box with $IJ \subset I$ and $IJ \subset J$}. Okay?
+
+The ambiguity here is that I could change the name with a shift of somebody in $IJ$, and that would change this; but this shift is still in $I$, and this shift is still in $J$, so the answer is the same, yeah.
+\end{speech}
+
+\begin{student}[Student Question]
+Do we need to assume that multiplication is commutative for this or... because if we look at it like this, I would argue that $j$ or the $ij$'s are in $J$, but then is $IJ$ the same as $JI$?
+\end{student}
+
+\begin{speech}[01:25:13 - 01:26:33]
+Yes! We're in commutative rings! An interesting question is: How do you define this for non-commutative rings? What you're getting to is that if you want to do this theory for non-commutative rings --- which we're not doing in this class --- you have to be, at the very beginning, very careful about what you mean by an ideal, and whether it's left multiplication or right multiplication.
+
+His concern is that if I view this element of $J$, the $i$ is sitting on the left, which is what we normally do. But if I view this as an element of $I$, the $j$ is sitting on the right. That's your concern. But we're commutative, so you can always move the chairs.
+
+If you're doing non-commutative ring theory, then you have to be super organized about what you mean by an ideal, etc. But we're not doing it.
+
+Did I convince you this map is well-defined? The matter here is a little bit of confusion, and that confusion goes to this issue that I said: In quotients, there's a deep philosophical confusion that it's hard to name anybody; they all have lots of different names. It'd be like if humans each had a countable number of names, which would make the world pretty interesting, I think.
+
+Once you're on top of this naming ambiguity, you see that this map makes sense: It works. And then you have to check it's a homomorphism, which I leave to you.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Inclusion in Component Ideals]\label[lemma]{lem:product-subset-intersection}
+For any two ideals $I, J$ in a commutative ring $R$:
+\begin{equation}\label{eq:product-subset-both}
+IJ \subseteq I \quad \text{and} \quad IJ \subseteq J \qquad (\text{hence } IJ \subseteq I \cap J).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $\gamma \in IJ$. By \cref{def:product-of-ideals}, $\gamma = \sum_{r=1}^m i_r j_r$ with $i_r \in I$ and $j_r \in J$.
+\begin{itemize}
+    \item Since $I$ is an ideal, each term $i_r j_r \in I$ by ideal absorption. Because $I$ is closed under finite sums, $\gamma \in I$.
+    \item Since $J$ is an ideal and $R$ is commutative, $i_r j_r = j_r i_r \in J$ by ideal absorption. Since $J$ is closed under finite sums, $\gamma \in J$.
+\end{itemize}
+Therefore, $IJ \subseteq I$ and $IJ \subseteq J$, which implies $IJ \subseteq I \cap J$.
+\end{proof}
+\end{content}
+
+\begin{speech}[01:26:33 - 01:27:32]
+You must check $\phi$ is a homomorphism of rings \inlinemetanote{writes You must check $\phi$ is a homomorphism of rings}.
+
+There's nothing to this. The only issue is this naming, because you'd have to check something like $\phi(\bar{z}_1 \bar{z}_2) = \phi(\bar{z}_1) \phi(\bar{z}_2)$ \inlinemetanote{writes $\phi(\bar{z}_1 \bar{z}_2) = \phi(\bar{z}_1) \phi(\bar{z}_2)$}. When you do this, you'll see that all that mattered was that this was legal; the rest will work out.
+
+You can see that $0 \mapsto (0, 0)$ and $1 \mapsto (1, 1)$, so, this is a homomorphism of rings.
+
+Finally, that's the explanation of this: The Chinese Remainder Theorem says that this is an isomorphism of rings \inlinemetanote{writes CRT: $\phi$ is isomorphism of rings}.
+
+All right, so, we don't have much time, but I should be able to prove at least half of this. Let's try.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[$\phi$ is a Ring Homomorphism]\label[lemma]{lem:phi-is-homomorphism}
+The map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ is a ring homomorphism.
+\end{lemma}
+
+\begin{proof}
+Let $\bar{z}_1 = z_1 + IJ$ and $\bar{z}_2 = z_2 + IJ$ in $\faktor{R}{IJ}$.
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Additive Homomorphism:}
+    \begin{align*}
+    \phi(\bar{z}_1 + \bar{z}_2) &= \phi((z_1 + z_2) + IJ) \\
+    &= (z_1 + z_2 + I, \ z_1 + z_2 + J) \\
+    &= (z_1 + I, \ z_1 + J) + (z_2 + I, \ z_2 + J) \\
+    &= \phi(\bar{z}_1) + \phi(\bar{z}_2).
+    \end{align*}
+    \setcounter{enumi}{1} \item \textbf{Multiplicative Homomorphism:}
+    \begin{align*}
+    \phi(\bar{z}_1 \cdot \bar{z}_2) &= \phi(z_1 z_2 + IJ) \\
+    &= (z_1 z_2 + I, \ z_1 z_2 + J) \\
+    &= (z_1 + I, \ z_1 + J) \cdot (z_2 + I, \ z_2 + J) \\
+    &= \phi(\bar{z}_1) \cdot \phi(\bar{z}_2).
+    \end{align*}
+    \setcounter{enumi}{2} \item \textbf{Preservation of Identity:}
+    \[
+    \phi(1 + IJ) = (1 + I, \ 1 + J) = 1_{\faktor{R}{I} \times \faktor{R}{J}}.
+    \]
+\end{enumerate}
+Thus, $\phi$ is a unital ring homomorphism.
+\end{proof}
+\end{content}
+
+\subsubsection{Proof of Injectivity}
+
+\begin{note}[Board Elevation \& Cleaning]
+The lecturer pushes the middle blackboard upward, leaving the homomorphism check on the upper board, and wipes the lower blackboard clean with a sponge.
+\end{note}
+
+\begin{speech}[01:27:55 - 01:29:47]
+I will in the end explain how this is related to the Chinese Remainder Theorem as I said at the beginning. The answer is, it's directly related.
+
+We want to prove it's an isomorphism, so, this basically always means you have to prove two things: that it's injective and surjective.
+
+Let us prove $\phi$ is injective \inlinemetanote{writes Let us prove $\phi$ is inj.}.
+
+Our hypothesis, our assumption, is that $I + J = (1)$ \inlinemetanote{writes hypothesis $I + J = (1)$}. That's our assumption.
+
+This means that there exists an $i \in I$ and a $j \in J$ \inlinemetanote{writes $\implies \exists i \in I, j \in J$} such that $i + j = 1$ \inlinemetanote{writes $i + j = 1$}. That's our basic assumption of these ideals, all right?
+
+And we need to now show... I'll do it quickly and we'll discuss it again next time: Suppose we have $\phi(\bar{z}) = (\bar{0}, \bar{0})$ \inlinemetanote{writes Suppose $\phi(\bar{z}) = (\bar{0}, \bar{0})$}.
+
+That's in the kernel. That means that our $\bar{z} \in R \bmod IJ$ is in the kernel: $\bar{z} \in \ker(\phi)$ \inlinemetanote{writes $\bar{z} \in \faktor{R}{IJ}, \bar{z} \in \ker(\phi)$}. That's what it means to be in the kernel, right?
+\end{speech}
+
+\begin{speech}[01:29:47 - 01:31:12]
+How can it be in the kernel? That means that if I take $\bar{z} \in R \bmod I$, this has to be zero: $\bar{0} = \bar{z} \in R \bmod I \implies z \in I$ \inlinemetanote{writes $\bar{0} = \bar{z} \in \faktor{R}{I} \implies z \in I$}. This first zero says that $z \in I$, okay?
+
+Then zero has to be equal to $\bar{z} \in R \bmod J$: $\bar{0} = \bar{z} \in R \bmod J \implies z \in J$ \inlinemetanote{writes $\bar{0} = \bar{z} \in \faktor{R}{J} \implies z \in J$}.
+
+And then I want to show that $z \in IJ$. I'll do this next time also: I do a great thing, which is the whole point of this --- I take that equation $i + j = 1$ and multiply it by $z$ \inlinemetanote{writes $z \in IJ, i + j = 1, i z + j z = z$}:
+\[
+iz + jz = z.
+\]
+
+This is the main trick in the whole Chinese Remainder Theorem: I just multiply it by $z$. And this is $z$, and both of these are in $IJ$ \inlinemetanote{underlines $iz$ and $jz$, writes $\in IJ$ under each}.
+
+This means that $z \in IJ$ \inlinemetanote{writes $\implies z \in IJ$}, and that means that $\bar{z} = \bar{0} \in R \bmod IJ$ \inlinemetanote{writes $\implies \bar{z} = \bar{0} \in \faktor{R}{IJ}$}.
+
+So, that's the end of it. I'll explain it again next time.
+
+But that's the cool idea in this. We'll discuss it next time. Okay? \inlinemetanote{students applaud}
+\end{speech}
+
+\begin{content}[Proof of Injectivity of the Canonical Map $\phi$]
+\begin{proof}[Proof of Injectivity in \cref{thm:crt-general-rings}]
+To prove that the ring homomorphism $\phi$ is injective, it suffices to show that its kernel is trivial:
+\[
+\ker(\phi) = \{ \bar{0} \}.
+\]
+
+Let $\bar{z} = z + IJ \in \ker(\phi)$ with representative $z \in R$.
+By definition of $\phi$:
+\[
+\phi(\bar{z}) = (z + I, \ z + J) = (\bar{0}, \bar{0}) = (0 + I, \ 0 + J).
+\]
+This yields two conditions on $z$:
+\begin{equation}\label{eq:z-in-both-ideals}
+z + I = 0 + I \implies z \in I, \qquad \text{and} \qquad z + J = 0 + J \implies z \in J.
+\end{equation}
+Therefore, $z \in I \cap J$.
+
+We now use the hypothesis that $I$ and $J$ are coprime:
+\[
+I + J = (1) \implies \exists i \in I, \ j \in J \quad \text{such that} \quad i + j = 1.
+\]
+Multiplying this identity through by $z$:
+\begin{equation}\label{eq:crt-magic-trick}
+z = z \cdot 1 = z(i + j) = z i + z j = i z + j z.
+\end{equation}
+We examine the two terms on the right-hand side of \eqref{eq:crt-magic-trick}:
+\begin{itemize}
+    \item For $i z$: We know $i \in I$, and from \eqref{eq:z-in-both-ideals} we have $z \in J$. Thus, $i z \in I J$.
+    \item For $j z$: We know $j \in J$, and from \eqref{eq:z-in-both-ideals} we have $z \in I$. By commutativity, $j z = z j \in I J$.
+\end{itemize}
+Since both $i z \in I J$ and $j z \in I J$, their sum belongs to the ideal $I J$:
+\[
+z = i z + j z \in I J.
+\]
+Consequently:
+\[
+\bar{z} = z + IJ = 0 + IJ = \bar{0} \quad \text{in } \faktor{R}{IJ}.
+\]
+This proves $\ker(\phi) = \{ \bar{0} \}$, and hence $\phi$ is injective.
+\end{proof}
+
+\begin{steps}[The Essential Mechanism of the Injectivity Proof]
+The proof reveals that for any two coprime ideals $I$ and $J$ in a commutative ring:
+\[
+I \cap J = I J.
+\]
+While the inclusion $I J \subseteq I \cap J$ holds unconditionally (\cref{lem:product-subset-intersection}), the reverse inclusion $I \cap J \subseteq I J$ relies crucially on coprimality:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \setcounter{enumi}{0} \item \textbf{Coprimality Decomposition:} $1 = i + j$ with $i \in I, j \in J$.
+    \setcounter{enumi}{1} \item \textbf{Splitting Any Common Element:} Any $z \in I \cap J$ splits as $z = i z + j z$.
+    \item \textbf{Trapping in the Product:} In $i z$, the factor $i$ belongs to $I$ and $z$ belongs to $J$, forcing $i z \in I J$. In $j z$, $z \in I$ and $j \in J$, forcing $j z \in I J$.
+\end{enumerate}
+This identity $I \cap J = I J$ ensures that $\ker(\phi) = \faktor{(I \cap J)}{IJ} = \{ \bar{0} \}$, establishing injectivity.
+\end{steps}
+\end{content}
+
+\begin{overview}[Summary of Key Concepts]
+\begin{itemize}
+    \item \textbf{Ideal Correspondence Theorem:} For an ideal $K \subset R$, the projection $q \colon R \to \faktor{R}{K}$ induces an inclusion-preserving bijection between ideals of $R$ containing $K$ and all ideals of the quotient $\faktor{R}{K}$.
+    \item \textbf{Third Isomorphism Theorem for Rings:} For nested ideals $K \subseteq I \subseteq R$, there is a canonical ring isomorphism $\faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)} \cong \faktor{R}{I}$.
+    \item \textbf{Maximal Ideals and Fields:} An ideal $M \subset R$ is maximal if and only if $\faktor{R}{M}$ is a field. In particular, a commutative ring $R$ is a field if and only if $(0) \subset R$ is a maximal ideal.
+    \item \textbf{Krull's Theorem via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$, where every chain is bounded above by the union of its members.
+    \item \textbf{Prime Ideals and Integral Domains:} An ideal $P \subset R$ is prime if and only if $\faktor{R}{P}$ is an integral domain. Consequently, every maximal ideal is prime, and every non-zero commutative ring possesses at least one prime ideal.
+    \item \textbf{Chinese Remainder Theorem:} For coprime ideals $I + J = (1)$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined by $z + IJ \mapsto (z + I, z + J)$ is an isomorphism. Injectivity follows from the coprimality decomposition $1 = i + j$, establishing that $I \cap J = IJ$.
+\end{itemize}
+\end{overview}
