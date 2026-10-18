@@ -107,9 +107,9 @@ Continuing from the previous lecture, we review the construction and intuitive a
 \begin{speech}[00:00:00 - 00:01:00]
 Can I start? Okay, we start.
 
-The topic this week was... the first part was $R$ is an integral domain \inlinemetanote{writes $R$ int domain}, and then it's the construction of the field of fractions \inlinemetanote{writes $\implies R \subset F$ and \qt{field of fraction of $R$}} of $R$ (Recall: \cref{def:field-of-fractions}). Sometimes this is denoted by $\operatorname{Frac}(R)$ \inlinemetanote{writes $F = \operatorname{Frac}(R)$}.
+The topic this week was... the first part was $R$ is an integral domain \inlinemetanote{writes: $R$ int domain}, and then it's the construction of the field of fractions \inlinemetanote{writes \qt{$\implies R \subset F$} and \qt{field of fraction of $R$}} of $R$ (Recall: \cref{def:field-of-fractions}). Sometimes this is denoted by $\operatorname{Frac}(R)$ \inlinemetanote{writes: $F = \operatorname{Frac}(R)$}.
 
-And then the other two topics are: if $R$ is any ring \inlinemetanote{writes $R$ any ring}, which for us is commutative with unit, then there's the construction of the polynomials \inlinemetanote{writes $R[x]$} --- we started that, I'll say more --- and also of the power series \inlinemetanote{writes $R[[x]]$}. This is the universal symbol for polynomial \inlinemetanote{writes poly}, and this is the universal mathematical way of describing power series, the power series ring \inlinemetanote{writes power series}.
+And then the other two topics are: if $R$ is any ring \inlinemetanote{writes: $R$ any ring}, which for us is commutative with unit, then there's the construction of the polynomials \inlinemetanote{writes: $R[x]$} --- we started that, I'll say more --- and also of the power series \inlinemetanote{writes: $R[[x]]$}. This is the universal symbol for polynomial \inlinemetanote{writes: poly}, and this is the universal mathematical way of describing power series, the power series ring \inlinemetanote{writes: power series}.
 
 So, I'll talk about these topics.
 \end{speech}
@@ -130,7 +130,7 @@ So, I'll talk about these topics.
 \end{content}
 
 \begin{speech}[00:01:00 - 00:01:46]
-I'll just say one more thing about the field of fractions. I gave you this very formal way to think about the field of fractions, which is you take some set $S$ of pairs \inlinemetanote{writes $S \subset R^2$} --- I won't review the whole thing now ---, a set $S$ of pairs, then you have an equivalence relation \inlinemetanote{writes $\equiv$}, and you look at the objects in this field of fractions as being equivalence classes in this equivalence relation \inlinemetanote{writes $S_{\equiv} \ni f$}. And then you can define everything at this formal level and then check all the properties.
+I'll just say one more thing about the field of fractions. I gave you this very formal way to think about the field of fractions, which is you take some set $S$ of pairs \inlinemetanote{writes: $S \subset R^2$} --- I won't review the whole thing now ---, a set $S$ of pairs, then you have an equivalence relation \inlinemetanote{writes: $\equiv$}, and you look at the objects in this field of fractions as being equivalence classes in this equivalence relation \inlinemetanote{writes: $S_{\equiv} \ni f$}. And then you can define everything at this formal level and then check all the properties.
 
 And that is, you know, the underlying mathematical formalism of the field of fractions --- meaning that if you're ever thinking about the field of fractions and you're wondering about something, you can always resolve it foundationally by saying, \qt{I know what the definition is. It's this, this, and this, precisely.}
 \end{speech}
@@ -155,11 +155,11 @@ Let $R$ be an integral domain. To construct the field of fractions formally:
 % [TIMESTAMP-CORRECTED: cut at 00:01:46 as in the 2026-10-04 run; frames show R \ni r, s being written at
 % 00:01:54, so the 2026-10-10 run's 00:02:08 is late]
 \begin{speech}[00:01:46 - 00:03:25]
-No one ever thinks about it that way. The way you think about it is: if $R$ is an integral domain \inlinemetanote{writes $R \ni r, s$} --- these are elements in $R$, if you have some elements $r$ and $s$ ---, then for an element of the field of fractions \inlinemetanote{writes $\operatorname{Frac}(R) =$}, you just say this is $r/s$ \inlinemetanote{writes $r/s$}. That's it, you know? And when you do this, you make sure $s$ is not zero \inlinemetanote{writes $s \neq 0$}, because that was the second one there, just like you would with rational numbers.
+No one ever thinks about it that way. The way you think about it is: if $R$ is an integral domain \inlinemetanote{writes: $R \ni r, s$} --- these are elements in $R$, if you have some elements $r$ and $s$ ---, then for an element of the field of fractions \inlinemetanote{writes: $\operatorname{Frac}(R) =$}, you just say this is $r/s$ \inlinemetanote{writes: $r/s$}. That's it, you know? And when you do this, you make sure $s$ is not zero \inlinemetanote{writes: $s \neq 0$}, because that was the second one there, just like you would with rational numbers.
 
-And if you want to add, multiply, all of this, you just use the rules you did with rational numbers. Like if you want to add $r/s + t/w$ \inlinemetanote{writes $\frac{r}{s} + \frac{t}{w}$}, you know how to add fractions: you just do it here. It's just the right answer; it's this \inlinemetanote{writes $= \frac{rw+st}{sw}$}. And so on. If you multiply, then you multiply fractions; whatever rules you use to manipulate fractions, they're just correct here.
+And if you want to add, multiply, all of this, you just use the rules you did with rational numbers. Like if you want to add $r/s + t/w$ \inlinemetanote{writes: $\frac{r}{s} + \frac{t}{w}$}, you know how to add fractions: you just do it here. It's just the right answer; it's this \inlinemetanote{writes: $= \frac{rw+st}{sw}$}. And so on. If you multiply, then you multiply fractions; whatever rules you use to manipulate fractions, they're just correct here.
 
-In particular, why is this a field? If I take $r/s$, if this is not zero \inlinemetanote{writes $\frac{r}{s} \neq 0$}, that implies that $r$ is not zero \inlinemetanote{writes $\implies r \neq 0$}. If $r$ were zero, then that's the zero element of this. And you can go check by the definitions that if $r$ is zero, this is the zero element. So, if this is not zero, $r$ must not be equal to zero. And then it has an inverse, and that's the multiplicative inverse \inlinemetanote{writes $(\frac{r}{s})^{-1} = \frac{s}{r}$}. And it's legal because $r$'s not zero, so I can put him downstairs.
+In particular, why is this a field? If I take $r/s$, if this is not zero \inlinemetanote{writes: $\frac{r}{s} \neq 0$}, that implies that $r$ is not zero \inlinemetanote{writes: $\implies r \neq 0$}. If $r$ were zero, then that's the zero element of this. And you can go check by the definitions that if $r$ is zero, this is the zero element. So, if this is not zero, $r$ must not be equal to zero. And then it has an inverse, and that's the multiplicative inverse \inlinemetanote{writes: $(\frac{r}{s})^{-1} = \frac{s}{r}$}. And it's legal because $r$'s not zero, so I can put him downstairs.
 
 Anyway, the way you think about it --- I mean, you get to think about it however you want ---, the way typically people think about the field of fractions is you just write the fractions. That's why it's called the field of fractions. And you just go forward. And the rules of this formalism are designed so that this actually works. Okay.
 \end{speech}
@@ -213,7 +213,7 @@ The book the lecturer refers to is Richard Dedekind's \emph{Stetigkeit und irrat
 \begin{speech}[00:04:45 - 00:06:30]
 Okay, so we go to polynomials.
 
-I explained yesterday (Recall: \cref{def:poly-ring-informal}) that the way to think about polynomials is just the way you always think about polynomials. Elements of this ring, I advise you to think about this way: \inlinemetanote{writes $R[x] = \{ a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \mid a_i \in R \}$}
+I explained yesterday (Recall: \cref{def:poly-ring-informal}) that the way to think about polynomials is just the way you always think about polynomials. Elements of this ring, I advise you to think about this way: \inlinemetanote{writes: $R[x] = \{ a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \mid a_i \in R \}$}
 
 But in all things, you get your own choice how to think about them. So, they're polynomials that have this formal variable $x$ that's denoted here, and you consider polynomials in $x$ with coefficients in $R$.
 
@@ -221,7 +221,7 @@ And this polynomial ring, that's the set, and it has addition; and the addition 
 
 This is more complicated, multiplying polynomials, but you already know how to multiply polynomials, and you just do it here. You can define it formally, which I did last time (Recall: \cref{def:poly-ring-operations}), but you just do it.
 
-And it has the zero polynomial and the one polynomial, and this is the ring of polynomials \inlinemetanote{writes $(R[x], +, \cdot, 0, 1) \text{ ring: poly in } x \text{ with coef in } R$} --- ring of polynomials in the variable $x$ with coefficients in $R$.
+And it has the zero polynomial and the one polynomial, and this is the ring of polynomials \inlinemetanote{writes: $(R[x], +, \cdot, 0, 1) \text{ ring: poly in } x \text{ with coef in } R$} --- ring of polynomials in the variable $x$ with coefficients in $R$.
 
 So, we can do this for any ring --- I said that. This is important to keep track of: sometimes we make assumptions on rings, sometimes not. Here we needed the assumption (i.e., $R$ an integral domain), that's kind of crucial; here we don't need the assumption.
 \end{speech}
@@ -260,13 +260,13 @@ Unlike the construction of the field of fractions $\operatorname{Frac}(R)$, whic
 \begin{speech}[00:06:30 - 00:09:00]
 Okay, so properties of this polynomial ring. The first is --- this is somehow the most basic property of polynomial rings:
 
-Suppose $R$ and $S$ are rings \inlinemetanote{writes Suppose $R, S$ are rings} --- which I say commutative rings with unit, just for us ---, and I have an element $y \in S$ \inlinemetanote{writes $y \in S$}. Okay?
+Suppose $R$ and $S$ are rings \inlinemetanote{writes: Suppose $R, S$ are rings} --- which I say commutative rings with unit, just for us ---, and I have an element $y \in S$ \inlinemetanote{writes: $y \in S$}. Okay?
 
-Then, given any homomorphism \inlinemetanote{writes Then given $\phi \colon R \to S$ homomorphism of rings} --- so you have some homomorphism from $R$ to $S$, a homomorphism of rings ---, there exists a unique extension \inlinemetanote{writes $\exists!$ extension} --- I will say what this means in a moment --- from the polynomial ring to $S$ \inlinemetanote{writes $\hat{\phi} \colon R[x] \to S$} which satisfies these properties \inlinemetanote{writes which satisfies 2 properties}, two properties:
+Then, given any homomorphism \inlinemetanote{writes: Then given $\phi \colon R \to S$ homomorphism of rings} --- so you have some homomorphism from $R$ to $S$, a homomorphism of rings ---, there exists a unique extension \inlinemetanote{writes: $\exists!$ extension} --- I will say what this means in a moment --- from the polynomial ring to $S$ \inlinemetanote{writes: $\hat{\phi} \colon R[x] \to S$} which satisfies these properties \inlinemetanote{writes: which satisfies 2 properties}, two properties:
 
-Property \textbf{(1)} is that if I take a constant polynomial \inlinemetanote{writes $\bullet\ \hat{\phi}(r) = \phi(r)$ (const)}... So, this is just the constant polynomial, which is to say that $R$ sits inside $R[x]$ as the constants \inlinemetanote{writes $R \subset R[x]$}, okay? If I take a constant polynomial, this should just be the value that I've already specified here, okay?
+Property \textbf{(1)} is that if I take a constant polynomial \inlinemetanote{writes: $\bullet\ \hat{\phi}(r) = \phi(r)$ (const)}... So, this is just the constant polynomial, which is to say that $R$ sits inside $R[x]$ as the constants \inlinemetanote{writes: $R \subset R[x]$}, okay? If I take a constant polynomial, this should just be the value that I've already specified here, okay?
 
-And the second property is: I have to say what happens to $x$, because that's not specified here. And I just say $x$ goes to $y$ \inlinemetanote{writes $\bullet\ \hat{\phi}(x) = y$}.
+And the second property is: I have to say what happens to $x$, because that's not specified here. And I just say $x$ goes to $y$ \inlinemetanote{writes: $\bullet\ \hat{\phi}(x) = y$}.
 
 Okay, so that's the claim. If I start with these two rings --- there's the ring where my maps are starting, and the ring where the target map, where my maps are ending, the homomorphisms are ending --- and I pick an element $y$, I can take any homomorphism from $R$ to $S$ and I can extend it to the polynomial ring by just setting $x$ to $y$.
 \end{speech}
@@ -299,7 +299,7 @@ The universal property states that $R[x]$ is the \qt{freest} ring containing $R$
 % [TIMESTAMP-CORRECTED: cut at 00:09:00 as in the 2026-10-04 run; frames show the board still without
 % "Proof" at 00:08:58, so the 2026-10-10 run's 00:08:40 is early]
 \begin{speech}[00:09:00 - 00:09:48]
-Okay, and the proof of this is just by the formula. So, the proof: \inlinemetanote{writes Proof} I have to define $\hat{\phi}$ on any polynomial. So, a polynomial looks like this: \inlinemetanote{writes Def $\hat{\phi}(a_0 + a_1 x + \dots + a_n x^n) =$}
+Okay, and the proof of this is just by the formula. So, the proof: \inlinemetanote{writes: Proof} I have to define $\hat{\phi}$ on any polynomial. So, a polynomial looks like this: \inlinemetanote{writes: Def $\hat{\phi}(a_0 + a_1 x + \dots + a_n x^n) =$}
 
 And I have to define it. Formally, I would have to first define it, then check that it's a homomorphism --- so I can say it extends to a homomorphism: I have to define it, check it's a homomorphism, then show it satisfies these two properties. That's the task at hand, so to speak.
 
@@ -311,9 +311,9 @@ Evaluate the coefficients, and then replace each $x$ with $y$.
 \end{student}
 
 \begin{speech}[00:09:53 - 00:10:45]
-Yeah. So, this is the definition: I have to somehow take this data and get to $S$. Any element here --- so these $a_i$'s, that's part of the definition of polynomial, they're in $R$ \inlinemetanote{writes $a_i \in R$}. And I only have on the board one way to ship elements from $R$ to $S$: it's here. So, I can't make up another one, that's, you know.
+Yeah. So, this is the definition: I have to somehow take this data and get to $S$. Any element here --- so these $a_i$'s, that's part of the definition of polynomial, they're in $R$ \inlinemetanote{writes: $a_i \in R$}. And I only have on the board one way to ship elements from $R$ to $S$: it's here. So, I can't make up another one, that's, you know.
 
-So, all these coefficients I just move by the only way I know how to get to $S$. So, that's the constant coefficient, then I move this coefficient to $S$, because this result has to be in $S$. And then the question is: how do I move $x$ to $S$? Well, I know one element of $S$, that's $y$. And then I do this: $\phi(a_2) y^2$ and so on, to $y^n$. \inlinemetanote{writes $\stackrel{\text{def}}{=} \phi(a_0) + \phi(a_1) \cdot y + \phi(a_2) y^2 + \dots + \phi(a_n) y^n$}
+So, all these coefficients I just move by the only way I know how to get to $S$. So, that's the constant coefficient, then I move this coefficient to $S$, because this result has to be in $S$. And then the question is: how do I move $x$ to $S$? Well, I know one element of $S$, that's $y$. And then I do this: $\phi(a_2) y^2$ and so on, to $y^n$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \phi(a_0) + \phi(a_1) \cdot y + \phi(a_2) y^2 + \dots + \phi(a_n) y^n$}
 \end{speech}
 
 \begin{speech}[00:10:45 - 00:12:20]
@@ -323,7 +323,7 @@ In the case when you have equivalence classes, the matter is a little subtle, be
 
 So, that's the definition. Okay. But is that the end? No, I have to check that it satisfies this property, on constant polynomials. But for constant polynomials, well, it does satisfy that property: that would just mean there's none of this, so just by definition it satisfies that property.
 
-So, I have to check constants \inlinemetanote{writes \qt{$\bullet$ Check consts}}, and I have to check $x$ \inlinemetanote{writes \qt{$\bullet$ Check $x$}}. What is $\hat{\phi}(x)$ by this definition? Well, that would be just one $x$ here and everything else is zero or one. Formally, I'd have to put like $\phi(0)$ and $\phi(1)$. I mean, yeah, I'm not going to write that, but you could write that. But $\phi(0) = 0$ and $\phi(1) = 1$, so you don't have to write it. So, this is just $y$ \inlinemetanote{writes $\hat{\phi}(x) = y$}.
+So, I have to check constants \inlinemetanote{writes \qt{$\bullet$ Check consts}}, and I have to check $x$ \inlinemetanote{writes \qt{$\bullet$ Check $x$}}. What is $\hat{\phi}(x)$ by this definition? Well, that would be just one $x$ here and everything else is zero or one. Formally, I'd have to put like $\phi(0)$ and $\phi(1)$. I mean, yeah, I'm not going to write that, but you could write that. But $\phi(0) = 0$ and $\phi(1) = 1$, so you don't have to write it. So, this is just $y$ \inlinemetanote{writes: $\hat{\phi}(x) = y$}.
 
 Okay, so I have now checked these things, but the one thing I haven't checked is that it's a homomorphism. Let's think about how you'd check that.
 \end{speech}
@@ -358,25 +358,25 @@ Since every polynomial in $R[x]$ has a unique representation as a formal sum of 
 \end{hidden}
 
 \begin{speech}[00:12:20 - 00:14:25]
-To check it's a homomorphism, you have to check some things about zero going to zero, and one goes to one, which it certainly does. So, the main thing to check is that $\hat{\phi}$ of two polynomials --- so $f$ and $g$ now are my polynomials: \inlinemetanote{writes $\hat{\phi}(f + g) = \hat{\phi}(f) + \hat{\phi}(g)$, $f, g \in R[x]$}.
+To check it's a homomorphism, you have to check some things about zero going to zero, and one goes to one, which it certainly does. So, the main thing to check is that $\hat{\phi}$ of two polynomials --- so $f$ and $g$ now are my polynomials: \inlinemetanote{writes: $\hat{\phi}(f + g) = \hat{\phi}(f) + \hat{\phi}(g)$, $f, g \in R[x]$}.
 
-Okay? For this, you need to know... sorry, these are $f$, right? So, you need to know how to add the polynomials here, and then you need to know how to add elements of $S$. So, this addition is addition of polynomials \inlinemetanote{writes addition of polys}, and this addition is addition in $S$ \inlinemetanote{writes addition in $S$}, right?
+Okay? For this, you need to know... sorry, these are $f$, right? So, you need to know how to add the polynomials here, and then you need to know how to add elements of $S$. So, this addition is addition of polynomials \inlinemetanote{writes: addition of polys}, and this addition is addition in $S$ \inlinemetanote{writes: addition in $S$}, right?
 
-And the way this thing works: what are we going to do here? Let's say that we take this $\hat{\phi}$; if $f$ is given by $a$'s, it's $a_0 + a_1 x$, let's say --- let's say that's the $f$, just a linear one ---, plus $b_0 + b_1 x$ \inlinemetanote{writes $\hat{\phi}(\underbrace{a_0 + a_1 x}_{f} + \underbrace{b_0 + b_1 x}_{g})$}.
+And the way this thing works: what are we going to do here? Let's say that we take this $\hat{\phi}$; if $f$ is given by $a$'s, it's $a_0 + a_1 x$, let's say --- let's say that's the $f$, just a linear one ---, plus $b_0 + b_1 x$ \inlinemetanote{writes: $\hat{\phi}(\underbrace{a_0 + a_1 x}_{f} + \underbrace{b_0 + b_1 x}_{g})$}.
 
-If we add them first in polynomials, then this is $(a_0 + b_0) + (a_1 + b_1) x$ \inlinemetanote{writes $\hat{\phi}((a_0 + b_0) + (a_1 + b_1) x)$ below}.
+If we add them first in polynomials, then this is $(a_0 + b_0) + (a_1 + b_1) x$ \inlinemetanote{writes \qt{$\hat{\phi}((a_0 + b_0) + (a_1 + b_1) x)$} below}.
 
-And then, if we go over by the definition, then this is $\phi(a_0 + b_0) + \phi(a_1 + b_1) y$ \inlinemetanote{writes $\implies \phi(a_0 + b_0) + \phi(a_1 + b_1) y$}, right?
+And then, if we go over by the definition, then this is $\phi(a_0 + b_0) + \phi(a_1 + b_1) y$ \inlinemetanote{writes: $\implies \phi(a_0 + b_0) + \phi(a_1 + b_1) y$}, right?
 \end{speech}
 
 \begin{speech}[00:14:25 - 00:16:30]
-And this, I can now use the homomorphism property of $R$ and write as $\phi(a_0) + \phi(a_1) y + \phi(b_0) + \phi(b_1) y$ \inlinemetanote{writes $= \phi(a_0) + \phi(a_1) y + \phi(b_0) + \phi(b_1) y$}. I don't know if this is really worth doing all out, but...
+And this, I can now use the homomorphism property of $R$ and write as $\phi(a_0) + \phi(a_1) y + \phi(b_0) + \phi(b_1) y$ \inlinemetanote{writes: $= \phi(a_0) + \phi(a_1) y + \phi(b_0) + \phi(b_1) y$}. I don't know if this is really worth doing all out, but...
 
-And that, at the end, is $\hat{\phi}(a_0 + a_1 x) + \hat{\phi}(b_0 + b_1 x)$ \inlinemetanote{writes $= \hat{\phi}(a_0 + a_1 x) + \hat{\phi}(b_0 + b_1 x)$}.
+And that, at the end, is $\hat{\phi}(a_0 + a_1 x) + \hat{\phi}(b_0 + b_1 x)$ \inlinemetanote{writes: $= \hat{\phi}(a_0 + a_1 x) + \hat{\phi}(b_0 + b_1 x)$}.
 
 Okay. So, what did I do here? I just expanded out by the definition, and at a certain point I have to use the homomorphism property of $R$. Nothing happened here, actually; it was just a lot of waste of chalk. But I just follow... at a certain point I have to use the homomorphism property of $R$. There. And I did this with linear polynomials, but it's just the same with more coefficients.
 
-And then you have to check something that's more complicated with the indices: that if I take $f \cdot g$, this is equal to $\hat{\phi}(f) \cdot \hat{\phi}(g)$ \inlinemetanote{writes $\hat{\phi}(fg) = \hat{\phi}(f) \cdot \hat{\phi}(g)$}. And, again, this follows from the same expansion.
+And then you have to check something that's more complicated with the indices: that if I take $f \cdot g$, this is equal to $\hat{\phi}(f) \cdot \hat{\phi}(g)$ \inlinemetanote{writes: $\hat{\phi}(fg) = \hat{\phi}(f) \cdot \hat{\phi}(g)$}. And, again, this follows from the same expansion.
 
 So, I tried to do some checking for you, but in the end I don't know how successful that was. The fact of the matter is: I give you the definition, and then you have to check the compatibility; and when you check the compatibility, all you use is the homomorphism property of this.
 
@@ -430,9 +430,9 @@ Hence $\psi = \hat{\phi}$, proving uniqueness.
 
 So, let's think about... We know that if you have rings, you can think about their units. So, we can ask: What are the units in a polynomial ring? That's a very reasonable question. And that question actually turns out to have some wrinkles.
 
-Let's start with: Suppose $R$ is an integral domain \inlinemetanote{writes Suppose $R$ is an integral domain}. Then the question is: What are the units in the polynomial ring? \inlinemetanote{writes What are the units in $R[x]$?} Which is to say: which elements of this polynomial ring have a multiplicative inverse?
+Let's start with: Suppose $R$ is an integral domain \inlinemetanote{writes: Suppose $R$ is an integral domain}. Then the question is: What are the units in the polynomial ring? \inlinemetanote{writes: What are the units in $R[x]$?} Which is to say: which elements of this polynomial ring have a multiplicative inverse?
 
-So, what do you think the answer to this is? Well, let's say if I have some $f$ in the polynomial ring, it's $a_0 + a_1 x + \dots + a_n x^n$ \inlinemetanote{writes $f = a_0 + a_1 x + \dots + a_n x^n$}. And if it's a unit, that means that there exists a multiplicative inverse --- there exists $g = b_0 + b_1 x + \dots + \text{some different number, } b_m x^m$ \inlinemetanote{writes $\exists \ g = b_0 + b_1 x + \dots + b_m x^m$} ---, and I multiply them so that I get $1$, the constant polynomial \inlinemetanote{writes $f g = 1$}.
+So, what do you think the answer to this is? Well, let's say if I have some $f$ in the polynomial ring, it's $a_0 + a_1 x + \dots + a_n x^n$ \inlinemetanote{writes: $f = a_0 + a_1 x + \dots + a_n x^n$}. And if it's a unit, that means that there exists a multiplicative inverse --- there exists $g = b_0 + b_1 x + \dots + \text{some different number, } b_m x^m$ \inlinemetanote{writes: $\exists \ g = b_0 + b_1 x + \dots + b_m x^m$} ---, and I multiply them so that I get $1$, the constant polynomial \inlinemetanote{writes: $f g = 1$}.
 
 That would mean that if $f$ is a unit, then there exists a $g$ such that when I multiply them I get the unit, the constant polynomial $1$.
 
@@ -476,11 +476,11 @@ I suppose if $f$ is a constant term?
 \end{student}
 
 \begin{speech}[00:18:59 - 00:20:09]
-Yeah, so, one way to do it is: the answer is that a unit... if I take the polynomial to be a constant, $f$ equals a constant polynomial \inlinemetanote{writes $f = a$}, and this happens to be a unit for $R$ \inlinemetanote{completes the line to $f = a \in \operatorname{Unit}(R)$}.
+Yeah, so, one way to do it is: the answer is that a unit... if I take the polynomial to be a constant, $f$ equals a constant polynomial \inlinemetanote{writes: $f = a$}, and this happens to be a unit for $R$ \inlinemetanote{completes the line to $f = a \in \operatorname{Unit}(R)$}.
 
 Right? So, that's a good... So, he's saying that just forget it: we could have just the constants, take that to be a constant polynomial, and if I further choose that to be a unit, then I know it has a friend, because it has a unit in $R$.
 
-This part, I hope, is good: that the units of the original ring sit inside the units of this polynomial ring, and they sit inside as the constant polynomials \inlinemetanote{writes $\operatorname{Unit}(R) \subset \operatorname{Unit}(R[x])$ with \qt{Const Polys} below}.
+This part, I hope, is good: that the units of the original ring sit inside the units of this polynomial ring, and they sit inside as the constant polynomials \inlinemetanote{writes \qt{$\operatorname{Unit}(R) \subset \operatorname{Unit}(R[x])$} with \qt{Const Polys} below}.
 
 Okay. I hope that's clear.
 
@@ -516,7 +516,7 @@ There are no more units?
 \begin{speech}[00:20:12 - 00:20:37]
 Yes, so, the answer here is that there's no more. It's actually equal. So, the answer is that there are no more units; the units in $R$ equal the units in $R[x]$ \inlinemetanote{writes \qt{Ans.\ $\operatorname{Unit}(R) = \operatorname{Unit}(R[x])$}}.
 
-And I just remind you, because otherwise this is going to be wrong: $R$ is an integral domain \inlinemetanote{writes $R$ is an int domain}.
+And I just remind you, because otherwise this is going to be wrong: $R$ is an integral domain \inlinemetanote{writes: $R$ is an int domain}.
 
 And how are you going to use this condition?
 \end{speech}
@@ -528,7 +528,7 @@ So, we have the general form of $f$ and $g$, and if we multiply them, then the t
 \begin{speech}[00:20:45 - 00:22:05]
 Yeah, this is the right answer. When you multiply polynomials --- and as I said, you must have had some years of experience multiplying polynomials, and you should not forget these years of experience ---, if you multiply polynomials, in the middle is a complicated mess of things: you have to add up all the things, it's some complicated mess. But there are two terms which are very simple.
 
-If you want the constant polynomial of the product, that's the product of the constants, right? \inlinemetanote{writes $\operatorname{Const}(fg) = a_0 b_0$}
+If you want the constant polynomial of the product, that's the product of the constants, right? \inlinemetanote{writes: $\operatorname{Const}(fg) = a_0 b_0$}
 
 And if you want the highest term in the product, that's the product of the highest terms. \inlinemetanote{writes \qt{highest term $=$}}
 
@@ -555,13 +555,13 @@ When multiplying $f(x)$ and $g(x)$, the extremal coefficients take an uncomplica
 \begin{speech}[00:22:05 - 00:23:22]
 ...the highest term comes from the highest term of $f$ times the highest term of $g$.
 
-So, if I write it like this, when I take this highest term... Usually when they write polynomials --- but you have to be careful about the conventions and the convention of whatever author you're reading ---, the typical thing is when you write a polynomial like this, you could say $a_n$ is not zero \inlinemetanote{writes $a_n \neq 0$}, because if it were zero, then you wouldn't have written it. So, it's kind of standard that when you write a polynomial like this, the highest term you say is not zero, because as I said, if it were zero, you didn't have to write it.
+So, if I write it like this, when I take this highest term... Usually when they write polynomials --- but you have to be careful about the conventions and the convention of whatever author you're reading ---, the typical thing is when you write a polynomial like this, you could say $a_n$ is not zero \inlinemetanote{writes: $a_n \neq 0$}, because if it were zero, then you wouldn't have written it. So, it's kind of standard that when you write a polynomial like this, the highest term you say is not zero, because as I said, if it were zero, you didn't have to write it.
 
-And this one \inlinemetanote{points at $b_m$} is not zero \inlinemetanote{writes $b_m \neq 0$}, because otherwise I wouldn't have to write it.
+And this one \inlinemetanote{points at $b_m$} is not zero \inlinemetanote{writes: $b_m \neq 0$}, because otherwise I wouldn't have to write it.
 
-So, when I take these polynomials, then this is the highest term, and that's the highest term. So, this would be the highest term here: $a_n x^n$. That would be the highest term there: $b_m x^m$. And the highest term would be $a_n \times b_m \times x^{n+m}$ \inlinemetanote{writes $(a_n x^n) \cdot (b_m x^m)$, with \qt{highest of $f$} and \qt{highest of $g$} below, and $a_n \cdot b_m \, x^{n+m}$}: $n + m$, that would be the highest term.
+So, when I take these polynomials, then this is the highest term, and that's the highest term. So, this would be the highest term here: $a_n x^n$. That would be the highest term there: $b_m x^m$. And the highest term would be $a_n \times b_m \times x^{n+m}$ \inlinemetanote{writes: $(a_n x^n) \cdot (b_m x^m)$, with \qt{highest of $f$} and \qt{highest of $g$} below, and $a_n \cdot b_m \, x^{n+m}$}: $n + m$, that would be the highest term.
 
-And if we're in an integral domain, this product, if they start out to be not zero, they end up to be not zero. So, this would still be non-zero if $R$ is an integral domain \inlinemetanote{writes $\neq 0$ if $R$ int domain}.
+And if we're in an integral domain, this product, if they start out to be not zero, they end up to be not zero. So, this would still be non-zero if $R$ is an integral domain \inlinemetanote{writes: $\neq 0$ if $R$ int domain}.
 \end{speech}
 
 \begin{content}[Units of the Polynomial Ring over an Integral Domain]
@@ -665,15 +665,15 @@ Thus $f(x) = 1 + 2x$ is a unit of degree $1$ with $f(x)^{-1} = 1 + 2x$.
 
 Okay, so the next thing is power series. And this is maybe... You may have less experience manipulating power series, I don't know. But it's a beautiful thing.
 
-Here, I have to define for you the power series ring \inlinemetanote{writes $R[[x]] \ni$}. And the reason there are two brackets here, somehow, is because there are a lot more $x$'s, you know? \inlinemetanote{laughter}
+Here, I have to define for you the power series ring \inlinemetanote{writes: $R[[x]] \ni$}. And the reason there are two brackets here, somehow, is because there are a lot more $x$'s, you know? \inlinemetanote{laughter}
 
 An element of the power series ring... And, of course, we now have, as with polynomial rings, two ways to think about it: the formal way, or the way people actually think about it.
 
-Now, the formal way: we had before, a polynomial was given by a sequence of elements of $R$ \inlinemetanote{writes $(a_0, a_1, a_2, \dots, a_n$}, and that sequence had a highest term and then had an infinite number of zeros afterwards \inlinemetanote{continues with $0, 0, 0$}. This was the definition of polynomial, if you remember from yesterday (Recall: \cref{def:poly-rigorous-sequences}). You could add these, subtract these, multiply them, and it would just be the same thing as the $x$'s, but this is the abstract discussion.
+Now, the formal way: we had before, a polynomial was given by a sequence of elements of $R$ \inlinemetanote{writes: $(a_0, a_1, a_2, \dots, a_n$}, and that sequence had a highest term and then had an infinite number of zeros afterwards \inlinemetanote{continues with $0, 0, 0$}. This was the definition of polynomial, if you remember from yesterday (Recall: \cref{def:poly-rigorous-sequences}). You could add these, subtract these, multiply them, and it would just be the same thing as the $x$'s, but this is the abstract discussion.
 
 From this point of view, power series are easy: you just don't put this condition of zeros. It's just infinite elements. \inlinemetanote{erases the zeros and continues the sequence with further coefficients}
 
-So, from this abstract point of view, elements of the power series ring are infinite lists --- infinite vectors --- of elements of $R$ \inlinemetanote{writes Elements of $R[[x]]$ are infinite vectors of elements of $R$}. Before, we had lists that eventually become all zero, and now we don't; we just lift that condition. You can do anything you want.
+So, from this abstract point of view, elements of the power series ring are infinite lists --- infinite vectors --- of elements of $R$ \inlinemetanote{writes: Elements of $R[[x]]$ are infinite vectors of elements of $R$}. Before, we had lists that eventually become all zero, and now we don't; we just lift that condition. You can do anything you want.
 \end{speech}
 
 \begin{content}[Formal Definition of Power Series as Sequences]
@@ -694,9 +694,9 @@ Let $R$ be a commutative ring with identity $1$.
 \end{content}
 
 \begin{speech}[00:27:02 - 00:29:00]
-Now, the way to think about it as power series: all this means is that before, for polynomials, we had the condition that eventually you stop --- that's a polynomial \inlinemetanote{points to the sequence}. And for power series, you just don't stop: you can go forever \inlinemetanote{writes $a_0 + a_1 x + \dots + a_n x^n + \dots$ after $R[[x]] \ni$}.
+Now, the way to think about it as power series: all this means is that before, for polynomials, we had the condition that eventually you stop --- that's a polynomial \inlinemetanote{points to the sequence}. And for power series, you just don't stop: you can go forever \inlinemetanote{writes \qt{$a_0 + a_1 x + \dots + a_n x^n + \dots$} after $R[[x]] \ni$}.
 
-It's hard to go forever, so typically you would write the following thing: the elements of the power series ring are the sum from $i = 0$ to infinity of $a_i x^i$ \inlinemetanote{writes $R[[x]] = \sum_{i=0}^\infty a_i x^i$, \ $a_i \in R$}, where the $a_i$'s are in $R$.
+It's hard to go forever, so typically you would write the following thing: the elements of the power series ring are the sum from $i = 0$ to infinity of $a_i x^i$ \inlinemetanote{writes: $R[[x]] = \sum_{i=0}^\infty a_i x^i$, \ $a_i \in R$}, where the $a_i$'s are in $R$.
 
 You can see this is exactly the same data as that. The $x$, as I said, is just the variable; it's not influencing the $a$'s. Like here, it just makes clear that $x$ is just a placeholder, right? And that's all it's doing here also.
 
@@ -704,11 +704,11 @@ Okay, so that's power series. You must have had whole classes on power series --
 
 So, do you know how to add power series, multiply power series?
 
-The zero is just the zero power series, that's where every coefficient forever is zero. The one power series is just a one and then everybody else is zero \inlinemetanote{writes $(R[[x]], +, \cdot, 0, 1)$ and below it $(0, 0, 0, \dots)$, $(1, 0, 0, 0, \dots)$}.
+The zero is just the zero power series, that's where every coefficient forever is zero. The one power series is just a one and then everybody else is zero \inlinemetanote{writes \qt{$(R[[x]], +, \cdot, 0, 1)$} and below it \qt{$(0, 0, 0, \dots)$, $(1, 0, 0, 0, \dots)$}}.
 
 Do you know how to add power series? I say that you do know how to add power series: in every analysis class, I think you add power series.
 
-Here's the rule, which will surprise no one: \inlinemetanote{writes $\sum_{i=0}^\infty a_i x^i + \sum_{i=0}^\infty b_i x^i \stackrel{\text{def}}{=} \sum_{i=0}^\infty (a_i + b_i) x^i$}.
+Here's the rule, which will surprise no one: \inlinemetanote{writes: $\sum_{i=0}^\infty a_i x^i + \sum_{i=0}^\infty b_i x^i \stackrel{\text{def}}{=} \sum_{i=0}^\infty (a_i + b_i) x^i$}.
 
 It's a lot of work to write all of these things, so it's... yeah.
 
@@ -747,13 +747,13 @@ The formal power series ring is equipped with a ring structure $(R[[x]], +, \cdo
 \begin{speech}[00:29:00 - 00:30:25]
 More complicated is: how do you multiply power series?
 
-Again, that's a definition, by the way: \inlinemetanote{writes $\sum_{i=0}^\infty a_i x^i \cdot \sum_{i=0}^\infty b_i x^i \stackrel{\text{def}}{=}$}.
+Again, that's a definition, by the way: \inlinemetanote{writes: $\sum_{i=0}^\infty a_i x^i \cdot \sum_{i=0}^\infty b_i x^i \stackrel{\text{def}}{=}$}.
 
 Here... I must say that I really dislike indices in mathematics, somehow. Okay.
 
-So, we have to define this. How are we going to define this? As I said, this is how we define it: you define it to be the sum from $i = 0$ to infinity of $c_i x^i$ \inlinemetanote{writes $\sum_{i=0}^\infty c_i x^i$}, and then I have to define for you the $c_i$'s --- I have to define what $c_i$ is.
+So, we have to define this. How are we going to define this? As I said, this is how we define it: you define it to be the sum from $i = 0$ to infinity of $c_i x^i$ \inlinemetanote{writes: $\sum_{i=0}^\infty c_i x^i$}, and then I have to define for you the $c_i$'s --- I have to define what $c_i$ is.
 
-Let's say $c_k$ is... You can write this as a sum from $i = 0$ to $k$, and I write $a_{k-i} b_i$ \inlinemetanote{writes $c_k = \sum_{i=0}^k a_{k-i} b_i$}.
+Let's say $c_k$ is... You can write this as a sum from $i = 0$ to $k$, and I write $a_{k-i} b_i$ \inlinemetanote{writes: $c_k = \sum_{i=0}^k a_{k-i} b_i$}.
 
 Okay. All right, I did it.
 
@@ -837,25 +837,25 @@ Anyway, if you have not encountered these before, you should make yourself comfo
 \begin{speech}[00:32:38 - 00:35:07]
 So, let's try to ask this question: What are the units of this ring? \inlinemetanote{writes \qt{What are unit $R[[x]]$?}}
 
-So, again, that means we start with a particular power series $f$: $a_0 + a_1 x + a_2 x^2 + \dots$ \inlinemetanote{writes $f = a_0 + a_1 x + a_2 x^2 + \dots$}.
+So, again, that means we start with a particular power series $f$: $a_0 + a_1 x + a_2 x^2 + \dots$ \inlinemetanote{writes: $f = a_0 + a_1 x + a_2 x^2 + \dots$}.
 
 And it goes forever, in principle. Of course, it could also all be zero: a polynomial is a power series, just one that doesn't last too long, because zero is fine.
 
-And $g$: $b_0 + b_1 x + b_2 x^2 + \dots$ \inlinemetanote{writes $g = b_0 + b_1 x + b_2 x^2 + \dots$}.
+And $g$: $b_0 + b_1 x + b_2 x^2 + \dots$ \inlinemetanote{writes: $g = b_0 + b_1 x + b_2 x^2 + \dots$}.
 
 Okay, and for this to be a unit --- if $f$ is a unit ---, then there exists $g$ such that $f \times g = 1$ \inlinemetanote{writes \qt{If $f$ is a unit, $\exists g \implies f \cdot g = 1$}}.
 
 And to be $1$ is dramatic! It means when you multiply this, the rule in principle gives you infinitely many terms. If it's $1$, it means almost all of them are zero.
 
-If we multiply them, $f \times g$, we get: the first term is $a_0 b_0$ \inlinemetanote{writes $fg = a_0 b_0 +$}. The second term is $(a_1 b_0 + a_0 b_1) x$ \inlinemetanote{writes $(a_1 b_0 + a_0 b_1)x +$}.
+If we multiply them, $f \times g$, we get: the first term is $a_0 b_0$ \inlinemetanote{writes: $fg = a_0 b_0 +$}. The second term is $(a_1 b_0 + a_0 b_1) x$ \inlinemetanote{writes: $(a_1 b_0 + a_0 b_1)x +$}.
 
 You can tell I've been spending too much time in Europe because I say \qt{nought} all the time. \inlinemetanote{laughter}
 
-Here, $a_2$... That was a complicated joke. \inlinemetanote{writes $(a_2 b_0 + a_1 b_1 + a_0 b_2)x^2 + \dots$}
+Here, $a_2$... That was a complicated joke. \inlinemetanote{writes: $(a_2 b_0 + a_1 b_1 + a_0 b_2)x^2 + \dots$}
 
 Okay, so that's how the power series multiplication works, right? How is it possible that this could be $1$?
 
-Well, could this be $1$? $1$, I remind you, is $1 + 0 \times x + 0 \times x^2$, and so on \inlinemetanote{writes $1$, $0 \cdot x$, $0 \cdot x^2$ under the terms of $fg$}. So, the only way it can be $1$ is that this is $1$ \inlinemetanote{points to $a_0 b_0$}. So, this would imply that $a_0 b_0 = 1$ \inlinemetanote{writes $\implies a_0 b_0 = 1$}. This means that the constant term of $f$ is a unit \inlinemetanote{writes $\implies \operatorname{Const}(f) \text{ is a unit}$}. Right?
+Well, could this be $1$? $1$, I remind you, is $1 + 0 \times x + 0 \times x^2$, and so on \inlinemetanote{writes \qt{$1$, $0 \cdot x$, $0 \cdot x^2$} under the terms of $fg$}. So, the only way it can be $1$ is that this is $1$ \inlinemetanote{points to $a_0 b_0$}. So, this would imply that $a_0 b_0 = 1$ \inlinemetanote{writes: $\implies a_0 b_0 = 1$}. This means that the constant term of $f$ is a unit \inlinemetanote{writes: $\implies \operatorname{Const}(f) \text{ is a unit}$}. Right?
 
 What about all this other stuff? So, what's your feeling about that?
 \end{speech}
@@ -885,7 +885,7 @@ Thus, a necessary condition for $f(x)$ to be invertible in $R[[x]]$ is that its 
 \end{content}
 
 \begin{speech}[00:35:07 - 00:36:51]
-Of course, it's also true that the constants --- if we take the units of $R$ --- sit inside the units of the power series \inlinemetanote{writes $\operatorname{Unit}(R) \subset \operatorname{Unit}(R[[x]])$}, by just this unit $a$ going to the constant power series $a$ \inlinemetanote{writes $a \mapsto a$}. That's also true, right?
+Of course, it's also true that the constants --- if we take the units of $R$ --- sit inside the units of the power series \inlinemetanote{writes: $\operatorname{Unit}(R) \subset \operatorname{Unit}(R[[x]])$}, by just this unit $a$ going to the constant power series $a$ \inlinemetanote{writes: $a \mapsto a$}. That's also true, right?
 
 So, the same question as above: Is this an equality?
 
@@ -943,13 +943,13 @@ The banknote is the 10-franc note of the sixth series of Swiss banknotes, in cir
 \begin{speech}[00:37:45 - 00:39:07]
 Okay, so I'll try to prove this. I want to prove this statement at the end.
 
-Suppose $f$ has the form $a_0 + a_1 x + a_2 x^2 + \dots$, where $a_0 \in R$ is a unit \inlinemetanote{writes Suppose $f = a_0 + a_1 x + a_2 x^2 + \dots$, $a_0 \in R$ is a unit}. That means that there exists some $y \in R$ such that $a_0 y = 1$ in $R$ \inlinemetanote{writes $\exists y \in R$, $a_0 y = 1 \text{ in } R$}, right?
+Suppose $f$ has the form $a_0 + a_1 x + a_2 x^2 + \dots$, where $a_0 \in R$ is a unit \inlinemetanote{writes: Suppose $f = a_0 + a_1 x + a_2 x^2 + \dots$, $a_0 \in R$ is a unit}. That means that there exists some $y \in R$ such that $a_0 y = 1$ in $R$ \inlinemetanote{writes: $\exists y \in R$, $a_0 y = 1 \text{ in } R$}, right?
 
-So, the first thing I can do is just multiply $f$ by $y$ \inlinemetanote{writes $f \cdot y =$}.
+So, the first thing I can do is just multiply $f$ by $y$ \inlinemetanote{writes: $f \cdot y =$}.
 
 Is that clear? Whenever I think about this, $y$ is now the constant power series. Are you happy with this?
 
-And who knows what I get here, but I know one thing: it starts with $1$, because when I multiply by a constant power series, it just multiplies all these by $y$, right? So, whatever it is, it starts with $1$, and then it's $(a_1 y) x$ \inlinemetanote{writes $= 1 + (a_1 y) x + (a_2 y) x^2 + \dots$} --- $y$ is an element of the ring, it has nothing to do with $x$ ---, $(a_2 y) x^2$, and so on.
+And who knows what I get here, but I know one thing: it starts with $1$, because when I multiply by a constant power series, it just multiplies all these by $y$, right? So, whatever it is, it starts with $1$, and then it's $(a_1 y) x$ \inlinemetanote{writes: $= 1 + (a_1 y) x + (a_2 y) x^2 + \dots$} --- $y$ is an element of the ring, it has nothing to do with $x$ ---, $(a_2 y) x^2$, and so on.
 
 Okay, so the first step is: I use the fact it's a unit, I multiply by something in $R$ and make this $1$.
 \end{speech}
@@ -975,13 +975,13 @@ Because $y \in \operatorname{Unit}(R) \subset \operatorname{Unit}(R[[x]])$, $f(x
 \begin{speech}[00:39:07 - 00:40:25]
 Okay? Then it's enough to invert this, because inversion means that there's somebody else I multiply to get $1$.
 
-So, then it's sufficient to find $g \in R[[x]]$ \inlinemetanote{writes Sufficient to find $g \in R[[x]]$} such that $g$ times this result, $1 + \dots$ \inlinemetanote{writes $g \cdot (1 + b_1 x + b_2 x^2 + \dots) = 1$}. And now I just make these coefficients $b$'s, because I don't want to write $a_1 y$, and I don't know anything about them anyway, so I might as well make it $b$.
+So, then it's sufficient to find $g \in R[[x]]$ \inlinemetanote{writes: Sufficient to find $g \in R[[x]]$} such that $g$ times this result, $1 + \dots$ \inlinemetanote{writes: $g \cdot (1 + b_1 x + b_2 x^2 + \dots) = 1$}. And now I just make these coefficients $b$'s, because I don't want to write $a_1 y$, and I don't know anything about them anyway, so I might as well make it $b$.
 
 So, it's sufficient to find a $g$ such that whenever I have something of this form --- which is what I have there ---, this is equal to $1$.
 
 Meaning I only have to invert such things. All I've done is use the fact it's a unit to change the first coefficient to $1$. And then it's sufficient to invert that; because once I invert that, then I can just multiply it by $y$, and then, you know...
 
-So, I have to invert this: $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$ \inlinemetanote{writes $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$}.
+So, I have to invert this: $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$ \inlinemetanote{writes: $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$}.
 
 Okay, well, you never finish, so maybe like this: I have to invert this.
 \end{speech}
@@ -997,9 +997,9 @@ that is, to show that the inverse $(1 + b_1 x + b_2 x^2 + \dots)^{-1}$ exists in
 \begin{speech}[00:40:25 - 00:41:31]
 Now, you know how to do this, right? You definitely know how to do this. It's, you know, somehow in your brain; you have to bring it out.
 
-So, you write this whole thing, let's say as $\gamma$ \inlinemetanote{writes $\gamma = b_1 x + b_2 x^2 + \dots$}: $\gamma$ is equal to this power series. And this power series has $x$'s in it, okay?
+So, you write this whole thing, let's say as $\gamma$ \inlinemetanote{writes: $\gamma = b_1 x + b_2 x^2 + \dots$}: $\gamma$ is equal to this power series. And this power series has $x$'s in it, okay?
 
-So, you can say: I want to invert this, $1 + \gamma$ \inlinemetanote{writes $(1 + \gamma)^{-1}$}. And if I write this as $1 / (1 + \gamma)$ \inlinemetanote{writes $= \frac{1}{1 + \gamma}$}, surely you know how to invert this: it's equal to $1 - \gamma + \gamma^2 - \gamma^3$, and so on \inlinemetanote{writes $= 1 - \gamma + \gamma^2 - \gamma^3 + \dots$}.
+So, you can say: I want to invert this, $1 + \gamma$ \inlinemetanote{writes: $(1 + \gamma)^{-1}$}. And if I write this as $1 / (1 + \gamma)$ \inlinemetanote{writes: $= \frac{1}{1 + \gamma}$}, surely you know how to invert this: it's equal to $1 - \gamma + \gamma^2 - \gamma^3$, and so on \inlinemetanote{writes: $= 1 - \gamma + \gamma^2 - \gamma^3 + \dots$}.
 
 That's the answer! This actually proves it's invertible. And you have to think: why does it prove...? You know this, this is like some identity from your previous life. I just write it, and I claim this is the formula for the inverse.
 \end{speech}
@@ -1016,7 +1016,7 @@ The expression to invert is simply $1 + \gamma$. Inspired by the classical geome
 \end{content}
 
 \begin{speech}[00:41:31 - 00:42:50]
-And the reason is that this thing makes sense. It looks like an infinite sum, but this $\gamma$ has $x$'s in it. $\gamma$ is divisible by $x$, so $x$ divides $\gamma$ \inlinemetanote{writes $x \mid \gamma$}. That means $x^2$ divides $\gamma^2$ \inlinemetanote{writes $x^2 \mid \gamma^2$}, and $x^k$ divides $\gamma^k$ \inlinemetanote{writes $x^k \mid \gamma^k$}.
+And the reason is that this thing makes sense. It looks like an infinite sum, but this $\gamma$ has $x$'s in it. $\gamma$ is divisible by $x$, so $x$ divides $\gamma$ \inlinemetanote{writes: $x \mid \gamma$}. That means $x^2$ divides $\gamma^2$ \inlinemetanote{writes: $x^2 \mid \gamma^2$}, and $x^k$ divides $\gamma^k$ \inlinemetanote{writes: $x^k \mid \gamma^k$}.
 
 So, when I expand this, if I want the coefficient of the power series in any particular $x$, only finitely many of these terms enter.
 

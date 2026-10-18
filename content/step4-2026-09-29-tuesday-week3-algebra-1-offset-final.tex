@@ -118,9 +118,9 @@ Okay, so, we start. About the quiz: as I said, I'm very much pro-guessing in mat
 
 If you think the quiz was too easy, too hard, or too medium, tell us. As I said, I've never gone through this quiz thing before.
 
-Last week we discussed rings, \inlinemetanote{writes $(R, +, \cdot, 0, 1)$} and associated to a ring, there is an additive group. \inlinemetanote{draws arrow to $(R, +, 0)$} This is easy, this is part of the definition. But there's another group, which was also discussed in the last lecture (Recall: \cref{prop:group-of-units}), which is the group of units. \inlinemetanote{draws arrow and writes \qt{the group of unit}} And I remind you that this group... \inlinemetanote{writes $\operatorname{Unit}_R$} Various people use different notation for describing it, but here I just say $\operatorname{Unit}(R)$, so there's no question: it's the group of units of the ring $R$.
+Last week we discussed rings, \inlinemetanote{writes: $(R, +, \cdot, 0, 1)$} and associated to a ring, there is an additive group. \inlinemetanote{draws arrow to $(R, +, 0)$} This is easy, this is part of the definition. But there's another group, which was also discussed in the last lecture (Recall: \cref{prop:group-of-units}), which is the group of units. \inlinemetanote{draws arrow and writes \qt{the group of unit}} And I remind you that this group... \inlinemetanote{writes: $\operatorname{Unit}_R$} Various people use different notation for describing it, but here I just say $\operatorname{Unit}(R)$, so there's no question: it's the group of units of the ring $R$.
 
-It's those elements such that there exists somebody else where the product is $1$ \inlinemetanote{writes $= \{x \mid \exists y, \, xy = 1\}$} --- so, it's those elements with a multiplicative inverse. And this is a group; we discussed this last week. So, this group here is $\operatorname{Unit}(R)$, and it has, well, the units by this definition, multiplication, and $1$. \inlinemetanote{writes $\operatorname{Unit}_R = (\text{Units}, \cdot, 1)$}
+It's those elements such that there exists somebody else where the product is $1$ \inlinemetanote{writes: $= \{x \mid \exists y, \, xy = 1\}$} --- so, it's those elements with a multiplicative inverse. And this is a group; we discussed this last week. So, this group here is $\operatorname{Unit}(R)$, and it has, well, the units by this definition, multiplication, and $1$. \inlinemetanote{writes: $\operatorname{Unit}_R = (\text{Units}, \cdot, 1)$}
 
 Whenever you see a ring, you immediately have these two groups. And this one is often the more complicated one to think about, because it's not part of the definition in some sense.
 \end{speech}
@@ -147,7 +147,7 @@ The group of units is closed under multiplication: if $x, z \in \operatorname{Un
 \subsection{Units in the Integers and the Gaussian Integers}
 
 \begin{speech}[00:01:40 - 00:02:45]
-We'd seen this --- I just review, but you know this: if you take $\mathbb{Z}$, \inlinemetanote{writes $\mathbb{Z} \to \text{Units } \{\pm 1\}$} the units are $\pm 1$. And I said this many times, but maybe since I didn't actually ever give a proof: \inlinemetanote{writes $\mathbb{Z}[i] \to \text{Units } \{\pm 1, \pm i\}$} the units are $\pm 1, \pm i$ (Recall: \cref{exer:units-gaussian-integers}).
+We'd seen this --- I just review, but you know this: if you take $\mathbb{Z}$, \inlinemetanote{writes: $\mathbb{Z} \to \text{Units } \{\pm 1\}$} the units are $\pm 1$. And I said this many times, but maybe since I didn't actually ever give a proof: \inlinemetanote{writes: $\mathbb{Z}[i] \to \text{Units } \{\pm 1, \pm i\}$} the units are $\pm 1, \pm i$ (Recall: \cref{exer:units-gaussian-integers}).
 
 If you're taking complex analysis, you should be able to prove this. But let's actually write a proof; I don't think I ever wrote the proof for this.
 
@@ -157,21 +157,21 @@ Proof: let $a + bi \in \mathbb{Z}[i]$ be a unit. \inlinemetanote{writes \qt{Let 
 \end{speech}
 
 \begin{speech}[00:02:45 - 00:03:55]
-When I write this, of course that means that $a$ and $b$ are integers, okay? \inlinemetanote{writes $(a, b \in \mathbb{Z})$} That's what this being in there means.
+When I write this, of course that means that $a$ and $b$ are integers, okay? \inlinemetanote{writes: $(a, b \in \mathbb{Z})$} That's what this being in there means.
 
-All right, so, then there exists somebody else, $c + di$, also here, \inlinemetanote{writes $\text{Then } \exists \, c + di \in \mathbb{Z}[i]$} such that $(a+bi)(c+di) = 1$. \inlinemetanote{writes $\text{s.t. } (a+bi)(c+di) = 1$} And this is multiplication of complex numbers. The whole idea of the proof is understanding multiplication of complex numbers.
+All right, so, then there exists somebody else, $c + di$, also here, \inlinemetanote{writes: $\text{Then } \exists \, c + di \in \mathbb{Z}[i]$} such that $(a+bi)(c+di) = 1$. \inlinemetanote{writes: $\text{s.t. } (a+bi)(c+di) = 1$} And this is multiplication of complex numbers. The whole idea of the proof is understanding multiplication of complex numbers.
 
 If you've taken a complex numbers class, or you've met complex numbers, however you know: when you multiply complex numbers, there's a length of a complex number \inlinemetanote{sketches axes and a complex number vector} --- the norm of the complex number. So, if you multiply two complex numbers, their angles add and their lengths multiply, right?
 
-So, we just take the norm --- the lengths --- take the norms. \inlinemetanote{writes \qt{take the norms:}} The norm here is the square root of $a^2 + b^2$, \inlinemetanote{writes $\sqrt{a^2 + b^2}$} that's the length of this one. I hope that's not controversial --- that's Euclid or something. This one is the square root of $c^2 + d^2$, \inlinemetanote{writes $\cdot \sqrt{c^2 + d^2}$} and their norms multiply, so this has to be just $1$. \inlinemetanote{writes $= 1$} Okay?
+So, we just take the norm --- the lengths --- take the norms. \inlinemetanote{writes \qt{take the norms:}} The norm here is the square root of $a^2 + b^2$, \inlinemetanote{writes: $\sqrt{a^2 + b^2}$} that's the length of this one. I hope that's not controversial --- that's Euclid or something. This one is the square root of $c^2 + d^2$, \inlinemetanote{writes: $\cdot \sqrt{c^2 + d^2}$} and their norms multiply, so this has to be just $1$. \inlinemetanote{writes: $= 1$} Okay?
 \end{speech}
 
 \begin{speech}[00:03:55 - 00:05:14]
-This is pretty restrictive: $a, b, c$, and $d$ are all integers. So, we can square that equation: \inlinemetanote{writes $(a^2 + b^2)(c^2 + d^2) = 1$} $(a^2 + b^2)(c^2 + d^2) = 1^2$, which is $1$.
+This is pretty restrictive: $a, b, c$, and $d$ are all integers. So, we can square that equation: \inlinemetanote{writes: $(a^2 + b^2)(c^2 + d^2) = 1$} $(a^2 + b^2)(c^2 + d^2) = 1^2$, which is $1$.
 
 Now you have an equation where you have integers all multiplying to $1$, and you know the only way this can happen is if this integer itself is $\pm 1$ --- because you can't factor $1$ in integers without having just $1 \cdot 1$ or $(-1)(-1)$. Is that clear?
 
-So, how could this be $1$? Well, $a^2$ for an integer is either $0$, $1$, or something bigger. So, the only way this could be $\pm 1$ is if $a = 0$ or $\pm 1$, and $b = 0$ or $\pm 1$ \inlinemetanote{writes $a = 0, \pm 1$ and $b = 0, \pm 1$} --- those are the only cases. If these are both positive integers, it's going to be bigger than $1$. So, you only have to check these cases. Is that clear? And if you look at these cases, well, these are the answers. \inlinemetanote{points at $\{\pm 1, \pm i\}$}
+So, how could this be $1$? Well, $a^2$ for an integer is either $0$, $1$, or something bigger. So, the only way this could be $\pm 1$ is if $a = 0$ or $\pm 1$, and $b = 0$ or $\pm 1$ \inlinemetanote{writes \qt{$a = 0, \pm 1$} and \qt{$b = 0, \pm 1$}} --- those are the only cases. If these are both positive integers, it's going to be bigger than $1$. So, you only have to check these cases. Is that clear? And if you look at these cases, well, these are the answers. \inlinemetanote{points at $\{\pm 1, \pm i\}$}
 
 Okay? So, that's a complete proof --- that's as complete a proof as you get in this class. I think this proof was $100$ percent complete. But that's a nice fact, and if you draw them, they look like this: \inlinemetanote{draws a coordinate plane with four points at $1, -1, i, -i$} Those are the four units in the Gaussian integers.
 \end{speech}
@@ -278,29 +278,29 @@ The field norm $N(a+bi) = a^2 + b^2$ is multiplicative: $N(zw) = N(z)N(w)$. Sinc
 \subsection{The Group of Units of \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ}}
 
 \begin{speech}[00:05:14 - 00:07:18]
-We did a much more interesting example last time, which was also with proof, but since various people asked me about it afterwards, I want to do just another example. And that was this ring: $\mathbb{Z}/m\mathbb{Z}$. \inlinemetanote{writes $\mathbb{Z}/m\mathbb{Z}$} That's a nice ring, and so it has a group of units: $\operatorname{Unit}(\mathbb{Z}/m\mathbb{Z})$. \inlinemetanote{writes $\to \text{Units } \mathbb{Z}/m\mathbb{Z}$}
+We did a much more interesting example last time, which was also with proof, but since various people asked me about it afterwards, I want to do just another example. And that was this ring: $\mathbb{Z}/m\mathbb{Z}$. \inlinemetanote{writes: $\mathbb{Z}/m\mathbb{Z}$} That's a nice ring, and so it has a group of units: $\operatorname{Unit}(\mathbb{Z}/m\mathbb{Z})$. \inlinemetanote{writes: $\to \text{Units } \mathbb{Z}/m\mathbb{Z}$}
 
-This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units, this is equal to those classes such that $\operatorname{gcd}(x, m) = 1$. \inlinemetanote{writes $= \{\bar{x} \mid (x, m) = 1\}$} And as I said, it's standard here to say $m$ is at least $2$, so we're not with the zero ring. \inlinemetanote{draws a box around $m \ge 2$} That's the units, and these are the residue classes which are relatively prime. And I did an example last time (Recall: $\mathbb{Z}/7\mathbb{Z}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing.
+This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units, this is equal to those classes such that $\operatorname{gcd}(x, m) = 1$. \inlinemetanote{writes: $= \{\bar{x} \mid (x, m) = 1\}$} And as I said, it's standard here to say $m$ is at least $2$, so we're not with the zero ring. \inlinemetanote{draws a box around $m \ge 2$} That's the units, and these are the residue classes which are relatively prime. And I did an example last time (Recall: $\mathbb{Z}/7\mathbb{Z}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing.
 
-In the sense that, one might say that if I take here the additive structure, \inlinemetanote{writes $\mathbb{Z}/m\mathbb{Z} \to (\mathbb{Z}/m\mathbb{Z}, +, 0)$} this is very simple to think about. It's just adding up integers $\bmod m$. In some sense, most people learn about this under one name or the other in school. But this thing --- the units --- are more complicated, are more interesting. \inlinemetanote{writes \qt{units are more interesting}}
+In the sense that, one might say that if I take here the additive structure, \inlinemetanote{writes: $\mathbb{Z}/m\mathbb{Z} \to (\mathbb{Z}/m\mathbb{Z}, +, 0)$} this is very simple to think about. It's just adding up integers $\bmod m$. In some sense, most people learn about this under one name or the other in school. But this thing --- the units --- are more complicated, are more interesting. \inlinemetanote{writes \qt{units are more interesting}}
 
 And so I wanted to do another... there were various people asking me some questions, so, let's try this: $10\mathbb{Z}$, just to say a little bit.
 
-The standard notation for this is that: \inlinemetanote{writes $(\mathbb{Z}/m\mathbb{Z})^*$} This is the usual notation for units of $\mathbb{Z}/m\mathbb{Z}$, and also this notation is sometimes used in general. $R^*$ sometimes denotes --- could denote --- units, depends on the author. So, I've just been writing $\operatorname{Unit}$, so there's no question about what I mean. But in this case, it's so common to use the star here, I also use the star. Is that clear? So, this is it.
+The standard notation for this is that: \inlinemetanote{writes: $(\mathbb{Z}/m\mathbb{Z})^*$} This is the usual notation for units of $\mathbb{Z}/m\mathbb{Z}$, and also this notation is sometimes used in general. $R^*$ sometimes denotes --- could denote --- units, depends on the author. So, I've just been writing $\operatorname{Unit}$, so there's no question about what I mean. But in this case, it's so common to use the star here, I also use the star. Is that clear? So, this is it.
 \end{speech}
 
 \subsubsection{Example: Units of \texorpdfstring{$\mathbb{Z}/10\mathbb{Z}$}{Z/10Z}}
 
 \begin{speech}[00:07:18 - 00:08:43]
-How to think about this? Well, I'll just do an example because, as I said, there were various questions. This is all the residue classes that are relatively prime. So, you can just write them all first and cross them out: $\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}, \bar{7}, \bar{8}, \bar{9}$. \inlinemetanote{writes $\bar{0}, \bar{1}, \bar{2}, \dots, \bar{9}$} Maybe I should have picked something less than $10$.
+How to think about this? Well, I'll just do an example because, as I said, there were various questions. This is all the residue classes that are relatively prime. So, you can just write them all first and cross them out: $\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}, \bar{7}, \bar{8}, \bar{9}$. \inlinemetanote{writes: $\bar{0}, \bar{1}, \bar{2}, \dots, \bar{9}$} Maybe I should have picked something less than $10$.
 
 These are all the residue classes, and then we have to cancel all the ones that are not relatively prime.
 
 Which one? Is $\bar{0}$ relatively prime? No, so, we cross that out. \inlinemetanote{crosses out $\bar{0}$} $\bar{1}$ is relatively prime --- $\bar{1}$ is always relatively prime. What about $\bar{2}$? No. \inlinemetanote{crosses out $\bar{2}$} $\bar{3}$? Yes, so, we skip it. $\bar{4}$? That has a $2$ in it and $10$ has a $2$, so, we cross that out. \inlinemetanote{crosses out $\bar{4}$} $\bar{5}$ --- $10$ has a $5$ in it, we cross that one out. \inlinemetanote{crosses out $\bar{5}$} Cross that one out, \inlinemetanote{crosses out $\bar{6}$ and $\bar{8}$} and what's left? Four, yeah, so, these are the four residue classes left. \inlinemetanote{circles $\bar{1}, \bar{3}, \bar{7}, \bar{9}$}
 
-The group of units here consists of these residue classes: \inlinemetanote{writes $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\} \subset (\mathbb{Z}/10\mathbb{Z})^*$} $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\}$. And the claim is: this is a group under multiplication. That's what that claim is.
+The group of units here consists of these residue classes: \inlinemetanote{writes: $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\} \subset (\mathbb{Z}/10\mathbb{Z})^*$} $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\}$. And the claim is: this is a group under multiplication. That's what that claim is.
 
-For example, $\bar{3}$ is in this group, so, what is its inverse? \inlinemetanote{writes $\bar{3} \in (\mathbb{Z}/10\mathbb{Z})^*$, what is its inverse?}
+For example, $\bar{3}$ is in this group, so, what is its inverse? \inlinemetanote{writes: $\bar{3} \in (\mathbb{Z}/10\mathbb{Z})^*$, what is its inverse?}
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -312,9 +312,9 @@ Seven, because $7 \times 3 = 21$, and so on. So anyway, you can play with this.
 
 This is a more interesting object, and in fact you could ask: what is the order? This is a basic question in elementary number theory: what is the order of this group? \inlinemetanote{writes \qt{What is the order of $(\mathbb{Z}/m\mathbb{Z})^*$?}}
 
-And by order, this word means for groups the number of elements. \inlinemetanote{writes \qt{\# of elements}} So, when I say order of a group, if it's a finite group, I just mean the number of elements. What is the order of this? Sometimes this order is denoted by just straight lines --- the bars: \inlinemetanote{writes $|(\mathbb{Z}/m\mathbb{Z})^*|$} You should be familiar with this set-theoretic notation; these two bars usually denote order. Is that clear? That's kind of standard set-theoretic notation.
+And by order, this word means for groups the number of elements. \inlinemetanote{writes \qt{\# of elements}} So, when I say order of a group, if it's a finite group, I just mean the number of elements. What is the order of this? Sometimes this order is denoted by just straight lines --- the bars: \inlinemetanote{writes: $|(\mathbb{Z}/m\mathbb{Z})^*|$} You should be familiar with this set-theoretic notation; these two bars usually denote order. Is that clear? That's kind of standard set-theoretic notation.
 
-First of all, let's do $10$. What is this? Well, the answer is $4$ --- you just have to compute these. \inlinemetanote{writes $|(\mathbb{Z}/10\mathbb{Z})^*| = 4$}
+First of all, let's do $10$. What is this? Well, the answer is $4$ --- you just have to compute these. \inlinemetanote{writes: $|(\mathbb{Z}/10\mathbb{Z})^*| = 4$}
 \end{speech}
 
 \begin{content}[Units in \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ} and the Example \texorpdfstring{$\mathbb{Z}/10\mathbb{Z}$}{Z/10Z}]
@@ -366,7 +366,7 @@ You know, my first trip to Switzerland was when I was a kid in the '80s, and the
 \subsection{Evaluating \texorpdfstring{$\phi(p)$}{phi(p)} and \texorpdfstring{$\phi(p^2)$}{phi(p\texttwosuperior)} for a Prime \texorpdfstring{$p$}{p}}
 
 \begin{speech}[00:12:03 - 00:12:15]
-Okay, so, let's do one example to compute this. Well, let's do two examples. Suppose you have a prime $p$ \inlinemetanote{writes $\phi(p) =$} --- then what is this?
+Okay, so, let's do one example to compute this. Well, let's do two examples. Suppose you have a prime $p$ \inlinemetanote{writes: $\phi(p) =$} --- then what is this?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -383,15 +383,15 @@ Because any number less than $p$ is coprime to $p$.
 
 % [TIMESTAMP-ESTIMATED: block split for the student answer, whose words come from the 2026-10-04 run]
 \begin{speech}[00:12:22 - 00:13:48]
-In other words, if you write this, you'll write $p$ elements, and you'll cross out $0$, and everybody else is relatively prime. So, it's $p - 1$. \inlinemetanote{writes $p - 1$}
+In other words, if you write this, you'll write $p$ elements, and you'll cross out $0$, and everybody else is relatively prime. So, it's $p - 1$. \inlinemetanote{writes: $p - 1$}
 
-And so, what about this one? \inlinemetanote{writes $\phi(p^2) = ?$} Do you know how to do this? What you do --- I mean, of course once you do this, you can do the general case for powers of a prime --- you write all the elements. This is a really primitive way to do it, but let's just do it: $0, 1, 2, \dots, p^2 - 1$. \inlinemetanote{writes $0, 1, 2, \dots, p^2 - 1$} That's what we did there, right?
+And so, what about this one? \inlinemetanote{writes: $\phi(p^2) = ?$} Do you know how to do this? What you do --- I mean, of course once you do this, you can do the general case for powers of a prime --- you write all the elements. This is a really primitive way to do it, but let's just do it: $0, 1, 2, \dots, p^2 - 1$. \inlinemetanote{writes: $0, 1, 2, \dots, p^2 - 1$} That's what we did there, right?
 
 So, it starts out, and then you cross out all of the... here you're going to cross out $0$, so, it's $p^2 - 1$, but you have to take away... of course you don't want $0$, but you have to take away all the multiples of $p$, right?
 
-And so, now you have to concentrate really hard: how many multiples of $p$? Well, there's $p$ here, there's $2p$ here, and what's the last one? The last one you have to cross out is $p(p - 1)$ --- that's the last one. \inlinemetanote{writes $p, 2p, \dots, p(p-1)$} Is that clear?
+And so, now you have to concentrate really hard: how many multiples of $p$? Well, there's $p$ here, there's $2p$ here, and what's the last one? The last one you have to cross out is $p(p - 1)$ --- that's the last one. \inlinemetanote{writes: $p, 2p, \dots, p(p-1)$} Is that clear?
 
-So, we have to take away $p - 1$, so, the answer is $p^2 - p$. \inlinemetanote{writes $(p^2 - 1) - (p - 1) = p^2 - p$} The answer to this is $p^2 - p$. Okay, that's the beginning; you can play with it a bit. All right?
+So, we have to take away $p - 1$, so, the answer is $p^2 - p$. \inlinemetanote{writes: $(p^2 - 1) - (p - 1) = p^2 - p$} The answer to this is $p^2 - p$. Okay, that's the beginning; you can play with it a bit. All right?
 \end{speech}
 
 \begin{content}[Euler's Totient Function and Prime Power Formulas]
@@ -435,7 +435,7 @@ For any prime power $p^k$ with $k \ge 1$, an integer $x \in \{0, 1, \dots, p^k -
 \begin{speech}[00:13:48 - 00:15:30]
 The next topic in the course has to do with fields of fractions. \inlinemetanote{writes \qt{Fields of fractions}} And this is a peculiar subject.
 
-It starts with this idea that $\mathbb{Z}$ is inside $\mathbb{Q}$. \inlinemetanote{writes $\mathbb{Z} \subset \mathbb{Q}$} So, $\mathbb{Z}$ is a ring, it's an integral domain \inlinemetanote{writes arrow from $\mathbb{Z}$ to \qt{int. domain}} and $\mathbb{Q}$ is a field, \inlinemetanote{writes arrow from $\mathbb{Q}$ to \qt{field}} and $\mathbb{Z}$ sits inside $\mathbb{Q}$. But the relationship is not just of any ring inside any field. In some sense, $\mathbb{Q}$ is the smallest field that contains $\mathbb{Z}$. This understanding will lead to the study of the field of fractions.
+It starts with this idea that $\mathbb{Z}$ is inside $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Q}$} So, $\mathbb{Z}$ is a ring, it's an integral domain \inlinemetanote{writes arrow from $\mathbb{Z}$ to \qt{int. domain}} and $\mathbb{Q}$ is a field, \inlinemetanote{writes arrow from $\mathbb{Q}$ to \qt{field}} and $\mathbb{Z}$ sits inside $\mathbb{Q}$. But the relationship is not just of any ring inside any field. In some sense, $\mathbb{Q}$ is the smallest field that contains $\mathbb{Z}$. This understanding will lead to the study of the field of fractions.
 
 Let's try to first make this precise; let's try to make precise the qualitative statement that... \inlinemetanote{writes \qt{Make precise the statement that \qt{$\mathbb{Q}$ is the smallest field which contains $\mathbb{Z}$}}} Here's the statement: \qt{$\mathbb{Q}$ is the smallest field which contains $\mathbb{Z}$}. That's a statement that probably you feel is true. It's not a $100$ percent mathematical statement, so, let's try to make this precise.
 
@@ -450,7 +450,7 @@ It's kind of a strange feeling, because you learn about the rational numbers in 
 
 And what do I mean by that? $\mathbb{Q}$ is a much more complicated thing than $\mathbb{Z}$ conceptually, because $\mathbb{Z}$ is really great: there are these objects and they have names, and everybody has one name. That's what's great about $\mathbb{Z}$.
 
-The thing that's confusing about $\mathbb{Q}$ is that they're objects, but they have many names. You know, you can have... \inlinemetanote{writes $5/7 = 60/84$} That's kind of confusing: all these numbers have many, many different names. And when I said, \qt{Have you ever checked it works?}, it means that whatever operations you do, you have to be able to do them with any name, and it has to give the same answer, so to speak. That's what I mean. And so, the question is: have you ever checked that?
+The thing that's confusing about $\mathbb{Q}$ is that they're objects, but they have many names. You know, you can have... \inlinemetanote{writes: $5/7 = 60/84$} That's kind of confusing: all these numbers have many, many different names. And when I said, \qt{Have you ever checked it works?}, it means that whatever operations you do, you have to be able to do them with any name, and it has to give the same answer, so to speak. That's what I mean. And so, the question is: have you ever checked that?
 
 It's a weird question. But kind of the ideal math question is in first grade or second grade, whenever you're adding fractions, you should ask, say: \qt{But why is it well-defined?} That's the question you should ask. And if you'd asked that question, then we wouldn't have to give this lecture today, actually.
 \end{speech}
@@ -473,7 +473,7 @@ Consequently, every operation on fractions (addition, multiplication, evaluation
 \begin{speech}[00:17:25 - 00:19:32]
 I try to make precise the statement that $\mathbb{Q}$ is the smallest field which contains $\mathbb{Z}$. And there's different ways to do it, but one way is to say it like this:
 
-Suppose I have $f \colon \mathbb{Z} \to F$, \inlinemetanote{writes $\text{Suppose } f \colon \mathbb{Z} \to F$} where $F$ is a field \inlinemetanote{writes arrow from $F$ to \qt{field}} --- this big $F$ is a field, and this little $f$ is an injection of rings, so, an injective homomorphism of rings. \inlinemetanote{writes \qt{injection of rings / homomorphism of rings}}
+Suppose I have $f \colon \mathbb{Z} \to F$, \inlinemetanote{writes: $\text{Suppose } f \colon \mathbb{Z} \to F$} where $F$ is a field \inlinemetanote{writes arrow from $F$ to \qt{field}} --- this big $F$ is a field, and this little $f$ is an injection of rings, so, an injective homomorphism of rings. \inlinemetanote{writes \qt{injection of rings / homomorphism of rings}}
 
 So, I start with this: I take any possible field --- maybe a field that I might think is smaller than $\mathbb{Q}$, or whatever field, take any field you want --- and I start with a ring homomorphism which is injective. That means that I view this as $\mathbb{Z}$ sitting inside $F$, okay?
 
@@ -527,7 +527,7 @@ Okay, but I haven't proven it, so, let's try to prove it. I won't prove the whol
 
 So, let us see: I have to prove this, which means I get to start with the data I suppose. That's what \qt{suppose} is about --- \qt{suppose} means I get to start with this data, which is here, all right? And then the whole claim is existence. To prove this, what I have to do is produce $g$.
 
-Proof, more or less: \inlinemetanote{writes \qt{Proof I have to construct $g$}} I have to construct $g$. So, I write down... \inlinemetanote{self-correction} a complex number, $x$ over $y$, where $x$ and $y$ are integers and $y \neq 0$ --- sorry, a rational number, that's what a rational number is: $x/y$, where $x, y \in \mathbb{Z}$ and $y \neq 0$. \inlinemetanote{writes $g(x/y) =$, $x, y \in \mathbb{Z}, y \neq 0$} I hope you're happy with that; that's what a rational number is.
+Proof, more or less: \inlinemetanote{writes \qt{Proof I have to construct $g$}} I have to construct $g$. So, I write down... \inlinemetanote{self-correction} a complex number, $x$ over $y$, where $x$ and $y$ are integers and $y \neq 0$ --- sorry, a rational number, that's what a rational number is: $x/y$, where $x, y \in \mathbb{Z}$ and $y \neq 0$. \inlinemetanote{writes: $g(x/y) =$, $x, y \in \mathbb{Z}, y \neq 0$} I hope you're happy with that; that's what a rational number is.
 
 This is my responsibility: I have to define this, or we define. \inlinemetanote{writes \qt{we define}} So, how am I going to define this?
 \end{speech}
@@ -537,7 +537,7 @@ $f(x) / f(y)$.
 \end{student}
 
 \begin{speech}[00:21:23 - 00:21:51]
-Yeah, so, formally, of course we'll write it the way you said, but formally we write it like this: \inlinemetanote{writes $= f(x) f(y)^{-1}$} $f(x) f(y)^{-1}$.
+Yeah, so, formally, of course we'll write it the way you said, but formally we write it like this: \inlinemetanote{writes: $= f(x) f(y)^{-1}$} $f(x) f(y)^{-1}$.
 
 Because $f(x)$ is in the field $F$, and $f(y)$ is in the field $F$, and I want to take its inverse. This is the kind of field language. Why am I allowed to take its inverse? You cannot take inverses of everything.
 \end{speech}
@@ -550,7 +550,7 @@ Because $F$ is a field and we chose, um... $y \ne 0$.
 \begin{speech}[00:21:58 - 00:23:11]
 Yeah, but you have to check --- and this is the whole thing, which is that you have to check. This is legal so long as $f(y) \neq 0$. \inlinemetanote{writes \qt{legal as long as $f(y) \neq 0$}} And why is $f(y)$ not zero? It's because $f$ is injective, and $y \neq 0$. \inlinemetanote{writes \qt{and this is because $f$ is injective and $y \neq 0$}} That's actually using this thing here. So, this is legal. Is that clear?
 
-And as was implicit in the answer, we will often write this as that, \inlinemetanote{writes $= \frac{f(x)}{f(y)}$} because it's charming to do that. And in a field, if you see this, all that means is that the fellow downstairs can be put upstairs by multiplicative inverse. And you're only legally allowed to write it if you know this is not zero --- just like in normal arithmetic, you can't divide by zero.
+And as was implicit in the answer, we will often write this as that, \inlinemetanote{writes: $= \frac{f(x)}{f(y)}$} because it's charming to do that. And in a field, if you see this, all that means is that the fellow downstairs can be put upstairs by multiplicative inverse. And you're only legally allowed to write it if you know this is not zero --- just like in normal arithmetic, you can't divide by zero.
 
 When we write this, it means various things: it means in particular this one's not zero, and you can put it up here, and you can put it on either side, it doesn't matter because our fields are commutative. Okay?
 \end{speech}
@@ -586,19 +586,19 @@ You understand we have to check this, because that's the slipperiness of the rat
 \begin{speech}[00:25:18 - 00:27:08]
 All right, but you accept we have to check this? Otherwise, if we can't check this, whatever was there was nonsense.
 
-So, we have to check it. And how are we going to check it? Well, so, we have here: \inlinemetanote{writes $g\left(\frac{x_1}{y_1}\right) = \frac{f(x_1)}{f(y_1)}$ and $g\left(\frac{x_2}{y_2}\right) = \frac{f(x_2)}{f(y_2)}$}
+So, we have to check it. And how are we going to check it? Well, so, we have here: \inlinemetanote{writes \qt{$g\left(\frac{x_1}{y_1}\right) = \frac{f(x_1)}{f(y_1)}$} and \qt{$g\left(\frac{x_2}{y_2}\right) = \frac{f(x_2)}{f(y_2)}$}}
 
 And we want to figure out whether these things are equal: do we have... \inlinemetanote{writes \qt{do we have $\frac{f(x_1)}{f(y_1)} \stackrel{?}{=} \frac{f(x_2)}{f(y_2)}$}} That's the question.
 
-Using the fact that these are invertible, and we can multiply by them, this question is equivalent to what's called clearing the denominators. So, by clearing the denominators, this is equivalent \inlinemetanote{draws $\iff$ and writes $f(x_1) f(y_2) = f(x_2) f(y_1)$} to $f(x_1) f(y_2) = f(x_2) f(y_1)$ by just multiplying both sides by $f(y_1) f(y_2)$ \inlinemetanote{writes $\cdot f(y_1) f(y_2)$} --- that's a legal move in fields. And since these are invertible, this implies that, and this implies the other way, because they're both non-zero. Everything here is invertible.
+Using the fact that these are invertible, and we can multiply by them, this question is equivalent to what's called clearing the denominators. So, by clearing the denominators, this is equivalent \inlinemetanote{draws $\iff$ and writes: $f(x_1) f(y_2) = f(x_2) f(y_1)$} to $f(x_1) f(y_2) = f(x_2) f(y_1)$ by just multiplying both sides by $f(y_1) f(y_2)$ \inlinemetanote{writes: $\cdot f(y_1) f(y_2)$} --- that's a legal move in fields. And since these are invertible, this implies that, and this implies the other way, because they're both non-zero. Everything here is invertible.
 
-We're using all the time that when we write this, \inlinemetanote{writes $y_1, y_2 \neq 0 \implies f(y_1), f(y_2) \neq 0$} neither $y_1$ nor $y_2$ is zero, which implies $f(y_1)$ and $f(y_2)$ are not zero, okay?
+We're using all the time that when we write this, \inlinemetanote{writes: $y_1, y_2 \neq 0 \implies f(y_1), f(y_2) \neq 0$} neither $y_1$ nor $y_2$ is zero, which implies $f(y_1)$ and $f(y_2)$ are not zero, okay?
 \end{speech}
 
 \begin{speech}[00:27:08 - 00:27:50]
-And now, these things are all integers, and everything's upstairs --- there's no division. This is if and only if \inlinemetanote{draws $\Updownarrow$} you can use the homomorphism property: \inlinemetanote{writes $f(x_1 y_2) = f(x_2 y_1)$} $f(x_1 y_2) = f(x_2 y_1)$, right? Because $f$ is a homomorphism.
+And now, these things are all integers, and everything's upstairs --- there's no division. This is if and only if \inlinemetanote{draws $\Updownarrow$} you can use the homomorphism property: \inlinemetanote{writes: $f(x_1 y_2) = f(x_2 y_1)$} $f(x_1 y_2) = f(x_2 y_1)$, right? Because $f$ is a homomorphism.
 
-And this is if and only if \inlinemetanote{draws $\Updownarrow$ and writes $f(x_1 y_2 - x_2 y_1) = 0$} $f(x_1 y_2 - x_2 y_1) = 0$, okay?
+And this is if and only if \inlinemetanote{draws $\Updownarrow$ and writes: $f(x_1 y_2 - x_2 y_1) = 0$} $f(x_1 y_2 - x_2 y_1) = 0$, okay?
 
 Why would this be the case? Yeah?
 \end{speech}
@@ -611,7 +611,7 @@ We could rearrange...
 \begin{speech}[00:27:52 - 00:28:48]
 Well, you have to say what this means. What does this mean? This goes to the heart of the issue about whether you learned the rational numbers correctly, and the answer is: this means \inlinemetanote{points to $\frac{x_1}{y_1} = \frac{x_2}{y_2}$ and writes below: $x_1 y_2 = x_2 y_1$} that $x_1 y_2 = x_2 y_1$. It means nothing more or less than that; it just actually means that.
 
-So, if we start with this, we have this equation: \inlinemetanote{writes $x_1 y_2 - x_2 y_1 = 0 \text{ in the integers}$} $x_1 y_2 - x_2 y_1 = 0$ in the integers. That's what this means.
+So, if we start with this, we have this equation: \inlinemetanote{writes: $x_1 y_2 - x_2 y_1 = 0 \text{ in the integers}$} $x_1 y_2 - x_2 y_1 = 0$ in the integers. That's what this means.
 
 And very fortunately, that's what we need: we need this to be zero, so, this is true \inlinemetanote{places a checkmark next to $f(x_1 y_2 - x_2 y_1) = 0$} --- and so, everything is true, and this is well-defined. All right?
 
@@ -675,15 +675,15 @@ And the checks are all the same, so you can do it yourself. That's the end of wh
 \begin{speech}[00:30:05 - 00:31:50]
 We have now, successfully, defined $g$. Then we need to check that $g$ is indeed a homomorphism of fields. \inlinemetanote{writes \qt{We have defined $g$. We need to check that $g$ is indeed a hom. of fields.}} I leave this to you. We're going to have to do things like this anyway, and it's all just unraveling the definitions.
 
-Meaning you have to check... \inlinemetanote{writes \qt{You have to check}} You check something like: \inlinemetanote{writes $g\left(\frac{x_1}{y_1}\right) + g\left(\frac{x_2}{y_2}\right) = g\left(\frac{x_1}{y_1} + \frac{x_2}{y_2}\right)$} $g(x_1/y_1) + g(x_2/y_2) = g(x_1/y_1 + x_2/y_2)$. You have to go check that; that's what you have to check.
+Meaning you have to check... \inlinemetanote{writes \qt{You have to check}} You check something like: \inlinemetanote{writes: $g\left(\frac{x_1}{y_1}\right) + g\left(\frac{x_2}{y_2}\right) = g\left(\frac{x_1}{y_1} + \frac{x_2}{y_2}\right)$} $g(x_1/y_1) + g(x_2/y_2) = g(x_1/y_1 + x_2/y_2)$. You have to go check that; that's what you have to check.
 
-And you can see when you write this, this side... Okay, I'm going to do part of it for you --- I don't know why I'm feeling compassionate today here. This one is $f(x_1)/f(y_1) + f(x_2)/f(y_2)$. \inlinemetanote{writes $= \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)}$} That's the definition here. And this has a different definition.
+And you can see when you write this, this side... Okay, I'm going to do part of it for you --- I don't know why I'm feeling compassionate today here. This one is $f(x_1)/f(y_1) + f(x_2)/f(y_2)$. \inlinemetanote{writes: $= \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)}$} That's the definition here. And this has a different definition.
 
-First of all, how do we do it? We first have to add this fraction, right? Because our definition only applies to names of rational numbers, and this is the sum. So, we first have to do this, but you know how to add fractions: this is equal to \inlinemetanote{writes $= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right)$} $g$ of $(x_1 y_2 + x_2 y_1)/(y_1 y_2)$. At least I hope you know how to add fractions --- at least I hope I know how to add fractions, right? Okay, so, that's the addition of the fraction.
+First of all, how do we do it? We first have to add this fraction, right? Because our definition only applies to names of rational numbers, and this is the sum. So, we first have to do this, but you know how to add fractions: this is equal to \inlinemetanote{writes: $= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right)$} $g$ of $(x_1 y_2 + x_2 y_1)/(y_1 y_2)$. At least I hope you know how to add fractions --- at least I hope I know how to add fractions, right? Okay, so, that's the addition of the fraction.
 \end{speech}
 
 \begin{speech}[00:31:50 - 00:32:50]
-And then this, by definition --- use the definition --- is $f(x_1 y_2 + x_2 y_1)/f(y_1 y_2)$. \inlinemetanote{writes $= \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)}$} Okay?
+And then this, by definition --- use the definition --- is $f(x_1 y_2 + x_2 y_1)/f(y_1 y_2)$. \inlinemetanote{writes: $= \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)}$} Okay?
 
 So, that's the one side to check, and that's supposed to equal this side, all right? And how are you going to check this? Well, you use the homomorphism property, you move everything upstairs, and then finally you're going to use the thing I erased --- this, okay?
 
@@ -756,13 +756,13 @@ establishing \eqref{eq:g-unit}. Thus $g$ is a field homomorphism.
 \section{The Field of Fractions of an Integral Domain}
 
 \begin{speech}[00:32:50 - 00:35:03]
-That's the story about $\mathbb{Z}$. Their fates are really closely tied: $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes $\mathbb{Z} \subset \mathbb{Q}$} $\mathbb{Q}$ is not just any field that $\mathbb{Z}$ is in --- it's the smallest field it's in. So, we could ask: can we construct this relationship for other rings? Because we really like this relationship.
+That's the story about $\mathbb{Z}$. Their fates are really closely tied: $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Q}$} $\mathbb{Q}$ is not just any field that $\mathbb{Z}$ is in --- it's the smallest field it's in. So, we could ask: can we construct this relationship for other rings? Because we really like this relationship.
 
 If you study the integers, it's very useful sometimes to be able to divide; so, that's the movement to the field. Let's try this with a ring in general.
 
 Suppose $R$ is an integral domain. \inlinemetanote{writes \qt{Suppose $R$ is an integral domain}} It turns out that this is extremely important, and we will see in the definition --- it may not be clear from the discussion so far --- but let's say $R$ is an integral domain.
 
-Can we find the analogue of $\mathbb{Q}$, which is the \qt{smallest} field containing $R$? \inlinemetanote{writes \qt{Can we find \qt{smallest} field containing $R$?}} Already in this language, if we find a field containing $R$, \inlinemetanote{writes $R \subset F$} that means $R$ has to be a domain (Recall: \cref{def:integral-domain}), because a domain means that two elements that are non-zero, when you multiply them, stay non-zero. If you're inside a field, that's always the case, okay? This is one of the reasons why we're talking only about integral domains.
+Can we find the analogue of $\mathbb{Q}$, which is the \qt{smallest} field containing $R$? \inlinemetanote{writes \qt{Can we find \qt{smallest} field containing $R$?}} Already in this language, if we find a field containing $R$, \inlinemetanote{writes: $R \subset F$} that means $R$ has to be a domain (Recall: \cref{def:integral-domain}), because a domain means that two elements that are non-zero, when you multiply them, stay non-zero. If you're inside a field, that's always the case, okay? This is one of the reasons why we're talking only about integral domains.
 
 So, that's the question: if you find on the street an integral domain, can you put it in its smallest field? The answer is yes, and that construction is called the field of fractions. And I will show you how to do it.
 
@@ -797,9 +797,9 @@ Given an arbitrary integral domain $R$, our goal is to construct the minimal fie
 \subsection{Construction of the Set of Formal Fractions}
 
 \begin{speech}[00:36:16 - 00:38:05]
-Let's think about this in the abstract. The main thing is just the definition. Here is our ring $R$: we don't know what it is, it's just any ring, but it's an integral domain. \inlinemetanote{writes $R$ int. domain} We want to construct a field containing $R$. \inlinemetanote{writes \qt{We want to construct a field containing $R$}}
+Let's think about this in the abstract. The main thing is just the definition. Here is our ring $R$: we don't know what it is, it's just any ring, but it's an integral domain. \inlinemetanote{writes: $R$ int. domain} We want to construct a field containing $R$. \inlinemetanote{writes \qt{We want to construct a field containing $R$}}
 
-The field should have elements that are like $x$ over $y$, where $x, y \in R$ and $y \neq 0$. \inlinemetanote{writes $F \ni \frac{x}{y}$, $x, y \in R, y \neq 0$} This should be the element of that field, because if it contains $R$, I should be able to take $x$ and multiply it by the inverse of $y$ in the field, so, it should have these elements in it. Is that clear? That's what happened with the rational numbers.
+The field should have elements that are like $x$ over $y$, where $x, y \in R$ and $y \neq 0$. \inlinemetanote{writes: $F \ni \frac{x}{y}$, $x, y \in R, y \neq 0$} This should be the element of that field, because if it contains $R$, I should be able to take $x$ and multiply it by the inverse of $y$ in the field, so, it should have these elements in it. Is that clear? That's what happened with the rational numbers.
 
 So, we can just define it that way. We start with: let $S$ be the set of pairs. \inlinemetanote{writes \qt{Let $S = \{(x, y) \mid y \neq 0, x, y \in R\} \subset R \times R$}} This whole thing is going to be a big disappointment if you think something fun is going to happen --- I just tell you ahead of time, this is going to be a big disappointment. But some things in life are like that.
 
@@ -809,13 +809,13 @@ So, here: $y \neq 0$, and $x, y \in R$. Okay, that's the set of pairs. For the i
 \subsection{Digression: Equivalence Relations and Partitions}
 
 \begin{speech}[00:38:05 - 00:40:21]
-All right, and now the thing that will come is that there is an equivalence relation. \inlinemetanote{writes \qt{There is an equivalence relation on $S$}} There is an equivalence relation on $S$, so maybe we call this equivalence relation... \inlinemetanote{writes $\sim$, then changes to $\equiv$} You can use various symbols for equivalence, that's kind of standard. How about three lines?
+All right, and now the thing that will come is that there is an equivalence relation. \inlinemetanote{writes \qt{There is an equivalence relation on $S$}} There is an equivalence relation on $S$, so maybe we call this equivalence relation... \inlinemetanote{writes \qt{$\sim$}, then changes to \qt{$\equiv$}} You can use various symbols for equivalence, that's kind of standard. How about three lines?
 
 Do you know what an equivalence relation is? This was in your Foundations class. An equivalence relation on a set --- maybe a little aside \inlinemetanote{writes \qt{Aside on $T$}} --- an equivalence relation on a set $T$ tells you when two elements are related, and the rules for the equivalence relation are:
 
-$x$ is always related to itself --- this is the reflexive property; \inlinemetanote{writes $x \equiv x$, reflexive}
+$x$ is always related to itself --- this is the reflexive property; \inlinemetanote{writes: $x \equiv x$, reflexive}
 
-if $x$ is related to $y$, then $y$ is related to $x$ --- this is the symmetric property; \inlinemetanote{writes $x \equiv y \implies y \equiv x$, symmetric}
+if $x$ is related to $y$, then $y$ is related to $x$ --- this is the symmetric property; \inlinemetanote{writes: $x \equiv y \implies y \equiv x$, symmetric}
 
 and if you know the definition, what's the third one? Yeah?
 \end{speech}
@@ -825,9 +825,9 @@ Transitivity.
 \end{student}
 
 \begin{speech}[00:40:21 - 00:41:00]
-The transitive property. It says that if we have $x$ related to $y$ and $y$ related to $z$, then $x$ is related to $z$. \inlinemetanote{writes $x \equiv y \land y \equiv z \implies x \equiv z$, transitive} That's the whole thing of equivalence relations. It comes up many times in mathematics, and it will come up again in this course, so, if you have not seen it, think about it.
+The transitive property. It says that if we have $x$ related to $y$ and $y$ related to $z$, then $x$ is related to $z$. \inlinemetanote{writes: $x \equiv y \land y \equiv z \implies x \equiv z$, transitive} That's the whole thing of equivalence relations. It comes up many times in mathematics, and it will come up again in this course, so, if you have not seen it, think about it.
 
-And the main thing we use about this equivalence relation is that if I have $T$ with this equivalence relation, then I have another set --- sometimes it's called this --- which is the set of equivalence classes. \inlinemetanote{writes $T_{/\equiv} = \text{set of equivalence classes}$} That's going to be very important for us.
+And the main thing we use about this equivalence relation is that if I have $T$ with this equivalence relation, then I have another set --- sometimes it's called this --- which is the set of equivalence classes. \inlinemetanote{writes: $T_{/\equiv} = \text{set of equivalence classes}$} That's going to be very important for us.
 
 Whenever we have a set with an equivalence relation, that equivalence relation divides the set up into equivalence classes --- disjoint equivalence classes, okay? And this thing here is the set of equivalence classes. There's three objects in this kind of abstract situation: there's the set that we start with, there's the equivalence relation, and then there's the set of equivalence classes.
 \end{speech}
@@ -894,7 +894,7 @@ The quotient set $T/\!\equiv$ denotes the set of \newterm{equivalence classes} (
 \begin{speech}[00:41:00 - 00:42:06]
 We have to define the equivalence relation. We now define an equivalence relation on our set $S$, which is the set of pairs \inlinemetanote{writes \qt{We now define $\equiv$ on $S$}} --- and you should think about these pairs as numerator and denominator, but those are just words here.
 
-We need to define when $(x_1, y_1)$ is equivalent to $(x_2, y_2)$. \inlinemetanote{writes $(x_1, y_1) \equiv (x_2, y_2)$} We need a definition for this. What's the answer going to be? Yeah?
+We need to define when $(x_1, y_1)$ is equivalent to $(x_2, y_2)$. \inlinemetanote{writes: $(x_1, y_1) \equiv (x_2, y_2)$} We need a definition for this. What's the answer going to be? Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -902,7 +902,7 @@ $x_1 y_2 = x_2 y_1$.
 \end{student}
 
 \begin{speech}[00:42:06 - 00:44:08]
-Okay, very good. This is the definition: \inlinemetanote{writes $\stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$} it's just exactly what you do with integer arithmetic. If you have a fraction, you say they're equal if $x_1 y_2 = x_2 y_1$, okay? That's the definition. There's nothing more or less than that --- that's the whole definition.
+Okay, very good. This is the definition: \inlinemetanote{writes: $\stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$} it's just exactly what you do with integer arithmetic. If you have a fraction, you say they're equal if $x_1 y_2 = x_2 y_1$, okay? That's the definition. There's nothing more or less than that --- that's the whole definition.
 
 And it's motivated by the integers. It's very important for this definition that this is only about $R$. \inlinemetanote{writes \qt{only about $R$}} This whole discussion starts with $R$, so, we can only say things that are about $R$.
 
@@ -933,13 +933,13 @@ Crucially, formula \eqref{eq:equiv-relation-formula} involves only multiplicatio
 \end{content}
 
 \begin{speech}[00:44:08 - 00:45:05]
-The first is: if I take $(x_1, y_1)$, this is equivalent to $(x_1, y_1)$. \inlinemetanote{writes $(x_1, y_1) \equiv (x_1, y_1)$} And why is this? Because by definition this is equal to $x_1 y_1 = x_1 y_1$, \inlinemetanote{writes $\iff x_1 y_1 = x_1 y_1$ \checkmark} so, we're very happy about that. There was nothing to do here.
+The first is: if I take $(x_1, y_1)$, this is equivalent to $(x_1, y_1)$. \inlinemetanote{writes: $(x_1, y_1) \equiv (x_1, y_1)$} And why is this? Because by definition this is equal to $x_1 y_1 = x_1 y_1$, \inlinemetanote{writes: $\iff x_1 y_1 = x_1 y_1$ \checkmark} so, we're very happy about that. There was nothing to do here.
 
-You also have to check the symmetric property: that if we have $(x_1, y_1) \equiv (x_2, y_2)$, then the other way around is fine, and it'll just be the same equation. There's nothing to check about that. \inlinemetanote{writes $x_1 y_2 = x_2 y_1 \iff x_2 y_1 = x_1 y_2$ \checkmark}
+You also have to check the symmetric property: that if we have $(x_1, y_1) \equiv (x_2, y_2)$, then the other way around is fine, and it'll just be the same equation. There's nothing to check about that. \inlinemetanote{writes: $x_1 y_2 = x_2 y_1 \iff x_2 y_1 = x_1 y_2$ \checkmark}
 
-The interesting one is the transitive property. \inlinemetanote{writes \qt{Transitive}} This is the only fun one to check. We start with this one: \inlinemetanote{writes $(x_1, y_1) \equiv (x_2, y_2)$ and $(x_2, y_2) \equiv (x_3, y_3)$} these are the inputs.
+The interesting one is the transitive property. \inlinemetanote{writes \qt{Transitive}} This is the only fun one to check. We start with this one: \inlinemetanote{writes \qt{$(x_1, y_1) \equiv (x_2, y_2)$} and \qt{$(x_2, y_2) \equiv (x_3, y_3)$}} these are the inputs.
 
-And we must show --- this is for us to do --- that $(x_1, y_1)$ is congruent (i.e., equivalent) to $(x_3, y_3)$. \inlinemetanote{writes $\implies (x_1, y_1) \equiv (x_3, y_3)$}
+And we must show --- this is for us to do --- that $(x_1, y_1)$ is congruent (i.e., equivalent) to $(x_3, y_3)$. \inlinemetanote{writes: $\implies (x_1, y_1) \equiv (x_3, y_3)$}
 
 The thing that's a little funny about this is... let's try to do this. We have to write the first equation. This is what we have: \inlinemetanote{writes \qt{What we have}} that's what we've assumed, that's in the left column.
 \inlinemetanote{The lecture bell rings.}
@@ -988,20 +988,20 @@ We come to this point that's kind of fun and interesting. We started with an int
 
 As an object, it's this formal object. And then there was this proposal, which was correct, of how to define the equivalence relation. And now we actually need to check something: is it an equivalence relation?
 
-Here we have to prove the transitive property. And so, we start with: what do we have? We have that equivalence, so, if we translate that into equations, it says $x_1 y_2 = x_2 y_1$ --- and you have to be very careful with the subscripts, otherwise you'll confuse yourself: \inlinemetanote{writes $x_1 y_2 = x_2 y_1$} $x_1 y_2 = x_2 y_1$. And then what we also have here is $x_2 y_3 = x_3 y_2$. \inlinemetanote{writes $x_2 y_3 = x_3 y_2$}
+Here we have to prove the transitive property. And so, we start with: what do we have? We have that equivalence, so, if we translate that into equations, it says $x_1 y_2 = x_2 y_1$ --- and you have to be very careful with the subscripts, otherwise you'll confuse yourself: \inlinemetanote{writes: $x_1 y_2 = x_2 y_1$} $x_1 y_2 = x_2 y_1$. And then what we also have here is $x_2 y_3 = x_3 y_2$. \inlinemetanote{writes: $x_2 y_3 = x_3 y_2$}
 \end{speech}
 
 \begin{speech}[00:47:20 - 00:48:40]
-And what we want, \inlinemetanote{writes \qt{Want}} we want this thing, which is $x_1 y_3 = x_3 y_1$. \inlinemetanote{writes $x_1 y_3 = x_3 y_1$}
+And what we want, \inlinemetanote{writes \qt{Want}} we want this thing, which is $x_1 y_3 = x_3 y_1$. \inlinemetanote{writes: $x_1 y_3 = x_3 y_1$}
 
 The puzzling thing about this is: we have these quadratic equations and we need to get another quadratic equation. It seems a little bit unfortunate, because you might think you have to do some linear algebra with quadratic equations, and that's not going to work --- you're not going to get a new quadratic equation from these.
 
-The correct answer is we're supposed to multiply here. The clever thing is to multiply the top equation by $y_3$ \inlinemetanote{writes \qt{mult. by $y_3$}} --- $y_3$ is what we want. So, we get $x_1 y_2 y_3 = x_2 y_1 y_3$. \inlinemetanote{writes $x_1 y_2 y_3 = x_2 y_1 y_3$}
+The correct answer is we're supposed to multiply here. The clever thing is to multiply the top equation by $y_3$ \inlinemetanote{writes \qt{mult. by $y_3$}} --- $y_3$ is what we want. So, we get $x_1 y_2 y_3 = x_2 y_1 y_3$. \inlinemetanote{writes: $x_1 y_2 y_3 = x_2 y_1 y_3$}
 
 This is kind of good: we see the $x_1 y_3$ here. Can you see what we have to do next? This is actually algebra. What?
 
 \inlinemetanote{A student answers inaudibly.}
-Yeah, you could do that, but why don't we just take this $y_2 y_3$ here and use this equation? It's the same thing. So, we take the $y_2 y_3$ and use this equation to flip them. This is all about subscripts, and I should just tell you that subscripts have always been difficult for me. Do you accept that? Because I just took this and flipped them using this equation. \inlinemetanote{writes $x_1 y_3 y_2 = x_3 y_2 y_1$}
+Yeah, you could do that, but why don't we just take this $y_2 y_3$ here and use this equation? It's the same thing. So, we take the $y_2 y_3$ and use this equation to flip them. This is all about subscripts, and I should just tell you that subscripts have always been difficult for me. Do you accept that? Because I just took this and flipped them using this equation. \inlinemetanote{writes: $x_1 y_3 y_2 = x_3 y_2 y_1$}
 \end{speech}
 
 \begin{speech}[00:48:40 - 00:50:02]
@@ -1084,7 +1084,7 @@ The lecturer takes a sponge, washes the upper chalkboard clean, and dries it to 
 \subsection{Construction of the Field of Fractions}
 
 \begin{speech}[00:51:06 - 00:52:35]
-Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes $R \text{ int. domain}$} We constructed $S$ with an equivalence relation, \inlinemetanote{writes $S = \dots \text{ with } \equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes $\implies F := S_{/\equiv}$ \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes $F = S_{/\equiv}$}
+Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes: $R \text{ int. domain}$} We constructed $S$ with an equivalence relation, \inlinemetanote{writes: $S = \dots \text{ with } \equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes \qt{$\implies F := S_{/\equiv}$} and \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes: $F = S_{/\equiv}$}
 
 Is it completely clear what this thing is? We defined $S$, we defined an equivalence relation, and we took great pains to check all of its properties, so, we get the set of equivalence classes and that is $F$.
 \end{speech}
@@ -1092,7 +1092,7 @@ Is it completely clear what this thing is? We defined $S$, we defined an equival
 \subsection{The Canonical Embedding of \texorpdfstring{$R$}{R} into \texorpdfstring{$F$}{F}}
 
 \begin{speech}[00:52:35 - 00:53:14]
-Then we need to do a lot of things. But let's start by defining the map which is the inclusion from $R$ to $F$, \inlinemetanote{writes $R \to F$} because we said this $F$ should be a field that contains $R$. That means we have to have some way of getting points from $R$ to $F$. And what's that way going to be?
+Then we need to do a lot of things. But let's start by defining the map which is the inclusion from $R$ to $F$, \inlinemetanote{writes: $R \to F$} because we said this $F$ should be a field that contains $R$. That means we have to have some way of getting points from $R$ to $F$. And what's that way going to be?
 
 This $\iota$, the inclusion: we have to put $R$ in $F$. \inlinemetanote{writes \qt{We have to put $R$ in $F$}} This is by $\iota$. Normally people don't even write it, but if I have an element of $R$, we have to put it into $F$. That means we have to assign it an equivalence class in this set. What are we going to do? Yeah?
 \end{speech}
@@ -1102,7 +1102,7 @@ The equivalence class of $(r, 1)$.
 \end{student}
 
 \begin{speech}[00:53:15 - 00:54:22]
-Yeah, that's a good idea: $(r, 1)$. \inlinemetanote{writes $i(r) = (r, 1) \in S_{\equiv}$} It has some advantages: $1 \neq 0$, and an integral domain is never the zero ring (Recall: \cref{def:integral-domain}). So, this is legal: this is an element of $S$, and then we can take its equivalence class.
+Yeah, that's a good idea: $(r, 1)$. \inlinemetanote{writes: $i(r) = (r, 1) \in S_{\equiv}$} It has some advantages: $1 \neq 0$, and an integral domain is never the zero ring (Recall: \cref{def:integral-domain}). So, this is legal: this is an element of $S$, and then we can take its equivalence class.
 
 I'm not going to write equivalence classes because it becomes too complicated, but you could formally take its equivalence class like this. If you start doing this, you commit to writing things like $[(3, 4)]$ for rational numbers, and no one ever does that. We don't want to do it, but this would be kind of more logically correct.
 \end{speech}
@@ -1118,7 +1118,7 @@ The set $S$, is this all of $R \times R$ or is it just any subset of $R \times R
 \end{student}
 
 \begin{speech}[00:55:00 - 00:55:28]
-No, the set $S$ was very precisely defined on a previous board: $S$ is equal to those elements in $R \times R$ where $y \neq 0$. \inlinemetanote{writes $S = \{ (x, y) \mid x, y \in R, \ y \neq 0 \}$} That's $S$.
+No, the set $S$ was very precisely defined on a previous board: $S$ is equal to those elements in $R \times R$ where $y \neq 0$. \inlinemetanote{writes: $S = \{ (x, y) \mid x, y \in R, \ y \neq 0 \}$} That's $S$.
 
 And this is an element of $S$ because $1 \neq 0$; and $1 \neq 0$ because $R$ is an integral domain, and an integral domain is by definition not the zero ring. That's the full logic --- that's the full logical certificate if you want it.
 \end{speech}
@@ -1130,7 +1130,7 @@ This means: when are $(r, 1)$ and $(\hat{r}, 1)$ in the same equivalence class o
 
 How do we check this? The answer is that these are in the same equivalence class if and only if that equivalence class identity holds --- that one. \inlinemetanote{points at $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$}
 
-It's if and only if $r \cdot 1 = \hat{r} \cdot 1$, \inlinemetanote{writes $\iff r \cdot 1 = \hat{r} \cdot 1$} which is if and only if $r = \hat{r}$, \inlinemetanote{writes $\iff r = \hat{r}$} which is great for us because it shows that this is an injection. \inlinemetanote{places a checkmark}
+It's if and only if $r \cdot 1 = \hat{r} \cdot 1$, \inlinemetanote{writes: $\iff r \cdot 1 = \hat{r} \cdot 1$} which is if and only if $r = \hat{r}$, \inlinemetanote{writes: $\iff r = \hat{r}$} which is great for us because it shows that this is an injection. \inlinemetanote{places a checkmark}
 
 There's a lot of things to do in this construction --- it's like a big house: you have to build all the pieces of it. So, now we not only have defined $F$, we've defined $\iota$, and we've put $R$ inside $F$, and this placement is injective. Okay?
 \end{speech}
@@ -1176,14 +1176,14 @@ For the pair $(r, 1)$ to belong to $S$, the denominator must satisfy $1 \ne 0$. 
 \subsection{Definition of Zero, One, and Addition on \texorpdfstring{$F$}{F}}
 
 \begin{speech}[00:57:05 - 00:58:38]
-This is just the beginning of the story. $R$ already is born with all of the data: $R$, $+$, multiplication, $0, 1$. \inlinemetanote{writes $R, +, \cdot, 0, 1$} We need to define all the structures on $F$ and show this is a homomorphism also. \inlinemetanote{draws arrow to $F$ and gestures}
+This is just the beginning of the story. $R$ already is born with all of the data: $R$, $+$, multiplication, $0, 1$. \inlinemetanote{writes: $R, +, \cdot, 0, 1$} We need to define all the structures on $F$ and show this is a homomorphism also. \inlinemetanote{draws arrow to $F$ and gestures}
 
 \inlinemetanote{The lecturer pushes the upper chalkboard up to reveal the lower board.}
 We have to start talking about all the structures for $F$ as a field. And for many of them we don't have any choice: the zero in $F$ has to correspond to the zero in $R$ for it to be a homomorphism. So, the zero in $F$ has to be $(0, 1)$, \inlinemetanote{writes \qt{Zero in $F$ has to be $(0, 1)$}} okay? Also, the unit in $F$ has to be $(1, 1)$, \inlinemetanote{writes \qt{unit in $F$ has to be $(1, 1)$}} because it has to correspond to the unit in $R$ by the rule of getting $R$ to $F$. We don't really have any choice in this matter.
 
 But we have to define $+$ and multiplication on $F$. \inlinemetanote{writes \qt{We have to define $+$, $\cdot$ on $F$}} That's something that we have to construct. We have to define it, check it's compatible with $R$, check it satisfies the field axioms --- it's a lot of long and boring work, but the interesting part to start with is we have to define it.
 
-If we have an element here, $(x_1, y_1) \in S$, \inlinemetanote{writes $(x_1, y_1) \in S$} and we have another one, $(x_2, y_2) \in S$, \inlinemetanote{writes $(x_2, y_2) \in S$} then we have to define this operation. This is up to us: we must define $(x_1, y_1) + (x_2, y_2) = \dots$ \inlinemetanote{writes $(x_1, y_1) + (x_2, y_2) =$} \inlinemetanote{writes \qt{we must define}}
+If we have an element here, $(x_1, y_1) \in S$, \inlinemetanote{writes: $(x_1, y_1) \in S$} and we have another one, $(x_2, y_2) \in S$, \inlinemetanote{writes: $(x_2, y_2) \in S$} then we have to define this operation. This is up to us: we must define $(x_1, y_1) + (x_2, y_2) = \dots$ \inlinemetanote{writes: $(x_1, y_1) + (x_2, y_2) =$} \inlinemetanote{writes \qt{we must define}}
 
 That's the problem. How are we going to define this? What do you think? Tell me.
 \end{speech}
@@ -1193,9 +1193,9 @@ $x_1 y_2 + x_2 y_1$ over $y_1 y_2$.
 \end{student}
 
 \begin{speech}[00:58:39 - 01:00:40]
-Yeah, so, we just use the standard definition for how you add fractions: this one times that one plus this one times that one over $y_1 y_2$, okay? \inlinemetanote{writes $= (x_1 y_2 + x_2 y_1, y_1 y_2)$}
+Yeah, so, we just use the standard definition for how you add fractions: this one times that one plus this one times that one over $y_1 y_2$, okay? \inlinemetanote{writes: $= (x_1 y_2 + x_2 y_1, y_1 y_2)$}
 
-Meaning you pretend that it's this problem, which it kind of is: \inlinemetanote{writes $\frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}$} $\frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}$. You know how to do this. I hope I got the subscripts right; you should tell me if I get the subscripts wrong.
+Meaning you pretend that it's this problem, which it kind of is: \inlinemetanote{writes: $\frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}$} $\frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}$. You know how to do this. I hope I got the subscripts right; you should tell me if I get the subscripts wrong.
 
 This is the definition --- that's just it, nothing more, nothing less.
 
@@ -1273,19 +1273,19 @@ We verify two essential requirements:
 \begin{speech}[01:02:25 - 01:03:40]
 Also you have to do it with multiplication. \inlinemetanote{The lecturer washes the chalkboard to the left and writes} Multiplication is a bit easier --- that was the most painful one.
 
-Also define multiplication, \inlinemetanote{writes \qt{Also define $\cdot$}} which is $(x_1, y_1) \cdot (x_2, y_2)$ \inlinemetanote{writes $(x_1, y_1) \cdot (x_2, y_2) \stackrel{\text{def}}{=}$} --- it will surprise no one that this is $(x_1 x_2, y_1 y_2)$, okay? \inlinemetanote{writes $(x_1 x_2, y_1 y_2)$} That's the definition.
+Also define multiplication, \inlinemetanote{writes \qt{Also define $\cdot$}} which is $(x_1, y_1) \cdot (x_2, y_2)$ \inlinemetanote{writes: $(x_1, y_1) \cdot (x_2, y_2) \stackrel{\text{def}}{=}$} --- it will surprise no one that this is $(x_1 x_2, y_1 y_2)$, okay? \inlinemetanote{writes: $(x_1 x_2, y_1 y_2)$} That's the definition.
 
 And again, next is plus check \inlinemetanote{writes \qt{+ check}} of compatibility with the equivalence classes. \inlinemetanote{writes \qt{compatibility with $\equiv$}} And this check is easy, so, I'll do it since it's easy.
 \end{speech}
 
 \begin{speech}[01:03:40 - 01:05:45]
-Suppose we have here $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$ \inlinemetanote{writes $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$} and $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$. \inlinemetanote{writes $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$} That's the input, right?
+Suppose we have here $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$ \inlinemetanote{writes: $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$} and $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$. \inlinemetanote{writes: $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$} That's the input, right?
 
-Then we must show \inlinemetanote{writes \qt{We must show}} that $(x_1 x_2, y_1 y_2)$ is in the same equivalence class as if we chose the other representatives: $(\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$, \inlinemetanote{writes $(x_1 x_2, y_1 y_2) \equiv (\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$} okay? That's what we have to do.
+Then we must show \inlinemetanote{writes \qt{We must show}} that $(x_1 x_2, y_1 y_2)$ is in the same equivalence class as if we chose the other representatives: $(\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$, \inlinemetanote{writes: $(x_1 x_2, y_1 y_2) \equiv (\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$} okay? That's what we have to do.
 
-What we know is this: that equation that this is in the same equivalence class is $x_1 \hat{y}_1 = \hat{x}_1 y_1$, \inlinemetanote{writes $x_1 \hat{y}_1 = \hat{x}_1 y_1$} and this equation is $x_2 \hat{y}_2 = \hat{x}_2 y_2$ \inlinemetanote{writes $x_2 \hat{y}_2 = \hat{x}_2 y_2$} --- all very confusing.
+What we know is this: that equation that this is in the same equivalence class is $x_1 \hat{y}_1 = \hat{x}_1 y_1$, \inlinemetanote{writes: $x_1 \hat{y}_1 = \hat{x}_1 y_1$} and this equation is $x_2 \hat{y}_2 = \hat{x}_2 y_2$ \inlinemetanote{writes: $x_2 \hat{y}_2 = \hat{x}_2 y_2$} --- all very confusing.
 
-And now we just multiply them together! These are what we know, and having these two equations, we can multiply them all together, and we get $x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$. \inlinemetanote{writes $x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$} Now there's subscripts and hats.
+And now we just multiply them together! These are what we know, and having these two equations, we can multiply them all together, and we get $x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$. \inlinemetanote{writes: $x_1 x_2 \hat{y}_1 \hat{y}_2 = \hat{x}_1 \hat{x}_2 y_1 y_2$} Now there's subscripts and hats.
 
 And that equation is exactly the certificate that these things are in the same equivalence class, okay? \inlinemetanote{draws double arrow $\iff$ and checkmark} This implies that.
 
@@ -1297,7 +1297,7 @@ So, this shows that if I pick different equivalence classes here, the result doe
 \begin{speech}[01:05:45 - 01:07:25]
 Then you have to check that these definitions are compatible with $R$. They're just all defined that way, meaning we have to check \inlinemetanote{writes \qt{Check $\iota \colon R \to F$ is a hom of rings}} that this $\iota \colon R \to F$ is a homomorphism of rings.
 
-Again, there's really nothing to this: it means that if you take $r + \hat{r}$ \inlinemetanote{writes $r + \hat{r} \stackrel{\iota}{\mapsto} (r + \hat{r}, 1)$} and you go by $\iota$, you get $(r + \hat{r}, 1)$. Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, \inlinemetanote{writes $= (r, 1) + (\hat{r}, 1)$} and that's the same by the definition that we used there. But you have to check it.
+Again, there's really nothing to this: it means that if you take $r + \hat{r}$ \inlinemetanote{writes: $r + \hat{r} \stackrel{\iota}{\mapsto} (r + \hat{r}, 1)$} and you go by $\iota$, you get $(r + \hat{r}, 1)$. Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, \inlinemetanote{writes: $= (r, 1) + (\hat{r}, 1)$} and that's the same by the definition that we used there. But you have to check it.
 
 You also have to check it for multiplication. So, it's just a bunch of checking. By here, all the cards are played, and you just have to check everything.
 \end{speech}
@@ -1407,11 +1407,11 @@ And that's the construction. We're done with this construction.
 \begin{speech}[01:08:00 - 01:09:44]
 The construction I just summarize here: \inlinemetanote{writes \qt{Construction}} we start with $R$ is an integral domain, \inlinemetanote{writes \qt{Start with $R$ int. domain}} and then we construct explicitly --- that's as explicit a math construction as you get. You just take $R$, and you make some sets and equivalence classes and relations; it's totally explicit. Construct this $F$, which is the field of fractions. \inlinemetanote{writes \qt{Construct $F = \text{field of fractions}$}}
 
-And $R$ sits inside $F$ by this map: $r$ goes to $(r, 1)$. \inlinemetanote{writes $R \hookrightarrow F$, $r \mapsto (r, 1)$}
+And $R$ sits inside $F$ by this map: $r$ goes to $(r, 1)$. \inlinemetanote{writes: $R \hookrightarrow F$, $r \mapsto (r, 1)$}
 
-When you get used to it, the way an algebraist always thinks about this is: you have elements in $R$, \inlinemetanote{writes $r \in R$} and the elements of $F$ are just $r$ over $s$. That's the element of $F$; you just view them as kind of fractions in $R$. \inlinemetanote{writes $\frac{r}{s} \in F$}
+When you get used to it, the way an algebraist always thinks about this is: you have elements in $R$, \inlinemetanote{writes: $r \in R$} and the elements of $F$ are just $r$ over $s$. That's the element of $F$; you just view them as kind of fractions in $R$. \inlinemetanote{writes: $\frac{r}{s} \in F$}
 
-This is a perfectly reasonable way to think about it. In our language, when someone writes this, what they really mean is the equivalence class of $(r, s)$ in this set $S$. That's what it actually means. \inlinemetanote{writes $(r, s) \in S$}
+This is a perfectly reasonable way to think about it. In our language, when someone writes this, what they really mean is the equivalence class of $(r, s)$ in this set $S$. That's what it actually means. \inlinemetanote{writes: $(r, s) \in S$}
 
 And it's only legal if the bottom one is not zero, which you're not allowed to write anyway if the bottom one's not zero. And then you can add fractions, multiply fractions, just as you would normally do, and they exactly correspond to the rules that were prescribed here. So, that's the natural way to think about it.
 
@@ -1456,11 +1456,11 @@ Under this notation, the field operations on $\operatorname{Frac}(R)$ take the s
 \section{Examples of Fields of Fractions}
 
 \begin{speech}[01:09:44 - 01:10:46]
-If I take $\mathbb{Z}$, \inlinemetanote{writes $\mathbb{Z} \to \text{What is field of fractions?}$} we can ask: what is the field of fractions?
+If I take $\mathbb{Z}$, \inlinemetanote{writes: $\mathbb{Z} \to \text{What is field of fractions?}$} we can ask: what is the field of fractions?
 
-The answer is going to be $\mathbb{Q}$, \inlinemetanote{writes $\mathbb{Q}$} which means that if you start with $\mathbb{Z}$ and you do this crazy construction, you get the rational numbers. I hope that's clear by now. All right?
+The answer is going to be $\mathbb{Q}$, \inlinemetanote{writes: $\mathbb{Q}$} which means that if you start with $\mathbb{Z}$ and you do this crazy construction, you get the rational numbers. I hope that's clear by now. All right?
 
-What happens if I start with the ring of Gaussian integers? What is the field of fractions? \inlinemetanote{writes $\mathbb{Z}[i] \to \text{What is the field of fractions?}$}
+What happens if I start with the ring of Gaussian integers? What is the field of fractions? \inlinemetanote{writes: $\mathbb{Z}[i] \to \text{What is the field of fractions?}$}
 
 That's a strange question, because I've just explained what the field of fractions is: you take the Gaussian integers, you do this construction, that's the field of fractions. When I say \qt{what is the field of fractions?}, what the question is actually asking is: what's another way of thinking about the answer?
 
@@ -1472,7 +1472,7 @@ $\mathbb{Q}$ adjoined $i$.
 \end{student}
 
 \begin{speech}[01:10:46 - 01:11:48]
-Yeah, so, the answer is $\mathbb{Q}(i)$, \inlinemetanote{writes $\mathbb{Q}(i) = \{a + bi \mid a, b \in \mathbb{Q}\}$} which is equal to the set $a + bi$ where $a$ and $b$ are in $\mathbb{Q}$.
+Yeah, so, the answer is $\mathbb{Q}(i)$, \inlinemetanote{writes: $\mathbb{Q}(i) = \{a + bi \mid a, b \in \mathbb{Q}\}$} which is equal to the set $a + bi$ where $a$ and $b$ are in $\mathbb{Q}$.
 
 It's correct, but to check this is correct, you have to do a bunch of things: one is you have to show this is a field --- you can invert --- and then you have to show that this sits inside, and everything here is a ratio of that. It's all true. But that's the answer here, and requires some checking.
 
@@ -1482,9 +1482,9 @@ All right, this is correct.
 \subsection{Fields of Fractions of Intermediate Rings and Fields}
 
 \begin{speech}[01:11:48 - 01:12:32]
-What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes $\mathbb{Z} \subset \mathbb{Z}[\frac{1}{3}] \subset \mathbb{Q}$}
+What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Z}[\frac{1}{3}] \subset \mathbb{Q}$}
 
-This ring is the set $a / 3^b$, where $a \in \mathbb{Z}$ and $b \ge 0$, right? \inlinemetanote{writes $\{a / 3^b \mid a \in \mathbb{Z}, b \ge 0\}$}
+This ring is the set $a / 3^b$, where $a \in \mathbb{Z}$ and $b \ge 0$, right? \inlinemetanote{writes: $\{a / 3^b \mid a \in \mathbb{Z}, b \ge 0\}$}
 
 We discussed this last week (Recall: \cref{ex:dyadic-rationals-subring}): the subrings that sit in between. I hope you remember. Do you remember?
 
@@ -1498,7 +1498,7 @@ $\mathbb{Q}$.
 \end{student}
 
 \begin{speech}[01:12:33 - 01:13:22]
-Also $\mathbb{Q}$. \inlinemetanote{writes $\mathbb{Q}$}
+Also $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Q}$}
 
 Nothing says it can't be $\mathbb{Q}$. It certainly sits inside $\mathbb{Q}$, and everything in $\mathbb{Q}$ is a ratio of numbers here --- it's already a ratio of numbers here. So, it's just $\mathbb{Q}$! If you go through this definition, you get $\mathbb{Q}$.
 
@@ -1645,7 +1645,7 @@ The next topic this week is about polynomial rings. These are really fun. \inlin
 
 The idea is: if I take $R$ as a ring \inlinemetanote{writes \qt{$R$ is a ring}} --- and now no assumptions, meaning not an integral domain, so, this just means for us commutative ring with unit: \inlinemetanote{writes \qt{(comm. ring with unit)}} that's our basic ring. I would say a ring with no assumptions: commutative ring with unit (Recall: \cref{rem:ring-convention}). In particular, everything today so far, $R$ was an integral domain; now I don't care if it's an integral domain, just a commutative ring with unit.
 
-Then I make here a new ring: $R[x]$. \inlinemetanote{writes $R[x]$} $x$ is the variable, or sometimes it's called indeterminate \inlinemetanote{writes \qt{the indeterminate}} --- that's kind of a fancy name, but it's just $x$, right? \inlinemetanote{writes \qt{or the variable}}
+Then I make here a new ring: $R[x]$. \inlinemetanote{writes: $R[x]$} $x$ is the variable, or sometimes it's called indeterminate \inlinemetanote{writes \qt{the indeterminate}} --- that's kind of a fancy name, but it's just $x$, right? \inlinemetanote{writes \qt{or the variable}}
 
 The name of this ring is the polynomial ring with coefficients in $R$. \inlinemetanote{writes \qt{(Poly. ring with the coeff's in $R$)}}
 
@@ -1657,9 +1657,9 @@ Or if you want to be even more precise: the polynomial ring in one variable with
 \begin{speech}[01:18:05 - 01:19:08]
 What is this? Well, I have to tell you what it is as a set. So, the first thing is: what's the set? \inlinemetanote{writes \qt{What is the set?}}
 
-Here the definition is: it's the set of polynomials in $x$ with coefficients in $R$. Polynomials look like this: $a_0 + a_1 x + a_2 x^2 + \dots$ \inlinemetanote{writes $R[x] = \{a_0 + a_1 x + a_2 x^2 + \dots\}$}
+Here the definition is: it's the set of polynomials in $x$ with coefficients in $R$. Polynomials look like this: $a_0 + a_1 x + a_2 x^2 + \dots$ \inlinemetanote{writes: $R[x] = \{a_0 + a_1 x + a_2 x^2 + \dots\}$}
 
-It's these symbols, and one of the properties of a polynomial is that it's not infinite: a polynomial is finite. That's part of the definition always in mathematics of a polynomial. That means we stop somewhere: some $n$, $a_n$. So, the elements of this ring are such symbols --- just formal combinations of $a_0, \dots, a_n$, where these $a_i$'s are in $R$, okay? \inlinemetanote{writes $+ a_n x^n \mid a_i \in R, n \in \mathbb{Z}_{\ge 0}\}$}
+It's these symbols, and one of the properties of a polynomial is that it's not infinite: a polynomial is finite. That's part of the definition always in mathematics of a polynomial. That means we stop somewhere: some $n$, $a_n$. So, the elements of this ring are such symbols --- just formal combinations of $a_0, \dots, a_n$, where these $a_i$'s are in $R$, okay? \inlinemetanote{writes: $+ a_n x^n \mid a_i \in R, n \in \mathbb{Z}_{\ge 0}\}$}
 
 And possibly different $n$'s, and this $n$ is some integer greater than or equal to zero.
 \end{speech}
@@ -1667,13 +1667,13 @@ And possibly different $n$'s, and this $n$ is some integer greater than or equal
 \subsection{Examples and Constant Polynomials}
 
 \begin{speech}[01:19:08 - 01:20:48]
-If I have $\mathbb{Z}[x]$, \inlinemetanote{writes $\mathbb{Z}[x] \ni f(x)$} the elements in here are sometimes written $f(x)$, because we like to write polynomials with the variable. It could be, for example, $f(x) = 3 + 2x + 15x^2 + 345x^{200}$. \inlinemetanote{writes $= 3 + 2x + 15x^2 + 345x^{200}$} This is a totally legitimate element of it. Other times you'll see people just write this as just $f$, and just suppress the variable. \inlinemetanote{writes $\text{or } f$} Those are two different ways you can write polynomials.
+If I have $\mathbb{Z}[x]$, \inlinemetanote{writes: $\mathbb{Z}[x] \ni f(x)$} the elements in here are sometimes written $f(x)$, because we like to write polynomials with the variable. It could be, for example, $f(x) = 3 + 2x + 15x^2 + 345x^{200}$. \inlinemetanote{writes: $= 3 + 2x + 15x^2 + 345x^{200}$} This is a totally legitimate element of it. Other times you'll see people just write this as just $f$, and just suppress the variable. \inlinemetanote{writes: $\text{or } f$} Those are two different ways you can write polynomials.
 
-For $R[x]$, it's just the same thing: you just write an element here, $f(x)$ \inlinemetanote{writes $R[x] \ni f(x) = a_0 + a_1 x + \dots + a_n x^n$} --- you pick some elements of $R$, some finite number of elements of $R$ as the coefficients, all the way to $a_n$, and then you just put the $x$'s here.
+For $R[x]$, it's just the same thing: you just write an element here, $f(x)$ \inlinemetanote{writes: $R[x] \ni f(x) = a_0 + a_1 x + \dots + a_n x^n$} --- you pick some elements of $R$, some finite number of elements of $R$ as the coefficients, all the way to $a_n$, and then you just put the $x$'s here.
 
 $x$ is a formal variable, so, $x$ is just in some sense a placeholder. Those are the elements of $R[x]$.
 
-And $R[x]$ has a confusing element, just like the integers; there's a confusing polynomial: the constant polynomial. If I put here $17$, \inlinemetanote{writes $17 \in \mathbb{Z}[x]$} that is also here. That's the polynomial that only has a constant term: it just happens that there's no $x$. It can happen: there's no $x$ in that. So, it's weird to write this polynomial as a function of $x$, but it is a function of $x$ --- it's a constant function.
+And $R[x]$ has a confusing element, just like the integers; there's a confusing polynomial: the constant polynomial. If I put here $17$, \inlinemetanote{writes: $17 \in \mathbb{Z}[x]$} that is also here. That's the polynomial that only has a constant term: it just happens that there's no $x$. It can happen: there's no $x$ in that. So, it's weird to write this polynomial as a function of $x$, but it is a function of $x$ --- it's a constant function.
 
 In this ring there are also the constant polynomials --- the ones with no $x$.
 \end{speech}
@@ -1724,9 +1724,9 @@ The lecturer pushes the upper chalkboard upward and begins washing the lower cha
 If I were to be dishonest and formally correct, the way you define these polynomials is the following:
 
 \inlinemetanote{The lecturer washes and dries the board}
-You say a polynomial --- an element of $R[x]$ \inlinemetanote{writes \qt{An element of $R[x]$ is a tuple of elements of $R$}} --- is a tuple of elements of $R$: $(a_0, a_1, a_2, \dots)$, \inlinemetanote{writes $(a_0, a_1, a_2, \dots)$} an infinite tuple such that there exists some big $N$ so that for all $m > N$, the element in this tuple is zero, okay? \inlinemetanote{writes \qt{and that $\exists N \ \forall m > N, \ a_m = 0$}}
+You say a polynomial --- an element of $R[x]$ \inlinemetanote{writes \qt{An element of $R[x]$ is a tuple of elements of $R$}} --- is a tuple of elements of $R$: $(a_0, a_1, a_2, \dots)$, \inlinemetanote{writes: $(a_0, a_1, a_2, \dots)$} an infinite tuple such that there exists some big $N$ so that for all $m > N$, the element in this tuple is zero, okay? \inlinemetanote{writes \qt{and that $\exists N \ \forall m > N, \ a_m = 0$}}
 
-That's a formal definition of a polynomial in one variable, where I just give you the coefficients. The coefficients are $a_0, a_1, a_2, \dots$ --- they're all elements of $R$. \inlinemetanote{writes $a_i \in R$}
+That's a formal definition of a polynomial in one variable, where I just give you the coefficients. The coefficients are $a_0, a_1, a_2, \dots$ --- they're all elements of $R$. \inlinemetanote{writes: $a_i \in R$}
 
 I just give you the coefficients, and they could be lots and lots of them --- any finite number --- but eventually this sequence of coefficients is all zero. That's the formal definition of a polynomial.
 
@@ -1738,7 +1738,7 @@ That's the set. I hope there's no confusion about the set.
 \subsection{The Indeterminate and the Ring Operations on \texorpdfstring{$R[x]$}{R[x]}}
 
 \begin{speech}[01:23:58 - 01:24:24]
-In this abstract way, what is the variable $x$? \inlinemetanote{writes $x = \dots$}
+In this abstract way, what is the variable $x$? \inlinemetanote{writes: $x = \dots$}
 
 You have five minutes to figure it out.
 
@@ -1750,13 +1750,13 @@ $(0, 1, 0, \dots)$
 \end{student}
 
 \begin{speech}[01:24:27 - 01:25:20]
-Yeah, so, $x$ is this: \inlinemetanote{writes $x = (0, 1, 0, \dots)$} zero, one, and then all zeros. That's $x$ if you think about it this way, okay?
+Yeah, so, $x$ is this: \inlinemetanote{writes: $x = (0, 1, 0, \dots)$} zero, one, and then all zeros. That's $x$ if you think about it this way, okay?
 
-That's the set. Once you agree what the set is --- and I gave you two ways to think about it: one way, which is a very simple way; this way is more formally correct --- I need to give you the addition rule, the multiplication rule, zero, and one. \inlinemetanote{writes $R[x], +, \cdot, 0, 1$}
+That's the set. Once you agree what the set is --- and I gave you two ways to think about it: one way, which is a very simple way; this way is more formally correct --- I need to give you the addition rule, the multiplication rule, zero, and one. \inlinemetanote{writes: $R[x], +, \cdot, 0, 1$}
 
-Zero is just the zero polynomial: in my case, just the polynomial zero. In this case, you have to write an infinite number of zeros, which takes a long time. \inlinemetanote{writes $0$ under $0$, and $(0, 0, \dots)$}
+Zero is just the zero polynomial: in my case, just the polynomial zero. In this case, you have to write an infinite number of zeros, which takes a long time. \inlinemetanote{writes \qt{$0$} under $0$, and $(0, 0, \dots)$}
 
-And one is just the constant one polynomial. Here it's the $(1, 0, 0, \dots)$ polynomial. \inlinemetanote{writes $1$ and $(1, 0, \dots)$} Yeah?
+And one is just the constant one polynomial. Here it's the $(1, 0, 0, \dots)$ polynomial. \inlinemetanote{writes \qt{$1$} and \qt{$(1, 0, \dots)$}} Yeah?
 \end{speech}
 
 \begin{student}[Student Question]
@@ -1847,7 +1847,7 @@ Componentwise addition.
 \begin{speech}[01:26:30 - 01:27:08]
 Componentwise addition. Which is also how you add polynomials there: componentwise addition.
 
-And it will be the case there that if I take the constant polynomial and I take this polynomial and I add them, \inlinemetanote{writes $a_0$, $x$, $a_0 + x$} I get the thing I call this, which is also kind of nice. All right?
+And it will be the case there that if I take the constant polynomial and I take this polynomial and I add them, \inlinemetanote{writes \qt{$a_0$}, \qt{$x$}, \qt{$a_0 + x$}} I get the thing I call this, which is also kind of nice. All right?
 
 Addition is easy. Then they have to define multiplication. Multiplication is more of a pain. And if you think about it there, you already know how to multiply polynomials: you have to do this thing where you distribute and whatever --- you know how to do it.
 
@@ -1857,7 +1857,7 @@ How do you define polynomial multiplication here? Let's try to do that.
 \subsection{Multiplication in \texorpdfstring{$R[x]$}{R[x]} and the Cauchy Convolution}
 
 \begin{speech}[01:27:08 - 01:27:43]
-If I use this list of coefficients, here's my first polynomial, $f$, \inlinemetanote{writes $f = (a_0, a_1, a_2, \dots)$} and my second polynomial, $g$. \inlinemetanote{writes $g = (b_0, b_1, b_2, \dots)$} Then I have to define this polynomial, which is $f \times g$. \inlinemetanote{writes $fg = ($}
+If I use this list of coefficients, here's my first polynomial, $f$, \inlinemetanote{writes: $f = (a_0, a_1, a_2, \dots)$} and my second polynomial, $g$. \inlinemetanote{writes: $g = (b_0, b_1, b_2, \dots)$} Then I have to define this polynomial, which is $f \times g$. \inlinemetanote{writes: $fg = ($}
 
 How do I do it? What's this coefficient going to be? What do you think? Yeah?
 \end{speech}
@@ -1867,9 +1867,9 @@ $a_0 b_0$.
 \end{student}
 
 \begin{speech}[01:27:44 - 01:28:55]
-Yeah, because it's just the constant... The secret, the way to do this is you write this thing out... This is a definition, but the way to understand this definition is you write this out as a polynomial: \inlinemetanote{writes $a_0 + a_1 x + \dots$} that's the easy way to think about it. And so on: write this as a polynomial, \inlinemetanote{writes $b_0 + b_1 x + \dots$} and you do polynomial multiplication, and the constant term is that: $a_0 b_0$. \inlinemetanote{writes $a_0 b_0$}
+Yeah, because it's just the constant... The secret, the way to do this is you write this thing out... This is a definition, but the way to understand this definition is you write this out as a polynomial: \inlinemetanote{writes: $a_0 + a_1 x + \dots$} that's the easy way to think about it. And so on: write this as a polynomial, \inlinemetanote{writes: $b_0 + b_1 x + \dots$} and you do polynomial multiplication, and the constant term is that: $a_0 b_0$. \inlinemetanote{writes: $a_0 b_0$}
 
-What is this term? Well, it's going to be $a_1 b_0 + a_0 b_1$. \inlinemetanote{writes $a_1 b_0 + a_0 b_1$} The second term is going to be $a_2 b_0 + a_1 b_1 + a_0 b_2$. \inlinemetanote{writes $+ a_2 b_0 + a_1 b_1 + a_0 b_2, \dots$}
+What is this term? Well, it's going to be $a_1 b_0 + a_0 b_1$. \inlinemetanote{writes: $a_1 b_0 + a_0 b_1$} The second term is going to be $a_2 b_0 + a_1 b_1 + a_0 b_2$. \inlinemetanote{writes: $+ a_2 b_0 + a_1 b_1 + a_0 b_2, \dots$}
 
 Formally, this is the definition of polynomial multiplication. Is that clear?
 \end{speech}

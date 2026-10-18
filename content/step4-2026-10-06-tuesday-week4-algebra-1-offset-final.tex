@@ -133,11 +133,11 @@ This lecture explores fundamental algebraic ring constructions, bridging polynom
 \section{Review: Polynomial Rings and Power Series}
 
 \begin{speech}[00:00:00 - 00:01:55]
-Okay, so, we start, and I wanted to start with some things from last week. \inlinemetanote{walks to the board and writes on the blackboard} If $R$ is a ring, we had defined this polynomial ring in one variable, and also the power series ring. \inlinemetanote{writes $R \to R[x], R[[x]]$} And just some comments: the polynomial ring is a subring of the power series ring. \inlinemetanote{writes $R[x] \subset R[[x]]$} That's important to note, because every polynomial you can view as a finite power series. 
+Okay, so, we start, and I wanted to start with some things from last week. \inlinemetanote{walks to the board and writes on the blackboard} If $R$ is a ring, we had defined this polynomial ring in one variable, and also the power series ring. \inlinemetanote{writes: $R \to R[x], R[[x]]$} And just some comments: the polynomial ring is a subring of the power series ring. \inlinemetanote{writes: $R[x] \subset R[[x]]$} That's important to note, because every polynomial you can view as a finite power series. 
 
-So, this is one comment. The second comment is that --- and people were asking me after class ---: what happens if I have two variables or three variables? \inlinemetanote{writes $\to R[x,y]$} There's two ways to approach this. One is you could just define this in the same way as we define this, \inlinemetanote{writes $\to \text{defined}$} which is: it's the set of finite sums $a_{i,j} x^i y^j$, where these indices go over some finite set, and the coefficients are in $R$, \inlinemetanote{writes $\{ \sum_{0 \le i, j \in \mathbb{N}} a_{i,j} x^i y^j \mid a_{i,j} \in R \}$} and it's just the same definition as before. So, that's one way to do it. I hope that's clear --- it's just multiplying with more polynomials. 
+So, this is one comment. The second comment is that --- and people were asking me after class ---: what happens if I have two variables or three variables? \inlinemetanote{writes: $\to R[x,y]$} There's two ways to approach this. One is you could just define this in the same way as we define this, \inlinemetanote{writes: $\to \text{defined}$} which is: it's the set of finite sums $a_{i,j} x^i y^j$, where these indices go over some finite set, and the coefficients are in $R$, \inlinemetanote{writes: $\{ \sum_{0 \le i, j \in \mathbb{N}} a_{i,j} x^i y^j \mid a_{i,j} \in R \}$} and it's just the same definition as before. So, that's one way to do it. I hope that's clear --- it's just multiplying with more polynomials. 
 
-But there's a more formal way, which is that $R$ is a ring, so then we've already defined this, that's where we add one variable, \inlinemetanote{writes $R \Rightarrow R[x]$} and so this is a ring, so we can also define this: this is a ring, and have one more variable. \inlinemetanote{writes $\Rightarrow R[x][y]$} And you could take this to be the definition of $R[x, y]$. \inlinemetanote{writes $= R[x,y]$} So, it's just: we add the variables one at a time, as this is a polynomial ring over the polynomial ring over $R$. 
+But there's a more formal way, which is that $R$ is a ring, so then we've already defined this, that's where we add one variable, \inlinemetanote{writes: $R \Rightarrow R[x]$} and so this is a ring, so we can also define this: this is a ring, and have one more variable. \inlinemetanote{writes: $\Rightarrow R[x][y]$} And you could take this to be the definition of $R[x, y]$. \inlinemetanote{writes: $= R[x,y]$} So, it's just: we add the variables one at a time, as this is a polynomial ring over the polynomial ring over $R$. 
 
 So, it's another way. And of course, if you have two different paths, then you have the burden of proving they're both the same, etc., and I leave this burden for you to carry, all right? So, and these are the same, maybe I'll just say that: \inlinemetanote{draws a double arrow between the two definitions and writes \qt{SAME}} same.
 \end{speech}
@@ -178,15 +178,15 @@ R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
 \subsection{The Binomial Formula in Commutative Rings}
 
 \begin{speech}[00:01:55 - 00:03:48]
-Okay, so, then there's some comments from essentially... Well, something you should know is if I have this polynomial ring in two variables, \inlinemetanote{writes $R[x,y]$ on the board} and I take $x + y$, that's in this polynomial ring of two variables. And I can raise it to the $n$, \inlinemetanote{writes $(x+y)^n =$} and this is something you know: this is this binomial expansion, or I don't know how it's called, binomial formula... \inlinemetanote{writes \qt{binomial expansion}}
+Okay, so, then there's some comments from essentially... Well, something you should know is if I have this polynomial ring in two variables, \inlinemetanote{writes \qt{$R[x,y]$} on the board} and I take $x + y$, that's in this polynomial ring of two variables. And I can raise it to the $n$, \inlinemetanote{writes: $(x+y)^n =$} and this is something you know: this is this binomial expansion, or I don't know how it's called, binomial formula... \inlinemetanote{writes \qt{binomial expansion}}
 
-This is equal to the sum --- so, this is from $a = 0$ to $n$ --- \inlinemetanote{writes $\sum_{a=0}^n$} of $x^{n-a} y^a \binom{n}{a}$. \inlinemetanote{writes $x^{n-a} y^a \binom{n}{a}$}
+This is equal to the sum --- so, this is from $a = 0$ to $n$ --- \inlinemetanote{writes: $\sum_{a=0}^n$} of $x^{n-a} y^a \binom{n}{a}$. \inlinemetanote{writes: $x^{n-a} y^a \binom{n}{a}$}
 
-Okay? That's the binomial formula. Are you familiar with this binomial formula? So, for example, $(x+y)^5$ \inlinemetanote{writes $(x+y)^5 =$} is equal to $1 x^5 + 5 x^4 y + 10 x^3 y^2 + 10 x^2 y^3 + 5 x y^4 + y^5$. \inlinemetanote{writes $x^5 + 5x^4 y + 10x^3 y^2 + 10x^2 y^3 + 5xy^4 + y^5$} I guess I should have done a smaller one. 
+Okay? That's the binomial formula. Are you familiar with this binomial formula? So, for example, $(x+y)^5$ \inlinemetanote{writes: $(x+y)^5 =$} is equal to $1 x^5 + 5 x^4 y + 10 x^3 y^2 + 10 x^2 y^3 + 5 x y^4 + y^5$. \inlinemetanote{writes: $x^5 + 5x^4 y + 10x^3 y^2 + 10x^2 y^3 + 5xy^4 + y^5$} I guess I should have done a smaller one. 
 
 Okay, so, that's an example. And this holds in every ring, because these elements $x$ and $y$ are here, and we've already discussed: these numbers make sense in any ring, they're just how you add up $1$ (Recall: \cref{def:canonical-map-z}). Is that clear? So, this formula holds in any ring. 
 
-And to prove it, it's just the same as by induction we do. If you wanted to prove this formula in any ring, you just write it out as $(x+y)(x+y)$ and use the distributive law, and you get $x^2$, and you regroup everything, and you get $xy + xy + y^2$, and that gives you the formula; and then you prove it by induction. \inlinemetanote{writes $(x+y)^2 = (x+y)(x+y) = x^2 + xy + xy + y^2$}
+And to prove it, it's just the same as by induction we do. If you wanted to prove this formula in any ring, you just write it out as $(x+y)(x+y)$ and use the distributive law, and you get $x^2$, and you regroup everything, and you get $xy + xy + y^2$, and that gives you the formula; and then you prove it by induction. \inlinemetanote{writes: $(x+y)^2 = (x+y)(x+y) = x^2 + xy + xy + y^2$}
 \end{speech}
 
 \begin{content}[The Binomial Expansion]
@@ -225,11 +225,11 @@ using Pascal's identity $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$ (\cref{
 \subsection{Characteristic \texorpdfstring{$p$}{p} and the Frobenius Identity}
 
 \begin{speech}[00:03:48 - 00:05:44]
-Okay, so, there's one comment here, which is kind of a fun comment. That holds in any ring, that binomial formula. But what happens if we take this ring $\mathbb{Z}/p\mathbb{Z}$, \inlinemetanote{writes $\mathbb{Z}/p\mathbb{Z}$ on the bottom blackboard} where $p$ is a prime? \inlinemetanote{writes \qt{prime} under it, with an arrow from the $p$} So, for example, and then in this ring, you could take this ring $(\mathbb{Z}/p\mathbb{Z})[x, y]$, and the fun thing to consider there is $(x+y)^p$. \inlinemetanote{writes $(x+y)^p$}
+Okay, so, there's one comment here, which is kind of a fun comment. That holds in any ring, that binomial formula. But what happens if we take this ring $\mathbb{Z}/p\mathbb{Z}$, \inlinemetanote{writes \qt{$\mathbb{Z}/p\mathbb{Z}$} on the bottom blackboard} where $p$ is a prime? \inlinemetanote{writes \qt{prime} under it, with an arrow from the $p$} So, for example, and then in this ring, you could take this ring $(\mathbb{Z}/p\mathbb{Z})[x, y]$, and the fun thing to consider there is $(x+y)^p$. \inlinemetanote{writes: $(x+y)^p$}
 
-So, that's an example. And so, if I take this formula in $\mathbb{Z}/p\mathbb{Z}$ --- $\mathbb{Z}/5\mathbb{Z}$ in this case, where it's the same exponent as here --- something kind of nice happens: all these internal coefficients here, they all have a $5$ in it, so they all go away. And this is true just in general. In $\mathbb{Z}/p\mathbb{Z}$, if you take $(x+y)^p$, you get this formula that you secretly wanted anyway, which is this: \inlinemetanote{writes $= x^p + y^p$} $x^p + y^p$. It's a simple formula.
+So, that's an example. And so, if I take this formula in $\mathbb{Z}/p\mathbb{Z}$ --- $\mathbb{Z}/5\mathbb{Z}$ in this case, where it's the same exponent as here --- something kind of nice happens: all these internal coefficients here, they all have a $5$ in it, so they all go away. And this is true just in general. In $\mathbb{Z}/p\mathbb{Z}$, if you take $(x+y)^p$, you get this formula that you secretly wanted anyway, which is this: \inlinemetanote{writes: $= x^p + y^p$} $x^p + y^p$. It's a simple formula.
 
-And the reason is because for all of the binomial coefficients, $\binom{p}{a}$, $p$ divides $\binom{p}{a}$ \inlinemetanote{writes $p \mid \binom{p}{a}$} when $a$ goes from $1$ to $p-1$. \inlinemetanote{writes when $1 \le a \le p-1$} All the internal coefficients, $p$ divides that. And why is that? It's because this binomial starts with a $p!$, \inlinemetanote{writes $\frac{p!}{a!(p-a)!}$} and there's no $p$'s here to cancel the $p$ in the $p!$, because these are all lesser numbers. Is that clear? 
+And the reason is because for all of the binomial coefficients, $\binom{p}{a}$, $p$ divides $\binom{p}{a}$ \inlinemetanote{writes: $p \mid \binom{p}{a}$} when $a$ goes from $1$ to $p-1$. \inlinemetanote{writes: when $1 \le a \le p-1$} All the internal coefficients, $p$ divides that. And why is that? It's because this binomial starts with a $p!$, \inlinemetanote{writes: $\frac{p!}{a!(p-a)!}$} and there's no $p$'s here to cancel the $p$ in the $p!$, because these are all lesser numbers. Is that clear? 
 
 So, you'll always have... if you look at the exponent being prime in this binomial theorem, all of the middle coefficients here will all have that prime in it. So, if I look at it in $\mathbb{Z}/p\mathbb{Z}$, I get this great formula where there's no... So, this is a well-known formula, it will come up. Okay. So, that's an aside about the binomial formula.
 \end{speech}
@@ -284,9 +284,9 @@ The proof of \cref{prop:frobenius-identity} only uses that $p \cdot 1 = 0$ in th
 \subsection{Polynomial Rings and Power Series Rings as Integral Domains}
 
 \begin{speech}[00:05:44 - 00:06:39]
-And then there were some definitions: if I take $R$ now to be an integral domain, \inlinemetanote{writes $R$ int.\ domain} we had defined here $R[x]$, that's polynomials in one variable, this is also an integral domain. \inlinemetanote{writes $R[x]$ also int. domain} We discussed that (Recall: the highest-term argument in \cref{thm:units-polynomial-ring-integral-domain}). You use the highest term, and if $R$ is an integral domain, when you multiply polynomials, the highest term lives, so it stays an integral domain. 
+And then there were some definitions: if I take $R$ now to be an integral domain, \inlinemetanote{writes: $R$ int.\ domain} we had defined here $R[x]$, that's polynomials in one variable, this is also an integral domain. \inlinemetanote{writes: $R[x]$ also int. domain} We discussed that (Recall: the highest-term argument in \cref{thm:units-polynomial-ring-integral-domain}). You use the highest term, and if $R$ is an integral domain, when you multiply polynomials, the highest term lives, so it stays an integral domain. 
 
-But what I didn't say is this is also an integral domain: $R[[x]]$. \inlinemetanote{writes $R[[x]]$ also int. domain} And one needs a different argument here, because power series don't have highest terms. And so, the answer is, well, what do you think the answer is? You can't use the highest term here, so what should you use?
+But what I didn't say is this is also an integral domain: $R[[x]]$. \inlinemetanote{writes: $R[[x]]$ also int. domain} And one needs a different argument here, because power series don't have highest terms. And so, the answer is, well, what do you think the answer is? You can't use the highest term here, so what should you use?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -336,9 +336,9 @@ Since $1 \neq 0$ in $R$, also $1 \neq 0$ in $R[x]$ and in $R[[x]]$; it remains t
 \begin{speech}[00:07:07 - 00:08:35]
 And the point I wanted to make here is that the main construction last week was the field of fractions (Recall: \cref{thm:field-of-fractions-summary}). \inlinemetanote{writes \qt{field of fractions} over an arrow} We'll have a different construction this week, but that was the field of fractions, and the important thing about a field of fractions: you can only build that on an integral domain. So, if I have an integral domain, I could take the field of fractions of that integral domain. That was a construction. 
 
-But I could also take the field of fractions of polynomials, because that's an integral domain, and that is called... well, the symbol for that is $R$ with parentheses, that's brackets: \inlinemetanote{writes $R(x)$} $R(x)$. That's the name of the field of fractions of the polynomial ring when $R$ is an integral domain. And it's called the field of rational functions. \inlinemetanote{writes \qt{field of rational functions}}
+But I could also take the field of fractions of polynomials, because that's an integral domain, and that is called... well, the symbol for that is $R$ with parentheses, that's brackets: \inlinemetanote{writes: $R(x)$} $R(x)$. That's the name of the field of fractions of the polynomial ring when $R$ is an integral domain. And it's called the field of rational functions. \inlinemetanote{writes \qt{field of rational functions}}
 
-So, maybe rational functions with coefficients in $R$. This is polynomials with coefficients in $R$, that's the field of rational functions. And you know how to think about this, because we've thought about the field of fractions: an element here in rational functions is a polynomial divided by another polynomial. So, both of these, $f$ and $g$, are polynomials, and of course $g$ is not allowed to be zero. \inlinemetanote{writes $R(x) \ni \frac{f(x)}{g(x)}$, $f, g \in R[x]$, $g \neq 0$} So, that's how to think about an element here, and you know, that's that. Okay.
+So, maybe rational functions with coefficients in $R$. This is polynomials with coefficients in $R$, that's the field of rational functions. And you know how to think about this, because we've thought about the field of fractions: an element here in rational functions is a polynomial divided by another polynomial. So, both of these, $f$ and $g$, are polynomials, and of course $g$ is not allowed to be zero. \inlinemetanote{writes: $R(x) \ni \frac{f(x)}{g(x)}$, $f, g \in R[x]$, $g \neq 0$} So, that's how to think about an element here, and you know, that's that. Okay.
 \end{speech}
 
 \begin{content}[The Field of Rational Functions]
@@ -353,11 +353,11 @@ R(x) := \operatorname{Frac}(R[x]) = \left\{ \frac{f(x)}{g(x)} \;\middle|\; f(x),
 \end{content}
 
 \begin{speech}[00:08:35 - 00:10:15]
-Now, power series are also an integral domain, so we can again consider the field of fractions, and the symbol for that is two parentheses: $R((x))$. \inlinemetanote{writes $R((x))$} All right? So, this is kind of universal math notation. There's the integral domain, you have the polynomial ring, power series, field of fractions, and this one has a special name. Does anyone know what the name of this thing is? It's called the field of Laurent series. \inlinemetanote{writes \qt{field of Laurent series}}
+Now, power series are also an integral domain, so we can again consider the field of fractions, and the symbol for that is two parentheses: $R((x))$. \inlinemetanote{writes: $R((x))$} All right? So, this is kind of universal math notation. There's the integral domain, you have the polynomial ring, power series, field of fractions, and this one has a special name. Does anyone know what the name of this thing is? It's called the field of Laurent series. \inlinemetanote{writes \qt{field of Laurent series}}
 
 Actually, I'm having some doubts about how to spell Laurent. Is it with an a? No, I think it's with an e. I'm not 100\% sure about that. 
 
-So, this is the field of Laurent series, and this will come up in your complex analysis classes for sure, but with a $\mathbb{C}$ here, and usually the argument is called $z$ in complex analysis. So, the field of Laurent series --- this is actually something... you could say we've already constructed the field of fractions, so why do I have to talk about it here? You could say this field of Laurent series we think about the same way as $f/g(x)$, where $f$ and $g$ are power series. \inlinemetanote{writes $R((x)) = \frac{f(x)}{g(x)}$, $f, g \in R[[x]], g \neq 0$} And this would be absolutely correct. That would be correct, and $g$ is not equal to zero. It's just there's a nicer way to think about it, and that has to do with the last thing I said yesterday... not yesterday, last week (Recall: \cref{thm:units-power-series-ring}).
+So, this is the field of Laurent series, and this will come up in your complex analysis classes for sure, but with a $\mathbb{C}$ here, and usually the argument is called $z$ in complex analysis. So, the field of Laurent series --- this is actually something... you could say we've already constructed the field of fractions, so why do I have to talk about it here? You could say this field of Laurent series we think about the same way as $f/g(x)$, where $f$ and $g$ are power series. \inlinemetanote{writes: $R((x)) = \frac{f(x)}{g(x)}$, $f, g \in R[[x]], g \neq 0$} And this would be absolutely correct. That would be correct, and $g$ is not equal to zero. It's just there's a nicer way to think about it, and that has to do with the last thing I said yesterday... not yesterday, last week (Recall: \cref{thm:units-power-series-ring}).
 \end{speech}
 
 \begin{content}[The Field of Fractions of Formal Power Series]
@@ -383,9 +383,9 @@ So, you won't go wrong if you think about it this way --- that's the definition,
 
 So, I can say this: \inlinemetanote{writes on the board: Laurent series in $x$} Laurent series in a variable $x$, this is a power series with --- and this is the crucial thing --- \inlinemetanote{writes \qt{is a power series with}} finitely many negative coefficients... \inlinemetanote{writes \qt{finitely many negative powers}} You can have as many positive coefficients, positive degree coefficients as you want, it's a power series, but only finitely many negative powers. So, that's the crucial thing for a Laurent series. 
 
-So, what is a power series? A power series might be like the power series for $e^x$, \inlinemetanote{writes $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots \in R[[x]]$} we've seen these also anyway. So, that's a power series; these are elements of the ring, the power series ring. 
+So, what is a power series? A power series might be like the power series for $e^x$, \inlinemetanote{writes: $1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots \in R[[x]]$} we've seen these also anyway. So, that's a power series; these are elements of the ring, the power series ring. 
 
-In Laurent series, you're allowed to have some negative, so you could have some $x^{-12} + 3 x^{-2} + x^{-1}$, then the constant term... I got too excited about the constant term! $17 + x + x^{15} + \dots$. \inlinemetanote{writes $x^{-12} + 3x^{-2} + x^{-1} + 17 + x + x^{15} + \dots$} So, that is a Laurent series. So, have you seen these objects in mathematics? Okay, well, maybe it's the first time, but you can imagine: you just take power series, you're allowed to have negative terms, but only finitely many. And it's extremely important you have only finitely many.
+In Laurent series, you're allowed to have some negative, so you could have some $x^{-12} + 3 x^{-2} + x^{-1}$, then the constant term... I got too excited about the constant term! $17 + x + x^{15} + \dots$. \inlinemetanote{writes: $x^{-12} + 3x^{-2} + x^{-1} + 17 + x + x^{15} + \dots$} So, that is a Laurent series. So, have you seen these objects in mathematics? Okay, well, maybe it's the first time, but you can imagine: you just take power series, you're allowed to have negative terms, but only finitely many. And it's extremely important you have only finitely many.
 \end{speech}
 
 \begin{content}[Formal Definition and Arithmetic of Laurent Series]
@@ -413,9 +413,9 @@ where $N \in \mathbb{Z}$ and $a_n \in R$ for all $n \ge -N$. That is, $f(x)$ con
 \end{content}
 
 \begin{speech}[00:12:45 - 00:14:25]
-And you'll find: if you have only finitely many, you can add them, and when you add them, you'll still only have finitely many because two of them only had finitely many. When you multiply them, the lowest term now --- you know, if I multiply this with something with lowest term $-7$ \inlinemetanote{writes $x^{-7}$}, its lowest term will be $x^{-19}$ --- so, it will still have only finitely many. Is that clear? 
+And you'll find: if you have only finitely many, you can add them, and when you add them, you'll still only have finitely many because two of them only had finitely many. When you multiply them, the lowest term now --- you know, if I multiply this with something with lowest term $-7$ \inlinemetanote{writes: $x^{-7}$}, its lowest term will be $x^{-19}$ --- so, it will still have only finitely many. Is that clear? 
 
-And here's the great thing: if you're non-zero here, you can divide. That's why the Laurent series turns out to be a field. And this is something you should think about. We discussed this last time. So, if you have a power series... maybe I just say this, because this is maybe now departing a little bit from the course, but it is the case that if I take this field of Laurent series, \inlinemetanote{writes \qt{field of Laurent series}} this is isomorphic to $R((x))$, \inlinemetanote{writes $\cong R((x))$} the field of fractions of the power series. And what you have to show there is: if you have Laurent series, you can divide. That's the interesting thing. 
+And here's the great thing: if you're non-zero here, you can divide. That's why the Laurent series turns out to be a field. And this is something you should think about. We discussed this last time. So, if you have a power series... maybe I just say this, because this is maybe now departing a little bit from the course, but it is the case that if I take this field of Laurent series, \inlinemetanote{writes \qt{field of Laurent series}} this is isomorphic to $R((x))$, \inlinemetanote{writes: $\cong R((x))$} the field of fractions of the power series. And what you have to show there is: if you have Laurent series, you can divide. That's the interesting thing. 
 
 And that has to do with the last thing I said last week, which is that it's pretty easy to divide power series: all you have to do is find the first non-zero coefficient, then use this rule I explained last week (Recall: \cref{thm:units-power-series-ring}), and then you can play with this power to take it out. So, I leave this for you.
 \end{speech}
@@ -479,13 +479,13 @@ If you like polynomial rings, the class will talk about results of polynomial ri
 \end{speech}
 
 \begin{speech}[00:16:29 - 00:18:33]
-Okay, so, now we finish these constructions and we start something new. $R$ is our ring, \inlinemetanote{writes $R$ ring} and the first thing: we've already defined $I$ is an ideal. \inlinemetanote{writes $I \subset R$ is an ideal} So, we've already defined this (Recall: \cref{def:ideal}), but I'll just review it briefly because now it's crucial for this week. 
+Okay, so, now we finish these constructions and we start something new. $R$ is our ring, \inlinemetanote{writes: $R$ ring} and the first thing: we've already defined $I$ is an ideal. \inlinemetanote{writes: $I \subset R$ is an ideal} So, we've already defined this (Recall: \cref{def:ideal}), but I'll just review it briefly because now it's crucial for this week. 
 
-$I$ is an ideal if it satisfies that, if I take $R$ plus and $0$... this is a subgroup of the additive part of the ring. \inlinemetanote{writes $\bullet (I, +, 0) \subset (R, +, 0)$ subgroup} And the second is: if I take anybody in the ring and anybody in the ideal, then their product lies in the ideal. \inlinemetanote{writes $\bullet \ \forall r \in R, \forall a \in I \text{ then } r \cdot a \in I$} This says that the ideal is an additive subgroup under addition, but there's another condition. The ideal has kind of two constraints: one is the addition constraint, and the other is the multiplication constraint. They're just different, because they're talking about two different operations.
+$I$ is an ideal if it satisfies that, if I take $R$ plus and $0$... this is a subgroup of the additive part of the ring. \inlinemetanote{writes: $\bullet (I, +, 0) \subset (R, +, 0)$ subgroup} And the second is: if I take anybody in the ring and anybody in the ideal, then their product lies in the ideal. \inlinemetanote{writes: $\bullet \ \forall r \in R, \forall a \in I \text{ then } r \cdot a \in I$} This says that the ideal is an additive subgroup under addition, but there's another condition. The ideal has kind of two constraints: one is the addition constraint, and the other is the multiplication constraint. They're just different, because they're talking about two different operations.
 
-And our example we had seen... we did some examples anyway, but a place where we know we always get ideals: if I take a homomorphism... \inlinemetanote{writes $f \colon R \to S$} maybe I should put it here... so, $f$ is a homomorphism of rings, \inlinemetanote{writes $f$ is a hom of rings} then whenever you have a homomorphism of rings, you get an ideal for free. Sorry. \inlinemetanote{chalk slips}
+And our example we had seen... we did some examples anyway, but a place where we know we always get ideals: if I take a homomorphism... \inlinemetanote{writes: $f \colon R \to S$} maybe I should put it here... so, $f$ is a homomorphism of rings, \inlinemetanote{writes: $f$ is a hom of rings} then whenever you have a homomorphism of rings, you get an ideal for free. Sorry. \inlinemetanote{chalk slips}
 
-And we discussed this also before: then the kernel of $f$, which is defined to be all the people in the ring such that $f(a) = 0$, is an ideal. \inlinemetanote{writes $\implies \ker(f) = \{a \in R \mid f(a) = 0\}$ is an ideal} So, we proved this in one of the early weeks (Recall: \cref{prop:kernel-is-ideal}).
+And we discussed this also before: then the kernel of $f$, which is defined to be all the people in the ring such that $f(a) = 0$, is an ideal. \inlinemetanote{writes: $\implies \ker(f) = \{a \in R \mid f(a) = 0\}$ is an ideal} So, we proved this in one of the early weeks (Recall: \cref{prop:kernel-is-ideal}).
 \end{speech}
 
 \begin{content}[Definition of Ideals and the Kernel of a Homomorphism]
@@ -530,9 +530,9 @@ We verify the two defining conditions of \cref{def:ideal-w4}:
 \subsection{The Linear Algebra Analogy: Kernels, Images, and Isomorphisms}
 
 \begin{speech}[00:18:33 - 00:20:12]
-So, in general, just when you study algebra, even in linear algebra, I remind you in the study of linear algebra... \inlinemetanote{writes \qt{Reminder} on the middle board} this is a reminder: if you have a vector space $V$ and you have a linear transformation, let's call it $\phi$... \inlinemetanote{writes $\phi \colon V \to W$} so, if these are two vector spaces --- so, $V, W$ are vector spaces over some field, \inlinemetanote{writes $V, W$ vector spaces $/\mathbb{C}$} it's not relevant for this example, I don't know, say complex numbers --- and this is a linear transformation --- I don't know what you called homomorphisms of vector spaces, linear transformation. \inlinemetanote{writes $\phi$ linear transformation}
+So, in general, just when you study algebra, even in linear algebra, I remind you in the study of linear algebra... \inlinemetanote{writes \qt{Reminder} on the middle board} this is a reminder: if you have a vector space $V$ and you have a linear transformation, let's call it $\phi$... \inlinemetanote{writes: $\phi \colon V \to W$} so, if these are two vector spaces --- so, $V, W$ are vector spaces over some field, \inlinemetanote{writes: $V, W$ vector spaces $/\mathbb{C}$} it's not relevant for this example, I don't know, say complex numbers --- and this is a linear transformation --- I don't know what you called homomorphisms of vector spaces, linear transformation. \inlinemetanote{writes: $\phi$ linear transformation}
 
-So, in the abstract study of linear algebra, when you have such a linear transformation, you automatically get two other vector spaces, so to speak for free. So, the two vector spaces are the kernel --- this is a subspace of $V$ --- and the image, this is a subspace of $W$. \inlinemetanote{writes $\ker(\phi) \subset V$, $\operatorname{Im}(\phi) \subset W$} And there is a theorem that links this data. If you remember, it says that if I take $V$ and I quotient by the kernel... I hope you remember this, it's kind of crucial here... if you take $V$ and you quotient by the kernel, this is isomorphic as vector spaces to the image. \inlinemetanote{writes $V/\ker(\phi) \cong \operatorname{Im}(\phi)$}
+So, in the abstract study of linear algebra, when you have such a linear transformation, you automatically get two other vector spaces, so to speak for free. So, the two vector spaces are the kernel --- this is a subspace of $V$ --- and the image, this is a subspace of $W$. \inlinemetanote{writes: $\ker(\phi) \subset V$, $\operatorname{Im}(\phi) \subset W$} And there is a theorem that links this data. If you remember, it says that if I take $V$ and I quotient by the kernel... I hope you remember this, it's kind of crucial here... if you take $V$ and you quotient by the kernel, this is isomorphic as vector spaces to the image. \inlinemetanote{writes: $V/\ker(\phi) \cong \operatorname{Im}(\phi)$}
 
 All right, so, this is kind of a model. It's some aspect of your... Did you learn it in these terms? I've never taught linear algebra here. Okay.
 \end{speech}
@@ -564,15 +564,15 @@ That's not true, I did teach it. \inlinemetanote{cleans and wipes the lower boar
 \begin{speech}[00:21:10 - 00:23:08]
 Okay, so, we would like to think a little bit about this kind of construction for rings. And we see a lot of it to start. 
 
-If I have this ring homomorphism... so, these are both rings now, so, I try to make the parallel here: $R$ and $S$ are rings, \inlinemetanote{writes $f \colon R \to S$, $R, S$ are rings} and I remind you, they're commutative rings with unit, and $f$ always takes unit... I don't remind you of all the definitions, but it's consistent with our previous... $f$ takes the $1$ to $1$, that's the definition of a ring (Recall: \cref{def:ring-homomorphism}). And $f$ is a homomorphism. \inlinemetanote{writes $f$ hom} So, we just want to complete that board.
+If I have this ring homomorphism... so, these are both rings now, so, I try to make the parallel here: $R$ and $S$ are rings, \inlinemetanote{writes: $f \colon R \to S$, $R, S$ are rings} and I remind you, they're commutative rings with unit, and $f$ always takes unit... I don't remind you of all the definitions, but it's consistent with our previous... $f$ takes the $1$ to $1$, that's the definition of a ring (Recall: \cref{def:ring-homomorphism}). And $f$ is a homomorphism. \inlinemetanote{writes: $f$ hom} So, we just want to complete that board.
 
-So, we get now in this situation, we get two objects for free. Or I don't know, free might be the wrong word, but anyway, this gives us two objects: one is the kernel inside $R$, \inlinemetanote{writes $\to \ker(f) \subset R$} but this is not... so, there, everything was vector spaces. But this is not a ring now, this is an ideal. \inlinemetanote{writes \qt{ideal}} 
+So, we get now in this situation, we get two objects for free. Or I don't know, free might be the wrong word, but anyway, this gives us two objects: one is the kernel inside $R$, \inlinemetanote{writes: $\to \ker(f) \subset R$} but this is not... so, there, everything was vector spaces. But this is not a ring now, this is an ideal. \inlinemetanote{writes \qt{ideal}} 
 
-All right, but we also get the image of $f$ inside $S$, \inlinemetanote{writes $\operatorname{Im}(f) \subset S$} and that is a subring. \inlinemetanote{writes \qt{subring}} All right, so, we saw that was a subring, the image (Recall: \cref{prop:image-ring-hom-subring}). 
+All right, but we also get the image of $f$ inside $S$, \inlinemetanote{writes: $\operatorname{Im}(f) \subset S$} and that is a subring. \inlinemetanote{writes \qt{subring}} All right, so, we saw that was a subring, the image (Recall: \cref{prop:image-ring-hom-subring}). 
 
 So, that's kind of the parallel there. And then we're going to work on this quotient business, but you see the matter is slightly... you know, in the vector space world, everything is a vector space. But in the ring world, sometimes you get rings, and sometimes you get ideals, and they're slightly different objects, so, we have to come to terms with that.
 
-So, let me just say that the statements there that you know... so, basic statements: \inlinemetanote{writes \qt{STATEMENT}} One is that $f$ is surjective if and only if this subring is the whole ring. \inlinemetanote{writes (i) $f \text{ is surjective} \iff \operatorname{Im}(f) = S$} That's almost like a tautology, right? That's what surjective means: you get everybody here, and if the image is everybody, it's surjective. So, that's essentially a tautology.
+So, let me just say that the statements there that you know... so, basic statements: \inlinemetanote{writes \qt{STATEMENT}} One is that $f$ is surjective if and only if this subring is the whole ring. \inlinemetanote{writes: (i) $f \text{ is surjective} \iff \operatorname{Im}(f) = S$} That's almost like a tautology, right? That's what surjective means: you get everybody here, and if the image is everybody, it's surjective. So, that's essentially a tautology.
 \end{speech}
 
 \begin{content}[The Morphism Data for Rings: Ideals vs. Subrings]
@@ -607,7 +607,7 @@ Let $f \colon R \to S$ be a ring homomorphism. Then $f$ is surjective if and onl
 \subsection{Injectivity and the Zero Ideal}
 
 \begin{speech}[00:23:08 - 00:24:34]
-The second statement --- and that's also true there --- the second statement: \inlinemetanote{writes (ii)} $f$ is injective if and only if... \inlinemetanote{writes $f \text{ is injective} \iff$} so, what's the statement going to be? It's going to be about the kernel: the kernel of $f$ is the zero ideal. \inlinemetanote{writes $\ker(f) = (0) \text{ zero ideal}$}
+The second statement --- and that's also true there --- the second statement: \inlinemetanote{writes: (ii)} $f$ is injective if and only if... \inlinemetanote{writes: $f \text{ is injective} \iff$} so, what's the statement going to be? It's going to be about the kernel: the kernel of $f$ is the zero ideal. \inlinemetanote{writes: $\ker(f) = (0) \text{ zero ideal}$}
 
 This is the standard terminology for the zero ideal, the standard notation for the zero ideal. The zero ideal is the ideal that has zero and nothing else. If you look at the definition of an ideal, the ideal that has the single element zero... So, this is going to be used a lot, so, it should be completely clear. \inlinemetanote{moves to the right and writes: Zero ideal, $(0)$, $0$, $\{0\}$}
 
@@ -636,11 +636,11 @@ f \text{ is injective} \iff \ker(f) = (0).
 \begin{proofWrapper}[Proof of \cref{prop:injective-kernel}]
 
 \begin{speech}[00:24:34 - 00:25:38]
-So, let's try to see what the argument for that is; that's almost a tautology. So, proof of \textbf{(2)}. \inlinemetanote{writes Proof (ii).}
+So, let's try to see what the argument for that is; that's almost a tautology. So, proof of \textbf{(2)}. \inlinemetanote{writes: Proof (ii).}
 
-We have to do two things. Suppose $f$ is injective. \inlinemetanote{writes Suppose $f$ is injective} Then let $a$ in $R$ be not zero. \inlinemetanote{writes let $a \in R, a \neq 0$} Then $f(a)$ is not equal to $f(0)$, because injective means you take different elements, they go to different places --- that's what injective means. So, if it's injective, this implies that $a$... oh, and $f(0) = 0$, so, that means $f(a)$ is not zero, \inlinemetanote{writes then $f(a) \neq f(0) = 0$} so, this implies $a$ is not in the kernel of $f$. \inlinemetanote{writes $\implies a \notin \ker(f)$} 
+We have to do two things. Suppose $f$ is injective. \inlinemetanote{writes: Suppose $f$ is injective} Then let $a$ in $R$ be not zero. \inlinemetanote{writes: let $a \in R, a \neq 0$} Then $f(a)$ is not equal to $f(0)$, because injective means you take different elements, they go to different places --- that's what injective means. So, if it's injective, this implies that $a$... oh, and $f(0) = 0$, so, that means $f(a)$ is not zero, \inlinemetanote{writes: then $f(a) \neq f(0) = 0$} so, this implies $a$ is not in the kernel of $f$. \inlinemetanote{writes: $\implies a \notin \ker(f)$} 
 
-So, if we have $f$ is injective, nobody who's not zero is in the kernel of $f$, so, this implies the kernel of $f$ equals zero. \inlinemetanote{writes $\implies \ker(f) = 0$}
+So, if we have $f$ is injective, nobody who's not zero is in the kernel of $f$, so, this implies the kernel of $f$ equals zero. \inlinemetanote{writes: $\implies \ker(f) = 0$}
 
 So, that's one half of it. I assume it's injective, and I deduce the kernel of $f$ is zero; there can only be one element in it.
 \end{speech}
@@ -664,11 +664,11 @@ Consequently, no non-zero element of $R$ belongs to $\ker(f)$. Since $0 \in \ker
 \end{content}
 
 \begin{speech}[00:25:38 - 00:26:43]
-The other way around is: suppose the kernel of $f$ is zero, \inlinemetanote{writes Suppose $\ker(f) = 0$} and as I said, it's just standard to use both things, depending on what you want to emphasize. 
+The other way around is: suppose the kernel of $f$ is zero, \inlinemetanote{writes: Suppose $\ker(f) = 0$} and as I said, it's just standard to use both things, depending on what you want to emphasize. 
 
-Suppose the kernel of $f$ is zero; then let $f(a) = f(b)$. \inlinemetanote{writes let $f(a) = f(b)$} We're assuming it's zero, and then we pick two elements $a, b$ in the ring that go to the same place. 
+Suppose the kernel of $f$ is zero; then let $f(a) = f(b)$. \inlinemetanote{writes: let $f(a) = f(b)$} We're assuming it's zero, and then we pick two elements $a, b$ in the ring that go to the same place. 
 
-So, this implies, by the homomorphism property, $f(a) - f(b) = f(a - b)$... \inlinemetanote{writes $\implies f(a - b) = f(a) - f(b) = 0$} which equals zero, because I'm assuming they're the same. So, this implies that $a - b$ is in the kernel, \inlinemetanote{writes $\implies a - b \in \ker(f)$} but we're assuming the kernel is zero, so, this implies $a - b = 0$, which implies $a = b$. \inlinemetanote{writes $\implies a - b = 0 \implies a = b$ and boxes $a = b$} 
+So, this implies, by the homomorphism property, $f(a) - f(b) = f(a - b)$... \inlinemetanote{writes: $\implies f(a - b) = f(a) - f(b) = 0$} which equals zero, because I'm assuming they're the same. So, this implies that $a - b$ is in the kernel, \inlinemetanote{writes: $\implies a - b \in \ker(f)$} but we're assuming the kernel is zero, so, this implies $a - b = 0$, which implies $a = b$. \inlinemetanote{writes \qt{$\implies a - b = 0 \implies a = b$} and boxes \qt{$a = b$}} 
 
 So, that's the second implication. 
 
@@ -721,13 +721,13 @@ The lecturer erases the lower blackboard to prepare for the construction of quot
 \begin{speech}[00:28:05 - 00:29:59]
 Okay, so, the task at hand is to understand this quotient. And now we do this not just for the kernel --- we'll get back to the kernel --- but for any ideal. So, we let $I$ in $R$ be an ideal. \inlinemetanote{writes on the lower left board: Let $I \subset R$ be an ideal} 
 
-And now, this is the main construction for this week: we will construct the quotient ring. \inlinemetanote{writes: we will construct the quotient ring} So, that's the name: quotient ring. And the symbol is $R \bmod I$. \inlinemetanote{writes $R/I$ and circles it} That's the symbol. So, we have to construct it. 
+And now, this is the main construction for this week: we will construct the quotient ring. \inlinemetanote{writes: we will construct the quotient ring} So, that's the name: quotient ring. And the symbol is $R \bmod I$. \inlinemetanote{writes \qt{$R/I$} and circles it} That's the symbol. So, we have to construct it. 
 
 And what's the parallel to linear algebra, of course, is $R \bmod$ the kernel; that's the quotient ring. So, we'll get back to that in a moment. We forget about this linear algebra analogy, etc., and we go for this construction. We need to construct this. 
 
-So, is that clear? We have $I$ is an ideal, so, our hypothesis is: $R$ is a ring, $I$ is an ideal, and we need to construct the quotient. But we need to construct this object as a ring. That means, as usual, it's a multi-step construction: we have to first construct it as a set, then we have to find zero in it, we have to find one in it, \inlinemetanote{writes $(R/I, +, \cdot, 0, 1)$} zero and one, and we have to find an addition and multiplication. So, you have to construct the whole thing. That's just what you have to do; there's no other way around it. 
+So, is that clear? We have $I$ is an ideal, so, our hypothesis is: $R$ is a ring, $I$ is an ideal, and we need to construct the quotient. But we need to construct this object as a ring. That means, as usual, it's a multi-step construction: we have to first construct it as a set, then we have to find zero in it, we have to find one in it, \inlinemetanote{writes: $(R/I, +, \cdot, 0, 1)$} zero and one, and we have to find an addition and multiplication. So, you have to construct the whole thing. That's just what you have to do; there's no other way around it. 
 
-So, Step 1... there's a lot of steps, and as usual, I don't do all of them... \inlinemetanote{writes: Step 1: What is the set $R/I$? }
+So, Step 1... there's a lot of steps, and as usual, I don't do all of them... \inlinemetanote{writes: Step 1: What is the set $R/I$?}
 \end{speech}
 
 \begin{content}[The Quotient Ring Construction: Roadmap]
@@ -759,7 +759,7 @@ So, the step for this is: we define an equivalence relation \inlinemetanote{writ
 
 Here's the definition: we say that if I have $x$ and $y$ in $R$, then $x$ is equivalent to $y$ \inlinemetanote{writes: Def: $x, y \in R$, $x \equiv y$} --- and as I said, if you like, you can put $I$ here because the equivalence relation depends on $I$ --- if and only if $x - y$ is in the ideal $I$. \inlinemetanote{writes: $\iff x - y \in I$} That's the definition. 
 
-And in words --- so, as I said, if you want to be really precise, so, this is an aside, \inlinemetanote{writes (Aside $\equiv_I$,} if you want to be really precise, you could define it like this, because this thing depends on $I$ --- in words, this is usually put: $x$ is equivalent to $y \bmod I$. \inlinemetanote{writes \qt{$x$ is equivalent to $y \bmod I$})} This is very standard language: $\bmod I$. $x$ is equivalent to $y \bmod I$. That's what this equivalence relation is. It's just like for the integers. 
+And in words --- so, as I said, if you want to be really precise, so, this is an aside, \inlinemetanote{writes: (Aside $\equiv_I$,} if you want to be really precise, you could define it like this, because this thing depends on $I$ --- in words, this is usually put: $x$ is equivalent to $y \bmod I$. \inlinemetanote{writes \qt{$x$ is equivalent to $y \bmod I$})} This is very standard language: $\bmod I$. $x$ is equivalent to $y \bmod I$. That's what this equivalence relation is. It's just like for the integers. 
 
 Anyway, that's the symbol. And so, formally now, you have to check it's an equivalence relation. And to do that, you have to remember the three properties of an equivalence relation (Recall: \cref{rem:equivalence-relation-review}). And the three properties are: $x$ is equivalent to $x$, which is zero being in the ideal; the other property is: if $x$ is equivalent to $y$, then $y$ is equivalent to $x$, and that would just put a sign here, but we know that $I$ is a subgroup under addition, so, it's closed under the sign; and the last one is transitive. Maybe I do the last one: the transitive property.
 \end{speech}
@@ -785,11 +785,11 @@ where $I = n\mathbb{Z} = (n)$ is the principal ideal generated by $n$ (\cref{def
 \begin{speech}[00:31:57 - 00:33:28]
 \inlinemetanote{writes: Transitive:} The transitive property says: if $x$ is equivalent to $y$ and $y$ is equivalent to $z$, then $x$ is equivalent to $z$. \inlinemetanote{writes: If $x \equiv y$ and $y \equiv z$, then $x \equiv z$} 
 
-$x$ is equivalent to $y$ means, if I translate this now in the definition, $x - y$ is in $I$, \inlinemetanote{writes $x - y \in I$} and this is $y - z$ is in $I$. \inlinemetanote{writes $y - z \in I$} 
+$x$ is equivalent to $y$ means, if I translate this now in the definition, $x - y$ is in $I$, \inlinemetanote{writes: $x - y \in I$} and this is $y - z$ is in $I$. \inlinemetanote{writes: $y - z \in I$} 
 
-What I need to show is: $x - z$ is in $I$. But these two elements are in $I$, so, I can add them. \inlinemetanote{writes $(x - y) + (y - z) \in I$} These two assumptions, since $I$ is closed under addition, I can add them. Is that clear? 
+What I need to show is: $x - z$ is in $I$. But these two elements are in $I$, so, I can add them. \inlinemetanote{writes: $(x - y) + (y - z) \in I$} These two assumptions, since $I$ is closed under addition, I can add them. Is that clear? 
 
-And then happily the $y$ falls out, so, you get $x - z$ is in $I$, \inlinemetanote{writes $x - z \in I$} and we're happy about that, okay? So, that's the proof of the transitivity.
+And then happily the $y$ falls out, so, you get $x - z$ is in $I$, \inlinemetanote{writes: $x - z \in I$} and we're happy about that, okay? So, that's the proof of the transitivity.
 \end{speech}
 
 \begin{content}[Verification: Equivalence Relation Properties]
@@ -845,7 +845,7 @@ Now we can define the set: $R \bmod I$ as a set is equal to the set of equivalen
 
 Okay, so, I've defined this as a set. And now the question of names: how do I name things? And that's a separate discussion. It's the same discussion we had about the rational numbers, the same for the field of fractions, that one of the conceptual issues about the quotient is that people do not have unique names. And this is just, you know, something you have to live with. 
 
-So, the question is: how do I name an element? \inlinemetanote{writes: How do I name an element in $R/I$? }
+So, the question is: how do I name an element? \inlinemetanote{writes: How do I name an element in $R/I$?}
 \end{speech}
 
 \begin{content}
@@ -862,7 +862,7 @@ R/I := R / {\equiv_I} = \{ [x] \mid x \in R \}.
 \begin{speech}[00:36:03 - 00:37:33]
 How do I name an element in $R \bmod I$? One way to do it is: you take $x$ in $R$, \inlinemetanote{writes: $x \in R$} then $x$ is in $R$, so, it determines an equivalence class: the equivalence class which $x$ lies in. And that is usually called $\bar{x}$. \inlinemetanote{writes: $\bar{x} \in R/I$, the equiv. class that $x$ lies in} This is the equivalence class that $x$ lies in --- the equivalence class that $x$ lies in. Okay, that's not beautiful English, but anyway, that's what it is. You take $x$, you get an equivalence class; that's usually denoted $\bar{x}$. That's what we do with integers also. Is that okay? 
 
-Another standard way to denote it... there's kind of three ways to denote this: if $x$ is in $R$, we can take $\bar{x}$ in $R \bmod I$; \inlinemetanote{writes: $\bar{x} \in R/I$} if you really want to write things out really explicitly, you can write it like that: \inlinemetanote{writes: $x + I \in R/I$} because the equivalence class of $x$ is the set of things where you take... the equivalence class of $x$ is equal to all those things $x + i$ where $i$ is in $I$. \inlinemetanote{writes $\bar{x} = \{x + i \mid i \in I\}$} Is that clear? Because if you're equivalent to $x$, your difference is in $I$. So, this is explicitly what the equivalence class is. And since it's $x$ plus something in $I$, some people will write it like this: \inlinemetanote{points to $x + I$} okay? It's kind of messy to keep that around, but in some arguments it's nice, so, that's a second way to write it. 
+Another standard way to denote it... there's kind of three ways to denote this: if $x$ is in $R$, we can take $\bar{x}$ in $R \bmod I$; \inlinemetanote{writes: $\bar{x} \in R/I$} if you really want to write things out really explicitly, you can write it like that: \inlinemetanote{writes: $x + I \in R/I$} because the equivalence class of $x$ is the set of things where you take... the equivalence class of $x$ is equal to all those things $x + i$ where $i$ is in $I$. \inlinemetanote{writes: $\bar{x} = \{x + i \mid i \in I\}$} Is that clear? Because if you're equivalent to $x$, your difference is in $I$. So, this is explicitly what the equivalence class is. And since it's $x$ plus something in $I$, some people will write it like this: \inlinemetanote{points to $x + I$} okay? It's kind of messy to keep that around, but in some arguments it's nice, so, that's a second way to write it. 
 
 The third way to write it, which is by far the most common, is you just call it $x$. \inlinemetanote{writes: $x \in R/I$} That's by far the most common, because you can see that... then if you use this, you have to be very careful. Sometimes, like in this, when $x$ was born, it was an element, and then when you put it here, it becomes an equivalence class, and you have to keep track of the data type of $x$ in your head. But I would say that that's kind of the three ways to do it. They all have their own advantages. Well, this one has limited advantage, but okay.
 \end{speech}
@@ -887,9 +887,9 @@ An element of $R/I$ is an equivalence class containing elements of $R$. Because 
 \subsection{Step 2 \& 3: Distinguished Elements and the Well-Definedness of Addition}
 
 \begin{speech}[00:37:33 - 00:39:08]
-All right, so, since we've defined the set, we need to now define addition. So, let's do the zero and one. First, we define zero in $R \bmod I$: \inlinemetanote{writes $0 \in R/I$, Def: $0 = \bar{0}$} $0$ is equal to $\bar{0}$, okay? Because this is the equivalence class of zero. Zeros are always called zeros. 
+All right, so, since we've defined the set, we need to now define addition. So, let's do the zero and one. First, we define zero in $R \bmod I$: \inlinemetanote{writes: $0 \in R/I$, Def: $0 = \bar{0}$} $0$ is equal to $\bar{0}$, okay? Because this is the equivalence class of zero. Zeros are always called zeros. 
 
-So, that's the zero here: it's the equivalence class of zero, which is not a surprise. And similarly, the definition of one is: it's the equivalence class of one. \inlinemetanote{writes Def: $1 = \bar{1}$} So, now we have at least this $R \bmod I$, and we have some distinguished elements: zero, one. 
+So, that's the zero here: it's the equivalence class of zero, which is not a surprise. And similarly, the definition of one is: it's the equivalence class of one. \inlinemetanote{writes: Def: $1 = \bar{1}$} So, now we have at least this $R \bmod I$, and we have some distinguished elements: zero, one. 
 
 Okay, so, now let us define addition. \inlinemetanote{writes: Let us define $+$} And it's still called plus. Very formally, you shouldn't call the binary operation in two different rings the same thing, because they're kind of different. But no one does that; everyone calls it plus, and it makes following the definitions... it makes you have to concentrate to follow the definitions. 
 
@@ -916,7 +916,7 @@ For any two equivalence classes $\bar{x}, \bar{y} \in R/I$, their sum is defined
 \begin{speech}[00:39:08 - 00:40:48]
 So, that's the definition, and as I said, to read it, you have to concentrate on what's being defined in this whole thing. This is being defined; that was already previously known, because it was in $R$. All right? So, this whole equation is a definition of plus, and it's not a full definition, because you have to check it's well-defined, because these things could have different names. So, that's kind of a pain. 
 
-So, let's check it's well-defined. \inlinemetanote{writes Let us check $+$ is well defined in $R/I$} What could we do? We could have $\bar{x}$ is equal to some $\overline{x'}$, \inlinemetanote{writes: $\bar{x} = \overline{x'}$} where $x'$ is equal to $x + i$, \inlinemetanote{writes: $x' = x + i$} where $i$ is in $I$. \inlinemetanote{writes: $i \in I$} So, we could have just had a different name for the same equivalence class. And if we had a different name, what we know is that it will just be some shift of $x$ by $I$, because if they're in the same equivalence class, their difference is an element of $I$ --- that's by definition. Okay? 
+So, let's check it's well-defined. \inlinemetanote{writes: Let us check $+$ is well defined in $R/I$} What could we do? We could have $\bar{x}$ is equal to some $\overline{x'}$, \inlinemetanote{writes: $\bar{x} = \overline{x'}$} where $x'$ is equal to $x + i$, \inlinemetanote{writes: $x' = x + i$} where $i$ is in $I$. \inlinemetanote{writes: $i \in I$} So, we could have just had a different name for the same equivalence class. And if we had a different name, what we know is that it will just be some shift of $x$ by $I$, because if they're in the same equivalence class, their difference is an element of $I$ --- that's by definition. Okay? 
 
 Similarly for $y$, we could have a different name here: \inlinemetanote{writes: $\bar{y} = \overline{y'}$, $y' = y + j$, $j \in I$} $j$, where $j$ is in $I$. 
 
@@ -924,7 +924,7 @@ So, now we have to test that this definition is the same. We already have the fo
 \end{speech}
 
 \begin{speech}[00:40:48 - 00:42:05]
-If we use these names, this definition would give us $\overline{x'} + \overline{y'}$; \inlinemetanote{writes: $\overline{x'} + \overline{y'} = \overline{x' + y'}$} then we use the formulas for $x' + y'$, and then I regroup them --- so, this is... well, okay, maybe I don't... \inlinemetanote{writes $= \overline{x+i+y+j}$} $x + i$, $y + j$, and then I regroup it: $x + y + i + j$, \inlinemetanote{writes $= \overline{x+y+(i+j)}$} but now $i + j$ has to be in the ideal $I$ because $I$ is closed under addition. 
+If we use these names, this definition would give us $\overline{x'} + \overline{y'}$; \inlinemetanote{writes: $\overline{x'} + \overline{y'} = \overline{x' + y'}$} then we use the formulas for $x' + y'$, and then I regroup them --- so, this is... well, okay, maybe I don't... \inlinemetanote{writes: $= \overline{x+i+y+j}$} $x + i$, $y + j$, and then I regroup it: $x + y + i + j$, \inlinemetanote{writes: $= \overline{x+y+(i+j)}$} but now $i + j$ has to be in the ideal $I$ because $I$ is closed under addition. 
 
 And so, this equivalence class is actually the same as that equivalence class, because it's the equivalence class of the same thing shifted by an element of $I$. 
 
@@ -975,7 +975,7 @@ The lecturer cleans the middle blackboard to prepare for the definition of multi
 \subsection{Step 4: Multiplication and the Crucial Role of the Ideal Absorption Property}
 
 \begin{speech}[00:43:13 - 00:45:11]
-The next step is define multiplication on $R \bmod I$. \inlinemetanote{writes: Define $\cdot$ on $R/I$:} That means if we have this $x$, it's exactly as before, we need to define this: \inlinemetanote{writes $\bar{x} \cdot \bar{y} \underset{\text{DEF}}{=} \overline{xy}$} and this is going to be the answer, this is the definition. And how are you going to define it? You don't know... you only know how to do one thing to define things. So, you really have no choice except this. Okay? I could put the dot there too if I want. 
+The next step is define multiplication on $R \bmod I$. \inlinemetanote{writes: Define $\cdot$ on $R/I$:} That means if we have this $x$, it's exactly as before, we need to define this: \inlinemetanote{writes: $\bar{x} \cdot \bar{y} \underset{\text{DEF}}{=} \overline{xy}$} and this is going to be the answer, this is the definition. And how are you going to define it? You don't know... you only know how to do one thing to define things. So, you really have no choice except this. Okay? I could put the dot there too if I want. 
 
 This just says that if I want to multiply two equivalence classes, I take one element of one equivalence class, another element of the other equivalence class, I multiply them in the ring, and then take the resulting equivalence class. Is that clear? 
 
@@ -1048,9 +1048,9 @@ The lecturer takes a short pause for the mid-lecture break. The lecture resumes 
 \begin{speech}[00:45:11 - 00:47:25]
 Okay, so, we start, and the last moment in the first half of the class was about this observation, and it's a really important thing, so, I repeat it now. This is the only time... 
 
-If you remember, the definition of an ideal \inlinemetanote{writes on the right board: Def of Ideal} had two clauses: the first is that \inlinemetanote{writes $\bullet \ (I, +, 0) \subset (R, +, 0)$ Subgroup} this is an additive subgroup, and we've used that repeatedly. This has been used repeatedly in the definition of the equivalence relation, in the definition of addition, if you wanted to prove associativity and you wanted to prove all of those properties that I didn't prove, you'd be using them here. 
+If you remember, the definition of an ideal \inlinemetanote{writes on the right board: Def of Ideal} had two clauses: the first is that \inlinemetanote{writes: $\bullet \ (I, +, 0) \subset (R, +, 0)$ Subgroup} this is an additive subgroup, and we've used that repeatedly. This has been used repeatedly in the definition of the equivalence relation, in the definition of addition, if you wanted to prove associativity and you wanted to prove all of those properties that I didn't prove, you'd be using them here. 
 
-But it has a second property, which was the multiplicative property, which is that for every element of the ring and for every $a$ in the ideal, the product is in the ideal. \inlinemetanote{writes $\bullet \ \forall r \in R, \forall a \in I \implies r a \in I$} That's just a totally separate property, because this one doesn't have anything to do with multiplication, this one has to do with multiplication, and this is the first time we use it. 
+But it has a second property, which was the multiplicative property, which is that for every element of the ring and for every $a$ in the ideal, the product is in the ideal. \inlinemetanote{writes: $\bullet \ \forall r \in R, \forall a \in I \implies r a \in I$} That's just a totally separate property, because this one doesn't have anything to do with multiplication, this one has to do with multiplication, and this is the first time we use it. 
 
 And it's used to show that this definition of multiplication --- which I tried to say philosophically you didn't have very much choice: if you want to multiply two equivalence classes, you pick an element in one equivalence class, you pick an element in the other, you multiply those elements, and you take the equivalence class. That's pretty much the only choice you have to define it, because you start with just an abstract ring. 
 
@@ -1087,7 +1087,7 @@ A subset $I \subseteq R$ is an ideal if and only if:
 \begin{speech}[00:47:25 - 00:48:47]
 Okay, so, that proves the... \inlinemetanote{walks across the front} And this is one aspect of the construction which is not in your linear algebra class. Although it's not far from what happened in your linear algebra class when you considered the problem of scalar multiplication on the quotient, which I don't repeat. But anyway, even that shouldn't be totally foreign to you. 
 
-So, now we've constructed this: we have plus, we have multiplication, we have zero and one. \inlinemetanote{writes $(R/I, +, \cdot, \bar{0}, \bar{1})$} The part that requires the foundational work is the definition as equivalence classes and making sure these are well-defined. The rest just follow the nose, that the identities... I mean, you can imagine: you have to check this times that, so, by definition this is that, and so, that's that, so, that checks one of the identity properties; and there's like $10$ other properties you have to check, and they're all checked like this. \inlinemetanote{writes $\bar{1} \cdot \bar{x} = \overline{1 \cdot x} = \bar{x}$} 
+So, now we've constructed this: we have plus, we have multiplication, we have zero and one. \inlinemetanote{writes: $(R/I, +, \cdot, \bar{0}, \bar{1})$} The part that requires the foundational work is the definition as equivalence classes and making sure these are well-defined. The rest just follow the nose, that the identities... I mean, you can imagine: you have to check this times that, so, by definition this is that, and so, that's that, so, that checks one of the identity properties; and there's like $10$ other properties you have to check, and they're all checked like this. \inlinemetanote{writes: $\bar{1} \cdot \bar{x} = \overline{1 \cdot x} = \bar{x}$} 
 
 So, that's the construction, and that's the main construction this week. Last week we had the construction of the field of fractions, which you should understand completely, and now there is this construction, which is the construction of the quotient ring, which is your task to understand really completely this week: the construction. 
 
@@ -1155,11 +1155,11 @@ The lecturer answers student inquiries regarding the course literature:
 \begin{speech}[00:50:58 - 00:52:37]
 All right, so, we go back to this issue now. We've made some progress. 
 
-If I have $R$ to $S$... \inlinemetanote{writes $f \colon R \to S$, $R, S$ rings, $f$ is a hom} So, this $R$ and $S$ are rings, $f$ is a homomorphism. Now, this is sometimes called the First Isomorphism Theorem, \inlinemetanote{writes First Isom. Thm} and it plays the role of the missing piece that we had in linear algebra that I wanted to develop here, and that says that this ring, $R \bmod$ the kernel \inlinemetanote{writes $R/\ker(f)$} --- because when you have here, we have the kernel is an ideal; if we have an ideal, we can take the quotient, because that's what the last $45$ minutes were about --- this ring is canonically isomorphic to the image. \inlinemetanote{writes $\cong \operatorname{Im}(f)$} Okay? 
+If I have $R$ to $S$... \inlinemetanote{writes: $f \colon R \to S$, $R, S$ rings, $f$ is a hom} So, this $R$ and $S$ are rings, $f$ is a homomorphism. Now, this is sometimes called the First Isomorphism Theorem, \inlinemetanote{writes: First Isom. Thm} and it plays the role of the missing piece that we had in linear algebra that I wanted to develop here, and that says that this ring, $R \bmod$ the kernel \inlinemetanote{writes: $R/\ker(f)$} --- because when you have here, we have the kernel is an ideal; if we have an ideal, we can take the quotient, because that's what the last $45$ minutes were about --- this ring is canonically isomorphic to the image. \inlinemetanote{writes: $\cong \operatorname{Im}(f)$} Okay? 
 
 So, that plays the role of the statement in vector spaces. Is that clear? That's the replacement. So, we have to prove this. 
 
-So, let us see what we have to do. We start with this $f$ from $R$ to $S$, \inlinemetanote{writes We start $f \colon R \to S$} and we will define a homomorphism \inlinemetanote{writes we will define a hom} $\bar{f}$ from $R \bmod$ the kernel of $f$ to $S$, \inlinemetanote{writes $\bar{f} \colon R/\ker(f) \to S$} just to start. 
+So, let us see what we have to do. We start with this $f$ from $R$ to $S$, \inlinemetanote{writes: We start $f \colon R \to S$} and we will define a homomorphism \inlinemetanote{writes: we will define a hom} $\bar{f}$ from $R \bmod$ the kernel of $f$ to $S$, \inlinemetanote{writes: $\bar{f} \colon R/\ker(f) \to S$} just to start. 
 
 And how do you think we're going to define this?
 \end{speech}
@@ -1201,7 +1201,7 @@ The lecturer pauses as students reflect on the proposed definition of $\bar{f}$.
 \subsection{Step 1: Construction and Well-Definedness of the Induced Map \texorpdfstring{$\bar{f}$}{fbar}}
 
 \begin{speech}[00:53:31 - 00:54:07]
-Okay, so, we have to define $\bar{f}$. What does it mean? We have to define this, this is the definition. So, define $\bar{f}$: it is a homomorphism that starts from $R \bmod \ker(f)$. So, what this thing eats is elements of $R \bmod \ker(f)$. \inlinemetanote{writes $\bar{f}(\bar{x})$} We have to define this function, and it eats equivalence classes. \inlinemetanote{writes $\bar{x} \in R/\ker(f)$} 
+Okay, so, we have to define $\bar{f}$. What does it mean? We have to define this, this is the definition. So, define $\bar{f}$: it is a homomorphism that starts from $R \bmod \ker(f)$. So, what this thing eats is elements of $R \bmod \ker(f)$. \inlinemetanote{writes: $\bar{f}(\bar{x})$} We have to define this function, and it eats equivalence classes. \inlinemetanote{writes: $\bar{x} \in R/\ker(f)$} 
 
 What do you think we're going to do here?
 \end{speech}
@@ -1213,17 +1213,17 @@ Send it to $f(x)$.
 \begin{speech}[00:54:08 - 00:55:09]
 Yeah. I mean, in this kind of generality, there's very little you can do, because we start... you can imagine $R$ is like one country, $S$ is another, there's only one flight here between them, and you've got to take it. There's no other way. There's just no other way. So, to get in here, you've got to get on $f$ somehow, and that's the only way. 
 
-So, that's the definition. \inlinemetanote{writes Def: $\bar{f}(\bar{x}) = f(x) \in S$} When you define it like this, as I said, it's the standard pain about this naming business. And you know, I say it slightly facetiously, but this name is an incredibly crucial thing in this. If you study mathematics more and more, you'll see this idea of what you can name, what you can name precisely, how you can name it, turns out to be an incredibly important, subtle point. So, it's good to get used to thinking about that. 
+So, that's the definition. \inlinemetanote{writes: Def: $\bar{f}(\bar{x}) = f(x) \in S$} When you define it like this, as I said, it's the standard pain about this naming business. And you know, I say it slightly facetiously, but this name is an incredibly crucial thing in this. If you study mathematics more and more, you'll see this idea of what you can name, what you can name precisely, how you can name it, turns out to be an incredibly important, subtle point. So, it's good to get used to thinking about that. 
 
-Anyway, so, the point: we have to show this is well-defined. \inlinemetanote{writes Show $\bar{f}$ is well defined}
+Anyway, so, the point: we have to show this is well-defined. \inlinemetanote{writes: Show $\bar{f}$ is well defined}
 \end{speech}
 
 \begin{speech}[00:55:09 - 00:56:41]
-So, what does that mean? If we take another name with somebody else in the equivalence class, it satisfies this equation; \inlinemetanote{writes $x' = x + i, \ i \in \ker(f), \ \bar{x'} = \bar{x}$} then we must check that $\bar{f}$ of this is equal to $\bar{f}$ of that. \inlinemetanote{writes We must check $\bar{f}(\bar{x'}) = \bar{f}(\bar{x})$} We have to check it. 
+So, what does that mean? If we take another name with somebody else in the equivalence class, it satisfies this equation; \inlinemetanote{writes: $x' = x + i, \ i \in \ker(f), \ \bar{x'} = \bar{x}$} then we must check that $\bar{f}$ of this is equal to $\bar{f}$ of that. \inlinemetanote{writes: We must check $\bar{f}(\bar{x'}) = \bar{f}(\bar{x})$} We have to check it. 
 
-Well, let's see. What is this? $\bar{f}$ of this --- here we use the definition --- that's $f$ of $x'$, \inlinemetanote{writes $\bar{f}(\bar{x'}) \stackrel{\text{def}}{=} f(x')$} and then we use the definition of $x'$, that's $f$ of $x + i$. \inlinemetanote{writes $= f(x + i)$} Okay, now what do we do? 
+Well, let's see. What is this? $\bar{f}$ of this --- here we use the definition --- that's $f$ of $x'$, \inlinemetanote{writes: $\bar{f}(\bar{x'}) \stackrel{\text{def}}{=} f(x')$} and then we use the definition of $x'$, that's $f$ of $x + i$. \inlinemetanote{writes: $= f(x + i)$} Okay, now what do we do? 
 
-I should have said here very carefully that $i$ is in the kernel. \inlinemetanote{adds $i \in \ker(f)$} Yeah, so, what do we do here? Well, maybe you should expand this as $f(x) + f(i)$, \inlinemetanote{writes $= f(x) + f(i)$} because $f$ itself is a homomorphism. Now $i$ is in the kernel, so, this is equal to $f(x)$, \inlinemetanote{writes $= f(x)$} because $f(i)$ is zero. \inlinemetanote{writes $f(i) = 0$ underneath} And that's what we wanted, right? And this is equal to $\bar{f}$ of $\bar{x}$. \inlinemetanote{writes $= \bar{f}(\bar{x})$} Okay, yeah.
+I should have said here very carefully that $i$ is in the kernel. \inlinemetanote{adds $i \in \ker(f)$} Yeah, so, what do we do here? Well, maybe you should expand this as $f(x) + f(i)$, \inlinemetanote{writes: $= f(x) + f(i)$} because $f$ itself is a homomorphism. Now $i$ is in the kernel, so, this is equal to $f(x)$, \inlinemetanote{writes: $= f(x)$} because $f(i)$ is zero. \inlinemetanote{writes \qt{$f(i) = 0$} underneath} And that's what we wanted, right? And this is equal to $\bar{f}$ of $\bar{x}$. \inlinemetanote{writes: $= \bar{f}(\bar{x})$} Okay, yeah.
 \end{speech}
 
 \begin{student}[Student Question]
@@ -1287,11 +1287,11 @@ Thus, $\bar{f}(\bar{x}') = \bar{f}(\bar{x})$, proving that $\bar{f}$ is well-def
 \end{content}
 
 \begin{speech}[00:58:44 - 01:00:17]
-So, that was a little painful. But we're not done with the pain: this just shows it's well-defined. So, we have $\bar{f} \colon R/\ker(f) \to S$ is a function now. \inlinemetanote{writes $\bar{f} \colon R/I \to S$ function} And we have to show all the properties to show it's a ring homomorphism. 
+So, that was a little painful. But we're not done with the pain: this just shows it's well-defined. So, we have $\bar{f} \colon R/\ker(f) \to S$ is a function now. \inlinemetanote{writes: $\bar{f} \colon R/I \to S$ function} And we have to show all the properties to show it's a ring homomorphism. 
 
-So, we'd have to show, for example, $\bar{f}(\bar{0})$... well, what is this? We use our definition, and that's equal to $f(0)$, that's what that definition says, and $f(0)$ has to be zero because $f$ itself is a homomorphism. \inlinemetanote{writes $\bar{f}(\bar{0}) \stackrel{\text{def}}{=} f(0) = 0$} So, that's good: it's sending zero to zero. That's maybe what you were worried about. Now we've shown it. 
+So, we'd have to show, for example, $\bar{f}(\bar{0})$... well, what is this? We use our definition, and that's equal to $f(0)$, that's what that definition says, and $f(0)$ has to be zero because $f$ itself is a homomorphism. \inlinemetanote{writes: $\bar{f}(\bar{0}) \stackrel{\text{def}}{=} f(0) = 0$} So, that's good: it's sending zero to zero. That's maybe what you were worried about. Now we've shown it. 
 
-Well, we also have to show $\bar{f}(\bar{x} + \bar{y}) = \bar{f}(\bar{x}) + \bar{f}(\bar{y})$. \inlinemetanote{writes $\bar{f}(\bar{x} + \bar{y}) = \bar{f}(\bar{x}) + \bar{f}(\bar{y})$} We also have to show this. And now you just have to expand these sides completely, and if you do that, you'll get a chain like this, more or less similar to that, and you'll find that it's compatible with the definition. Okay, so, expand yourself. \inlinemetanote{writes \qt{expand yourself}} As I said, you'll get a chain where...
+Well, we also have to show $\bar{f}(\bar{x} + \bar{y}) = \bar{f}(\bar{x}) + \bar{f}(\bar{y})$. \inlinemetanote{writes: $\bar{f}(\bar{x} + \bar{y}) = \bar{f}(\bar{x}) + \bar{f}(\bar{y})$} We also have to show this. And now you just have to expand these sides completely, and if you do that, you'll get a chain like this, more or less similar to that, and you'll find that it's compatible with the definition. Okay, so, expand yourself. \inlinemetanote{writes \qt{expand yourself}} As I said, you'll get a chain where...
 \end{speech}
 
 \begin{note}[Board Transition and Cleaning]
@@ -1299,9 +1299,9 @@ The lecturer pulls down the chalkboard and cleans the panel from timestamp 01:00
 \end{note}
 
 \begin{speech}[01:01:06 - 01:01:57]
-That's the additive structure. Then you also have to show that $\bar{f}$ respects the multiplicative structure: \inlinemetanote{writes Check $\bar{f}(\bar{x} \cdot \bar{y}) \overset{?}{=} \bar{f}(\bar{x}) \cdot \bar{f}(\bar{y})$} 
+That's the additive structure. Then you also have to show that $\bar{f}$ respects the multiplicative structure: \inlinemetanote{writes: Check $\bar{f}(\bar{x} \cdot \bar{y}) \overset{?}{=} \bar{f}(\bar{x}) \cdot \bar{f}(\bar{y})$} 
 
-Check this, and if we do that, this is defined to be... first we have the definition of the product, that's this, \inlinemetanote{writes $\bar{f}(\overline{x y})$} and then this is the definition of $\bar{f}$, that's $f(x y)$, \inlinemetanote{writes $= f(x y)$} and if we expand this side, this is $f(x) \cdot f(y)$. \inlinemetanote{writes $= f(x) f(y)$} So, you see, and that's true because $f$ is a homomorphism. \inlinemetanote{writes True because $f$ is hom $R \to S$.} 
+Check this, and if we do that, this is defined to be... first we have the definition of the product, that's this, \inlinemetanote{writes: $\bar{f}(\overline{x y})$} and then this is the definition of $\bar{f}$, that's $f(x y)$, \inlinemetanote{writes: $= f(x y)$} and if we expand this side, this is $f(x) \cdot f(y)$. \inlinemetanote{writes: $= f(x) f(y)$} So, you see, and that's true because $f$ is a homomorphism. \inlinemetanote{writes: True because $f$ is hom $R \to S$.} 
 
 So, true because $f$ was born a homomorphism. Okay.
 \end{speech}
@@ -1309,7 +1309,7 @@ So, true because $f$ was born a homomorphism. Okay.
 \begin{speech}[01:01:57 - 01:02:41]
 So, you have to concentrate with the bars, but really the proofs of this is just unraveling definitions. 
 
-So, that's the first step in the proof. I remind you here: we have this $R \xrightarrow{f} S$, \inlinemetanote{writes $f \colon R \to S$} and the kernel of $f$ is my ideal, \inlinemetanote{writes $\ker(f) \subset R$} and we've defined this $\bar{f}$ from $R \bmod$ the kernel of $f$ to $S$. \inlinemetanote{writes $\bar{f} \colon R/\ker(f) \to S$} Okay? And this is a homomorphism, \inlinemetanote{writes is a hom} meaning that we know this is a ring --- that was the first part of this class --- we've defined $\bar{f}$, and then the claim is that's a ring homomorphism.
+So, that's the first step in the proof. I remind you here: we have this $R \xrightarrow{f} S$, \inlinemetanote{writes: $f \colon R \to S$} and the kernel of $f$ is my ideal, \inlinemetanote{writes: $\ker(f) \subset R$} and we've defined this $\bar{f}$ from $R \bmod$ the kernel of $f$ to $S$. \inlinemetanote{writes: $\bar{f} \colon R/\ker(f) \to S$} Okay? And this is a homomorphism, \inlinemetanote{writes: is a hom} meaning that we know this is a ring --- that was the first part of this class --- we've defined $\bar{f}$, and then the claim is that's a ring homomorphism.
 \end{speech}
 
 \begin{content}[Proof that $\bar{f}$ is a Ring Homomorphism]
@@ -1358,13 +1358,13 @@ Therefore, $\bar{f}$ is a homomorphism of commutative rings.
 \subsection{Step 2: Surjectivity of \texorpdfstring{$\bar{f}$}{fbar} onto \texorpdfstring{$\operatorname{Im}(f)$}{Im(f)}}
 
 \begin{speech}[01:02:41 - 01:04:17]
-All right, so, that's the first step. Next, Step 2: what is the image of $\bar{f}$? \inlinemetanote{writes Step 2: What is $\operatorname{Im}(\bar{f})$?} 
+All right, so, that's the first step. Next, Step 2: what is the image of $\bar{f}$? \inlinemetanote{writes: Step 2: What is $\operatorname{Im}(\bar{f})$?} 
 
-That means, where do we go here? And the answer is: it's the same as the image of $f$. So, actually $\bar{f}$ goes from $R \bmod \ker(f)$ to the image of $f$. \inlinemetanote{writes $\bar{f} \colon R/\ker(f) \to \operatorname{Im}(f)$} This is some subring of $S$. \inlinemetanote{writes $\cap$ and $S$ under $\operatorname{Im}(f)$} 
+That means, where do we go here? And the answer is: it's the same as the image of $f$. So, actually $\bar{f}$ goes from $R \bmod \ker(f)$ to the image of $f$. \inlinemetanote{writes: $\bar{f} \colon R/\ker(f) \to \operatorname{Im}(f)$} This is some subring of $S$. \inlinemetanote{writes \qt{$\cap$} and \qt{$S$} under $\operatorname{Im}(f)$} 
 
 Why? Because the definition just says that if I take an equivalence class, I choose an element, I go to $f(x)$. So, everything I get is in the image of $f$. On the other hand, if I'm in the image of $f$, that means that I come from some element of $R$, and I can take its equivalence class. So, I get exactly the image of $f$. 
 
-That's Step 2, and this is a surjection. So, I call $\bar{f}$ the same thing, so, $\bar{f}$ is surjective onto the image of $f$, okay? \inlinemetanote{writes $\bar{f}$ is surjective onto the image of $f$} Sometimes in math, you write this kind of two arrows for surjectivity; do you follow that kind of stuff or not? Okay, I won't give you more notation now.
+That's Step 2, and this is a surjection. So, I call $\bar{f}$ the same thing, so, $\bar{f}$ is surjective onto the image of $f$, okay? \inlinemetanote{writes: $\bar{f}$ is surjective onto the image of $f$} Sometimes in math, you write this kind of two arrows for surjectivity; do you follow that kind of stuff or not? Okay, I won't give you more notation now.
 \end{speech}
 
 \begin{content}[Surjectivity of the Induced Homomorphism onto the Image]
@@ -1395,15 +1395,15 @@ Hence, $\operatorname{Im}(\bar{f}) = \operatorname{Im}(f)$, proving that $\bar{f
 \begin{speech}[01:04:17 - 01:06:42]
 So, first we define this $\bar{f}$, and $\bar{f}$ is defined in like the only possible way you can. The second step is we realize it's surjective onto the image of $f$. 
 
-And the third step --- and this one requires some real concentration --- is: what is the kernel? What is the kernel of $\bar{f}$? \inlinemetanote{writes Step 3: What is the $\ker(\bar{f})$?} 
+And the third step --- and this one requires some real concentration --- is: what is the kernel? What is the kernel of $\bar{f}$? \inlinemetanote{writes: Step 3: What is the $\ker(\bar{f})$?} 
 
-Let's try to think about that. That means: suppose I have $\bar{x}$ in $R \bmod I$... \inlinemetanote{writes Suppose $\bar{x} \in R/I$ and $\bar{f}(\bar{x}) = 0 \in S$, $\bar{x} \in \ker(\bar{f})$} This is another way of saying $\bar{x}$ is in the kernel of $\bar{f}$. Suppose I have that. 
+Let's try to think about that. That means: suppose I have $\bar{x}$ in $R \bmod I$... \inlinemetanote{writes: Suppose $\bar{x} \in R/I$ and $\bar{f}(\bar{x}) = 0 \in S$, $\bar{x} \in \ker(\bar{f})$} This is another way of saying $\bar{x}$ is in the kernel of $\bar{f}$. Suppose I have that. 
 
-Then what can I conclude? Well, I can use the definition: the definition of this is $f(x)$, right? So, then this implies that actually $f(x)$ is equal to zero in $S$, right? \inlinemetanote{writes Then $f(x) = 0 \in S$} And this implies $x$ is in the kernel of $f$. \inlinemetanote{writes $\implies x \in \ker(f)$} 
+Then what can I conclude? Well, I can use the definition: the definition of this is $f(x)$, right? So, then this implies that actually $f(x)$ is equal to zero in $S$, right? \inlinemetanote{writes: Then $f(x) = 0 \in S$} And this implies $x$ is in the kernel of $f$. \inlinemetanote{writes: $\implies x \in \ker(f)$} 
 
-All right? So, what have we done here? We said: we start with any equivalence class; if it's in the kernel of $\bar{f}$, then that element has to be in the kernel of $f$. And that means that equivalence class is the zero equivalence class, because it's equivalent to zero. This means that $x$ is equivalent using the kernel relation to zero. \inlinemetanote{writes $\implies x \equiv_{\ker(f)} 0$} 
+All right? So, what have we done here? We said: we start with any equivalence class; if it's in the kernel of $\bar{f}$, then that element has to be in the kernel of $f$. And that means that equivalence class is the zero equivalence class, because it's equivalent to zero. This means that $x$ is equivalent using the kernel relation to zero. \inlinemetanote{writes: $\implies x \equiv_{\ker(f)} 0$} 
 
-And this means that actually, you know, $x$ is equal to zero in $R \bmod I$. \inlinemetanote{writes $\implies \bar{x} = \bar{0} \in R/I$} 
+And this means that actually, you know, $x$ is equal to zero in $R \bmod I$. \inlinemetanote{writes: $\implies \bar{x} = \bar{0} \in R/I$} 
 
 So, that proves that the kernel of $\bar{f}$ is zero. So, the conclusion here --- let me sorry... that's Step 3 --- the conclusion is the kernel of $\bar{f}$ is zero.
 \end{speech}
@@ -1463,7 +1463,7 @@ The lecturer pulls down the upper blackboard and thoroughly cleans the lower rig
 \end{note}
 
 \begin{speech}[01:07:47 - 01:09:13]
-So, I say it in words because it's confusing. We start with $f$ from $R$ to $S$. This has a kernel, which we call the kernel of $f$, \inlinemetanote{writes $f \colon R \to S$ and \qt{This has kernel $\ker(f)$}} which could be anything --- maybe zero, maybe not, could be anything in the world. 
+So, I say it in words because it's confusing. We start with $f$ from $R$ to $S$. This has a kernel, which we call the kernel of $f$, \inlinemetanote{writes \qt{$f \colon R \to S$} and \qt{This has kernel $\ker(f)$}} which could be anything --- maybe zero, maybe not, could be anything in the world. 
 
 Then from this, we make $\bar{f}$ from $R \bmod \ker(f)$ to $S$ --- well, it goes to the image of $f$, that subring inside $S$. \inlinemetanote{writes: $\bar{f} \colon R/\ker(f) \to \operatorname{Im}(f) \subset S$} So, we study this, and the last step is that the kernel of $\bar{f}$... 
 
@@ -1477,7 +1477,7 @@ That's a nice way to think about it. I'll explain tomorrow how this kind of logi
 \begin{speech}[01:09:13 - 01:10:35]
 So, these three steps, if you take Steps 1 to 3 together --- because first we defined $\bar{f}$, we show it's surjective onto the image of $f$, and now we show the kernel is zero, so, that means it's also injective. I remind you: the kernel being zero implies that $\bar{f}$ is injective. \inlinemetanote{writes: $\implies \bar{f} \text{ is injective}$} We started the lecture with that, I think (Recall: \cref{prop:injective-kernel}). 
 
-So, Steps 1 to 3 show that $\bar{f}$ from $R \bmod \ker(f)$ to the image of $f$ is well-defined, injective, and surjective, so, $\bar{f}$ is an isomorphism of rings. \inlinemetanote{writes STEP 1--3: $\bar{f} \colon R/\ker(f) \to \operatorname{Im}(f)$, $\bar{f}$ is isom.} 
+So, Steps 1 to 3 show that $\bar{f}$ from $R \bmod \ker(f)$ to the image of $f$ is well-defined, injective, and surjective, so, $\bar{f}$ is an isomorphism of rings. \inlinemetanote{writes: STEP 1--3: $\bar{f} \colon R/\ker(f) \to \operatorname{Im}(f)$, $\bar{f}$ is isom.} 
 
 So, that's the end of the proof of the First Isomorphism Theorem. Okay.
 
@@ -1516,7 +1516,7 @@ Maybe I have some room here, I can say: one of the things to think about rings a
 
 A standard way of writing an ideal is: let $x_1$ to $x_n$ be elements of the ring $R$, \inlinemetanote{writes on the board: Let $x_1, \dots, x_n \in R$} then... they could also be infinite, but in this class typically it's finite, but anyway...
 
-Then if you have some list of elements in $R$, the standard notation is you put parentheses around them, and you define an ideal. This is the definition of this: it is the ideal defined by this equation, \inlinemetanote{writes then $(x_1, \dots, x_n) \subset R$ is the ideal defined by} so, I have to just tell you who is in this ideal: this is equal to those elements that are of the form $a_1 x_1$... in language you could say this is $R$-linear combinations of these elements: $a_n x_n$, where the $a_i$'s are in $R$. \inlinemetanote{writes $(x_1, \dots, x_n) = \{ a_1 x_1 + \dots + a_n x_n \mid a_i \in R \}$} So, this is a particular set.
+Then if you have some list of elements in $R$, the standard notation is you put parentheses around them, and you define an ideal. This is the definition of this: it is the ideal defined by this equation, \inlinemetanote{writes: then $(x_1, \dots, x_n) \subset R$ is the ideal defined by} so, I have to just tell you who is in this ideal: this is equal to those elements that are of the form $a_1 x_1$... in language you could say this is $R$-linear combinations of these elements: $a_n x_n$, where the $a_i$'s are in $R$. \inlinemetanote{writes: $(x_1, \dots, x_n) = \{ a_1 x_1 + \dots + a_n x_n \mid a_i \in R \}$} So, this is a particular set.
 \end{speech}
 
 \begin{speech}[01:12:08 - 01:13:39]
@@ -1588,7 +1588,7 @@ The lecturer takes a wet sponge and washes the left panel of the lower chalkboar
 \begin{speech}[01:14:41 - 01:16:10]
 Okay, so, for example, I can take my ring $R$ to be polynomials in one variable: \inlinemetanote{writes: $R = \mathbb{C}[x]$} $R = \mathbb{C}[x]$. You should be totally happy with this ring: it's polynomials with complex coefficients, all right? 
 
-And I can take an element here, $f$, to be like $x^2 + 1$. \inlinemetanote{writes: $f = x^2 + 1 \in R$} That's a polynomial. And then, I'm using the notation there: if you have one element, that's an element; if I put parentheses around it, this is the ideal. \inlinemetanote{writes $(f) \subset R$ with an arrow to \qt{ideal}} 
+And I can take an element here, $f$, to be like $x^2 + 1$. \inlinemetanote{writes: $f = x^2 + 1 \in R$} That's a polynomial. And then, I'm using the notation there: if you have one element, that's an element; if I put parentheses around it, this is the ideal. \inlinemetanote{writes \qt{$(f) \subset R$} with an arrow to \qt{ideal}} 
 
 Very concretely, using that definition, this is just the ideal of $f$ times a polynomial where the polynomial is in the ring. \inlinemetanote{writes: $(f) = \{ f \cdot p \mid p \in R \}$} That's what it is: it's just one linear combination. So, all this is is polynomials that have an $x^2 + 1$ factor. Okay? 
 
@@ -1598,7 +1598,7 @@ Do you accept that all the symbols on this board have been defined?
 \end{speech}
 
 \begin{speech}[01:16:10 - 01:16:41]
-So, I can ask you now any question about this ring. For example: is this an integral domain? \inlinemetanote{writes: Is this an int. domain? }
+So, I can ask you now any question about this ring. For example: is this an integral domain? \inlinemetanote{writes: Is this an int. domain?}
 
 What's your opinion about that?
 \end{speech}
@@ -1624,7 +1624,7 @@ Okay, that's the correct argument. So, now, this is the beginning to say it's no
 
 If we have these three statements --- that equals zero, the product was zero, and they're both not equal to zero --- then it's not an integral domain. You agree with that? 
 
-And he gave the correct argument for that: because if $x + i$ were equivalent to zero, \inlinemetanote{writes If $x + i \equiv 0$} this means that $x + i$ is in this ideal generated by $x^2 + 1$, \inlinemetanote{writes $\iff x + i \in (x^2+1)$} but the ideal generated by $x^2 + 1$ has $x^2 + 1$ times things in it, times polynomials, and you can never lower the degree to a linear polynomial by taking a quadratic polynomial and multiplying it by another polynomial. 
+And he gave the correct argument for that: because if $x + i$ were equivalent to zero, \inlinemetanote{writes: If $x + i \equiv 0$} this means that $x + i$ is in this ideal generated by $x^2 + 1$, \inlinemetanote{writes: $\iff x + i \in (x^2+1)$} but the ideal generated by $x^2 + 1$ has $x^2 + 1$ times things in it, times polynomials, and you can never lower the degree to a linear polynomial by taking a quadratic polynomial and multiplying it by another polynomial. 
 
 So, that's the full argument, the full painful argument that says the answer is no. Okay.
 \end{speech}
@@ -1667,13 +1667,13 @@ Since $\overline{x + i}$ and $\overline{x - i}$ are non-zero elements whose prod
 \subsection{The Quotient \texorpdfstring{$\mathbb{Q}[x]/(x^2+1)$}{Q[x]/(x\texttwosuperior+1)} and the Gaussian Rationals}
 
 \begin{speech}[01:18:56 - 01:20:11]
-What about this one? \inlinemetanote{writes $\mathbb{Q}[x]/(x^2+1)$} 
+What about this one? \inlinemetanote{writes: $\mathbb{Q}[x]/(x^2+1)$} 
 
 This is kind of cutting closer to what this class is about, actually. Is this an integral domain? 
 
 His argument you cannot use exactly here, because $i$ is not a rational number, right? You agree you can't use the same argument. But I can ask the same question, though: what do you think the answer to that is? 
 
-This is really a question that the last part of the class is about. But I'm going to give you a proof of this. The answer is: this is an integral domain. \inlinemetanote{writes is an int.\ dom.} Actually, more than that: \inlinemetanote{writes Field} actually, it's a field! 
+This is really a question that the last part of the class is about. But I'm going to give you a proof of this. The answer is: this is an integral domain. \inlinemetanote{writes: is an int.\ dom.} Actually, more than that: \inlinemetanote{writes: Field} actually, it's a field! 
 
 It doesn't look like it immediately here, but I will try to give you a proof in the next few minutes about this. 
 
@@ -1700,13 +1700,13 @@ Notice that the factorization $x^2 + 1 = (x + i)(x - i)$ used over $\mathbb{C}$ 
 \subsection{Construction of the Evaluation Homomorphism at \texorpdfstring{$i$}{i}}
 
 \begin{speech}[01:20:56 - 01:22:36]
-We know the complex numbers, so, we write it down. \inlinemetanote{writes: $\mathbb{C}$} And I take $\mathbb{Q}$... \inlinemetanote{writes $\mathbb{Q} \to \mathbb{C}$} $\mathbb{Q}$ embeds in the complex numbers. There is no doubt about that. And now I look at the polynomial ring. \inlinemetanote{writes $\cap$ and $\mathbb{Q}[x]$ under $\mathbb{Q}$} 
+We know the complex numbers, so, we write it down. \inlinemetanote{writes: $\mathbb{C}$} And I take $\mathbb{Q}$... \inlinemetanote{writes: $\mathbb{Q} \to \mathbb{C}$} $\mathbb{Q}$ embeds in the complex numbers. There is no doubt about that. And now I look at the polynomial ring. \inlinemetanote{writes \qt{$\cap$} and \qt{$\mathbb{Q}[x]$} under $\mathbb{Q}$} 
 
 And we proved that if I can choose any value of $x$, I get a homomorphism from the polynomial ring (Recall: \cref{thm:universal-property-polynomial-ring}). Do you remember that? 
 
-So, I'm going to choose a homomorphism $f$ that takes... for constants, it just commutes, but $f$ on $x$ is $i$. \inlinemetanote{draws an arrow $f$ from $\mathbb{Q}[x]$ to $\mathbb{C}$ and writes $f(x) = i$} I just do that. I get to do it. Because I told you: for the polynomial ring, if I know how the original ring maps to any other ring, I can always extend the map to anything I want for $x$. So, I get to just do this. It's somehow my right from the previous lectures. 
+So, I'm going to choose a homomorphism $f$ that takes... for constants, it just commutes, but $f$ on $x$ is $i$. \inlinemetanote{draws an arrow $f$ from $\mathbb{Q}[x]$ to $\mathbb{C}$ and writes: $f(x) = i$} I just do that. I get to do it. Because I told you: for the polynomial ring, if I know how the original ring maps to any other ring, I can always extend the map to anything I want for $x$. So, I get to just do this. It's somehow my right from the previous lectures. 
 
-In other words, I define a homomorphism $f$ from polynomials to the complex numbers, \inlinemetanote{writes: $f \colon \mathbb{Q}[x] \to \mathbb{C}$} where $f$ of a polynomial equals the polynomial evaluated at $i$. \inlinemetanote{writes $f(p(x)) = p(i)$} Okay? 
+In other words, I define a homomorphism $f$ from polynomials to the complex numbers, \inlinemetanote{writes: $f \colon \mathbb{Q}[x] \to \mathbb{C}$} where $f$ of a polynomial equals the polynomial evaluated at $i$. \inlinemetanote{writes: $f(p(x)) = p(i)$} Okay? 
 
 Do you accept this? 
 
@@ -1823,9 +1823,9 @@ Well, one thing that's definitely in the kernel is this polynomial: $x^2 + 1$ is
 
 So, whatever the kernel is, it definitely has this polynomial. Okay? 
 
-Then we'd like to see whether there's anything else in the kernel. Once this is in the kernel, then the whole ideal generated by this polynomial is also in the kernel. \inlinemetanote{writes $(x^2+1) \subset \ker(f)$} Because if I take this polynomial and multiply it by something else, it'll still be in the kernel. 
+Then we'd like to see whether there's anything else in the kernel. Once this is in the kernel, then the whole ideal generated by this polynomial is also in the kernel. \inlinemetanote{writes: $(x^2+1) \subset \ker(f)$} Because if I take this polynomial and multiply it by something else, it'll still be in the kernel. 
 
-So, the question now is: is there anything else? The question here is: is the ideal generated by this polynomial equal to the kernel of $f$? \inlinemetanote{writes Is $(x^2+1) = \ker(f)$?} 
+So, the question now is: is there anything else? The question here is: is the ideal generated by this polynomial equal to the kernel of $f$? \inlinemetanote{writes: Is $(x^2+1) = \ker(f)$?} 
 
 Okay? If the answer is yes, then I've answered that question! Because here it is, it's $\mathbb{Q}[x] \bmod$... and spoiler: it's going to be yes. If it were yes, then I will have answered this question, because I've computed the kernel here, and I've showed it's isomorphic to the ring of Gaussian integers (i.e., Gaussian rationals $\mathbb{Q}[i]$). 
 
@@ -1862,17 +1862,17 @@ Let us try to think really what we have to do to prove it's the kernel. You have
 
 We have $f$ from $\mathbb{Q}[x]$ to $\mathbb{C}$, \inlinemetanote{writes: $f \colon \mathbb{Q}[x] \to \mathbb{C}$} and $f$ eats polynomials --- that's an element here --- and it gives back a complex number, which is $p(i)$. \inlinemetanote{writes: $f(p(x)) = p(i)$} 
 
-And the kernel of $f$: a polynomial is in the kernel of $f$ if and only if $p(i)$ is zero. \inlinemetanote{writes $\ker(f) \ni p(x) \iff p(i) = 0$} In real life, you say $i$ is a root of $p$, \inlinemetanote{writes \qt{$i$ is root of $p$}} right? So, the ones in the kernel are those polynomials where $i$ is a root. Okay? 
+And the kernel of $f$: a polynomial is in the kernel of $f$ if and only if $p(i)$ is zero. \inlinemetanote{writes: $\ker(f) \ni p(x) \iff p(i) = 0$} In real life, you say $i$ is a root of $p$, \inlinemetanote{writes \qt{$i$ is root of $p$}} right? So, the ones in the kernel are those polynomials where $i$ is a root. Okay? 
 
 So, we have to see how that's related to this $x^2 + 1$. 
 
 There's different ways to say this, but we could do the following thing: we try to divide $p(x)$ by $x^2 + 1$, \inlinemetanote{writes: $x^2 + 1 \mid p(x)$} right? This is some polynomial, and we try to divide it, and everything's happening in this algebra of polynomials $\mathbb{Q}[x]$. \inlinemetanote{writes: $\mathbb{Q}[x]$} 
 
-This is what's called polynomial long division, which you should have learned in school: as you have a polynomial, you can start dividing it. And the answer is that this will be equal to some polynomial $q(x)$ times $x^2 + 1$ plus a remainder term. \inlinemetanote{writes $p(x) = q(x) \cdot (x^2+1) + r(x)$} 
+This is what's called polynomial long division, which you should have learned in school: as you have a polynomial, you can start dividing it. And the answer is that this will be equal to some polynomial $q(x)$ times $x^2 + 1$ plus a remainder term. \inlinemetanote{writes: $p(x) = q(x) \cdot (x^2+1) + r(x)$} 
 
 Do you remember polynomial long division? You just keep taking out the highest powers all the way down. I don't know, did you learn this stuff? 
 
-If you do polynomial long division, you start dividing, and you'll eventually get some polynomial times this, plus a remainder term. And this remainder term, since this is a quadratic polynomial, this remainder term is a linear polynomial! \inlinemetanote{writes: linear poly.} So, this remainder term is some $r_1 x + r_2$. \inlinemetanote{writes $r_1 x + r_2$} Of course, these could be zero. All right.
+If you do polynomial long division, you start dividing, and you'll eventually get some polynomial times this, plus a remainder term. And this remainder term, since this is a quadratic polynomial, this remainder term is a linear polynomial! \inlinemetanote{writes: linear poly.} So, this remainder term is some $r_1 x + r_2$. \inlinemetanote{writes: $r_1 x + r_2$} Of course, these could be zero. All right.
 \end{speech}
 
 \begin{content}[Polynomial Division by \texorpdfstring{$x^2+1$}{x^2+1}]
@@ -1894,7 +1894,7 @@ That's polynomial long division, that's something you learn in school, and you s
 
 Now, I just stick $i$ in this equation: \inlinemetanote{writes: $p(i) = q(i)(i^2+1) + r(i)$} $p(i)$... I put $i$'s everywhere: $q(i) \cdot (i^2 + 1) + r(i)$. 
 
-And now, the assumption is $p(i) = 0$, so, this side is zero. \inlinemetanote{writes $0$ under $p(i)$} This term is also zero, because $i^2 + 1$ is zero. \inlinemetanote{crosses out $(i^2+1)$} 
+And now, the assumption is $p(i) = 0$, so, this side is zero. \inlinemetanote{writes \qt{$0$} under $p(i)$} This term is also zero, because $i^2 + 1$ is zero. \inlinemetanote{crosses out $(i^2+1)$} 
 
 That means that the conclusion is $r(i)$ is zero! \inlinemetanote{writes: $\implies r(i) = 0$} 
 
@@ -1908,7 +1908,7 @@ Both coefficients must be zero.
 \begin{speech}[01:29:20 - 01:30:14]
 Yeah, the only way, because $i$ is not... if this were a non-zero polynomial, these are rational numbers, the only way when you stick in $i$ this is zero is if this is the zero polynomial! Because $i$ is not a rational number. 
 
-So, this implies that $r$ is the zero polynomial, \inlinemetanote{writes $\implies r = 0$} so, actually it's not here, and this $p$ is in the ideal! \inlinemetanote{crosses out $r(x)$ in the equation} 
+So, this implies that $r$ is the zero polynomial, \inlinemetanote{writes: $\implies r = 0$} so, actually it's not here, and this $p$ is in the ideal! \inlinemetanote{crosses out $r(x)$ in the equation} 
 
 And that finishes the argument, actually. 
 
