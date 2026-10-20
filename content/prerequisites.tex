@@ -85,11 +85,11 @@ An \newterm{equivalence relation} on a set $T$ is a relation $\equiv$ on $T$ tha
 \end{definition}
 
 \begin{definition}[Equivalence Classes and Quotient Set]\label[definition]{def:pre-quotient-set}
-The \newterm{equivalence class} of $x \in T$ is $[x] = \{ y \in T \mid y \equiv x \}$, and the \newterm{quotient set} $T/{\equiv}$ (written $T_{\equiv}$ on the lecturer's board) is the set of all equivalence classes. Two classes are either equal or disjoint, $[x] = [y]$ holds exactly when $x \equiv y$, and the classes cover $T$: they form a \newterm{partition} of $T$.
+The \newterm{equivalence class} of $x \in T$ is $[x] = \{ y \in T \mid y \equiv x \}$, and the \newterm{quotient set} $\faktor{T}{{\equiv}}$ (written $T_{\equiv}$ on the lecturer's board) is the set of all equivalence classes. Two classes are either equal or disjoint, $[x] = [y]$ holds exactly when $x \equiv y$, and the classes cover $T$: they form a \newterm{partition} of $T$.
 \end{definition}
 
 \begin{steps}[Maps Defined on Classes]
-A rule that defines a value for a class through one of its elements (a \newterm{representative}) defines a map on $T/{\equiv}$ only if equivalent representatives give the same value; the rule is then called \newterm{well-defined}. The lectures carry out this check for the operations of $\mathbb{Z}/n\mathbb{Z}$ (\cref{def:residue-class-ring}), for the extension $g \colon \mathbb{Q} \to F$ (\cref{clm:g-well-defined}) and for the field of fractions (\cref{prop:addition-well-defined}).
+A rule that defines a value for a class through one of its elements (a \newterm{representative}) defines a map on $\faktor{T}{{\equiv}}$ only if equivalent representatives give the same value; the rule is then called \newterm{well-defined}. The lectures carry out this check for the operations of $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ (\cref{def:residue-class-ring}), for the extension $g \colon \mathbb{Q} \to F$ (\cref{clm:g-well-defined}) and for the field of fractions (\cref{prop:addition-well-defined}).
 \end{steps}
 
 \begin{definition}[Partial Orders and Maximal Elements]\label[definition]{def:pre-partial-order}
@@ -157,7 +157,7 @@ so $\gcd(252, 198) = 18$. Solving the equations backwards for the remainders,
 \[
 18 = 54 - 36 = 54 - (198 - 3 \cdot 54) = 4 \cdot 54 - 198 = 4 \cdot (252 - 198) - 198 = 4 \cdot 252 - 5 \cdot 198.
 \]
-If $\gcd(a, m) = 1$, the same back-substitution gives $a x + m y = 1$, so $\bar{x}$ is the inverse of $\bar{a}$ in $\mathbb{Z}/m\mathbb{Z}$ (\cref{thm:units-z-mod-m}).
+If $\gcd(a, m) = 1$, the same back-substitution gives $a x + m y = 1$, so $\bar{x}$ is the inverse of $\bar{a}$ in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ (\cref{thm:units-z-mod-m}).
 \end{example}
 
 \begin{fact}[Unique Factorization in $\mathbb{Z}$]\label[fact]{fact:pre-unique-factorization}
@@ -169,7 +169,7 @@ Let $n \in \mathbb{Z}_{>0}$. Integers $a, b$ are \newterm{congruent modulo $n$},
 \end{definition}
 
 \begin{fact}[Residue Classes]\label[fact]{fact:pre-residue-classes}
-Congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$, and it is compatible with the operations: $a \equiv a'$ and $b \equiv b'$ imply $a + b \equiv a' + b'$ and $a b \equiv a' b' \pmod n$. Its classes are the \newterm{residue classes} $\bar{a} = a + n\mathbb{Z}$; by division with remainder there are exactly $n$ of them, $\bar{0}, \bar{1}, \dots, \overline{n-1}$. The lecturer recalls the resulting ring $\mathbb{Z}/n\mathbb{Z}$ in Week~1 (\cref{def:residue-class-ring}).
+Congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$, and it is compatible with the operations: $a \equiv a'$ and $b \equiv b'$ imply $a + b \equiv a' + b'$ and $a b \equiv a' b' \pmod n$. Its classes are the \newterm{residue classes} $\bar{a} = a + n\mathbb{Z}$; by division with remainder there are exactly $n$ of them, $\bar{0}, \bar{1}, \dots, \overline{n-1}$. The lecturer recalls the resulting ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ in Week~1 (\cref{def:residue-class-ring}).
 \end{fact}
 
 \section{Groups, Fields and the Complex Numbers}
@@ -183,11 +183,11 @@ A map $f \colon G \to H$ between groups is a \newterm{homomorphism} if $f(a b) =
 \end{definition}
 
 \begin{definition}[Order of an Element, Cyclic Groups]\label[definition]{def:pre-cyclic}
-Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} of $a$ is the least $n \ge 1$ with $a^n = e$ (or $\infty$ if there is none); in additive notation the condition reads $n a = 0$. The group $G$ is \newterm{cyclic}, with \newterm{generator} $a$, if every element of $G$ is a power $a^k$, $k \in \mathbb{Z}$. A finite group $G$ is cyclic with generator $a$ exactly when $a$ has order $|G|$, and then $G = \{e, a, a^2, \dots, a^{|G|-1}\}$. Example: $(\mathbb{Z}/n\mathbb{Z}, +, \bar{0})$ is cyclic with generator $\bar{1}$. An isomorphism maps elements of order $n$ to elements of order $n$; the lectures use this in Week~2 (\cref{prop:r-star-not-isom-r-pos}, \cref{prop:z7z-cyclic-isomorphism}).
+Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} of $a$ is the least $n \ge 1$ with $a^n = e$ (or $\infty$ if there is none); in additive notation the condition reads $n a = 0$. The group $G$ is \newterm{cyclic}, with \newterm{generator} $a$, if every element of $G$ is a power $a^k$, $k \in \mathbb{Z}$. A finite group $G$ is cyclic with generator $a$ exactly when $a$ has order $|G|$, and then $G = \{e, a, a^2, \dots, a^{|G|-1}\}$. Example: $(\faktor{\mathbb{Z}}{n\mathbb{Z}}, +, \bar{0})$ is cyclic with generator $\bar{1}$. An isomorphism maps elements of order $n$ to elements of order $n$; the lectures use this in Week~2 (\cref{prop:r-star-not-isom-r-pos}, \cref{prop:z7z-cyclic-isomorphism}).
 \end{definition}
 
 \begin{definition}[Field]\label[definition]{def:pre-field}
-A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\mathbb{Z}/p\mathbb{Z}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). A \newterm{subfield} of a field is a subring (Week~2, \cref{def:subring}) that is itself a field, such as $\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$ or the Gaussian rationals $\mathbb{Q}(i) \subset \mathbb{C}$ (Week~3, \cref{ex:frac-gaussian-integers}). The lecturer restates fields in Week~2 (\cref{def:field}).
+A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). A \newterm{subfield} of a field is a subring (Week~2, \cref{def:subring}) that is itself a field, such as $\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$ or the Gaussian rationals $\mathbb{Q}(i) \subset \mathbb{C}$ (Week~3, \cref{ex:frac-gaussian-integers}). The lecturer restates fields in Week~2 (\cref{def:field}).
 \end{definition}
 
 \begin{fact}[Complex Conjugation and Modulus]\label[fact]{fact:pre-complex}
@@ -228,19 +228,19 @@ This is long division of polynomials: as long as $\deg(f) \ge \deg(g)$, subtract
 \end{fact}
 
 \begin{definition}[Quotient Vector Space]\label[definition]{def:pre-quotient-space}
-Let $U \subset V$ be a subspace. The relation $v \equiv w \iff v - w \in U$ is an equivalence relation on $V$, with classes the cosets $v + U$. The \newterm{quotient space} $V/U$ is the set of these cosets with
+Let $U \subset V$ be a subspace. The relation $v \equiv w \iff v - w \in U$ is an equivalence relation on $V$, with classes the cosets $v + U$. The \newterm{quotient space} $\faktor{V}{U}$ is the set of these cosets with
 \[
 (v + U) + (w + U) = (v + w) + U, \qquad \lambda (v + U) = \lambda v + U;
 \]
-these operations are well-defined, $V/U$ is a vector space, and the projection $\pi \colon V \to V/U$, $v \mapsto v + U$, is linear and surjective with $\ker(\pi) = U$. If $V$ is finite-dimensional, $\dim V/U = \dim V - \dim U$.
+these operations are well-defined, $\faktor{V}{U}$ is a vector space, and the projection $\pi \colon V \to \faktor{V}{U}$, $v \mapsto v + U$, is linear and surjective with $\ker(\pi) = U$. If $V$ is finite-dimensional, $\dim \faktor{V}{U} = \dim V - \dim U$.
 \end{definition}
 
 \begin{fact}[First Isomorphism Theorem for Linear Maps]\label[fact]{fact:pre-linear-first-iso}
-For a linear map $T \colon V \to W$, the map $\bar{T} \colon V/\ker(T) \to \operatorname{im}(T)$, $v + \ker(T) \mapsto T(v)$, is a well-defined isomorphism of vector spaces. With $\dim V/\ker(T) = \dim V - \dim \ker(T)$ this gives rank--nullity again (\cref{fact:pre-rank-nullity}).
+For a linear map $T \colon V \to W$, the map $\bar{T} \colon \faktor{V}{\ker(T)} \to \operatorname{im}(T)$, $v + \ker(T) \mapsto T(v)$, is a well-defined isomorphism of vector spaces. With $\dim \faktor{V}{\ker(T)} = \dim V - \dim \ker(T)$ this gives rank--nullity again (\cref{fact:pre-rank-nullity}).
 \end{fact}
 
 \begin{steps}[The Model for Quotient Rings]
-The quotient ring $R/I$ of Week~4 follows this pattern step by step, with the ideal $I$ in the role of the subspace $U$: congruence modulo $I$ (\cref{def:congruence-modulo-ideal}), the set of classes (\cref{def:quotient-set}), well-defined operations (\cref{prop:quotient-addition-well-defined}, \cref{prop:multiplication-well-defined}), and the First Isomorphism Theorem $R/\ker(f) \cong \operatorname{im}(f)$ (\cref{thm:first-isomorphism-theorem-statement}). The new ingredient is multiplication: a subspace only has to absorb scalars, an ideal has to absorb all of $R$, and that is exactly what makes the product of classes well-defined.
+The quotient ring $\faktor{R}{I}$ of Week~4 follows this pattern step by step, with the ideal $I$ in the role of the subspace $U$: congruence modulo $I$ (\cref{def:congruence-modulo-ideal}), the set of classes (\cref{def:quotient-set}), well-defined operations (\cref{prop:quotient-addition-well-defined}, \cref{prop:multiplication-well-defined}), and the First Isomorphism Theorem $\faktor{R}{\ker(f)} \cong \operatorname{im}(f)$ (\cref{thm:first-isomorphism-theorem-statement}). The new ingredient is multiplication: a subspace only has to absorb scalars, an ideal has to absorb all of $R$, and that is exactly what makes the product of classes well-defined.
 \end{steps}
 
 \begin{definition}[Dual Space and Dual Map]\label[definition]{def:pre-dual-space}

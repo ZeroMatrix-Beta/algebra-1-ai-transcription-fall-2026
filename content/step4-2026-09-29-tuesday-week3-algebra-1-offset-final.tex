@@ -102,8 +102,8 @@
 \begin{overview}[Course Content Overview]
 This lecture investigates the transition from commutative rings to fields and polynomials, focusing on the invertible elements of rings, the localization process that produces the minimal ambient field of an integral domain, and the algebraic construction of polynomial rings:
 \begin{itemize}
-    \item \textbf{The Group of Units $\operatorname{Unit}(R)$:} Structure of multiplicatively invertible elements, characterization of units in $\mathbb{Z}$ and the Gaussian integers $\mathbb{Z}[i]$ via the norm, and the group of units of residue class rings $(\mathbb{Z}/m\mathbb{Z})^*$.
-    \item \textbf{Euler's Totient Function $\phi(m)$:} Definition as the order of $(\mathbb{Z}/m\mathbb{Z})^*$, with explicit computations for prime powers $\phi(p) = p-1$ and $\phi(p^2) = p(p-1)$.
+    \item \textbf{The Group of Units $\operatorname{Unit}(R)$:} Structure of multiplicatively invertible elements, characterization of units in $\mathbb{Z}$ and the Gaussian integers $\mathbb{Z}[i]$ via the norm, and the group of units of residue class rings $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$.
+    \item \textbf{Euler's Totient Function $\phi(m)$:} Definition as the order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, with explicit computations for prime powers $\phi(p) = p-1$ and $\phi(p^2) = p(p-1)$.
     \item \textbf{Universal Property of $\mathbb{Q}$:} Rigorous formulation of $\mathbb{Q}$ as the smallest field containing $\mathbb{Z}$, and the unique extension of ring embeddings into fields.
     \item \textbf{Construction of the Field of Fractions $\operatorname{Frac}(R)$:} Generalization to arbitrary integral domains via equivalence classes of formal pairs $(x, y) \in R \times (R \setminus \{0\})$, verification of well-defined operations, and canonical embedding $i \colon R \hookrightarrow \operatorname{Frac}(R)$.
     \item \textbf{Concrete Quotient Fields:} Field of fractions of $\mathbb{Z}$, the Gaussian rationals $\mathbb{Q}(i) = \operatorname{Frac}(\mathbb{Z}[i])$, subrings of $\mathbb{Q}$ such as $\mathbb{Z}[\frac{1}{3}]$, and self-isomorphism for existing fields $\operatorname{Frac}(K) \cong K$.
@@ -275,21 +275,21 @@ The field norm $N(a+bi) = a^2 + b^2$ is multiplicative: $N(zw) = N(z)N(w)$. Sinc
 \end{steps}
 \end{content}
 
-\subsection{The Group of Units of \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ}}
+\subsection{The Group of Units of \texorpdfstring{$\faktor{\mathbb{Z}}{m\mathbb{Z}}$}{Z/mZ}}
 
 \begin{speech}[00:05:14 - 00:07:18]
-We did a much more interesting example last time, which was also with proof, but since various people asked me about it afterwards, I want to do just another example. And that was this ring: $\mathbb{Z}/m\mathbb{Z}$. \inlinemetanote{writes: $\mathbb{Z}/m\mathbb{Z}$} That's a nice ring, and so it has a group of units: $\operatorname{Unit}(\mathbb{Z}/m\mathbb{Z})$. \inlinemetanote{writes: $\to \text{Units } \mathbb{Z}/m\mathbb{Z}$}
+We did a much more interesting example last time, which was also with proof, but since various people asked me about it afterwards, I want to do just another example. And that was this ring: $\faktor{\mathbb{Z}}{m\mathbb{Z}}$. \inlinemetanote{writes: $\faktor{\mathbb{Z}}{m\mathbb{Z}}$} That's a nice ring, and so it has a group of units: $\operatorname{Unit}(\faktor{\mathbb{Z}}{m\mathbb{Z}})$. \inlinemetanote{writes: $\to \text{Units } \faktor{\mathbb{Z}}{m\mathbb{Z}}$}
 
-This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units, this is equal to those classes such that $\operatorname{gcd}(x, m) = 1$. \inlinemetanote{writes: $= \{\bar{x} \mid (x, m) = 1\}$} And as I said, it's standard here to say $m$ is at least $2$, so we're not with the zero ring. \inlinemetanote{draws a box around $m \ge 2$} That's the units, and these are the residue classes which are relatively prime. And I did an example last time (Recall: $\mathbb{Z}/7\mathbb{Z}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing.
+This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units, this is equal to those classes such that $\operatorname{gcd}(x, m) = 1$. \inlinemetanote{writes: $= \{\bar{x} \mid (x, m) = 1\}$} And as I said, it's standard here to say $m$ is at least $2$, so we're not with the zero ring. \inlinemetanote{draws a box around $m \ge 2$} That's the units, and these are the residue classes which are relatively prime. And I did an example last time (Recall: $\faktor{\mathbb{Z}}{7\mathbb{Z}}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing.
 
-In the sense that, one might say that if I take here the additive structure, \inlinemetanote{writes: $\mathbb{Z}/m\mathbb{Z} \to (\mathbb{Z}/m\mathbb{Z}, +, 0)$} this is very simple to think about. It's just adding up integers $\bmod m$. In some sense, most people learn about this under one name or the other in school. But this thing --- the units --- are more complicated, are more interesting. \inlinemetanote{writes \qt{units are more interesting}}
+In the sense that, one might say that if I take here the additive structure, \inlinemetanote{writes: $\faktor{\mathbb{Z}}{m\mathbb{Z}} \to (\faktor{\mathbb{Z}}{m\mathbb{Z}}, +, 0)$} this is very simple to think about. It's just adding up integers $\bmod m$. In some sense, most people learn about this under one name or the other in school. But this thing --- the units --- are more complicated, are more interesting. \inlinemetanote{writes \qt{units are more interesting}}
 
 And so I wanted to do another... there were various people asking me some questions, so, let's try this: $10\mathbb{Z}$, just to say a little bit.
 
-The standard notation for this is that: \inlinemetanote{writes: $(\mathbb{Z}/m\mathbb{Z})^*$} This is the usual notation for units of $\mathbb{Z}/m\mathbb{Z}$, and also this notation is sometimes used in general. $R^*$ sometimes denotes --- could denote --- units, depends on the author. So, I've just been writing $\operatorname{Unit}$, so there's no question about what I mean. But in this case, it's so common to use the star here, I also use the star. Is that clear? So, this is it.
+The standard notation for this is that: \inlinemetanote{writes: $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$} This is the usual notation for units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$, and also this notation is sometimes used in general. $R^*$ sometimes denotes --- could denote --- units, depends on the author. So, I've just been writing $\operatorname{Unit}$, so there's no question about what I mean. But in this case, it's so common to use the star here, I also use the star. Is that clear? So, this is it.
 \end{speech}
 
-\subsubsection{Example: Units of \texorpdfstring{$\mathbb{Z}/10\mathbb{Z}$}{Z/10Z}}
+\subsubsection{Example: Units of \texorpdfstring{$\faktor{\mathbb{Z}}{10\mathbb{Z}}$}{Z/10Z}}
 
 \begin{speech}[00:07:18 - 00:08:43]
 How to think about this? Well, I'll just do an example because, as I said, there were various questions. This is all the residue classes that are relatively prime. So, you can just write them all first and cross them out: $\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}, \bar{7}, \bar{8}, \bar{9}$. \inlinemetanote{writes: $\bar{0}, \bar{1}, \bar{2}, \dots, \bar{9}$} Maybe I should have picked something less than $10$.
@@ -298,9 +298,9 @@ These are all the residue classes, and then we have to cancel all the ones that 
 
 Which one? Is $\bar{0}$ relatively prime? No, so, we cross that out. \inlinemetanote{crosses out $\bar{0}$} $\bar{1}$ is relatively prime --- $\bar{1}$ is always relatively prime. What about $\bar{2}$? No. \inlinemetanote{crosses out $\bar{2}$} $\bar{3}$? Yes, so, we skip it. $\bar{4}$? That has a $2$ in it and $10$ has a $2$, so, we cross that out. \inlinemetanote{crosses out $\bar{4}$} $\bar{5}$ --- $10$ has a $5$ in it, we cross that one out. \inlinemetanote{crosses out $\bar{5}$} Cross that one out, \inlinemetanote{crosses out $\bar{6}$ and $\bar{8}$} and what's left? Four, yeah, so, these are the four residue classes left. \inlinemetanote{circles $\bar{1}, \bar{3}, \bar{7}, \bar{9}$}
 
-The group of units here consists of these residue classes: \inlinemetanote{writes: $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\} \subset (\mathbb{Z}/10\mathbb{Z})^*$} $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\}$. And the claim is: this is a group under multiplication. That's what that claim is.
+The group of units here consists of these residue classes: \inlinemetanote{writes: $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\} \subset (\faktor{\mathbb{Z}}{10\mathbb{Z}})^*$} $\{\bar{1}, \bar{3}, \bar{7}, \bar{9}\}$. And the claim is: this is a group under multiplication. That's what that claim is.
 
-For example, $\bar{3}$ is in this group, so, what is its inverse? \inlinemetanote{writes: $\bar{3} \in (\mathbb{Z}/10\mathbb{Z})^*$, what is its inverse?}
+For example, $\bar{3}$ is in this group, so, what is its inverse? \inlinemetanote{writes: $\bar{3} \in (\faktor{\mathbb{Z}}{10\mathbb{Z}})^*$, what is its inverse?}
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -310,25 +310,25 @@ $7$.
 \begin{speech}[00:08:44 - 00:09:45]
 Seven, because $7 \times 3 = 21$, and so on. So anyway, you can play with this.
 
-This is a more interesting object, and in fact you could ask: what is the order? This is a basic question in elementary number theory: what is the order of this group? \inlinemetanote{writes \qt{What is the order of $(\mathbb{Z}/m\mathbb{Z})^*$?}}
+This is a more interesting object, and in fact you could ask: what is the order? This is a basic question in elementary number theory: what is the order of this group? \inlinemetanote{writes \qt{What is the order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$?}}
 
-And by order, this word means for groups the number of elements. \inlinemetanote{writes \qt{\# of elements}} So, when I say order of a group, if it's a finite group, I just mean the number of elements. What is the order of this? Sometimes this order is denoted by just straight lines --- the bars: \inlinemetanote{writes: $|(\mathbb{Z}/m\mathbb{Z})^*|$} You should be familiar with this set-theoretic notation; these two bars usually denote order. Is that clear? That's kind of standard set-theoretic notation.
+And by order, this word means for groups the number of elements. \inlinemetanote{writes \qt{\# of elements}} So, when I say order of a group, if it's a finite group, I just mean the number of elements. What is the order of this? Sometimes this order is denoted by just straight lines --- the bars: \inlinemetanote{writes: $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$} You should be familiar with this set-theoretic notation; these two bars usually denote order. Is that clear? That's kind of standard set-theoretic notation.
 
-First of all, let's do $10$. What is this? Well, the answer is $4$ --- you just have to compute these. \inlinemetanote{writes: $|(\mathbb{Z}/10\mathbb{Z})^*| = 4$}
+First of all, let's do $10$. What is this? Well, the answer is $4$ --- you just have to compute these. \inlinemetanote{writes: $|(\faktor{\mathbb{Z}}{10\mathbb{Z}})^*| = 4$}
 \end{speech}
 
-\begin{content}[Units in \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ} and the Example \texorpdfstring{$\mathbb{Z}/10\mathbb{Z}$}{Z/10Z}]
-\recap{This characterization was proved in Week~2 (\cref{thm:units-z-mod-m}); the lecturer restates it with the notation $(\mathbb{Z}/m\mathbb{Z})^*$.}
+\begin{content}[Units in \texorpdfstring{$\faktor{\mathbb{Z}}{m\mathbb{Z}}$}{Z/mZ} and the Example \texorpdfstring{$\faktor{\mathbb{Z}}{10\mathbb{Z}}$}{Z/10Z}]
+\recap{This characterization was proved in Week~2 (\cref{thm:units-z-mod-m}); the lecturer restates it with the notation $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$.}
 
 \begin{proposition}[Units in the Residue Class Ring]\label[proposition]{prop:units-mod-m-w3}
-Let $m \in \mathbb{Z}_{\ge 2}$. The group of units of the residue class ring $\mathbb{Z}/m\mathbb{Z}$ (frequently denoted by $(\mathbb{Z}/m\mathbb{Z})^*$ or $R^*$ for general rings) consists of those residue classes whose representatives are coprime to $m$ (on the board: $(x, m) = 1$):
+Let $m \in \mathbb{Z}_{\ge 2}$. The group of units of the residue class ring $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ (frequently denoted by $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$ or $R^*$ for general rings) consists of those residue classes whose representatives are coprime to $m$ (on the board: $(x, m) = 1$):
 \begin{equation}\label{eq:units-mod-m}
-(\mathbb{Z}/m\mathbb{Z})^* = \operatorname{Unit}(\mathbb{Z}/m\mathbb{Z}) = \{ \bar{x} \in \mathbb{Z}/m\mathbb{Z} \mid \gcd(x, m) = 1 \}.
+(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \operatorname{Unit}(\faktor{\mathbb{Z}}{m\mathbb{Z}}) = \{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \mid \gcd(x, m) = 1 \}.
 \end{equation}
 \end{proposition}
 
-\begin{example}[Computing the Units of $\mathbb{Z}/10\mathbb{Z}$]\label[example]{ex:units-z10z}
-Consider the ring $\mathbb{Z}/10\mathbb{Z} = \{ \bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}, \bar{7}, \bar{8}, \bar{9} \}$. To find the units, we eliminate all classes that share a common divisor with $10$ greater than $1$:
+\begin{example}[Computing the Units of $\faktor{\mathbb{Z}}{10\mathbb{Z}}$]\label[example]{ex:units-z10z}
+Consider the ring $\faktor{\mathbb{Z}}{10\mathbb{Z}} = \{ \bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}, \bar{7}, \bar{8}, \bar{9} \}$. To find the units, we eliminate all classes that share a common divisor with $10$ greater than $1$:
 \begin{itemize}
     \item \textbf{Class $\bar{0}$:} $\gcd(0, 10) = 10 \ne 1$ (eliminate $\bar{0}$),
     \item \textbf{Even classes:} $\gcd(2, 10) = 2$, $\gcd(4, 10) = 2$, $\gcd(6, 10) = 2$, $\gcd(8, 10) = 2$ (eliminate $\bar{2}, \bar{4}, \bar{6}, \bar{8}$),
@@ -336,11 +336,11 @@ Consider the ring $\mathbb{Z}/10\mathbb{Z} = \{ \bar{0}, \bar{1}, \bar{2}, \bar{
 \end{itemize}
 The remaining coprime residue classes form the group of units:
 \[
-(\mathbb{Z}/10\mathbb{Z})^* = \{ \bar{1}, \bar{3}, \bar{7}, \bar{9} \}.
+(\faktor{\mathbb{Z}}{10\mathbb{Z}})^* = \{ \bar{1}, \bar{3}, \bar{7}, \bar{9} \}.
 \]
 This is an abelian group of order $4$ under multiplication modulo $10$. For instance, the inverse of $\bar{3}$ is $\bar{7}$, since:
 \[
-\bar{3} \cdot \bar{7} = \overline{21} = \bar{1} \in \mathbb{Z}/10\mathbb{Z}.
+\bar{3} \cdot \bar{7} = \overline{21} = \bar{1} \in \faktor{\mathbb{Z}}{10\mathbb{Z}}.
 \]
 \end{example}
 \end{content}
@@ -352,7 +352,7 @@ The lecturer pushes the upper chalkboard up and erases the middle section to pre
 \section{Euler's Totient Function}
 
 \begin{speech}[00:10:36 - 00:12:03]
-You can ask this question in general, and that's a fun thing to think about. We'll say more about this a bit later, but the definition can be given now: \inlinemetanote{writes \qt{Order of $(\mathbb{Z}/m\mathbb{Z})^* \stackrel{\text{def}}{=} \phi(m)$}} the order of $(\mathbb{Z}/m\mathbb{Z})^*$, the group of units, has a name.
+You can ask this question in general, and that's a fun thing to think about. We'll say more about this a bit later, but the definition can be given now: \inlinemetanote{writes \qt{Order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* \stackrel{\text{def}}{=} \phi(m)$}} the order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, the group of units, has a name.
 
 Do you know the name of this function? Yes, yeah, it's $\phi$... It's Euler's totient function, that's just the definition. That's the definition of this function --- it's just the order.
 
@@ -396,9 +396,9 @@ So, we have to take away $p - 1$, so, the answer is $p^2 - p$. \inlinemetanote{w
 
 \begin{content}[Euler's Totient Function and Prime Power Formulas]
 \begin{definition}[Euler's Totient Function]\label[definition]{def:eulers-totient}
-The \newterm{Euler totient function} (or Euler's $\phi$-function) $\phi \colon \mathbb{Z}_{\ge 1} \to \mathbb{Z}_{\ge 1}$ is defined as the order of the group of units of $\mathbb{Z}/m\mathbb{Z}$:
+The \newterm{Euler totient function} (or Euler's $\phi$-function) $\phi \colon \mathbb{Z}_{\ge 1} \to \mathbb{Z}_{\ge 1}$ is defined as the order of the group of units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$:
 \begin{equation}\label{eq:totient-def}
-\phi(m) := |(\mathbb{Z}/m\mathbb{Z})^*| = \#\{ x \in \{0, 1, \dots, m-1\} \mid \gcd(x, m) = 1 \}.
+\phi(m) := |(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*| = \#\{ x \in \{0, 1, \dots, m-1\} \mid \gcd(x, m) = 1 \}.
 \end{equation}
 \end{definition}
 
@@ -1973,8 +1973,8 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $R^\times = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\mathbb{Z}/m\mathbb{Z})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
-    \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\mathbb{Z}/m\mathbb{Z})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
+    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $R^\times = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
+    \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
     \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i)$, $\operatorname{Frac}(\mathbb{Z}[\frac{1}{3}]) = \mathbb{Q}$, and $\operatorname{Frac}(K) \cong K$ for any existing field $K$.

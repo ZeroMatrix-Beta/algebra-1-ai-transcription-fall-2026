@@ -562,9 +562,9 @@ In the zero ring $R = \{0\}$, the only element is $0$. Therefore, there exist no
 
 \begin{content}[Proposition: When Residue Class Rings are Domains]
 \begin{proposition}\label[proposition]{prop:z-mod-m-domain}
-Let $m \in \mathbb{Z}_{>0}$ be a positive integer. The residue class ring $(\mathbb{Z}/m\mathbb{Z}, +, \cdot, \bar{0}, \bar{1})$ is an integral domain if and only if $m$ is a prime number:
+Let $m \in \mathbb{Z}_{>0}$ be a positive integer. The residue class ring $(\faktor{\mathbb{Z}}{m\mathbb{Z}}, +, \cdot, \bar{0}, \bar{1})$ is an integral domain if and only if $m$ is a prime number:
 \begin{equation}\label{eq:z-mod-m-equiv}
-\mathbb{Z}/m\mathbb{Z} \text{ is an integral domain} \iff m \text{ is prime}.
+\faktor{\mathbb{Z}}{m\mathbb{Z}} \text{ is an integral domain} \iff m \text{ is prime}.
 \end{equation}
 \end{proposition}
 \end{content}
@@ -580,7 +580,7 @@ Let $m \in \mathbb{Z}_{>0}$ be a positive integer. The residue class ring $(\mat
 \begin{proofWrapper}[Proof of \cref{prop:z-mod-m-domain}]
 
 \begin{speech}[00:17:09 - 00:19:24]
-Okay, $\mathbb{Z}/m\mathbb{Z}$ is a domain if and only if $m$ is prime. So, let's try to prove this.
+Okay, $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ is a domain if and only if $m$ is prime. So, let's try to prove this.
 
 Proof. \inlinemetanote{writes \qt{Proof}}
 
@@ -592,39 +592,39 @@ Okay, so, let's try to prove this: it is a domain if and only if $m$ is prime.
 
 We have $m$ here as some positive integer. If $m$ is not prime, then this means that $m$ admits a factorization into $ab$ \inlinemetanote{writes \qt{$m = ab$}}, where $a$ is strictly greater than $1$, strictly less than $m$ \inlinemetanote{writes \qt{$1 < a < m$}}, and $b$ is strictly like this: $1 < b < m$ \inlinemetanote{writes \qt{$1 < b < m$}}. That's what it means: If it's not prime, I can factor it; and if I can factor it, I break it in two, into smaller pieces.
 
-And then if I look at this equation as a residue class, this equals that, which is equal to zero in $\mathbb{Z} / m\mathbb{Z}$ \inlinemetanote{writes \qt{$\bar{a} \cdot \bar{b} = \bar{m} = \bar{0} \in \mathbb{Z}/m\mathbb{Z}$}}. And this shows that $\bar{a}$ is not zero \inlinemetanote{writes \qt{$\bar{a} \neq \bar{0}$}}, and this shows that $\bar{b}$ is not zero \inlinemetanote{writes \qt{$\bar{b} \neq \bar{0}$}}.
+And then if I look at this equation as a residue class, this equals that, which is equal to zero in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{$\bar{a} \cdot \bar{b} = \bar{m} = \bar{0} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$}}. And this shows that $\bar{a}$ is not zero \inlinemetanote{writes \qt{$\bar{a} \neq \bar{0}$}}, and this shows that $\bar{b}$ is not zero \inlinemetanote{writes \qt{$\bar{b} \neq \bar{0}$}}.
 
 Okay? So, this says that if $m$ is not prime, there's no way for it to be a domain, because it factors, and those factors precisely give the violation of that property (i.e., condition \textbf{(ii)} of \cref{def:integral-domain}). All right?
 \end{speech}
 
 \begin{content}[Proof of Proposition: Direction 1 (Non-Prime Case)]
-\textbf{Direction 1: \texorpdfstring{$m$}{m} Not Prime \texorpdfstring{$\implies \mathbb{Z}/m\mathbb{Z}$}{=> Z/mZ} Not a Domain.}
+\textbf{Direction 1: \texorpdfstring{$m$}{m} Not Prime \texorpdfstring{$\implies \faktor{\mathbb{Z}}{m\mathbb{Z}}$}{=> Z/mZ} Not a Domain.}
 
-Suppose $m$ is not prime. If $m = 1$, then $\mathbb{Z}/1\mathbb{Z} = \{\bar{0}\}$ is the zero ring, which is not a domain by condition (i) of \cref{def:integral-domain} (see also \cref{rem:boundary-cases-mod-rings}). Otherwise $m > 1$ is composite and admits a proper non-trivial factorization in $\mathbb{Z}$:
+Suppose $m$ is not prime. If $m = 1$, then $\faktor{\mathbb{Z}}{1\mathbb{Z}} = \{\bar{0}\}$ is the zero ring, which is not a domain by condition (i) of \cref{def:integral-domain} (see also \cref{rem:boundary-cases-mod-rings}). Otherwise $m > 1$ is composite and admits a proper non-trivial factorization in $\mathbb{Z}$:
 \begin{align}
     m &= a \cdot b, \label{eq:composite-m-factor} \\
     1 &< a < m, \nonumber \\
     1 &< b < m. \nonumber
 \end{align}
-Passing to the residue classes in the quotient ring $\mathbb{Z}/m\mathbb{Z}$:
+Passing to the residue classes in the quotient ring $\faktor{\mathbb{Z}}{m\mathbb{Z}}$:
 \begin{equation}\label{eq:prod-zero-divisors}
-\bar{a} \cdot \bar{b} = \overline{a \cdot b} = \bar{m} = \bar{0} \in \mathbb{Z}/m\mathbb{Z}.
+\bar{a} \cdot \bar{b} = \overline{a \cdot b} = \bar{m} = \bar{0} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}.
 \end{equation}
 However, because $1 < a < m$ and $1 < b < m$, neither $a$ nor $b$ is divisible by $m$. Therefore:
 \begin{equation}\label{eq:nonzero-factors}
 \bar{a} \neq \bar{0} \quad \text{and} \quad \bar{b} \neq \bar{0}.
 \end{equation}
-The existence of non-zero elements $\bar{a}, \bar{b} \in \mathbb{Z}/m\mathbb{Z}$ satisfying $\bar{a} \cdot \bar{b} = \bar{0}$ demonstrates that $\mathbb{Z}/m\mathbb{Z}$ possesses zero divisors, so $\mathbb{Z}/m\mathbb{Z}$ is not an integral domain.
+The existence of non-zero elements $\bar{a}, \bar{b} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ satisfying $\bar{a} \cdot \bar{b} = \bar{0}$ demonstrates that $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ possesses zero divisors, so $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ is not an integral domain.
 \end{content}
 
 \begin{speech}[00:19:24 - 00:21:50]
 So, then the other thing is: Suppose it is prime.
 
-Suppose $m = p$ is prime. \inlinemetanote{writes \qt{Suppose $m = p$ is prime}} Then let $a$ and $b$ be integers \inlinemetanote{writes \qt{Then let $a, b \in \mathbb{Z}$}} such that $\bar{a} \cdot \bar{b} = \bar{0}$ in $\mathbb{Z} / p\mathbb{Z}$ \inlinemetanote{writes \qt{such that $\bar{a} \cdot \bar{b} = \bar{0} \in \mathbb{Z}/p\mathbb{Z}$}}.
+Suppose $m = p$ is prime. \inlinemetanote{writes \qt{Suppose $m = p$ is prime}} Then let $a$ and $b$ be integers \inlinemetanote{writes \qt{Then let $a, b \in \mathbb{Z}$}} such that $\bar{a} \cdot \bar{b} = \bar{0}$ in $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ \inlinemetanote{writes \qt{such that $\bar{a} \cdot \bar{b} = \bar{0} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}$}}.
 
 All right? What are we going to do here? If I translate this equation on residue classes to integers, this means that $a \cdot b$ is equal to some integer $d \cdot p$ \inlinemetanote{writes \qt{$ab = dp$}}.
 
-I am using this notation and arithmetic in $\mathbb{Z} / m\mathbb{Z}$ freely here, because I assume you've seen this before. Is this true? If it's not, you should tell me. All right. If you haven't seen it, you should study it.
+I am using this notation and arithmetic in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ freely here, because I assume you've seen this before. Is this true? If it's not, you should tell me. All right. If you haven't seen it, you should study it.
 
 So, if I take these two residue classes and they multiply to zero, that exactly means that the product is divisible by $p$, and that is that difference. Is that clear?
 
@@ -632,15 +632,15 @@ And then this means that $p$ divides $ab$, because $ab$ is $d$ times $p$ \inline
 
 And if this is true, then that means $\bar{a} = \bar{0}$ \inlinemetanote{writes \qt{$\implies \bar{a} = \bar{0}$}}; and if this is true, that means $\bar{b} = \bar{0}$ \inlinemetanote{writes \qt{or $\bar{b} = \bar{0}$}}.
 
-So, we've proven that if the product is zero in $\mathbb{Z} / p\mathbb{Z}$, the only way that happens is one of them is zero. And that's logically equivalent to this: If they were both not zero, then the product is not zero. Or the logical equivalent, which is the contrapositive, is that if the product is zero, then one of the factors must be zero, which we've established. So, this proposition is proven.
+So, we've proven that if the product is zero in $\faktor{\mathbb{Z}}{p\mathbb{Z}}$, the only way that happens is one of them is zero. And that's logically equivalent to this: If they were both not zero, then the product is not zero. Or the logical equivalent, which is the contrapositive, is that if the product is zero, then one of the factors must be zero, which we've established. So, this proposition is proven.
 \end{speech}
 
 \begin{content}[Proof of Proposition: Direction 2 (Prime Case via Euclid's Lemma)]
-\textbf{Direction 2: \texorpdfstring{$m = p$}{m=p} Prime \texorpdfstring{$\implies \mathbb{Z}/p\mathbb{Z}$}{=> Z/pZ} Is a Domain.}
+\textbf{Direction 2: \texorpdfstring{$m = p$}{m=p} Prime \texorpdfstring{$\implies \faktor{\mathbb{Z}}{p\mathbb{Z}}$}{=> Z/pZ} Is a Domain.}
 
-Suppose $m = p$ is a prime number. Let $\bar{a}, \bar{b} \in \mathbb{Z}/p\mathbb{Z}$ and assume that their product vanishes:
+Suppose $m = p$ is a prime number. Let $\bar{a}, \bar{b} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}$ and assume that their product vanishes:
 \begin{equation}\label{eq:prime-prod-zero}
-\bar{a} \cdot \bar{b} = \bar{0} \in \mathbb{Z}/p\mathbb{Z}.
+\bar{a} \cdot \bar{b} = \bar{0} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}.
 \end{equation}
 By definition of modular multiplication, this implies $\overline{a \cdot b} = \bar{0}$, meaning that $a \cdot b$ is congruent to $0 \pmod p$. Hence, there exists some integer $d \in \mathbb{Z}$ such that:
 \begin{equation}\label{eq:divisible-by-p}
@@ -650,12 +650,12 @@ By Euclid's Lemma (which holds whenever $p$ is prime, \cref{fact:pre-euclid}):
 \begin{equation}\label{eq:euclids-lemma}
 p \mid (a \cdot b) \implies p \mid a \quad \text{or} \quad p \mid b.
 \end{equation}
-Translating each case back into modular equivalence in $\mathbb{Z}/p\mathbb{Z}$:
+Translating each case back into modular equivalence in $\faktor{\mathbb{Z}}{p\mathbb{Z}}$:
 \begin{itemize}
-    \item If $p \mid a$, then $\bar{a} = \bar{0} \in \mathbb{Z}/p\mathbb{Z}$.
-    \item If $p \mid b$, then $\bar{b} = \bar{0} \in \mathbb{Z}/p\mathbb{Z}$.
+    \item If $p \mid a$, then $\bar{a} = \bar{0} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}$.
+    \item If $p \mid b$, then $\bar{b} = \bar{0} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}$.
 \end{itemize}
-Thus, $\bar{a} \cdot \bar{b} = \bar{0}$ implies $\bar{a} = \bar{0}$ or $\bar{b} = \bar{0}$. This establishes that $\mathbb{Z}/p\mathbb{Z}$ has no zero divisors. Because $p \ge 2$, $\mathbb{Z}/p\mathbb{Z}$ contains at least two distinct elements ($\bar{0} \neq \bar{1}$), so $\mathbb{Z}/p\mathbb{Z}$ is not the zero ring. Therefore, $\mathbb{Z}/p\mathbb{Z}$ is an integral domain.
+Thus, $\bar{a} \cdot \bar{b} = \bar{0}$ implies $\bar{a} = \bar{0}$ or $\bar{b} = \bar{0}$. This establishes that $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ has no zero divisors. Because $p \ge 2$, $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ contains at least two distinct elements ($\bar{0} \neq \bar{1}$), so $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ is not the zero ring. Therefore, $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ is an integral domain.
 \end{content}
 
 \end{proofWrapper}
@@ -888,18 +888,18 @@ Hence, $(\mathcal{U}_R, \cdot, 1_R)$ is a group in the sense of \cref{def:group}
 % open_loops: none
 \end{hidden}
 
-\section{Units in Residue Class Rings \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ}}
+\section{Units in Residue Class Rings \texorpdfstring{$\faktor{\mathbb{Z}}{m\mathbb{Z}}$}{Z/mZ}}
 
 \subsection{Characterization of Units via Coprimality}
 
 \begin{speech}[00:30:47 - 00:32:27]
-A very natural question, and one of the first things to think about regarding $\mathbb{Z}/m\mathbb{Z}$... If I take this ring $R = \mathbb{Z}/m\mathbb{Z}$ \inlinemetanote{writes \qt{$R = \mathbb{Z}/m\mathbb{Z}$}} --- and that was implicit there --- I will always consider $m > 0$ here when I do this \inlinemetanote{writes \qt{$m > 0$}}, because there's no reason to consider the negative ones, because it's just counting everything twice.
+A very natural question, and one of the first things to think about regarding $\faktor{\mathbb{Z}}{m\mathbb{Z}}$... If I take this ring $R = \faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{$R = \faktor{\mathbb{Z}}{m\mathbb{Z}}$}} --- and that was implicit there --- I will always consider $m > 0$ here when I do this \inlinemetanote{writes \qt{$m > 0$}}, because there's no reason to consider the negative ones, because it's just counting everything twice.
 
-And then there's the confusing thing when $m = 0$, which is usually a special case, so I exclude it. Usually we allow $m = 1$, which is the zero ring, but anyway, this is kind of standard. When I write $\mathbb{Z}/m\mathbb{Z}$, I always mean this; and typically I also mean it's bigger than $1$, but anyway.
+And then there's the confusing thing when $m = 0$, which is usually a special case, so I exclude it. Usually we allow $m = 1$, which is the zero ring, but anyway, this is kind of standard. When I write $\faktor{\mathbb{Z}}{m\mathbb{Z}}$, I always mean this; and typically I also mean it's bigger than $1$, but anyway.
 
-So, the question \inlinemetanote{writes \qt{Question}} is: What are the units \inlinemetanote{writes \qt{What are the units of $\mathbb{Z}/m\mathbb{Z}$?}} of $\mathbb{Z}/m\mathbb{Z}$?
+So, the question \inlinemetanote{writes \qt{Question}} is: What are the units \inlinemetanote{writes \qt{What are the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$?}} of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$?
 
-Suppose we have $\bar{x} \in \mathbb{Z}/m\mathbb{Z}$ \inlinemetanote{writes \qt{Suppose $\bar{x} \in \mathbb{Z}/m\mathbb{Z}$}}, and $\bar{x}$ is a unit \inlinemetanote{writes \qt{and $\bar{x}$ is a unit}} --- a unit. This means that there exists $\bar{y}$ such that \inlinemetanote{writes \qt{$\exists \bar{y}$ such that}} $\bar{x}\bar{y} = \bar{1}$ in $\mathbb{Z}/m\mathbb{Z}$ \inlinemetanote{writes \qt{$\bar{x}\bar{y} = \bar{1} \in \mathbb{Z}/m\mathbb{Z}$}}. That's what it means to be a unit; I'm just repeating it, right?
+Suppose we have $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{Suppose $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$}}, and $\bar{x}$ is a unit \inlinemetanote{writes \qt{and $\bar{x}$ is a unit}} --- a unit. This means that there exists $\bar{y}$ such that \inlinemetanote{writes \qt{$\exists \bar{y}$ such that}} $\bar{x}\bar{y} = \bar{1}$ in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{$\bar{x}\bar{y} = \bar{1} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$}}. That's what it means to be a unit; I'm just repeating it, right?
 \end{speech}
 
 \begin{speech}[00:32:27 - 00:33:32]
@@ -913,30 +913,30 @@ And in English, this condition is usually said as: $x$ and $m$ are relatively pr
 \end{speech}
 
 \begin{speech}[00:33:32 - 00:35:02]
-We have now discovered what the units of $\mathbb{Z}/m\mathbb{Z}$ are: They're all the elements which are relatively prime. Because if it is a unit, it's the residue class of a relatively prime integer. If you have $\operatorname{gcd} = 1$, then you go backwards in this diagram.
+We have now discovered what the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ are: They're all the elements which are relatively prime. Because if it is a unit, it's the residue class of a relatively prime integer. If you have $\operatorname{gcd} = 1$, then you go backwards in this diagram.
 
-If you write this as a result, then it says that the units of $\mathbb{Z}/m\mathbb{Z}$ \inlinemetanote{writes \qt{The units of $\mathbb{Z}/m\mathbb{Z}$}} consist of all elements $\bar{x}$ \inlinemetanote{writes \qt{consist of $\{\bar{x} \mid$}} where $\operatorname{gcd}(x, m) = 1$ \inlinemetanote{writes \qt{$\operatorname{gcd}(x, m) = 1$\}}}.
+If you write this as a result, then it says that the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{The units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$}} consist of all elements $\bar{x}$ \inlinemetanote{writes \qt{consist of $\{\bar{x} \mid$}} where $\operatorname{gcd}(x, m) = 1$ \inlinemetanote{writes \qt{$\operatorname{gcd}(x, m) = 1$\}}}.
 
 Did I write GCD here? Maybe GCD. Okay? Is that clear?
 
-And so, the thing we've learned is that this unit group, the units of $\mathbb{Z}/m\mathbb{Z}$, are a group \inlinemetanote{writes \qt{$\mathcal{U}_{\mathbb{Z}/m\mathbb{Z}}$ are a group}}. In particular, if you take $\mathbb{Z}/m\mathbb{Z}$ and you take the residue classes that are relatively prime to $m$, they form a group under multiplication.
+And so, the thing we've learned is that this unit group, the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$, are a group \inlinemetanote{writes \qt{$\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}$ are a group}}. In particular, if you take $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ and you take the residue classes that are relatively prime to $m$, they form a group under multiplication.
 \end{speech}
 
-\begin{content}[Units of the Quotient Ring \texorpdfstring{$\mathbb{Z}/m\mathbb{Z}$}{Z/mZ}]
-\begin{theorem}[Units in $\mathbb{Z}/m\mathbb{Z}$]\label[theorem]{thm:units-z-mod-m}
-Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \mathbb{Z}/m\mathbb{Z}$ is a unit if and only if $x$ and $m$ are coprime (this does not depend on the representative $x$, since $\operatorname{gcd}(x + km, m) = \operatorname{gcd}(x, m)$):
+\begin{content}[Units of the Quotient Ring \texorpdfstring{$\faktor{\mathbb{Z}}{m\mathbb{Z}}$}{Z/mZ}]
+\begin{theorem}[Units in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$]\label[theorem]{thm:units-z-mod-m}
+Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ is a unit if and only if $x$ and $m$ are coprime (this does not depend on the representative $x$, since $\operatorname{gcd}(x + km, m) = \operatorname{gcd}(x, m)$):
 \begin{equation}\label{eq:units-z-mod-m}
-\mathcal{U}_{\mathbb{Z}/m\mathbb{Z}} = (\mathbb{Z}/m\mathbb{Z})^\times = \left\{ \bar{x} \in \mathbb{Z}/m\mathbb{Z} \;\big|\; \operatorname{gcd}(x, m) = 1 \right\}.
+\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}} = (\faktor{\mathbb{Z}}{m\mathbb{Z}})^\times = \left\{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \;\big|\; \operatorname{gcd}(x, m) = 1 \right\}.
 \end{equation}
-The order of this group is given by Euler's totient function $\phi(m) := |\mathcal{U}_{\mathbb{Z}/m\mathbb{Z}}|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
+The order of this group is given by Euler's totient function $\phi(m) := |\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
 \end{theorem}
 
 \begin{proof}
 We establish the equivalence by unwinding the definition of divisibility:
 \begin{itemize}
-    \item \textbf{Forward Direction ($\implies$):} Suppose $\bar{x} \in \mathcal{U}_{\mathbb{Z}/m\mathbb{Z}}$. Then there exists $\bar{y} \in \mathbb{Z}/m\mathbb{Z}$ such that:
+    \item \textbf{Forward Direction ($\implies$):} Suppose $\bar{x} \in \mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}$. Then there exists $\bar{y} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ such that:
     \[
-    \bar{x} \cdot \bar{y} = \bar{1} \in \mathbb{Z}/m\mathbb{Z}.
+    \bar{x} \cdot \bar{y} = \bar{1} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}.
     \]
     In terms of integer divisibility, this means $x y \equiv 1 \pmod m$. Hence, there exists an integer $d \in \mathbb{Z}$ such that:
     \[
@@ -947,20 +947,20 @@ We establish the equivalence by unwinding the definition of divisibility:
     \[
     x \cdot y + m \cdot k = 1 \implies x \cdot y \equiv 1 \pmod m.
     \]
-    Projecting this relation into residue classes in $\mathbb{Z}/m\mathbb{Z}$, we obtain $\bar{x} \cdot \bar{y} = \bar{1}$. Thus, $\bar{x}$ is invertible, so $\bar{x} \in \mathcal{U}_{\mathbb{Z}/m\mathbb{Z}}$.
+    Projecting this relation into residue classes in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$, we obtain $\bar{x} \cdot \bar{y} = \bar{1}$. Thus, $\bar{x}$ is invertible, so $\bar{x} \in \mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}$.
 \end{itemize}
-By \cref{prop:group-of-units}, $(\mathcal{U}_{\mathbb{Z}/m\mathbb{Z}}, \cdot, \bar{1})$ forms a finite abelian group.
+By \cref{prop:group-of-units}, $(\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}, \cdot, \bar{1})$ forms a finite abelian group.
 \end{proof}
 \end{content}
 
-\subsection{The Units of \texorpdfstring{$\mathbb{Z}/7\mathbb{Z}$}{Z/7Z} and Cyclic Generator Calculations}
+\subsection{The Units of \texorpdfstring{$\faktor{\mathbb{Z}}{7\mathbb{Z}}$}{Z/7Z} and Cyclic Generator Calculations}
 
 \begin{speech}[00:35:02 - 00:36:08]
-Let's do an example: $\mathbb{Z}/7\mathbb{Z}$ \inlinemetanote{writes \qt{$\mathbb{Z}/7\mathbb{Z}$}}. That's actually a prime one, but let's do this example.
+Let's do an example: $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ \inlinemetanote{writes \qt{$\faktor{\mathbb{Z}}{7\mathbb{Z}}$}}. That's actually a prime one, but let's do this example.
 
 The elements of this are $\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}$ \inlinemetanote{writes \qt{$= \{\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}$}}, right? And which of these residue classes come here? They're classes of $x$ where $x$ and $7$ are relatively prime.
 
-So, the question is: What are the units? \inlinemetanote{writes \qt{Unit of $\mathbb{Z}/7\mathbb{Z} = $}}
+So, the question is: What are the units? \inlinemetanote{writes \qt{Unit of $\faktor{\mathbb{Z}}{7\mathbb{Z}} = $}}
 
 Of course, it's some of these. Well, which of these residue classes correspond to $x$ and $7$ being relatively prime? What would you say? As I said, if you don't know, guess.
 \end{speech}
@@ -985,23 +985,23 @@ And the reason is because, look, this was the answer: It's the residue classes o
 Is that clear?
 \end{speech}
 
-\begin{content}[The Unit Group of \texorpdfstring{$\mathbb{Z}/7\mathbb{Z}$}{Z/7Z}]
-\begin{example}[Units of $\mathbb{Z}/7\mathbb{Z}$]\label[example]{ex:units-z7z}
-Consider the quotient ring $\mathbb{Z}/7\mathbb{Z}$. The elements of the ambient ring are:
+\begin{content}[The Unit Group of \texorpdfstring{$\faktor{\mathbb{Z}}{7\mathbb{Z}}$}{Z/7Z}]
+\begin{example}[Units of $\faktor{\mathbb{Z}}{7\mathbb{Z}}$]\label[example]{ex:units-z7z}
+Consider the quotient ring $\faktor{\mathbb{Z}}{7\mathbb{Z}}$. The elements of the ambient ring are:
 \[
-\mathbb{Z}/7\mathbb{Z} = \{\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
+\faktor{\mathbb{Z}}{7\mathbb{Z}} = \{\bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
 \]
 Since $7$ is a prime number, every non-zero residue class $\bar{x} \in \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}$ satisfies $\operatorname{gcd}(x, 7) = 1$. The zero class $\bar{0}$ is not coprime to $7$ (since $\operatorname{gcd}(0, 7) = 7 \neq 1$, or for example $14 \equiv 0 \pmod 7$ where $\operatorname{gcd}(14, 7) = 7$).
 Consequently, the group of units is:
 \begin{equation}\label{eq:units-z7z-set}
-\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}) = (\mathbb{Z}/7\mathbb{Z})^\times = \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
+\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) = (\faktor{\mathbb{Z}}{7\mathbb{Z}})^\times = \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
 \end{equation}
-The order of the unit group is $|\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})| = \phi(7) = 7 - 1 = 6$.
+The order of the unit group is $|\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})| = \phi(7) = 7 - 1 = 6$.
 \end{example}
 \end{content}
 
 \begin{speech}[00:36:50 - 00:37:28]
-Okay, and the claim is this is a group under multiplication. Well, anyway, $\mathbb{Z}/7\mathbb{Z}$ is a group under addition; but if you take the relatively prime ones, this is a group under multiplication.
+Okay, and the claim is this is a group under multiplication. Well, anyway, $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ is a group under addition; but if you take the relatively prime ones, this is a group under multiplication.
 
 So, we should be able to figure out: What's the group?
 
@@ -1021,7 +1021,7 @@ And so, it matters which element you pick. I propose we pick $3$.
 \end{hidden}
 
 \begin{speech}[00:37:28 - 00:38:51]
-Let's say we take this element in this group, $a = \bar{3}$ \inlinemetanote{writes \qt{$a = \bar{3} \in \operatorname{Unit} \mathbb{Z}/7\mathbb{Z}$}}. That's an element of this unit group.
+Let's say we take this element in this group, $a = \bar{3}$ \inlinemetanote{writes \qt{$a = \bar{3} \in \operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$}}. That's an element of this unit group.
 
 And let's try to consider its powers. That's the neutral element \inlinemetanote{writes \qt{$\bar{1}$}}, then I can take $a, a^2, a^3, a^4, a^5, a^6$ \inlinemetanote{writes \qt{$\bar{1}, a, a^2, a^3, a^4, a^5, a^6$}}. You should know the powers of $3$. Okay, let's see how many powers of $3$ you know.
 
@@ -1058,8 +1058,8 @@ It's a cyclic group.
 It's $\mathbb{Z}$... The proposition that we've kind of proven here...
 \end{speech}
 
-\begin{content}[Powers of the Generator \texorpdfstring{$a = \bar{3}$}{a = 3} in \texorpdfstring{$\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$}{U(Z/7Z)}]
-To examine the internal structure of the abelian group $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ of order $6$, we choose the candidate generator $a := \bar{3} \in \operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ and compute its successive powers:
+\begin{content}[Powers of the Generator \texorpdfstring{$a = \bar{3}$}{a = 3} in \texorpdfstring{$\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$}{U(Z/7Z)}]
+To examine the internal structure of the abelian group $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ of order $6$, we choose the candidate generator $a := \bar{3} \in \operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ and compute its successive powers:
 
 \begin{center}
 \begin{tabular}{c|ccccccc}
@@ -1083,11 +1083,11 @@ To examine the internal structure of the abelian group $\operatorname{Unit}(\mat
     a^5 &= \overline{3^5} = \overline{243} = \bar{5} && (243 = 7 \cdot 34 + 5), \\
     a^6 &= \overline{3^6} = \overline{729} = \bar{1} && (729 = 7 \cdot 104 + 1).
 \end{align*}
-Because the powers of $a = \bar{3}$ exhaust all $6$ elements of $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ before returning to the identity $\bar{1}$ at exponent $6$, the element $\bar{3}$ is a \newterm{generator} (or \newterm{primitive root} modulo $7$). Consequently, $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ is a cyclic group of order $6$ (\cref{def:pre-cyclic}).
+Because the powers of $a = \bar{3}$ exhaust all $6$ elements of $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ before returning to the identity $\bar{1}$ at exponent $6$, the element $\bar{3}$ is a \newterm{generator} (or \newterm{primitive root} modulo $7$). Consequently, $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ is a cyclic group of order $6$ (\cref{def:pre-cyclic}).
 \end{steps}
 \end{content}
 
-\subsection{Isomorphism with the Additive Cyclic Group \texorpdfstring{$(\mathbb{Z}/6\mathbb{Z}, +, \bar{0})$}{(Z/6Z, +, 0)}}
+\subsection{Isomorphism with the Additive Cyclic Group \texorpdfstring{$(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$}{(Z/6Z, +, 0)}}
 
 \begin{speech}[00:39:54 - 00:41:19]
 We've proven... that calculation of powers of $3$ --- and I picked $3$, you know, I picked the $3$; if you picked another one, it would have maybe been slightly different --- but that calculation proves a group isomorphism, which maybe I write here and we think about. \inlinemetanote{erases lower left blackboard}
@@ -1096,13 +1096,13 @@ You should check my powers of $3$, and then after you take the power of $3$, you
 
 This great 20th-century Hungarian mathematician (Paul Erd\H{o}s) said that if numbers aren't beautiful, I don't know what is. That's kind of the mathematical perspective on numbers.
 
-We have here the units of $\mathbb{Z}/7\mathbb{Z}$ \inlinemetanote{writes \qt{$(\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}), \cdot, \bar{1})$}}, and then there's another group, which is $\mathbb{Z}/6\mathbb{Z}$ with $+$ and $\bar{0}$ \inlinemetanote{writes \qt{$(\mathbb{Z}/6\mathbb{Z}, +, \bar{0})$}}, and I claim these are isomorphic \inlinemetanote{writes \qt{$\cong$}}.
+We have here the units of $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ \inlinemetanote{writes \qt{$(\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}), \cdot, \bar{1})$}}, and then there's another group, which is $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ with $+$ and $\bar{0}$ \inlinemetanote{writes \qt{$(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$}}, and I claim these are isomorphic \inlinemetanote{writes \qt{$\cong$}}.
 
 This is the units with multiplication and $1$. This group is isomorphic to that group. And what is the isomorphism? It's written on the board.
 \end{speech}
 
 \begin{insight}[Paul Erd\H{o}s on the Beauty of Numbers]
-The lecturer references the celebrated quote by the Hungarian mathematician Paul Erd\H{o}s (1913--1996): \qt{If numbers are not beautiful, I don't know what is.} The unexpected isomorphism between the unit group $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ of the field $\mathbb{Z}/7\mathbb{Z}$ and the simple additive clock arithmetic of $\mathbb{Z}/6\mathbb{Z}$ is a classic embodiment of this aesthetic: multiplication modulo $7$ transforms into addition modulo $6$ via the powers of a single primitive root.
+The lecturer references the celebrated quote by the Hungarian mathematician Paul Erd\H{o}s (1913--1996): \qt{If numbers are not beautiful, I don't know what is.} The unexpected isomorphism between the unit group $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ of the field $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ and the simple additive clock arithmetic of $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is a classic embodiment of this aesthetic: multiplication modulo $7$ transforms into addition modulo $6$ via the powers of a single primitive root.
 \end{insight}
 
 \begin{speech}[00:41:19 - 00:42:48]
@@ -1121,18 +1121,18 @@ And if you want to say this explicitly here, you have to write these $a$'s in te
 Okay, that's that. \inlinemetanote{lecture concludes; students applaud}
 \end{speech}
 
-\begin{content}[Group Isomorphism: \texorpdfstring{$\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}) \cong (\mathbb{Z}/6\mathbb{Z}, +, \bar{0})$}{U(Z/7Z) isomorphic to (Z/6Z, +, 0)}]
+\begin{content}[Group Isomorphism: \texorpdfstring{$\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) \cong (\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$}{U(Z/7Z) isomorphic to (Z/6Z, +, 0)}]
 \begin{proposition}[Cyclic Group Isomorphism]\label[proposition]{prop:z7z-cyclic-isomorphism}
-The multiplicative group of units $(\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}), \cdot, \bar{1})$ is isomorphic to the additive cyclic group $(\mathbb{Z}/6\mathbb{Z}, +, \bar{0})$:
+The multiplicative group of units $(\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}), \cdot, \bar{1})$ is isomorphic to the additive cyclic group $(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$:
 \begin{equation}\label{eq:z7z-isom-group}
-(\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}), \cdot, \bar{1}) \cong (\mathbb{Z}/6\mathbb{Z}, +, \bar{0}).
+(\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}), \cdot, \bar{1}) \cong (\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0}).
 \end{equation}
 \end{proposition}
 
 \begin{proof}
-Let $a = \bar{3} \in \operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$. We define the mapping $\Phi \colon \operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}) \to \mathbb{Z}/6\mathbb{Z}$ by sending powers of the generator $a$ to their integer exponents modulo $6$:
+Let $a = \bar{3} \in \operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$. We define the mapping $\Phi \colon \operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) \to \faktor{\mathbb{Z}}{6\mathbb{Z}}$ by sending powers of the generator $a$ to their integer exponents modulo $6$:
 \begin{align*}
-    \Phi \colon \operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}) &\to \mathbb{Z}/6\mathbb{Z}, \\
+    \Phi \colon \operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) &\to \faktor{\mathbb{Z}}{6\mathbb{Z}}, \\
     \bar{1} = a^0 &\mapsto \bar{0}, \\
     \bar{3} = a^1 &\mapsto \bar{1}, \\
     \bar{2} = a^2 &\mapsto \bar{2}, \\
@@ -1146,7 +1146,7 @@ a^j \cdot a^k = a^{j+k} = a^{(j+k) \bmod 6},
 \]
 since $a^6 = \bar{1}$. Applying the map $\Phi$:
 \[
-\Phi(a^j \cdot a^k) = \overline{j + k} = \bar{j} + \bar{k} = \Phi(a^j) + \Phi(a^k) \in \mathbb{Z}/6\mathbb{Z}.
+\Phi(a^j \cdot a^k) = \overline{j + k} = \bar{j} + \bar{k} = \Phi(a^j) + \Phi(a^k) \in \faktor{\mathbb{Z}}{6\mathbb{Z}}.
 \]
 Hence, $\Phi$ is a group homomorphism. Because $\Phi$ maps the generator $a$ of order $6$ to the generator $\bar{1}$ of order $6$, $\Phi$ is a bijective homomorphism, establishing the isomorphism.
 \end{proof}
@@ -1161,7 +1161,7 @@ Hence, $\Phi$ is a group homomorphism. Because $\Phi$ maps the generator $a$ of 
 \begin{center}
 \begin{tikzpicture}[scale=1.1, >=Stealth]
     % Domain column: (U_{Z/7Z}, *)
-    \node[MidnightBlue, font=\bfseries] at (0, 0.8) {$(\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}), \cdot)$};
+    \node[MidnightBlue, font=\bfseries] at (0, 0.8) {$(\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}), \cdot)$};
     \node[MidnightBlue] (u0) at (0, 0.0) {$a^0 = \bar{1}$};
     \node[MidnightBlue] (u1) at (0, -0.8) {$a^1 = \bar{3}$};
     \node[MidnightBlue] (u2) at (0, -1.6) {$a^2 = \bar{2}$};
@@ -1170,7 +1170,7 @@ Hence, $\Phi$ is a group homomorphism. Because $\Phi$ maps the generator $a$ of 
     \node[MidnightBlue] (u5) at (0, -4.0) {$a^5 = \bar{5}$};
 
     % Codomain column: (Z/6Z, +)
-    \node[BrickRed, font=\bfseries] at (4.0, 0.8) {$(\mathbb{Z}/6\mathbb{Z}, +)$};
+    \node[BrickRed, font=\bfseries] at (4.0, 0.8) {$(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +)$};
     \node[BrickRed] (z0) at (4.0, 0.0) {$\bar{0}$};
     \node[BrickRed] (z1) at (4.0, -0.8) {$\bar{1}$};
     \node[BrickRed] (z2) at (4.0, -1.6) {$\bar{2}$};
@@ -1194,8 +1194,8 @@ Hence, $\Phi$ is a group homomorphism. Because $\Phi$ maps the generator $a$ of 
 \begin{steps}[Disambiguating Residue Class Notations Across Groups]
 The bar notation $\bar{\cdot}$ operates over two distinct moduli in this isomorphism:
 \begin{itemize}
-    \item In the domain $(\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}), \cdot)$, bars denote residue classes modulo $7$ under multiplication: $\bar{x} = x + 7\mathbb{Z}$.
-    \item In the codomain $(\mathbb{Z}/6\mathbb{Z}, +)$, bars denote residue classes modulo $6$ under addition: $\bar{k} = k + 6\mathbb{Z}$.
+    \item In the domain $(\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}), \cdot)$, bars denote residue classes modulo $7$ under multiplication: $\bar{x} = x + 7\mathbb{Z}$.
+    \item In the codomain $(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +)$, bars denote residue classes modulo $6$ under addition: $\bar{k} = k + 6\mathbb{Z}$.
 \end{itemize}
 The isomorphism $\Phi$ is the \newterm{discrete logarithm} with respect to the base $3$ modulo $7$.
 \end{steps}
@@ -1210,8 +1210,8 @@ The isomorphism $\Phi$ is the \newterm{discrete logarithm} with respect to the b
         \item \textbf{Monomorphism (Monic):} Left-cancellable morphism ($f \circ g_1 = f \circ g_2 \implies g_1 = g_2$), corresponding to injectivity in standard concrete categories.
         \item \textbf{Epimorphism (Epic):} Right-cancellable morphism ($g_1 \circ f = g_2 \circ f \implies g_1 = g_2$), corresponding to surjectivity in $\mathbf{Set}$, $\mathbf{Grp}$ and $\mathbf{Vect}_K$, but not in $\mathbf{Ring}$ (the inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is an epimorphism).
     \end{itemize}
-    \item \textbf{Zero Divisors and Integral Domains:} An integral domain is a non-trivial commutative ring with identity ($R \neq \{0\}$) without non-zero zero divisors ($ab = 0 \implies a = 0 \lor b = 0$). In modular arithmetic, the residue class ring $\mathbb{Z}/m\mathbb{Z}$ ($m \in \mathbb{Z}_{>0}$) is an integral domain if and only if $m$ is prime.
+    \item \textbf{Zero Divisors and Integral Domains:} An integral domain is a non-trivial commutative ring with identity ($R \neq \{0\}$) without non-zero zero divisors ($ab = 0 \implies a = 0 \lor b = 0$). In modular arithmetic, the residue class ring $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ ($m \in \mathbb{Z}_{>0}$) is an integral domain if and only if $m$ is prime.
     \item \textbf{Divisibility and Units:} An element $u \in R$ is a unit if $u \mid 1$ (i.e., $\exists w \in R$ such that $uw = 1$). The units of any commutative ring $R$ form an abelian group $(\mathcal{U}_R, \cdot, 1)$ under ring multiplication.
-    \item \textbf{Modular Units and Cyclic Generators:} The unit group $\mathcal{U}_{\mathbb{Z}/m\mathbb{Z}}$ consists precisely of the residue classes coprime to $m$: $\mathcal{U}_{\mathbb{Z}/m\mathbb{Z}} = \{\bar{x} \in \mathbb{Z}/m\mathbb{Z} \mid \operatorname{gcd}(x, m) = 1\}$. For $p = 7$, $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z}) = \{\bar{1}, \dots, \bar{6}\}$ is a cyclic group of order $6$ generated by $a = \bar{3}$, isomorphic to the additive cyclic group $(\mathbb{Z}/6\mathbb{Z}, +, \bar{0})$.
+    \item \textbf{Modular Units and Cyclic Generators:} The unit group $\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}$ consists precisely of the residue classes coprime to $m$: $\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}} = \{\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \mid \operatorname{gcd}(x, m) = 1\}$. For $p = 7$, $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) = \{\bar{1}, \dots, \bar{6}\}$ is a cyclic group of order $6$ generated by $a = \bar{3}$, isomorphic to the additive cyclic group $(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$.
 \end{itemize}
 \end{overview}

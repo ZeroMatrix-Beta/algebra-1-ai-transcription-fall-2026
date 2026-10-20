@@ -11,7 +11,7 @@ In this lecture, we bridge arithmetic and abstract algebra by exploring the foll
 \begin{itemize}
     \item \textbf{Gaussian Integers and Primes:} Comparing factorization and units in $\mathbb{Z}$ and $\mathbb{Z}[i]$, and establishing how the primality of an ordinary integer prime in $\mathbb{Z}[i]$ connects directly to Fermat's two-square theorem (an odd prime $p$ is a sum of two squares $a^2 + b^2$ if and only if $p \equiv 1 \pmod 4$).
     \item \textbf{Axioms and Elementary Properties of Rings:} Formalizing the ring axioms $(R, +, \cdot, 0, 1)$, deriving fundamental arithmetic identities such as $0 \cdot a = 0$ and $(-1) \cdot a = -a$, analyzing the degenerate zero ring ($1 = 0$), and defining scalar multiples by integers.
-    \item \textbf{Ring Homomorphisms:} Defining structure-preserving maps between rings, explaining why identity preservation ($f(1) = 1$) must be explicitly required while $f(0) = 0$ is automatic, and exploring canonical examples including standard subring inclusions, modular reduction $\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$, and the initial evaluation map $\mathbb{Z} \to R$.
+    \item \textbf{Ring Homomorphisms:} Defining structure-preserving maps between rings, explaining why identity preservation ($f(1) = 1$) must be explicitly required while $f(0) = 0$ is automatic, and exploring canonical examples including standard subring inclusions, modular reduction $\mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$, and the initial evaluation map $\mathbb{Z} \to R$.
     \item \textbf{Ideals and Field Structure:} Introducing the kernel $\ker(f)$, defining ideals $I \subset R$ via additive closure and multiplicative absorption, proving that every kernel is an ideal, and classifying the ideals of a field (establishing that fields possess only $\{0\}$ and $F$).
     \item \textbf{Outlook:} Connecting the existence of bases in infinite-dimensional vector spaces to Zorn's lemma and the Axiom of Choice.
 \end{itemize}
@@ -417,7 +417,7 @@ R = \{0\}.
 \end{proof}
 
 \begin{remark}[The Zero Ring in Abstract Algebra]
-The trivial ring $R = \{0\}$ is often called the \newterm{zero ring}. While fields strictly require $1 \neq 0$, the general definition of a ring intentionally admits $1 = 0$ so that the category of rings has a terminal object (the zero ring: every ring has exactly one homomorphism to it) and quotient rings $R/I$ remain rings even when $I = R$. Definitions that must exclude it say so explicitly, as for integral domains (\cref{def:integral-domain}, Week~2).
+The trivial ring $R = \{0\}$ is often called the \newterm{zero ring}. While fields strictly require $1 \neq 0$, the general definition of a ring intentionally admits $1 = 0$ so that the category of rings has a terminal object (the zero ring: every ring has exactly one homomorphism to it) and quotient rings $\faktor{R}{I}$ remain rings even when $I = R$. Definitions that must exclude it say so explicitly, as for integral domains (\cref{def:integral-domain}, Week~2).
 \end{remark}
 \end{content}
 
@@ -817,21 +817,21 @@ are all injective ring homomorphisms. For any subring $S \subseteq R$ (defined f
 \end{example}
 \end{content}
 
-\subsection{The Ring of Residue Classes \texorpdfstring{$\mathbb{Z}/n\mathbb{Z}$}{Z/nZ} and the Projection Homomorphism}
+\subsection{The Ring of Residue Classes \texorpdfstring{$\faktor{\mathbb{Z}}{n\mathbb{Z}}$}{Z/nZ} and the Projection Homomorphism}
 
 \begin{speech}[00:28:24 - 00:30:48]
-One example is that you've studied this ring $\mathbb{Z}/n\mathbb{Z}$ \inlinemetanote{writes: $\mathbb{Z}/n\mathbb{Z}$}... Well, if we haven't, let me at least say what it is, because this also plays a role in the class. So, this ring here, this set here... \inlinemetanote{writes: $(\mathbb{Z}/n\mathbb{Z}, +, \cdot, \bar{0}, \bar{1})$}. This is a standard name; probably in other courses it's also given other names. But the words are \qt{$\mathbb{Z} \bmod n\mathbb{Z}$}, and this is the set of residue classes $\bmod n$ \inlinemetanote{writes: $= \{\text{set of residue classes mod } n\}$}. If you want to be explicit, this is equal to the set $\bar{0}, \bar{1}, \bar{2}, \dots, \overline{n-1}$ \inlinemetanote{writes: $= \{\bar{0}, \bar{1}, \bar{2}, \dots, \overline{n-1}\}$}, because $n$ is zero. Is this notation reasonable notation? It's kind of semi-standard mathematical notation. There's exactly $n$ elements of this; it's just the residue classes $\bmod n$.
+One example is that you've studied this ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ \inlinemetanote{writes: $\faktor{\mathbb{Z}}{n\mathbb{Z}}$}... Well, if we haven't, let me at least say what it is, because this also plays a role in the class. So, this ring here, this set here... \inlinemetanote{writes: $(\faktor{\mathbb{Z}}{n\mathbb{Z}}, +, \cdot, \bar{0}, \bar{1})$}. This is a standard name; probably in other courses it's also given other names. But the words are \qt{$\mathbb{Z} \bmod n\mathbb{Z}$}, and this is the set of residue classes $\bmod n$ \inlinemetanote{writes: $= \{\text{set of residue classes mod } n\}$}. If you want to be explicit, this is equal to the set $\bar{0}, \bar{1}, \bar{2}, \dots, \overline{n-1}$ \inlinemetanote{writes: $= \{\bar{0}, \bar{1}, \bar{2}, \dots, \overline{n-1}\}$}, because $n$ is zero. Is this notation reasonable notation? It's kind of semi-standard mathematical notation. There's exactly $n$ elements of this; it's just the residue classes $\bmod n$.
 
-And you can add residue classes, you can multiply them, there's the zero, and there's the one. So, if I take this whole data together, this exactly is a commutative ring with unit \inlinemetanote{writes: Ring!}. So, it's a ring for us. It's a ring of a slightly different nature than the other ones because it has finitely many elements. It's an interesting ring to think about. In some sense, one of the simplest and most confusing ones is this one \inlinemetanote{writes: $\mathbb{Z}/2\mathbb{Z}$}: this is a ring with two elements \inlinemetanote{writes: $= \{\bar{0}, \bar{1}\}$}, zero and one. That's kind of a fun ring, but it's a full-fledged ring. You know, a ring is a ring no matter how small.
+And you can add residue classes, you can multiply them, there's the zero, and there's the one. So, if I take this whole data together, this exactly is a commutative ring with unit \inlinemetanote{writes: Ring!}. So, it's a ring for us. It's a ring of a slightly different nature than the other ones because it has finitely many elements. It's an interesting ring to think about. In some sense, one of the simplest and most confusing ones is this one \inlinemetanote{writes: $\faktor{\mathbb{Z}}{2\mathbb{Z}}$}: this is a ring with two elements \inlinemetanote{writes: $= \{\bar{0}, \bar{1}\}$}, zero and one. That's kind of a fun ring, but it's a full-fledged ring. You know, a ring is a ring no matter how small.
 
-And we get here: $\mathbb{Z}$ goes to $\mathbb{Z}/n\mathbb{Z}$ \inlinemetanote{writes: $\mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$}; this is also a homomorphism \inlinemetanote{writes \qt{$f$} over the arrow}. It's a ring homomorphism where I take $f(a)$ --- for any integer $a$ --- to $\bar{a}$ \inlinemetanote{writes: $f(a) = \bar{a}$}. Okay? So, that's another example.
+And we get here: $\mathbb{Z}$ goes to $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ \inlinemetanote{writes: $\mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$}; this is also a homomorphism \inlinemetanote{writes \qt{$f$} over the arrow}. It's a ring homomorphism where I take $f(a)$ --- for any integer $a$ --- to $\bar{a}$ \inlinemetanote{writes: $f(a) = \bar{a}$}. Okay? So, that's another example.
 \end{speech}
 
 \begin{content}[Residue Class Rings and the Reduction Modulo $n$]
 \begin{definition}[Ring of Residue Classes Modulo $n$]\label[definition]{def:residue-class-ring}
-For any integer $n \ge 1$, the ring of \newterm{residue classes modulo $n$} (denoted $\mathbb{Z}/n\mathbb{Z}$ or $\mathbb{Z}_n$) is the set:
+For any integer $n \ge 1$, the ring of \newterm{residue classes modulo $n$} (denoted $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ or $\mathbb{Z}_n$) is the set:
 \begin{equation}\label{eq:zn-set}
-\mathbb{Z}/n\mathbb{Z} := \{ \bar{0}, \bar{1}, \bar{2}, \dots, \overline{n-1} \},
+\faktor{\mathbb{Z}}{n\mathbb{Z}} := \{ \bar{0}, \bar{1}, \bar{2}, \dots, \overline{n-1} \},
 \end{equation}
 equipped with modular addition and multiplication:
 \[
@@ -848,8 +848,8 @@ a' + b' = (a + b) + (k + \ell) n, \qquad a' b' = ab + (a \ell + k b + k \ell n) 
 so $\overline{a' + b'} = \overline{a + b}$ and $\overline{a' b'} = \overline{ab}$. The ring axioms are then inherited from $\mathbb{Z}$, and so is commutativity. For $n = 1$ one gets the zero ring $\{\bar{0}\}$.
 \end{steps}
 
-\begin{example}[The Two-Element Field $\mathbb{Z}/2\mathbb{Z}$]\label[example]{ex:z2-ring}
-For $n = 2$, $\mathbb{Z}/2\mathbb{Z} = \{\bar{0}, \bar{1}\}$ is the smallest non-trivial commutative ring with unit ($1 \neq 0$). The addition and multiplication tables are given by:
+\begin{example}[The Two-Element Field $\faktor{\mathbb{Z}}{2\mathbb{Z}}$]\label[example]{ex:z2-ring}
+For $n = 2$, $\faktor{\mathbb{Z}}{2\mathbb{Z}} = \{\bar{0}, \bar{1}\}$ is the smallest non-trivial commutative ring with unit ($1 \neq 0$). The addition and multiplication tables are given by:
 \begin{center}
 \begin{tabular}{c|cc}
 $+$ & $\bar{0}$ & $\bar{1}$ \\ \hline
@@ -869,7 +869,7 @@ This is a non-trivial commutative ring with unit despite containing only two ele
 \begin{proposition}[Canonical Projection Homomorphism]\label[proposition]{prop:canonical-projection}
 The reduction map modulo $n$ (written $f$ on the board):
 \begin{equation}\label{eq:canonical-projection}
-\pi \colon \mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}, \quad a \mapsto \bar{a} := a \bmod n
+\pi \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}, \quad a \mapsto \bar{a} := a \bmod n
 \end{equation}
 is a surjective ring homomorphism.
 \end{proposition}
@@ -881,7 +881,7 @@ For any $a, b \in \mathbb{Z}$:
     \item \textbf{Multiplicativity:} $\pi(a \cdot b) = \overline{a \cdot b} = \bar{a} \cdot \bar{b} = \pi(a) \cdot \pi(b)$.
     \item \textbf{Unit Preservation:} $\pi(1) = \bar{1}$.
 \end{enumerate}
-Surjectivity holds because every residue class $\bar{k} \in \mathbb{Z}/n\mathbb{Z}$ is the image of the integer $k \in \mathbb{Z}$.
+Surjectivity holds because every residue class $\bar{k} \in \faktor{\mathbb{Z}}{n\mathbb{Z}}$ is the image of the integer $k \in \mathbb{Z}$.
 \end{proof}
 \end{content}
 
@@ -899,7 +899,7 @@ So, this is an interesting object. Here we have: let...
 \begin{speech}[00:32:06 - 00:32:56]
 Let $f$ from $R_1$ to $R_2$ \inlinemetanote{writes: Let $f \colon R_1 \to R_2$} be a homomorphism of rings \inlinemetanote{writes: be a hom. of rings}. Then we define the kernel of $f$: $\ker(f)$ \inlinemetanote{writes: $\ker(f) =$} --- it's those elements in the first ring, because the kernel lives in the first ring \inlinemetanote{writes: $\{a \in R_1 \mid$}, such that $f(a)$ is equal to zero \inlinemetanote{writes: $f(a) = 0\}$}. Okay? I hope this definition is clear: it's everybody that goes to zero.
 
-In particular, you could say: what is the kernel of this? \inlinemetanote{writes: $\ker(f) \subset \mathbb{Z} \xrightarrow{f} \mathbb{Z}/n\mathbb{Z}$} What is the kernel here?
+In particular, you could say: what is the kernel of this? \inlinemetanote{writes: $\ker(f) \subset \mathbb{Z} \xrightarrow{f} \faktor{\mathbb{Z}}{n\mathbb{Z}}$} What is the kernel here?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -919,7 +919,7 @@ Let $R_1, R_2$ be rings and let $f \colon R_1 \to R_2$ be a ring homomorphism. T
 \end{definition}
 
 \begin{example}[Kernel of the Modular Reduction Homomorphism]\label[example]{ex:kernel-of-projection}
-For the canonical projection $\pi \colon \mathbb{Z} \to \mathbb{Z}/n\mathbb{Z}$ given by $\pi(a) = \bar{a}$, an integer $a$ maps to $\bar{0}$ if and only if $a$ is a multiple of $n$. Hence:
+For the canonical projection $\pi \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$ given by $\pi(a) = \bar{a}$, an integer $a$ maps to $\bar{0}$ if and only if $a$ is a multiple of $n$. Hence:
 \begin{equation}\label{eq:kernel-zn}
 \ker(\pi) = n\mathbb{Z} := \{ k \cdot n \mid k \in \mathbb{Z} \}.
 \end{equation}
@@ -1200,7 +1200,7 @@ Because $\ker(f) = \{0\}$, field homomorphisms into non-zero rings are always em
 The lecturer's humorous pedagogical quip --- that \qt{fields are sellouts because they have lost all their ideals} --- highlights an essential contrast between field theory and ring theory:
 \begin{itemize}
     \item In a field $F$, the abundance of units ($F^\times = F \setminus \{0\}$) destroys all non-trivial ideals, as any non-zero element $a \in I$ immediately pulls the identity into the ideal: $1 = a^{-1} \cdot a \in I$ (with $r = a^{-1} \in F$ and $a \in I$), forcing $I = F$.
-    \item In general rings (such as $\mathbb{Z}$ or polynomial rings), the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., the ideals $n\mathbb{Z} \subset \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$), which form the foundational building blocks for quotient rings $R/I$ and algebraic geometry.
+    \item In general rings (such as $\mathbb{Z}$ or polynomial rings), the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., the ideals $n\mathbb{Z} \subset \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$), which form the foundational building blocks for quotient rings $\faktor{R}{I}$ and algebraic geometry.
 \end{itemize}
 \end{insight}
 

@@ -277,9 +277,9 @@ It's usually not written this way \inlinemetanote{draws a box around $\faktor{R}
 
 This is just writing the same thing, because if we say $q^{-1}(J)$ is equal to some ideal $I$, this $I$ has to be some ideal that contains $K$. This is writing it, so to speak, starting with the $J$ side; this is writing it starting with $I$ \inlinemetanote{boxes $\faktor{R}{I} \cong \faktor{(\faktor{R}{K})}{q(I)}$}. Okay?
 
-So, you'll see both formulations. And the way you normally see this is you use this notation $q(I) = I \bmod K$, which is a very sensible notation. Then the way you normally see this in books is: $R \bmod I$ is equal to $(R \bmod K) / (I \bmod K)$ \inlinemetanote{writes: $\faktor{R}{I} \cong \faktor{\faktor{R}{K}}{\faktor{I}{K}}$}. That's exactly a third way of expressing the same thing, just in new notation. Okay?
+So, you'll see both formulations. And the way you normally see this is you use this notation $q(I) = I \bmod K$, which is a very sensible notation. Then the way you normally see this in books is: $R \bmod I$ is equal to $\faktor{(R \bmod K)}{(I \bmod K)}$ \inlinemetanote{writes: $\faktor{R}{I} \cong \faktor{\faktor{R}{K}}{\faktor{I}{K}}$}. That's exactly a third way of expressing the same thing, just in new notation. Okay?
 
-And this is very convenient, because you can try to prove it by saying $R/K$ times $K/I$ is equal to $R/I$ \inlinemetanote{writes: $\frac{R}{K} \cdot \frac{K}{I} = \frac{R}{I}$}. That's a very convenient mnemonic for it. It's not exactly a proof, but you know, the notation works perfectly.
+And this is very convenient, because you can try to prove it by saying $\faktor{R}{K}$ times $\faktor{K}{I}$ is equal to $\faktor{R}{I}$ \inlinemetanote{writes: $\frac{R}{K} \cdot \frac{K}{I} = \frac{R}{I}$}. That's a very convenient mnemonic for it. It's not exactly a proof, but you know, the notation works perfectly.
 
 We shouldn't write these things during the lectures, so maybe I cross this out \inlinemetanote{crosses out $\frac{R}{K} \cdot \frac{K}{I} = \frac{R}{I}$}. But that's why the notation works perfectly.
 \end{speech}
@@ -528,7 +528,7 @@ So, that's the proof the other way. If I assume that zero is a maximal ideal, I 
 
 I have now proven this proposition: $R$ is a field if and only if $(0)$ is a maximal ideal.
 
-The next proposition, which is a kind of strengthening of that one, is: \inlinemetanote{writes: Prop: $R/M$ is a field $\iff M \subset R$ is a maximal ideal} $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal.
+The next proposition, which is a kind of strengthening of that one, is: \inlinemetanote{writes: Prop: $\faktor{R}{M}$ is a field $\iff M \subset R$ is a maximal ideal} $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal.
 
 That's a strengthening of this statement: That says $R$ is a field if zero is a maximal ideal; actually I say it for any ideal here: This is a field if and only if that's a maximal ideal. Okay?
 
@@ -559,7 +559,7 @@ The lecturer pauses and wipes the upper-right board panel clean with a sponge fr
 \begin{speech}[00:22:36 - 00:23:14]
 Okay, so, we want to prove that.
 
-The proof is: \inlinemetanote{writes \qt{Proof:} on the upper board} $R \bmod M$ is a field \inlinemetanote{writes: $R/M$ is a field} if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod M$ is a maximal ideal \inlinemetanote{writes: $\iff (0) \subset R/M$ is a max ideal}.
+The proof is: \inlinemetanote{writes \qt{Proof:} on the upper board} $R \bmod M$ is a field \inlinemetanote{writes: $\faktor{R}{M}$ is a field} if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod M$ is a maximal ideal \inlinemetanote{writes: $\iff (0) \subset \faktor{R}{M}$ is a max ideal}.
 
 We've proven this --- already proven, right? \inlinemetanote{writes: already proven} I just use this proposition here for $R \bmod M$. Okay? Yeah.
 \end{speech}
@@ -1199,11 +1199,11 @@ Prove \cref{clm:prime-ideals-in-z}: Show that for $n \in \mathbb{N}_{\ge 2}$, $(
 \subsection{Quotients by Prime Ideals and Integral Domains}
 
 \begin{speech}[00:53:20 - 00:54:40]
-Then we want to prove a theorem like the field theorem that says: \inlinemetanote{writes: Prop: $R/P \text{ is an int. domain} \iff P \subset R \text{ is a prime ideal}$}
+Then we want to prove a theorem like the field theorem that says: \inlinemetanote{writes: Prop: $\faktor{R}{P} \text{ is an int. domain} \iff P \subset R \text{ is a prime ideal}$}
 
 $R \bmod P$ is an integral domain --- this is a proposition --- $R \bmod P$ is an integral domain if and only if $P \subset R$ is a prime ideal \inlinemetanote{writes: $\iff P \subset R \text{ is a prime ideal}$}.
 
-I want to prove this, and I remind you of the proposition from the first lecture, which I have not had the skill enough to leave on the board: $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $R/M \text{ is a field} \iff M \subset R \text{ is a max ideal}$}.
+I want to prove this, and I remind you of the proposition from the first lecture, which I have not had the skill enough to leave on the board: $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $\faktor{R}{M} \text{ is a field} \iff M \subset R \text{ is a max ideal}$}.
 
 This was the statement that we already proved just a few minutes ago, and this is the analogous statement for integral domains. Everything is just analogous: Here we want to consider which ideals have quotients that are fields, and the answer is those are the maximal ideals; and here we ask which ideals have the property that the quotient is an integral domain, and those are the prime ideals, okay? So, we have to prove this one. But the parallelism here should be clear.
 \end{speech}
@@ -1227,7 +1227,7 @@ We prove the proposition about prime ideals \inlinemetanote{writes: Proof Prop (
 
 We have to start somewhere. Let $P \subset R$ be a prime ideal \inlinemetanote{writes: Let $P \subset R$ be a prime ideal}, okay?
 
-Again, we have to think about the ground cases carefully. We must prove that $R \bmod P$ is an integral domain \inlinemetanote{writes: $\implies$ we must prove that $R/P$ is an int. domain}.
+Again, we have to think about the ground cases carefully. We must prove that $R \bmod P$ is an integral domain \inlinemetanote{writes: $\implies$ we must prove that $\faktor{R}{P}$ is an int. domain}.
 
 Now, one of the properties in the definition of integral domains is you cannot be the zero ring. That was one of the properties in the definition: Integral domains by definition are not the zero ring \inlinemetanote{writes: (not zero ring)}.
 
@@ -1239,7 +1239,7 @@ Okay, but that's not the teeth of the definition of an integral domain.
 \end{speech}
 
 \begin{speech}[00:56:19 - 00:57:18]
-We have to show \inlinemetanote{writes: We have to show} that given elements $\bar{x}$ and $\bar{y}$ in $R \bmod P$ \inlinemetanote{writes: given $\bar{x}, \bar{y} \in R/P$} --- with $x, y \in R$ \inlinemetanote{writes: (with $x, y \in R$)}, these are the equivalence classes of $x$ and $y$ --- such that $\bar{x} \neq \bar{0}$ \inlinemetanote{writes: such that $\bar{x} \neq \bar{0}$} and $\bar{y} \neq \bar{0}$ \inlinemetanote{writes: and $\bar{y} \neq \bar{0}$}, then I need to show that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes: $\implies \bar{x}\bar{y} \neq \bar{0}$}. Is that clear?
+We have to show \inlinemetanote{writes: We have to show} that given elements $\bar{x}$ and $\bar{y}$ in $R \bmod P$ \inlinemetanote{writes: given $\bar{x}, \bar{y} \in \faktor{R}{P}$} --- with $x, y \in R$ \inlinemetanote{writes: (with $x, y \in R$)}, these are the equivalence classes of $x$ and $y$ --- such that $\bar{x} \neq \bar{0}$ \inlinemetanote{writes: such that $\bar{x} \neq \bar{0}$} and $\bar{y} \neq \bar{0}$ \inlinemetanote{writes: and $\bar{y} \neq \bar{0}$}, then I need to show that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes: $\implies \bar{x}\bar{y} \neq \bar{0}$}. Is that clear?
 
 Now, I've just used bars everywhere here. Sometimes I do, sometimes I don't, and that's just how it goes. But anyway, in this proof I'm going to use bars everywhere. Yeah?
 \end{speech}
@@ -1297,7 +1297,7 @@ And $\bar{y} \neq \bar{0}$ implies that $y \notin P$ \inlinemetanote{writes: $\b
 
 Then I have to check that their product is not zero in the quotient ring. Now we use the fact that $P$ is prime \inlinemetanote{writes: $P \text{ prime}$}. This means that $xy \notin P$ \inlinemetanote{writes: $xy \notin P$} --- that's actually using the prime property for the first time.
 
-And this means that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes: $\implies \bar{x}\bar{y} \neq \bar{0}$}. So, we've shown that $R \bmod P$ is an integral domain \inlinemetanote{writes: $R/P \text{ is an int. domain}$}.
+And this means that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes: $\implies \bar{x}\bar{y} \neq \bar{0}$}. So, we've shown that $R \bmod P$ is an integral domain \inlinemetanote{writes: $\faktor{R}{P} \text{ is an int. domain}$}.
 
 You will agree that there was no idea in this proof; it was just unraveling.
 \end{speech}

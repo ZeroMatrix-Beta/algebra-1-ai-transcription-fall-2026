@@ -41,9 +41,9 @@
 \begin{overview}[Context and Overview]
 In this lecture, we explore the algebraic architecture of quotient rings and the structural behavior of ideals under ring homomorphisms:
 \begin{itemize}
-    \item \textbf{Review of Quotient Rings and the Canonical Projection:} We revisit the coset construction of $R/I$ for an ideal $I \subset R$, the well-definedness of its operations, and the canonical quotient homomorphism $q \colon R \to R/I$ with $\ker(q) = I$. We also recall the First Isomorphism Theorem for rings.
+    \item \textbf{Review of Quotient Rings and the Canonical Projection:} We revisit the coset construction of $\faktor{R}{I}$ for an ideal $I \subset R$, the well-definedness of its operations, and the canonical quotient homomorphism $q \colon R \to \faktor{R}{I}$ with $\ker(q) = I$. We also recall the First Isomorphism Theorem for rings.
     \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} We prove that the preimage (pullback) $f^{-1}(J)$ of an ideal $J \subset S$ under any ring homomorphism $f \colon R \to S$ is always an ideal of $R$, whereas forward images generally fail to be ideals unless the map is surjective.
-    \item \textbf{The Correspondence Theorem for Ideals:} We formulate and rigorously prove the Lattice Isomorphism Theorem for ideals, establishing an inclusion-preserving bijection between the ideals of the quotient ring $R/K$ and the ideals of $R$ containing the modulo ideal $K$.
+    \item \textbf{The Correspondence Theorem for Ideals:} We formulate and rigorously prove the Lattice Isomorphism Theorem for ideals, establishing an inclusion-preserving bijection between the ideals of the quotient ring $\faktor{R}{K}$ and the ideals of $R$ containing the modulo ideal $K$.
     \item \textbf{Maximal Ideals and Fields:} We introduce maximal proper ideals, examine concrete examples in $\mathbb{Z}$, and establish the characterization that a ring $R$ is a field if and only if the zero ideal $(0)$ is maximal.
 \end{itemize}
 \end{overview}
@@ -55,14 +55,14 @@ Okay, so we start. And I remind you of yesterday --- it wasn't a long time ago, 
 
 So, if we have an ideal inside a ring... Typically, when I write $R$, it's a ring; $I$ is an ideal, so it's an ideal \inlinemetanote{writes \qt{$I \subset R$}, with an arrow from $I$ to \qt{ideal} and one from $R$ to \qt{ring}} in a ring.
 
-Then I want to say there are three main things to take away from yesterday. The first \inlinemetanote{writes: (i) Construction of $R/I$} is the construction of the quotient $R/I$ (Recall: \cref{thm:quotient-ring-structure}) --- and we went through this rather carefully, not fully; there were things to check that are left to you, but this is equal to, as a set, the set of equivalence classes of this relation $\equiv_I$ \inlinemetanote{writes: $= \text{set of equiv. classes of } \equiv_I$}. And then we defined on top of that --- I don't review it here, but --- we defined addition, multiplication; there's a zero element and a one element (Recall: \cref{def:addition-quotient,def:multiplication-quotient,def:distinguished-elements}). \inlinemetanote{writes: $(R/I, +, \cdot, \bar{0}, \bar{1})$}
+Then I want to say there are three main things to take away from yesterday. The first \inlinemetanote{writes: (i) Construction of $\faktor{R}{I}$} is the construction of the quotient $\faktor{R}{I}$ (Recall: \cref{thm:quotient-ring-structure}) --- and we went through this rather carefully, not fully; there were things to check that are left to you, but this is equal to, as a set, the set of equivalence classes of this relation $\equiv_I$ \inlinemetanote{writes: $= \text{set of equiv. classes of } \equiv_I$}. And then we defined on top of that --- I don't review it here, but --- we defined addition, multiplication; there's a zero element and a one element (Recall: \cref{def:addition-quotient,def:multiplication-quotient,def:distinguished-elements}). \inlinemetanote{writes: $(\faktor{R}{I}, +, \cdot, \bar{0}, \bar{1})$}
 \end{speech}
 
 \begin{content}[Review: Construction of the Quotient Ring]
 \recap{The quotient ring was constructed in the previous lecture: congruence modulo $I$ (\cref{def:congruence-modulo-ideal}, \cref{prop:equiv-rel-modulo-ideal}), the quotient set (\cref{def:quotient-set}), the operations and their well-definedness (\cref{def:addition-quotient}, \cref{prop:quotient-addition-well-defined}, \cref{def:multiplication-quotient}, \cref{prop:multiplication-well-defined}), and the resulting ring (\cref{thm:quotient-ring-structure}). The lecturer reviews it as the first of three main points.}
 
 \begin{definition}[Quotient Ring]\label[definition]{def:quotient-ring-w4wed}
-Let $R$ be a ring and $I \subset R$ an ideal. The quotient ring $R/I$ is defined as the set of equivalence classes under the congruence relation modulo $I$:
+Let $R$ be a ring and $I \subset R$ an ideal. The quotient ring $\faktor{R}{I}$ is defined as the set of equivalence classes under the congruence relation modulo $I$:
 \[
 x \equiv_I y \iff x - y \in I.
 \]
@@ -72,14 +72,14 @@ The equivalence class of an element $x \in R$ is the coset:
 \]
 As a set:
 \[
-R/I := \{ \bar{x} \mid x \in R \}.
+\faktor{R}{I} := \{ \bar{x} \mid x \in R \}.
 \]
 Equipped with the operations:
 \begin{align}
 \bar{x} + \bar{y} &:= \overline{x + y}, \label{eq:quotient-add} \\
 \bar{x} \cdot \bar{y} &:= \overline{x \cdot y}, \label{eq:quotient-mult}
 \end{align}
-additive identity $\bar{0} = 0 + I = I$, and multiplicative identity $\bar{1} = 1 + I$, the algebraic structure $(R/I, +, \cdot, \bar{0}, \bar{1})$ forms a well-defined ring.
+additive identity $\bar{0} = 0 + I = I$, and multiplicative identity $\bar{1} = 1 + I$, the algebraic structure $(\faktor{R}{I}, +, \cdot, \bar{0}, \bar{1})$ forms a well-defined ring.
 \end{definition}
 
 \begin{steps}[Well-Definedness of Operations on Cosets]
@@ -94,7 +94,7 @@ The well-definedness of addition and multiplication relies directly on $I$ being
 \subsection{The Canonical Quotient Map}
 
 \begin{speech}[00:01:10 - 00:02:45]
-So, then something I didn't say as explicitly, but will be the topic today, is that there is a map called the quotient map. We'll discuss this today. I didn't say this yesterday, but: \inlinemetanote{writes: (ii) $q \colon R \to R/I$} $R$ to $R/I$, and this map takes an element here to its equivalence class: \inlinemetanote{writes: $q(x) = \bar{x}$} $q(x) = \bar{x}$.
+So, then something I didn't say as explicitly, but will be the topic today, is that there is a map called the quotient map. We'll discuss this today. I didn't say this yesterday, but: \inlinemetanote{writes: (ii) $q \colon R \to \faktor{R}{I}$} $R$ to $\faktor{R}{I}$, and this map takes an element here to its equivalence class: \inlinemetanote{writes: $q(x) = \bar{x}$} $q(x) = \bar{x}$.
 
 Okay? So, it was implicit last time, but now it'll be explicit. So, after we've made this construction, there's a rule that if I take an element here, I can take it to its equivalence class. You accept that, right? It's the most basic way.
 
@@ -109,16 +109,16 @@ And the same is for multiplication. This is in some sense a review of the defini
 \begin{definition}[Quotient Map]\label[definition]{def:canonical-quotient-map}
 Let $R$ be a ring and $I \subset R$ an ideal. The \newterm{canonical quotient map} (or projection map) is defined by:
 \begin{equation}\label{eq:quotient-map-def}
-q \colon R \to R/I, \quad x \mapsto q(x) := \bar{x} = x + I.
+q \colon R \to \faktor{R}{I}, \quad x \mapsto q(x) := \bar{x} = x + I.
 \end{equation}
 \end{definition}
 
 \begin{claim}[Homomorphism Property of the Quotient Map]\label[claim]{clm:q-is-homomorphism}
-The projection map $q \colon R \to R/I$ is a ring homomorphism.
+The projection map $q \colon R \to \faktor{R}{I}$ is a ring homomorphism.
 \end{claim}
 
 \begin{proof}
-By definition of the algebraic operations in the quotient ring $R/I$:
+By definition of the algebraic operations in the quotient ring $\faktor{R}{I}$:
 \begin{align}
 q(x + y) &= \overline{x + y} = \bar{x} + \bar{y} = q(x) + q(y), \label{eq:q-preserves-add} \\
 q(x \cdot y) &= \overline{x \cdot y} = \bar{x} \cdot \bar{y} = q(x) \cdot q(y). \label{eq:q-preserves-mult}
@@ -177,7 +177,7 @@ For this, we have to find those elements \inlinemetanote{writes: Find those $x \
 
 \begin{content}[Properties of the Canonical Quotient Map]
 \begin{proposition}[Surjectivity and Kernel of the Quotient Map]\label[proposition]{prop:properties-of-q}
-Let $R$ be a ring, $I \subset R$ an ideal, and $q \colon R \to R/I$ the canonical quotient homomorphism. Then:
+Let $R$ be a ring, $I \subset R$ an ideal, and $q \colon R \to \faktor{R}{I}$ the canonical quotient homomorphism. Then:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item $q$ is surjective.
     \item $\ker(q) = I$.
@@ -187,12 +187,12 @@ Let $R$ be a ring, $I \subset R$ an ideal, and $q \colon R \to R/I$ the canonica
 \begin{proof}
 We verify each statement directly:
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item \textbf{Surjectivity:} Every element of $R/I$ is of the form $\bar{x} = x + I$ for some $x \in R$. By definition, $q(x) = \bar{x}$, so $q$ maps $R$ onto $R/I$.
+    \item \textbf{Surjectivity:} Every element of $\faktor{R}{I}$ is of the form $\bar{x} = x + I$ for some $x \in R$. By definition, $q(x) = \bar{x}$, so $q$ maps $R$ onto $\faktor{R}{I}$.
     \item \textbf{Kernel:} By definition of the kernel of a ring homomorphism (\cref{def:kernel-ring-hom}):
     \[
     \ker(q) = \{ x \in R \mid q(x) = \bar{0} \}.
     \]
-    Since the zero element in $R/I$ is the coset $\bar{0} = 0 + I = I$, we have:
+    Since the zero element in $\faktor{R}{I}$ is the coset $\bar{0} = 0 + I = I$, we have:
     \[
     q(x) = \bar{0} \iff \bar{x} = \bar{0} \iff x - 0 \in I \iff x \in I,
     \]
@@ -214,7 +214,7 @@ We verify each statement directly:
 % Old section structure: unsectioned content block under Section 1
 
 \begin{speech}[00:07:05 - 00:08:15]
-All right, so the third property is the one we discussed carefully last time (Recall: \cref{thm:first-isomorphism-theorem-statement}), which is that if I have a homomorphism \inlinemetanote{writes: (iii) $R \xrightarrow{f} S$, $f$ is a hom.} --- $R \xrightarrow{f} S$, where it's a homomorphism ---, then we have this data, which is somehow analogous to the linear algebra situation: that this kernel here is an ideal \inlinemetanote{writes: $\ker(f) \subset R$ ideal}, and the image of $f$ is a subring \inlinemetanote{writes: $\operatorname{Im}(f) \subset S$ subring}, such that the image is canonically --- and that's a complicated word in mathematics, \qt{canonically}, but anyway, I just wrote it down explicitly --- this image is isomorphic to $R \bmod \ker(f)$ \inlinemetanote{writes: $\operatorname{Im}(f) \cong R/\ker(f)$}.
+All right, so the third property is the one we discussed carefully last time (Recall: \cref{thm:first-isomorphism-theorem-statement}), which is that if I have a homomorphism \inlinemetanote{writes: (iii) $R \xrightarrow{f} S$, $f$ is a hom.} --- $R \xrightarrow{f} S$, where it's a homomorphism ---, then we have this data, which is somehow analogous to the linear algebra situation: that this kernel here is an ideal \inlinemetanote{writes: $\ker(f) \subset R$ ideal}, and the image of $f$ is a subring \inlinemetanote{writes: $\operatorname{Im}(f) \subset S$ subring}, such that the image is canonically --- and that's a complicated word in mathematics, \qt{canonically}, but anyway, I just wrote it down explicitly --- this image is isomorphic to $R \bmod \ker(f)$ \inlinemetanote{writes: $\operatorname{Im}(f) \cong \faktor{R}{\ker(f)}$}.
 
 So, that's like the three basic properties of the quotient construction, and you should really make sure that you understand them. In some sense, that's the main thing this week.
 \end{speech}
@@ -227,9 +227,9 @@ Let $f \colon R \to S$ be a homomorphism of rings. Then:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item $\ker(f)$ is an ideal of $R$.
     \item $\operatorname{Im}(f)$ is a subring of $S$.
-    \item There is a canonical ring isomorphism $\operatorname{Im}(f) \cong R/\ker(f)$, given by:
+    \item There is a canonical ring isomorphism $\operatorname{Im}(f) \cong \faktor{R}{\ker(f)}$, given by:
     \begin{equation}\label{eq:first-iso-rings}
-    \bar{f} \colon R/\ker(f) \xrightarrow{\sim} \operatorname{Im}(f), \quad \bar{x} \mapsto f(x).
+    \bar{f} \colon \faktor{R}{\ker(f)} \xrightarrow{\sim} \operatorname{Im}(f), \quad \bar{x} \mapsto f(x).
     \end{equation}
 \end{enumerate}
 \end{theorem}
@@ -239,7 +239,7 @@ Let $f \colon R \to S$ be a homomorphism of rings. Then:
 
 % [TIMESTAMP-SUSPECT: inspect manually — original: 00:08:05 - 00:10:25]
 \begin{speech}[00:08:05 - 00:10:25]
-So, we'll explore \textbf{(ii)} (i.e., the quotient map $q \colon R \to R/I$, \cref{def:canonical-quotient-map}) a bit more today. The first statement is: let $f$ from $R$ to $S$ be any homomorphism of rings \inlinemetanote{writes: Let $f \colon R \to S$ be any hom. of rings}, and then let $J$ in $S$ be an ideal \inlinemetanote{writes: Let $J \subset S$ be an ideal}.
+So, we'll explore \textbf{(ii)} (i.e., the quotient map $q \colon R \to \faktor{R}{I}$, \cref{def:canonical-quotient-map}) a bit more today. The first statement is: let $f$ from $R$ to $S$ be any homomorphism of rings \inlinemetanote{writes: Let $f \colon R \to S$ be any hom. of rings}, and then let $J$ in $S$ be an ideal \inlinemetanote{writes: Let $J \subset S$ be an ideal}.
 
 All right, so what we have here in the picture is that inside here is $J$, which is an ideal. Then the claim, so the proposition --- and this is kind of an important proposition --- is: if I take the inverse image of $J$ \inlinemetanote{writes: Proposition: $f^{-1}(J) \subset R$ is an ideal}... Are you happy with this set-theoretic terminology? This is just a map: if I take a set here, I can take its inverse image. The inverse image lives here. This is inside $R$. That's clear --- that would not be a proposition, that's just, you know, by definition... It is an ideal.
 
@@ -373,36 +373,36 @@ So, we want to study this for the quotient map, and there we learn something tha
 \subsection{Sets of Ideals and Notation}
 
 \begin{speech}[00:16:01 - 00:18:40]
-So, we consider now the situation of the quotient map $q \colon R \to R/I$ \inlinemetanote{writes: $q \colon R \to R/I$}. So, we start with some... $I$ is an ideal in $R$, we construct the quotient, and we consider the quotient map. And I want to now start pulling back ideals here to here.
+So, we consider now the situation of the quotient map $q \colon R \to \faktor{R}{I}$ \inlinemetanote{writes: $q \colon R \to \faktor{R}{I}$}. So, we start with some... $I$ is an ideal in $R$, we construct the quotient, and we consider the quotient map. And I want to now start pulling back ideals here to here.
 
-Since we have $I$'s in there, let's just --- to avoid the notation --- call this one $K$, because we can use $I$ and $K$ \inlinemetanote{corrects notation on board: changes $I$ to $K$ in $q \colon R \to R/K, K \subset R$}. Sorry about that. So, we start with an ideal $K$, because I want to keep $I$ and $J$ for my ideals that I play with, rather than fix it.
+Since we have $I$'s in there, let's just --- to avoid the notation --- call this one $K$, because we can use $I$ and $K$ \inlinemetanote{corrects notation on board: changes $I$ to $K$ in $q \colon R \to \faktor{R}{K}, K \subset R$}. Sorry about that. So, we start with an ideal $K$, because I want to keep $I$ and $J$ for my ideals that I play with, rather than fix it.
 
 So, we have an ideal $K$ inside $R$, and I consider this quotient map. And I want to understand here --- and this part of the quotient map is crucial to understand ---: I want to understand \inlinemetanote{writes: I want to understand the pullback of ideals here} what this pullback of ideals looks like here in this situation.
 
-For that, I need some definitions. \textbf{Definition 1} \inlinemetanote{writes: Definition I}: let's look at ideals here. So, let $\operatorname{Id}$ of this ring \inlinemetanote{writes: $\operatorname{Id}(R/K)$} be the set of ideals. So, this equals the set of ideals of this ring \inlinemetanote{writes: $= \text{Set of ideals of } R/K$}. This is a ring, it has some set of ideals; just let this be the set of ideals of that ring. It could be infinite, could be small, but anyway, it's a set of ideals.
+For that, I need some definitions. \textbf{Definition 1} \inlinemetanote{writes: Definition I}: let's look at ideals here. So, let $\operatorname{cl}$ of this ring \inlinemetanote{writes: $\operatorname{cl}(\faktor{R}{K})$} be the set of ideals. So, this equals the set of ideals of this ring \inlinemetanote{writes: $= \text{Set of ideals of } \faktor{R}{K}$}. This is a ring, it has some set of ideals; just let this be the set of ideals of that ring. It could be infinite, could be small, but anyway, it's a set of ideals.
 
-And \textbf{Definition 2} \inlinemetanote{writes: Definition II} is: let $\operatorname{Id}_K(R)$ \inlinemetanote{writes: $\operatorname{Id}_K(R)$} be the set of ideals of $R$ which contain $K$ \inlinemetanote{writes: $= \text{Set of ideals of } R \text{ which contain } K$}.
+And \textbf{Definition 2} \inlinemetanote{writes: Definition II} is: let $\operatorname{cl}_K(R)$ \inlinemetanote{writes: $\operatorname{cl}_K(R)$} be the set of ideals of $R$ which contain $K$ \inlinemetanote{writes: $= \text{Set of ideals of } R \text{ which contain } K$}.
 
-So, these definitions are kind of important. Let me just say it, and I'll write them again in case you don't: $\operatorname{Id}(R/K)$ equals all $J$ in $R/K$ where $J$ is an ideal \inlinemetanote{writes: $\operatorname{Id}(R/K) = \{ J \subset R/K \mid J \text{ is an ideal} \}$}. This is just writing slightly more mathematically what I said there.
+So, these definitions are kind of important. Let me just say it, and I'll write them again in case you don't: $\operatorname{cl}(\faktor{R}{K})$ equals all $J$ in $\faktor{R}{K}$ where $J$ is an ideal \inlinemetanote{writes: $\operatorname{cl}(\faktor{R}{K}) = \{ J \subset \faktor{R}{K} \mid J \text{ is an ideal} \}$}. This is just writing slightly more mathematically what I said there.
 
-And this $\operatorname{Id}_K(R)$ is equal to the set of $I$, ideals in $R$, such that $K$ is inside $I$ and $I$ is an ideal \inlinemetanote{writes: $\operatorname{Id}_K(R) = \{ I \subset R \mid K \subset I, I \text{ ideal} \}$}. Okay? So, I just said it again, but the definitions are crucial.
+And this $\operatorname{cl}_K(R)$ is equal to the set of $I$, ideals in $R$, such that $K$ is inside $I$ and $I$ is an ideal \inlinemetanote{writes: $\operatorname{cl}_K(R) = \{ I \subset R \mid K \subset I, I \text{ ideal} \}$}. Okay? So, I just said it again, but the definitions are crucial.
 \end{speech}
 
 \begin{content}
 \begin{notation}[Ideal Sets for the Quotient Setting]\label[notation]{not:ideal-sets-k}
 Let $R$ be a ring and $K \subset R$ an ideal. We consider the quotient map:
 \[
-q \colon R \to R/K, \quad x \mapsto \bar{x} = x + K.
+q \colon R \to \faktor{R}{K}, \quad x \mapsto \bar{x} = x + K.
 \]
 We define two collections of ideals:
 \begin{enumerate}[label=\textbf{(\Roman*)}]
     \item \textbf{Ideals of the Quotient Ring:}
     \begin{align}
-    \operatorname{Id}(R/K) &:= \{ J \subset R/K \mid J \text{ is an ideal of } R/K \}. \label{eq:def-id-quotient}
+    \operatorname{cl}(\faktor{R}{K}) &:= \{ J \subset \faktor{R}{K} \mid J \text{ is an ideal of } \faktor{R}{K} \}. \label{eq:def-id-quotient}
     \end{align}
     \item \textbf{Ideals Containing the Kernel:}
     \begin{align}
-    \operatorname{Id}_K(R) &:= \{ I \subset R \mid K \subset I \text{ and } I \text{ is an ideal of } R \}. \label{eq:def-id-k}
+    \operatorname{cl}_K(R) &:= \{ I \subset R \mid K \subset I \text{ and } I \text{ is an ideal of } R \}. \label{eq:def-id-k}
     \end{align}
 \end{enumerate}
 \end{notation}
@@ -413,7 +413,7 @@ We define two collections of ideals:
 \begin{speech}[00:18:40 - 00:20:07]
 So, is there any confusion about these definitions? I'm going to consider any ideal here, that's that set; and I consider here not any ideal, just ideals that contain the original $K$. Is that okay?
 
-So, the proposition, which is kind of fundamental here, is the relationship. And the proposition is that there is a bijection \inlinemetanote{writes: There is a bijection}, and this bijection is between, on the left side, $\operatorname{Id}_K(R)$ \inlinemetanote{writes: $\operatorname{Id}_K(R)$} --- so those are ideals in $R$ which contain $K$ ---; they're in bijective correspondence --- this is the bijection \inlinemetanote{draws double arrow $\longleftrightarrow$ with label bijection} --- with this $\operatorname{Id}(R/K)$ \inlinemetanote{writes: $\operatorname{Id}(R/K)$}. That's what we're going to prove.
+So, the proposition, which is kind of fundamental here, is the relationship. And the proposition is that there is a bijection \inlinemetanote{writes: There is a bijection}, and this bijection is between, on the left side, $\operatorname{cl}_K(R)$ \inlinemetanote{writes: $\operatorname{cl}_K(R)$} --- so those are ideals in $R$ which contain $K$ ---; they're in bijective correspondence --- this is the bijection \inlinemetanote{draws double arrow $\longleftrightarrow$ with label bijection} --- with this $\operatorname{cl}(\faktor{R}{K})$ \inlinemetanote{writes: $\operatorname{cl}(\faktor{R}{K})$}. That's what we're going to prove.
 
 So, we're going to prove this statement.
 
@@ -424,29 +424,29 @@ This is some kind of very nice way of thinking about ideals. We start with $R$ -
 \begin{proposition}[Correspondence Theorem / Lattice Theorem for Ideals]\label[proposition]{prop:correspondence-theorem-ideals}
 Let $R$ be a ring and $K \subset R$ an ideal. There is a canonical bijection:
 \begin{equation}\label{eq:correspondence-bijection}
-\operatorname{Id}_K(R) \longleftrightarrow \operatorname{Id}(R/K).
+\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right).
 \end{equation}
-That is, the ideals of the quotient ring $R/K$ are in exact one-to-one correspondence with the ideals of $R$ that contain $K$.
+That is, the ideals of the quotient ring $\faktor{R}{K}$ are in exact one-to-one correspondence with the ideals of $R$ that contain $K$.
 \end{proposition}
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2, >=Stealth]
 % \begin{hidden}
 % - Canvas: scale 1.2, x in [-4.3, 4.3], y in [-1.2, 1.2]; two boxes, two arrows between them
-% - Left box Id_K(R) centred at (-2.9, 0), right box Id(R/K) centred at (2.9, 0), each 3.2cm x 2.2cm
+% - Left box cl_K(R) centred at (-2.9, 0), right box cl(R/K) centred at (2.9, 0), each 3.2cm x 2.2cm
 %   (node sizes do not scale): centres at +-3.48cm, inner edges at +-1.88cm
 % - Pullback arrow at y = 0.45 from x = 1.25 to x = -1.25 (+-1.5cm, pointing left), label above;
 %   image arrow at y = -0.45 from x = -1.25 to x = 1.25 (pointing right), label below; labels about 2cm wide fit the 3cm
 % - Collisions: the arrows are 0.9 apart; each label sits on the outer side of its arrow
 % \end{hidden}
     \node[draw, thick, rounded corners, fill=MidnightBlue!10, minimum width=3.2cm, minimum height=2.2cm, align=center] at (-2.9, 0) {
-        $\operatorname{Id}_K(R)$\\[4pt]
+        $\operatorname{cl}_K(R)$\\[4pt]
         \footnotesize ideals $I \subset R$\\
         \footnotesize with $K \subset I$
     };
     \node[draw, thick, rounded corners, fill=ForestGreen!10, minimum width=3.2cm, minimum height=2.2cm, align=center] at (2.9, 0) {
-        $\operatorname{Id}(R/K)$\\[4pt]
-        \footnotesize ideals $J \subset R/K$
+        $\operatorname{cl}(\faktor{R}{K})$\\[4pt]
+        \footnotesize ideals $J \subset \faktor{R}{K}$
     };
     \draw[->, thick, BrickRed] (1.25, 0.45) -- node[above, font=\small] {$q^{-1}(J) \leftarrow J$} (-1.25, 0.45);
     \draw[->, thick, BurntOrange] (-1.25, -0.45) -- node[below, font=\small] {$I \mapsto q(I)$} (1.25, -0.45);
@@ -456,7 +456,7 @@ That is, the ideals of the quotient ring $R/K$ are in exact one-to-one correspon
 \begin{steps}[Conceptual Meaning of the Bijection]
 This theorem reveals the internal structure of quotient rings:
 \begin{itemize}
-    \item \textbf{Ideals in $R/K$ Are Pre-Existing Ideals in $R$:} One does not need to search for new, exotic ideals in the quotient ring $R/K$. Every ideal in $R/K$ arises directly from an ideal of $R$ that happens to contain the modulo ideal $K$.
+    \item \textbf{Ideals in \texorpdfstring{$\faktor{R}{K}$}{R/K} Are Pre-Existing Ideals in $R$:} One does not need to search for new, exotic ideals in the quotient ring $\faktor{R}{K}$. Every ideal in $\faktor{R}{K}$ arises directly from an ideal of $R$ that happens to contain the modulo ideal $K$.
 \end{itemize}
 \end{steps}
 \end{content}
@@ -474,7 +474,7 @@ This theorem reveals the internal structure of quotient rings:
 % Old section name: \subsection{Construction and Well-Definedness of the Correspondence Maps}
 
 \begin{speech}[00:20:07 - 00:22:05]
-All right, so on this bijection, to prove it, I have to give you maps. If I have $J$ here \inlinemetanote{writes: $J \in \operatorname{Id}(R/K)$}, in $R/K$, I have to take it to get an ideal here, right? \inlinemetanote{writes: $J \mapsto \dots$} And the map this way is going to be $f^{-1}(J)$ --- this is an ideal here \inlinemetanote{writes: $q^{-1}(J) \in \operatorname{Id}_K(R)$} ---, okay?
+All right, so on this bijection, to prove it, I have to give you maps. If I have $J$ here \inlinemetanote{writes: $J \in \operatorname{cl}(\faktor{R}{K})$}, in $\faktor{R}{K}$, I have to take it to get an ideal here, right? \inlinemetanote{writes: $J \mapsto \dots$} And the map this way is going to be $f^{-1}(J)$ --- this is an ideal here \inlinemetanote{writes: $q^{-1}(J) \in \operatorname{cl}_K(R)$} ---, okay?
 
 Let's first understand it. First, we said that if you take any ideal here, when you take $f^{-1}$, it is an ideal (Recall: \cref{prop:preimage-of-ideal}). I'm saying more now: not only is it an ideal, but it also contains $K$. And why does it contain $K$? Because if I take zero here, the inverse image of zero is all of $K$.
 
@@ -487,26 +487,26 @@ Are you happy with this statement? It's kind of important, because, you know, it
 
 \begin{content}[The Leftward Map: Pullback under the Quotient Map]
 \begin{claim}[Well-Definedness of the Pullback Map]\label[claim]{clm:pullback-well-defined}
-For any ideal $J \in \operatorname{Id}(R/K)$, its preimage under $q$:
+For any ideal $J \in \operatorname{cl}(\faktor{R}{K})$, its preimage under $q$:
 \begin{equation}\label{eq:pullback-ideal-map}
 q^{-1}(J) = \{ x \in R \mid q(x) \in J \}
 \end{equation}
-is an ideal of $R$ that contains $K$, i.e., $q^{-1}(J) \in \operatorname{Id}_K(R)$.
+is an ideal of $R$ that contains $K$, i.e., $q^{-1}(J) \in \operatorname{cl}_K(R)$.
 \end{claim}
 
 \begin{proof}
 By \cref{prop:preimage-of-ideal}, the preimage of any ideal under a ring homomorphism is an ideal of the domain, so $q^{-1}(J)$ is an ideal of $R$.
 It remains to show that $q^{-1}(J) \supset K$:
-Since $J$ is an ideal in $R/K$, it contains the additive identity $\bar{0} \in J$. By the definition of preimage and the kernel of $q$ (\cref{prop:properties-of-q}):
+Since $J$ is an ideal in $\faktor{R}{K}$, it contains the additive identity $\bar{0} \in J$. By the definition of preimage and the kernel of $q$ (\cref{prop:properties-of-q}):
 \[
 K = \ker(q) = q^{-1}(\bar{0}) \subset q^{-1}(J).
 \]
-Hence, $K \subset q^{-1}(J)$, which proves that $q^{-1}(J) \in \operatorname{Id}_K(R)$.
+Hence, $K \subset q^{-1}(J)$, which proves that $q^{-1}(J) \in \operatorname{cl}_K(R)$.
 \end{proof}
 \end{content}
 
 \begin{speech}[00:22:05 - 00:23:35]
-That's one direction. Now we have to do the other direction. If I have an ideal $I$ here \inlinemetanote{writes: $I \in \operatorname{Id}_K(R)$} --- I have an ideal here, $I$ ---, I have to be able to go this way and get an ideal of $R/K$ \inlinemetanote{writes: $I \mapsto \dots$}.
+That's one direction. Now we have to do the other direction. If I have an ideal $I$ here \inlinemetanote{writes: $I \in \operatorname{cl}_K(R)$} --- I have an ideal here, $I$ ---, I have to be able to go this way and get an ideal of $\faktor{R}{K}$ \inlinemetanote{writes: $I \mapsto \dots$}.
 
 And the natural thing to do is just to take $q$ of this \inlinemetanote{writes: $q(I)$}.
 
@@ -520,20 +520,20 @@ Anyway, that's the task at hand.
 \end{speech}
 
 \begin{content}[The Explicit Bijection Maps]
-To establish the correspondence $\operatorname{Id}_K(R) \longleftrightarrow \operatorname{Id}(R/K)$, we define two mutually inverse maps:
+To establish the correspondence $\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right)$, we define two mutually inverse maps:
 \begin{align}
-\Phi &\colon \operatorname{Id}(R/K) \to \operatorname{Id}_K(R), \quad J \mapsto q^{-1}(J), \label{eq:map-phi} \\
-\Psi &\colon \operatorname{Id}_K(R) \to \operatorname{Id}(R/K), \quad I \mapsto q(I) = \{ \bar{x} \in R/K \mid x \in I \}. \label{eq:map-psi}
+\Phi &\colon \operatorname{cl}\left(\faktor{R}{K}\right) \to \operatorname{cl}_K(R), \quad J \mapsto q^{-1}(J), \label{eq:map-phi} \\
+\Psi &\colon \operatorname{cl}_K(R) \to \operatorname{cl}\left(\faktor{R}{K}\right), \quad I \mapsto q(I) = \{ \bar{x} \in \faktor{R}{K} \mid x \in I \}. \label{eq:map-psi}
 \end{align}
 
 \begin{steps}[Why the Forward Image $q(I)$ is an Ideal for the Quotient Map]
 Earlier, \cref{ex:forward-image-not-ideal} demonstrated that forward images of ideals generally fail to be ideals. However, $q$ is \textbf{surjective} (\cref{prop:properties-of-q}).
-For any ideal $I \subset R$, $q(I)$ is an additive subgroup of $R/K$ because $q$ is a homomorphism. To check ideal absorption:
-Let $\bar{r} \in R/K$ and $\bar{x} \in q(I)$ with $x \in I$. Since $q$ is surjective, $\bar{r} = q(r)$ for some $r \in R$. Then:
+For any ideal $I \subset R$, $q(I)$ is an additive subgroup of $\faktor{R}{K}$ because $q$ is a homomorphism. To check ideal absorption:
+Let $\bar{r} \in \faktor{R}{K}$ and $\bar{x} \in q(I)$ with $x \in I$. Since $q$ is surjective, $\bar{r} = q(r)$ for some $r \in R$. Then:
 \[
 \bar{r} \cdot \bar{x} = q(r) \cdot q(x) = q(r \cdot x).
 \]
-Since $I$ is an ideal of $R$, $r \cdot x \in I$. Thus, $q(r \cdot x) \in q(I)$, showing that $q(I)$ absorbs multiplication from all elements of $R/K$.
+Since $I$ is an ideal of $R$, $r \cdot x \in I$. Thus, $q(r \cdot x) \in q(I)$, showing that $q(I)$ absorbs multiplication from all elements of $\faktor{R}{K}$.
 \end{steps}
 \end{content}
 
@@ -542,28 +542,28 @@ To prove the left arrow --- this arrow \inlinemetanote{points at $\longleftarrow
 
 And the proof of that, the argument for that, is: well, $J$ is an ideal, so $0$ is in $J$ \inlinemetanote{writes: $0 \in J$ so}. So $q^{-1}(0)$ is in $q^{-1}(J)$ \inlinemetanote{writes: $q^{-1}(0) \subset q^{-1}(J)$}, and $q^{-1}(0)$ is exactly $K$ \inlinemetanote{writes: $K$} --- that's the kernel of the quotient map. So that's the argument there.
 
-Next, to prove this arrow \inlinemetanote{points at $\longrightarrow$ on the board} is well-defined \inlinemetanote{writes: To prove $\longrightarrow$ is well defined}, we just have to prove that \inlinemetanote{writes: we have to prove that} $q(I)$ inside this quotient is an ideal \inlinemetanote{writes: $q(I) \subset R/K$ is an ideal}. That's all we have to do.
+Next, to prove this arrow \inlinemetanote{points at $\longrightarrow$ on the board} is well-defined \inlinemetanote{writes: To prove $\longrightarrow$ is well defined}, we just have to prove that \inlinemetanote{writes: we have to prove that} $q(I)$ inside this quotient is an ideal \inlinemetanote{writes: $q(I) \subset \faktor{R}{K}$ is an ideal}. That's all we have to do.
 
 All right, so how are we going to prove it's an ideal? You know, we have to check these properties in general. So we just...
 \end{speech}
 
 \begin{content}[Verification: Well-Definedness of Both Directions]
 \textbf{1. Left Arrow ($\longleftarrow$ is Well-Defined):}
-To show $\Phi(J) = q^{-1}(J) \in \operatorname{Id}_K(R)$, we must show that $K \subset q^{-1}(J)$:
+To show $\Phi(J) = q^{-1}(J) \in \operatorname{cl}_K(R)$, we must show that $K \subset q^{-1}(J)$:
 \[
 \bar{0} \in J \implies q^{-1}(\bar{0}) \subset q^{-1}(J).
 \]
 Since $q^{-1}(\bar{0}) = \ker(q) = K$ (\cref{prop:properties-of-q}), we obtain $K \subset q^{-1}(J)$.
 
 \textbf{2. Right Arrow ($\longrightarrow$ is Well-Defined):}
-To show $\Psi(I) = q(I) \in \operatorname{Id}(R/K)$, we must show that for any ideal $I \in \operatorname{Id}_K(R)$:
+To show $\Psi(I) = q(I) \in \operatorname{cl}\left(\faktor{R}{K}\right)$, we must show that for any ideal $I \in \operatorname{cl}_K(R)$:
 \[
-q(I) \subset R/K \quad \text{is an ideal.}
+q(I) \subset \faktor{R}{K} \quad \text{is an ideal.}
 \]
 \end{content}
 
 \begin{speech}[00:25:06 - 00:26:54]
-So, if I have an element here \inlinemetanote{writes: $R \to R/K$} --- $R/K$, and inside here we have $q(I)$ \inlinemetanote{writes: $q(I)$}, and here's the map $q$ \inlinemetanote{writes: $q$}...
+So, if I have an element here \inlinemetanote{writes: $R \to \faktor{R}{K}$} --- $\faktor{R}{K}$, and inside here we have $q(I)$ \inlinemetanote{writes: $q(I)$}, and here's the map $q$ \inlinemetanote{writes: $q$}...
 
 If we pick two elements here... I want to show it's an ideal, so in particular I have to show it's closed under addition. First of all, let's just get zero out of the way. Zero is definitely in $q(I)$, because zero is in $I$, and if I apply $q$ to zero, I get zero, right? \inlinemetanote{writes: $\bar{0} \in q(I)$} Is this clear? Because $0$ is in $I$, so $q(0)$ is in $q(I)$, and $q(0) = 0$ \inlinemetanote{writes: Because $0 \in I \implies q(0) \in q(I)$, and $\bar{0}$ above $q(0)$}. So, zero is definitely here.
 
@@ -575,7 +575,7 @@ Okay? So, that shows that $q(I)$ has zero and it's closed under addition.
 \end{speech}
 
 \begin{content}[Proof that \texorpdfstring{$q(I)$}{q(I)} is an Additive Subgroup]
-We verify that $q(I)$ is an additive subgroup of $R/K$:
+We verify that $q(I)$ is an additive subgroup of $\faktor{R}{K}$:
 
 \textbf{Zero Element:}
 Since $I$ is an ideal of $R$, we have $0 \in I$. Thus:
@@ -612,8 +612,8 @@ So, now I've checked it. I've checked that this is well-defined. So, they're bot
 \end{speech}
 
 \begin{content}[Ideal Absorption under Multiplication]
-Let $\bar{r} \in R/K$ be an arbitrary element of the quotient ring, and let $\bar{x} \in q(I)$ with $x \in I$.
-Because the canonical quotient map $q \colon R \to R/K$ is \textbf{surjective}, the element $\bar{r}$ possesses a preimage $r \in R$ such that $q(r) = \bar{r}$.
+Let $\bar{r} \in \faktor{R}{K}$ be an arbitrary element of the quotient ring, and let $\bar{x} \in q(I)$ with $x \in I$.
+Because the canonical quotient map $q \colon R \to \faktor{R}{K}$ is \textbf{surjective}, the element $\bar{r}$ possesses a preimage $r \in R$ such that $q(r) = \bar{r}$.
 
 Since $I$ is an ideal of $R$, it absorbs multiplication by any ring element:
 \[
@@ -624,7 +624,7 @@ Applying the quotient homomorphism $q$:
 q(r \cdot x) \in q(I) \implies \overline{r \cdot x} = \bar{r} \cdot \bar{x} \in q(I).
 \]
 Similarly, $\bar{x} \cdot \bar{r} = \overline{x \cdot r} \in q(I)$.
-Hence, $q(I)$ satisfies all ideal axioms, proving that $q(I) \subset R/K$ is an ideal.
+Hence, $q(I)$ satisfies all ideal axioms, proving that $q(I) \subset \faktor{R}{K}$ is an ideal.
 \end{content}
 
 \begin{hidden}
@@ -649,13 +649,13 @@ So, I'm going to erase the definitions of this that you're supposed to remember 
 
 To prove it's a bijection, we should prove that if I go here and then back, I get the same thing. That's the first thing; and then I have to do it the other way, you know.
 
-So now... \inlinemetanote{writes: Now proof of the bijective property} proof of the bijective property. There are two steps. The first step, maybe \textbf{Step (A)} \inlinemetanote{writes: (A)}, is: start with an ideal $J$ in the quotient --- we start there \inlinemetanote{writes: Start with $J \subset R/K$}.
+So now... \inlinemetanote{writes: Now proof of the bijective property} proof of the bijective property. There are two steps. The first step, maybe \textbf{Step (A)} \inlinemetanote{writes: (A)}, is: start with an ideal $J$ in the quotient --- we start there \inlinemetanote{writes: Start with $J \subset \faktor{R}{K}$}.
 
 And then I have to show that if I take the pullback and then I take $q$ of that, this equals $J$ \inlinemetanote{writes: $q(q^{-1}(J)) = J$}, okay? That's what I have to show. That's saying that if I do the motion left and then the motion right, I have altogether done nothing.
 
 And the claim is: this is clear \inlinemetanote{writes: This is clear}. This is clear because $q$ is surjective \inlinemetanote{writes: because $q$ is surjective}.
 
-Okay, and I'm going to draw you a picture. So, here's $R/K$, here's $R$...
+Okay, and I'm going to draw you a picture. So, here's $\faktor{R}{K}$, here's $R$...
 \end{speech}
 
 \begin{speech}[00:30:18 - 00:31:26]
@@ -669,11 +669,11 @@ So, we're happy about that. Okay, then we have one more thing to check.
 \end{speech}
 
 \begin{content}[Bijective Property Part (A): \texorpdfstring{$q(q^{-1}(J)) = J$}{q(q^{-1}(J)) = J}]
-Let $J \in \operatorname{Id}(R/K)$ be an ideal of the quotient ring. We show:
+Let $J \in \operatorname{cl}\left(\faktor{R}{K}\right)$ be an ideal of the quotient ring. We show:
 \begin{equation}\label{eq:composition-step-a}
 q(q^{-1}(J)) = J.
 \end{equation}
-This equality holds purely set-theoretically because the quotient map $q \colon R \to R/K$ is \textbf{surjective}:
+This equality holds purely set-theoretically because the quotient map $q \colon R \to \faktor{R}{K}$ is \textbf{surjective}:
 \begin{itemize}
     \item \textbf{Inclusion $(\subseteq)$:} The relation $q(q^{-1}(J)) \subseteq J$ always holds by the general definition of the preimage (\cref{fact:pre-image-preimage}).
     \item \textbf{Inclusion $(\supseteq)$:} Conversely, let $\bar{y} \in J$. By surjectivity of $q$, there exists $x \in R$ such that $q(x) = \bar{y}$. Thus $x \in q^{-1}(J)$, which implies $\bar{y} = q(x) \in q(q^{-1}(J))$.
@@ -695,7 +695,7 @@ This equality holds purely set-theoretically because the quotient map $q \colon 
     
     % Codomain R/K
     \draw[thick, ForestGreen] (4.5, 0) ellipse (1.6cm and 1.3cm);
-    \node[ForestGreen, above] at (4.5, 1.3) {$R/K$};
+    \node[ForestGreen, above] at (4.5, 1.3) {$\faktor{R}{K}$};
     
     % Mapping arrow q
     \draw[->, thick] (0.8, 0.8) -- node[above] {$q$ (surjective)} (2.7, 0.8);
@@ -730,7 +730,7 @@ The usual thing I tell students is that all the stuff I talk about, it's much ea
 \begin{speech}[00:32:06 - 00:34:06]
 So, we need now to prove... We started on the right-hand side, so we need to start on this side now. We start with some $I$ that contains $K$, and this is an ideal \inlinemetanote{writes: $K \subset I \subset R$} --- so it's an ideal that contains that ideal $K$. And then we go with $I$ to the right-hand side, so we just take $q(I)$; and then we have to go back to $q^{-1}$, so we take $q(I)$ and then we take the pullback, and we need to show that this is $I$, okay? \inlinemetanote{writes: $I \longrightarrow q^{-1}(q(I)) \stackrel{?}{=} I$}
 
-And now it's not true for set-theoretic reasons. So, with the same diagram \inlinemetanote{draws two blobs for $R$ and $R/K$}... Then we have some $I$ here, and here is $R$ and $R/K$. And when we go forward, we just go with whatever $q$; so $q$ sends points all over here, right? So it just sends points to some image, that's $q(I)$ \inlinemetanote{draws arrows from $I$ to $q(I)$}. Okay?
+And now it's not true for set-theoretic reasons. So, with the same diagram \inlinemetanote{draws two blobs for $R$ and $\faktor{R}{K}$}... Then we have some $I$ here, and here is $R$ and $\faktor{R}{K}$. And when we go forward, we just go with whatever $q$; so $q$ sends points all over here, right? So it just sends points to some image, that's $q(I)$ \inlinemetanote{draws arrows from $I$ to $q(I)$}. Okay?
 
 And now you see the problem, because then when we go back, there could be a point here: there's some point $x$ here that goes to $\bar{x}$, but then there could be a $y$ that also goes to that. And we get nervous now, because I want this to be $I$, but this $y$ makes me nervous, because these two things could have gone here, so this $y$ is definitely in $q^{-1}(q(I))$ \inlinemetanote{writes: $y \in q^{-1}(q(I))$}, okay? And it makes me very nervous.
 
@@ -762,7 +762,7 @@ So, now I've proven that bijection. All right.
 \end{speech}
 
 \begin{content}[Bijective Property Part (B): \texorpdfstring{$q^{-1}(q(I)) = I$}{q^{-1}(q(I)) = I}]
-Let $I \in \operatorname{Id}_K(R)$ be an ideal containing $K$ (so $K \subset I \subset R$). We show:
+Let $I \in \operatorname{cl}_K(R)$ be an ideal containing $K$ (so $K \subset I \subset R$). We show:
 \begin{equation}\label{eq:composition-step-b}
 q^{-1}(q(I)) = I.
 \end{equation}
@@ -822,7 +822,7 @@ Therefore, $q^{-1}(q(I)) \subseteq I$, which proves $q^{-1}(q(I)) = I$.
     
     % Codomain R/K
     \draw[thick, ForestGreen] (4.5, 0) ellipse (1.6cm and 1.3cm);
-    \node[ForestGreen, above] at (4.5, 1.3) {$R/K$};
+    \node[ForestGreen, above] at (4.5, 1.3) {$\faktor{R}{K}$};
     
     % Mapping arrow q
     \draw[->, thick] (0.9, 0.8) -- node[above] {$q$} (2.8, 0.8);
@@ -861,7 +861,7 @@ Together, Steps (A) and (B) establish that $\Phi$ and $\Psi$ are mutually invers
 
 \begin{aiNote}[Beyond the Lecture: The Correspondence Preserves Inclusions]
 % [PERSISTENT, ADDITION]
-The bijection of \cref{prop:correspondence-theorem-ideals} respects inclusions in both directions, which is why it is also called the lattice theorem. For ideals $I_1, I_2 \in \operatorname{Id}_K(R)$, $I_1 \subseteq I_2$ clearly gives $q(I_1) \subseteq q(I_2)$; conversely, $q(I_1) \subseteq q(I_2)$ gives $I_1 = q^{-1}(q(I_1)) \subseteq q^{-1}(q(I_2)) = I_2$ by Step (B) (\cref{eq:composition-step-b}). In the same way, $J_1 \subseteq J_2$ holds in $\operatorname{Id}(R/K)$ if and only if $q^{-1}(J_1) \subseteq q^{-1}(J_2)$, using Step (A) (\cref{eq:composition-step-a}).
+The bijection of \cref{prop:correspondence-theorem-ideals} respects inclusions in both directions, which is why it is also called the lattice theorem. For ideals $I_1, I_2 \in \operatorname{cl}_K(R)$, $I_1 \subseteq I_2$ clearly gives $q(I_1) \subseteq q(I_2)$; conversely, $q(I_1) \subseteq q(I_2)$ gives $I_1 = q^{-1}(q(I_1)) \subseteq q^{-1}(q(I_2)) = I_2$ by Step (B) (\cref{eq:composition-step-b}). In the same way, $J_1 \subseteq J_2$ holds in $\operatorname{cl}\left(\faktor{R}{K}\right)$ if and only if $q^{-1}(J_1) \subseteq q^{-1}(J_2)$, using Step (A) (\cref{eq:composition-step-a}).
 \end{aiNote}
 
 \begin{hidden}
@@ -988,16 +988,16 @@ R \text{ is a field} \iff (0) \text{ is a maximal ideal of } R.
 % [PERSISTENT, ADDITION — refined by Gemini 4 Argon]
 Suppose $(0)$ is a maximal ideal of $R$, so that $R \neq \{0\}$. For any non-zero element $x \in R \setminus \{0\}$, the principal ideal $(x)$ (\cref{def:ideal-generated-by-elements}) strictly contains $(0)$. By maximality of $(0)$, $(x)$ cannot be a proper ideal, forcing $(x) = R$. Therefore, $1 \in (x)$, meaning there exists $y \in R$ such that $x y = 1$, so every non-zero element is invertible and $R$ is a field.
 
-Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}) immediately yields the fundamental characterization of maximal ideals via quotient rings: for any ideal $\mathfrak{m} \subset R$, the quotient ring $R/\mathfrak{m}$ is a field if and only if $(\bar{0}) = q(\mathfrak{m})$ is a maximal ideal in $R/\mathfrak{m}$, which holds if and only if $\mathfrak{m} = q^{-1}((\bar{0}))$ is a maximal ideal in $R$.
+Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}) immediately yields the fundamental characterization of maximal ideals via quotient rings: for any ideal $\mathfrak{m} \subset R$, the quotient ring $\faktor{R}{\mathfrak{m}}$ is a field if and only if $(\bar{0}) = q(\mathfrak{m})$ is a maximal ideal in $\faktor{R}{\mathfrak{m}}$, which holds if and only if $\mathfrak{m} = q^{-1}((\bar{0}))$ is a maximal ideal in $R$.
 \end{aiNote}
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Quotient Rings and Canonical Projection:} For any ideal $I \subset R$, the quotient $R/I$ is a well-defined ring under coset operations $\bar{x} + \bar{y} = \overline{x+y}$ and $\bar{x} \bar{y} = \overline{x y}$. The canonical projection $q \colon R \to R/I$ with $x \mapsto \bar{x}$ is a surjective ring homomorphism with $\ker(q) = I$. By the First Isomorphism Theorem, every homomorphism $f \colon R \to S$ induces an isomorphism $R/\ker(f) \cong \operatorname{Im}(f)$.
+    \item \textbf{Quotient Rings and Canonical Projection:} For any ideal $I \subset R$, the quotient $\faktor{R}{I}$ is a well-defined ring under coset operations $\bar{x} + \bar{y} = \overline{x+y}$ and $\bar{x} \bar{y} = \overline{x y}$. The canonical projection $q \colon R \to \faktor{R}{I}$ with $x \mapsto \bar{x}$ is a surjective ring homomorphism with $\ker(q) = I$. By the First Isomorphism Theorem, every homomorphism $f \colon R \to S$ induces an isomorphism $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$.
     \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} Under any ring homomorphism $f \colon R \to S$, the preimage $f^{-1}(J)$ of an ideal $J \subset S$ is always an ideal of $R$. Conversely, direct images $f(I)$ generally fail to be ideals (e.g., $2\mathbb{Z} \subset \mathbb{Z} \hookrightarrow \mathbb{Q}$), unless the homomorphism is surjective.
-    \item \textbf{The Correspondence Theorem for Ideals:} For an ideal $K \subset R$, the lattice of ideals in $R/K$ is in canonical inclusion-preserving bijection with the lattice of ideals in $R$ containing $K$:
+    \item \textbf{The Correspondence Theorem for Ideals:} For an ideal $K \subset R$, the lattice of ideals in $\faktor{R}{K}$ is in canonical inclusion-preserving bijection with the lattice of ideals in $R$ containing $K$:
     \[
-    \operatorname{Id}_K(R) \longleftrightarrow \operatorname{Id}(R/K), \quad I \mapsto q(I), \quad J \mapsto q^{-1}(J).
+    \operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right), \quad I \mapsto q(I), \quad J \mapsto q^{-1}(J).
     \]
     Surjectivity of $q$ ensures $q(q^{-1}(J)) = J$, while the condition $K \subset I$ ensures $q^{-1}(q(I)) = I$.
     \item \textbf{Maximal Ideals and Fields:} An ideal $\mathfrak{m} \subsetneq R$ is maximal if no proper ideal strictly contains it. In $\mathbb{Z}$, the maximal ideals are precisely the ideals $p\mathbb{Z}$ for primes $p$. A commutative ring $R$ is a field if and only if the zero ideal $(0)$ is a maximal ideal.
