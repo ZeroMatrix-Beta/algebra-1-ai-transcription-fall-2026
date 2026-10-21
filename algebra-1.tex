@@ -127,10 +127,10 @@
 \colorlet{TocChapColor}{ThemeSecondary!90!black}
 \colorlet{TocSecColor}{TocEntryBlue}
 \colorlet{TocSubsecColor}{TocEntryBrown}
-\colorlet{TocSubsubColor}{gray}
+\colorlet{TocSubsubColor}{TocSubsecColor}
 \colorlet{TocLabelColor}{ThemePrimary!85!black}
 \colorlet{TocProofColor}{OliveGreen} % titled proofWrapper entries, in the color of the proof heading (ProofTint)
-\colorlet{TocSummaryColor}{BurntOrange!85!black} % Summary of Key Concepts in the color of the overview box
+\colorlet{TocSummaryColor}{TocSubsecColor} % Summary of Key Concepts inherits subsection color
 
 % 3. SHADOWS & PROOF GLOBALS
 \colorlet{ShadowNormal}{black!50}
@@ -558,7 +558,8 @@ pdfauthor={Prof. Rahul Pandharipande}
 
 % Custom text commands
 \newcommand{\newterm}[1]{\textcolor{QuoteRed}{``}\textcolor{TextBoldColor}{\textit{#1}}\textcolor{QuoteRed}{''}}
-\newcommand{\inlinemetanote}[1]{{\colorlet{QuoteRed}{TextMetaNote}\textit{\textcolor{TextMetaNote}{[#1]}}}} % quote marks and brackets grey too
+\newcommand{\inlinemetanote}[1]{\textcolor{TextMetaNote}{\colorlet{QuoteRed}{TextMetaNote}\footnotesize\textit{[#1]}}} % quote marks and brackets grey too
+\let\inlinematenote\inlinemetanote
 % Recap line: a definition or result from an earlier lecture (or from earlier in this one) that the
 % lecturer states again. Before a restatement on the board it cites the first version, and the
 % restated one carries its label plus a week tag (def:ring-w2). A recap the lecturer only speaks
