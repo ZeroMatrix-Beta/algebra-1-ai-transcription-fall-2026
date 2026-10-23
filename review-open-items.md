@@ -1,8 +1,8 @@
 # Open items from the final review
 
-The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video.
+The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4.
 
-When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item from this file (or the whole file, once all three are done).
+When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item from this file (or the whole file, once all are done).
 
 ## 1. Week 2 Tuesday: "the origin of this $n$"
 
@@ -26,3 +26,11 @@ When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item fr
 - **Problem:** the block at line 216 is `[00:07:05 - 00:08:15]`, but the next block (line 241) starts at `00:08:05`. Line 240 still carries the pipeline's marker `% [TIMESTAMP-SUSPECT: inspect manually — original: 00:08:05 - 00:10:25]`.
 - **Check:** in the 7 October recording, find where "…that's the main thing this week." ends and "So, we'll explore (ii) a bit more today." begins. Shortly after, the lecturer writes "Let f: R → S be any hom. of rings" on the board. This file's pipeline header names the run `2026-10-07-wednesday-week3-algebra-1`, so the recording may carry that name rather than `week4`.
 - **Fix:** set the end of the first block and the start of the second to that time. Replace the marker on line 240 with a `% [TIMESTAMP-CORRECTED: …]` comment saying what the recording showed, as the other lecture files do.
+
+## 4. Week 5 Tuesday: two speech blocks overlap by 16 seconds
+
+- **Where:** [`content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex`, lines 1409 and 1417](content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex#L1417).
+- **Problem:** the block at line 1409 is `[01:04:41 - 01:05:40]`, but the next block (line 1417) starts at `01:05:24`. The text does not repeat across the boundary, so one of the two times is simply off.
+- **Check:** in the 14 October recording, find where "…Anyway, we can now ask: Is this a prime ideal?" ends and "And the answer is no." begins.
+- **Fix:** set the end of the first block and the start of the second to that time, with a `% [TIMESTAMP-CORRECTED: …]` comment.
+- **Not worth an item:** the same file has a 1-second overlap at line 1051 (`00:46:53` / `00:46:52`), which is rounding.

@@ -53,7 +53,7 @@ Two sets have the same \newterm{cardinality} if there is a bijection between the
 \end{fact}
 
 \begin{definition}[Image and Preimage of a Subset]\label[definition]{def:pre-image-preimage}
-Let $f \colon X \to Y$ be a map. For $A \subset X$, the \newterm{image} of $A$ is $f(A) = \{ f(a) \mid a \in A \} \subset Y$; the image of $f$ is $\operatorname{im}(f) = f(X)$. For $B \subset Y$, the \newterm{preimage} (or pullback) of $B$ is
+Let $f \colon X \to Y$ be a map. For $A \subset X$, the \newterm{image} of $A$ is $f(A) = \{ f(a) \mid a \in A \} \subset Y$; the image of $f$ is $\operatorname{Im}(f) = f(X)$. For $B \subset Y$, the \newterm{preimage} (or pullback) of $B$ is
 \[
 f^{-1}(B) = \{ x \in X \mid f(x) \in B \} \subset X.
 \]
@@ -201,13 +201,13 @@ and $\bar{z} = z$ exactly when $z \in \mathbb{R}$. So conjugation respects sums 
 \section{Linear Algebra}
 
 \begin{definition}[Linear Map, Kernel and Image]\label[definition]{def:pre-linear-map}
-Let $V, W$ be vector spaces over a field $K$. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) = \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{im}(T) = T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
+Let $V, W$ be vector spaces over a field $K$. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) = \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{Im}(T) = T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
 \end{definition}
 
 \begin{fact}[Kernel, Image and Rank--Nullity]\label[fact]{fact:pre-rank-nullity}
-For a linear map $T \colon V \to W$, $\ker(T) \subset V$ and $\operatorname{im}(T) \subset W$ are subspaces, and $T$ is injective if and only if $\ker(T) = \{0\}$. If $V$ is finite-dimensional,
+For a linear map $T \colon V \to W$, $\ker(T) \subset V$ and $\operatorname{Im}(T) \subset W$ are subspaces, and $T$ is injective if and only if $\ker(T) = \{0\}$. If $V$ is finite-dimensional,
 \[
-\dim V = \dim \ker(T) + \dim \operatorname{im}(T).
+\dim V = \dim \ker(T) + \dim \operatorname{Im}(T).
 \]
 \end{fact}
 
@@ -236,11 +236,11 @@ these operations are well-defined, $\faktor{V}{U}$ is a vector space, and the pr
 \end{definition}
 
 \begin{fact}[First Isomorphism Theorem for Linear Maps]\label[fact]{fact:pre-linear-first-iso}
-For a linear map $T \colon V \to W$, the map $\bar{T} \colon \faktor{V}{\ker(T)} \to \operatorname{im}(T)$, $v + \ker(T) \mapsto T(v)$, is a well-defined isomorphism of vector spaces. With $\dim \faktor{V}{\ker(T)} = \dim V - \dim \ker(T)$ this gives rank--nullity again (\cref{fact:pre-rank-nullity}).
+For a linear map $T \colon V \to W$, the map $\bar{T} \colon \faktor{V}{\ker(T)} \to \operatorname{Im}(T)$, $v + \ker(T) \mapsto T(v)$, is a well-defined isomorphism of vector spaces. With $\dim \faktor{V}{\ker(T)} = \dim V - \dim \ker(T)$ this gives rank--nullity again (\cref{fact:pre-rank-nullity}).
 \end{fact}
 
 \begin{steps}[The Model for Quotient Rings]
-The quotient ring $\faktor{R}{I}$ of Week~4 follows this pattern step by step, with the ideal $I$ in the role of the subspace $U$: congruence modulo $I$ (\cref{def:congruence-modulo-ideal}), the set of classes (\cref{def:quotient-set}), well-defined operations (\cref{prop:quotient-addition-well-defined}, \cref{prop:multiplication-well-defined}), and the First Isomorphism Theorem $\faktor{R}{\ker(f)} \cong \operatorname{im}(f)$ (\cref{thm:first-isomorphism-theorem-statement}). The new ingredient is multiplication: a subspace only has to absorb scalars, an ideal has to absorb all of $R$, and that is exactly what makes the product of classes well-defined.
+The quotient ring $\faktor{R}{I}$ of Week~4 follows this pattern step by step, with the ideal $I$ in the role of the subspace $U$: congruence modulo $I$ (\cref{def:congruence-modulo-ideal}), the set of classes (\cref{def:quotient-set}), well-defined operations (\cref{prop:quotient-addition-well-defined}, \cref{prop:multiplication-well-defined}), and the First Isomorphism Theorem $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$ (\cref{thm:first-isomorphism-theorem-statement}). The new ingredient is multiplication: a subspace only has to absorb scalars, an ideal has to absorb all of $R$, and that is exactly what makes the product of classes well-defined.
 \end{steps}
 
 \begin{definition}[Dual Space and Dual Map]\label[definition]{def:pre-dual-space}

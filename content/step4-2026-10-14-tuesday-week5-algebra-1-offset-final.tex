@@ -392,7 +392,7 @@ Let's just do this.
 \end{speech}
 
 \begin{content}[Characterization of Fields via the Zero Ideal]
-\begin{proposition}\label[proposition]{prop:field-zero-maximal}
+\begin{proposition}[Fields via the Zero Ideal]\label[proposition]{prop:field-zero-maximal}
 Let $R$ be a ring. Then $R$ is a field if and only if the zero ideal $(0) \subset R$ is a maximal ideal.
 \end{proposition}
 \end{content}
@@ -536,7 +536,7 @@ In particular, if I take this statement and specialize to $M = (0)$, I get that 
 \end{speech}
 
 \begin{content}[Characterization of Maximal Ideals via Field Quotients]
-\begin{proposition}\label[proposition]{prop:quotient-field-maximal}
+\begin{proposition}[Maximal Ideals via Field Quotients]\label[proposition]{prop:quotient-field-maximal}
 Let $R$ be a ring and $M \subset R$ an ideal. Then the quotient ring $\faktor{R}{M}$ is a field if and only if $M$ is a maximal ideal of $R$.
 \end{proposition}
 
@@ -592,7 +592,7 @@ So, that's the proof of this proposition.
 \begin{proof}[Proof of \cref{prop:quotient-field-maximal}]
 We combine \cref{prop:field-zero-maximal} with the Ideal Correspondence Theorem (\cref{thm:ideal-correspondence}):
 \begin{align*}
-\faktor{R}{M} \text{ is a field} &\iff (0) \subset \faktor{R}{M} \text{ is a maximal ideal} && (\text{by \cref{prop:field-zero-maximal} applied to } \faktor{R}{M}) \\
+\faktor{R}{M} \text{ is a field} &\iff (0) \subset \faktor{R}{M} \text{ is a maximal ideal} && (\text{by \cref{prop:field-zero-maximal}}) \\
 &\iff M \subset R \text{ is a maximal ideal} && (\text{by \cref{thm:ideal-correspondence}}).
 \end{align*}
 \end{proof}
@@ -1171,7 +1171,7 @@ It's good to understand; that's why it's called a prime ideal. I said that this 
 \end{speech}
 
 \begin{content}[Prime Ideals in the Ring of Integers $\mathbb{Z}$]
-\begin{claim}\label[claim]{clm:prime-ideals-in-z}
+\begin{claim}[Prime Ideals in $\mathbb{Z}$]\label[claim]{clm:prime-ideals-in-z}
 Let $n \in \mathbb{Z}_{\ge 2}$. The principal ideal $(n) = n\mathbb{Z} \subset \mathbb{Z}$ is a prime ideal if and only if $n$ is a prime number.
 \end{claim}
 
@@ -1209,7 +1209,7 @@ This was the statement that we already proved just a few minutes ago, and this i
 \end{speech}
 
 \begin{content}[Characterization of Prime Ideals via Integral Domains]
-\begin{proposition}\label[proposition]{prop:quotient-integral-domain-prime}
+\begin{proposition}[Prime Ideals via Integral Domains]\label[proposition]{prop:quotient-integral-domain-prime}
 Let $R$ be a commutative ring and $P \subset R$ an ideal. Then the quotient ring $\faktor{R}{P}$ is an integral domain if and only if $P$ is a prime ideal of $R$.
 \end{proposition}
 
