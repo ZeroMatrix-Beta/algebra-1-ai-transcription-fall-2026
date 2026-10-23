@@ -221,7 +221,7 @@
 \colorlet{EnvTheoremDark}{OriginalTheoremHex}  % Wendet den Hex-Code auf das Wort "Definition" an
 % The other theorem families are colored as in ta-notes (EnvTheorem: Satz, Definition, Beispiel).
 \definecolor{EnvRemark}{HTML}{008837}           % Bemerkung, Notation, Zusammenfassung, Ziele
-\colorlet{EnvQuestion}{MidnightBlue}            % Frage, Antwort
+\colorlet{EnvQuestion}{EnvRemark}               % Frage, Antwort
 \definecolor{EnvImportantRemark}{HTML}{D7263D}  % Wichtige Bemerkung
 % ==========================================
 
@@ -580,6 +580,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 \NewIconThmStyle{examplethm}{EnvTheorem}{\faLightbulb[regular]}
 \NewIconThmStyle{remarkthm}{EnvRemark}{\faInfoCircle}
 \NewIconThmStyle{questionthm}{EnvQuestion}{\faQuestionCircle}
+\NewIconThmStyle{answerthm}{EnvQuestion}{\faCommentDots}
 \NewIconThmStyle{importantremarkthm}{EnvImportantRemark}{\faExclamationTriangle}
 
 % Math Environments (English), grouped by style. All numbered ones share the theorem counter.
@@ -631,8 +632,10 @@ pdfauthor={Prof. Rahul Pandharipande}
 
 \theoremstyle{questionthm}
 \newtheorem{question}[theorem]{Question}
-\newtheorem{answer}[theorem]{Answer}
 \newtheorem*{question*}{Question}
+
+\theoremstyle{answerthm}
+\newtheorem{answer}[theorem]{Answer}
 \newtheorem*{answer*}{Answer}
 
 \theoremstyle{importantremarkthm}
