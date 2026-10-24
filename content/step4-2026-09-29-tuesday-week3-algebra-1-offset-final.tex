@@ -114,7 +114,7 @@ This lecture investigates the transition from commutative rings to fields and po
 \section{Review: The Group of Units of a Ring}
 
 \begin{speech}[00:00:00 - 00:01:40]
-Okay, so, we start. About the quiz: as I said, I'm very much pro-guessing in mathematics --- you're never penalized for getting the wrong answer. Lika said that there was some implementation problem and some people were penalized for getting the right answer, and she's going to fix that.
+Okay, so, we start. About the quiz: as I said, I'm very much pro-guessing in mathematics --- you're never penalized for getting the wrong answer. Lycka said that there was some implementation problem and some people were penalized for getting the right answer, and she's going to fix that.
 
 If you think the quiz was too easy, too hard, or too medium, tell us. As I said, I've never gone through this quiz thing before.
 
@@ -426,7 +426,7 @@ We evaluate the number of coprime residue classes in each case:
 \end{proof}
 
 \begin{steps}[Generalization to Prime Powers]
-For any prime power $p^k$ with $k \ge 1$, an integer $x \in \{0, 1, \dots, p^k - 1\}$ shares a factor with $p^k$ if and only if $p \mid x$. The multiples of $p$ are $0, p, 2p, \dots, (p^{k-1}-1)p$, totaling $p^{k-1}$ elements. Hence, $\phi(p^k) = p^k - p^{k-1} = p^k (1 - 1/p)$.
+For any prime power $p^k$ with $k \ge 1$, an integer $x \in \{0, 1, \dots, p^k - 1\}$ shares a factor with $p^k$ if and only if $p \mid x$. The multiples of $p$ are $0, p, 2p, \dots, (p^{k-1}-1)p$, totaling $p^{k-1}$ elements. Hence, $\phi(p^k) = p^k - p^{k-1} = p^k (1 - 1/p)$. For a general $n$, the Chinese Remainder Theorem splits $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ into prime-power factors, which gives $\phi(n) = n \prod_{p \mid n} (1 - 1/p)$ (Week~5, \cref{thm:euler-totient-product}).
 \end{steps}
 \end{content}
 

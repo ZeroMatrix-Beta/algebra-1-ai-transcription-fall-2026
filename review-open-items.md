@@ -1,6 +1,6 @@
 # Open items from the final review
 
-The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4.
+The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, and the Week 6 review (24 October 2026) item 5.
 
 When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item from this file (or the whole file, once all are done).
 

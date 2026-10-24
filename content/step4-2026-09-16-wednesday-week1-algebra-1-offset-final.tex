@@ -328,7 +328,7 @@ A \newterm{ring} is a tuple $(R, +, \cdot, 0, 1)$ consisting of a set $R$, two b
         \item \textbf{Commutativity:} $\forall a, b \in R \colon a + b = b + a$.
     \end{itemize}
 
-    \item \textbf{Multiplicative Monoid Axioms:}
+    \item \textbf{Multiplicative Monoid Axioms} (a monoid is a set with an associative operation and a neutral element, \cref{def:pre-group}):
     Multiplication is associative and possesses a unit element $1$:
     \begin{itemize}
         \item \textbf{Associativity:} $\forall a, b, c \in R \colon (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
@@ -478,6 +478,10 @@ Using \cref{prop:mult-by-zero} ($0 \cdot a = 0$), \cref{def:negative-elements} (
 \end{align*}
 Since $a + \bigl((-1) \cdot a\bigr) = 0$, the element $(-1) \cdot a$ satisfies the defining property of the additive inverse of $a$. By uniqueness of inverses in $(R, +, 0)$, this confirms that $-a = (-1) \cdot a$ is indeed the unique additive inverse of $a$.
 \end{proof}
+
+\begin{steps}[Two Meanings of $-a$, One Element]
+The ring axioms (\cref{def:ring}) already write $-a$ for the additive inverse of $a$ in the group $(R, +, 0)$, while \cref{def:negative-elements} defines $-a := (-1) \cdot a$. There is no circularity: the axioms only assert that an additive inverse exists, and it is unique; the definition of $-1$ uses just that. \Cref{lem:additive-inverse-product} then shows that the product $(-1) \cdot a$ \emph{is} this unique inverse, so the two meanings of $-a$ name the same element.
+\end{steps}
 \end{content}
 
 \subsection{Integer Multiples and the Canonical Map \texorpdfstring{$\mathbb{Z} \to R$}{Z -> R}}
@@ -938,14 +942,14 @@ In ring theory, however, their algebraic roles diverge profoundly:
     \item The image $\operatorname{Im}(f) \subseteq R_2$ is merely a \textbf{subring} of the codomain.
     \item The kernel $\ker(f) \subseteq R_1$ is not merely a subring, but an \textbf{ideal} of the domain: it is closed under addition and absorbs multiplication from the entire ring ($r \cdot a \in \ker(f)$ for all $r \in R_1$ and $a \in \ker(f)$).
 \end{itemize}
-This absorption property makes the kernel the precise algebraic structure needed to construct quotient rings $R_1/\ker(f)$ and establish the First Isomorphism Theorem for rings ($R_1/\ker(f) \cong \operatorname{Im}(f)$).
+This absorption property makes the kernel the precise algebraic structure needed to construct quotient rings $\faktor{R_1}{\ker(f)}$ and establish the First Isomorphism Theorem for rings ($\faktor{R_1}{\ker(f)} \cong \operatorname{Im}(f)$, Week~4, \cref{thm:first-isomorphism-theorem-statement}).
 \end{insight}
 \end{content}
 
 \subsection{Properties of the Kernel}
 
 \begin{speech}[00:33:17 - 00:34:49]
-So, the kernel has very specific properties \inlinemetanote{writes: Properties of the ker(f)}. The first property is that it's closed under addition: if we have $a$ and $b$ in the kernel of $f$ \inlinemetanote{writes: $\bullet \ a, b \in \ker(f)$}, this implies $a + b$ is in the kernel \inlinemetanote{writes: $\implies (a+b) \in \ker(f)$}. This is the linear algebra property. All of these things are easy to prove. To check whether $a + b$ is in the kernel, I have to calculate $f(a + b)$ \inlinemetanote{writes: $f(a+b) =$}. Using the definition of homomorphism, this is $f(a) + f(b)$ \inlinemetanote{writes: $= f(a) + f(b)$}. Then, using the fact that $a$ and $b$ are both in the kernel, well, this one is zero \inlinemetanote{writes \qt{$0$} under $f(a)$} and that one is zero \inlinemetanote{writes \qt{$0$} under $f(b)$}, so the whole thing is zero \inlinemetanote{writes: $= 0$} --- and so, it's in the kernel, right? I should have said even earlier: we already know that zero is in the kernel \inlinemetanote{writes: $\bullet \ 0 \in \ker(f)$}.
+So, the kernel has very specific properties \inlinemetanote{writes: Properties of the $\ker(f)$}. The first property is that it's closed under addition: if we have $a$ and $b$ in the kernel of $f$ \inlinemetanote{writes: $\bullet \ a, b \in \ker(f)$}, this implies $a + b$ is in the kernel \inlinemetanote{writes: $\implies (a+b) \in \ker(f)$}. This is the linear algebra property. All of these things are easy to prove. To check whether $a + b$ is in the kernel, I have to calculate $f(a + b)$ \inlinemetanote{writes: $f(a+b) =$}. Using the definition of homomorphism, this is $f(a) + f(b)$ \inlinemetanote{writes: $= f(a) + f(b)$}. Then, using the fact that $a$ and $b$ are both in the kernel, well, this one is zero \inlinemetanote{writes \qt{$0$} under $f(a)$} and that one is zero \inlinemetanote{writes \qt{$0$} under $f(b)$}, so the whole thing is zero \inlinemetanote{writes: $= 0$} --- and so, it's in the kernel, right? I should have said even earlier: we already know that zero is in the kernel \inlinemetanote{writes: $\bullet \ 0 \in \ker(f)$}.
 
 If $a$ is in the kernel \inlinemetanote{writes: $\bullet$ If $a \in \ker(f)$} and $r$ is any element of the ring \inlinemetanote{writes: $, r \in R$}, then $r \times a$ is in the kernel \inlinemetanote{writes: $\implies ra \in \ker(f)$}.
 \end{speech}
@@ -1009,7 +1013,7 @@ This is an extremely important definition for the class. It tells you various su
 \begin{definition}[Ideal]\label[definition]{def:ideal}
 Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subseteq R$ is called an \newterm{ideal} of $R$ if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Additive Subgroup:} $(I, +, 0)$ is an abelian subgroup of $(R, +, 0)$:
+    \item \textbf{Additive Subgroup:} $(I, +, 0)$ is an abelian subgroup (\cref{def:pre-group}) of $(R, +, 0)$:
     \begin{itemize}
         \item $0 \in I$,
         \item $\forall a, b \in I \implies a + b \in I$,
@@ -1193,6 +1197,8 @@ A direct consequence of this theorem is that every ring homomorphism $f \colon F
 \[
 \ker(f) \subset F \text{ an ideal} \implies \ker(f) = \{0\} \quad (\text{since } f(1_F) = 1_R \neq 0_R \implies \ker(f) \neq F).
 \]
+The converse also holds: a non-zero commutative ring whose only ideals are $(0)$ and $(1)$ is a field, that is, $R$ is a field if and only if $(0)$ is a maximal ideal (Week~5, \cref{prop:field-zero-maximal}); more generally, $\faktor{R}{M}$ is a field exactly when $M$ is maximal (\cref{prop:quotient-field-maximal}).
+
 Because $\ker(f) = \{0\}$, field homomorphisms into non-zero rings are always embeddings ($f(a) = f(b)$ gives $f(a - b) = 0$, so $a = b$). This is why the extension $g \colon \mathbb{Q} \to F$ in Week~3 is automatically injective (\cref{thm:universal-property-q}).
 \end{steps}
 \end{content}
@@ -1245,6 +1251,7 @@ Zorn's lemma says: if $P$ is a non-empty partially ordered set (\cref{def:pre-pa
     \item The union of a chain in $P$ is again linearly independent: a linear relation involves only finitely many vectors, and these all lie in one member of the chain. So every chain has an upper bound in $P$.
     \item Zorn's lemma gives a maximal element $B \in P$. If some $v \in V$ were not in the span of $B$, then $B \cup \{v\}$ would be linearly independent and strictly larger than $B$. Hence $B$ spans $V$, and $B$ is a basis.
 \end{enumerate}
+Week~5 states Zorn's lemma formally (\cref{lem:zorns-lemma}) and uses the same union-of-a-chain argument (\cref{lem:chains-ideals-bounded}) to prove that every non-zero ring has a maximal ideal (Krull's theorem, \cref{thm:krulls-theorem-maximal-ideals}).
 \end{aiNote}
 
 \begin{speech}[00:43:29 - 00:44:01]

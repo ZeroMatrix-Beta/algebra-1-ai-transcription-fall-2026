@@ -393,7 +393,7 @@ So, I'll number them, but I need the other board. \inlinemetanote{pushes the mid
 
 \inlinemetanote{begins wiping the lower right blackboard with a wet sponge} There's a great picture of Emmy Noether on a boat in Zurich that I found when I taught the Commutative Algebra class. She was here in the '30s for the ICM (i.e., the International Congress of Mathematicians, Zurich 1932), and she gave a lecture in this building.
 
-I don't know where that photo is, but probably if you asked Lieke, she can put it on the web page if you're curious. \inlinemetanote{finishes wiping the board with the sponge}
+I don't know where that photo is, but probably if you asked Lycka, she can put it on the web page if you're curious. \inlinemetanote{finishes wiping the board with the sponge}
 \end{speech}
 
 \begin{insight}[Emmy Noether at the 1932 Zurich ICM]
@@ -2121,6 +2121,12 @@ For any two real numbers (or non-negative integers), $\min(n_i, m_i) + \max(n_i,
 \]
 This establishes the identity up to multiplication by units.
 \end{proof}
+
+\begin{remark}[The GCD as a Linear Combination: PIDs versus UFDs]\label[remark]{rem:gcd-bezout-pid}
+In a PID, the ideal $(x, y)$ is principal, say $(x, y) = (d)$. Then $d$ is a greatest common divisor of $x$ and $y$: it divides both, as $x, y \in (d)$; and every common divisor $w$ of $x$ and $y$ divides every element $a x + b y$ of $(x, y)$, in particular $d$. Since $d \in (x, y)$, we get \newterm{Bézout's identity} $d = a x + b y$ for some $a, b \in R$, as in $\mathbb{Z}$ (\cref{fact:pre-bezout}).
+
+In a UFD that is not a PID this fails. In $K[x, y]$, the elements $x$ and $y$ are non-associate irreducibles, so $\gcd(x, y) \sim 1$, but $(x, y) \neq (1)$ (\cref{ans:kx-ky-pid}): $1$ is not of the form $a x + b y$. Likewise $\gcd(2, x) \sim 1$ in $\mathbb{Z}[x]$, while $(2, x)$ is a proper ideal (\cref{ex:non-pids}). In a general UFD, greatest common divisors exist (\cref{thm:gcd-formula-ufd}) but need not be linear combinations.
+\end{remark}
 \end{content}
 
 \section{Formal Power Series as a PID}

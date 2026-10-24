@@ -141,6 +141,8 @@ Okay, so, that's the correspondence. We discussed this extremely carefully becau
 So, one more step of this is that this is a way to just, if you have ideals here, it's the same thing as certain ideals there. All right? Are there any questions about this? As I said, this is absolutely fundamental; it's just used all the time. And as I said, for the algebraist, these sets are so strongly identified, they're just viewed as like the same set. Yeah.
 \end{speech}
 
+\recap{The correspondence theorem was proved at the end of the previous lecture (\cref{prop:correspondence-theorem-ideals}); the lecturer restates it as a bijection.}
+
 \begin{content}[The Correspondence Theorem for Ideals: Bijection]
 \begin{theorem}[Ideal Correspondence Theorem]\label[theorem]{thm:ideal-correspondence}
 Let $R$ be a ring and $K \subset R$ an ideal, with canonical projection $q \colon R \to \faktor{R}{K}$. The assignment:
@@ -391,6 +393,8 @@ This is relating the idea of a field --- some rings are fields ---, so it's a fi
 Let's just do this.
 \end{speech}
 
+\recap{This statement was begun in the previous lecture (\cref{prop:field-zero-ideal-maximal}): one direction was proved there before the bell. The lecturer now proves both directions.}
+
 \begin{content}[Characterization of Fields via the Zero Ideal]
 \begin{proposition}[Fields via the Zero Ideal]\label[proposition]{prop:field-zero-maximal}
 Let $R$ be a ring. Then $R$ is a field if and only if the zero ideal $(0) \subset R$ is a maximal ideal.
@@ -627,12 +631,12 @@ R \qquad \operatorname{cl}^*(R) \qquad & \\
 &\text{max ideals here are exactly those ideals for which } \faktor{R}{M} \text{ is a field.}
 \end{align*}
 
-\begin{definition}[Alternative Characterization of Maximal Ideals]\label[definition]{def:maximal-ideal-quotient-char}
-Let $R$ be a ring. The set of maximal ideals of $R$ is precisely the collection of proper ideals whose quotient ring is a field:
+\begin{corollary}[Alternative Characterization of Maximal Ideals]\label[corollary]{cor:maximal-ideal-quotient-char}
+Let $R$ be a ring. By \cref{prop:quotient-field-maximal}, the set of maximal ideals of $R$ is precisely the collection of proper ideals whose quotient ring is a field:
 \begin{equation}\label{eq:max-ideals-field-quotients}
 \operatorname{MaxSpec}(R) = \left\{ M \in \operatorname{cl}^*(R) \;\middle|\; \faktor{R}{M} \text{ is a field} \right\}.
 \end{equation}
-\end{definition}
+\end{corollary}
 \end{content}
 
 \begin{note}[Board Transition \& Pushing Blackboard]
@@ -675,15 +679,18 @@ That's kind of a standard partial ordering. Because if I have two ideals, one mi
 This is the abstract poset; this is ours. This is going to be the one that plays a role: It's the set of proper ideals with the subset relation. Okay?
 \end{speech}
 
+\recap{Partial orders are among the prerequisites (\cref{def:pre-partial-order}). The lecturer first describes posets informally and gives the axioms a few minutes later (\cref{def:poset-axioms}).}
+
 \begin{content}
-\begin{definition}[Partially Ordered Set / Poset]\label[definition]{def:poset}
-A \newterm{partially ordered set} (or \newterm{poset}) is a pair $(S, \le)$ consisting of a set $S$ and a binary relation $\le$ on $S$ such that for any two elements $x, y \in S$, one of three mutually non-exclusive situations may occur:
+
+\begin{remark}[Partially Ordered Set / Poset, Informally]\label[remark]{rem:poset-informal}
+A \newterm{partially ordered set} (or \newterm{poset}) is a pair $(S, \le)$ consisting of a set $S$ and a binary relation $\le$ on $S$ satisfying the axioms of \cref{def:poset-axioms}. Unlike in a total order, two elements need not be comparable: for $x, y \in S$, any of the following may occur:
 \begin{itemize}
     \item $x \le y$ ($x$ precedes or is equal to $y$),
     \item $y \le x$ ($y$ precedes or is equal to $x$),
     \item $x$ and $y$ are \newterm{incomparable} (neither $x \le y$ nor $y \le x$ holds).
 \end{itemize}
-\end{definition}
+\end{remark}
 
 \begin{example}[The Canonical Poset of Proper Ideals]\label[example]{ex:poset-proper-ideals}
 Let $R$ be a ring. The primary poset of interest is the set of all proper ideals of $R$ ordered by set inclusion:
@@ -1049,7 +1056,7 @@ In particular, this argument doesn't give you any hint of how to construct a max
 \end{speech}
 
 \begin{speech}[00:46:52 - 00:47:51]
-Does this affect me practically? No, because I work on... Some people asked about what my own research is, and Lika put some links to some public talks, so you can look at it. Part of what I think about is algebra, and the other half is geometry. Actually, I view myself mostly as a geometer.
+Does this affect me practically? No, because I work on... Some people asked about what my own research is, and Lycka put some links to some public talks, so you can look at it. Part of what I think about is algebra, and the other half is geometry. Actually, I view myself mostly as a geometer.
 
 This issue about Zorn's lemma doesn't affect me personally.
 
@@ -1436,7 +1443,7 @@ Okay? That's kind of a fun example.
 
 \begin{content}[Counterexample: Compactly Supported Smooth Functions]
 \begin{example}[Compactly Supported Functions Do Not Form a Prime Ideal]\label[example]{ex:compact-support-not-prime-p4}
-Let $R = C^\infty(\mathbb{R})$ be the ring of smooth functions under pointwise operations. Consider the ideal of functions with compact support:
+Let $R = C^\infty(\mathbb{R})$ be the ring of smooth functions under pointwise operations. Consider the ideal of functions with compact support (Week~2, \cref{def:compact-support-ideal}, \cref{prop:compact-support-ideal}):
 \begin{equation}\label{eq:compact-support-ideal-p4}
 I = C_c^\infty(\mathbb{R}) := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact} \}.
 \end{equation}

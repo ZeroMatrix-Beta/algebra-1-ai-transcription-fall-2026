@@ -14,7 +14,8 @@
 % it: cardinality, partial orders and maximal elements, span and linear independence, matrices,
 % subfields, limits and continuity, and the notations for the group of units.
 % Extended on 2026-10-24 (same model), for Week 6: the least common multiple, and gcd and lcm
-% from prime factorizations.
+% from prime factorizations. Then, after a review of the whole book: monoids and subgroups, the
+% subspace criteria, |A x B| = |A||B|, and gcd >= 1.
 % ==========================================
 
 % Primary Language: English
@@ -51,7 +52,7 @@ A map $f \colon X \to Y$ is bijective if and only if there is a map $g \colon Y 
 \end{fact}
 
 \begin{fact}[Cardinality]\label[fact]{fact:pre-cardinality}
-Two sets have the same \newterm{cardinality} if there is a bijection between them. A set is \newterm{countable} if it is finite or has the cardinality of $\mathbb{N}$: $\mathbb{Z}$ and $\mathbb{Q}$ are countable, while $\mathbb{R}$ is \newterm{uncountable} (Cantor's diagonal argument). The sets $\mathbb{R}_{>0}$ and $\mathbb{R}^* = \mathbb{R} \setminus \{0\}$ have the same cardinality as $\mathbb{R}$; for $\mathbb{R}_{>0}$, a bijection is $\exp$ (\cref{fact:pre-exp}). A bijection says nothing about algebraic structure: the groups $(\mathbb{R}^*, \cdot)$ and $(\mathbb{R}_{>0}, \cdot)$ have the same cardinality but are not isomorphic (Week~2, \cref{prop:r-star-not-isom-r-pos}).
+Two sets have the same \newterm{cardinality} if there is a bijection between them. A set is \newterm{countable} if it is finite or has the cardinality of $\mathbb{N}$: $\mathbb{Z}$ and $\mathbb{Q}$ are countable, while $\mathbb{R}$ is \newterm{uncountable} (Cantor's diagonal argument). For finite sets, $\abs{A \times B} = \abs{A} \cdot \abs{B}$, and a bijection preserves the number of elements; this counts the units of $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ in Week~5 (\cref{thm:euler-totient-product}). The sets $\mathbb{R}_{>0}$ and $\mathbb{R}^* = \mathbb{R} \setminus \{0\}$ have the same cardinality as $\mathbb{R}$; for $\mathbb{R}_{>0}$, a bijection is $\exp$ (\cref{fact:pre-exp}). A bijection says nothing about algebraic structure: the groups $(\mathbb{R}^*, \cdot)$ and $(\mathbb{R}_{>0}, \cdot)$ have the same cardinality but are not isomorphic (Week~2, \cref{prop:r-star-not-isom-r-pos}).
 \end{fact}
 
 \begin{definition}[Image and Preimage of a Subset]\label[definition]{def:pre-image-preimage}
@@ -124,7 +125,7 @@ y = q n + r \quad \text{and} \quad 0 \le r < n.
 \end{fact}
 
 \begin{definition}[Divisibility, Greatest Common Divisor, Primes]\label[definition]{def:pre-divisibility}
-For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\gcd(a, b)$ is the largest integer dividing both; the lecturer also writes $(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\gcd(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
+For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\gcd(a, b)$ is the largest integer dividing both (so $\gcd(a, b) \ge 1$, as $1$ divides both); the lecturer also writes $(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\gcd(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
 \end{definition}
 
 \begin{fact}[Bézout's Identity]\label[fact]{fact:pre-bezout}
@@ -185,7 +186,7 @@ Congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$, and it is comp
 \section{Groups, Fields and the Complex Numbers}
 
 \begin{definition}[Group]\label[definition]{def:pre-group}
-A \newterm{group} $(G, \cdot, e)$ is a set $G$ with an associative operation $\cdot$, a neutral element $e$ ($e a = a e = a$ for all $a$), and an inverse for every element ($a b = b a = e$ for some $b$). It is \newterm{abelian} if $a b = b a$ for all $a, b$; an abelian group is often written additively as $(G, +, 0)$, with inverses $-a$. Examples: $(\mathbb{Z}, +, 0)$ and $(\mathbb{R}^*, \cdot, 1)$. The lecturer restates the definition in Week~2 (\cref{def:group}).
+A \newterm{monoid} $(M, \cdot, e)$ is a set $M$ with an associative operation $\cdot$ and a neutral element $e$ ($e a = a e = a$ for all $a$); the multiplication of a ring is a monoid (Week~1, \cref{def:ring}). A \newterm{group} $(G, \cdot, e)$ is a monoid in which every element has an inverse ($a b = b a = e$ for some $b$). A \newterm{subgroup} of $G$ is a subset $H \subseteq G$ with $e \in H$ that is closed under the operation and under inverses; it is a group with the restricted operation (Week~2, \cref{def:subgroup}). It is \newterm{abelian} if $a b = b a$ for all $a, b$; an abelian group is often written additively as $(G, +, 0)$, with inverses $-a$. Examples: $(\mathbb{Z}, +, 0)$ and $(\mathbb{R}^*, \cdot, 1)$. The lecturer restates the definition in Week~2 (\cref{def:group}).
 \end{definition}
 
 \begin{definition}[Group Homomorphism]\label[definition]{def:pre-group-hom}
@@ -211,7 +212,7 @@ and $\bar{z} = z$ exactly when $z \in \mathbb{R}$. So conjugation respects sums 
 \section{Linear Algebra}
 
 \begin{definition}[Linear Map, Kernel and Image]\label[definition]{def:pre-linear-map}
-Let $V, W$ be vector spaces over a field $K$. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) = \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{Im}(T) = T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
+Let $V, W$ be vector spaces over a field $K$. A \newterm{subspace} of $V$ is a subset $U \subseteq V$ with $0 \in U$ that is closed under addition and under multiplication by scalars ($u, v \in U$, $\lambda \in K \implies u + v \in U$, $\lambda u \in U$); Week~1 compares this with the absorption property of ideals. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) = \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{Im}(T) = T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
 \end{definition}
 
 \begin{fact}[Kernel, Image and Rank--Nullity]\label[fact]{fact:pre-rank-nullity}
