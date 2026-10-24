@@ -115,7 +115,7 @@ The lecture is organized into two primary components:
         \item \textbf{Step 2 (Uniqueness):} Uniqueness via proving that every irreducible element in $R[x]$ is prime:
         \begin{itemize}
             \item \emph{Case 1 ($\deg(p) = 0$):} Constant irreducibles in $R$ remain prime in $R[x]$ via coefficient divisibility and Gauss's Lemma.
-            \item \emph{Case 2 ($\deg(p) > 0$):} Positive-degree irreducibles analyzed via minimal-degree elements in the ideal $(p, f)$, Euclidean division in the field of fractions $Q[x]$, and denominator clearing.
+            \item \emph{Case 2 ($\deg(p) > 0$):} Positive-degree irreducibles analyzed via minimal-degree elements in the ideal $(p, f)$, division with remainder in $Q[x]$ over the field of fractions $Q = \operatorname{Frac}(R)$, and denominator clearing.
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -537,14 +537,11 @@ So, let us start this time with existence. Step 1 is the existence result. \inli
 \end{speech}
 
 \begin{content}[Statement of Theorem B and Two-Part Strategy]
-\begin{theorem}[Gauss's Theorem on Polynomial Rings (Theorem B)]\label[theorem]{thm:gauss-b-revisited}
-Let $R$ be a unique factorization domain (UFD). Then the polynomial ring in one variable $R[x]$ is also a unique factorization domain:
+The lecturer writes Theorem~B on the board once more (\cref{thm:ufd-polynomial-ring-w6wed}):
 \[
 R \text{ is a UFD} \implies R[x] \text{ is a UFD}.
 \]
-\end{theorem}
-
-To establish that $R[x]$ is a UFD, we must prove two fundamental assertions for every non-zero, non-unit polynomial $f \in R[x]$:
+To establish that $R[x]$ is a UFD (\cref{def:ufd}), we must prove two fundamental assertions for every non-zero, non-unit polynomial $f \in R[x]$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Existence of Factorization:} Every non-zero, non-unit $f \in R[x]$ can be factored into a product of irreducible elements in $R[x].$
     \item \textbf{Uniqueness of Factorization:} Such factorization into irreducibles is unique up to permutation and associate elements.
@@ -599,7 +596,7 @@ Let us see.
 
 As far as Theorem B is concerned, this is the first moment where an idea is needed. We need to prove existence. We're not necessarily a scalar, so we can't just use the assumption; we're some actual bona fide polynomial, so we have here $f$. And the idea here is we know one thing that I taught at the beginning of the class: we can write $f$ as $c(f)$ times $f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: $f = c(f) \cdot f^*$} That's the content, and this is primitive. \inlinemetanote{writes: \qt{primitive} above $f^*$} Okay?
 
-So, we need to factor $f$. We need to show there exists a factorization of $f$ into irreducibles for $R[x]$. We already have a kind of factorization here. And remember, this is a scalar \inlinemetanote{writes: $R$ under $c(f)$} and this is in $R[x]$ \inlinemetanote{writes: $R[x] under f^*$}. And since the degree of $f$ is positive, the degree of this is positive. So, I just write that explicitly: the degree of $f^*$ is equal to the degree of $f$, which is positive \inlinemetanote{writes: $\deg(f^*) = \deg(f) > 0$}, because this is just a scalar, okay?
+So, we need to factor $f$. We need to show there exists a factorization of $f$ into irreducibles for $R[x]$. We already have a kind of factorization here. And remember, this is a scalar \inlinemetanote{writes: $R$ under $c(f)$} and this is in $R[x]$ \inlinemetanote{writes: $R[x]$ under $f^*$}. And since the degree of $f$ is positive, the degree of this is positive. So, I just write that explicitly: the degree of $f^*$ is equal to the degree of $f$, which is positive \inlinemetanote{writes: $\deg(f^*) = \deg(f) > 0$}, because this is just a scalar, okay?
 
 Now, we have to think: what could happen here? So, what could happen? \inlinemetanote{writes: What could happen?}
 \end{speech}
@@ -935,8 +932,8 @@ So, if we just multiply by the denominators, I get an equation: $b' f = q' m + r
 And now, if you look at this, everything is in $R$: all the terms here are in the ring $R$. \inlinemetanote{writes: $b', b'' \in R; q', q'', r', r'' \in R[x]$}
 \end{speech}
 
-\begin{content}[{Euclidean Division in \texorpdfstring{$Q[x]$}{Q[x]} and Clearing Denominators}]
-Applying the Euclidean division algorithm in $Q[x]$ to divide $f$ and $p$ by $m$, there exist unique quotients and remainders $\hat{q}, \hat{r}, \hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$ such that:
+\begin{content}[{Division with Remainder in \texorpdfstring{$Q[x]$}{Q[x]} and Clearing Denominators}]
+Applying division with remainder in $Q[x]$ (\cref{thm:poly-long-division}, with $K = Q$) to divide $f$ and $p$ by $m \neq 0$, there exist unique quotients and remainders $\hat{q}, \hat{r}, \hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$ such that:
 \begin{align}
 f &= \hat{q} m + \hat{r}, && \text{with } \hat{r} = 0 \text{ or } \deg(\hat{r}) < \deg(m), \label{eq:div-f-Q} \\
 p &= \hat{\hat{q}} m + \hat{\hat{r}}, && \text{with } \hat{\hat{r}} = 0 \text{ or } \deg(\hat{\hat{r}}) < \deg(m). \label{eq:div-p-Q}
