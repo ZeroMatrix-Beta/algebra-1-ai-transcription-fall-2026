@@ -13,6 +13,8 @@
 % Extended on 2026-10-13 (same model), after checking every term the lectures use without defining
 % it: cardinality, partial orders and maximal elements, span and linear independence, matrices,
 % subfields, limits and continuity, and the notations for the group of units.
+% Extended on 2026-10-24 (same model), for Week 6: the least common multiple, and gcd and lcm
+% from prime factorizations.
 % ==========================================
 
 % Primary Language: English
@@ -162,6 +164,14 @@ If $\gcd(a, m) = 1$, the same back-substitution gives $a x + m y = 1$, so $\bar{
 
 \begin{fact}[Unique Factorization in $\mathbb{Z}$]\label[fact]{fact:pre-unique-factorization}
 Every integer $n \ge 2$ is a product of primes, and this product is unique up to the order of the factors.
+\end{fact}
+
+\begin{fact}[Least Common Multiple, and gcd and lcm from Prime Factorizations]\label[fact]{fact:pre-lcm}
+For non-zero $a, b \in \mathbb{Z}$, $\operatorname{lcm}(a, b)$ is the smallest positive integer divisible by both. Writing $\abs{a} = \prod_i p_i^{n_i}$ and $\abs{b} = \prod_i p_i^{m_i}$ over the same distinct primes $p_i$ (with exponents $n_i, m_i \ge 0$),
+\[
+\gcd(a, b) = \prod_i p_i^{\min(n_i, m_i)}, \qquad \operatorname{lcm}(a, b) = \prod_i p_i^{\max(n_i, m_i)}, \qquad \gcd(a, b) \cdot \operatorname{lcm}(a, b) = \abs{a b}.
+\]
+Every common divisor of $a$ and $b$ divides $\gcd(a, b)$, and every common multiple is a multiple of $\operatorname{lcm}(a, b)$. Week~6 carries all of this over to unique factorization domains (\cref{thm:gcd-formula-ufd}, \cref{prop:gcd-lcm-product-identity}).
 \end{fact}
 
 \begin{definition}[Congruence Modulo $n$]\label[definition]{def:pre-congruence}

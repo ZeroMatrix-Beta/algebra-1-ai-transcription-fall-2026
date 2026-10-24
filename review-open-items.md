@@ -34,3 +34,10 @@ When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item fr
 - **Check:** in the 14 October recording, find where "…Anyway, we can now ask: Is this a prime ideal?" ends and "And the answer is no." begins.
 - **Fix:** set the end of the first block and the start of the second to that time, with a `% [TIMESTAMP-CORRECTED: …]` comment.
 - **Not worth an item:** the same file has a 1-second overlap at line 1051 (`00:46:53` / `00:46:52`), which is rounding.
+
+## 5. Week 6 Tuesday: two split speech blocks with estimated times
+
+- **Where:** [`content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex`, lines 1986–1997 and 2077–2092](content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex#L1986).
+- **Problem:** the pipeline split two speech blocks around a student's answer (`01:23:12 - 01:25:34` around "Minimum.", and `01:27:19 - 01:28:56` around "$x \times y$.") and estimated the split times (`01:24:47`/`01:24:48` and `01:28:17`/`01:28:18`) without the audio. Each pair is marked `% [TIMESTAMP-SUSPECT: estimated without audio …]`.
+- **Check:** in the 20 October recording, find where the student says "Minimum." and "x times y".
+- **Fix:** set the block boundaries to those times and replace each marker with a `% [TIMESTAMP-CORRECTED: …]` comment.
