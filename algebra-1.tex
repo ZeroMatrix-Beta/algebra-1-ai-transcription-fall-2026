@@ -109,18 +109,24 @@
 
 % 2. TEXT & LINKS
 % \emph, \textbf, \newterm, \qt and the list labels follow the ta-notes palette (2026-10-03).
-\definecolor{TextEmphColor}{HTML}{BD6400}
+\definecolor{ListAmber}{HTML}{BD2400}
+% 2026-10-25: ai-note / EnvAI softened with 75% Gray (previously ListAmber!50!Gray, pure ListAmber #BD2400, originally BrickRed):
+\colorlet{EnvAI}{ListAmber!25!Gray}
+% 2026-10-25: textemph / TextEmphColor set to same color as ai Note (EnvAI, previously #BD6400):
+% \definecolor{TextEmphColor}{HTML}{BD6400}
+\colorlet{TextEmphColor}{EnvAI}
 \definecolor{TextBoldColor}{HTML}{0E6C95}
 \colorlet{TextMetaNote}{Gray}
 \colorlet{LinkColor}{MidnightBlue}
 \colorlet{FileColor}{Magenta}
-\definecolor{ListAmber}{HTML}{BD2400}
 % 2026-10-25: Previously used ListAmber (#BD2400) for itemize and enumerate bullets:
 % \colorlet{ItemizeBullet}{ListAmber}
 % \colorlet{EnumerateBullet}{ListAmber}
 \colorlet{ItemizeBullet}{EnvTheorem}
 \colorlet{EnumerateBullet}{EnvTheorem}
-\definecolor{QuoteRed}{HTML}{BD2400} % quote marks of \newterm and \qt
+% 2026-10-25: Quote marks in \qt and \newterm set to section heading purple (ThemePrimary / SecTitleColor, previously #BD2400):
+% \definecolor{QuoteRed}{HTML}{BD2400} % quote marks of \newterm and \qt
+\colorlet{QuoteRed}{ThemePrimary}
 % Headings and the TOC keep the colors \emph and \textbf had before, under their own names,
 % so they do not move when the text colors do.
 \colorlet{HeadingSlate}{SlateBlue4}
@@ -132,7 +138,9 @@
 \colorlet{TocPartColor}{ThemePrimary!90!black}
 \colorlet{TocChapColor}{ThemeSecondary!90!black}
 \colorlet{TocSecColor}{TocEntryBlue}
-\colorlet{TocSubsecColor}{TocEntryBrown}
+% 2026-10-25: Subsections in TOC set to black (previously TocEntryBrown):
+% \colorlet{TocSubsecColor}{TocEntryBrown}
+\colorlet{TocSubsecColor}{black}
 % 2026-10-25: Subsubsections in TOC set to black (previously TocSubsecColor):
 % \colorlet{TocSubsubColor}{TocSubsecColor}
 \colorlet{TocSubsubColor}{black}
@@ -151,7 +159,8 @@
 \colorlet{EnvMath}{MidnightBlue}
 \colorlet{EnvTeacher}{ForestGreen}
 \colorlet{EnvMeta}{TealBlue}
-\colorlet{EnvAI}{BrickRed}
+% 2026-10-25: ai-note / EnvAI defined above in Section 2 (ListAmber!25!Gray, shared with TextEmphColor):
+% \colorlet{EnvAI}{ListAmber!25!Gray}
 \colorlet{EnvNote}{BurntOrange}
 \colorlet{EnvBreak}{BrickRed}
 
@@ -186,7 +195,9 @@
 \colorlet{ProofQEDBg}{white}
 
 % 7. HEADER, FOOTER & CHAPTER
-\colorlet{HeaderFooterFaint}{ThemeWeekNumber!45!Gray}
+% 2026-10-25: Mixed in 40% ProofTint (proof green) into HeaderFooterFaint (previously 30%, 20%, originally ThemeWeekNumber!45!Gray):
+% \colorlet{HeaderFooterFaint}{ThemeWeekNumber!45!Gray}
+\colorlet{HeaderFooterFaint}{ThemeWeekNumber!45!Gray!60!ProofTint}
 \colorlet{HeaderFooterLine}{HeaderFooterFaint!50}
 \colorlet{ChapTitleText}{ThemeSecondary!90!black}
 \colorlet{ChapNumberText}{ThemeWeekNumber}
@@ -204,19 +215,21 @@
 \colorlet{SecBar4Proof}{SecBar4!50!ProofTint}
 \colorlet{SecTitleColor}{ThemePrimary}
 \colorlet{SecTitleColorProof}{SecTitleColor!50!ProofTint}
+\colorlet{QuoteRed}{SecTitleColor}
 
 \colorlet{SubSecBar1}{HeadingBrown}
 \colorlet{SubSecBar2}{HeadingBrown!70!white}
 \colorlet{SubSecBar1Proof}{SubSecBar1!50!ProofTint}
 \colorlet{SubSecBar2Proof}{SubSecBar2!50!ProofTint}
-\colorlet{SubSecTitleColor}{HeadingBrown}
+% 2026-10-25: Subsection and subsubsection text colors set to SecTitleColor (previously HeadingBrown)
+\colorlet{SubSecTitleColor}{SecTitleColor}
 \colorlet{SubSecTitleColorProof}{SubSecTitleColor!50!ProofTint}
 
 \colorlet{SubSubSecBar1}{HeadingBrown}
 \colorlet{SubSubSecBar2}{gray!60!white}
 \colorlet{SubSubSecBar1Proof}{SubSubSecBar1!50!ProofTint}
 \colorlet{SubSubSecBar2Proof}{SubSubSecBar2!50!ProofTint}
-\colorlet{SubSubSecTitleColor}{HeadingBrown}
+\colorlet{SubSubSecTitleColor}{SecTitleColor}
 \colorlet{SubSubSecTitleColorProof}{SubSubSecTitleColor!50!ProofTint}
 
 
@@ -237,8 +250,13 @@
 % ==========================================
 
 % --- EMPHASIS STYLE OVERRIDE ---
-\DeclareTextFontCommand{\emph}{\sffamily\bfseries\color{TextEmphColor}}
-\DeclareTextFontCommand{\textbf}{\sffamily\bfseries\color{TextBoldColor}} 
+\DeclareTextFontCommand{\emph}{\sffamily\bfseries\boldmath\color{TextEmphColor}}
+\DeclareTextFontCommand{\textbf}{\sffamily\bfseries\boldmath\color{TextBoldColor}} 
+
+% --- AUTOMATIC BOLD MATH IN BOLD TEXT (2026-10-25) ---
+\makeatletter
+\g@addto@macro\bfseries{\ifmmode\else\boldmath\fi}
+\makeatother 
 
 \usepackage[margin=1in, headheight=40pt]{geometry} % Headheight leicht erhöht für mehrzeilige Header
 
@@ -348,39 +366,10 @@ pdfauthor={Prof. Rahul Pandharipande}
 % --- LIST SPACING FIX & VIBRANT COLORS ---
 \usepackage{enumitem}
 
-% Dynamic list colors based on nesting depth (2026-10-25):
-% Level 1: Purple (theorem environment color, EnvTheorem)
-% Level 2 (one level deeper): MidnightBlue
-% Level 3 (one level deeper again): Purple (EnvTheorem)
-% Level 4: MidnightBlue
-\makeatletter
-\newcommand{\updatelistcolorsbydepth}{%
-  \ifcase\@listdepth\relax
-    % 0 (fallback): Purple
-    \colorlet{ItemizeBullet}{EnvTheorem}%
-    \colorlet{EnumerateBullet}{EnvTheorem}%
-  \or
-    % 1 (Level 1): Purple
-    \colorlet{ItemizeBullet}{EnvTheorem}%
-    \colorlet{EnumerateBullet}{EnvTheorem}%
-  \or
-    % 2 (Level 2, one level deeper): MidnightBlue
-    \colorlet{ItemizeBullet}{MidnightBlue}%
-    \colorlet{EnumerateBullet}{MidnightBlue}%
-  \or
-    % 3 (Level 3, one level deeper again): Purple
-    \colorlet{ItemizeBullet}{EnvTheorem}%
-    \colorlet{EnumerateBullet}{EnvTheorem}%
-  \or
-    % 4 (Level 4): MidnightBlue
-    \colorlet{ItemizeBullet}{MidnightBlue}%
-    \colorlet{EnumerateBullet}{MidnightBlue}%
-  \else
-    \colorlet{ItemizeBullet}{EnvTheorem}%
-    \colorlet{EnumerateBullet}{EnvTheorem}%
-  \fi
-}
-\makeatother
+% 2026-10-25: All bullet points for itemize and enumerate set to purple (EnvTheorem) regardless of nesting depth.
+% (Previously alternated: Level 1 = EnvTheorem, Level 2 = MidnightBlue, Level 3 = EnvTheorem):
+\colorlet{ItemizeBullet}{EnvTheorem}
+\colorlet{EnumerateBullet}{EnvTheorem}
 
 \setlist{
   topsep=0pt, 
@@ -391,7 +380,6 @@ pdfauthor={Prof. Rahul Pandharipande}
   % itemsep ist der ZUSÄTZLICHE Abstand zwischen zwei Punkten. 
   % Den setzen wir jetzt auf 0, damit die Liste schön kompakt wird.
   itemsep=0pt, 
-  before*=\updatelistcolorsbydepth,
 }
 
 
@@ -790,7 +778,15 @@ code={
   \ifinsideproof
     \tcbset{
       underlay unbroken and last={
-        \fill[EnvSpokenProof] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        % 2026-10-25: Single continuous path in pure EnvSpokenProof (MidnightBlue proof tint, no gradient/cyan).
+        % Curves into the bottom-left rounded corner (arc=3mm), tapers smoothly from 3pt to 0pt,
+        % and continues 2.5mm onto the bottom edge to disappear seamlessly without any color jump:
+        \fill[EnvSpokenProof] (frame.north west) --
+          ([yshift=3mm]frame.south west) arc (180:270:3mm) --
+          ([xshift=5.5mm]frame.south west)
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
+          ([xshift=3pt, yshift=3mm]frame.south west) --
+          ([xshift=3pt]frame.north west) -- cycle;
       },
       underlay first and middle={
         \fill[EnvSpokenProof] (frame.north west) rectangle ([xshift=3pt]frame.south west);
@@ -799,7 +795,15 @@ code={
   \else
     \tcbset{
       underlay unbroken and last={
-        \fill[EnvSpoken] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        % 2026-10-25: Single continuous path in pure EnvSpoken (MidnightBlue, no gradient/cyan).
+        % Curves into the bottom-left rounded corner (arc=3mm), tapers smoothly from 3pt to 0pt,
+        % and continues 2.5mm onto the bottom edge to disappear seamlessly without any color jump:
+        \fill[EnvSpoken] (frame.north west) --
+          ([yshift=3mm]frame.south west) arc (180:270:3mm) --
+          ([xshift=5.5mm]frame.south west)
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
+          ([xshift=3pt, yshift=3mm]frame.south west) --
+          ([xshift=3pt]frame.north west) -- cycle;
       },
       underlay first and middle={
         \fill[EnvSpoken] (frame.north west) rectangle ([xshift=3pt]frame.south west);
@@ -855,19 +859,39 @@ code={
   \ifinsideproof
     \tcbset{
       underlay unbroken and last={
-        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=2pt, yshift=3mm]frame.south west);
+        % 2026-10-25: Single continuous path in pure EnvTeacherProof (width matched to speech at 3pt).
+        % Curves into bottom-left corner (arc=3mm), tapers from 3pt to 0pt, continues 2.5mm onto bottom edge.
+        % Previously 2pt straight rectangle:
+        % \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=2pt, yshift=3mm]frame.south west);
+        \fill[EnvTeacherProof] (frame.north west) --
+          ([yshift=3mm]frame.south west) arc (180:270:3mm) --
+          ([xshift=5.5mm]frame.south west)
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
+          ([xshift=3pt, yshift=3mm]frame.south west) --
+          ([xshift=3pt]frame.north west) -- cycle;
       },
       underlay first and middle={
-        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=2pt]frame.south west);
+        % 2026-10-25: Width matched to speech at 3pt (previously 2pt):
+        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=3pt]frame.south west);
       }
     }
   \else
     \tcbset{
       underlay unbroken and last={
-        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=2pt, yshift=3mm]frame.south west);
+        % 2026-10-25: Single continuous path in pure EnvTeacherBorder (width matched to speech at 3pt).
+        % Curves into bottom-left corner (arc=3mm), tapers from 3pt to 0pt, continues 2.5mm onto bottom edge.
+        % Previously 2pt straight rectangle:
+        % \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=2pt, yshift=3mm]frame.south west);
+        \fill[EnvTeacherBorder] (frame.north west) --
+          ([yshift=3mm]frame.south west) arc (180:270:3mm) --
+          ([xshift=5.5mm]frame.south west)
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
+          ([xshift=3pt, yshift=3mm]frame.south west) --
+          ([xshift=3pt]frame.north west) -- cycle;
       },
       underlay first and middle={
-        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=2pt]frame.south west);
+        % 2026-10-25: Width matched to speech at 3pt (previously 2pt):
+        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=3pt]frame.south west);
       }
     }
   \fi
@@ -1005,10 +1029,11 @@ opacityback=0,
 breakable,
 before upper={\setlength{\parskip}{\customparskip}\setlength{\parindent}{0pt}},
 code={
+  % 2026-10-25: Content vertical bar matched to speech width at 3pt (previously 2pt):
   \ifinsideproof
-    \tcbset{borderline west={2pt}{0pt}{EnvMathProof}}
+    \tcbset{borderline west={3pt}{0pt}{EnvMathProof}}
   \else
-    \tcbset{borderline west={2pt}{0pt}{EnvMath!50}}
+    \tcbset{borderline west={3pt}{0pt}{EnvMath!50}}
   \fi
   \ifblank{#1}{
     \tcbset{notitle}
@@ -1070,7 +1095,17 @@ code={
   \ifinsideproof
     \tcbset{
       underlay unbroken and last={
-        \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        % 2026-10-25: Single continuous path in pure EnvStudentProof (no gradient).
+        % Curves into the bottom-left rounded corner (arc=3mm), tapers smoothly from 3pt to 0pt,
+        % and continues 2.5mm onto the bottom edge to disappear seamlessly:
+        % Previously stopped flat at yshift=3mm:
+        % \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvStudentProof] (frame.north west) --
+          ([yshift=3mm]frame.south west) arc (180:270:3mm) --
+          ([xshift=5.5mm]frame.south west)
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
+          ([xshift=3pt, yshift=3mm]frame.south west) --
+          ([xshift=3pt]frame.north west) -- cycle;
       },
       underlay first and middle={
         \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=3pt]frame.south west);
@@ -1079,7 +1114,17 @@ code={
   \else
     \tcbset{
       underlay unbroken and last={
-        \fill[EnvStudent] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        % 2026-10-25: Single continuous path in pure EnvStudent (no gradient).
+        % Curves into the bottom-left rounded corner (arc=3mm), tapers smoothly from 3pt to 0pt,
+        % and continues 2.5mm onto the bottom edge to disappear seamlessly:
+        % Previously stopped flat at yshift=3mm:
+        % \fill[EnvStudent] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvStudent] (frame.north west) --
+          ([yshift=3mm]frame.south west) arc (180:270:3mm) --
+          ([xshift=5.5mm]frame.south west)
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
+          ([xshift=3pt, yshift=3mm]frame.south west) --
+          ([xshift=3pt]frame.north west) -- cycle;
       },
       underlay first and middle={
         \fill[EnvStudent] (frame.north west) rectangle ([xshift=3pt]frame.south west);
@@ -1113,6 +1158,19 @@ breakable
 
 \newcommand{\qedbadge}{%
   \tikz[baseline=(Q.base)]\node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};%
+}
+
+\newcommand{\proofshdtext}[3]{%
+  \makebox[0pt][l]{%
+    \kern0.7pt\raisebox{-0.7pt}{%
+      \begingroup
+        \colorlet{LinkColor}{#2}%
+        \hypersetup{linkcolor=#2}%
+        \textcolor{#2}{#3}%
+      \endgroup
+    }%
+  }%
+  \textcolor{#1}{#3}%
 }
 
 % SHORT PROOF 
@@ -1196,15 +1254,55 @@ breakable
   \let\Cref\proofwrapper@pdfref
 }
 
+\newcommand{\proofwrapper@fontsize}{%
+  \ifcase\proofwrapper@depth
+    \Large% 0: chapter
+  \or
+    \Large% 1: section
+  \or
+    \large% 2: subsection
+  \else
+    \normalsize% 3: subsubsection
+  \fi
+}
+\newcommand{\proofwrapper@beforespace}{%
+  \ifcase\proofwrapper@depth
+    3.5ex plus 1ex minus .2ex% 0: chapter
+  \or
+    3.5ex plus 1ex minus .2ex% 1: section
+  \or
+    3ex plus 1ex minus .2ex% 2: subsection
+  \else
+    2.5ex plus 1ex minus .2ex% 3: subsubsection
+  \fi
+}
+\newcommand{\proofwrapper@afterspace}{%
+  \ifcase\proofwrapper@depth
+    1.5ex plus .2ex% 0: chapter
+  \or
+    1.5ex plus .2ex% 1: section
+  \or
+    1.2ex plus .2ex% 2: subsection
+  \else
+    1ex plus .2ex% 3: subsubsection
+  \fi
+}
+
 \newenvironment{proofWrapper}[1][Proof]{%
-    \par\addvspace{3.5ex plus 1ex minus .2ex}%
+    \par\addvspace{\proofwrapper@beforespace}%
     \insideprooftrue
-    \noindent
+    \noindent%
     \def\proofwrapper@title{#1}%
     \ifx\proofwrapper@title\proofWrapperDefaultTitle\else\proofwrapper@tocentry{#1}\fi
-    \makebox[0pt][r]{\textcolor{ProofTint}{\faPenNib}\hspace{10pt}}%
-    {\normalfont\sffamily\Large\bfseries\color{ProofTint}#1}%
-    \par\nobreak\vspace{1.5ex plus .2ex}\vspace{-\parskip}%
+    {\normalfont\sffamily\bfseries\boldmath\proofwrapper@fontsize
+      \mbox{%
+        \makebox[0pt][l]{\kern0.7pt\raisebox{-0.7pt}{\textcolor{ShadowProof}{\faPenNib}}}%
+        \textcolor{ProofTint}{\faPenNib}%
+        \kern0.45em%
+      }%
+      \proofshdtext{ProofTint}{ShadowProof}{#1}%
+    }%
+    \par\nobreak\vspace{\proofwrapper@afterspace}\vspace{-\parskip}%
     \@afterindentfalse\@afterheading
 }{%
     \ifmmode
@@ -1272,6 +1370,62 @@ breakable
 \NewFallbackBox{ai-async-board-update}
 \NewFallbackBox{ai-kinetic-emphasis}
 
+% --- SHADOWED HEADING & CHAPTER STYLING (2026-10-25) ---
+% Color definitions for bars, lines, and shadows:
+\definecolor{SecBarShd}{HTML}{B5C2E3}
+\definecolor{SecBarOne}{HTML}{6A3199}
+\definecolor{SecBarTwo}{HTML}{143866}
+\definecolor{SecBarThree}{HTML}{008CC8}
+\definecolor{SecBarFour}{HTML}{BD6400}
+\definecolor{SecLineLeft}{HTML}{6A3199}
+\definecolor{SecLineMid}{HTML}{143866}
+\definecolor{SecLineRight}{HTML}{5CA8D6}
+
+\definecolor{SubSecBarShd}{HTML}{B0C7E0}
+\definecolor{SubSecBarOne}{HTML}{123563}
+\definecolor{SubSecBarTwo}{HTML}{6A3199}
+\definecolor{SubSecBarThree}{HTML}{0E6C95}
+
+\definecolor{SubSubSecBarShd}{HTML}{C4BCE3}
+\definecolor{SubSubSecBarOne}{HTML}{2B4C7E}
+\definecolor{SubSubSecBarTwo}{HTML}{7E42B3}
+
+% Heading text and shadow colors:
+\colorlet{SecTitleCol}{SecTitleColor}
+\colorlet{SubSecTitleCol}{SecTitleColor}
+\colorlet{SubSubSecTitleCol}{SecTitleColor}
+
+\definecolor{SecTextShd}{HTML}{C6BBE6}
+\definecolor{SubSecTextShd}{HTML}{B6D0E8}
+\definecolor{SubSubSecTextShd}{HTML}{CEC6EB}
+
+% Chapter shadow colors (2026-10-25):
+\definecolor{ChapLineShd}{HTML}{B5C2E3}
+\definecolor{ChapTitleShd}{HTML}{B6D0E8}
+\colorlet{ChapNumberShd}{ThemeWeekNumber!35!white}
+\colorlet{ChapSubtitleShd}{HeaderFooterFaint!40!white}
+
+\newcommand{\shdtext}[3]{%
+  \makebox[0pt][l]{\kern0.7pt\raisebox{-0.7pt}{\textcolor{#2}{#3}}}%
+  \textcolor{\ifinsideproof SecTitleColorProof\else #1\fi}{#3}%
+}
+
+\newcommand{\sbar}[4]{%
+  \kern0.85pt\textcolor{#4}{\rule[-0.85pt]{#1}{#2}}\kern-#1\kern-0.85pt%
+  \textcolor{#3}{\rule{#1}{#2}}\kern2.1pt%
+}
+
+\newcommand{\ChapRule}{%
+  \noindent%
+  \makebox[0pt][l]{\kern0.85pt\raisebox{-0.85pt}{\textcolor{ChapLineShd}{\rule{\textwidth}{1.2pt}}}}%
+  \textcolor{ChapLine}{\rule{\textwidth}{1.5pt}}%
+}
+
+\newcommand{\chapshdtitle}[3]{%
+  \makebox[0pt][l]{\kern0.85pt\raisebox{-0.85pt}{\parbox[t]{\textwidth}{\setlength{\parindent}{0pt}\raggedleft\color{#2}#3}}}%
+  \parbox[t]{\textwidth}{\setlength{\parindent}{0pt}\raggedleft\color{#1}#3}%
+}
+
 % Custom Lecture Chapter Command with Optional Semester/Week Number
 \newif\ifrestorelecturesubcounters
 \newcounter{currentweek}
@@ -1301,7 +1455,12 @@ breakable
       \setcounter{chapter}{\numexpr#1-1\relax}%
     }%
   }%
-  \chapter[\texorpdfstring{#2, #3\quad---\quad #5}{#2, #3 --- #5}]{{\Large\color{ChapSubtitleText}#2 #4} \texorpdfstring{\\[1ex]}{--- } {\LARGE #5}}%
+  % 2026-10-25: Lecture chapter subtitle and title rendered with drop shadows:
+  \chapter[\texorpdfstring{#2, #3\quad---\quad #5}{#2, #3 --- #5}]{%
+    {\Large\shdtext{ChapSubtitleText}{ChapSubtitleShd}{#2 #4}}%
+    \texorpdfstring{\\[1ex]}{--- }%
+    {\LARGE\chapshdtitle{ChapTitleText}{ChapTitleShd}{#5}}%
+  }%
   \ifrestorelecturesubcounters
     \setcounter{section}{\TempSec}%
     \setcounter{theorem}{\TempThm}%
@@ -1323,7 +1482,12 @@ breakable
   \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faBook}}%
   \setcounter{chapter}{-1}%
   \renewcommand{\chapterlabel}{\MakeUppercase{Prerequisites}}%
-  \chapter[#2]{{\Large\color{ChapSubtitleText}#1} \texorpdfstring{\\[1ex]}{--- } {\LARGE #2}}%
+  % 2026-10-25: Prerequisites chapter subtitle and title rendered with drop shadows:
+  \chapter[#2]{%
+    {\Large\shdtext{ChapSubtitleText}{ChapSubtitleShd}{#1}}%
+    \texorpdfstring{\\[1ex]}{--- }%
+    {\LARGE\chapshdtitle{ChapTitleText}{ChapTitleShd}{#2}}%
+  }%
   \renewcommand{\chapterlabel}{\MakeUppercase{\chaptertitlename}\ \thechapter}%
   \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faCalendarDay}}%
   \markboth{Prerequisites\ \ ---\ \ #2}{}%
@@ -1331,50 +1495,61 @@ breakable
 
 \titlespacing*{\chapter}{0pt}{-20pt}{18pt plus 4pt minus 2pt}
 
+% 2026-10-25: Chapter number label and framing horizontal rules rendered with drop shadows:
 \titleformat{\chapter}[display]
-{\normalfont\sffamily\Large\bfseries\color{ChapTitleText}}
-{\raggedleft\large\color{ChapNumberText}\chapterlabel}
+{\normalfont\sffamily\Large\bfseries\boldmath\color{ChapTitleText}}
+{\raggedleft\large\shdtext{ChapNumberText}{ChapNumberShd}{\chapterlabel}}
 {1ex}
-{\color{ChapLine}\rule{\textwidth}{1.5pt}\endgraf\nopagebreak\vspace{2ex}\raggedleft} 
-[\endgraf\nopagebreak\vspace{1ex}\color{ChapLine}\rule{\textwidth}{1.5pt}]
+{\ChapRule\endgraf\nopagebreak\vspace{2ex}\raggedleft} 
+[\endgraf\nopagebreak\vspace{1ex}\ChapRule]
 
-% Extended Section Bars 
-\newcommand{\sectionbar}{%
-\tikz[baseline=0pt]{
-\fill[\ifinsideproof SecBar1Proof\else SecBar1\fi] (-2.5pt, 0) rectangle (1.0pt, 0.72em);
-\fill[\ifinsideproof SecBar2Proof\else SecBar2\fi] (2.0pt, 0) rectangle (3.5pt, 0.72em);
-\fill[\ifinsideproof SecBar3Proof\else SecBar3\fi] (4.8pt, 0) rectangle (5.3pt, 0.72em);
-\fill[\ifinsideproof SecBar4Proof\else SecBar4\fi] (6.6pt, 0) rectangle (8.1pt, 0.72em);
-}%
-\hspace{10pt}%
+\newcommand{\SecRule}{%
+  \vspace{-0.55em}\noindent%
+  \makebox[0pt][l]{\kern0.8pt\raisebox{-0.8pt}{\textcolor{SecBarShd}{\rule{\textwidth}{0.9pt}}}}%
+  \textcolor{SecLineLeft}{\rule{0.28\textwidth}{1.25pt}}%
+  \textcolor{SecLineMid}{\rule{0.36\textwidth}{1.0pt}}%
+  \textcolor{SecLineRight}{\rule{0.36\textwidth}{0.75pt}}%
 }
 
-\newcommand{\subsectionbar}{%
-\tikz[baseline=0pt]{
-\fill[\ifinsideproof SubSecBar1Proof\else SubSecBar1\fi] (-2.5pt, 0) rectangle (0.3pt, 0.72em);
-\shade[left color=\ifinsideproof SubSecBar1Proof\else SubSecBar1\fi, right color=\ifinsideproof SubSecBar2Proof\else SubSecBar2\fi] (1.3pt, 0) rectangle (2.0pt, 0.72em);
-\fill[\ifinsideproof SubSecBar2Proof\else SubSecBar2\fi] (3.3pt, 0) rectangle (4.8pt, 0.72em);
-}%
-\hspace{10pt}%
+\newcommand{\SecSym}{%
+  \phantomsection%
+  \mbox{%
+    \sbar{3.5pt}{1.55ex}{SecBarOne}{SecBarShd}%
+    \sbar{2.6pt}{1.55ex}{SecBarTwo}{SecBarShd}%
+    \sbar{1.8pt}{1.55ex}{SecBarThree}{SecBarShd}%
+    \sbar{1.1pt}{1.55ex}{SecBarFour}{SecBarShd}%
+    \kern0.4em%
+  }%
+  \shdtext{SecTitleCol}{SecTextShd}%
 }
 
-\newcommand{\subsubsectionbar}{%
-\tikz[baseline=0pt]{
-\fill[\ifinsideproof SubSubSecBar1Proof\else SubSubSecBar1\fi] (-2.5pt, 0) rectangle (-1.0pt, 0.72em);
-\fill[\ifinsideproof SubSubSecBar2Proof\else SubSubSecBar2\fi] (0,0) rectangle (2.2pt, 0.72em);
-}%
-\hspace{10pt}%
+\newcommand{\SubsecSym}{%
+  \phantomsection%
+  \mbox{%
+    \sbar{2.8pt}{1.45ex}{SubSecBarOne}{SubSecBarShd}%
+    \sbar{2.0pt}{1.45ex}{SubSecBarTwo}{SubSecBarShd}%
+    \sbar{1.2pt}{1.45ex}{SubSecBarThree}{SubSecBarShd}%
+    \kern0.4em%
+  }%
+  \shdtext{SubSecTitleCol}{SubSecTextShd}%
 }
 
-% The \color sits in the before-code (horizontal mode), not in the format argument: there it
-% would add a color whatsit to the vertical list, and the glue after it is a legal page break,
-% which let a \section heading be separated from the \subsection directly below it.
-\titleformat{\section}{\normalfont\sffamily\Large\bfseries}{}{0pt}{\phantomsection\color{\ifinsideproof SecTitleColorProof\else SecTitleColor\fi}\makebox[0pt][r]{\sectionbar}}
-\titleformat{\subsection}{\normalfont\sffamily\large\bfseries}{}{0pt}{\phantomsection\color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleColor\fi}\makebox[0pt][r]{\subsectionbar}}
-\titleformat{\subsubsection}{\normalfont\sffamily\normalsize\bfseries}{}{0pt}{\phantomsection\color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleColor\fi}\makebox[0pt][r]{\subsubsectionbar}}
-\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{\phantomsection} % the class default, plus a link target on the heading (unnumbered, it has none)
+\newcommand{\SubsubsecSym}{%
+  \phantomsection%
+  \mbox{%
+    \sbar{2.4pt}{1.35ex}{SubSubSecBarOne}{SubSubSecBarShd}%
+    \sbar{1.4pt}{1.35ex}{SubSubSecBarTwo}{SubSubSecBarShd}%
+    \kern0.35em%
+  }%
+  \shdtext{SubSubSecTitleCol}{SubSubSecTextShd}%
+}
 
-\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\section}{\normalfont\Large\sffamily\bfseries\boldmath}{}{0pt}{\SecSym}[\SecRule]
+\titleformat{\subsection}{\normalfont\large\sffamily\bfseries\boldmath}{}{0pt}{\SubsecSym}
+\titleformat{\subsubsection}{\normalfont\normalsize\sffamily\bfseries\boldmath}{}{0pt}{\SubsubsecSym}
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\boldmath}{\theparagraph}{1em}{\phantomsection} % the class default, plus a link target on the heading (unnumbered, it has none)
+
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.8ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{3ex plus 1ex minus .2ex}{1.2ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{2.5ex plus 1ex minus .2ex}{1ex plus .2ex}
 
