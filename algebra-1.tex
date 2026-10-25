@@ -185,8 +185,9 @@
 \colorlet{EnvAIBorder}{EnvAI!85!black}
 \colorlet{EnvAIProof}{EnvAIBorder!50!ProofTint}
 \colorlet{EnvAIFallbackProof}{EnvAI!50!ProofTint}
-% 2026-10-25: Custom title text color for ai-note:
-\definecolor{EnvAITitleText}{HTML}{668F99}
+% 2026-10-25: Title text color for ai-note (65% white mixed into #668F99 for clear contrast against EnvAIBorder):
+\definecolor{EnvAITitleTextBase}{HTML}{668F99}
+\colorlet{EnvAITitleText}{EnvAITitleTextBase!35!white}
 \colorlet{EnvStudentBg}{EnvStudent!5}
 \colorlet{EnvStudentProof}{EnvStudent!50!ProofTint}
 \colorlet{EnvBreakProof}{EnvBreak!50!ProofTint}
@@ -1167,18 +1168,7 @@ breakable
   \tikz[baseline=(Q.base)]\node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};%
 }
 
-\newcommand{\proofshdtext}[3]{%
-  \makebox[0pt][l]{%
-    \kern0.7pt\raisebox{-0.7pt}{%
-      \begingroup
-        \colorlet{LinkColor}{#2}%
-        \hypersetup{linkcolor=#2}%
-        \textcolor{#2}{#3}%
-      \endgroup
-    }%
-  }%
-  \textcolor{#1}{#3}%
-}
+
 
 % SHORT PROOF 
 \renewenvironment{proof}[1][Proof]{%
@@ -1301,13 +1291,8 @@ breakable
     \noindent%
     \def\proofwrapper@title{#1}%
     \ifx\proofwrapper@title\proofWrapperDefaultTitle\else\proofwrapper@tocentry{#1}\fi
-    {\normalfont\sffamily\bfseries\boldmath\proofwrapper@fontsize
-      \mbox{%
-        \makebox[0pt][l]{\kern0.7pt\raisebox{-0.7pt}{\textcolor{ShadowProof}{\faPenNib}}}%
-        \textcolor{ProofTint}{\faPenNib}%
-        \kern0.45em%
-      }%
-      \proofshdtext{ProofTint}{ShadowProof}{#1}%
+    {\normalfont\sffamily\bfseries\boldmath\proofwrapper@fontsize\color{ProofTint}%
+      \faPenNib\hspace{0.5em}#1%
     }%
     \par\nobreak\vspace{\proofwrapper@afterspace}\vspace{-\parskip}%
     \@afterindentfalse\@afterheading
@@ -1377,9 +1362,8 @@ breakable
 \NewFallbackBox{ai-async-board-update}
 \NewFallbackBox{ai-kinetic-emphasis}
 
-% --- SHADOWED HEADING & CHAPTER STYLING (2026-10-25) ---
-% Color definitions for bars, lines, and shadows:
-\definecolor{SecBarShd}{HTML}{B5C2E3}
+% --- VIBRANT HEADING & CHAPTER STYLING (CLEAN & RAZOR-SHARP) ---
+% Color definitions for bars and accent lines:
 \definecolor{SecBarOne}{HTML}{6A3199}
 \definecolor{SecBarTwo}{HTML}{143866}
 \definecolor{SecBarThree}{HTML}{008CC8}
@@ -1388,51 +1372,22 @@ breakable
 \definecolor{SecLineMid}{HTML}{143866}
 \definecolor{SecLineRight}{HTML}{5CA8D6}
 
-\definecolor{SubSecBarShd}{HTML}{B0C7E0}
 \definecolor{SubSecBarOne}{HTML}{123563}
 \definecolor{SubSecBarTwo}{HTML}{6A3199}
 \definecolor{SubSecBarThree}{HTML}{0E6C95}
 
-\definecolor{SubSubSecBarShd}{HTML}{C4BCE3}
 \definecolor{SubSubSecBarOne}{HTML}{2B4C7E}
 \definecolor{SubSubSecBarTwo}{HTML}{7E42B3}
 
-% Heading text and shadow colors:
+% Heading text colors:
 \colorlet{SecTitleCol}{SecTitleColor}
 \colorlet{SubSecTitleCol}{SecTitleColor}
 \colorlet{SubSubSecTitleCol}{SecTitleColor}
 
-\definecolor{SecTextShd}{HTML}{C6BBE6}
-\definecolor{SubSecTextShd}{HTML}{B6D0E8}
-\definecolor{SubSubSecTextShd}{HTML}{CEC6EB}
-
-% Chapter shadow colors (2026-10-25):
-\definecolor{ChapLineShd}{HTML}{B5C2E3}
-\definecolor{ChapTitleShd}{HTML}{B6D0E8}
-% 2026-10-25: Chapter number shadow matched to purple text shadow (SecTextShd #C6BBE6, previously ThemeWeekNumber!35!white):
-% \colorlet{ChapNumberShd}{ThemeWeekNumber!35!white}
-\colorlet{ChapNumberShd}{SecTextShd}
-\colorlet{ChapSubtitleShd}{HeaderFooterFaint!40!white}
-
-\newcommand{\shdtext}[3]{%
-  \makebox[0pt][l]{\kern0.7pt\raisebox{-0.7pt}{\textcolor{#2}{#3}}}%
-  \textcolor{\ifinsideproof SecTitleColorProof\else #1\fi}{#3}%
-}
-
-\newcommand{\sbar}[4]{%
-  \kern0.85pt\textcolor{#4}{\rule[-0.85pt]{#1}{#2}}\kern-#1\kern-0.85pt%
-  \textcolor{#3}{\rule{#1}{#2}}\kern2.1pt%
-}
+\newcommand{\cbar}[3]{\textcolor{#1}{\rule{#2}{#3}}\kern2.1pt}
 
 \newcommand{\ChapRule}{%
-  \noindent%
-  \makebox[0pt][l]{\kern0.85pt\raisebox{-0.85pt}{\textcolor{ChapLineShd}{\rule{\textwidth}{1.2pt}}}}%
-  \textcolor{ChapLine}{\rule{\textwidth}{1.5pt}}%
-}
-
-\newcommand{\chapshdtitle}[3]{%
-  \makebox[0pt][l]{\kern0.85pt\raisebox{-0.85pt}{\parbox[t]{\textwidth}{\setlength{\parindent}{0pt}\raggedleft\color{#2}#3}}}%
-  \parbox[t]{\textwidth}{\setlength{\parindent}{0pt}\raggedleft\color{#1}#3}%
+  \noindent\textcolor{ChapLine}{\rule{\textwidth}{1.5pt}}%
 }
 
 % Custom Lecture Chapter Command with Optional Semester/Week Number
@@ -1464,11 +1419,10 @@ breakable
       \setcounter{chapter}{\numexpr#1-1\relax}%
     }%
   }%
-  % 2026-10-25: Lecture chapter subtitle and title rendered with drop shadows:
   \chapter[\texorpdfstring{#2, #3\quad---\quad #5}{#2, #3 --- #5}]{%
-    {\Large\shdtext{ChapSubtitleText}{ChapSubtitleShd}{#2 #4}}%
+    {\Large\color{ChapSubtitleText}#2 #4}%
     \texorpdfstring{\\[1ex]}{--- }%
-    {\LARGE\chapshdtitle{ChapTitleText}{ChapTitleShd}{#5}}%
+    {\LARGE\raggedleft\color{ChapTitleText}#5}%
   }%
   \ifrestorelecturesubcounters
     \setcounter{section}{\TempSec}%
@@ -1491,11 +1445,10 @@ breakable
   \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faBook}}%
   \setcounter{chapter}{-1}%
   \renewcommand{\chapterlabel}{\MakeUppercase{Prerequisites}}%
-  % 2026-10-25: Prerequisites chapter subtitle and title rendered with drop shadows:
   \chapter[#2]{%
-    {\Large\shdtext{ChapSubtitleText}{ChapSubtitleShd}{#1}}%
+    {\Large\color{ChapSubtitleText}#1}%
     \texorpdfstring{\\[1ex]}{--- }%
-    {\LARGE\chapshdtitle{ChapTitleText}{ChapTitleShd}{#2}}%
+    {\LARGE\raggedleft\color{ChapTitleText}#2}%
   }%
   \renewcommand{\chapterlabel}{\MakeUppercase{\chaptertitlename}\ \thechapter}%
   \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faCalendarDay}}%
@@ -1504,17 +1457,15 @@ breakable
 
 \titlespacing*{\chapter}{0pt}{-20pt}{18pt plus 4pt minus 2pt}
 
-% 2026-10-25: Chapter number label and framing horizontal rules rendered with drop shadows:
 \titleformat{\chapter}[display]
 {\normalfont\sffamily\Large\bfseries\boldmath\color{ChapTitleText}}
-{\raggedleft\large\shdtext{ChapNumberText}{ChapNumberShd}{\chapterlabel}}
+{\raggedleft\large\color{ChapNumberText}\chapterlabel}
 {1ex}
 {\ChapRule\endgraf\nopagebreak\vspace{2ex}\raggedleft} 
 [\endgraf\nopagebreak\vspace{1ex}\ChapRule]
 
 \newcommand{\SecRule}{%
   \vspace{-0.55em}\noindent%
-  \makebox[0pt][l]{\kern0.8pt\raisebox{-0.8pt}{\textcolor{SecBarShd}{\rule{\textwidth}{0.9pt}}}}%
   \textcolor{SecLineLeft}{\rule{0.28\textwidth}{1.25pt}}%
   \textcolor{SecLineMid}{\rule{0.36\textwidth}{1.0pt}}%
   \textcolor{SecLineRight}{\rule{0.36\textwidth}{0.75pt}}%
@@ -1523,34 +1474,34 @@ breakable
 \newcommand{\SecSym}{%
   \phantomsection%
   \mbox{%
-    \sbar{3.5pt}{1.55ex}{SecBarOne}{SecBarShd}%
-    \sbar{2.6pt}{1.55ex}{SecBarTwo}{SecBarShd}%
-    \sbar{1.8pt}{1.55ex}{SecBarThree}{SecBarShd}%
-    \sbar{1.1pt}{1.55ex}{SecBarFour}{SecBarShd}%
+    \cbar{SecBarOne}{3.5pt}{1.55ex}%
+    \cbar{SecBarTwo}{2.6pt}{1.55ex}%
+    \cbar{SecBarThree}{1.8pt}{1.55ex}%
+    \cbar{SecBarFour}{1.1pt}{1.55ex}%
     \kern0.4em%
   }%
-  \shdtext{SecTitleCol}{SecTextShd}%
+  \color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}%
 }
 
 \newcommand{\SubsecSym}{%
   \phantomsection%
   \mbox{%
-    \sbar{2.8pt}{1.45ex}{SubSecBarOne}{SubSecBarShd}%
-    \sbar{2.0pt}{1.45ex}{SubSecBarTwo}{SubSecBarShd}%
-    \sbar{1.2pt}{1.45ex}{SubSecBarThree}{SubSecBarShd}%
+    \cbar{SubSecBarOne}{2.8pt}{1.45ex}%
+    \cbar{SubSecBarTwo}{2.0pt}{1.45ex}%
+    \cbar{SubSecBarThree}{1.2pt}{1.45ex}%
     \kern0.4em%
   }%
-  \shdtext{SubSecTitleCol}{SubSecTextShd}%
+  \color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleCol\fi}%
 }
 
 \newcommand{\SubsubsecSym}{%
   \phantomsection%
   \mbox{%
-    \sbar{2.4pt}{1.35ex}{SubSubSecBarOne}{SubSubSecBarShd}%
-    \sbar{1.4pt}{1.35ex}{SubSubSecBarTwo}{SubSubSecBarShd}%
+    \cbar{SubSubSecBarOne}{2.4pt}{1.35ex}%
+    \cbar{SubSubSecBarTwo}{1.4pt}{1.35ex}%
     \kern0.35em%
   }%
-  \shdtext{SubSubSecTitleCol}{SubSubSecTextShd}%
+  \color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleCol\fi}%
 }
 
 \titleformat{\section}{\normalfont\Large\sffamily\bfseries\boldmath}{}{0pt}{\SecSym}[\SecRule]
