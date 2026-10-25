@@ -185,6 +185,8 @@
 \colorlet{EnvAIBorder}{EnvAI!85!black}
 \colorlet{EnvAIProof}{EnvAIBorder!50!ProofTint}
 \colorlet{EnvAIFallbackProof}{EnvAI!50!ProofTint}
+% 2026-10-25: Custom title text color for ai-note:
+\definecolor{EnvAITitleText}{HTML}{668F99}
 \colorlet{EnvStudentBg}{EnvStudent!5}
 \colorlet{EnvStudentProof}{EnvStudent!50!ProofTint}
 \colorlet{EnvBreakProof}{EnvBreak!50!ProofTint}
@@ -200,7 +202,9 @@
 \colorlet{HeaderFooterFaint}{ThemeWeekNumber!45!Gray!60!ProofTint}
 \colorlet{HeaderFooterLine}{HeaderFooterFaint!50}
 \colorlet{ChapTitleText}{ThemeSecondary!90!black}
-\colorlet{ChapNumberText}{ThemeWeekNumber}
+% 2026-10-25: Chapter number text "WEEK n" set to theorem purple (EnvTheorem, previously ThemeWeekNumber):
+% \colorlet{ChapNumberText}{ThemeWeekNumber}
+\colorlet{ChapNumberText}{EnvTheorem}
 \colorlet{ChapSubtitleText}{HeaderFooterFaint}
 \colorlet{ChapLine}{ThemeSecondary!80!black}
 
@@ -823,23 +827,24 @@ colback=white,
 boxrule=0.5pt,
 dynamic shadow,
 varwidth boxed title*=-30pt,
+% 2026-10-25: nice-box / overview colored to match aiNote (EnvAIBorder and EnvAIBg, previously EnvNote / BurntOrange):
 code={
   \ifinsideproof
     \tcbset{
-      colframe=EnvNoteProof,
-      boxed title style={colback=EnvNoteBg, colframe=EnvNoteProof, boxrule=0.5pt}
+      colframe=EnvAIProof,
+      boxed title style={colback=EnvAIBg, colframe=EnvAIProof, boxrule=0.5pt}
     }
   \else
     \tcbset{
-      colframe=EnvNote,
-      boxed title style={colback=EnvNoteBg, colframe=EnvNote, boxrule=0.5pt}
+      colframe=EnvAIBorder,
+      boxed title style={colback=EnvAIBg, colframe=EnvAIBorder, boxrule=0.5pt}
     }
   \fi
   \ifboolexpr{ test {\ifstrequal{#1}{Summary of Key Concepts}} or test {\ifstrequal{#1}{Summary}} }{%
     \tcbset{phantom={\phantomsection\addcontentsline{toc}{summary}{#1}}}%
   }{}%
 },
-title={\sffamily\bfseries\begin{tabular}[t]{@{}l@{\hspace{0.5em}}l@{}}\faStickyNote & \begin{tabular}[t]{@{}l@{}} #1 \end{tabular}\end{tabular}},
+title={\sffamily\bfseries\begin{tabular}[t]{@{}l@{\hspace{0.5em}}l@{}}\textcolor{EnvAIBorder}{\faStickyNote} & \begin{tabular}[t]{@{}l@{}} #1 \end{tabular}\end{tabular}},
 coltitle=black,
 attach boxed title to top left={xshift=10pt, yshift*=-\tcboxedtitleheight/2},
 top=16pt,
@@ -1075,7 +1080,9 @@ code={
   \fi
 },
 fonttitle=\bfseries\sffamily,
-coltitle=white,
+% 2026-10-25: Title text color set to EnvAITitleText (#668F99, previously white):
+% coltitle=white,
+coltitle=EnvAITitleText,
 title={\faRobot\ \ #1},
 boxrule=1pt,
 arc=3pt,
@@ -1402,7 +1409,9 @@ breakable
 % Chapter shadow colors (2026-10-25):
 \definecolor{ChapLineShd}{HTML}{B5C2E3}
 \definecolor{ChapTitleShd}{HTML}{B6D0E8}
-\colorlet{ChapNumberShd}{ThemeWeekNumber!35!white}
+% 2026-10-25: Chapter number shadow matched to purple text shadow (SecTextShd #C6BBE6, previously ThemeWeekNumber!35!white):
+% \colorlet{ChapNumberShd}{ThemeWeekNumber!35!white}
+\colorlet{ChapNumberShd}{SecTextShd}
 \colorlet{ChapSubtitleShd}{HeaderFooterFaint!40!white}
 
 \newcommand{\shdtext}[3]{%
