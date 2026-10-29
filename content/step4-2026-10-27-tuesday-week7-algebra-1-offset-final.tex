@@ -1,0 +1,2364 @@
+% ==========================================
+% Step 4/4 - Final refinement (refinement step 3)
+% Output: step4-10-27-2026-tuesday-week7-Algebra_I-offset-final.tex
+% Input: step3-10-27-2026-tuesday-week7-Algebra_I-offset-speech_refined.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-29 22:13:10
+% Thought summaries: step4-10-27-2026-tuesday-week7-Algebra_I-offset-final-thoughts.md
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 84'556 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 84'556 (neu verrechneter Input)
+%   - Output Tokens       : 50'257 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 11'828 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 3/4 - Speech refinement (refinement step 2)
+% Output: step3-10-27-2026-tuesday-week7-Algebra_I-offset-speech_refined.tex
+% Input: step2-10-27-2026-tuesday-week7-Algebra_I-offset-merged.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-29 21:58:59
+% Thought summaries: step3-10-27-2026-tuesday-week7-Algebra_I-offset-speech_refined-thoughts.md
+% ------------------------------------------
+% Token Usage (2 Request(s)):
+%   - Total Prompt Tokens : 542'728 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 542'728 (neu verrechneter Input)
+%   - Output Tokens       : 50'391 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 23'804 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 2/4 - Merge & timestamp alignment (refinement step 1)
+% Output: step2-10-27-2026-tuesday-week7-Algebra_I-offset-merged.tex
+% Input: step1-10-27-2026-tuesday-week7-Algebra_I-all-offset.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.4
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-10-29 11:48:54
+% Thought summaries: step2-10-27-2026-tuesday-week7-Algebra_I-offset-merged-thoughts.md
+% ------------------------------------------
+% Token Usage (2 Request(s)):
+%   - Total Prompt Tokens : 479'900 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 479'900 (neu verrechneter Input)
+%   - Output Tokens       : 51'348 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 15'626 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 1/4 - Transcription, 4 part(s) combined
+% Output: step1-10-27-2026-tuesday-week7-Algebra_I-all-offset.tex
+% Source video: 10-27-2026-tuesday-week7-Algebra_I.mp4
+% Model: gemini-3.8-flash
+% Temperature: 0.36
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Processed on: 2026-10-29 11:08:53
+% ------------------------------------------
+% Parts:
+%   - Part 1: 10-27-2026-tuesday-week7-Algebra_I-part1.mp4 | start 00:00:00 | model gemini-3.8-flash | processed 2026-10-29 09:40:20 | prompt 425'527 | output 13'800 | thinking 27'144
+%   - Part 2: 10-27-2026-tuesday-week7-Algebra_I-part2.mp4 | start 00:21:04 | model gemini-3.8-flash | processed 2026-10-29 10:17:55 | prompt 439'993 | output 14'686 | thinking 23'716
+%   - Part 3: 10-27-2026-tuesday-week7-Algebra_I-part3.mp4 | start 00:42:09 | model gemini-3.8-flash | processed 2026-10-29 10:42:21 | prompt 454'961 | output 16'292 | thinking 46'574
+%   - Part 4: 10-27-2026-tuesday-week7-Algebra_I-part4.mp4 | start 01:03:13 | model gemini-3.8-flash | processed 2026-10-29 11:08:53 | prompt 471'616 | output 16'899 | thinking 18'795
+% ------------------------------------------
+% Token Usage of this run (4 Request(s)):
+%   - Total Prompt Tokens : 1'792'097 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 1'792'097 (neu verrechneter Input)
+%   - Output Tokens       : 61'677 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 116'229 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+
+% Primary Language: English
+% End of the video: 01:28:18
+
+\lecturechapter[7]{Tuesday}{27 Oct}{27 October 2026}{Gauss's Theorem, Group Axioms, the Symmetric Group, and Element Orders}
+% Old chapter title: Gauss's Theorem, Group Axioms, the Symmetric Group, and Element Orders
+
+\begin{overview}[Course Content Overview]
+This lecture concludes the foundational development of ring theory and initiates the study of abstract group theory:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Gauss's Theorem on Polynomial Rings:} Reviewing examples of UFDs and PIDs (multivariate polynomials, Gaussian integers $\mathbb{Z}[i]$, and formal power series $k[[x]]$), and completing the proof that $R \text{ UFD} \implies R[x] \text{ UFD}$ by passing to the fraction field $Q(R)$ and clearing denominators.
+    \item \textbf{Pedagogical Reflections on Algebra:} Framing the study of mathematics around the triad of definitions, theorems, and examples, and discussing philosophical perspectives on independent learning (Schopenhauer, Confucius).
+    \item \textbf{Foundations of Group Theory:} Defining groups $(G, \cdot, e)$, establishing uniqueness of identity and inverses, deriving the left and right cancellation laws, and contrasting finite, non-commutative groups with classical rings.
+    \item \textbf{The Symmetric Group $S_n$ and Cycle Notation:} Permutations, generalized associativity, Catalan numbers $C_n$, right-to-left composition, non-commutativity, Cayley tables, and cycle decomposition notation.
+    \item \textbf{Element Orders and Cyclic Subgroups:} Applying the Pigeonhole Principle to establish that every element in a finite group has finite order, and introducing the cyclic subgroup $\langle x \rangle \cong \mathbb{Z}/\operatorname{ord}(x)\mathbb{Z}$.
+\end{enumerate}
+\end{overview}
+
+\section{Gauss's Theorem and Classical Examples of UFDs}
+
+\subsection{Statement of Gauss's Theorem}
+
+\begin{speech}[00:00:00 - 00:00:39]
+Okay, so, at the last lecture, I was almost at the end of this theorem, which I will state again. So, this is Carl Friedrich... and the theorem is: $R$ is a UFD implies the polynomial ring is also a UFD \inlinemetanote{writes: C.F.G. $R$ is a UFD $\implies R[x]$ is a UFD}.
+
+And there were many steps in the logic here, and maybe I'll take a chance to review some of the things and also explain some of the ideas. So, this is an intricate proof, and as I said, at the end of the last lecture I came to within five minutes of completing it. But anyway, I'll take some time now.
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Gauss's Theorem on Polynomial Rings]\label[theorem]{thm:gauss-polynomial-ufd}
+Let $R$ be a unique factorization domain (UFD). Then the polynomial ring $R[x]$ is also a unique factorization domain:
+\begin{equation}\label{eq:gauss-thm}
+R \text{ is a UFD} \implies R[x] \text{ is a UFD}.
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Historical Context and Scope of the Theorem]
+Gauss established this fundamental theorem in his \emph{Disquisitiones Arithmeticae} (1801) for the integer polynomial ring $\mathbb{Z}[x]$. By mathematical induction on the number of variables $n$, the theorem extends directly to multivariate polynomial rings:
+\[
+R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
+\]
+\end{steps}
+\end{content}
+
+\subsection{Examples: Multivariable Polynomials, Gaussian Integers, and Power Series}
+
+\begin{speech}[00:00:39 - 00:02:17]
+So, the first thing to notice --- so this is not about the proof, this was what was labeled before Theorem B last week \inlinemetanote{writes: \qt{Thm B}} --- the first thing to note, which is not about the proof, it's just about examples \inlinemetanote{writes: \qt{Examples:}}, is that if you know this result, then you can take any UFD you want, like $\mathbb{Z}$ is a UFD. So, this result implies that if I take the polynomial ring in one variable or two variables or any number of variables \inlinemetanote{writes: $\mathbb{Z} \to \mathbb{Z}[x], \mathbb{Z}[x, y], \mathbb{Z}[x_1, x_2, \dots]$} --- which you can just keep applying this, one after the other --- that these are all UFDs.
+
+And also, these are kind of the standard class of examples: if I take the finite field $\mathbb{Z} / p\mathbb{Z}$ \inlinemetanote{writes: $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$}, every field is a UFD. So, that means if I take polynomials in finite fields \inlinemetanote{writes: $\mathbb{F}_p[x], \mathbb{F}_p[x_1, x_2, \dots]$}, these, however many variables you want --- as long as there are finitely many --- these obey all the factorization rules that you are familiar with for the integers: the idea that if you have a polynomial, there is unique factorization into prime polynomials, and whatever you remember about the integers, not every single statement, but the parts about unique factorization, they apply here.
+
+And the other classical examples: you take the fields $\mathbb{Q}$, $\mathbb{C}$, $\mathbb{R}$ \inlinemetanote{writes: $\mathbb{Q}, \mathbb{C}, \mathbb{R} \to \mathbb{Q}[x], \dots$}. These are like the classical examples. And it's one of the aspects of this course that if you see these rings, there's a huge study of these rings, and this course is only the very beginning of the study. But at least you'll know that you can factor things, and the rules of factorization work like in integers.
+\end{speech}
+
+\begin{content}
+\begin{example}[Polynomial Rings as Unique Factorization Domains]\label[example]{ex:ufd-polynomial-rings}
+Applying Gauss's Theorem (\cref{thm:gauss-polynomial-ufd}) inductively yields that multivariate polynomial rings over familiar base rings are UFDs:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Integers:} Since $\mathbb{Z}$ is a UFD, repeated application implies:
+    \[
+    \mathbb{Z} \implies \mathbb{Z}[x], \ \mathbb{Z}[x, y], \ \mathbb{Z}[x_1, \dots, x_n] \dots \quad \text{are all UFDs.}
+    \]
+    \item \textbf{Finite Fields:} For any prime $p$, the field $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ is a field (hence trivially a UFD), so:
+    \[
+    \mathbb{F}_p = \mathbb{Z}/p\mathbb{Z} \implies \mathbb{F}_p[x], \ \mathbb{F}_p[x_1, \dots, x_n] \dots \quad \text{are all UFDs.}
+    \]
+    \item \textbf{Characteristic Zero Fields:} For the classical fields $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$:
+    \[
+    \mathbb{Q}, \mathbb{C}, \mathbb{R} \implies \mathbb{Q}[x], \ \mathbb{C}[x], \ \mathbb{R}[x], \dots \quad \text{are all UFDs.}
+    \]
+\end{enumerate}
+\end{example}
+
+\begin{steps}[Contrast: UFDs versus PIDs in Multivariate Polynomial Rings]
+While the single-variable polynomial ring $k[x]$ over a field $k$ is a principal ideal domain (PID) due to the polynomial Euclidean algorithm, multivariate polynomial rings such as $\mathbb{Z}[x]$ or $k[x, y]$ are \emph{not} PIDs. For example, the ideals
+\[
+I = (2, x) \subset \mathbb{Z}[x] \quad \text{and} \quad J = (x, y) \subset k[x, y]
+\]
+cannot be generated by any single polynomial. Nevertheless, by Gauss's Theorem, they remain unique factorization domains.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:02:17 - 00:03:57]
+Okay, so, you could say: what about other rings? So, as it was kind of an example in this class, this ring of Gaussian integers \inlinemetanote{writes: $\mathbb{Z}[i]$}. What about this ring? That's not exactly in this context, and it's not... So, it turns out this ring of Gaussian integers is a PID \inlinemetanote{writes: $\mathbb{Z}[i] \text{ is a PID} \implies \mathbb{Z}[i] \text{ is a UFD}$}. We haven't proven it. You can go look in the book. It was not in the topics in the course, but this is a PID, so it implies that this ring, the Gaussian integers, is also a UFD.
+
+The argument that it's a PID is not hard, it's just a page in the book. There's a notion of Euclidean domains, so you have to look in the book for... there's a notion of a division algorithm here \inlinemetanote{writes: \qt{division alg.}}. Then that shows it's a PID, and so, if you're interested, you can read it; you can find it's a page in the book basically. But that's also a UFD.
+
+What about rings like, if I take a field, let's say $k$, $k$ is a field \inlinemetanote{writes: $k \text{ field}$}. What about the rings... so these are polynomial rings, what about power series \inlinemetanote{writes: $k[[x]]\text{?}$}? That's not covered here, and it's actually an interesting, complicated topic, but in this particular case it's not complicated. And the answer, and I hinted at this, is that actually this power series in a field is a PID, so, it's also a UFD \inlinemetanote{writes: Ans: $k[[x]] \text{ is a PID} \implies k[[x]] \text{ is a UFD}$}.
+
+And I said that I was not going to give a hint about the proof, but I will now basically give the proof, more or less.
+\end{speech}
+
+\begin{content}
+\begin{example}[Gaussian Integers as a Euclidean Domain and UFD]\label[example]{ex:gaussian-integers-ufd}
+The ring of Gaussian integers $\mathbb{Z}[i] := \{ a + bi \mid a, b \in \mathbb{Z} \}$ equipped with the field norm $N(a + bi) = a^2 + b^2$ admits a division algorithm, establishing that it is a Euclidean domain. Since every Euclidean domain is a PID, and every PID is a UFD:
+\[
+\mathbb{Z}[i] \text{ is a Euclidean Domain} \implies \mathbb{Z}[i] \text{ is a PID} \implies \mathbb{Z}[i] \text{ is a UFD}.
+\]
+\end{example}
+
+\begin{example}[Formal Power Series Ring over a Field]\label[example]{ex:power-series-pid-ufd}
+For any field $k$, the ring of formal power series $k[[x]]$ is also a principal ideal domain:
+\[
+k \text{ is a field} \implies k[[x]] \text{ is a PID} \implies k[[x]] \text{ is a UFD}.
+\]
+\end{example}
+\end{content}
+
+\begin{speech}[00:03:57 - 00:05:31]
+So, proof: let $I$... \inlinemetanote{writes: Proof: Let $I \subset k[[x]]$ ideal} So, I have to prove it's a PID, because we proved earlier that PIDs are UFDs. So, let $I$ be any ideal...
+
+Then either $I$ could be zero \inlinemetanote{writes: $I = (0)$}, that's one possibility, or $I$ is not the zero ideal \inlinemetanote{writes: $I \neq (0)$}. So, here, well, of course, there's nothing to prove here if it's the zero ideal. So, if it's not the zero ideal, choose a power series in here, so, choose $f$ in here that has minimal lowest degree \inlinemetanote{writes: choose $f \in k[[x]]$ that has min.\ lowest degree}.
+
+Power series don't have highest degrees, you don't think about it, so you think about lowest degree. So, it's the minimal lowest degree. That means $f$ starts somewhere, like $2x^{17} + x^{18} + 3x^{19} + \dots$ \inlinemetanote{writes: $f = 2x^{17} + x^{18} + 3x^{19} + \dots$}. So, $f$ starts somewhere. And so here, or it could be, you know, there's some element in the field, anyway, something non-zero in the field, it starts somewhere... and you find the element here in $I$, so $f$ is in $I$, of lowest degree. Okay? So, do you accept you can do that? Once it's non-zero, it has some elements, and then you can find the one of lowest degree. All right.
+\end{speech}
+
+\begin{content}
+\begin{proof}[{Proof Sketch that $k[[x]]$ is a PID}]\label{proof:power-series-pid}
+Let $I \subseteq k[[x]]$ be an ideal.
+\begin{itemize}
+    \item \textbf{Case 1 ($I = (0)$):} If $I = (0)$, it is generated by the zero element, so $I$ is principal.
+    \item \textbf{Case 2 ($I \neq (0)$):} Since $I$ contains non-zero elements, we define for each non-zero power series $g(x) = \sum_{n=0}^\infty a_n x^n \in I \setminus \{0\}$ its order (lowest degree):
+    \[
+    \operatorname{ord}(g) := \min \{ n \in \mathbb{N} \mid a_n \neq 0 \}.
+    \]
+    By the well-ordering of $\mathbb{N}$, there exists an element $f \in I \setminus \{0\}$ achieving the minimal lowest degree:
+    \[
+    m := \min_{g \in I \setminus \{0\}} \operatorname{ord}(g).
+    \]
+    Thus, $f$ can be written in the form:
+    \[
+    f(x) = a_m x^m + a_{m+1} x^{m+1} + \dots = x^m \underbrace{(a_m + a_{m+1} x + \dots)}_{=: u(x)}, \quad a_m \in k \setminus \{0\}.
+    \]
+    Since $a_m \neq 0$, the series $u(x)$ has an invertible constant term in $k$, which implies that $u(x)$ is a unit in $k[[x]]$ (i.e., $u(x) \in k[[x]]^\times$).
+\end{itemize}
+\end{proof}
+\end{content}
+
+\begin{speech}[00:05:31 - 00:05:45]
+Then this is... now this is the part for you: exercise --- I did most of it \inlinemetanote{writes: Ex: prove $I = $}. Prove $I$... What am I going to write here?
+\end{speech}
+
+\begin{student}[Student Answer]
+Generated by $f$.
+\end{student}
+
+\begin{speech}[00:05:47 - 00:06:53]
+Yeah, you could say that, but there's a more elegant way to say it. I went to all this trouble writing the minimal degree here. It's generated by the lowest term, in this case $x^{17}$ \inlinemetanote{writes: $(x^{17})$}. It's generated by the lowest term.
+
+So, in general, if you have $f$ in $I$ of minimal degree, then this is generated by the monomial $x$ to the minimal, that's the one \inlinemetanote{writes: $f \in I \text{ min.\ degree} \implies I = (x^m)$}. The monomial where the first one that comes, okay?
+
+And the reason is that... well, I mean, we discussed these things, I leave that as an exercise for you to think. So, this shows that not only is this power series ring a principal ideal domain, because every ideal is generated by one element, in this case $17$, or some other power, but actually I just told you all the ideals in the ring. All the ideals are of the form $x$ to some number, that's it. Those are the only ideals. So, there are very few... I mean, there's infinitely many, but in some conceptual sense very few ideals.
+
+Okay, so... these rings are all PIDs, so, they're all UFDs.
+\end{speech}
+
+\begin{content}
+\begin{exercise}[{Classification of Ideals in $k[[x]]$}]\label[exercise]{exer:ideals-power-series}
+Let $k$ be a field. Prove that if $f \in I \setminus \{0\}$ has minimal lowest degree $m$, then:
+\[
+f \in I \text{ of minimal degree } m \implies I = (x^m).
+\]
+Consequently, the only non-zero ideals of $k[[x]]$ are the powers of the principal maximal ideal $(x)$:
+\[
+(0) \subset \dots \subset (x^3) \subset (x^2) \subset (x) \subset k[[x]].
+\]
+In particular, $k[[x]]$ is a discrete valuation ring (DVR), hence a PID and a UFD.
+\end{exercise}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:06:53
+% topic: Review of Gauss's Theorem and examples of UFDs and PIDs
+% board_state: thm:gauss-polynomial-ufd, ex:ufd-polynomial-rings, ex:gaussian-integers-ufd, ex:power-series-pid-ufd, exer:ideals-power-series
+% next_goal: Review of content, primitive polynomials, Gauss's Lemma
+% open_loops: none
+\end{hidden}
+
+\section{Review of Content and Gauss's Lemma}
+
+\subsection{Content of a Polynomial and Primitive Polynomials}
+
+\begin{speech}[00:06:53 - 00:08:12]
+Okay, so, now let's go back to the proof. So, the ideas of this proof, there were several new ideas, which I'll just comment on, so, we're going to use them. If I have $f$ as a polynomial \inlinemetanote{writes: $f \in R[x]$}, and $f$ is not zero \inlinemetanote{writes: $f \neq 0$} --- we don't like factoring zeros --- if $f$ is not zero, then we defined the content \inlinemetanote{writes: $C(f) = \operatorname{GCD}(\text{non-zero coeff of } f) \subset R$}. This is the content of $f$, that's the words for it \inlinemetanote{writes: \qt{content of $f$}}, and it equals the GCD of the non-zero coefficients of $f$. Okay? Since $f$ is not zero, it has at least one coefficient that's non-zero, and that's the GCD, and it's only defined up to a unit.
+
+And the ways we think about this is given any $f$ --- always non-zero --- $f$ non-zero, then we can write $f$ is equal to the content, or we just pull out the GCD, and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes: $f \in R[x], f \neq 0 \implies f = C(f) \cdot f_0$ and labels $f_0$ as primitive}. And the definition of the term primitive was the content is equal to $1$, up to a unit \inlinemetanote{writes: $C(f_0) = 1$ up to unit}. Okay? So, this is review from last time.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Content and Primitive Polynomials]\label[definition]{def:content-primitive}
+Let $R$ be a UFD and let $f \in R[x]$ be a non-zero polynomial, $f(x) = \sum_{i=0}^n a_i x^i$.
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item The \newterm{content} of $f$, denoted $C(f)$, is defined as the greatest common divisor of its non-zero coefficients:
+    \[
+    C(f) := \operatorname{gcd}(a_0, a_1, \dots, a_n) \in R,
+    \]
+    which is well-defined up to multiplication by a unit in $R^\times$.
+    \item A polynomial $f_0 \in R[x]$ is called \newterm{primitive} if its content is a unit:
+    \[
+    C(f_0) = 1 \quad (\text{up to units in } R^\times).
+    \]
+    \item Every non-zero polynomial $f \in R[x]$ admits a canonical factorization:
+    \begin{equation}\label{eq:content-primitive-decomposition}
+    f = C(f) \cdot f_0,
+    \end{equation}
+    where $C(f) \in R$ and $f_0 \in R[x]$ is a primitive polynomial.
+\end{enumerate}
+\end{definition}
+\end{content}
+
+\subsection{Gauss's Lemma and Divisibility of Primitive Polynomials}
+
+\begin{speech}[00:08:12 - 00:10:18]
+And the two properties that we use about this, which are really important: the first one is another theorem by Carl Friedrich, that says that if $f$ and $g$ are primitive, then their product is primitive \inlinemetanote{writes: $\ast\ \text{CFG: if } f, g \text{ are primitive} \implies fg \text{ primitive}$}. Okay? So, we proved that, and that was a very nice proof actually. It used the fact about polynomial rings over integral domains being integral domains.
+
+And what the content of this is, is if you take something like... let's take the integers: $(2x + 5) \cdot (3x + 17)$ \inlinemetanote{writes: $(2x+5)(3x+17)$}. So, like these two things, these two polynomials, this is $f$ and this is $g$ \inlinemetanote{labels $f$ and $g$ under the factors}. This one's primitive because $2$ and $5$ don't have any common factors. This one's also primitive because $3$ and $17$ don't have any common factors. And what our friend Carl Friedrich is asserting here is if I multiply these, it'll also have that property.
+
+So, then to check it, we can multiply. So, we have to do some multiplication here: $6x^2 + \dots$, something, $+ 17 \times 5$, that's $85$. And this is the one where you have to add, I think it's $49$ \inlinemetanote{writes: $= 6x^2 + 49x + 85$}. Is that right? Anyway, you can do some multiplication. It's important to get this right. Looks reasonable.
+
+Okay, so, then if you factor this, you get $2 \times 3$, $7^2$, and this is $5 \times 17$ \inlinemetanote{writes: $2 \cdot 3$, $7^2$, $5 \cdot 17$ under the coefficients}. And you see they have no common factors. And that's the assertion he's saying: every single time you do this, that happens. And the thing that's tricky... I mean, we proved it, so I'm not repeating the proof, but the thing that's tricky here is that although these things are relatively prime, when you multiply there's all sorts of addition that happens. And he's saying that doesn't stop his claim from being true. Okay, that's one principle.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Gauss's Lemma]\label[lemma]{lem:gauss-primitive-product}
+Let $R$ be a UFD. If $f, g \in R[x]$ are primitive polynomials, then their product $f \cdot g$ is also primitive:
+\begin{equation}\label{eq:gauss-lemma-w7tue}
+C(f) = 1 \text{ and } C(g) = 1 \implies C(f \cdot g) = 1.
+\end{equation}
+\end{lemma}
+
+\begin{example}[{Explicit Verification in $\mathbb{Z}[x]$}]\label[example]{ex:gauss-lemma-verification}
+Consider $f(x) = 2x + 5$ and $g(x) = 3x + 17$ in $\mathbb{Z}[x]$:
+\begin{itemize}
+    \item $C(f) = \operatorname{gcd}(2, 5) = 1$, so $f$ is primitive.
+    \item $C(g) = \operatorname{gcd}(3, 17) = 1$, so $g$ is primitive.
+\end{itemize}
+Multiplying the two polynomials:
+\[
+f(x) \cdot g(x) = (2x + 5)(3x + 17) = 6x^2 + 49x + 85.
+\]
+Factoring the individual coefficients into prime factors:
+\[
+6 = 2 \cdot 3, \qquad 49 = 7^2, \qquad 85 = 5 \cdot 17.
+\]
+Since no prime divides $6$, $49$, and $85$ simultaneously, we have $\operatorname{gcd}(6, 49, 85) = 1$, confirming that $f \cdot g$ is primitive.
+\end{example}
+\end{content}
+
+\begin{speech}[00:10:18 - 00:11:20]
+The second one was that if $g$ divides $b \cdot f$ \inlinemetanote{writes: $\ast\ g \mid bf$}, and the assumptions are $g$ is primitive \inlinemetanote{writes: $g$ primitive}, so that means $g$ is some primitive polynomial \inlinemetanote{writes: $g \in R[x]$}, $b$ is a scalar not equal to $0$ \inlinemetanote{writes: $b \in R, b \neq 0$}, and $f$ is some polynomial \inlinemetanote{writes: $f \in R[x]$}, the fact that $g$ is primitive implies $g$ actually divides $f$ \inlinemetanote{writes: $\implies g \mid f$}.
+
+So, those are the two things that we're going to use. I'm not going to prove them again; I proved them last time. But if you've never seen the content, it's worth playing with. It's kind of a useful idea.
+\end{speech}
+
+\begin{content}
+\begin{lemma}[Primitive Divisor Lemma]\label[lemma]{lem:primitive-divisor-scalar}
+Let $R$ be a UFD. Let $g \in R[x]$ be a primitive polynomial, $f \in R[x]$, and $b \in R \setminus \{0\}$. If $g$ divides $b \cdot f$ in $R[x]$, then $g$ divides $f$ in $R[x]$:
+\begin{equation}\label{eq:primitive-divisibility}
+g \mid b \cdot f \quad \text{with } C(g) = 1 \text{ and } b \in R \setminus \{0\} \implies g \mid f.
+\end{equation}
+\end{lemma}
+
+\begin{steps}[Intuition behind the Primitive Divisor Lemma]
+Since $g$ is primitive, none of its irreducible factors can come from the base ring $R$. Therefore, multiplying $f$ by a scalar $b \in R$ cannot introduce any new non-scalar primitive factors, forcing $g$ to divide $f$ directly.
+\end{steps}
+\end{content}
+
+\section{Proof of Gauss's Theorem: Uniqueness of Factorization}
+
+\subsection{Reduction to Primeness of Irreducible Elements}
+
+\begin{speech}[00:11:20 - 00:13:05]
+Okay, so, now we come to the structure of the proof. It's intricate, and there are many steps we've already done, which I don't repeat, but I'll just show you the structure. So, we want to prove this: $R$ UFD implies $R[x]$ UFD \inlinemetanote{writes: $R \text{ UFD} \implies R[x] \text{ UFD}$}.
+
+So, for $R[x]$ we have to prove the existence \inlinemetanote{writes: For $R[x]$, we have to prove: $\exists$ -- factorization into irred. \checkmark}, that's the existence for factorization into irreducibles, that's the existence part, and I did that all last time. That was some induction on degree. Then we also have to prove uniqueness. So, that's the uniqueness statement \inlinemetanote{writes: $!$ -- uniqueness}.
+
+And for uniqueness, we use this principle that we proved last time, and this principle is that if we have $p$ in $R[x]$ is irreducible, if this implies the ideal in $R[x]$ is prime \inlinemetanote{writes: $[p \in R[x] \text{ irred.} \implies (p) \subset R[x] \text{ prime}]$} --- so, if I can prove this statement, then that implies the uniqueness of factorization into irreducibles \inlinemetanote{writes: $\implies !$ factorization into irred.}.
+
+So, this is a principle we proved last Tuesday: that if I have a ring such that the irreducibles are prime, then the uniqueness statement holds, if you remember that. So, we're going to use it now, so, we need to prove this.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Reduction of Uniqueness to Prime Ideals]\label[proposition]{prop:irred-implies-prime-uniqueness}
+To prove that $R[x]$ is a UFD when $R$ is a UFD, two components are required:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Existence of Factorization (\checkmark):} Every non-zero, non-unit polynomial factors into a product of irreducible elements. This was established previously via induction on the degree of the polynomial.
+    \item \textbf{Uniqueness of Factorization:} Uniqueness holds if every irreducible element generates a prime ideal:
+    \begin{equation}\label{eq:irred-implies-prime}
+    p \in R[x] \text{ is irreducible} \implies (p) \subset R[x] \text{ is a prime ideal}.
+    \end{equation}
+\end{enumerate}
+Consequently, proving \eqref{eq:irred-implies-prime} completes the proof of Gauss's Theorem.
+\end{proposition}
+\end{content}
+
+\begin{speech}[00:13:05 - 00:13:52]
+So, I remind you... reminder: $p$ not equal to $0$ or a unit is irreducible if we have whenever $p = ab$, then at least one of these is a unit, then $a$ is a unit or $b$ is a unit \inlinemetanote{writes: Reminder: $p \neq 0$, unit is irred.\ if $p = ab$ then $a$ is a unit or $b$ is a unit}.
+
+So, that's just the definition, just to remind you. So, we have to prove that whenever I have an irreducible person here, the ideal generated is prime. That will prove the uniqueness, we already have existence, and then we will have proved Gauss's theorem.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Irreducible Element]\label[definition]{def:irreducible-element}
+Let $R$ be an integral domain. A non-zero, non-unit element $p \in R \setminus (\{0\} \cup R^\times)$ is called \newterm{irreducible} if:
+\[
+p = a \cdot b \implies a \in R^\times \text{ or } b \in R^\times.
+\]
+\end{definition}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:13:52
+% topic: Reduction of Gauss's Theorem uniqueness to showing (p) is prime
+% board_state: thm:gauss-polynomial-ufd, def:content-primitive, lem:gauss-primitive-product, lem:primitive-divisor-scalar, prop:irred-implies-prime-uniqueness, def:irreducible-element
+% next_goal: Prove p irreducible implies (p) is prime by splitting into deg(p) = 0 and deg(p) > 0
+% open_loops: none
+\end{hidden}
+
+\begin{proofWrapper}[Proof of \cref{thm:gauss-polynomial-ufd}: Primeness of Irreducible Elements]
+
+\subsection{Case 1: Degree Zero Irreducibles}
+
+\begin{speech}[00:13:52 - 00:15:33]
+All right, so, even this I started last time. So, our goal here is we must prove that implication: $p$ in $R[x]$ irreducible implies the ideal generated by $p$ is prime \inlinemetanote{writes: We must prove: $p \in R[x] \text{ irred.} \implies (p) \subset R[x] \text{ is prime}$}. This is the statement we must prove. And even for this, there were two cases.
+
+Case 1 is that the degree of $p$ is $0$ \inlinemetanote{writes: Case (1) $\deg(p) = 0$}. So, what does it mean if $p$ is a polynomial of degree $0$? This means really $p$ is a scalar, it's in $R$ \inlinemetanote{writes: $p \in R$}. And we discussed this case last time, but this case should certainly not surprise you, because once $p$ is in $R$, we're assuming $R$ is a UFD, so, we just factorize it in $R$. That's basically the summary of that proof. So, we discussed this last time, I'm not going to discuss it again. But this is essentially because $R$ is a UFD, we're just assuming \inlinemetanote{writes: $R \text{ is a UFD}$}.
+
+It's not a problem. So, the interesting case, and it's actually the most interesting case of the whole proof, which is why I try to do it carefully, is the degree positive one \inlinemetanote{writes: Case (2) $\deg(p) > 0$}. Okay, and that's the statement I was in the middle of, or actually almost at the end of last time. But it is an intricate... I mean, at least for the kind of arguments we've had in this class, it is a slightly intricate one. So, let's do it slowly, and it's pretty, actually. As I said, most of the arguments for these things are proofs that prove themselves. This is not one; you have to actually have some ideas.
+\end{speech}
+
+\begin{content}
+\begin{proof}[Case 1: Constant Irreducible Polynomials]
+We must show that for any irreducible polynomial $p \in R[x]$, the principal ideal $(p) \subset R[x]$ is prime. We analyze two cases according to $\deg(p)$:
+
+\textbf{Case 1 ($\deg(p) = 0$):}
+If $\deg(p) = 0$, then $p \in R$ is a non-zero, non-unit constant polynomial. Since $p$ is irreducible in $R[x]$, it is also irreducible in $R$. Because $R$ is a UFD, every irreducible element in $R$ is a prime element, which implies that the quotient ring $R/(p)$ is an integral domain.
+
+Consider the canonical reduction homomorphism:
+\[
+\pi \colon R[x] \to (R/(p))[x], \quad \sum a_i x^i \mapsto \sum \bar{a}_i x^i.
+\]
+The kernel of $\pi$ is precisely the ideal $(p) \subset R[x]$. By the First Isomorphism Theorem:
+\[
+R[x]/(p) \cong (R/(p))[x].
+\]
+Since $R/(p)$ is an integral domain, the polynomial ring $(R/(p))[x]$ is also an integral domain. Therefore, $R[x]/(p)$ is an integral domain, which proves that $(p)$ is a prime ideal in $R[x]$.
+\end{proof}
+\end{content}
+
+\subsection{Case 2: Positive Degree Irreducibles and the Field of Fractions}
+
+\begin{speech}[00:15:33 - 00:16:44]
+Okay, so, what do we have to do? Let's write the assumptions \inlinemetanote{writes: Assumptions:}. So, one is that $p$ is irreducible and the degree of $p$ is positive \inlinemetanote{writes: $p \in R[x] \text{ is irred, } \deg(p) > 0$}. That's where we are in the logic.
+
+We want to prove that the ideal is prime, so, then we can assume $fg$ is in the ideal \inlinemetanote{writes: $fg \in (p)$}, and we assume $f$ is not in the ideal \inlinemetanote{writes: $f \notin (p)$}. All right? And we need to show --- this is our goal --- to show that then $g$ is in the ideal \inlinemetanote{writes: Goal: $g \in (p)$}.
+
+All right, so, if we can do this, that says this is our assumptions and this last part is it being prime: you take any two where the first one's not, then the second one has to be. So, that's what we have to do. Okay? That's the logical thing we have to do. Is that clear?
+\end{speech}
+
+\begin{content}[Case 2: Setup and Logical Assumptions]
+\textbf{Case 2 ($\deg(p) > 0$):}
+Let $p \in R[x]$ be an irreducible polynomial with $\deg(p) \ge 1$. To show that the principal ideal $(p) \subset R[x]$ is prime, we must establish:
+\begin{equation}\label{eq:case2-prime-goal}
+f \cdot g \in (p) \quad \text{and} \quad f \notin (p) \implies g \in (p).
+\end{equation}
+\begin{itemize}
+    \item \textbf{Assumptions:}
+    \begin{align}
+        p \in R[x] &\text{ is irreducible with } \deg(p) > 0, \label{eq:assump-p} \\
+        f \cdot g &\in (p) \iff p \mid f \cdot g, \label{eq:assump-fg} \\
+        f &\notin (p) \iff p \nmid f. \label{eq:assump-f-not-p}
+    \end{align}
+    \item \textbf{Goal:} Prove that $g \in (p)$, i.e., $p \mid g$ in $R[x].$
+\end{itemize}
+\end{content}
+
+\begin{speech}[00:16:44 - 00:18:50]
+All right, so, the proof of this is: the first idea is we construct this ideal generated by $f$ and $p$, and it's an ideal in this polynomial ring \inlinemetanote{writes: Proof: $I = (f, p) \subset R[x] \text{ ideal}$}. So, just to be clear here, everything here, $p, f, g$, are polynomials \inlinemetanote{writes: $p, f, g \in R[x]$}. All right? And so, I can take the ideal here.
+
+And so, now I select this element, and this is an idea that we've used many times: if I have this ideal in a ring, like in this polynomial ring, it's a very good idea often to select the element of lowest degree. So, now we're here: select $m$ in $I$ so that $m$ is of lowest degree among all non-zero elements of $I$ \inlinemetanote{writes: Select $m \in I$ so that $m \neq 0$ is of lowest degree among all non-zero elements of $I$}.
+
+Okay? So, again, this ideal has some people in it. In particular, $p$ is irreducible, so, it's not zero, so, this ideal is not zero. So, it has some non-zero elements; we choose the one of lowest degree, which we're allowed to. It's not unique, but we're allowed to choose an element of lowest degree. Are you happy with that?
+
+And now the sub-goal here is that we will show that $m$ is a constant, $m$ is in $R$ \inlinemetanote{writes: [We will show $m \in R$]}. In other words, $m$ is of degree $0$. We will show that. That's going to be the goal of the next part of the argument.
+\end{speech}
+
+\begin{content}[Auxiliary Ideal and Minimal Degree Element]
+To prove that $p \mid g$, we consider the ideal in $R[x]$ generated by $f$ and $p$:
+\begin{equation}\label{eq:ideal-I-def-w7tue}
+I := (f, p) = \{ a \cdot f + b \cdot p \mid a, b \in R[x] \} \subset R[x].
+\end{equation}
+Since $p \in I$ and $p$ is irreducible, $p \neq 0$, which ensures $I \neq (0)$.
+
+\textbf{Choice of Minimal Degree Element:}
+Select an element $m \in I \setminus \{0\}$ of minimal degree among all non-zero polynomials in $I$:
+\begin{equation}\label{eq:minimal-m-def}
+m \in I \setminus \{0\} \quad \text{such that} \quad \deg(m) = \min_{h \in I \setminus \{0\}} \deg(h).
+\end{equation}
+Such an element exists by the well-ordering of non-negative integer degrees.
+
+\textbf{Sub-goal:} We will show that $m$ is a non-zero constant in the base ring:
+\begin{equation}\label{eq:subgoal-m-in-R}
+m \in R \quad (\text{i.e., } \deg(m) = 0).
+\end{equation}
+\end{content}
+
+\begin{speech}[00:18:50 - 00:21:05]
+Now, what we normally do in the case when we have a field is we use the division algorithm. So, we'd very much like to use the division algorithm, and this is one of the ideas in this proof, and it's part of the reason why the notion of the fraction field was introduced. So, we would like to use the division algorithm \inlinemetanote{writes: We would like to use the division alg.\ in $R[x]$} ... the division algorithm...
+
+But we can't because this is not a field. So, the solution here, and this is what I said, one of the ideas in the proof, is that... so, the problem is that $R$ need not be a field \inlinemetanote{writes: But the problem is that $R$ need not be a field.}. And for the division algorithm you need a field because you're dividing.
+
+So, the idea here is to use the field of fractions. As I said, that's kind of why we introduced it. So, let $Q(R)$ be the field of fractions \inlinemetanote{writes: Idea: $Q(R)$ be the field of fractions of $R$}. So, remember, $R$ sits inside... I'm just going to call it $Q$, sits inside $Q$ \inlinemetanote{writes: $R \subset Q = \dots$}, and this is the field of fractions. Every element of $Q$, an element of $Q$ is some kind of $a/b$, where $b$ is not zero \inlinemetanote{writes: $Q \ni \frac{a}{b}, b \neq 0$}.
+
+All right? And all of these things we can consider, we can view all of these people, $p, f, g$, to be inside this polynomial ring over this field \inlinemetanote{writes: We can view $p, f, g \in Q[x]$}. Because they live inside $R$, so, we just view them inside the field. Okay? And the advantage of this is we can run the division algorithm in the field. That's the whole purpose of this idea.
+\end{speech}
+
+\begin{content}[Passage to the Field of Fractions \texorpdfstring{$Q(R)$}{Q(R)}]
+In the general polynomial ring $R[x]$, polynomial division with remainder cannot be performed because leading coefficients may not be invertible in $R$. To resolve this, we pass to the field of fractions of $R$:
+\begin{equation}\label{eq:field-of-fractions-def-w7tue}
+Q := Q(R) = \left\{ \frac{a}{b} \;\middle|\; a, b \in R, \ b \neq 0 \right\}.
+\end{equation}
+Since $R \subset Q$, we have a natural embedding of polynomial rings:
+\[
+R[x] \subset Q[x].
+\]
+Consequently, the polynomials $p, f, g, m \in R[x]$ can all be viewed as polynomials in $Q[x]$:
+\begin{equation}\label{eq:polynomials-in-Qx}
+p, f, g, m \in Q[x].
+\end{equation}
+Since $Q$ is a field, the Euclidean division algorithm is fully applicable in $Q[x]$.
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:20:50
+% topic: Passage to fraction field Q(R)[x] and division algorithm setup
+% board_state: thm:gauss-polynomial-ufd, eq:ideal-I-def-w7tue, eq:minimal-m-def, eq:subgoal-m-in-R, eq:field-of-fractions-def-w7tue, eq:polynomials-in-Qx
+% next_goal: Divide f by m in Q[x] and clear denominators
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:21:05 - 00:23:05]
+So, what does it mean we can run the division algorithm? This means that we can write... so, we can take $f$ and $m$ --- I should put $m$ also there in that list, sorry, just so I'm complete \inlinemetanote{adds $m$ to the list $p, f, g, m \in Q[x]$}. Also we've already selected $m$ too, so $m$ is on this list.
+
+So, we want to apply the division algorithm. We have $f$, I want to divide... division algorithm in here for division by $m$ \inlinemetanote{writes: $f$ in division alg.\ in $Q[x]$ division by $m$}. Okay? So, the consequence of that is I can write $f$ is equal to the quotient times $m$ plus some remainder \inlinemetanote{writes: $f = \hat{q} m + \hat{r}$}.
+
+And these hats signify that these elements may be in this ring, right? \inlinemetanote{writes: $\hat{q}, \hat{r} \in Q[x]$} Because $f$ and $m$ are also in $Q[x]$, but these things we know are actually in the smaller place, that they're here \inlinemetanote{writes: $\hat{q}, m \in Q[x]$ and indicates $f, m \in R[x]$}. Okay, but we can't apply the division algorithm in polynomials in $R$, but we can with polynomials with coefficients in $Q$. So, we apply the division algorithm, and we get this quotient and remainder, but they live here. Is that clear?
+
+And the condition that comes out of the division algorithm is that either $\hat{r}$ is $0$, or the degree of $\hat{r}$ is strictly less than the degree of $m$, okay? \inlinemetanote{writes: $\hat{r} = 0 \text{ or } \deg \hat{r} < \deg m$}. Are you happy with that?
+\end{speech}
+
+\begin{content}[Division Algorithm in \texorpdfstring{$Q[x]$}{Q[x]}]
+We apply the Euclidean division algorithm in $Q[x]$ to divide $f$ by $m$:
+\begin{equation}\label{eq:division-f-by-m}
+f = \hat{q} \cdot m + \hat{r}, \qquad \hat{q}, \hat{r} \in Q[x],
+\end{equation}
+where $\hat{q}$ and $\hat{r}$ are polynomials whose coefficients a priori lie in the fraction field $Q$, satisfying:
+\begin{equation}\label{eq:degree-remainder-cond}
+\hat{r} = 0 \quad \text{or} \quad \deg(\hat{r}) < \deg(m).
+\end{equation}
+\end{content}
+
+\begin{speech}[00:23:05 - 00:24:54]
+And now comes the next step, is this step which is called clear the denominators \inlinemetanote{writes: Clear the denoms:}. Which is... So, we don't want to work in polynomials with coefficients in this field. Somehow the theorem is about polynomials with coefficients in $R$, so, we'd like to get back to polynomials with coefficients in $R$.
+
+And the only problem here... so, this is a polynomial with coefficients in $Q[x]$, so, this has some $c_6 x^6 + c_5 x^5 + \dots + c_0$ \inlinemetanote{writes: $\hat{q} = c_6 x^6 + c_5 x^5 + \dots + c_0$}. Now, all of these coefficients are in the field of fractions of $R$ \inlinemetanote{writes: $c_i \in Q(R)$}, so, I can write them instead as elements in $R$: $a_6 / b_6$, $a_5 / b_5$ --- this is kind of explicit --- $a_0 / b_0$ \inlinemetanote{writes: $\hat{q} = \frac{a_6}{b_6} x^6 + \frac{a_5}{b_5} x^5 + \dots + \frac{a_0}{b_0}$ and $a_i, b_i \in R, b_i \neq 0$}, where all of these $a_i$'s and $b_i$'s are in $R$, and moreover the denominators are not zero, right? So, I can just write it like this.
+
+So, that means that if I multiply by all these denominators, I can have $b \cdot \hat{q} = a'_6 x^6 + a'_5 x^5 + \dots + a'_0$ \inlinemetanote{writes: $b \hat{q} = a'_6 x^6 + a'_5 x^5 + \dots + a'_0$}, where this $b$ is the product of the $b_i$ \inlinemetanote{writes: $b = \prod b_i$} --- that's clearing the denominators --- and then these are all in the ring also \inlinemetanote{writes: $\in R[x]$}.
+
+Okay, so, that's clearing the denominators. I did this really explicitly, but you know how to clear denominators. We just clear the denominators.
+\end{speech}
+
+\begin{content}[Clearing Denominators of $\hat{q}$]
+To return from $Q[x]$ to the original polynomial ring $R[x]$, we clear the denominators of $\hat{q}(x) \in Q[x]$. Expanding $\hat{q}(x)$ explicitly:
+\[
+\hat{q}(x) = c_k x^k + c_{k-1} x^{k-1} + \dots + c_0, \qquad c_i \in Q(R).
+\]
+Since each coefficient is a quotient of elements of $R$, we write $c_i = \frac{a_i}{b_i}$ with $a_i, b_i \in R$ and $b_i \neq 0$:
+\[
+\hat{q}(x) = \frac{a_k}{b_k} x^k + \frac{a_{k-1}}{b_{k-1}} x^{k-1} + \dots + \frac{a_0}{b_0}.
+\]
+Defining the common denominator $b \in R \setminus \{0\}$ as the product of all denominators:
+\begin{equation}\label{eq:common-denom-qhat}
+b := \prod_{i=0}^k b_i \in R \setminus \{0\},
+\end{equation}
+we clear denominators so that:
+\begin{equation}\label{eq:b-qhat-Rx}
+b \cdot \hat{q}(x) = a'_k x^k + a'_{k-1} x^{k-1} + \dots + a'_0 \in R[x], \qquad a'_i \in R.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:24:54 - 00:25:59]
+And the price of clearing the denominators... so, what's good about clearing the denominators is you land in this ring; the price is you have to multiply by $b$.
+
+So, I can just do that here. So, I take here, I have $f$... sorry... \inlinemetanote{moves to the middle lower blackboard} I have $f = \hat{q} m + \hat{r}$ \inlinemetanote{writes: $f = \hat{q} m + \hat{r}$}.
+
+So, there exists some $b'$ in $R$, $b'$ not equal to zero \inlinemetanote{writes: $\exists b' \in R, b' \neq 0$}, which clears the denominators of this. That means I multiply by $b'$: $b' f$, then I get a new $q'$ and a new $r'$ \inlinemetanote{writes: $b' f = q' m + r'$}.
+
+And now $b'$ is in $R$, as I said, not equal to zero, and $q'$ and $r'$ are polynomials with coefficients here, okay? \inlinemetanote{writes: $b' \in R, b' \neq 0, q', r' \in R[x]$}
+
+So, I'm saying it very explicitly, but all I do is I take this, there might be some denominators, I clear them. Which, you know, you've been clearing denominators for a long time by now, I assume.
+
+Okay. So, are you happy with this?
+\end{speech}
+
+\begin{content}[Cleared Division Equation for $f$]
+Applying this clearing procedure simultaneously to both $\hat{q}$ and $\hat{r}$ in \eqref{eq:division-f-by-m}, there exists a non-zero scalar $b' \in R \setminus \{0\}$ such that multiplying through clears all denominators:
+\begin{equation}\label{eq:cleared-div-f}
+b' \cdot f = q' \cdot m + r',
+\end{equation}
+where:
+\begin{equation}\label{eq:cleared-coeffs-f}
+b' \in R \setminus \{0\}, \qquad q' := b' \hat{q} \in R[x], \qquad r' := b' \hat{r} \in R[x].
+\end{equation}
+\end{content}
+
+\begin{speech}[00:25:59 - 00:28:09]
+And now I look at this $r'$.
+
+So, $r'$, when I clear denominators, I don't change the degree. So, we have the same thing: $r'$ is equal to zero \inlinemetanote{writes: $r' = 0$}, because when you clear denominators if it were zero, clearing the denominators will keep it zero; or... So, either $r'$ is zero, or the degree of $r'$ is less than the degree of $m$, okay? \inlinemetanote{writes: $\text{or } \deg(r') < \deg(m)$}. Because this multiplication by a scalar does not change the degree. We took $\hat{r}$ and we cleared the denominators, it does not change the degree.
+
+All right, but when I look at this equation, I notice that $m$ is in $I$, and $f$ is in $I$ \inlinemetanote{writes: $m \in I, f \in I$}. Because $m$ was the lowest element in $I$, and $f$ is born in $I$. So, this implies that $r'$ is in $I$ \inlinemetanote{writes: $\implies r' \in I$}.
+
+Right? But $r'$ cannot be lower than $m$ in $I$, because $m$ is an element of the lowest degree in $I$. So, this possibility is impossible \inlinemetanote{crosses out $\deg(r') < \deg(m)$}. So, it must be that $r'$ is zero \inlinemetanote{writes: $\implies r' = 0$}.
+
+Which is kind of what we were expecting, because that was the argument for a field if you use that. But this is a way to come to this conclusion even when $R$ is not a field, by going to the field.
+
+Okay, so, the conclusion here is that we have $b' f = q' m$ \inlinemetanote{writes: Conclude: $b' f = q' m$}.
+
+All right, and then if we write this in terms of contents, we have $b' f = q' \cdot C(m) \cdot m^*$ \inlinemetanote{writes: $b' f = q' C(m) m^*$}. So, the conclusion is that $m^*$ divides $f$ \inlinemetanote{writes: $m^* \mid f$ and draws a rectangular box around it}. This uses one of our principles, because $m^*$ is primitive: the primitive is dividing this product, so, it has to divide one of them, all right? So, this is one of our conclusions. Okay.
+\end{speech}
+
+\begin{content}[Vanishing of the Remainder and Divisibility of $f$]
+Because $b' \in R \setminus \{0\}$ is a non-zero scalar, multiplication by $b'$ does not alter the degree of polynomials:
+\[
+\deg(r') = \deg(b' \hat{r}) = \deg(\hat{r}).
+\]
+Therefore, condition \eqref{eq:degree-remainder-cond} carries over directly to $r'$:
+\begin{equation}\label{eq:rem-cond-cleared}
+r' = 0 \quad \text{or} \quad \deg(r') < \deg(m).
+\end{equation}
+
+\textbf{Ideal Containment and Contradiction:}
+From \eqref{eq:cleared-div-f}, we isolate the remainder:
+\[
+r' = b' \cdot f - q' \cdot m.
+\]
+Since $f \in I$ and $m \in I$, and $I$ is an ideal of $R[x]$, it follows that:
+\[
+r' \in I.
+\]
+By definition of $m$, it is a non-zero element of minimal degree in $I$:
+\[
+\deg(m) = \min_{h \in I \setminus \{0\}} \deg(h).
+\]
+Consequently, no non-zero element of $I$ can have degree strictly less than $\deg(m)$. This rules out the second alternative in \eqref{eq:rem-cond-cleared}:
+\[
+\deg(r') < \deg(m) \quad \text{is impossible for } r' \neq 0.
+\]
+Thus, the remainder must vanish identically:
+\begin{equation}\label{eq:rprime-zero}
+r' = 0.
+\end{equation}
+
+\textbf{Deducing Divisibility via Primitive Divisor Lemma:}
+Substituting $r' = 0$ into \eqref{eq:cleared-div-f} gives:
+\begin{equation}\label{eq:bprime-f-eq-qprime-m}
+b' \cdot f = q' \cdot m.
+\end{equation}
+Factoring $m$ into its content and primitive part:
+\[
+m = C(m) \cdot m^*, \qquad \text{where } C(m) \in R \setminus \{0\} \text{ and } m^* \in R[x] \text{ is primitive}.
+\]
+Equation \eqref{eq:bprime-f-eq-qprime-m} becomes:
+\[
+b' \cdot f = \bigl(q' \cdot C(m)\bigr) \cdot m^* \implies m^* \mid b' \cdot f.
+\]
+Since $m^*$ is primitive and $b' \in R \setminus \{0\}$, the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}) implies:
+\begin{equation}\label{eq:mstar-divides-f}
+\boxed{m^* \mid f} \quad \text{in } R[x].
+\end{equation}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:28:09
+% topic: Gauss's Theorem: Divisibility of f by primitive part m* of minimal element m
+% board_state: eq:cleared-div-f, eq:rprime-zero, eq:bprime-f-eq-qprime-m, eq:mstar-divides-f
+% next_goal: Repeat division algorithm for p by m to deduce m* divides p
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:28:09 - 00:29:04]
+So, this proof is now going at about half the speed as I was going last time. Which I don't know is good or bad.
+
+You can also just watch the video at half the speed, I guess, or twice the speed, or whatever you want.
+
+What I'm telling you... more details of the argument \inlinemetanote{erases the lower left blackboard to prepare for repeating the argument with $p$}.
+\end{speech}
+
+\begin{speech}[00:29:04 - 00:30:34]
+All right, so, we did this whole board with the division algorithm, we divided $f$ by $m$. So, do the whole board again, so, repeat for $p$ divided by $m$ \inlinemetanote{writes: Repeat for $p$ divided by $m$:}.
+
+So, what happened there? So, we take now $p$ here, and now we have some different quotients. They're double hats because we've already used one hat: $\hat{\hat{q}} m + \hat{\hat{r}}$ \inlinemetanote{writes: $p = \hat{\hat{q}} m + \hat{\hat{r}}$}. And again, these two are in the polynomial ring with coefficients in the field, just as they were there \inlinemetanote{writes: $\hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$}. We just do the same division algorithm.
+
+And now we clear, just as before: clear denominators \inlinemetanote{writes: Clear denoms:}.
+
+And the conclusion is we get $b'' p = q'' m + r''$ \inlinemetanote{writes: $b'' p = q'' m + r''$}, where now, all the same conclusions: $0 \neq b'' \in R$, and $q'', r''$ are here, okay? \inlinemetanote{writes: $0 \neq b'' \in R$, $q'', r'' \in R[x]$}
+\end{speech}
+
+\begin{content}[Division of $p$ by $m$ and Clearing Denominators]
+We now replicate the identical division and clearing procedure for the irreducible polynomial $p$ in place of $f$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Euclidean Division in $Q[x]$:}
+    Dividing $p$ by $m$ in $Q[x]$ yields:
+    \begin{equation}\label{eq:div-p-m-Qx}
+    p = \hat{\hat{q}} \cdot m + \hat{\hat{r}}, \qquad \hat{\hat{q}}, \hat{\hat{r}} \in Q[x],
+    \end{equation}
+    with:
+    \begin{equation}\label{eq:rem-cond-p}
+    \hat{\hat{r}} = 0 \quad \text{or} \quad \deg(\hat{\hat{r}}) < \deg(m).
+    \end{equation}
+    \item \textbf{Clearing Denominators:}
+    Clearing denominators by multiplying through by a suitable non-zero scalar $b'' \in R \setminus \{0\}$:
+    \begin{equation}\label{eq:cleared-div-p}
+    b'' \cdot p = q'' \cdot m + r'',
+    \end{equation}
+    where:
+    \begin{equation}\label{eq:cleared-coeffs-p}
+    b'' \in R \setminus \{0\}, \qquad q'' := b'' \hat{\hat{q}} \in R[x], \qquad r'' := b'' \hat{\hat{r}} \in R[x].
+    \end{equation}
+\end{enumerate}
+\end{content}
+
+\begin{speech}[00:30:34 - 00:31:52]
+So, here I just do just the same thing I did upstairs, I just do it with $p$ instead of $f$. And I reach the same conclusion, of course with different possible coefficients.
+
+But then, again, the next step was we notice that $m$ is in $I$, and $p$ is in $I$ \inlinemetanote{writes: $m \in I, p \in I$}. Because $p$ is also born inside $I$ --- remind you $I$ is $(f, p)$ \inlinemetanote{writes: $I = (f, p)$ above}.
+
+And so, the same conclusion holds, that $r''$ is in $I$ \inlinemetanote{writes: $\implies r'' \in I$}, and as a consequence $r''$ must be zero by the same logic \inlinemetanote{writes: $\implies r'' = 0$}.
+
+So, we get the equation... conclude, just as above --- in fact this whole board is just writing that whole argument again --- is that $b'' p = q'' m$ \inlinemetanote{writes: Conclude: $b'' p = q'' m$}.
+
+Okay?
+
+So, we conclude here that this $m^*$ has to divide $p$, for the same reason that this $m^*$ divides $f$, because $m$... we can write it further, the next step if you want, but it's the same thing: $q'' C(m) m^*$ \inlinemetanote{writes: $b'' p = q'' C(m) m^*$}; this is primitive \inlinemetanote{underlines $m^*$}, it divides the product, so, it must divide, all right? \inlinemetanote{writes: $m^* \mid p$ and frames it in a box}
+
+So, it's just the same. It's not surprising the conclusion is the same because the steps are the same.
+\end{speech}
+
+\begin{content}[Vanishing of $r''$ and Divisibility of $p$]
+Since $p \in I$ and $m \in I$, the remainder:
+\[
+r'' = b'' \cdot p - q'' \cdot m
+\]
+belongs to $I$. By the minimality of $\deg(m)$, we cannot have $\deg(r'') < \deg(m)$ for any non-zero element of $I$. Hence:
+\begin{equation}\label{eq:rdoubleprime-zero}
+r'' = 0.
+\end{equation}
+Substituting $r'' = 0$ into \eqref{eq:cleared-div-p}:
+\begin{equation}\label{eq:bdoubleprime-p-eq-qdoubleprime-m}
+b'' \cdot p = q'' \cdot m = \bigl(q'' \cdot C(m)\bigr) \cdot m^*.
+\end{equation}
+Because $m^*$ is primitive and $b'' \in R \setminus \{0\}$, the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}) implies:
+\begin{equation}\label{eq:mstar-divides-p}
+\boxed{m^* \mid p} \quad \text{in } R[x].
+\end{equation}
+\end{content}
+
+\begin{speech}[00:31:52 - 00:33:44]
+All right, so, what does this mean? This means $p$ is equal to $m^*$ times something \inlinemetanote{writes: $p = m^* \cdot B$}. That's what $m^* \mid p$ means: $p = m^*$ times something.
+
+So, now we have to use the irreducibility. All right?
+
+So, since $p$ is irreducible \inlinemetanote{writes: $p$ is irred.}, this implies one of these: so, either $m^*$ is a unit or $B$ is a unit \inlinemetanote{writes: $\implies \begin{cases} m^* \text{ unit} \in R[x] \\ B \text{ unit} \in R[x] \end{cases}$}. Since it's irreducible, you have to use it's irreducible now. So, one of these is true.
+
+And the claim is... this is impossible \inlinemetanote{crosses out the second branch $B \text{ unit}$ with an $X$}. Because if $B$ were a unit, then $p$ would be $m^*$ up to a unit. But $m^*$ divides $f$, so, if this were true, then $p$ would divide $f$ \inlinemetanote{writes: $p \mid f$}. That would mean $f$ is in the ideal generated by $p$ \inlinemetanote{writes: $f \in (p)$}.
+
+But our hypothesis is exactly $f$ is not in the ideal generated by $p$. This contradicts that hypothesis \inlinemetanote{writes: contradiction, lightning symbol}.
+
+Okay?
+
+So, here's where we start using the hypotheses. So, irreducible means we have this dichotomy, and then if we go on the second branch, $B$ is a unit, we get a contradiction. It contradicts that... so, one of the hypotheses, if you remember, assumption on that board was that $f$ is not in $(p)$ \inlinemetanote{writes: Assumption: $f \notin (p)$ on the right}. That was one of our assumptions. But if we go on this branch, we get $f$ is in $(p)$.
+
+So, it has to be that $m^*$ is a unit, okay? \inlinemetanote{ticks the branch $m^* \text{ unit} \in R[x]$}
+\end{speech}
+
+\begin{content}[Irreducibility of $p$ and Unit Property of $m^*$]
+From \eqref{eq:mstar-divides-p}, there exists a polynomial $B \in R[x]$ such that:
+\begin{equation}\label{eq:p-eq-mstar-B}
+p = m^* \cdot B.
+\end{equation}
+Since $p$ is assumed to be irreducible in $R[x]$ (\cref{def:irreducible-element}), every factorization of $p$ must contain a unit. This yields a dichotomy:
+\[
+m^* \in R[x]^\times \quad \text{or} \quad B \in R[x]^\times.
+\]
+
+\textbf{Exclusion of $B \in R[x]^\times$:}
+Suppose for contradiction that $B$ is a unit in $R[x]$:
+\[
+B \in R[x]^\times \implies m^* = B^{-1} \cdot p \implies p \sim m^*.
+\]
+Since $m^* \mid f$ from \eqref{eq:mstar-divides-f}, this would imply:
+\[
+p \mid f \implies f \in (p).
+\]
+However, this directly contradicts our foundational assumption \eqref{eq:assump-f-not-p} that $f \notin (p)$:
+\[
+f \in (p) \quad \text{contradicts} \quad f \notin (p). \quad \lightning
+\]
+Therefore, $B$ cannot be a unit. Consequently, the first branch must hold:
+\begin{equation}\label{eq:mstar-is-unit}
+m^* \in R[x]^\times.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:33:44 - 00:34:34]
+How can $m^*$ be a unit? $m^*$ is a polynomial. The only way it can be a unit is if it's a constant.
+
+So, this implies... that's the conclusion we were seeking.
+
+Conclusion: $m^*$ is in $R$ \inlinemetanote{writes: Conclude: $m^* \in R \implies m \in R$}. The only way you can be a unit in a polynomial ring over an integral domain is if you're a constant, right?
+
+And this implies that $m$ was actually in $R$ too, because they differ just by the content \inlinemetanote{writes: $m \in R$}.
+
+That's what I said with the goal here. So, after all this work, we selected this $m$ to be an element in the ideal of lowest degree, and we concluded that it has to be in $R$.
+
+So, we're almost done now.
+\end{speech}
+
+\begin{content}[Attainment of the Sub-Goal: $m \in R$]
+Since $R$ is an integral domain, the units of the polynomial ring $R[x]$ are strictly the units of the base ring:
+\[
+(R[x])^\times = R^\times.
+\]
+Therefore, \eqref{eq:mstar-is-unit} implies:
+\[
+m^* \in R^\times \subset R.
+\]
+Since $m = C(m) \cdot m^*$ and $C(m) \in R$, we obtain:
+\begin{equation}\label{eq:m-in-R-established}
+\boxed{m \in R \setminus \{0\}} \quad (\text{i.e., } \deg(m) = 0).
+\end{equation}
+This successfully proves our sub-goal \eqref{eq:subgoal-m-in-R}.
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:34:34
+% topic: Sub-goal achieved: m is in R; preparing final step to show g is in (p)
+% board_state: eq:mstar-divides-f, eq:mstar-divides-p, eq:mstar-is-unit, eq:m-in-R-established
+% next_goal: Multiply m = Af + Bp by g and prove p divides g using primitiveness of p
+% open_loops: none
+\end{hidden}
+
+\begin{note}[Blackboard Transition]
+The lecturer erases the lower middle blackboard to prepare for the final steps of the proof of Gauss's Theorem.
+\end{note}
+
+\begin{speech}[00:34:34 - 00:36:24]
+\inlinemetanote{erases the middle lower board}
+
+Okay, so, we have $m$ is in the ideal \inlinemetanote{writes: $m \in I$}. This is the ideal generated by $f$ and $p$ \inlinemetanote{writes: $I = (f, p)$}. So, this means we have $m = A f + B p$ \inlinemetanote{writes: $m = A f + B p$}, where everything here, $m, A, f, B, p$, are in the ring \inlinemetanote{writes: $m, A, f, B, p \in R[x]$}.
+
+Okay? So, this is just because it's an ideal generated by them.
+
+But now we know something more: we've proved that... we also know that this is in $R$ \inlinemetanote{underlines $m$ and writes $0 \neq m \in R$ on the left}. This is a scalar. This $m$ is in $R$, it's a non-zero element of $R$, okay?
+
+So, we have to get $g$ in the picture. The whole goal is to prove $g$ is in the ideal generated by $p$, and we haven't seen $g$ at all. So, how are we going to get $g$ in this picture? This is a trick we've used many, many times.
+\end{speech}
+
+\begin{student}[Student Answer]
+Multiply by $g$.
+\end{student}
+
+\begin{speech}[00:36:24 - 00:37:08]
+Yeah, multiply by $g$, exactly. We've used this many times. Multiply by $g$.
+
+\inlinemetanote{writes: $m g = A f g + B g p$}
+
+Okay? And this is our non... not equal to zero...
+
+Okay. Now we know this is in the ideal generated by $p$ \inlinemetanote{points at $A f g$ and writes $(p)$ underneath}. That was one of our assumptions: $f g$ is in the ideal generated by $p$. So, this term is in the ideal generated by $p$.
+
+This term is in the ideal generated by $p$ \inlinemetanote{underlines $B g p$}.
+
+So, this means that $p$ divides $m \cdot g$ \inlinemetanote{writes: $p \mid m g$}, where $m$ is a non-zero scalar \inlinemetanote{writes: $m \neq 0, m \in R$}.
+
+Okay?
+\end{speech}
+
+\begin{content}[Expressing $m$ in the Ideal and Introducing $g$]
+Since $m \in I = (f, p)$, there exist polynomials $A, B \in R[x]$ such that:
+\begin{equation}\label{eq:m-linear-comb}
+m = A \cdot f + B \cdot p, \qquad A, B \in R[x].
+\end{equation}
+By \eqref{eq:m-in-R-established}, $m$ is a non-zero scalar: $m \in R \setminus \{0\}$.
+
+Multiplying both sides of \eqref{eq:m-linear-comb} by the target polynomial $g$:
+\begin{equation}\label{eq:mg-expanded}
+m \cdot g = A \cdot (f \cdot g) + B \cdot g \cdot p.
+\end{equation}
+We analyze both terms on the right-hand side:
+\begin{itemize}
+    \item $A \cdot (f \cdot g) \in (p)$ because $f \cdot g \in (p)$ by assumption \eqref{eq:assump-fg}.
+    \item $B \cdot g \cdot p \in (p)$ because it is an explicit multiple of $p$.
+\end{itemize}
+Since $(p)$ is an ideal, the sum lies in $(p)$:
+\[
+m \cdot g \in (p) \iff p \mid m \cdot g \quad \text{in } R[x], \quad \text{with } m \in R \setminus \{0\}.
+\]
+\end{content}
+
+\begin{speech}[00:37:08 - 00:39:19]
+So, now the last thing is: what is the assumption on $p$? $p$ is irreducible \inlinemetanote{writes: $p \text{ is irred.}$}.
+
+If we knew $p$ were primitive, we'd be done.
+
+If $p$ were primitive \inlinemetanote{writes: If $p$ were primitive}, then we could use the principle that primitive $p$ divides $m \cdot g$, $m$ not equal to zero, primitive... \inlinemetanote{writes: $p \mid m g, m \neq 0, p \text{ prim.} \implies p \mid g \implies g \in (p)$ and checks it \checkmark} we use this principle: it implies $p$ divides $g$, and so $g$ is in $(p)$ and we're done.
+
+So, all we need to show is: we must show that $p$ irreducible, and now we use the assumption the degree of $p$ is positive, implies $p$ is primitive \inlinemetanote{writes: We must show: $p \text{ irred.}, \deg(p) > 0 \implies p \text{ is primitive}$}.
+
+Okay? That's the last step. The last step in this intricate argument: $p$ irreducible, degree positive, it's primitive.
+
+So, we factor $p$ as the content of $p$ times $p^*$ \inlinemetanote{writes: $p = C(p) \cdot p^*$}, all right? That's the content factorization of $p$.
+
+The fact that $p$ is irreducible, one of these two must be units: $p$ irreducible implies either $C(p)$ or $p^*$ is a unit \inlinemetanote{writes: $p \text{ irred.} \implies \text{either } C(p) \text{ or } p^* \text{ is a unit}$}. That's what it means to be irreducible: one of these two is a unit.
+
+This thing cannot be a unit \inlinemetanote{circles $p^*$}. Why is that? Because it has the same degree as $p$, which is positive, and positive degree things are not units \inlinemetanote{writes: $\deg(p^*) = \deg(p) > 0 \implies \text{cannot be unit}$}.
+
+So, this thing has to be a unit \inlinemetanote{circles $C(p)$}. So, this cannot be a unit, because it's positive degree, so, that has to be a unit \inlinemetanote{writes: $C(p) \text{ unit}$}. And that means that $p$ is primitive \inlinemetanote{writes: $\implies p \text{ is primitive}$}.
+
+So, we used that at the very last stage, we used the hypothesis the degree is greater than zero.
+
+And that's the end of the proof.
+\end{speech}
+
+\begin{content}[Primitiveness of $p$ and Conclusion of Gauss's Theorem]
+To deduce $p \mid g$ from $p \mid m \cdot g$ via the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}), we must establish that $p$ is primitive.
+
+\textbf{Claim:} If $p \in R[x]$ is irreducible and $\deg(p) > 0$, then $p$ is primitive.
+\begin{proof}[Proof of Claim]
+Factor $p$ into its content and primitive part:
+\[
+p = C(p) \cdot p^*, \qquad C(p) \in R, \quad C(p^*) = 1.
+\]
+Since $p$ is irreducible in $R[x]$:
+\[
+C(p) \in R[x]^\times \quad \text{or} \quad p^* \in R[x]^\times.
+\]
+Since $C(p)$ is a constant scalar, $\deg(p^*) = \deg(p) > 0$. Any element of positive degree in $R[x]$ cannot be a unit (units in $R[x]$ must have degree $0$). Thus:
+\[
+p^* \notin R[x]^\times.
+\]
+Therefore, $C(p)$ must be a unit in $R$:
+\[
+C(p) \in R^\times.
+\]
+By definition (\cref{def:content-primitive}), this means that $p$ is primitive:
+\[
+C(p) = 1 \quad (\text{up to units}).
+\]
+\end{proof}
+
+\textbf{Final Conclusion of the Proof:}
+Since $p$ is primitive, $m \in R \setminus \{0\}$, and $p \mid m \cdot g$, the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}) implies:
+\[
+p \mid g \implies g \in (p).
+\]
+This completes Case 2, establishing that $(p)$ is prime whenever $p$ is irreducible. Consequently, by \cref{prop:irred-implies-prime-uniqueness}, uniqueness of factorization holds, and Gauss's Theorem (\cref{thm:gauss-polynomial-ufd}) is proven.
+\end{content}
+
+\end{proofWrapper}
+
+\begin{hidden}
+% timestamp: 00:39:19
+% topic: Gauss's Theorem completed; concluding ring theory; transitioning to pedagogical reflections
+% board_state: thm:gauss-polynomial-ufd (proven)
+% next_goal: Clean board, discuss learning philosophy (Schopenhauer, Confucius), and introduce groups
+% open_loops: none
+\end{hidden}
+
+\begin{note}[Blackboard Transition: Concluding Ring Theory]
+The lecturer concludes the proof of Gauss's Theorem and thoroughly washes the entire blackboard with a sponge, marking the end of the formal development of ring theory in the course.
+\end{note}
+
+\begin{speech}[00:39:19 - 00:40:39]
+So, that's the whole argument.
+
+And, as I said, it has a certain intricacy. It uses most of the things we've discussed about rings. Yeah.
+
+And that, unfortunately, is the last result about rings in this class.
+
+That's not really true, there's a little bit at the end, but as far as the development of the theory of rings, we are finished. So, you can bid a tearful goodbye to rings now.
+
+\inlinemetanote{washes the entire blackboard with a sponge}
+\end{speech}
+
+\section{Reflections on Ring Theory and Mathematical Learning}
+
+\subsection{The Triad of Definitions, Theorems, and Examples}
+
+\begin{speech}[00:40:39 - 00:41:34]
+Yeah, so the next topic is groups, but I want to say a few things because people asked me some questions, and they're good questions.
+
+Like the first question is: how are you supposed to study this material? That's a really good question.
+
+Another question is: how did I learn the material? That's not such a good question, it's not so relevant, but...
+
+Maybe a deeper question which goes to the heart of the matter is: you know, what are we doing here? That's a really good question.
+
+And, you know, if you're studying you should take some time to think about these questions. There's different ways. So, maybe I try to answer these questions in different... I have a few minutes, but maybe it's worth giving a few...
+
+So, the first question about how to study the material: you can say, what have I taught in this class about rings? And then you can say there's kind of three things:
+
+One is definitions, and as I've said many, many times, those are incredibly important. It's what makes all these proofs work perfectly. And they're not tautological. In the end we prove some actual non-trivial results, but the definitions are... there's a lot of mathematical insight and knowledge in the definition. So, I would say, study the definitions.
+
+Then there's theorems, and then there's examples \inlinemetanote{writes: \qt{Def.}, \qt{Thrm}, \qt{Examples} in circles on the board and connects them}.
+
+So, these are like the three things you should really kind of try to understand. I don't know how to say more than that, but they are somehow equal weights in the class.
+
+If you understand the definitions... these definitions and the objects are like chess pieces, and each of them have certain moves, and the theorems involve playing out those moves. So, if you understand this, you'll understand that also.
+
+That's like at the lowest level.
+\end{speech}
+
+\begin{content}
+\definecolor{figBlue}{HTML}{076090} % RGB (7, 96, 144): petrol blue (MidnightBlue)
+\definecolor{figGreen}{HTML}{3D8252} % RGB (61, 130, 82): dark green (ForestGreen!70!black)
+\definecolor{figOrange}{HTML}{CB7E2B} % RGB (203, 126, 43): ochre orange (BurntOrange!80!black)
+\definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
+
+\begin{hidden}
+- Canvas: no scale, cm; x in [-3.5, 3.5], y in [-1.5, 1.8]
+- Order: (1) connecting lines; (2) node shapes with light fills; (3) text last
+- Coordinates:
+  Node 'Def.': (0, 1.0)
+  Node 'Examples': (-2.0, -0.6)
+  Node 'Thrm': (2.0, -0.6)
+- Sizes:
+  'Def.': ellipse radii 0.9cm and 0.45cm
+  'Examples': ellipse radii 1.2cm and 0.45cm
+  'Thrm': ellipse radii 0.9cm and 0.45cm
+- Lines:
+  Connecting line between Def and Examples: from (0, 1.0) to (-2.0, -0.6)
+  Connecting line between Def and Thrm: from (0, 1.0) to (2.0, -0.6)
+  Connecting line between Examples and Thrm: from (-2.0, -0.6) to (2.0, -0.6)
+- Collisions: ample margins between ellipses; distance between Def and Examples is sqrt(2.0^2 + 1.6^2) = 2.56cm;
+  distance between Examples and Thrm is 4.0cm; no overlaps possible.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth]
+    % (1) Connecting edges
+    \draw[thick, figGray] (0, 1.0) -- (-2.0, -0.6);
+    \draw[thick, figGray] (0, 1.0) -- (2.0, -0.6);
+    \draw[thick, figGray] (-2.0, -0.6) -- (2.0, -0.6);
+
+    % (2) Node shapes
+    \filldraw[thick, draw=figBlue, fill=figBlue!10] (0, 1.0) ellipse (0.9cm and 0.45cm);
+    \filldraw[thick, draw=figGreen, fill=figGreen!10] (-2.0, -0.6) ellipse (1.2cm and 0.45cm);
+    \filldraw[thick, draw=figOrange, fill=figOrange!10] (2.0, -0.6) ellipse (0.9cm and 0.45cm);
+
+    % (3) Node texts
+    \node[figBlue, font=\bfseries] at (0, 1.0) {Def.};
+    \node[figGreen, font=\bfseries] at (-2.0, -0.6) {Examples};
+    \node[figOrange, font=\bfseries] at (2.0, -0.6) {Thrm};
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[The Pedagogical Triad of Algebra]
+The lecturer frames mathematical mastery as balancing three equally weighted pillars:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Definitions (The Chess Pieces):} Definitions are not mere conventions or tautologies; they condense deep mathematical insight and define the \qt{rules of the game} and allowed moves.
+    \item \textbf{Theorems (The Gameplay):} Theorems represent the execution of mathematical possibilities, playing out the logical consequences of the definitions.
+    \item \textbf{Examples (The Intuition):} Concrete instances ground abstract definitions and test the boundaries of theorems.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\subsection{Philosophical Perspectives on Learning and Education}
+
+\begin{speech}[00:41:34 - 00:43:02]
+But this question about what are we doing here, that's an interesting question.
+
+And many people have written about it. It's been, you know, $2000$ years of intellectual history about that, and you can go look at it.
+
+So, one thing that I recommend my students read is an essay by Schopenhauer, which is called \qt{On Thinking for Yourself}, which I like a lot. He's a very dense, repetitive author. So, you can read just half the essay, the short essay --- the German is \qt{Selbstdenken}. It's a nice essay. Most of the students don't like it after they read it. But anyway, it's a really good essay, it's kind of about this topic.
+
+And, you know, all the greats have written about it. If you read the past... I mean, there's a lot of things to say, I could give a whole lecture, but...
+
+If you read Plato, in his Republic he talks about what education is about. Socrates, he didn't write, but there's a lot of stuff there.
+
+The one sentence which I like the best is Confucius. And you think: is he going to quote Confucius in this class? But I will quote, it's I think the statement that best captures what we do: Confucius wrote about teaching. He says that --- so, roughly speaking is: The truth has four corners. As a teacher I can show you one; the other three are for the student to discover themselves.
+
+That's what we're doing here. Okay. That's it.
+\end{speech}
+
+\begin{insight}[Confucius and the Four Corners of Truth]
+The lecturer quotes Confucius (\emph{Analects} VII.8) on the pedagogy of higher mathematics:
+\begin{quote}
+\qt{The truth has four corners. As a teacher I can show you one; the other three are for the student to discover themselves.}
+\end{quote}
+In advanced pure mathematics, lectures provide the rigorous scaffolding (the definitions and foundational theorems), but genuine mathematical understanding requires independent mental struggle---filling in intermediate steps, exploring examples, and reconstructing proofs without aid.
+\end{insight}
+
+\subsection{Retrospective: The Role of the Hypothesis \texorpdfstring{$\deg(p) > 0$}{deg(p) > 0}}
+
+\begin{speech}[00:43:02 - 00:44:09]
+Okay, so, there were some questions about the proof. The question roughly speaking was: in that whole hour I was assuming the degree of $p$ is positive \inlinemetanote{writes: $\deg(p) > 0$ on the left board}, where do I use it?
+
+And it was just... it's like a player who sits on the bench for the whole game. But at the end, we use this: $p$ irreducible, degree of $p$ positive implies $p$ primitive \inlinemetanote{writes: $p \text{ irred.}, \deg(p) > 0 \implies p \text{ primitive}$}.
+
+That was all we needed at the last moment. So, this player just sits on the bench, and at the last moment scores the winning goal. That's the only time it's used, at the end.
+
+You can look at the argument, but it's the only time it's used.
+
+Yeah, so, if anyone reads Schopenhauer, you should tell me.
+
+Finally, the question about: how did I learn it? The answer is: at a certain point in my life, I studied very hard. That's how you learn it. That's the only way.
+
+So, that's not very helpful, I think.
+
+Okay, so, now we switch to groups.
+\end{speech}
+
+\begin{content}
+\begin{remark}[The \qt{Player on the Bench} Hypothesis]\label[remark]{rem:role-of-deg-p-positive}
+Throughout the extensive division and clearing arguments of Case 2, the assumption $\deg(p) > 0$ was never invoked until the very final step:
+\[
+p = C(p) \cdot p^* \quad \text{with } p \text{ irreducible}.
+\]
+Because $\deg(p) > 0$, the primitive part $p^*$ has $\deg(p^*) = \deg(p) > 0$, which prevents $p^*$ from being an invertible constant unit in $R[x]^\times = R^\times$. This forced $C(p) \in R^\times$, proving that $p$ is primitive. As the lecturer notes, this hypothesis acts like a soccer player who sits on the bench for the entire match only to score the decisive goal in the final minute.
+\end{remark}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:44:09
+% topic: Concluding philosophical remarks; starting Group Theory
+% board_state: rem:role-of-deg-p-positive
+% next_goal: Define a group (G, \cdot, e) and state the group axioms
+% open_loops: none
+\end{hidden}
+
+\section{Introduction to Group Theory}
+
+\subsection{Definition and Axioms of a Group}
+
+\begin{speech}[00:44:09 - 00:45:55]
+And we've already seen the definition, so, I don't really say so much about it. A group is... the definition: so, first groups, that's the topic now \inlinemetanote{writes: \qt{Groups}, \qt{Def.}}. So, $G$ with a binary operation and a neutral element is a group \inlinemetanote{writes: $(G, \cdot, e) \text{ is a group}$}.
+
+So, here we have associativity, the unit property, and the existence of inverse \inlinemetanote{writes: Associativity, Unit property, Existence of inv.}.
+
+So, we've seen all of this; I'm not going to say so much about it except mostly about notation.
+
+Associativity... they're all interesting and they're worth thinking about again now, because I defined all of this maybe at the beginning of the semester, and you've probably seen the definition of a group even before.
+
+So, associativity is something that says that if I do the binary operation in two different ways, it's the same \inlinemetanote{writes: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$}.
+
+We haven't said anything about associativity also for rings, and maybe I'll say in a moment, I'll say more.
+
+The unit property says that there exists a unit such that $e \cdot x = x \cdot e = x$ for all $x$ in the group \inlinemetanote{writes: $\exists e \text{ s.t. } e \cdot x = x \cdot e = x \quad \forall x \in G$}.
+
+And existence of inverse says that for all $x$ in the group, there exists $y$ such that $xy = yx = e$, the unit \inlinemetanote{writes: $\forall x \in G, \exists y \text{ s.t. } x y = y x = e$}.
+
+And there are many things to say and I leave this to you. You can say that the unit is unique \inlinemetanote{writes: \qt{[unit is unique]}}.
+\end{speech}
+
+\begin{speech}[00:45:55 - 00:46:04]
+I will say one thing here because... \inlinemetanote{writes: \qt{[inverse is unique]}} unique...
+\end{speech}
+
+\begin{content}
+\begin{definition}[Group]\label[definition]{def:group-w7tue}
+A \newterm{group} is a triple $(G, \cdot, e)$, where $G$ is a set, $\cdot \colon G \times G \to G$ is a binary operation (often written $x \cdot y$ or $x y$), and $e \in G$ is a distinguished neutral element, satisfying the following axioms:
+\begin{enumerate}[label=\textbf{(G\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Associativity:} For all $x, y, z \in G$:
+    \begin{equation}\label{eq:group-associativity}
+    (x \cdot y) \cdot z = x \cdot (y \cdot z).
+    \end{equation}
+    \item \textbf{Identity / Unit Property:} The element $e \in G$ satisfies:
+    \begin{equation}\label{eq:group-identity}
+    e \cdot x = x \cdot e = x \quad \forall x \in G.
+    \end{equation}
+    Furthermore, the neutral element $e$ is uniquely determined.
+    \item \textbf{Existence of Inverses:} For every $x \in G$, there exists an element $y \in G$ such that:
+    \begin{equation}\label{eq:group-inverse}
+    x \cdot y = y \cdot x = e.
+    \end{equation}
+    Furthermore, for each $x \in G$, the inverse element $y$ is uniquely determined (commonly denoted $x^{-1}$).
+\end{enumerate}
+\end{definition}
+
+\begin{steps}[Uniqueness of Identity and Inverses]
+While the axioms only demand the existence of an identity and inverses, their uniqueness follows directly from associativity:
+\begin{itemize}
+    \item \textbf{Uniqueness of $e$:} If $e$ and $e'$ are both identities, then $e = e \cdot e' = e'$.
+    \item \textbf{Uniqueness of Inverse:} If $y$ and $y'$ are both inverses of $x$, then $y = y \cdot e = y \cdot (x \cdot y') = (y \cdot x) \cdot y' = e \cdot y' = y'$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Uniqueness of Identity, Inverses, and Cancellation Laws}
+
+\begin{speech}[00:46:04 - 00:48:17]
+These proofs are all very simple.
+
+So, the idea is that if we have both... these are both units \inlinemetanote{writes: $(e, \hat{e} \text{ units})$ under unit is unique}, this is a simple proof: then just I take $e \cdot \hat{e}$ \inlinemetanote{writes: $e \cdot \hat{e}$}. Using the unit property of $e$, I get this is equal to $\hat{e}$ \inlinemetanote{writes: $= \hat{e}$}. And using the unit property of $\hat{e}$, I get this is equal to $e$ \inlinemetanote{writes: $= e$}. So, this shows the unit is unique.
+
+Something that we use a lot in groups is left and right cancellation \inlinemetanote{writes: \qt{Left/right cancellation:}}. This says that if I have an equation $xa = xb$ \inlinemetanote{writes: $x a = x b$}, then I can cancel $x$. This implies $a = b$ \inlinemetanote{writes: $\implies a = b$}. In a group you can always cancel.
+
+And the reason is because I take this equation $xa = xb$ and I multiply by the inverse of $x$. I can then use $y = x^{-1}$ \inlinemetanote{writes: $y = x^{-1}$}, and I act on this. So, I get $yxa = yxb$ \inlinemetanote{writes: $y x a = y x b$}. Then these are units \inlinemetanote{underlines $y x$ and writes $e$ underneath: $e a = e b$}, it's the neutral element, and this implies $a = b$ \inlinemetanote{writes: $\implies a = b$}. So, we'll use this all the time, also on the other side. That's the left and right cancellation property.
+
+The final thing is that... I'll say it here, I've said all these things before, but maybe just something... The inverse is unique \inlinemetanote{writes above: \qt{inv. of $x$ is unique:}}. That means if I have $xy = e$, and this also equals $x\hat{y}$ \inlinemetanote{writes: $x y = e = x \hat{y}$} --- so, $y$ and $\hat{y}$ are now two putative inverses --- then I get $xy = x\hat{y}$ \inlinemetanote{writes: $x y = x \hat{y}$}, and then I use the cancellation property \inlinemetanote{writes: $\implies y = \hat{y}$ by cancellation}.
+
+Okay, so, those are the really basic aspects of it.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Uniqueness of the Identity Element]\label[proposition]{prop:uniqueness-identity}
+In any group $(G, \cdot, e)$, the neutral element $e$ is uniquely determined.
+\end{proposition}
+
+\begin{proof}
+Let $e$ and $\hat{e}$ be two neutral elements in $G$. Consider the product $e \cdot \hat{e}$:
+\begin{itemize}
+    \item Applying the identity property of $e$ yields:
+    \[
+    e \cdot \hat{e} = \hat{e}.
+    \]
+    \item Applying the identity property of $\hat{e}$ yields:
+    \[
+    e \cdot \hat{e} = e.
+    \]
+\end{itemize}
+Combining both equalities gives $e = \hat{e}$.
+\end{proof}
+
+\begin{proposition}[Left and Right Cancellation Laws]\label[proposition]{prop:cancellation-laws}
+Let $(G, \cdot, e)$ be a group. For all elements $x, a, b \in G$:
+\begin{align}
+x a = x b &\implies a = b \qquad \text{(Left Cancellation)}, \label{eq:left-cancellation} \\
+a x = b x &\implies a = b \qquad \text{(Right Cancellation)}. \label{eq:right-cancellation}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Suppose $x a = x b$. By axiom \textbf{(G2)}, there exists an inverse $y := x^{-1} \in G$ satisfying $y x = e$. Multiplying on the left by $y$:
+\begin{align*}
+y (x a) &= y (x b) \\
+(y x) a &= (y x) b && \text{(by Associativity \textbf{(G0)})} \\
+e a &= e b && \text{(since } y x = e\text{)} \\
+a &= b && \text{(by Identity \textbf{(G1)})}.
+\end{align*}
+Right cancellation is verified analogously by multiplying on the right by $x^{-1}$.
+\end{proof}
+
+\begin{proposition}[Uniqueness of Inverses]\label[proposition]{prop:uniqueness-inverse-w7tue}
+For each element $x$ in a group $(G, \cdot, e)$, the inverse element is uniquely determined.
+\end{proposition}
+
+\begin{proof}
+Let $y$ and $\hat{y}$ be two inverses of $x$, so that $x y = e$ and $x \hat{y} = e$. Then:
+\[
+x y = x \hat{y}.
+\]
+Applying left cancellation (\cref{prop:cancellation-laws}) by $x$ immediately implies:
+\[
+y = \hat{y}.
+\]
+\end{proof}
+
+\begin{steps}[Alternative Proof of Inverse Uniqueness via Associativity]
+Without invoking cancellation as a standalone lemma, uniqueness of the inverse follows directly from associativity:
+\[
+y = y \cdot e = y \cdot (x \cdot \hat{y}) = (y \cdot x) \cdot \hat{y} = e \cdot \hat{y} = \hat{y}.
+\]
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:48:17
+% topic: Group axioms, uniqueness of identity/inverse, cancellation laws proven
+% board_state: def:group-w7tue, prop:uniqueness-identity, prop:cancellation-laws, prop:uniqueness-inverse
+% next_goal: Discuss contrast between ring theory and group theory (finite vs infinite, non-abelian)
+% open_loops: none
+\end{hidden}
+
+\subsection{Contrast: Finite and Non-Commutative Groups}
+
+\begin{speech}[00:48:17 - 00:49:46]
+So, about groups: in some sense, it's algebra, just like about rings. Rings have more structure.
+
+We were very much interested, because of the classical examples, primarily in rings that have infinite numbers of elements. Not exclusively, but primarily our classical examples.
+
+Our focus on groups will be primarily on groups with a finite number of elements. So, groups can have, of course, infinite numbers of elements.
+
+So, we will primarily be interested in groups with finite numbers of elements \inlinemetanote{writes on the lower left board: $\to \text{groups with finite numbers of elements}$}. So, that's a different perspective than our study of rings, where I would say we were primarily interested in rings that were infinite rings.
+
+And we will primarily be interested in groups that are not commutative \inlinemetanote{writes: $\to \text{groups which are not commutative}$}. That's another difference.
+\end{speech}
+
+\begin{content}[The Two Methodological Shifts in Group Theory]
+The transition from ring theory to group theory involves two fundamental shifts in mathematical focus:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Finiteness versus Infinitude:} Ring theory in this course was driven by infinite classical structures ($\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, polynomials $R[x]$, and formal power series $k[[x]]$). In contrast, the study of group theory will focus primarily on \newterm{finite groups}.
+    \item \textbf{Non-Commutativity (Non-Abelian Structures):} Rings were assumed to be commutative with unit ($1 \neq 0$). In group theory, the focus shifts decisively to \newterm{non-commutative} (non-abelian) groups, where the order of factors in a product cannot be altered.
+\end{enumerate}
+\end{content}
+
+\subsection{Notational Conventions and the Additive Group of a Ring}
+
+\begin{speech}[00:49:46 - 00:51:49]
+So, we have now for this period about groups to be extremely careful never to switch order. I was cavalier about that; I never cared about the order because our rings were commutative, but now when we apply the group operation, you have to be very careful about the order. You're not allowed to switch the order unless you have a special reason for it.
+
+Okay. And the examples, of course, the examples we've seen before: if you take $R$ is any ring \inlinemetanote{writes: $(R, +, \cdot, 0, 1)$}, that's a ring, then you can make a group \inlinemetanote{writes: $\implies (R, +, 0) \text{ is a group}$}. That was our definition of a ring: the additive structure is always a group. These are abelian groups, they're commutative groups, they won't be primarily what we're interested in, but that's a good solid example of a group.
+
+And you see here the notation for the group, it's a good point here: I said $G$ and dot is the standard for the operation in the group, and $e$ is standard for the neutral element \inlinemetanote{writes: $(G, \cdot, e)$}. The neutral element is also sometimes denoted by $1$ \inlinemetanote{writes: $1$ under $e$}, because the dot kind of suggests multiplication, and $1$ psychologically is helpful, I don't know. Sometimes people will write $1_G$ \inlinemetanote{writes: $1_G$}. These are just accepted terms when you use dot.
+
+But you can also name this anything you want. You could also name it plus \inlinemetanote{writes: $(G, +, 0)$ underneath}. If you name it plus, usually the neutral element is called $0$ \inlinemetanote{writes: $0$ under $e$}. But this is just a question about names. You can name this binary operation anything you want, and the neutral element anything you want. If you do too crazy choices, you'll confuse everybody, but these are kind of the standard. So, that's why when I write plus, it's $0$ as the neutral element.
+
+So, there's lots of examples here.
+\end{speech}
+
+\begin{content}
+\begin{example}[Additive Reduct of a Ring]\label[example]{ex:ring-additive-group}
+Let $(R, +, \cdot, 0, 1)$ be any ring. By the ring axioms, the additive structure $(R, +, 0)$ forms an abelian (commutative) group.
+\end{example}
+
+\begin{notation}[Multiplicative versus Additive Group Notation]\label[notation]{not:group-notation}
+Depending on the context, group operations adopt multiplicative or additive conventions:
+\begin{center}
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Convention} & \textbf{Operation} & \textbf{Identity Element} & \textbf{Inverse of $x$} \\
+\midrule
+\textbf{Multiplicative (Default)} & $x \cdot y$ or $x y$ & $e$, $1$, or $1_G$ & $x^{-1}$ \\
+\textbf{Additive (Abelian Only)} & $x + y$ & $0$ or $0_G$ & $-x$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Additive notation is strictly reserved for commutative groups. In general non-commutative groups, multiplicative notation is used exclusively, and the order of multiplication must be preserved: $x y \neq y x$ in general.
+\end{notation}
+\end{content}
+
+\section{The Symmetric Group and Associativity}
+
+\subsection{Generalized Associativity and Parenthesizations}
+
+\begin{speech}[00:51:49 - 00:53:39]
+The example that's more relevant for the way we think about groups, the interesting things we're going to prove about groups, is the symmetric group $S_n$, that's the permutation group \inlinemetanote{writes: $S_n = \text{permutation group on } n \text{ elements}$}. I'm going to review this; I think I mentioned this in passing. Permutation group on $n$ elements. And in some sense this is like the most interesting finite group; I will make that claim.
+
+And you should think about these... you know, I already presented the definitions earlier, but you should think about them. There's a lot of interesting things here which we don't think... like I didn't talk at all about this associativity property. And in some sense in your education, it's kind of late to talk about associativity, because you've been using operations which were associative since childhood, and not thinking about them.
+
+So, maybe we take a moment for like mathematical culture. If I have this product of four elements in the group \inlinemetanote{writes on the middle board: $x_1 \cdot x_2 \cdot x_3 \cdot x_4$}, we just write it like this, if you're multiplying numbers, etc. But what do you mean by this? Because you're only allowed to do two elements at a time.
+
+So, one thing you could mean is this: you do these two \inlinemetanote{writes: $(x_1 \cdot x_2)$}, get an answer, and do these two \inlinemetanote{writes: $(x_3 \cdot x_4)$}, get an answer, and that is equal to your answer \inlinemetanote{writes: $(x_1 \cdot x_2) \cdot (x_3 \cdot x_4)$}. That makes sense because I do these two at a time and those two at a time, right?
+
+Or I could do these two \inlinemetanote{writes: $(x_1 \cdot x_2)$}, and then I could do that one \inlinemetanote{writes: $((x_1 \cdot x_2) \cdot x_3)$}, and then I could send it to that one at the end \inlinemetanote{writes: $(((x_1 \cdot x_2) \cdot x_3) \cdot x_4)$}. That's a different way of doing it.
+\end{speech}
+
+\begin{content}[The Problem of Multi-Element Products and Parenthesizations]
+A binary operation $\cdot \colon G \times G \to G$ is defined strictly for pairs of elements. When writing a product of four elements:
+\[
+x_1 \cdot x_2 \cdot x_3 \cdot x_4,
+\]
+the expression is formally ambiguous unless brackets specify the sequential order of pairwise evaluations. For example, two valid bracketings are:
+\begin{align}
+\text{Tree evaluation by pairs:} &\quad (x_1 \cdot x_2) \cdot (x_3 \cdot x_4), \label{eq:bracket-pairs} \\
+\text{Iterative left-to-right evaluation:} &\quad \bigl((x_1 \cdot x_2) \cdot x_3\bigr) \cdot x_4. \label{eq:bracket-left}
+\end{align}
+\end{content}
+
+\subsection{Catalan Numbers and the Combinatorics of Bracketing}
+
+\begin{speech}[00:53:39 - 00:55:39]
+And the associativity axiom says that these two are the same, which you prove by induction. Which probably you've never done, or I don't know whether you've done it or not. Unless you're really deeply paranoid, you probably have never done that. But it might be fun to do it.
+
+And if you do it, you discover some beautiful things.
+
+So, this is now nothing to do with the class, but mathematical culture. You can ask: how many different ways can I put these brackets? \inlinemetanote{writes on the right board: \qt{How many ways can I put these brackets?}} Meaning if I have $x_1 \dots x_n$ \inlinemetanote{writes: $x_1 \dots x_n$}, I can group them, I can do this operation in many different ways. How many ways?
+
+And that has an extremely famous answer, which is part of math culture, which I am going to write. The hint to this is... I'm kind of really bad at languages, but anyway, it's... \inlinemetanote{writes on the board in Catalan words: \qt{u, u, dos, cinc, catorze, \dots}} maybe like that.
+
+Does anyone recognize these numbers?
+No one?
+Aren't there any Catalan speakers in this room? Does anyone speak Catalan?
+You speak Catalan? So, you'll not recognize if I got it right.
+Spanish, Spanish is close enough, but...
+You seriously don't recognize these numbers?
+
+Well, this was supposed to be a huge hint: $1, 1, 2, 5, 14$ \inlinemetanote{writes digits: $1, 1, 2, 5, 14$ underneath}.
+
+So, these are the Catalan numbers. That's actually Catalan, that's my attempt to write them in Catalan. They don't come from the language; there's a French mathematician named Catalan.
+\end{speech}
+
+\begin{speech}[00:55:39 - 00:57:49]
+The formula for this is $C_n = \frac{1}{n+1} \binom{2n}{n}$ \inlinemetanote{writes: $C_n = \frac{1}{n+1} \binom{2n}{n}$}, and these are some of the most famous numbers in mathematics. Which doesn't mean... they're some of the most famous numbers in mathematics, but they probably don't occur in any course, I don't know.
+
+So, that's the $n$-th Catalan number. It's a totally beautiful object. And if you solve this problem correctly, the number of ways to bracket $n$ things, this is equal to $C_{n-1}$ \inlinemetanote{writes: $C_{n-1}$ under $x_1 \dots x_n$}. It's the $(n-1)$-st Catalan number.
+
+Anyway. So, that's already just trying to unpack associativity, what it means. If you do it, and you follow your nose, eventually you get to the Catalan numbers.
+
+But have you seen the definition of Catalan numbers before?
+Yeah. That's a tragedy.
+
+Well, I don't think they occur in any class, I don't know. Maybe they do. Hard to say.
+You can't actually learn mathematics by going to class, that's the other problem.
+
+So, the number of ways you can do three things is $2$, and the number of ways you can do four things is $5$ \inlinemetanote{points at the equations for 4 elements}. That's what they are...
+
+\inlinemetanote{takes the sponge and cleans the middle and right boards completely}
+
+Okay, so, then there's other things that also follow from what I already explained. If I have a group... but let me just... so, if I have a group, another way to think about the operations: there's this binary operation, and we have the neutral element, and it's nice to think also about inverse being a map, inverse from the group to the group \inlinemetanote{writes on the lower left board: $G$, $\cdot \text{ binary}$, $e \in G$, $\text{inv} \colon G \to G, x \mapsto x^{-1}$}. Meaning if I have $x$, I have a unique inverse, $x$ inverse. So, that's a function from the group to a group: it takes an element to its inverse, right?
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Generalized Associativity Theorem]\label[theorem]{thm:generalized-associativity}
+Let $(G, \cdot, e)$ be a group. Any product $x_1 \cdot x_2 \dots x_n$ of $n \ge 3$ elements in a fixed order evaluates to the exact same element in $G$, regardless of the placement of parentheses.
+\end{theorem}
+
+\begin{steps}[Combinatorics of Parenthesizations via Catalan Numbers]
+Although the final product is independent of parentheses by \cref{thm:generalized-associativity}, the number of distinct formal ways to fully parenthesize a product of $n$ factors is given by the $(n-1)$-th \newterm{Catalan number}:
+\[
+\#(\text{Parenthesizations of } x_1 \dots x_n) = C_{n-1}.
+\]
+The Catalan numbers are defined by:
+\begin{equation}\label{eq:catalan-formula}
+C_n := \frac{1}{n+1} \binom{2n}{n} = \frac{(2n)!}{(n+1)! \, n!}.
+\end{equation}
+The first values are:
+\begin{center}
+\begin{tabular}{c c c c c c c}
+\toprule
+$n$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
+\midrule
+$C_n$ & $1$ & $1$ & $2$ & $5$ & $14$ & $42$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}
+    \item For $n = 3$ elements ($x_1 x_2 x_3$), there are $C_2 = 2$ bracketings:
+    \[
+    (x_1 x_2) x_3 \quad \text{and} \quad x_1 (x_2 x_3).
+    \]
+    \item For $n = 4$ elements ($x_1 x_2 x_3 x_4$), there are $C_3 = 5$ bracketings:
+    \[
+    \bigl((x_1 x_2) x_3\bigr) x_4, \quad \bigl(x_1 (x_2 x_3)\bigr) x_4, \quad (x_1 x_2)(x_3 x_4), \quad x_1 \bigl((x_2 x_3) x_4\bigr), \quad x_1 \bigl(x_2 (x_3 x_4)\bigr).
+    \]
+\end{itemize}
+\end{steps}
+
+\begin{definition}[Inversion as a Unary Operation]\label[definition]{def:inversion-map}
+In addition to the binary operation $\cdot \colon G \times G \to G$ and the nullary constant $e \in G$, a group is equipped with a canonical unary \newterm{inversion map}:
+\begin{equation}\label{eq:inversion-map}
+\operatorname{inv} \colon G \to G, \quad x \mapsto x^{-1}.
+\end{equation}
+\end{definition}
+\end{content}
+
+\begin{aiNote}[Beyond the Lecture: Catalan Numbers and Eugène Charles Catalan]
+% [PERSISTENT, ADDITION]
+The Catalan numbers are named after the Belgian/French mathematician Eugène Charles Catalan (1814--1894). In combinatorics, $C_n$ also counts the number of Dyck paths of length $2n$, rooted binary trees with $n$ internal vertices, and triangulations of a convex polygon with $n+2$ vertices.
+\end{aiNote}
+
+\begin{hidden}
+% timestamp: 00:57:49
+% topic: Associativity and Catalan numbers concluded; board cleaned; beginning Subgroups and Homomorphisms
+% board_state: thm:generalized-associativity, def:inversion-map
+% next_goal: Define subgroups S <= G and group homomorphisms
+% open_loops: none
+\end{hidden}
+
+\section{Subgroups and Group Homomorphisms}
+
+\subsection{Definition of a Subgroup}
+
+\begin{speech}[00:57:49 - 00:59:44]
+And so, there's a notion of a subgroup \inlinemetanote{writes: Subgroup: $S \subset G$}. So, it's a subset, and it should be closed under the operation, meaning if I take two elements of the subset and I use the group operation, I stay in it \inlinemetanote{writes: $\cdot \colon S \times S \to S$}. It should contain the neutral element, so, this should be $S \times S \to S$, and the neutral element should be in $S$ \inlinemetanote{writes: $e \in S$}. And one more thing is $S$ should have inverses: that inverse maps $S$ to $S$ \inlinemetanote{writes: $\text{inv} \colon S \to S$}. So, every element in $S$ has its inverse in $S$. That's what a subgroup is. Okay?
+
+And we have a notion of group homomorphisms \inlinemetanote{writes on the middle board: Homs:}. If $(G_1, \cdot, e_1)$ and $(G_2, \cdot, e_2)$ are groups \inlinemetanote{writes: $(G_1, \cdot, e_1), (G_2, \cdot, e_2) \text{ are groups}$}, then $f$ from $G_1$ to $G_2$ \inlinemetanote{writes: $f \colon G_1 \to G_2$} is --- this is a definition --- is a group homomorphism \inlinemetanote{writes: \qt{is a group hom.}} (when I underline things I always mean definition), is a group homomorphism if $f(xy) = f(x) f(y)$ \inlinemetanote{writes: if $f(x y) = f(x) f(y)$}. So, here I use the group operation on $G_1$, and here I use the group operation on $G_2$ \inlinemetanote{underlines the operations in $G_1$ and $G_2$}.
+
+So, that's the whole definition, just this condition. So, you could wonder: what happens to the neutral element?
+\end{speech}
+
+\begin{content}
+\begin{definition}[Subgroup]\label[definition]{def:subgroup-w7tue}
+Let $(G, \cdot, e)$ be a group. A subset $S \subseteq G$ is called a \newterm{subgroup} of $G$ (denoted $S \le G$) if it satisfies the following three conditions:
+\begin{enumerate}[label=\textbf{(S\arabic*)}]
+    \setcounter{enumi}{0}
+    \item \textbf{Closure under Multiplication:} For all $x, y \in S$, the product lies in $S$:
+    \[
+    \cdot \colon S \times S \to S \quad (\text{i.e., } x, y \in S \implies x \cdot y \in S).
+    \]
+    \item \textbf{Identity Containment:} The neutral element belongs to $S$:
+    \[
+    e \in S.
+    \]
+    \item \textbf{Closure under Inverses:} For each $x \in S$, its inverse lies in $S$:
+    \[
+    \operatorname{inv} \colon S \to S \quad (\text{i.e., } x \in S \implies x^{-1} \in S).
+    \]
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Group Homomorphism]\label[definition]{def:group-homomorphism-w7tue}
+Let $(G_1, \cdot_{G_1}, e_1)$ and $(G_2, \cdot_{G_2}, e_2)$ be groups. A map $f \colon G_1 \to G_2$ is called a \newterm{group homomorphism} if it respects the group operations:
+\begin{equation}\label{eq:group-hom-def}
+f(x \cdot_{G_1} y) = f(x) \cdot_{G_2} f(y) \quad \forall x, y \in G_1.
+\end{equation}
+\end{definition}
+\end{content}
+
+\subsection{Preservation of Identities and Inverses}
+
+\begin{speech}[00:59:44 - 01:01:49]
+So, what happens to $e_1$? \inlinemetanote{writes: What happens to $e_1$?}
+
+So, I just plug it in: $f(e_1 e_1)$ has to be $f(e_1) f(e_1)$, right? \inlinemetanote{writes: $f(e_1 e_1) = f(e_1) f(e_1)$} But this thing, by using the unit property, is equal to $f(e_1)$, because $e_1 e_1 = e_1$, right? \inlinemetanote{writes: $f(e_1) = f(e_1) f(e_1)$} And then I can use cancellation.
+
+So, I look at this equation, I just write it: $f(e_1) = f(e_1) f(e_1)$ \inlinemetanote{writes: $f(e_1) = f(e_1) f(e_1)$}. So, this is a group equation in $G_2$, right? Everything's in $G_2$. But now I can cancel. If I want, with cancellation I could put an $e_2$ here \inlinemetanote{writes: $e_2 f(e_1) = f(e_1) f(e_1)$}, because that uses the identity in $e_2$, and then I can cancel \inlinemetanote{cancels $f(e_1)$ on both sides}.
+
+So, that's the answer: what happens to the neutral element? It has to go to the neutral element in the second one \inlinemetanote{writes: $\implies e_2 = f(e_1)$ and draws a frame around it}. Okay? It's implied by this condition. I don't have to impose it as an additional condition. I could, it would be harmless to do it, but I don't have to do it.
+
+Then I leave for you to check yourself: what happens to $f$ of an inverse? \inlinemetanote{writes on the right board: What happens to $f(x^{-1})$?} And the answer, it's just the same argument. Answer is that $f$ of an inverse is equal to the inverse here: $f(x^{-1}) = f(x)^{-1}$ \inlinemetanote{writes: Answer: $f(x^{-1}) = f(x)^{-1}$ and boxes it}. I leave this for you to check, okay? It's the same argument. It respects the inverse operation also.
+
+So, we're going to study the kernels and images just as before for groups, and that'll lead to a theorem which is parallel to what we called the First Isomorphism Theorem. But we're not doing that today.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Preservation Properties of Homomorphisms]\label[proposition]{prop:hom-preserves-structure}
+Let $f \colon G_1 \to G_2$ be a group homomorphism. Then $f$ automatically preserves identity elements and inverses:
+\begin{align}
+f(e_1) &= e_2, \label{eq:hom-preserves-id} \\
+f(x^{-1}) &= \bigl(f(x)\bigr)^{-1} \quad \forall x \in G_1. \label{eq:hom-preserves-inv}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+We establish each property individually:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Preservation of Identity:}
+    Since $e_1 \cdot e_1 = e_1$ in $G_1$, applying the homomorphism property \eqref{eq:group-hom-def} gives:
+    \[
+    f(e_1) = f(e_1 \cdot e_1) = f(e_1) \cdot f(e_1).
+    \]
+    Rewriting the left-hand side as $e_2 \cdot f(e_1)$ in $G_2$:
+    \[
+    e_2 \cdot f(e_1) = f(e_1) \cdot f(e_1).
+    \]
+    By right cancellation in $G_2$ (\cref{prop:cancellation-laws}):
+    \[
+    e_2 = f(e_1).
+    \]
+    \item \textbf{Preservation of Inverses:}
+    For any $x \in G_1$, by definition $x \cdot x^{-1} = e_1$. Applying $f$:
+    \[
+    f(x) \cdot f(x^{-1}) = f(x \cdot x^{-1}) = f(e_1) = e_2.
+    \]
+    Similarly, $f(x^{-1}) \cdot f(x) = f(x^{-1} \cdot x) = f(e_1) = e_2$.
+    By the uniqueness of the inverse of $f(x)$ in $G_2$ (\cref{prop:uniqueness-inverse-w7tue}), we conclude:
+    \[
+    f(x^{-1}) = \bigl(f(x)\bigr)^{-1}.
+    \]
+\end{enumerate}
+\end{proof}
+\end{content}
+
+\begin{hidden}
+% timestamp: 01:01:49
+% topic: Preservation of identity and inverse proven; board washed; beginning Symmetric Groups S_n
+% board_state: def:subgroup-w7tue, def:group-homomorphism-w7tue, prop:hom-preserves-structure
+% next_goal: Define the symmetric group S_n, bipartite permutation diagrams for S_1, S_2, S_3, |S_n| = n!
+% open_loops: none
+\end{hidden}
+
+\begin{note}[Blackboard Transition]
+The lecturer washes the upper middle and lower chalkboards with a sponge to prepare for the introduction of the symmetric group $S_n$.
+\end{note}
+
+\section{The Symmetric Group \texorpdfstring{$S_n$}{S\_n}}
+
+\subsection{Definition and Concrete Examples of \texorpdfstring{$S_1, S_2, S_3$}{S\_1, S\_2, S\_3}}
+
+\begin{speech}[01:01:49 - 01:03:59]
+\inlinemetanote{washes the upper middle board with a sponge}
+I thought I would do some example, think about the symmetric group, because it's totally crucial to understand that for your future mathematical life. But the symmetric group must have come up in many classes of yours, I would guess. But I won't assume you know anything about it.
+
+\inlinemetanote{washes the remaining lower boards with a sponge}
+
+So, if we start formally with the discussion of the symmetric group... And this is in the trichotomy I said about the subject: this is not definition, this is not theorem, it's example. But it's an incredibly important example: the symmetric group \inlinemetanote{writes on the lower left board: \qt{Symmetric groups:}}.
+
+So, the first symbol which is kind of standard is this square brackets $n$ \inlinemetanote{writes: $[n] := \{1, \dots, n\}$}, to be the set of numbers from $1$ to $n$. It's the $n$-element set, so it's exactly the integers from $1$ to $n$.
+
+And the symmetric group $S_n$ equals the set of functions $f$ from $[n]$ to $[n]$ such that $f$ is bijective \inlinemetanote{writes: $S_n = \{ f \colon [n] \to [n] \mid f \text{ is bijection} \}$}. That's as a set. So, it's just the set of bijections. I hope that's clear.
+
+I need to tell you the operation, and the operation is composition of functions \inlinemetanote{writes: $(S_n, \circ, \text{id}) \text{ def}$}. And I have to give you the neutral element, and it's the identity. That's the identity: there's a unique identity which takes $1$ to $1$, $2$ to $2$, and so on. And that is the definition of the symmetric group. That's the full definition, and you have to think about it, make sure you understand.
+\end{speech}
+
+\begin{content}
+\begin{notation}[Standard $n$-Element Set]\label[notation]{not:n-element-set}
+For any integer $n \ge 1$, we denote by $[n]$ the canonical $n$-element set:
+\begin{equation}\label{eq:n-set-def}
+[n] := \{1, 2, \dots, n\}.
+\end{equation}
+\end{notation}
+
+\begin{definition}[Symmetric Group $S_n$]\label[definition]{def:symmetric-group}
+The \newterm{symmetric group on $n$ elements}, denoted $S_n$, is the group whose underlying set is the collection of all bijections (permutations) of $[n]$ onto itself:
+\begin{equation}\label{eq:symmetric-group-set}
+S_n := \operatorname{Bij}([n], [n]) = \bigl\{ f \colon [n] \to [n] \;\big|\; f \text{ is bijective} \bigr\},
+\end{equation}
+equipped with the binary operation of function composition $\circ$ and identity element $\operatorname{id}_{[n]}$:
+\[
+(S_n, \circ, \operatorname{id}_{[n]}).
+\]
+\end{definition}
+
+\begin{steps}[Verification of Group Axioms for $S_n$]
+The triple $(S_n, \circ, \operatorname{id}_{[n]})$ satisfies the group axioms:
+\begin{itemize}
+    \item \textbf{Closure:} The composition of two bijections is a bijection: $f, g \in S_n \implies f \circ g \in S_n$.
+    \item \textbf{Associativity:} Function composition is universally associative: $(f \circ g) \circ h = f \circ (g \circ h)$.
+    \item \textbf{Identity:} The identity function $\operatorname{id}_{[n]}(i) = i$ satisfies $\operatorname{id}_{[n]} \circ f = f \circ \operatorname{id}_{[n]} = f$ for all $f \in S_n$.
+    \item \textbf{Inverses:} Every bijection $f$ admits a unique two-sided inverse function $f^{-1} \in S_n$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Composition Order and Bipartite Matching Representations}
+
+\begin{speech}[01:03:59 - 01:05:31]
+One of the important things to think about is: what does composition mean? If I take $f$ composed with $g$ \inlinemetanote{writes: $f \circ g$}, where $g$ is from $[n]$ to $[n]$ and $f$ is from $[n]$ to $[n]$ \inlinemetanote{writes: $g \colon [n] \to [n]$, $f \colon [n] \to [n]$}. This means... so, this acts on some number \inlinemetanote{writes: $(f \circ g)(1)$}. And the answer is you do $g$ first, and then you do $f$ \inlinemetanote{writes: $= f(g(1))$}. That's the definition of composition, right?
+
+Even though, you know, it's kind of... you can confuse yourself by this, because you see $f$ first. But nevertheless, the mathematical convention for this symbol is you do $g$ first, then you do $f$. Okay?
+
+So, that's the full definition of the group. And you could say, have I checked the axioms? Well, you're supposed to understand that composition of bijective functions gives you a bijective function, you have to also say that bijective functions have an inverse, and you have to show that composition is associative. I leave all of this to you. None of those are surprises, I think.
+
+So, that's the definition of $S_n$. But then there's a question about how to think about it. And that's an interesting question, that's a question about names: how are we going to talk about elements of $S_n$?
+
+So, the primitive way is say like if you're taking $S_1$ \inlinemetanote{writes: $S_1$}: there's nothing to do, $S_1$ has one element \inlinemetanote{writes: $|S_1| = 1$}, because it's the number of bijections from $1$ to $1$. So, you could say, okay, I could say: here's $1$ and here's the map from $1$ to $1$ \inlinemetanote{draws bipartite dots $1$ and $1$ and horizontal arrow $1 \to 1$}, it's a bijection, it has one element. That's not so exciting.
+
+In $S_2$ \inlinemetanote{writes: $S_2$}, we have bijections from the set of two elements. And one bijection is the identity. Do you accept this drawing as a function? $1$ goes to $1$, $2$ goes to $2$ \inlinemetanote{draws two columns of dots $1, 2$ and parallel horizontal lines $1 \to 1, 2 \to 2$}. That's one element. Another element is $1$ goes to $2$ and $2$ goes to $1$ \inlinemetanote{draws two columns $1, 2$ and crossing lines $1 \to 2, 2 \to 1$}. And that's pretty much the only two bijections, right?
+
+But this is kind of unfortunate: if we're going to have to draw a picture for every element, that's kind of unfortunate. Like $S_3$ \inlinemetanote{writes: $S_3$}, things get more complicated. You could have $1, 2, 3$ \inlinemetanote{draws two columns $1, 2, 3$ and $1, 2, 3$}. You could have like $1$ goes to $2$, $2$ goes to $3$, $3$ goes to $1$ \inlinemetanote{draws lines $1 \to 2, 2 \to 3, 3 \to 1$}. That's a nice element. But you can imagine this is not a very good way of naming the function by just giving its full... somehow it takes too much chalk, let's say. So, this is one element.
+\end{speech}
+
+\begin{content}
+\begin{remark}[The Right-to-Left Convention of Composition]\label[remark]{rem:composition-order}
+When evaluating a composition $f \circ g$ on an input $x \in [n]$, the inner function $g$ is evaluated first:
+\begin{equation}\label{eq:composition-eval}
+(f \circ g)(x) := f\bigl(g(x)\bigr).
+\end{equation}
+Although $f$ appears on the left in $f \circ g$, the mapping sequence proceeds right-to-left: $[n] \xrightarrow{g} [n] \xrightarrow{f} [n]$.
+\end{remark}
+
+\definecolor{figBlue}{HTML}{076090} % RGB (7, 96, 144): petrol blue (MidnightBlue)
+\definecolor{figRed}{HTML}{B5261C} % RGB (181, 38, 28): brick red (BrickRed)
+\definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
+
+\begin{hidden}
+- Canvas: no scale, cm; four subdiagrams arranged horizontally:
+  Subdiagram 1 (S_1): centered at x = 0
+  Subdiagram 2 (S_2 identity): centered at x = 3.5
+  Subdiagram 3 (S_2 transposition): centered at x = 7.0
+  Subdiagram 4 (S_3 cycle): centered at x = 11.2
+  Footprint: x in [-1.0, 13.0], y in [-1.5, 2.0]
+- Spacing & Elements:
+  Each bipartite block has two columns of nodes separated by dx = 1.2cm.
+  Left nodes at x_L, right nodes at x_R = x_L + 1.2cm.
+- Details:
+  * S_1:
+    Left: (0, 0.4) labeled '1' (anchor east)
+    Right: (1.2, 0.4) labeled '1' (anchor west)
+    Arrow: (0, 0.4) -> (1.2, 0.4)
+    Label: '|S_1| = 1' below at (0.6, -1.0)
+  * S_2 (Identity):
+    Left: (3.0, 0.8) '1', (3.0, 0.0) '2'
+    Right: (4.2, 0.8) '1', (4.2, 0.0) '2'
+    Edges: (3.0, 0.8) -> (4.2, 0.8), (3.0, 0.0) -> (4.2, 0.0)
+    Label: 'id \in S_2' at (3.6, -1.0)
+  * S_2 (Transposition):
+    Left: (6.5, 0.8) '1', (6.5, 0.0) '2'
+    Right: (7.7, 0.8) '1', (7.7, 0.0) '2'
+    Edges: (6.5, 0.8) -> (7.7, 0.0), (6.5, 0.0) -> (7.7, 0.8)
+    Label: '(1\; 2) \in S_2' at (7.1, -1.0)
+  * S_3 (Sample element):
+    Left: (10.5, 1.2) '1', (10.5, 0.4) '2', (10.5, -0.4) '3'
+    Right: (11.7, 1.2) '1', (11.7, 0.4) '2', (11.7, -0.4) '3'
+    Edges: 1 -> 2: (10.5, 1.2) -> (11.7, 0.4)
+           2 -> 3: (10.5, 0.4) -> (11.7, -0.4)
+           3 -> 1: (10.5, -0.4) -> (11.7, 1.2)
+    Label: '\text{Sample element in } S_3' at (11.1, -1.0)
+- Collisions: Ample margins (> 1.2cm) between the four independent subdiagrams; all labels placed outside the connecting arrows.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, font=\small]
+    % --- S_1 ---
+    \node[anchor=south, font=\bfseries] at (0.6, 1.5) {$S_1$};
+    \fill (0, 0.4) circle (1.8pt) node[anchor=east] {$1$};
+    \fill (1.2, 0.4) circle (1.8pt) node[anchor=west] {$1$};
+    \draw[->, thick, figBlue] (0, 0.4) -- (1.2, 0.4);
+    \node[anchor=north, figGray] at (0.6, -0.8) {$|S_1| = 1$};
+
+    % --- S_2: Identity ---
+    \node[anchor=south, font=\bfseries] at (3.6, 1.5) {$S_2 \text{ (Identity)}$};
+    \fill (3.0, 0.8) circle (1.8pt) node[anchor=east] {$1$};
+    \fill (3.0, 0.0) circle (1.8pt) node[anchor=east] {$2$};
+    \fill (4.2, 0.8) circle (1.8pt) node[anchor=west] {$1$};
+    \fill (4.2, 0.0) circle (1.8pt) node[anchor=west] {$2$};
+    \draw[->, thick, figBlue] (3.0, 0.8) -- (4.2, 0.8);
+    \draw[->, thick, figBlue] (3.0, 0.0) -- (4.2, 0.0);
+    \node[anchor=north, figGray] at (3.6, -0.8) {$\operatorname{id}$};
+
+    % --- S_2: Transposition ---
+    \node[anchor=south, font=\bfseries] at (7.1, 1.5) {$S_2 \text{ (Transposition)}$};
+    \fill (6.5, 0.8) circle (1.8pt) node[anchor=east] {$1$};
+    \fill (6.5, 0.0) circle (1.8pt) node[anchor=east] {$2$};
+    \fill (7.7, 0.8) circle (1.8pt) node[anchor=west] {$1$};
+    \fill (7.7, 0.0) circle (1.8pt) node[anchor=west] {$2$};
+    \draw[->, thick, figRed] (6.5, 0.8) -- (7.7, 0.0);
+    \draw[->, thick, figRed] (6.5, 0.0) -- (7.7, 0.8);
+    \node[anchor=north, figGray] at (7.1, -0.8) {Swap $1 \leftrightarrow 2$};
+
+    % --- S_3: Cyclic Permutation ---
+    \node[anchor=south, font=\bfseries] at (11.1, 1.5) {$S_3 \text{ (Sample Permutation)}$};
+    \fill (10.5, 1.2) circle (1.8pt) node[anchor=east] {$1$};
+    \fill (10.5, 0.4) circle (1.8pt) node[anchor=east] {$2$};
+    \fill (10.5, -0.4) circle (1.8pt) node[anchor=east] {$3$};
+    \fill (11.7, 1.2) circle (1.8pt) node[anchor=west] {$1$};
+    \fill (11.7, 0.4) circle (1.8pt) node[anchor=west] {$2$};
+    \fill (11.7, -0.4) circle (1.8pt) node[anchor=west] {$3$};
+    \draw[->, thick, figBlue] (10.5, 1.2) -- (11.7, 0.4);
+    \draw[->, thick, figBlue] (10.5, 0.4) -- (11.7, -0.4);
+    \draw[->, thick, figBlue] (10.5, -0.4) -- (11.7, 1.2);
+    \node[anchor=north, figGray] at (11.1, -0.8) {$1 \mapsto 2, \ 2 \mapsto 3, \ 3 \mapsto 1$};
+\end{tikzpicture}
+\end{center}
+
+\begin{steps}[Limitations of Bipartite String Diagrams]
+Representing permutations as bipartite matching graphs provides immediate visual clarity for small $n$ (such as $S_1$ and $S_2$). However, for larger $n$, this diagrammatic representation quickly becomes unmanageable: it consumes excessive blackboard space and obscures algebraic properties such as element orders, parity, and products. This motivates the introduction of a compact algebraic notation: \newterm{cycle notation}.
+\end{steps}
+\end{content}
+
+\subsection{Order of \texorpdfstring{$S_n$}{S\_n} and Prelude to Cycle Decomposition}
+
+\begin{speech}[01:05:31 - 01:06:07]
+I should say that it should be clear that $S_n$ is a finite group \inlinemetanote{writes: $S_n \text{ is finite group}$}, and its order, which is given by... the standard notation for order is putting these straight lines, is $n$ factorial \inlinemetanote{writes: $|S_n| = n!$}. That's how many bijections there are, and that's a standard formula because you can take the first one to any $n$, and then that position is occupied, the second one has to go to $n-1$, and so on. That's kind of a proof.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Order of $S_n$]\label[proposition]{prop:order-symmetric-group}
+For every integer $n \ge 1$, the symmetric group $S_n$ is a finite group of order:
+\begin{equation}\label{eq:order-sn}
+|S_n| = n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+An element $f \in S_n$ is uniquely determined by its values on $[n] = \{1, 2, \dots, n\}$:
+\begin{itemize}
+    \item There are $n$ possible choices for $f(1) \in [n]$.
+    \item Since $f$ must be injective, $f(2)$ can be any element of $[n] \setminus \{f(1)\}$, yielding $n-1$ choices.
+    \item Inductively, for each $k \in \{1, \dots, n\}$, there remain $n - (k - 1)$ choices for $f(k)$.
+\end{itemize}
+By the fundamental counting principle, the total number of bijections is:
+\[
+|S_n| = n \cdot (n-1) \cdot (n-2) \cdots 1 = n!
+\]
+\end{proof}
+
+\begin{steps}[Motivation for Cycle Decomposition]
+Since $|S_n| = n!$ grows super-exponentially ($|S_3| = 6$, $|S_4| = 24$, $|S_5| = 120$, $|S_{10}| = 3{,}628{,}800$), working with two-line Cauchy arrays or bipartite graphs is practically infeasible. The canonical algebraic language for studying permutations is the \newterm{cycle decomposition}, which factors each permutation into disjoint cycles.
+\end{steps}
+\end{content}
+
+\begin{speech}[01:06:07 - 01:07:01]
+Okay, so, the question is: how are we going to talk about these elements of the symmetric group? And there's a standard way, which is about the cycle decomposition. So, I'll try to write it, and it's really useful notation. In some sense, it's again about names. We need to find some nice way to name these elements that will allow us to manipulate them, both in our head and on the board and on paper.
+
+Logically, one doesn't have to do this. Logically, you can view those diagrams as the data type.
+
+\inlinemetanote{washes the middle board with a sponge}
+
+But there is a standard way to do it, which is the cycle decomposition, and once you understand it --- and maybe you already understand it --- you'll find this a very nice way to do it.
+\end{speech}
+
+\subsection{Cycle Decomposition Notation}
+
+\begin{speech}[01:07:01 - 01:08:35]
+So... how to name elements of $S_n$ \inlinemetanote{writes: How to name elements of $S_n$}.
+
+And the standard answer is: use the cycle decomposition \inlinemetanote{writes: Cycle decomp.\ notation}.
+
+And how this works, so, let me do an example. I'll do it in a couple of examples and then you should be able to see.
+
+So, if I take the three case, so, let's do this one: $1$ goes to $2$, $2$ goes to $1$, $3$ goes to $3$. So, this is one of the bijections. I flip $1$ and $2$, and $3$ stays the same, okay? \inlinemetanote{draws bipartite matching for $(1\,2)(3)$ on the board}
+
+And the way to represent it in the cycle decomposition is I start by... I open parentheses \inlinemetanote{writes: $($}, and I put $1$ here \inlinemetanote{writes: $1$}. And then next to $1$, I write where $1$ goes. So, where does $1$ go? Goes to $2$ \inlinemetanote{writes: $2$}. Okay.
+
+And then I look, and where does $2$ go? Well, $2$ goes back to $1$, so, then that closes the cycle \inlinemetanote{writes: $)$}.
+
+And then now I take the first thing that's not here, which is $3$. So, I open the parentheses, and I see where $3$ goes, but $3$ goes back to itself. So, the cycle decomposition of this would be that: $(1\,2)(3)$ \inlinemetanote{writes: $(3)$}. All right?
+\end{speech}
+
+\begin{content}
+\begin{definition}[Cycle]\label[definition]{def:cycle}
+A permutation $\sigma \in S_n$ is called a \newterm{$k$-cycle} (or cycle of length $k$), denoted $(i_1 \, i_2 \, \dots \, i_k)$, if:
+\[
+\sigma(i_1) = i_2, \quad \sigma(i_2) = i_3, \quad \dots, \quad \sigma(i_{k-1}) = i_k, \quad \sigma(i_k) = i_1,
+\]
+while fixing all other elements: $\sigma(j) = j$ for all $j \in [n] \setminus \{i_1, \dots, i_k\}$.
+\end{definition}
+
+\begin{example}[Transposition of Two Elements]\label[example]{ex:cycle-construction-12}
+Consider the permutation $\sigma \in S_3$ swapping $1$ and $2$ while fixing $3$:
+\[
+\sigma(1) = 2, \qquad \sigma(2) = 1, \qquad \sigma(3) = 3.
+\]
+Traced into cycle notation:
+\begin{itemize}
+    \item Start with $1$: $1 \mapsto 2$, and $2 \mapsto 1$, closing the cycle: $(1 \, 2)$.
+    \item Move to the remaining element $3$: $3 \mapsto 3$, closing the 1-cycle: $(3)$.
+\end{itemize}
+Thus, the complete disjoint cycle decomposition is $(1 \, 2)(3)$.
+\end{example}
+\end{content}
+
+\begin{speech}[01:08:35 - 01:10:01]
+Another example: the one I had there, this one \inlinemetanote{draws bipartite matching for $1 \to 2, 2 \to 3, 3 \to 1$}.
+
+So, again, I start, I open the parentheses, and there's $1$ \inlinemetanote{writes: $(1$}. $1$ goes to $2$ again \inlinemetanote{writes: $2$}. Now $2$ goes to $3$ \inlinemetanote{writes: $3$}. And then $3$ goes back to $1$, so, I close the cycle \inlinemetanote{writes: $)$}.
+
+So, if I write down now what is $S_3$, I can write down all the cycle decompositions. The first one is the trivial one, that's where no one goes anywhere \inlinemetanote{writes: $S_3 = \{ (1)(2)(3),$}.
+
+Then there's these ones: $(1\,2)(3)$, $(1\,3)(2)$, $(2\,3)(1)$ \inlinemetanote{writes: $(1\,2)(3), (1\,3)(2), (2\,3)(1)$}. And that's already four, I need two more. And there's $(1\,2\,3)$ and $(1\,3\,2)$ \inlinemetanote{writes: $(1\,2\,3), (1\,3\,2)\}$}. So, here I've listed all six elements.
+
+So, do you understand this notation? Like if I pick this, these cycles just tell you where everything goes. Like if I take this one, and I want to know where $2$ goes, I find $2$, and then it goes to the next one. And if I want to know $3$, whenever the cycle ends, it means you go to the first one. And if you're by yourself, it means you don't go anywhere, you're a fixed point.
+\end{speech}
+
+\begin{content}
+\begin{example}[Complete List of Elements in $S_3$]\label[example]{ex:all-elements-s3}
+Since $|S_3| = 3! = 6$, the symmetric group $S_3$ consists of exactly six permutations, partitioned by cycle structure:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Identity Permutation (Three 1-cycles):}
+    \[
+    \operatorname{id} = (1)(2)(3).
+    \]
+    \item \textbf{Transpositions (One 2-cycle and One 1-cycle):}
+    \[
+    (1 \, 2)(3), \qquad (1 \, 3)(2), \qquad (2 \, 3)(1).
+    \]
+    \item \textbf{3-Cycles (One 3-cycle):}
+    \[
+    (1 \, 2 \, 3), \qquad (1 \, 3 \, 2).
+    \]
+\end{enumerate}
+Thus, explicitly:
+\begin{equation}\label{eq:s3-full-cycle-list}
+S_3 = \bigl\{ (1)(2)(3), \ (1 \, 2)(3), \ (1 \, 3)(2), \ (2 \, 3)(1), \ (1 \, 2 \, 3), \ (1 \, 3 \, 2) \bigr\}.
+\end{equation}
+\end{example}
+\end{content}
+
+\begin{speech}[01:10:01 - 01:11:13]
+So, are you satisfied with this? You have to play with it. But it's much more efficient, because I've already written for you the six elements in $S_3$.
+
+Traditionally, I mean, the custom is you don't write these fixed points, because they're kind of a waste of chalk also. So, the standard is that if they don't appear, they're fixed.
+
+So, the standard way I would write this \inlinemetanote{writes: Standard:}, would be that I would just call it $e$, the neutral element \inlinemetanote{writes: $e$}. And this I'd say $(1\,2)$, $(1\,3)$, $(2\,3)$, $(1\,2\,3)$, $(1\,3\,2)$ \inlinemetanote{writes: $(1\,2), (1\,3), (2\,3), (1\,2\,3), (1\,3\,2)$}. That would be the standard. If they're not there, it means that nothing's happening to them. That's kind of the standard way to represent it.
+
+And, you know, this way I picked some way to break symmetry, but you could also write this $(3\,2)$ as $(2\,3)$, because $2$ goes to $3$ and $3$ goes to $2$, and here $3$ goes to $2$, $2$ goes to $3$. You can also write it like that if you want \inlinemetanote{writes: $(2\,3) = (3\,2)$}. But this is a canonical way of doing it. All right.
+\end{speech}
+
+\begin{content}
+\begin{notation}[Suppression of 1-Cycles]\label[notation]{not:omitting-1-cycles}
+In standard mathematical practice, 1-cycles (fixed points) are omitted from the cycle decomposition:
+\begin{itemize}
+    \item The identity permutation is denoted $e$ or $\operatorname{id}$.
+    \item A transposition $(i \, j)(k)$ is written compactly as $(i \, j)$, with the tacit understanding that $k$ is fixed.
+\end{itemize}
+Under this standard convention, the elements of $S_3$ are recorded as:
+\begin{equation}\label{eq:s3-standard-list}
+S_3 = \bigl\{ e, \ (1 \, 2), \ (1 \, 3), \ (2 \, 3), \ (1 \, 2 \, 3), \ (1 \, 3 \, 2) \bigr\}.
+\end{equation}
+Furthermore, cycles are invariant under cyclic shifts of their entries:
+\[
+(2 \, 3) = (3 \, 2), \qquad (1 \, 2 \, 3) = (2 \, 3 \, 1) = (3 \, 1 \, 2).
+\]
+\end{notation}
+\end{content}
+
+\subsection{Multiplication and Inverses in Cycle Notation}
+
+\begin{speech}[01:11:13 - 01:11:31]
+So, that works, of course, for any $n$, and the rule is if you have this kind of function, it tells you the cycle decomposition; if you have the cycle decomposition, it tells you the function. But it's much more efficient. And so, let us try to...
+
+In this notation, what is the inverse map? \inlinemetanote{writes: Inv:}
+
+So, of course, the inverse of $e$ is, of course, $e$, right? \inlinemetanote{writes: $e \mapsto e$} Neutral element. What's the inverse of this element: $(1\,2)$? \inlinemetanote{points at $(1\,2)$}
+\end{speech}
+
+\begin{student}[Student Answer]
+Itself.
+\end{student}
+
+\begin{speech}[01:11:32 - 01:12:15]
+Yeah, itself \inlinemetanote{writes: $(1\,2) \mapsto (1\,2)$}. If I apply it twice... so, now I have to tell you how to multiply in the cycle notation. So, here I take $(1\,2)$, that's one time... I can just put the cycles together, that's it, I just put them together \inlinemetanote{writes: $(1\,2)(1\,2) =$}. And now I have to figure out what cycle to write here.
+
+So, then I have to find out where $1$... I open it up, I find out where $1$ goes. $1$ goes to $2$, and then I go to the next one, now $2$ goes back to $1$, so $1$ stays by itself \inlinemetanote{writes: $(1)$}. And I start here: $2$. $2$ goes to $1$, $1$ goes back to $2$, so $2$ goes to $2$ \inlinemetanote{writes: $(2)$}. That's the identity \inlinemetanote{writes: $= (1)(2) = e$}.
+
+Also, you can just see it in functions. But there's just rules. So, of course, these are all the same, so, this is the inverse, that's the inverse \inlinemetanote{writes: $(1\,3) \mapsto (1\,3), (2\,3) \mapsto (2\,3)$}.
+
+What's the inverse of this person: $(1\,2\,3)$?
+\end{speech}
+
+\begin{student}[Student Answer]
+$(1\,3\,2)$.
+\end{student}
+
+\begin{speech}[01:12:16 - 01:12:31]
+Yeah, the other one. So, they flip around here: $(1\,3\,2)$ and $(1\,2\,3)$ \inlinemetanote{writes: $(1\,2\,3) \mapsto (1\,3\,2)$ and $(1\,3\,2) \mapsto (1\,2\,3)$}. So, that's the inverse map.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Inverses in Cycle Notation]\label[proposition]{prop:cycle-inverses}
+The inverse of a cycle $(i_1 \, i_2 \, \dots \, i_k)$ is obtained by reversing the order of its entries:
+\begin{equation}\label{eq:cycle-inverse-reversal}
+(i_1 \, i_2 \, \dots \, i_k)^{-1} = (i_k \, i_{k-1} \, \dots \, i_1).
+\end{equation}
+In particular, for $S_3$:
+\begin{itemize}
+    \item Transpositions are their own inverses (self-inverse elements of order $2$):
+    \[
+    (1 \, 2)^{-1} = (1 \, 2), \qquad (1 \, 3)^{-1} = (1 \, 3), \qquad (2 \, 3)^{-1} = (2 \, 3).
+    \]
+    \item The two 3-cycles are mutual inverses:
+    \[
+    (1 \, 2 \, 3)^{-1} = (3 \, 2 \, 1) = (1 \, 3 \, 2), \qquad (1 \, 3 \, 2)^{-1} = (1 \, 2 \, 3).
+    \]
+\end{itemize}
+\end{proposition}
+\end{content}
+
+\begin{speech}[01:12:31 - 01:14:49]
+So, these are more complicated: $(1\,2\,3)$, let us say $(1\,3\,2)$... So, let's do this one slowly, just for fun \inlinemetanote{writes: $(1\,2\,3)(1\,3\,2) =$}. I don't know how fun it is, but anyway: to figure out where $1$ goes, you start with $1$ in the first cycle you see where $1$ is, and this cycle tells you $1$ goes to $3$. And then you keep going left: oh, you still see a $3$, so $3$ is going somewhere, $3$ goes back to $1$, that's kind of nice. So, that's $1$, and you'll see $(2)(3)$, so, it's equal to $e$ \inlinemetanote{writes: $= (1)(2)(3) = e$}.
+
+Okay, let's try some... so, that's the inverse map. But we should be able to multiply anything, like what is $(1\,3)$ times $(2\,3)$? \inlinemetanote{writes: $(1\,3)(2\,3) =$}
+
+So, to do this, as I said, you start out with $1$. $1$ doesn't do anything here, but it goes to $3$ over there. So, now we do $3$. $3$ goes to $2$, $2$ doesn't go anywhere here, right? So, it stays at $2$.
+
+$2$ goes to $3$, and $3$ goes to $1$, so, it's that cycle: $(1\,3\,2)$ \inlinemetanote{writes: $= (1\,3\,2)$}. That's the product.
+
+And as I said, this is notation, you have to see how it works. You could, if you're suspicious about this notation, every time you see this, make one of those diagrams and put them together. But it's not a good idea. It's better to understand this notation. That's how people actually work with the cycles.
+
+So, an exercise that you should do if you've never seen it... but have you seen this kind of cycle notation in other classes? Some people have, some people haven't. It's just notation, and there's not much more I can say. You have to become familiar with it yourself.
+\end{speech}
+
+\begin{content}
+\begin{example}[Computing the Product of Permutations in Cycle Notation]\label[example]{ex:cycle-multiplication}
+To compute the product of two permutations, we evaluate the cycles from right to left:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Verification that $(1 \, 2 \, 3)(1 \, 3 \, 2) = e$:}
+    \begin{itemize}
+        \item Under $(1 \, 3 \, 2)$, $1 \mapsto 3$. Then under $(1 \, 2 \, 3)$, $3 \mapsto 1$. Thus, $1 \mapsto 1$.
+        \item Under $(1 \, 3 \, 2)$, $2 \mapsto 1$. Then under $(1 \, 2 \, 3)$, $1 \mapsto 2$. Thus, $2 \mapsto 2$.
+        \item Under $(1 \, 3 \, 2)$, $3 \mapsto 2$. Then under $(1 \, 2 \, 3)$, $2 \mapsto 3$. Thus, $3 \mapsto 3$.
+    \end{itemize}
+    Hence, $(1 \, 2 \, 3)(1 \, 3 \, 2) = (1)(2)(3) = e$.
+    \item \textbf{Computing $(1 \, 3)(2 \, 3)$:}
+    \begin{itemize}
+        \item Track $1$: $(2 \, 3)$ fixes $1$; then $(1 \, 3)$ sends $1 \mapsto 3$. Thus, $1 \mapsto 3$.
+        \item Track $3$: $(2 \, 3)$ sends $3 \mapsto 2$; then $(1 \, 3)$ fixes $2$. Thus, $3 \mapsto 2$.
+        \item Track $2$: $(2 \, 3)$ sends $2 \mapsto 3$; then $(1 \, 3)$ sends $3 \mapsto 1$. Thus, $2 \mapsto 1$, closing the cycle.
+    \end{itemize}
+    Combining these transitions yields the 3-cycle:
+    \begin{equation}\label{eq:prod-13-23}
+    (1 \, 3)(2 \, 3) = (1 \, 3 \, 2).
+    \end{equation}
+\end{enumerate}
+\end{example}
+\end{content}
+
+\begin{speech}[01:14:49 - 01:15:08]
+What if I do it in a different way: $(2\,3)(1\,3) =$ \inlinemetanote{writes: $(2\,3)(1\,3) =$}
+
+So, now you tell me: $1$, where does $1$ go?
+\end{speech}
+
+\begin{student}[Student Answer]
+$2$.
+\end{student}
+
+\begin{speech}[01:15:09 - 01:15:58]
+Yeah, $1$ goes to $2$, because $1$ goes to $3$, then $3$ gets bumped to $2$.
+
+And where does $2$ go? Well, $2$ doesn't see anything here, but then gets bumped to $3$.
+
+And then $3$ gets bumped to $1$ here, so, that's it: $(1\,2\,3)$ \inlinemetanote{writes: $= (1\,2\,3)$}.
+
+So, actually, this already shows that it's not commutative, because you got two different elements when you do them in different order \inlinemetanote{underlines $(1\,3\,2)$ and $(1\,2\,3)$}.
+
+So, what I advocate, what I was trying to say, is I advocate if you are learning this cycle notation is to go home and write the multiplication table of $S_3$.
+\end{speech}
+
+\begin{content}
+\begin{observation}[Non-Commutativity in $S_3$]\label[observation]{obs:s3-non-commutative}
+Reversing the order of multiplication of the transpositions $(1 \, 3)$ and $(2 \, 3)$ yields:
+\begin{equation}\label{eq:prod-23-13}
+(2 \, 3)(1 \, 3) = (1 \, 2 \, 3).
+\end{equation}
+Comparing \eqref{eq:prod-13-23} and \eqref{eq:prod-23-13}:
+\[
+(1 \, 3)(2 \, 3) = (1 \, 3 \, 2) \neq (1 \, 2 \, 3) = (2 \, 3)(1 \, 3).
+\]
+Consequently, $S_3$ is a non-abelian (non-commutative) group. In fact, $S_3$ is the smallest non-abelian group in mathematics.
+\end{observation}
+\end{content}
+
+\begin{speech}[01:15:58 - 01:16:58]
+So, for $S_3$, it's not that many. I mean, most of them we've already done. For $S_3$, the multiplication table, of course, is this table where I write the elements of $S_3$ here, and I write dot, and then I write them again here \inlinemetanote{draws Cayley table header on the middle board}.
+
+So, there's $36$ elements, and you just fill it out. That's a good exercise. Most of them we've already done actually. After you do that, you'll understand.
+
+You could do it for $S_4$ too, but it has more elements. That has $576$ elements; you might take the afternoon off and do that.
+
+\inlinemetanote{washes the middle board with a sponge}
+\end{speech}
+
+\begin{content}
+\begin{exercise}[Multiplication Table of $S_3$]\label[exercise]{exer:cayley-table-s3}
+Compute the full $6 \times 6$ Cayley table for the symmetric group $S_3$:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c | c c c c c c}
+\toprule
+$\circ$ & $e$ & $(1 \, 2)$ & $(1 \, 3)$ & $(2 \, 3)$ & $(1 \, 2 \, 3)$ & $(1 \, 3 \, 2)$ \\
+\midrule
+$e$ & $e$ & $(1 \, 2)$ & $(1 \, 3)$ & $(2 \, 3)$ & $(1 \, 2 \, 3)$ & $(1 \, 3 \, 2)$ \\
+$(1 \, 2)$ & $(1 \, 2)$ & $e$ & $(1 \, 3 \, 2)$ & $(1 \, 2 \, 3)$ & $(2 \, 3)$ & $(1 \, 3)$ \\
+$(1 \, 3)$ & $(1 \, 3)$ & $(1 \, 2 \, 3)$ & $e$ & $(1 \, 3 \, 2)$ & $(1 \, 2)$ & $(2 \, 3)$ \\
+$(2 \, 3)$ & $(2 \, 3)$ & $(1 \, 3 \, 2)$ & $(1 \, 2 \, 3)$ & $e$ & $(1 \, 3)$ & $(1 \, 2)$ \\
+$(1 \, 2 \, 3)$ & $(1 \, 2 \, 3)$ & $(1 \, 3)$ & $(2 \, 3)$ & $(1 \, 2)$ & $(1 \, 3 \, 2)$ & $e$ \\
+$(1 \, 3 \, 2)$ & $(1 \, 3 \, 2)$ & $(2 \, 3)$ & $(1 \, 2)$ & $(1 \, 3)$ & $e$ & $(1 \, 2 \, 3)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{exercise}
+\end{content}
+
+\begin{speech}[01:16:58 - 01:18:11]
+But one way or the other, you should make sure you understand what this symmetric group is, how to think about its elements, how to compose. It's kind of an important part of this class.
+
+And whatever direction your future mathematical life will go, it will have the symmetric group. It's like one of the really basic objects in mathematics. You cannot get away from the symmetric group.
+\end{speech}
+
+\begin{insight}[The Universality of the Symmetric Group and Cayley's Theorem]
+The lecturer emphasizes that the symmetric group $S_n$ is inescapable in mathematics. This intuition is codified by \textbf{Cayley's Theorem}: \emph{every finite group of order $n$ is isomorphic to a subgroup of $S_n$}. Thus, permutations capture the complete structural diversity of all finite group operations.
+\end{insight}
+
+\section{Orders of Elements in Finite Groups}
+
+\subsection{Powers of Elements and the Pigeonhole Principle}
+
+\begin{speech}[01:18:11 - 01:19:33]
+Okay, so, let $G$ be a finite group \inlinemetanote{writes: Let $G$ be a finite group}.
+
+So, this will be the assumption for many statements now for the next couple weeks.
+
+And always by this, you know, I talk about this $(G, \cdot, e)$ \inlinemetanote{writes: $(G, \cdot, e)$}, and I do not assume it's commutative \inlinemetanote{writes: but I do not assume commutative!}. I never assume it --- I mean, sorry, I never silently assume it. Sometimes I'll say \qt{let $G$ be a commutative group}, but I'll never silently assume it. If I just say a group, it means that I am considering in my head a group possibly non-commutative.
+
+I should say, and I made this definition before, that a commutative group, when $x \cdot y = y \cdot x$ for all $x, y$, then we say $G$ is abelian \inlinemetanote{writes: When $x \cdot y = y \cdot x \quad \forall x, y \implies \text{then } G \text{ is Abelian}$}. That's the standard: a commutative group, the definition, it's abelian. So, as I said, if I say $G$ is a group, you should not assume it's abelian.
+\end{speech}
+
+\begin{content}
+\begin{remark}[Standing Convention: Groups are not Silently Commutative]\label[remark]{rem:standing-convention-non-commutative}
+Throughout the subsequent study of group theory:
+\begin{itemize}
+    \item A generic group $(G, \cdot, e)$ is \emph{never} assumed to be commutative unless explicitly designated as such.
+    \item A group is called \newterm{abelian} (or commutative) if:
+    \begin{equation}\label{eq:abelian-group-def}
+    x \cdot y = y \cdot x \quad \forall x, y \in G.
+    \end{equation}
+\end{itemize}
+\end{remark}
+\end{content}
+
+\begin{speech}[01:19:33 - 01:20:53]
+So, we take $G$ is a finite group, and let $x$ be an element of $G$ \inlinemetanote{writes: and let $x \in G$}.
+
+All right, so, the first thing I can do is consider this: $x^1$, which is just $x$, $x^2$, $x^3$, and so on \inlinemetanote{writes: (1) $x, x^2, x^3, \dots$}.
+
+And what I mean by this, which is what everybody means: $x^2$ is just $x \cdot x$, and $x^3$ is $x \cdot x \cdot x$, and so on, okay? \inlinemetanote{writes: $x^2 = x \cdot x, x^3 = x \cdot x \cdot x$} That's what this notation means: we just apply the group operation to itself, all right?
+
+And I just consider all of these: $x^4, x^5$, and eventually there will be some $x^{17}$, and then eventually $x^{691}$, and so on \inlinemetanote{writes: $x^4, x^5, \dots, x^{17}, \dots, x^{691}, \dots$}.
+
+And you will see that there are infinitely many elements in this list. But $G$ is a finite group. So, some of these must be coincident; they cannot all be distinct elements of $G$ \inlinemetanote{writes: cannot all be distinct elements of $G$!}.
+\end{speech}
+
+\begin{speech}[01:20:53 - 01:21:43]
+They can't all be distinct, because $G$ is finite and this list is infinite. I hope you view that as a solid argument. Sometimes this is called something like the pigeonhole principle or something like that. It seems like a fancy word for it, but...
+
+So, if they're not distinct, that means there exists some $k < \ell$ such that $x^k = x^\ell$ \inlinemetanote{writes on the right board: $\exists k < \ell \text{ such that } x^k = x^\ell$}. That's what it means that they're not all distinct: there must be at least two that are the same, and then I just name them $k$ and $\ell$ with $k < \ell$, okay?
+
+And now, by cancellation, I can cancel all the powers of $k$. Since $k < \ell$, by cancellation, this means the neutral element is equal to $x^{\ell - k}$ \inlinemetanote{writes: by cancell. $\implies e = x^{\ell - k}$}. I just keep canceling powers of $x$ until I have none here. Okay?
+\end{speech}
+
+\begin{speech}[01:21:43 - 01:22:38]
+So, this is what we have proven: we have proven that for $x \in G$, where $G$ is finite, there exists a positive number such that $x^m$ is the neutral element \inlinemetanote{writes in a box: We have proven that for $x \in G$, $G$ finite, $\exists m > 0$, such that $x^m = e$}.
+
+So, for $x$ in $G$, for any element of a finite group, there's some positive number that when I raise the element to that power, I get the neutral element. We've proven it. Okay?
+
+This is not true for infinite groups.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Existence of a Power Equal to the Identity]\label[proposition]{prop:finite-group-identity-power}
+Let $G$ be a finite group and let $x \in G$. Then there exists an integer $m > 0$ such that:
+\begin{equation}\label{eq:xm-equals-e}
+x^m = e.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Consider the infinite sequence of positive integer powers of $x$:
+\begin{equation}\label{eq:powers-sequence}
+x^1, \ x^2, \ x^3, \ x^4, \dots, \ x^k, \dots \in G.
+\end{equation}
+Since the index set $\mathbb{Z}_{>0}$ is infinite while $G$ is finite, by the Pigeonhole Principle the elements of this sequence cannot all be distinct. Thus, there exist integers $k, \ell \in \mathbb{Z}_{>0}$ with $k < \ell$ such that:
+\[
+x^k = x^\ell.
+\]
+Expanding $x^\ell$ as $x^k \cdot x^{\ell - k}$:
+\[
+x^k \cdot e = x^k \cdot x^{\ell - k}.
+\]
+Applying left cancellation (\cref{prop:cancellation-laws}) $k$ times to cancel $x^k$:
+\[
+e = x^{\ell - k}.
+\]
+Setting $m := \ell - k$, since $\ell > k$, we have $m \in \mathbb{Z}_{>0}$ with $x^m = e$.
+\end{proof}
+\end{content}
+
+\begin{speech}[01:22:38 - 01:23:33]
+Because you could take the infinite group to be the integers, and you could take our element $x$ to be $1$.
+
+And then a power for the integers is adding it more and more times to itself, and you can add $1$ to itself as many times as you want, you're never going to get $0$.
+
+And the reason the proof fails, of course, is that for the integers these are all distinct.
+
+And you have to be clear when I'm talking about the integers with addition. So, it's easy to confuse yourself.
+
+All right, so, this is an extremely basic property of groups, and it's a very important one: if I have a finite group, and I have an element, if I apply powers of that element, eventually I get back to the unit, the neutral element.
+\end{speech}
+
+\begin{content}
+\begin{example}[The Integers under Addition]\label[example]{ex:integers-infinite-no-order}
+Consider the infinite additive group $(\mathbb{Z}, +, 0)$ with element $x = 1$. The corresponding sequence of \qt{powers} under additive notation is:
+\[
+n \cdot 1 = \underbrace{1 + 1 + \dots + 1}_{n \text{ times}} = n.
+\]
+For any $m \in \mathbb{Z}_{>0}$:
+\[
+m \cdot 1 = m \neq 0.
+\]
+Thus, no positive multiple of $1$ equals the neutral element $0$. The Pigeonhole Principle fails because the powers generate an infinite subset $\{1, 2, 3, \dots\} \subset \mathbb{Z}$.
+\end{example}
+\end{content}
+
+\subsection{Definition of the Order of an Element}
+
+\begin{speech}[01:23:33 - 01:24:33]
+And so, we come to a definition. So, again here: Def: let $x \in G$, $G$ finite \inlinemetanote{writes: Def: Let $x \in G$, $G$ finite}.
+
+Then the order of $x$ is the minimal positive $m$ such that $x^m$ is the neutral element \inlinemetanote{writes: then $\operatorname{Ord}(x)$ is the minimal positive $m$ such that $x^m = e$}. All right?
+
+So, once we have some, we can always take the minimal. And so, that's a canonical number associated... anytime you have a group that's finite and you have an element, that element has a number which is its order, and it's an extremely important aspect of that element.
+
+It's how many times you have to apply the group operation to itself to get back the neutral element.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Order of a Group Element]\label[definition]{def:element-order}
+Let $G$ be a finite group and let $x \in G$. The \newterm{order} of $x$, denoted $\operatorname{ord}(x)$ (or $|x|$), is the smallest positive integer $m \in \mathbb{Z}_{>0}$ such that:
+\begin{equation}\label{eq:element-order-def}
+\operatorname{ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}.
+\end{equation}
+By \cref{prop:finite-group-identity-power}, the set $\{ m \in \mathbb{Z}_{>0} \mid x^m = e \}$ is non-empty, so $\operatorname{ord}(x)$ is well-defined by the well-ordering of $\mathbb{N}$.
+\end{definition}
+\end{content}
+
+\begin{speech}[01:24:33 - 01:24:51]
+So, let us try to think about $S_3$. What is the order of $e$? \inlinemetanote{writes: $e \implies \operatorname{ord}(e) = 1$}
+
+Well, the order of $e$ is $1$, because $e^1 = e$ --- it's kind of silly, all right, anyway.
+
+So, what's the order of this element: $(1\,2)$? \inlinemetanote{writes: $(1\,2) \implies$}
+\end{speech}
+
+\begin{student}[Student Answer]
+$2$.
+\end{student}
+
+\begin{speech}[01:24:52 - 01:25:17]
+Yeah, $2$, because if I take this one, it's not $e$, so the order is not $1$ \inlinemetanote{writes: $(1\,2) \neq e \implies \text{ord} \neq 1$}. And if I apply it to itself, I have to figure out what the square is, and the square is that, and we calculated that's $e$, so the order is $2$ \inlinemetanote{writes: $(1\,2)^2 = e \implies \text{ord}(1\,2) = 2$}.
+
+And, of course, for all the two-cycles --- this thing is called a two-cycle --- so, these are all order $2$ \inlinemetanote{writes: $(1\,3) \implies \text{ord} = 2, (2\,3) \implies \text{ord} = 2$}. These are all order $2$, for all of them.
+
+And then the other one is this one: $(1\,2\,3)$. What's the order of this? \inlinemetanote{writes: $(1\,2\,3) \implies$}
+\end{speech}
+
+\begin{student}[Student Answer]
+$3$.
+\end{student}
+
+\begin{speech}[01:25:18 - 01:25:43]
+Three, yeah, three. Good guess \inlinemetanote{writes: $\text{ord} = 3$}.
+
+Because you have to apply this thing three times to get back to $1$: you take $1$, when you apply it once it goes to $2$, if you apply it twice you get $3$, it's not that anyway, but if you do it three times it gets back to $1$. So, that's that.
+\end{speech}
+
+\begin{content}
+\begin{example}[Computing Orders of Elements in $S_3$]\label[example]{ex:orders-s3}
+Evaluating the powers of elements in $S_3 = \{e, (1\,2), (1\,3), (2\,3), (1\,2\,3), (1\,3\,2)\}$:
+\begin{itemize}
+    \item \textbf{Identity element:}
+    \[
+    e^1 = e \implies \operatorname{ord}(e) = 1.
+    \]
+    \item \textbf{Transpositions (2-cycles):}
+    For $\sigma = (1 \, 2)$: $\sigma^1 = (1 \, 2) \neq e$, and $\sigma^2 = (1 \, 2)(1 \, 2) = e$. Thus:
+    \[
+    \operatorname{ord}((1 \, 2)) = \operatorname{ord}((1 \, 3)) = \operatorname{ord}((2 \, 3)) = 2.
+    \]
+    \item \textbf{3-cycles:}
+    For $\tau = (1 \, 2 \, 3)$: $\tau^1 = (1 \, 2 \, 3) \neq e$, $\tau^2 = (1 \, 3 \, 2) \neq e$, and $\tau^3 = e$. Thus:
+    \[
+    \operatorname{ord}((1 \, 2 \, 3)) = \operatorname{ord}((1 \, 3 \, 2)) = 3.
+    \]
+\end{itemize}
+Notice that the order of each element divides $|S_3| = 6$ ($1 \mid 6$, $2 \mid 6$, $3 \mid 6$), anticipating Lagrange's Theorem.
+\end{example}
+\end{content}
+
+\subsection{Cyclic Subgroups Generated by an Element}
+
+\begin{speech}[01:25:43 - 01:27:08]
+Okay, and you will notice here that part of the definition... so, let $x \in G$ be an element where $G$ is finite \inlinemetanote{writes on the lower right board: $x \in G$, $G$ finite}.
+
+Then I can consider this set, which is usually called this \inlinemetanote{writes: $\langle x \rangle =$}. And it's the set that contains the neutral element, $x$, and all the way up to $x$ to the order of $x$ minus $1$, okay? \inlinemetanote{writes: $\{e, x, \dots, x^{\operatorname{ord}(x)-1}\}$}.
+
+I don't put order because order is the neutral element. That's the definition of the order, so, I leave out the next one. All right?
+
+And the claim is... so, proposition, if I'm with this definition, this is the definition, and now maybe lemma \inlinemetanote{writes: Lemma:}... the size of this set is exactly the order of $x$ \inlinemetanote{writes: $|\langle x \rangle| = \operatorname{ord}(x)$}.
+
+So, this is some set, and the size of this is exactly order of $x$. And by that I mean certainly I've written that many symbols, order of $x$, because there's $1$ to the $\operatorname{ord}(x)-1$ plus the neutral element. So, there's certainly that many things I've written, but to say that this set has this order means that they're all distinct.
+
+So, the lemma, what I have to prove, to prove this lemma I have to show all these people here are distinct elements \inlinemetanote{writes: I have to show all these are distinct elts.}.
+\end{speech}
+
+\begin{speech}[01:27:08 - 01:27:29]
+Because over here I wrote down a set of infinite elements, but they weren't distinct.
+
+So, why is it that when I go from the neutral up to $\operatorname{ord}(x)-1$ that they're distinct? Why is that?
+\end{speech}
+
+\begin{student}[Student Answer]
+Because the order was defined as the minimal positive exponent...
+\end{student}
+
+\begin{speech}[01:27:30 - 01:28:08]
+Yeah, so, look, I mean, it could be like what happens... this neutral element, it certainly can't be one of these, because if it was like three here, it can't be that, because then that would be lower than the order. So, nothing here could be the neutral element.
+
+More interesting is: why can none of these two be equal? And again for the same reason: if these two were equal, then I could use my cancellation argument and I would get a power $m$ lower that's the neutral. So, you should think about that; it's an elementary argument, but it's certainly crucial. So, these things are just totally crucial aspects about group theory, we'll discuss them.
+
+So, let me say the final thing, then the bell's going to ring. Actually, this set is a subgroup \inlinemetanote{writes: is a subgroup}. This is a subgroup. And moreover, this subgroup is isomorphic to something. And what is it isomorphic to?
+\end{speech}
+
+\begin{student}[Student Answer]
+$\mathbb{Z} / \operatorname{ord}(x)\mathbb{Z}$.
+\end{student}
+
+\begin{speech}[01:28:08 - 01:28:18]
+Yeah, $\mathbb{Z}_{\operatorname{ord}(x)}$, $\mathbb{Z}/\operatorname{ord}(x)\mathbb{Z}$ \inlinemetanote{writes: $\cong \mathbb{Z} / \operatorname{ord}(x)\mathbb{Z}$}.
+
+So, it's a subgroup: it says that if I multiply anything here, or their inverse... I have to first show that it's closed under multiplication, you have to close it under inverse. I'll do that next time. It's kind of basic, I mean, it's kind of important, so, I'll do it next time.
+
+But the first thing is you have to show when you multiply these together, you stay in this set, and you have to show the inverses are there, and finally, what the subgroup is, is just this with addition and zero \inlinemetanote{writes: $(+, 0)$ on the right}.
+
+So, I'll explain that next time. \inlinemetanote{students applaud and pack up; the lecturer puts away chalk and sponge as the lecture concludes}
+\end{speech}
+
+\begin{content}
+\begin{definition}[Cyclic Subgroup]\label[definition]{def:cyclic-subgroup}
+Let $G$ be a finite group and let $x \in G$ with $m = \operatorname{ord}(x)$. The \newterm{cyclic subgroup generated by $x$}, denoted $\langle x \rangle$, is the set of powers:
+\begin{equation}\label{eq:cyclic-subgroup-set}
+\langle x \rangle := \bigl\{ e, x, x^2, \dots, x^{m-1} \bigr\} = \{ x^k \mid k \in \mathbb{Z} \}.
+\end{equation}
+\end{definition}
+
+\begin{lemma}[Cardinality of the Cyclic Subgroup]\label[lemma]{lem:cyclic-subgroup-order}
+The $m$ powers in \eqref{eq:cyclic-subgroup-set} are pairwise distinct. Consequently:
+\begin{equation}\label{eq:cyclic-subgroup-cardinality}
+|\langle x \rangle| = \operatorname{ord}(x).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Suppose for contradiction that $x^i = x^j$ for some $0 \le i < j \le m - 1$.
+Applying left cancellation (\cref{prop:cancellation-laws}) $i$ times:
+\[
+x^i \cdot e = x^i \cdot x^{j-i} \implies e = x^{j-i}.
+\]
+Setting $d := j - i$, we have:
+\[
+0 < d \le j \le m - 1 < m = \operatorname{ord}(x), \quad \text{with } x^d = e.
+\]
+This contradicts the definition of $m = \operatorname{ord}(x)$ as the \emph{minimal} positive integer satisfying $x^m = e$.
+Hence, all elements $e, x, x^2, \dots, x^{m-1}$ are distinct, proving that $|\langle x \rangle| = m = \operatorname{ord}(x)$.
+\end{proof}
+
+\begin{proposition}[Isomorphism with the Additive Cyclic Group]\label[proposition]{prop:cyclic-isomorphism}
+For any element $x \in G$ of order $m = \operatorname{ord}(x)$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item $\langle x \rangle$ is a subgroup of $G$: $\langle x \rangle \le G$.
+    \item $\langle x \rangle$ is isomorphic to the additive cyclic group of integers modulo $m$:
+    \begin{equation}\label{eq:cyclic-iso}
+    \langle x \rangle \cong (\mathbb{Z}/m\mathbb{Z}, +, 0).
+    \end{equation}
+\end{enumerate}
+\end{proposition}
+
+\begin{steps}[Subgroup Properties and Isomorphism Map]
+The full verification unfolds as follows:
+\begin{itemize}
+    \item \textbf{Closure under Multiplication:} For any $x^i, x^j \in \langle x \rangle$, by Euclidean division $i + j = q m + r$ with $0 \le r < m$. Then $x^i \cdot x^j = x^{i+j} = (x^m)^q \cdot x^r = e^q \cdot x^r = x^r \in \langle x \rangle$.
+    \item \textbf{Inverses:} The inverse of $x^i$ is $x^{m-i} \in \langle x \rangle$ because $x^i \cdot x^{m-i} = x^m = e$.
+    \item \textbf{Isomorphism:} The map $\phi \colon \mathbb{Z}/m\mathbb{Z} \to \langle x \rangle$ defined by $[k] \mapsto x^k$ is a well-defined bijective group homomorphism:
+    \[
+    \phi([a] + [b]) = x^{a+b} = x^a \cdot x^b = \phi([a]) \cdot \phi([b]).
+    \]
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{overview}[Summary of Key Concepts]
+This lecture bridged the culmination of ring theory with the foundational principles of abstract group theory:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Gauss's Theorem on Polynomial Rings:}
+    \begin{itemize}
+        \item Establishes that $R \text{ UFD} \implies R[x] \text{ UFD}$, extending inductively to multivariate polynomial rings $R[x_1, \dots, x_n]$.
+        \item The proof reduces uniqueness of factorization to showing that every irreducible polynomial $p \in R[x]$ generates a prime ideal $(p)$.
+        \item For $\deg(p) > 0$, the proof constructs the ideal $I = (f, p)$, selects a non-zero element $m \in I$ of minimal degree, passes to the fraction field $Q(R)[x]$ to execute the division algorithm, clears denominators to show $m^* \mid f$ and $m^* \mid p$, and uses the irreducibility and $\deg(p) > 0$ hypothesis to deduce that $m \in R \setminus \{0\}$, forcing $p \mid g$ via Gauss's Primitive Divisor Lemma.
+    \end{itemize}
+    \item \textbf{Pedagogical Triad of Algebra:}
+    \begin{itemize}
+        \item Conceptual mastery balances definitions (the rules and pieces), theorems (the gameplay), and examples (the grounding intuition).
+    \end{itemize}
+    \item \textbf{Group Axioms and Mechanics:}
+    \begin{itemize}
+        \item A group $(G, \cdot, e)$ satisfies associativity \textbf{(G0)}, unique identity $e$ \textbf{(G1)}, and unique two-sided inverses $x^{-1}$ \textbf{(G2)}.
+        \item Left and right cancellation laws ($xa = xb \implies a = b$) hold universally.
+        \item The pedagogical focus shifts to finite, non-commutative (non-abelian) groups.
+    \end{itemize}
+    \item \textbf{The Symmetric Group $S_n$ and Cycle Notation:}
+    \begin{itemize}
+        \item $S_n = \operatorname{Bij}([n], [n])$ has order $|S_n| = n!$.
+        \item Function composition is applied right-to-left: $(f \circ g)(x) = f(g(x))$.
+        \item Products of permutations are efficiently manipulated using disjoint cycle notation; $S_3$ is the smallest non-abelian group.
+    \end{itemize}
+    \item \textbf{Element Orders and Cyclic Subgroups:}
+    \begin{itemize}
+        \item In a finite group, the Pigeonhole Principle ensures that powers of an element satisfy $x^m = e$ for some $m > 0$.
+        \item The order $\operatorname{ord}(x)$ is the minimal positive exponent achieving the identity.
+        \item The set of distinct powers $\langle x \rangle = \{e, x, \dots, x^{\operatorname{ord}(x)-1}\}$ forms a cyclic subgroup of cardinality $\operatorname{ord}(x)$, canonically isomorphic to $(\mathbb{Z}/\operatorname{ord}(x)\mathbb{Z}, +, 0)$.
+    \end{itemize}
+\end{enumerate}
+\end{overview}
