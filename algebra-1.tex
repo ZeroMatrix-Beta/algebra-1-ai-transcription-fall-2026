@@ -917,20 +917,19 @@ colback=white,
 colupper=black,
 fonttitle=\bfseries\sffamily,
 coltitle=black,
-boxrule=1.5pt,
-arc=4pt,
-dynamic color shadow=#1!30,
+boxrule=1.2pt,
+arc=3.5pt,
 varwidth boxed title*=-30pt,
 code={
   \ifinsideproof
     \tcbset{
       colframe=#1!50!ProofTint,
-      boxed title style={colback=white, colframe=#1!50!ProofTint, boxrule=0.5pt, top=2pt, bottom=2pt, left=4pt, right=4pt}
+      boxed title style={colback=#1!5!white, colframe=#1!50!ProofTint, boxrule=0.8pt, top=2.5pt, bottom=2.5pt, left=5pt, right=5pt}
     }
   \else
     \tcbset{
       colframe=#1,
-      boxed title style={colback=white, colframe=#1, boxrule=0.5pt, top=2pt, bottom=2pt, left=4pt, right=4pt}
+      boxed title style={colback=#1!5!white, colframe=#1, boxrule=0.8pt, top=2.5pt, bottom=2.5pt, left=5pt, right=5pt}
     }
   \fi
 },
@@ -1057,8 +1056,7 @@ code={
 \newtcolorbox{note}[1][Administrative Metanote]{
 enhanced,
 frame hidden,
-colback=white,
-opacityback=0,
+colback=EnvMeta!3!white,
 code={
   % 2026-10-26: Dashed borderline thickness matched to aiNote at 1pt (previously 0.5pt):
   \ifinsideproof
@@ -1386,6 +1384,19 @@ breakable
   \noindent\textcolor{ChapLine}{\rule{\textwidth}{1.5pt}}%
 }
 
+% --- ORDINAL DATE FORMATTING (1st, 2nd, 3rd, 4th... 31st) ---
+\makeatletter
+\newcommand{\ordinalsuffix}[1]{%
+  \ifcase\numexpr(#1)\relax
+    th\or st\or nd\or rd\or th\or th\or th\or th\or th\or th% 0-9
+  \or th\or th\or th\or th\or th\or th\or th\or th\or th\or th% 10-19
+  \or th\or st\or nd\or rd\or th\or th\or th\or th\or th\or th% 20-29
+  \or th\or st\else th\fi}
+
+\newcommand{\formatordinaldate}[1]{\formatordinaldate@i#1\@nil}
+\def\formatordinaldate@i#1 #2\@nil{#1\textsuperscript{\ordinalsuffix{#1}} #2}
+\makeatother
+
 % Custom Lecture Chapter Command with Optional Semester/Week Number
 \newif\ifrestorelecturesubcounters
 \newcounter{currentweek}
@@ -1415,9 +1426,9 @@ breakable
       \setcounter{chapter}{\numexpr#1-1\relax}%
     }%
   }%
-  \chapter[\texorpdfstring{#2, #3\quad---\quad #5}{#2, #3 --- #5}]{%
-    {\Large\color{ChapSubtitleText}#2 #4}%
-    \texorpdfstring{\\[1ex]}{--- }%
+  \chapter[\texorpdfstring{#2, \formatordinaldate{#3}\quad---\quad #5}{#2, #3 --- #5}]{%
+    {\Large\color{ChapSubtitleText}#2, \formatordinaldate{#4}}%
+    \texorpdfstring{\\[1.4ex]}{--- }%
     {\LARGE\raggedleft\color{ChapTitleText}#5}%
   }%
   \ifrestorelecturesubcounters
@@ -1427,26 +1438,26 @@ breakable
     \setcounter{figure}{\TempFig}%
     \setcounter{table}{\TempTab}%
   \fi
-  \markboth{\chaptername\ \thechapter\ \ ---\ \ #2 #4\ \ ---\ \ #5}{}%
+  \markboth{\chaptername\ \thechapter\ \ ---\ \ #2, \formatordinaldate{#4}\ \ ---\ \ #5}{}%
 }
 
 % Chapter 0 for the background the lectures assume (content/prerequisites.tex): its own part line
 % "Prerequisites" in the TOC, a book icon instead of the calendar, and "PREREQUISITES" instead of
 % "WEEK n" above the title. Sections and results are numbered 0.x.
 % \prerequisiteschapter{Subtitle}{Title}
-\newcommand{\chapterlabel}{\MakeUppercase{\chaptertitlename}\ \thechapter}
+\newcommand{\chapterlabel}{\chaptertitlename\ \thechapter}
 \NewDocumentCommand{\prerequisiteschapter}{ m m }{%
   \phantomsection
   \addcontentsline{toc}{part}{Prerequisites}%
   \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faBook}}%
   \setcounter{chapter}{-1}%
-  \renewcommand{\chapterlabel}{\MakeUppercase{Prerequisites}}%
+  \renewcommand{\chapterlabel}{Prerequisites}%
   \chapter[#2]{%
     {\Large\color{ChapSubtitleText}#1}%
     \texorpdfstring{\\[1ex]}{--- }%
     {\LARGE\raggedleft\color{ChapTitleText}#2}%
   }%
-  \renewcommand{\chapterlabel}{\MakeUppercase{\chaptertitlename}\ \thechapter}%
+  \renewcommand{\chapterlabel}{\chaptertitlename\ \thechapter}%
   \addtocontents{toc}{\protect\renewcommand{\protect\tocchaptericon}{\protect\faCalendarDay}}%
   \markboth{Prerequisites\ \ ---\ \ #2}{}%
 }
@@ -1462,9 +1473,9 @@ breakable
 
 \newcommand{\SecRule}{%
   \vspace{-0.55em}\noindent%
-  \textcolor{SecLineLeft}{\rule{0.28\textwidth}{1.25pt}}%
+  \textcolor{SecLineLeft}{\rule{0.28\textwidth}{1.0pt}}%
   \textcolor{SecLineMid}{\rule{0.36\textwidth}{1.0pt}}%
-  \textcolor{SecLineRight}{\rule{0.36\textwidth}{0.75pt}}%
+  \textcolor{SecLineRight}{\rule{0.36\textwidth}{1.0pt}}%
 }
 
 \newcommand{\SecSym}{%
@@ -1579,38 +1590,37 @@ breakable
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
-  % Dezent geometrische Akzentformen oben rechts
-  \fill[ThemeSecondary!12, rounded corners=18pt] ($(current page.north east) + (-6.5cm,-2.5cm)$) rectangle ($(current page.north east) + (-1.2cm,-7.8cm)$);
-  \fill[ThemeWeekNumber!20, rounded corners=12pt] ($(current page.north east) + (-4.8cm,-4.2cm)$) rectangle ($(current page.north east) + (-0.6cm,-9.0cm)$);
+  % Clean geometric composition in theme palette
+  \fill[ThemeSecondary!10, rounded corners=8pt] ($(current page.north east) + (-7.2cm,-2.2cm)$) rectangle ($(current page.north east) + (-1.2cm,-6.8cm)$);
+  \fill[ThemePrimary!12, rounded corners=8pt] ($(current page.north east) + (-5.2cm,-3.6cm)$) rectangle ($(current page.north east) + (-0.6cm,-8.2cm)$);
+  \fill[TextBoldColor!15, rounded corners=6pt] ($(current page.north east) + (-3.4cm,-5.0cm)$) rectangle ($(current page.north east) + (-0.6cm,-9.4cm)$);
 \end{tikzpicture}
 
-\vspace*{4.5cm}
+\vspace*{4.2cm}
 \noindent\begin{minipage}{\textwidth}
-    {\sffamily\fontsize{40pt}{48pt}\selectfont\bfseries\color{ThemePrimary!95!black} Algebra I \par}
-    \vspace{1.2cm}
-    {\color{ThemeWeekNumber}\rule{\linewidth}{2.5pt}\par}
-    \vspace{0.2cm}
-    {\color{ThemeAccent1}\rule{0.6\linewidth}{1.5pt}\par}
-    \vspace{2.0cm}
-    % 2026-10-25: Changed color to purple (EnvTheorem), previously TextEmphColor
-    {\sffamily\fontsize{18pt}{24pt}\selectfont\bfseries\color{EnvTheorem} Lecture Notes \& Transcription \par}
-    \vspace{0.6cm}
-    {\sffamily\fontsize{15pt}{22pt}\selectfont\color{TextBoldColor} Course: \textbf{Algebra I} \par}
-    \vspace{0.3cm}
-    {\sffamily\fontsize{15pt}{22pt}\selectfont\color{TextBoldColor} Lecturer: \textbf{Prof. Rahul Pandharipande} \par}
-    \vspace{0.3cm}
-    {\sffamily\fontsize{14pt}{20pt}\selectfont\color{OliveGreen} Department of Mathematics -- ETH Z{\"u}rich \par}
-    \vspace{2.0cm}
-    {\sffamily\fontsize{14pt}{20pt}\selectfont\bfseries\color{ThemeWeekNumber}\faGraduationCap\quad Fall Semester 2026 \par}
+    {\sffamily\fontsize{42pt}{50pt}\selectfont\bfseries\color{ThemePrimary!95!black} Algebra I \par}
+    \vspace{0.8cm}
+    % Solid accent rule matching the clean design language
+    {\noindent\textcolor{ThemePrimary}{\rule{\textwidth}{1.5pt}}\par}%
+    \vspace{1.8cm}
+    {\sffamily\fontsize{18pt}{24pt}\selectfont\bfseries\color{ThemeSecondary!90!black} Lecture Notes \& Transcription \par}
+    \vspace{0.8cm}
+    {\sffamily\fontsize{13pt}{22pt}\selectfont
+      \begin{tabular}{@{}ll@{}}
+        \textcolor{black!50}{Course:}      & \textbf{\textcolor{ThemeSecondary!90!black}{Algebra I}} \\[0.5ex]
+        \textcolor{black!50}{Lecturer:}    & \textbf{\textcolor{ThemeSecondary!90!black}{Prof.\ Rahul Pandharipande}} \\[0.5ex]
+        \textcolor{black!50}{Institution:} & \textcolor{black!75}{Department of Mathematics -- ETH Z{\"u}rich} \\[0.5ex]
+        \textcolor{black!50}{Semester:}    & \textcolor{ThemeWeekNumber}{\faGraduationCap\quad Fall Semester 2026}
+      \end{tabular}\par}
 \end{minipage}
 \vfill
 \noindent\begin{minipage}{\textwidth}
     \begin{tcolorbox}[
         arc=6pt,
-        boxrule=0.7pt,
-        colback=MidnightBlue!3!white,
-        colframe=MidnightBlue!30!white,
-        left=10pt, right=10pt, top=8pt, bottom=8pt
+        boxrule=0.8pt,
+        colback=MidnightBlue!2!white,
+        colframe=MidnightBlue!25!white,
+        left=12pt, right=12pt, top=10pt, bottom=10pt
     ]
     {\sffamily\bfseries\small\color{MidnightBlue!90!black}\faInfoCircle\quad Notice \& Transcription Disclaimer \par}
     \vspace{0.25cm}
