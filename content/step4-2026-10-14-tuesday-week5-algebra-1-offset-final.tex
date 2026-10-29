@@ -134,7 +134,7 @@ Some textbooks denote the set of ideals of a ring $R$ by $\operatorname{Id}(R)$ 
 \end{aiNote}
 
 \begin{speech}[00:01:36 - 00:02:37]
-The bijection which we discussed last time is this: There's a bijection here \inlinemetanote{writes: $\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}(\faktor{R}{K})$} to ideals of $R \bmod K$, and it takes a $J$ here, this way goes to $q^{-1}(J)$ \inlinemetanote{writes: $q^{-1}(J) \mathrel{\reflectbox{$\mapsto$}} J$}, and if you take an $I$ here which contains $K$, this goes to $q(I)$ \inlinemetanote{writes: $I \mapsto q(I)$}. Sometimes this $q(I)$ is called $I \bmod K$ \inlinemetanote{writes: $= \faktor{I}{K}$}.
+The bijection which we discussed last time is this: There's a bijection here to ideals of $R \bmod K$ \inlinemetanote{writes: $\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}(\faktor{R}{K})$}, and it takes a $J$ here, this way goes to $q^{-1}(J)$ \inlinemetanote{writes: $q^{-1}(J) \mathrel{\reflectbox{$\mapsto$}} J$}, and if you take an $I$ here which contains $K$, this goes to $q(I)$ \inlinemetanote{writes: $I \mapsto q(I)$}. Sometimes this $q(I)$ is called $I \bmod K$ \inlinemetanote{writes: $= \faktor{I}{K}$}.
 
 Okay, so, that's the correspondence. We discussed this extremely carefully because I thought it wasn't really explained so carefully in the book.
 
@@ -169,7 +169,7 @@ Under this bijection, the following structural properties hold for any $I \in \o
 \subsection{Quotients of Quotients: The Third Isomorphism Theorem}
 
 \begin{speech}[00:02:37 - 00:03:48]
-So, you could ask, for example: What happens if I take a $J$ over here, an ideal $J$ in $R \bmod K$? \inlinemetanote{writes: What happens $J \subset \faktor{R}{K} \text{ ideal}$} We know that from this, I can construct a quotient: \inlinemetanote{writes: $\to \faktor{(\faktor{R}{K})}{J}$} $R \bmod K$, that's the ring, and that's an ideal, so this is the quotient.
+So, you could ask, for example: What happens if I take a $J$ over here, an ideal $J$ in $R \bmod K$ \inlinemetanote{writes: What happens $J \subset \faktor{R}{K} \text{ ideal}$}? We know that from this, I can construct a quotient: $R \bmod K$, that's the ring, and that's an ideal, so this is the quotient \inlinemetanote{writes: $\to \faktor{(\faktor{R}{K})}{J}$}.
 
 This is confusing notation sometimes, but this is the ring, this is an ideal in the ring, so I can construct the quotient.
 
@@ -177,7 +177,7 @@ That's on this side of the correspondence: If I have an ideal in this ring, I ca
 
 To understand that: What is this quotient on the other side of the correspondence? \inlinemetanote{writes: What is this quotient on the other side of the corr.?} Because for this quotient, I picked an ideal here, now I'm taking the quotient, and you can view that on the $R \bmod K$ side of the correspondence. So, what is that construction on the $R$ side of the correspondence?
 
-And that has a very nice answer. The answer for this \inlinemetanote{writes: Ans:} is we look at this quotient map: We have a quotient map $R$ to $R \bmod K$ \inlinemetanote{writes: $R \xrightarrow{q} \faktor{R}{K}$}.
+And that has a very nice answer. The answer for this is we look at this quotient map: We have a quotient map $R$ to $R \bmod K$ \inlinemetanote{writes: Ans: $R \xrightarrow{q} \faktor{R}{K}$}.
 \end{speech}
 
 \begin{content}[Quotient of a Quotient Ring: Problem Setup]
@@ -188,7 +188,7 @@ What is the structural meaning of the double quotient $\faktor{(\faktor{R}{K})}{
 \end{content}
 
 \begin{speech}[00:03:48 - 00:05:06]
-That's realizing $R \bmod K$ as a quotient of $R$, and we can compose that with another quotient map \inlinemetanote{writes: $\xrightarrow{\hat{q}} \faktor{(\faktor{R}{K})}{J}$} to $(R \bmod K) \bmod J$. This is the quotient map: Since $J$ is an ideal of $R \bmod K$, I can consider that quotient map, and I can consider the composition.
+That's realizing $R \bmod K$ as a quotient of $R$, and we can compose that with another quotient map to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $\xrightarrow{\hat{q}} \faktor{(\faktor{R}{K})}{J}$}. This is the quotient map: Since $J$ is an ideal of $R \bmod K$, I can consider that quotient map, and I can consider the composition.
 
 Let me consider this composition. For $f$, I do $q$ first and then I do $\hat{q}$ \inlinemetanote{writes: $f = \hat{q} \circ q$}. So, this is $f$ going from $R$ all the way to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $f \colon R \to \faktor{(\faktor{R}{K})}{J}$}. And since both of these are surjective --- $q$ was surjective, $\hat{q}$ is surjective ---, this $f$ is surjective. Is that clear? \inlinemetanote{writes: $f$ is surjective since both $q, \hat{q}$ are}
 
@@ -249,9 +249,9 @@ Okay? That tells us what the kernel is in this correspondence. Sorry.
 
 The answer is, the kernel of $f$ is $q^{-1}(J)$, which is that correspondence \inlinemetanote{writes: $\ker(f) = q^{-1}(J)$}. The kernel is exactly those people in $R$ where, when I move them to $R \bmod K$ with $q$, I end up in $J$, which is exactly $q^{-1}(J)$. Okay?
 
-Then, using that first isomorphism theorem, \inlinemetanote{writes: First Isom Theorem $\implies$} we can answer this question. The first isomorphism theorem says that if I take the image, which is the whole thing, it's isomorphic to that modulo the kernel.
+Then, using that first isomorphism theorem, we can answer this question \inlinemetanote{writes: First Isom Theorem $\implies$}. The first isomorphism theorem says that if I take the image, which is the whole thing, it's isomorphic to that modulo the kernel.
 
-The first isomorphism theorem says this: \inlinemetanote{writes: $\faktor{R}{\ker(f)} \cong \faktor{(\faktor{R}{K})}{J}$} $R$ modulo the kernel of $f$ is isomorphic to $(R \bmod K) \bmod J$. Are you happy that's just recalling what that is?
+The first isomorphism theorem says this: $R$ modulo the kernel of $f$ is isomorphic to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $\faktor{R}{\ker(f)} \cong \faktor{(\faktor{R}{K})}{J}$}. Are you happy that's just recalling what that is?
 
 Now we know what the kernel of $f$ is, so we can restate that as saying $R \bmod q^{-1}(J)$ is isomorphic to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $\faktor{R}{q^{-1}(J)} \cong \faktor{(\faktor{R}{K})}{J}$}. So, we've proven that.
 \end{speech}
@@ -350,7 +350,7 @@ Clearly, $\operatorname{cl}^*(R) \subset \operatorname{cl}(R)$ is obtained by ex
 \end{content}
 
 \begin{speech}[00:11:04 - 00:12:36]
-And then we say --- and this is a definition ---: $M$ \inlinemetanote{writes: $M \subset R$ is a maximal ideal} is a maximal ideal if it satisfies two properties. The first is that $M$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes: 1. $M \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $M$ is not the full ring, okay? \inlinemetanote{writes: $(M \neq R)$}
+And then we say --- and this is a definition ---: $M$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $M \subset R$ is a maximal ideal}. The first is that $M$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes: 1. $M \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $M$ is not the full ring \inlinemetanote{writes: $(M \neq R)$}, okay?
 
 Maximal ideals are not allowed to be the full ring. This is a source of standard confusion, but it's really important in the definition. Maximal ideals are not the full ring --- that's cheating for a maximal ideal.
 
@@ -386,7 +386,7 @@ The lecturer visualizes the partially ordered set of proper ideals $(\operatorna
 \begin{speech}[00:12:36 - 00:13:28]
 Okay, so, that's the definition of maximal ideal. We had some examples last time, but now we go...
 
-So, here we have a proposition: \inlinemetanote{writes: Prop. $R$ is a field $\iff (0) \subset R$ is a max ideal} $R$ is a field if and only if $(0)$ in $R$ is a maximal ideal.
+So, here we have a proposition: $R$ is a field if and only if $(0)$ in $R$ is a maximal ideal \inlinemetanote{writes: Prop. $R$ is a field $\iff (0) \subset R$ is a max ideal}.
 
 This is relating the idea of a field --- some rings are fields ---, so it's a field if and only if zero is a maximal ideal. Now there are some edge cases here which it's good to think about carefully.
 
@@ -532,7 +532,7 @@ So, that's the proof the other way. If I assume that zero is a maximal ideal, I 
 
 I have now proven this proposition: $R$ is a field if and only if $(0)$ is a maximal ideal.
 
-The next proposition, which is a kind of strengthening of that one, is: \inlinemetanote{writes: Prop: $\faktor{R}{M}$ is a field $\iff M \subset R$ is a maximal ideal} $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal.
+The next proposition, which is a kind of strengthening of that one, is: $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $\faktor{R}{M}$ is a field $\iff M \subset R$ is a maximal ideal}.
 
 That's a strengthening of this statement: That says $R$ is a field if zero is a maximal ideal; actually I say it for any ideal here: This is a field if and only if that's a maximal ideal. Okay?
 
@@ -563,7 +563,7 @@ The lecturer pauses and wipes the upper-right board panel clean with a sponge fr
 \begin{speech}[00:22:36 - 00:23:14]
 Okay, so, we want to prove that.
 
-The proof is: \inlinemetanote{writes \qt{Proof:} on the upper board} $R \bmod M$ is a field \inlinemetanote{writes: $\faktor{R}{M}$ is a field} if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod M$ is a maximal ideal \inlinemetanote{writes: $\iff (0) \subset \faktor{R}{M}$ is a max ideal}.
+The proof is: $R \bmod M$ is a field if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod M$ is a maximal ideal \inlinemetanote{writes \qt{Proof: $\faktor{R}{M}$ is a field $\iff (0) \subset \faktor{R}{M}$ is a max ideal} on the upper board}.
 
 We've proven this --- already proven, right? \inlinemetanote{writes: already proven} I just use this proposition here for $R \bmod M$. Okay? Yeah.
 \end{speech}
@@ -616,7 +616,7 @@ Therefore:
 \end{content}
 
 \begin{speech}[00:25:02 - 00:26:03]
-And that's one of the ways that the idea of a maximal ideal is important. If you have a ring $R$ --- this is another way to say it --- you have this ring $R$ \inlinemetanote{writes: $R$}, you have this set of proper ideals $\operatorname{cl}^*(R)$ \inlinemetanote{writes: $\operatorname{cl}^*(R)$}, and the ones in here, the maximal ideals here \inlinemetanote{writes: $\text{max ideals}$}, are exactly those ideals \inlinemetanote{writes: are exactly those ideals} for which the quotient is a field \inlinemetanote{writes: for which $\faktor{R}{M} \text{ is a field}$}.
+And that's one of the ways that the idea of a maximal ideal is important. If you have a ring $R$ --- this is another way to say it --- you have this ring $R$ \inlinemetanote{writes: $R$}, you have this set of proper ideals $\operatorname{cl}^*(R)$ \inlinemetanote{writes: $\operatorname{cl}^*(R)$}, and the ones in here, the maximal ideals here, are exactly those ideals for which the quotient is a field \inlinemetanote{writes: max ideals are exactly those ideals for which $\faktor{R}{M}$ is a field}.
 
 That's actually a very normal way of thinking about it. You could take this as the definition, even.
 
@@ -662,7 +662,7 @@ Ah, yeah! Right. Yeah, you could call it a partially ordered set. But the standa
 
 What is a poset? \inlinemetanote{writes: What is a poset? POSet} This means partially ordered set. You see, one of the things I teach you here is also mathematical English, which happens to be a language I know. As I get older, I feel like it's the only language I know. \inlinemetanote{laughter}
 
-What is a poset? A poset $S$ \inlinemetanote{writes: $S$} is a set \inlinemetanote{writes: is a set}, and it has what's called a partial ordering \inlinemetanote{writes: and partial ordering}.
+What is a poset? A poset $S$ is a set, and it has what's called a partial ordering \inlinemetanote{writes: $S$ is a set and partial ordering}.
 
 The partial ordering means that I might be able to compare two elements. So, a partial ordering means if I have $x$ and $y$ in $S$ \inlinemetanote{writes: $x, y \in S$}, I might have this \inlinemetanote{writes: $x \le y$}, I might have that \inlinemetanote{writes: $y \le x$}, or they could be not comparable \inlinemetanote{writes: (or could be incomparable)} --- incomparable \inlinemetanote{writes: incomparable}.
 
@@ -672,7 +672,7 @@ It satisfies some properties. I could say this formally: The standard thing for 
 \end{speech}
 
 \begin{speech}[00:28:38 - 00:29:58]
-Maybe the crucial example here is if I take $R$ a ring \inlinemetanote{writes: $R$}, and I take my set to be the set of all proper ideals \inlinemetanote{writes: $S = \operatorname{cl}^*(R)$}, and I take the partial ordering to be set inclusion \inlinemetanote{writes: set inclusion}, the subset condition \inlinemetanote{writes: subset}. So, it means if I have ideals $I$ and $J$ that are proper ideals \inlinemetanote{writes: $I, J \in \operatorname{cl}^*(R)$}, then the partial ordering is... the definition \inlinemetanote{writes: defn is} is: $I$ is a subset of $J$ \inlinemetanote{writes: $I \subset J$}.
+Maybe the crucial example here is if I take $R$ a ring \inlinemetanote{writes: $R$}, and I take my set to be the set of all proper ideals \inlinemetanote{writes: $S = \operatorname{cl}^*(R)$}, and I take the partial ordering to be set inclusion, the subset condition \inlinemetanote{writes \qt{set inclusion} and \qt{subset}}. So, it means if I have ideals $I$ and $J$ that are proper ideals \inlinemetanote{writes: $I, J \in \operatorname{cl}^*(R)$}, then the partial ordering is... the definition is: $I$ is a subset of $J$ \inlinemetanote{writes: defn is $I \subset J$}.
 
 That's kind of a standard partial ordering. Because if I have two ideals, one might be a subset of the other, the other might be a subset of the first, or they may have no subset relation at all. That's why it's called a partial ordering: I cannot always compare two elements. That's the partial part of the partial ordering.
 
@@ -778,13 +778,13 @@ The lecturer pushes the lower blackboard upward, displaying the axioms on the up
 \begin{speech}[00:32:38 - 00:33:55]
 Now, in posets, there's a notion of a maximal element of a poset. And that, in our example, is going to correspond exactly to the notion of a maximal ideal of a ring.
 
-If $S$ is an abstract poset --- we have here $(S, \le)$ is a poset \inlinemetanote{writes: $(S, \le) \text{ is a Poset}$} --- there's a definition of a maximal element: $x \in S$ is a maximal element of $S$ \inlinemetanote{writes: $x \in S \text{ is a max element of } S$}. And the definition for that --- and again, you can guess this --- the definition \inlinemetanote{writes: defn is} is: If somebody is on top of $x$, then this implies actually $x = y$ \inlinemetanote{writes: if $x \le y \implies x = y$}.
+If $S$ is an abstract poset --- we have here $(S, \le)$ is a poset \inlinemetanote{writes: $(S, \le) \text{ is a Poset}$} --- there's a definition of a maximal element: $x \in S$ is a maximal element of $S$ \inlinemetanote{writes: $x \in S \text{ is a max element of } S$}. And the definition for that --- and again, you can guess this --- the definition is: If somebody is on top of $x$, then this implies actually $x = y$ \inlinemetanote{writes: defn is if $x \le y \implies x = y$}.
 
 No one is on top of it. That's what it means. Okay? That's the definition of a maximal element: In any poset you can define a maximal element; it means that there's nobody on top of it here.
 \end{speech}
 
 \begin{speech}[00:33:55 - 00:34:33]
-And in our case, the poset here \inlinemetanote{writes: $\operatorname{cl}^*(R), \subset$}, the notion of maximal element \inlinemetanote{writes: max element} of this poset \inlinemetanote{writes: of this Poset} is the same as a maximal ideal \inlinemetanote{writes: $= \text{max ideal}$}.
+And in our case, the poset here \inlinemetanote{writes: $\operatorname{cl}^*(R), \subset$}, the notion of maximal element of this poset is the same as a maximal ideal \inlinemetanote{writes: max element of this Poset $= \text{max ideal}$}.
 
 It's just the same definition. If I take this as my poset and I use the abstract definition of maximal element, then that means my element is a maximal ideal. Is that clear? It's just saying there's nobody on top of it here. Okay?
 \end{speech}
@@ -838,7 +838,7 @@ In $(\operatorname{cl}^*(R), \subseteq)$, there is generally no greatest element
 \end{content}
 
 \begin{speech}[00:34:33 - 00:36:33]
-This existence of a maximal ideal, that was the question. Question of existence \inlinemetanote{writes: Question: existence in $\operatorname{cl}^*(R)$ of a max ideal} in $\operatorname{cl}^*(R)$ of a maximal ideal: This is really the same as some kind of abstract question of existence of maximal elements of posets \inlinemetanote{writes: Question of existence of max elts of Posets}.
+This existence of a maximal ideal, that was the question. Question of existence in $\operatorname{cl}^*(R)$ of a maximal ideal \inlinemetanote{writes: Question: existence in $\operatorname{cl}^*(R)$ of a max ideal}: This is really the same as some kind of abstract question of existence of maximal elements of posets \inlinemetanote{writes: Question of existence of max elts of Posets}.
 
 And we haven't done anything yet, because not all posets have maximal elements.
 
@@ -860,7 +860,7 @@ The lecturer wipes a portion of the right lower board clean, chuckling about Max
 \begin{speech}[00:36:33 - 00:38:18]
 What does Zorn say? Zorn's lemma tells you: If you have a poset that satisfies what's called a chain condition, then it always has a maximal element. Let's first say what that is.
 
-Zorn: \inlinemetanote{writes: Zorn: Let $(S, \le), S \neq \emptyset$} Let $(S, \le)$ be a poset in which every --- I have to explain it --- every chain is bounded \inlinemetanote{writes: be a Poset in which every chain is bounded}... Somehow my handwriting has deteriorated a bit... every chain is bounded.
+Zorn: Let $(S, \le)$ be a poset in which every --- I have to explain it --- every chain is bounded \inlinemetanote{writes: Zorn: Let $(S, \le), S \neq \emptyset$ be a Poset in which every chain is bounded}... Somehow my handwriting has deteriorated a bit... every chain is bounded.
 
 I have to explain chain and bounded.
 
@@ -887,7 +887,7 @@ Within Zermelo--Fraenkel set theory ($\text{ZF}$), Zorn's Lemma is logically equ
 \begin{speech}[00:38:18 - 00:39:26]
 Okay, so, I have to explain what \qt{every chain is bounded} means.
 
-Let $T$ be a subset of $S$ \inlinemetanote{writes: Let $T \subset S$} of our poset. Then $T$ is a chain \inlinemetanote{writes: $T$ is a chain} --- that's a definition --- if for all elements $x$ and $y$ in $T$ \inlinemetanote{writes: if $\forall x, y \in T$}, either $x \le y$ or $y \le x$ \inlinemetanote{writes: either $x \le y$ or $y \le x$}.
+Let $T$ be a subset of $S$ of our poset \inlinemetanote{writes: Let $T \subset S$}. Then $T$ is a chain \inlinemetanote{writes: $T$ is a chain} --- that's a definition --- if for all elements $x$ and $y$ in $T$, either $x \le y$ or $y \le x$ \inlinemetanote{writes \qt{if $\forall x, y \in T$} and \qt{either $x \le y$ or $y \le x$}}.
 
 This means, for a poset, not all elements are comparable, as we've discussed. So, a subset is a chain if every two elements are comparable. Okay?
 
@@ -897,7 +897,7 @@ It's not \qt{entweder \dots oder}, which would be wrong if I wrote that, but in 
 \end{speech}
 
 \begin{speech}[00:39:26 - 00:40:43]
-This is a chain. What is a chain here in our poset of proper ideals? A chain is a set $T$ \inlinemetanote{writes: $\operatorname{cl}^*(R), T = \{ \dots \}$} of ideals such that if I take any two of them, $I \in T$ and $J \in T$ \inlinemetanote{writes: $I, J \in T$}, we either have one inside the other \inlinemetanote{writes: $I \subset J$} or the other inside one \inlinemetanote{writes: $J \subset I$}.
+This is a chain. What is a chain here in our poset of proper ideals? A chain is a set $T$ of ideals such that if I take any two of them, $I \in T$ and $J \in T$ \inlinemetanote{writes \qt{$\operatorname{cl}^*(R), T = \{ \dots \}$} and \qt{$I, J \in T$}}, we either have one inside the other or the other inside one \inlinemetanote{writes \qt{$I \subset J$} and \qt{$J \subset I$}}.
 
 You view this chain as basically... this is not correct, because the index set could be uncountable numbers and all that nonsense from whatever foundations class you took, but the way you think about it is, a chain is like this: \inlinemetanote{writes: $I_1 \subset I_2 \subset \dots$}
 
@@ -928,7 +928,7 @@ although a chain may be arbitrarily infinite and uncountably indexed.
 \end{content}
 
 \begin{speech}[00:40:43 - 00:42:03]
-Now, for a chain to be bounded: A chain $T$ in $S$ is bounded \inlinemetanote{writes: a chain $T \subset S$ is bounded} --- now, this is the definition of bounded --- means there exists a $z \in S$ \inlinemetanote{writes: $\exists z \in S$} such that $z$ beats everybody, such that for every $x$ on the chain, $x \le z$ \inlinemetanote{writes: s.t. $\forall x \in T, x \le z$}.
+Now, for a chain to be bounded: A chain $T$ in $S$ is bounded \inlinemetanote{writes: a chain $T \subset S$ is bounded} --- now, this is the definition of bounded --- means there exists a $z \in S$ such that $z$ beats everybody, such that for every $x$ on the chain, $x \le z$ \inlinemetanote{writes: $\exists z \in S$ s.t. $\forall x \in T, x \le z$}.
 
 So, $z$ is on top of everybody in the chain. That's what a chain being bounded is. What's important here is this $z$ need only be in $S$; it doesn't have to be in the chain. Okay?
 
@@ -1094,13 +1094,13 @@ The lecturer highlights a fundamental philosophical dilemma in algebra: Krull's 
 \begin{speech}[00:47:51 - 00:49:27]
 Okay, so, sorry, that was a small discussion there.
 
-That was the end of our introduction to maximal ideals, and there's now a parallel discussion \inlinemetanote{writes: Parallel discussion of prime ideals} of prime ideals. So, this is a new definition: prime ideals.
+That was the end of our introduction to maximal ideals, and there's now a parallel discussion of prime ideals \inlinemetanote{writes: Parallel discussion of prime ideals}. So, this is a new definition: prime ideals.
 
 Let us say it: An ideal $P$ inside our ring is prime \inlinemetanote{writes: An ideal $P \subset R$ is prime} --- and this is the definition of prime \inlinemetanote{writes: $\Uparrow$ def} --- and there are two properties:
 
 The first property is that $P$ is in our $\operatorname{cl}^*(R)$ \inlinemetanote{writes: $* \ P \in \operatorname{cl}^*(R)$}. This means it's an ideal and it's not the whole ring again. It's in the same class. In other words, $P$ is not the whole ring \inlinemetanote{writes: $P \neq R$}. Maximal ideals can't be the whole ring, and prime ideals can't either, all right?
 
-The second one is the reason why it's called prime. It says that for all elements $a, b \in R$ \inlinemetanote{writes: $* \ \forall a, b \in R$}, if $a \notin P$ \inlinemetanote{writes: if $a \notin P$} and $b \notin P$ \inlinemetanote{writes: $b \notin P$}, then this implies their product $ab \notin P$ \inlinemetanote{writes: $\implies ab \notin P$}. So, that's the condition that has teeth.
+The second one is the reason why it's called prime. It says that for all elements $a, b \in R$, if $a \notin P$ and $b \notin P$, then this implies their product $ab \notin P$ \inlinemetanote{writes \qt{$* \ \forall a, b \in R$}, \qt{if $a \notin P$}, \qt{$b \notin P$} and \qt{$\implies ab \notin P$}}. So, that's the condition that has teeth.
 
 All right, so, that's the definition of a prime ideal, and you have to digest it a little bit. The main thing is, a prime ideal is an ideal, it's not the whole ring, and it has this property: If I take two people outside it and multiply, they stay out.
 \end{speech}
@@ -1140,7 +1140,7 @@ All right. And so, why is it called a prime ideal?
 
 You can call it anything you want, but the reason it's called a prime ideal... \inlinemetanote{writes: Reason for the name:}
 
-The reason for the name is that if I take this ideal $n$... \inlinemetanote{drops chalk} Oops. You can imagine what the reason is: If I take the ideal generated by $n$ \inlinemetanote{writes: $(n) \subset \mathbb{Z}$}, which we sometimes also call $n\mathbb{Z}$ \inlinemetanote{writes: $n\mathbb{Z}$} inside $\mathbb{Z}$, then the claim \inlinemetanote{writes: Claim:} is that... I mean, zero is always special, and we'll discuss that in a second, but if we have some positive integer \inlinemetanote{writes: If $n \in \mathbb{Z}_{\ge 2}$ (or $n \in \mathbb{N}_{\ge 2}$)} greater than or equal to $2$ --- because if $n = 1$, it's not a prime ideal --- so, if you have some integer here with $n \in \{2, 3, 4, \dots\}$ \inlinemetanote{writes: $n = \{2, 3, 4, \dots\}$}, then this is a prime ideal \inlinemetanote{writes: then $(n)$ is a prime ideal} if and only if $n$ is a prime number \inlinemetanote{writes: $\iff n \text{ is a prime number}$}.
+The reason for the name is that if I take this ideal $n$... \inlinemetanote{drops chalk} Oops. You can imagine what the reason is: If I take the ideal generated by $n$ \inlinemetanote{writes: $(n) \subset \mathbb{Z}$}, which we sometimes also call $n\mathbb{Z}$ inside $\mathbb{Z}$ \inlinemetanote{writes: $n\mathbb{Z}$}, then the claim is that... I mean, zero is always special, and we'll discuss that in a second, but if we have some positive integer greater than or equal to $2$ \inlinemetanote{writes: Claim: If $n \in \mathbb{Z}_{\ge 2}$ (or $n \in \mathbb{N}_{\ge 2}$)} --- because if $n = 1$, it's not a prime ideal --- so, if you have some integer here with $n \in \{2, 3, 4, \dots\}$ \inlinemetanote{writes: $n = \{2, 3, 4, \dots\}$}, then this is a prime ideal if and only if $n$ is a prime number \inlinemetanote{writes: then $(n)$ is a prime ideal $\iff n \text{ is a prime number}$}.
 
 There are the boundary cases here: If we take zero, this ideal \inlinemetanote{writes: $(0) \subset \mathbb{Z}$}, is this ideal prime or not?
 \end{speech}
@@ -1168,7 +1168,7 @@ Anyway, once you're out of these special cases, the notion of prime is it's a pr
 
 I'm not going to give you the proof of it. For example, if you take the ideal $(4)$ inside $\mathbb{Z}$, why is it not prime? Because if I take $2$, the number $2$ is not in this ideal, because $2$ is not a multiple of $4$. Actually, maybe I should do $6$ then. \inlinemetanote{erases $4$, writes: $(6) \subset \mathbb{Z}$}
 
-$2 \notin (6)$ \inlinemetanote{writes: $2 \notin (6)$} and $3 \notin (6)$ \inlinemetanote{writes: $3 \notin (6)$}, but if I multiply them, $2 \cdot 3 \in (6)$ \inlinemetanote{writes: $2 \cdot 3 \in (6)$}.
+$2 \notin (6)$ and $3 \notin (6)$ \inlinemetanote{writes \qt{$2 \notin (6)$} and \qt{$3 \notin (6)$}}, but if I multiply them, $2 \cdot 3 \in (6)$ \inlinemetanote{writes: $2 \cdot 3 \in (6)$}.
 
 This shows that $(6)$ is not prime \inlinemetanote{writes: NOT Prime!}, because to be prime, if you take two people outside and multiply, they have to stay outside. And here we don't: You have two people outside, you multiply, and you got inside. That's bad --- you're not prime.
 
@@ -1246,7 +1246,7 @@ Okay, but that's not the teeth of the definition of an integral domain.
 \end{speech}
 
 \begin{speech}[00:56:19 - 00:57:18]
-We have to show \inlinemetanote{writes: We have to show} that given elements $\bar{x}$ and $\bar{y}$ in $R \bmod P$ \inlinemetanote{writes: given $\bar{x}, \bar{y} \in \faktor{R}{P}$} --- with $x, y \in R$ \inlinemetanote{writes: (with $x, y \in R$)}, these are the equivalence classes of $x$ and $y$ --- such that $\bar{x} \neq \bar{0}$ \inlinemetanote{writes: such that $\bar{x} \neq \bar{0}$} and $\bar{y} \neq \bar{0}$ \inlinemetanote{writes: and $\bar{y} \neq \bar{0}$}, then I need to show that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes: $\implies \bar{x}\bar{y} \neq \bar{0}$}. Is that clear?
+We have to show that given elements $\bar{x}$ and $\bar{y}$ in $R \bmod P$ \inlinemetanote{writes: We have to show given $\bar{x}, \bar{y} \in \faktor{R}{P}$} --- with $x, y \in R$ \inlinemetanote{writes: (with $x, y \in R$)}, these are the equivalence classes of $x$ and $y$ --- such that $\bar{x} \neq \bar{0}$ and $\bar{y} \neq \bar{0}$, then I need to show that $\bar{x}\bar{y} \neq \bar{0}$ \inlinemetanote{writes: such that $\bar{x} \neq \bar{0}$ and $\bar{y} \neq \bar{0} \implies \bar{x}\bar{y} \neq \bar{0}$}. Is that clear?
 
 Now, I've just used bars everywhere here. Sometimes I do, sometimes I don't, and that's just how it goes. But anyway, in this proof I'm going to use bars everywhere. Yeah?
 \end{speech}
@@ -1527,7 +1527,7 @@ The very basic one, the version you learn in school, is: Let $a$ and $b$ be numb
 
 Then choose $x, y \in \mathbb{Z}$ to be some other integers \inlinemetanote{writes: choose $x, y \in \mathbb{Z}$}.
 
-The Chinese Remainder Theorem is about the solution of a certain system. We want to solve for a third integer $z$ that satisfies the equations: $z \equiv x \pmod a$ \inlinemetanote{writes: We want for $z \in \mathbb{Z}, z \equiv x \bmod a$} and $z \equiv y \pmod b$ \inlinemetanote{writes: $z \equiv y \bmod b$}.
+The Chinese Remainder Theorem is about the solution of a certain system. We want to solve for a third integer $z$ that satisfies the equations: $z \equiv x \pmod a$ and $z \equiv y \pmod b$ \inlinemetanote{writes \qt{We want for $z \in \mathbb{Z}, z \equiv x \bmod a$} and \qt{$z \equiv y \bmod b$}}.
 
 That's what we have to solve. Is this familiar to you?
 
@@ -1554,7 +1554,7 @@ The lecturer pushes the lower blackboard upward and cleans the lower blackboard 
 \begin{speech}[01:09:07 - 01:10:32]
 We would like to pursue this in the context of general rings, and let us try to do it in that context. Maybe do an example first if you haven't seen it --- it's not necessary that you've seen it.
 
-If you haven't seen it, we'll do a small example, and then I'll do the general case. We take here $\bmod 5$, and say we want $z \equiv 2 \pmod 5$ \inlinemetanote{writes: $z \equiv 2 \bmod 5$} and $z \equiv 1 \pmod 7$ \inlinemetanote{writes: $z \equiv 1 \bmod 7$}.
+If you haven't seen it, we'll do a small example, and then I'll do the general case. We take here $\bmod 5$, and say we want $z \equiv 2 \pmod 5$ and $z \equiv 1 \pmod 7$ \inlinemetanote{writes \qt{$z \equiv 2 \bmod 5$} and \qt{$z \equiv 1 \bmod 7$}}.
 
 How do you do this? I look at the numbers $\bmod 5$: There's $2$. What's $2 \bmod 5$? Well, I can add $7$... that doesn't seem to work... $12$... that's more failure... $17$... $22$... Ah, $22$ is pretty good! \inlinemetanote{circles $22$}
 
@@ -1966,7 +1966,7 @@ Let us prove $\phi$ is injective \inlinemetanote{writes: Let us prove $\phi$ is 
 
 Our hypothesis, our assumption, is that $I + J = (1)$ \inlinemetanote{writes: hypothesis $I + J = (1)$}. That's our assumption.
 
-This means that there exists an $i \in I$ and a $j \in J$ \inlinemetanote{writes: $\implies \exists i \in I, j \in J$} such that $i + j = 1$ \inlinemetanote{writes: $i + j = 1$}. That's our basic assumption of these ideals, all right?
+This means that there exists an $i \in I$ and a $j \in J$ such that $i + j = 1$ \inlinemetanote{writes \qt{$\implies \exists i \in I, j \in J$} and \qt{$i + j = 1$}}. That's our basic assumption of these ideals, all right?
 
 And we need to now show... I'll do it quickly and we'll discuss it again next time: Suppose we have $\phi(\bar{z}) = (\bar{0}, \bar{0})$ \inlinemetanote{writes: Suppose $\phi(\bar{z}) = (\bar{0}, \bar{0})$}.
 

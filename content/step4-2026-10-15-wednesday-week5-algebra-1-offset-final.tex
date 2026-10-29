@@ -752,16 +752,16 @@ Subtracting \eqref{eq:rep2} from \eqref{eq:rep1} gives:
 0 = \bigl(q(x) - \tilde{q}(x)\bigr) g(x) + \bigl(r(x) - \tilde{r}(x)\bigr) \implies \bigl(q(x) - \tilde{q}(x)\bigr) g(x) = \tilde{r}(x) - r(x).
 \end{equation}
 We show that $q(x) - \tilde{q}(x) = 0$:
-\begin{itemize}
-    \item \textbf{Case $q \neq \tilde{q}$:} Assume for contradiction that $q(x) - \tilde{q}(x) \neq 0$. Since $K$ is a field and $g(x) \neq 0$, the degree of a product equals the sum of the degrees:
+\begin{description}
+    \item[Case $q \neq \tilde{q}$:] Assume for contradiction that $q(x) - \tilde{q}(x) \neq 0$. Since $K$ is a field and $g(x) \neq 0$, the degree of a product equals the sum of the degrees:
     \[
     \deg\Bigl(\bigl(q(x) - \tilde{q}(x)\bigr) g(x)\Bigr) = \deg(q - \tilde{q}) + \deg(g) \ge \deg(g).
     \]
-    \item \textbf{Degree Contradiction:} On the other hand, each of $r(x)$ and $\tilde{r}(x)$ is either zero or has degree strictly less than $\deg(g)$. The difference $\tilde{r}(x) - r(x)$ is therefore either zero or satisfies:
+    \item[Degree Contradiction:] On the other hand, each of $r(x)$ and $\tilde{r}(x)$ is either zero or has degree strictly less than $\deg(g)$. The difference $\tilde{r}(x) - r(x)$ is therefore either zero or satisfies:
     \[
     \deg(\tilde{r} - r) \le \max\bigl(\deg(\tilde{r}), \, \deg(r)\bigr) < \deg(g).
     \]
-\end{itemize}
+\end{description}
 This forces $\deg(g) \le \deg\bigl((q - \tilde{q})g\bigr) = \deg(\tilde{r} - r) < \deg(g)$, an impossible contradiction.
 Therefore:
 \[

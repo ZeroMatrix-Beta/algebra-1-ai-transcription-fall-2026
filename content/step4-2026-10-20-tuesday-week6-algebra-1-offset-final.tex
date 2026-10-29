@@ -103,11 +103,11 @@ This lecture formally develops the theory of unique factorization domains (UFDs)
     \item \textbf{Foundations of Factorization:} The foundational notions of units $R^\times$ and irreducible elements are established for arbitrary integral domains, highlighting the critical distinction between irreducible elements and prime elements in abstract ring theory.
     \item \textbf{Unique Factorization Domains:} We define UFDs via the existence and uniqueness of irreducible factorizations (up to permutation and unit associates). We examine standard examples ($\mathbb{Z}$, fields $K$, $K[x]$, and multivariate polynomial rings $K[x_1, \dots, x_n]$ via Gauss's Theorem B) and investigate an explicit non-example: the subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ of polynomials lacking a linear term, illuminated by the geometry of the cuspidal cubic curve.
     \item \textbf{Proof of Theorem A ($\text{PID} \implies \text{UFD}$):} The core theorem is established across three sequential steps:
-    \begin{enumerate}[label=\textbf{Step \arabic*.}]
-        \item \textbf{Uniqueness Property:} If every irreducible element in a domain generates a prime ideal, factorizations into irreducibles are unique up to permutation and unit associates.
-        \item \textbf{Irreducible Implies Prime in a PID:} In any PID, every irreducible element generates a prime ideal, establishing the uniqueness property for all PIDs.
-        \item \textbf{Existence Property:} By analyzing a recursive binary factorization tree, we show that any non-terminating factorization branch yields a strictly ascending chain of principal ideals $(x_0) \subsetneq (x_1) \subsetneq (x_2) \subsetneq \dots$, which is ruled out by the PID property on the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$.
-    \end{enumerate}
+    \begin{description}
+        \item[Step 1:] \textbf{Uniqueness Property:} If every irreducible element in a domain generates a prime ideal, factorizations into irreducibles are unique up to permutation and unit associates.
+        \item[Step 2:] \textbf{Irreducible Implies Prime in a PID:} In any PID, every irreducible element generates a prime ideal, establishing the uniqueness property for all PIDs.
+        \item[Step 3:] \textbf{Existence Property:} By analyzing a recursive binary factorization tree, we show that any non-terminating factorization branch yields a strictly ascending chain of principal ideals $(x_0) \subsetneq (x_1) \subsetneq (x_2) \subsetneq \dots$, which is ruled out by the PID property on the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$.
+    \end{description}
     \item \textbf{GCD, LCM, and Power Series:} We express greatest common divisors and least common multiples in arbitrary UFDs via prime factorizations, analyze associate classes and unit ambiguities, prove the identity $\operatorname{gcd}(x, y) \cdot \operatorname{lcm}(x, y) \sim x \cdot y$, and conclude with the exercise that formal power series rings $k[[x]]$ are PIDs and UFDs.
 \end{itemize}
 \end{overview}
@@ -938,9 +938,9 @@ p_1 = q_1 \cdot q_2 \cdots q_m,
 \end{equation}
 where $p_1$ and all $q_j$ are irreducible elements in $R$.
 
-\begin{enumerate}[label=\textbf{Step \arabic*.}]
-    \item \textbf{Primality of the Ideal $(p_1)$:} Since $p_1$ is irreducible, the hypothesis \eqref{eq:condition-irr-implies-prime} implies that the principal ideal $(p_1) = R p_1$ is prime.
-    \item \textbf{Membership in $(p_1)$:} Clearly $p_1 \in (p_1)$, so:
+\begin{description}
+    \item[Step 1:] \textbf{Primality of the Ideal $(p_1)$:} Since $p_1$ is irreducible, the hypothesis \eqref{eq:condition-irr-implies-prime} implies that the principal ideal $(p_1) = R p_1$ is prime.
+    \item[Step 2:] \textbf{Membership in $(p_1)$:} Clearly $p_1 \in (p_1)$, so:
     \[
     q_1 \cdot q_2 \cdots q_m \in (p_1).
     \]
@@ -948,7 +948,7 @@ where $p_1$ and all $q_j$ are irreducible elements in $R$.
     \begin{equation}\label{eq:qj-in-p1}
     \exists j \in \{1, \dots, m\} \quad \text{such that} \quad q_j \in (p_1).
     \end{equation}
-    \item \textbf{Divisibility and Unit Associate:} The condition $q_j \in (p_1)$ means that:
+    \item[Step 3:] \textbf{Divisibility and Unit Associate:} The condition $q_j \in (p_1)$ means that:
     \begin{equation}\label{eq:qj-y-p1}
     q_j = y \cdot p_1 \quad \text{for some } y \in R.
     \end{equation}
@@ -956,7 +956,7 @@ where $p_1$ and all $q_j$ are irreducible elements in $R$.
     \begin{equation}\label{eq:y-is-unit}
     y \in R^\times \quad (y \text{ is a unit}).
     \end{equation}
-\end{enumerate}
+\end{description}
 \end{content}
 
 \begin{speech}[00:39:17 - 00:41:44]
@@ -1070,14 +1070,14 @@ p_1 \cdot p_2 \cdots p_n = q_1 \cdot q_2 \cdots q_m,
 \end{equation}
 where all $p_i$ and $q_k$ are irreducible in $R$.
 
-\begin{enumerate}[label=\textbf{Step \arabic*.}]
-    \item \textbf{Primality of $(p_1)$ and Finding the Partner:} As in the base case, $p_1$ is irreducible, so $(p_1)$ is prime by hypothesis \eqref{eq:condition-irr-implies-prime}. Since the product $q_1 \cdots q_m = p_1 \cdots p_n \in (p_1)$, there exists some index $j \in \{1, \dots, m\}$ such that:
+\begin{description}
+    \item[Step 1:] \textbf{Primality of $(p_1)$ and Finding the Partner:} As in the base case, $p_1$ is irreducible, so $(p_1)$ is prime by hypothesis \eqref{eq:condition-irr-implies-prime}. Since the product $q_1 \cdots q_m = p_1 \cdots p_n \in (p_1)$, there exists some index $j \in \{1, \dots, m\}$ such that:
     \begin{equation}\label{eq:induction-qj-in-p1}
     q_j \in (p_1) \implies q_j = y \cdot p_1 \quad \text{for some } y \in R.
     \end{equation}
     Because $q_j$ is irreducible and $p_1 \notin R^\times$, the factor $y$ must be a unit: $y \in R^\times$. Thus, $p_1$ and $q_j$ are associate irreducibles.
     
-    \item \textbf{Cancelling $p_1$ via Domain Property:} Commuting $q_j$ to the front of the right-hand side product and substituting $q_j = y \cdot p_1$:
+    \item[Step 2:] \textbf{Cancelling $p_1$ via Domain Property:} Commuting $q_j$ to the front of the right-hand side product and substituting $q_j = y \cdot p_1$:
     \begin{equation}\label{eq:induction-subst}
     p_1 \cdot (p_2 \cdots p_n) = y \cdot p_1 \cdot (q_1 \cdots \widehat{q_j} \cdots q_m).
     \end{equation}
@@ -1086,7 +1086,7 @@ where all $p_i$ and $q_k$ are irreducible in $R$.
     p_2 \cdots p_n = y \cdot (q_1 \cdots \widehat{q_j} \cdots q_m).
     \end{equation}
     
-    \item \textbf{Absorbing the Unit and Applying Induction Hypothesis:} The product $q_1 \cdots \widehat{q_j} \cdots q_m$ is not empty: otherwise $p_2 \cdots p_n = y$ would be a unit, so $p_2$ would divide $1$ and be a unit itself, which an irreducible element is not. So $m \ge 2$, and we absorb the unit $y \in R^\times$ into one of the remaining factors $q_k$, $k \neq j$, replacing it by the associate irreducible $\tilde{q}_k := y \cdot q_k$ (an associate of an irreducible element is irreducible). Renumbering so that $k = 1$:
+    \item[Step 3:] \textbf{Absorbing the Unit and Applying Induction Hypothesis:} The product $q_1 \cdots \widehat{q_j} \cdots q_m$ is not empty: otherwise $p_2 \cdots p_n = y$ would be a unit, so $p_2$ would divide $1$ and be a unit itself, which an irreducible element is not. So $m \ge 2$, and we absorb the unit $y \in R^\times$ into one of the remaining factors $q_k$, $k \neq j$, replacing it by the associate irreducible $\tilde{q}_k := y \cdot q_k$ (an associate of an irreducible element is irreducible). Renumbering so that $k = 1$:
     \begin{equation}\label{eq:induction-reduced-chain}
     p_2 \cdots p_n = \tilde{q}_1 \cdots \widehat{q_j} \cdots q_m.
     \end{equation}
@@ -1096,7 +1096,7 @@ where all $p_i$ and $q_k$ are irreducible in $R$.
         \item The remaining factors $\{p_2, \dots, p_n\}$ match the factors $\{q_k\}_{k \neq j}$ up to a permutation and multiplication by units.
     \end{itemize}
     Together with $p_1 = y^{-1} q_j$, this proves that the original factorizations in \eqref{eq:induction-setup} are identical up to reordering and unit associates.
-\end{enumerate}
+\end{description}
 This completes the induction and establishes \cref{clm:step1-uniqueness}.
 \end{content}
 \end{proofWrapper}

@@ -1497,9 +1497,9 @@ That proves this claim. \inlinemetanote{draws a separating line on the board}
 \begin{content}[Consolidated Proof: Ideals of $\mathbb{Z}$]
 \begin{proof}[Complete Derivation of \cref{thm:ideals-of-z-are-principal}]
 Let $I \subset \mathbb{Z}$ be an ideal.
-\begin{enumerate}[label=\textbf{Case \arabic*:}]
-    \item \textbf{$I = \{0\}$:} Then $I = 0\mathbb{Z}$, and $n = 0$ is unique.
-    \item \textbf{$I \neq \{0\}$:} Choose any non-zero $x \in I$. Since $I$ is an additive subgroup, $-x = (-1) \cdot x \in I$. Thus, $|x| \in I \cap \mathbb{Z}_{>0} \neq \emptyset$.
+\begin{description}
+    \item[Case 1:] \textbf{$I = \{0\}$:} Then $I = 0\mathbb{Z}$, and $n = 0$ is unique.
+    \item[Case 2:] \textbf{$I \neq \{0\}$:} Choose any non-zero $x \in I$. Since $I$ is an additive subgroup, $-x = (-1) \cdot x \in I$. Thus, $|x| \in I \cap \mathbb{Z}_{>0} \neq \emptyset$.
     
     By the Well-Ordering Principle of $\mathbb{N}$, the non-empty set of positive elements in $I$ has a least element:
     \[
@@ -1523,7 +1523,7 @@ Let $I \subset \mathbb{Z}$ be an ideal.
         Therefore, we must have $r = 0$, which gives $y = q \cdot n \in n\mathbb{Z}$.
     \end{itemize}
     Hence, $I = n\mathbb{Z}$. Uniqueness follows because distinct non-negative integers generate distinct sets of positive multiples ($n = \min(n\mathbb{Z} \cap \mathbb{Z}_{>0})$ for $n > 0$).
-\end{enumerate}
+\end{description}
 \end{proof}
 \end{content}
 
