@@ -1,4 +1,11 @@
 % ==========================================
+% Built into the book on 2026-10-30 by Claude (claude-opus-5-5), from the pipeline's step-4
+% output below: week-tagged labels and \recap lines for what the previous lecture stated, recall
+% anchors and cross-references, and the fixes of a review (the injectivity proof for Rot(cube) ->
+% S_4, which treated fixed diagonals as fixed axes; the face-counting rule claimed for every
+% polyhedron; A_4 justified; hidden edges of the cube and tetrahedron figures; wording fixes).
+% ==========================================
+% ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
 % Output: step4-10-28-2026-wednesday-week7-Algebra_I-offset-final.tex
 % Input: step3-10-28-2026-wednesday-week7-Algebra_I-offset-speech_refined.tex
@@ -110,7 +117,7 @@ This lecture explores the foundational structure of finite groups, culminating i
 \begin{speech}[00:00:00 - 00:01:25]
 Okay, so, we start. I hope you have now concluded your study of Confucius, Plato, and Schopenhauer, and we can come back to the discussion of groups.
 
-So, I defined last time group --- $G$ is a group \inlinemetanote{writes: $G \text{ group } (G, \cdot, e)$} --- which I don't repeat now. And I remind you, because it's kind of important for the perspective of the discussion about group theory: we will normally... our interest will be here mainly, but not exclusively, focused on finite groups \inlinemetanote{writes: $\implies \text{mostly focused on finite groups}$}, but not always.
+So, I defined last time group --- $G$ is a group \inlinemetanote{writes: $G \text{ group } (G, \cdot, e)$} --- which I don't repeat now (Recall: \cref{def:group-w7tue}). And I remind you, because it's kind of important for the perspective of the discussion about group theory: we will normally... our interest will be here mainly, but not exclusively, focused on finite groups \inlinemetanote{writes: $\implies \text{mostly focused on finite groups}$}, but not always.
 
 And also our main interest, but not always, is on non-commutative groups, so non-Abelian \inlinemetanote{writes: $\implies \text{on non-Abelian}$}. But not always. So, what you should have in your mind when I say group: it's a finite group and not necessarily Abelian.
 
@@ -125,11 +132,11 @@ Let $(G, \cdot, e)$ be a group. Throughout this part of the course, our primary 
 \end{itemize}
 
 \begin{example}[The Symmetric Group]\label[example]{ex:symmetric-group}
-For $n \in \mathbb{N}$, the \newterm{symmetric group} $S_n$ consists of all bijections (permutations) of the set $\{1, 2, \dots, n\}$ under function composition. Its order is given by:
+For $n \ge 1$, the \newterm{symmetric group} $S_n$ consists of all bijections (permutations) of the set $\{1, 2, \dots, n\}$ under function composition (\cref{def:symmetric-group}). Its order is given by (\cref{prop:order-symmetric-group}):
 \[
 |S_n| = n!
 \]
-For $n \ge 3$, $S_n$ is non-Abelian.
+For $n \ge 3$, $S_n$ is non-Abelian: it contains $(1\,3)$ and $(2\,3)$, which do not commute (\cref{obs:s3-non-commutative}).
 \end{example}
 
 \begin{steps}[Why Symmetric Groups Are Considered the Richest Family]
@@ -165,13 +172,15 @@ A group $G$ is called \newterm{cyclic} if there exists an element $g \in G$ such
 \begin{speech}[00:02:04 - 00:03:20]
 So, we were discussing in the second period last time... the setup of the discussion was $G$ is a group \inlinemetanote{writes: $G \text{ is group, finite}$}, a finite one, and $x$ is an element \inlinemetanote{writes: $x \in G$}. And we had proven some things already, so we had defined --- it's kind of a theorem-definition --- we had seen \inlinemetanote{writes: $\text{(1) we had seen that}$} that the order of $x$ is well-defined \inlinemetanote{writes: $\text{order of } x \text{ is well-defined}$}.
 
-And I'll just remind you what the order is. This order of $x$ \inlinemetanote{writes: $\operatorname{Ord}(x) =$} is equal... is the minimal $m$ positive integer such that \inlinemetanote{writes: $\min_{m > 0} \text{ s.t. } x^m = e$} $x^m$ is the neutral element in $G$. So, to say it's well-defined, you have to first show that there exists some, and that it's a non-empty set and you can pick the minimal one. So, we proved all of this last time.
+And I'll just remind you what the order is. This order of $x$ \inlinemetanote{writes: $\operatorname{Ord}(x) =$} is equal... is the minimal $m$ positive integer such that \inlinemetanote{writes: $\min_{m > 0} \text{ s.t. } x^m = e$} $x^m$ is the neutral element in $G$. So, to say it's well-defined, you have to first show that there exists some, and that it's a non-empty set and you can pick the minimal one. So, we proved all of this last time (Recall: \cref{prop:finite-group-identity-power}, \cref{def:element-order}).
 \end{speech}
+
+\recap{The order of an element was defined in the previous lecture (\cref{def:element-order}), which showed that it is well-defined (\cref{prop:finite-group-identity-power}).}
 
 \begin{content}[Order of a Group Element]
 Let $G$ be a finite group and let $x \in G$.
 
-\begin{definition}[Order of an Element]\label[definition]{def:order-of-element}
+\begin{definition}[Order of an Element]\label[definition]{def:element-order-w7wed}
 The \newterm{order} of $x \in G$, denoted by $\operatorname{Ord}(x)$, is the smallest positive integer $m \ge 1$ such that $x^m = e$:
 \[
 \operatorname{Ord}(x) := \min \{ m \in \mathbb{N}_{>0} \mid x^m = e \}.
@@ -192,11 +201,13 @@ cannot consist of distinct elements. By the Pigeonhole Principle, there must exi
 \begin{speech}[00:03:20 - 00:04:06]
 And I think that the point where I stopped was this discussion. Another definition is I use these triangular parentheses, the angle brackets. This is by definition \inlinemetanote{writes: $\text{(2) } \langle x \rangle \stackrel{\text{def}}{=}$} the set of elements that includes the neutral element, $x$, $x^2$, all the way to $x$ to the order of $x$ minus one \inlinemetanote{writes: $\{e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1}\}$}.
 
-Okay? This is a subset of $G$ \inlinemetanote{writes: $\subset G$}. That's the definition. Sometimes in words this is the... well, let me say the words later. So, that's where we were last time. Are there questions about this? That's in my memory where we were last time.
+Okay? This is a subset of $G$ \inlinemetanote{writes: $\subset G$}. That's the definition. Sometimes in words this is the... well, let me say the words later. So, that's where we were last time (Recall: \cref{def:cyclic-subgroup}). Are there questions about this? That's in my memory where we were last time.
 \end{speech}
 
+\recap{This is \cref{def:cyclic-subgroup} of the previous lecture, where \cref{lem:cyclic-subgroup-order} showed that the listed powers are distinct. That $\langle x \rangle$ is a subgroup isomorphic to $\mathbb{Z}/\operatorname{Ord}(x)\mathbb{Z}$ was stated there (\cref{prop:cyclic-isomorphism}) and is proved now.}
+
 \begin{content}[The Set of Powers of an Element]
-\begin{definition}[Subgroup Generated by $x$ (Preliminary Setup)]\label[definition]{def:generated-set-prelim}
+\begin{definition}[Subgroup Generated by $x$ (Preliminary Setup)]\label[definition]{def:cyclic-subgroup-w7wed}
 For any element $x \in G$ in a finite group, we define the set of its distinct powers using angle brackets:
 \[
 \langle x \rangle := \bigl\{ e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1} \bigr\} \subset G.
@@ -286,7 +297,7 @@ In particular, $|\langle x \rangle| = \operatorname{Ord}(x)$.
 \end{corollary}
 
 \begin{steps}[Why the Map Is an Isomorphism]
-The assignment $\psi \colon \mathbb{Z}_m \to \langle x \rangle$ defined by $\psi([k]) := x^k$ is well-defined because $x^m = e$. It is surjective by definition of $\langle x \rangle$, and since both sets have cardinality $m$, it is bijective. Furthermore,
+The assignment $\psi \colon \mathbb{Z}_m \to \langle x \rangle$ defined by $\psi([k]) := x^k$ is well-defined because $x^m = e$. It is surjective by definition of $\langle x \rangle$, and since both sets have cardinality $m$ (\cref{lem:cyclic-subgroup-order}), it is bijective. Furthermore,
 \[
 \psi([k] + [\ell]) = \psi([k + \ell]) = x^{k+\ell} = x^k \cdot x^\ell = \psi([k]) \cdot \psi([\ell]),
 \]
@@ -299,7 +310,7 @@ which proves that $\psi$ is a group isomorphism.
 \subsection{Divisibility of Orders in Symmetric Groups}
 
 \begin{speech}[00:07:49 - 00:09:18]
-All right, so, like in our example for $S_3$, we had some elements like these two-cycles, this element \inlinemetanote{writes: $S_3$, $(1\,2)(3) \implies \operatorname{ord} = 2$}, and I said sometimes I write this, sometimes I don't, it's just, you know, however I feel. But often people don't write the singletons.
+All right, so, like in our example for $S_3$ (Recall: \cref{ex:orders-s3}), we had some elements like these two-cycles, this element \inlinemetanote{writes: $S_3$, $(1\,2)(3) \implies \operatorname{ord} = 2$}, and I said sometimes I write this, sometimes I don't, it's just, you know, however I feel. But often people don't write the singletons.
 
 If I take this element, we saw it has order $2$. So, this has order $2$, and this \inlinemetanote{writes: $(1\,2\,3) \implies \operatorname{ord} = 3$} has order $3$.
 
@@ -536,14 +547,14 @@ where $k$ is the total number of distinct equivalence classes (cosets).
 
     % (3) Discrete elements (dots) inside classes
     \fill (-2.2, 0.9) circle (1.5pt) (-1.6, 0.6) circle (1.5pt) (-1.4, 1.0) circle (1.5pt);
-    \fill (-1.9, -1.1) circle (1.5pt) (-1.4, -0.8) circle (1.5pt) (-1.0, -1.2) circle (1.5pt);
+    \fill (-1.9, -1.1) circle (1.5pt) (-1.45, -1.4) circle (1.5pt) (-1.0, -1.15) circle (1.5pt);
     \fill (0.9, 0.2) circle (1.5pt) (1.4, -0.3) circle (1.5pt) (1.8, 0.5) circle (1.5pt) (2.4, -0.1) circle (1.5pt);
 
     % Other scattered dots in G
     \fill (3.0, 1.2) circle (1.5pt) (2.8, -1.2) circle (1.5pt) (-3.0, -0.2) circle (1.5pt);
 
     % (4) Text last
-    \node[anchor=north east, font=\large, figGray] at (3.6, -1.6) {$G$};
+    \node[anchor=west, font=\large, figGray] at (4.15, -1.0) {$G$};
     \node[figBlue, font=\bfseries] at (-1.8, 1.2) {$E_1$};
     \node[figGreen, font=\bfseries] at (-1.5, -0.6) {$E_2$};
     \node[figOrange, font=\bfseries] at (1.6, 0.9) {$E_3$};
@@ -672,7 +683,7 @@ We define the mapping:
     \fill (0.2, 0.1) circle (2pt);
 
     % (4) Text last
-    \node[anchor=north east, font=\large, figGray] at (3.0, -1.1) {$G$};
+    \node[anchor=west, font=\large, figGray] at (3.4, -0.7) {$G$};
     \node[figBlue, font=\bfseries] at (-0.6, 0.5) {$E$};
     \node[anchor=west] at (0.35, 0.1) {$x$};
 \end{tikzpicture}
@@ -696,7 +707,7 @@ Okay, so, we have to prove this. Why? Why would this be true? Injectivity means 
 
 We suppose this is true. Well, what do we do next? We write down the definitions. This thing is $xh_1$, and that should equal $xh_2$ \inlinemetanote{writes: $\iff xh_1 = xh_2$}. All right. But this is an equation that holds in the group.
 
-So, we now use the cancellation property. By the cancellation property, we can get rid of this \inlinemetanote{cancels $x$ from both sides}. This implies $h_1 = h_2$ \inlinemetanote{writes: $\iff h_1 = h_2$}, and that's injectivity.
+So, we now use the cancellation property (Recall: \cref{prop:cancellation-laws}). By the cancellation property, we can get rid of this \inlinemetanote{cancels $x$ from both sides}. This implies $h_1 = h_2$ \inlinemetanote{writes: $\iff h_1 = h_2$}, and that's injectivity.
 
 So, we finished the proof. Yeah, that's the whole proof. It's an extremely simple proof, and if you understand it, you'll never forget it.
 
@@ -721,7 +732,7 @@ To prove $|E| = |H|$, we show that the map $\phi \colon H \to E$, $\phi(h) := xh
     \[
     xh_1 = xh_2.
     \]
-    Multiplying on the left by $x^{-1} \in G$ (left cancellation in the group $G$) gives:
+    Multiplying on the left by $x^{-1} \in G$ (left cancellation in the group $G$, \cref{prop:cancellation-laws}) gives:
     \[
     x^{-1}(xh_1) = x^{-1}(xh_2) \implies (x^{-1}x)h_1 = (x^{-1}x)h_2 \implies h_1 = h_2.
     \]
@@ -759,7 +770,7 @@ Okay, so, this $S_n$... I mean, I can't somehow say enough how much you should m
 
 So, let me say some more comments about it. We said that... so, maybe I say it again, just because I don't know whether this is all things you've studied before or not, but...
 
-So, $S_n$ I write now \inlinemetanote{writes: $S_n$} --- this is not $S_n$, this is the set of $n$ points. So, I should maybe write it differently \inlinemetanote{erases doodle}. I'll try to say one more thing about the cycle notation, because, as I said, it's extremely important, and it's not like I gave you a totally formal presentation of cycle notation. I gave you a little bit, and it's kind of your responsibility to work out the cycle notation from that. But I'll give you one more hint.
+So, $S_n$ I write now \inlinemetanote{writes: $S_n$} --- this is not $S_n$, this is the set of $n$ points. So, I should maybe write it differently \inlinemetanote{erases doodle}. I'll try to say one more thing about the cycle notation, because, as I said, it's extremely important, and it's not like I gave you a totally formal presentation of cycle notation (Recall: \cref{def:cycle}). I gave you a little bit, and it's kind of your responsibility to work out the cycle notation from that. But I'll give you one more hint.
 \end{speech}
 
 \begin{speech}[00:29:27 - 00:30:52]
@@ -796,43 +807,45 @@ Let $[n] := \{1, 2, \dots, n\}$. Any permutation $\sigma \in S_n$ is a bijection
 \definecolor{figGreen}{HTML}{3C8252} % RGB (60, 130, 82): dark green (ForestGreen!70!black)
 \definecolor{figGray}{HTML}{666666} % RGB (102, 102, 102): dark gray
 \begin{hidden}
-- Canvas: no scale, cm; 7 discrete points arranged horizontally at y = 0 from x = 1.0 to 7.0, step 1.0;
-  curved arrows showing the 3 disjoint cycles; footprint x in [0.5, 7.8], y in [-1.5, 1.8]
-- Order: (1) 7 points with numbers below; (2) Cycle (1 4 6): 1 -> 4 (top arc), 4 -> 6 (top arc), 6 -> 1 (bottom return arc);
-  (3) Cycle (2 3): 2 -> 3 (top arc), 3 -> 2 (bottom return arc);
-  (4) Cycle (5 7): 5 -> 7 (top arc), 7 -> 5 (bottom return arc);
-  (5) Cycle notation and partition equation below.
+- Canvas: no scale, cm; the 7 points of [7] grouped by the cycles of sigma, each cycle drawn on its own;
+  footprint x in [-1.4, 7.4], y in [-1.9, 1.5]
+- Order: (1) points with number labels outside each cycle; (2) arrows i -> sigma(i), bent outward; (3) cycle names below
 - Coordinates:
-  Points: P_k = (k, 0) for k = 1..7.
-  Cycle 1 (figBlue): 1 -> 4 to[bend left=45], 4 -> 6 to[bend left=45], 6 -> 1 to[bend left=35] (below, so from 6 to 1 below is to[bend left=35])
-  Cycle 2 (figGreen): 2 -> 3 to[bend left=55], 3 -> 2 to[bend left=55] (below)
-  Cycle 3 (figRed): 5 -> 7 to[bend left=45], 7 -> 5 to[bend left=45] (below)
-- Labels:
-  Numbers 1..7 anchor north at (k, -0.15)
-  Cycle label \sigma = (1 4 6)(2 3)(5 7) below at (4.0, -1.1)
-  Partition 7 = 3 + 2 + 2 below at (4.0, -1.6)
+  Cycle (1 4 6) (figBlue): on a circle of radius 0.9 around (0, 0): 1 at 90 deg, 4 at -30 deg, 6 at 210 deg;
+    arrows 1 -> 4 -> 6 -> 1 with bend left=30 (clockwise, bulging outward); sigma on the arrow 1 -> 4
+  Cycle (2 3) (figGreen): 2 at (2.6, 0), 3 at (3.8, 0); arrows bend left=40 (a lens)
+  Cycle (5 7) (figRed): 5 at (5.4, 0), 7 at (6.6, 0); arrows bend left=40 (a lens)
+- Labels: numbers above / left / right of their points, away from all arrows;
+  (1 4 6), (2 3), (5 7) at y = -1.6 under the three groups
+- Collisions: the lens arcs rise 0.22cm above and below y = 0, clear of the side labels; groups 1.2cm apart.
 \end{hidden}
 \begin{center}
-\begin{tikzpicture}[>=Stealth]
-    % (1) Points 1 to 7
-    \foreach \i in {1, ..., 7} {
-        \coordinate (P\i) at (\i, 0);
-        \fill (P\i) circle (2.2pt);
-        \node[anchor=north] at (\i, -0.15) {$\i$};
-    }
+\begin{tikzpicture}[>=Stealth, dot/.style={circle, fill, inner sep=1.6pt},
+    arr/.style={->, thick, shorten <=2pt, shorten >=2pt}]
+    % (1) Cycle (1 4 6) in blue, clockwise
+    \node[dot, label=above:{$1$}] (a1) at (90:0.9) {};
+    \node[dot, label=right:{$4$}] (a4) at (-30:0.9) {};
+    \node[dot, label=left:{$6$}] (a6) at (210:0.9) {};
+    \draw[arr, figBlue] (a1) to[bend left=30] node[above right, font=\footnotesize] {$\sigma$} (a4);
+    \draw[arr, figBlue] (a4) to[bend left=30] (a6);
+    \draw[arr, figBlue] (a6) to[bend left=30] (a1);
 
-    % (2) Cycle (1 4 6) in Blue
-    \draw[->, thick, figBlue] (P1) to[bend left=40] node[midway, above, font=\footnotesize] {$\sigma$} (P4);
-    \draw[->, thick, figBlue] (P4) to[bend left=40] (P6);
-    \draw[->, thick, figBlue] (P6) to[bend left=35] (P1);
+    % (2) Cycle (2 3) in green
+    \node[dot, label=left:{$2$}] (b2) at (2.6, 0) {};
+    \node[dot, label=right:{$3$}] (b3) at (3.8, 0) {};
+    \draw[arr, figGreen] (b2) to[bend left=40] (b3);
+    \draw[arr, figGreen] (b3) to[bend left=40] (b2);
 
-    % (3) Cycle (2 3) in Green
-    \draw[->, thick, figGreen] (P2) to[bend left=55] (P3);
-    \draw[->, thick, figGreen] (P3) to[bend left=55] (P2);
+    % (3) Cycle (5 7) in red
+    \node[dot, label=left:{$5$}] (c5) at (5.4, 0) {};
+    \node[dot, label=right:{$7$}] (c7) at (6.6, 0) {};
+    \draw[arr, figRed] (c5) to[bend left=40] (c7);
+    \draw[arr, figRed] (c7) to[bend left=40] (c5);
 
-    % (4) Cycle (5 7) in Red
-    \draw[->, thick, figRed] (P5) to[bend left=45] (P7);
-    \draw[->, thick, figRed] (P7) to[bend left=45] (P5);
+    % (4) Cycle names
+    \node[figBlue] at (0, -1.6) {$(1\ 4\ 6)$};
+    \node[figGreen] at (3.2, -1.6) {$(2\ 3)$};
+    \node[figRed] at (6.0, -1.6) {$(5\ 7)$};
 \end{tikzpicture}
 \end{center}
 
@@ -846,7 +859,7 @@ The lengths of the disjoint cycles partition the total number of elements:
 \]
 
 \begin{steps}[Connection between Symmetric Groups and Integer Partitions]
-Every permutation $\sigma \in S_n$ decomposes uniquely into a product of disjoint cycles. The multiset of cycle lengths forms an \newterm{integer partition} of $n$, denoted:
+Every permutation $\sigma \in S_n$ decomposes uniquely (up to the order of the cycles) into a product of disjoint cycles. The multiset of cycle lengths forms an \newterm{integer partition} of $n$, denoted:
 \[
 n = \lambda_1 + \lambda_2 + \dots + \lambda_r, \quad \lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_r \ge 1.
 \]
@@ -926,8 +939,10 @@ A \newterm{Platonic solid} is a regular, convex polyhedron in three-dimensional 
      back square offset by (0.4, 0.4), dashed hidden edges.
   3. Octahedron (center x = 6.8): upper pyramid apex (6.8, 1.9), lower pyramid apex (6.8, -0.3);
      equatorial square (5.9, 0.8) -- (6.5, 0.5) -- (7.7, 0.8) -- (7.1, 1.1) -- cycle.
-  4. Dodecahedron (center x = 9.8): pentagonal profile.
-  5. Icosahedron (center x = 12.8): triangular facets.
+  4. Dodecahedron (center x = 10.5): orthographic view along a face axis: front pentagon r = 0.556,
+     spokes to the decagon outline r = 0.9 (ratio = golden ratio); hidden edges omitted.
+  5. Icosahedron (center x = 13.5): orthographic view along a face axis: front triangle r = 0.556,
+     hexagon outline r = 0.9, three spokes and six edges triangle -> hexagon; hidden edges omitted.
 - Labels below:
   Tetrahedron: "3 x 4 = 12" at y = -0.5
   Cube: "4 x 6 = 24" at y = -0.5
@@ -979,24 +994,43 @@ A \newterm{Platonic solid} is a regular, convex polyhedron in three-dimensional 
         \node[anchor=north, align=center, font=\small] at (1.0, -0.2) {\textbf{Octahedron}\\$3 \cdot 8 = 24$};
     \end{scope}
 
-    % --- 4. Dodecahedron ---
+    % --- 4. Dodecahedron, seen along the axis through a face: front pentagon (radius 0.556),
+    %        five spokes, and the decagon outline (radius 0.9 = 0.556 * golden ratio); back edges hidden ---
     \begin{scope}[xshift=9.5cm]
-        \draw[figBlue] (1.0, 0.9) circle (0.9cm);
-        \draw[figBlue] (1.0, 0.9) ++(90:0.5cm) \foreach \a in {162, 234, 306, 18} { -- ++(\a:0.5cm) } -- cycle;
+        \begin{scope}[shift={(1.0, 0.9)}]
+            \foreach \k in {0, ..., 4} {
+                \coordinate (DP\k) at ({90 + 72*\k}:0.556);
+                \coordinate (DM\k) at ({90 + 72*\k}:0.9);
+                \coordinate (DN\k) at ({126 + 72*\k}:0.9);
+            }
+            \draw[figBlue] (DP0) -- (DP1) -- (DP2) -- (DP3) -- (DP4) -- cycle;
+            \draw[figBlue] (DM0) -- (DN0) -- (DM1) -- (DN1) -- (DM2) -- (DN2) -- (DM3) -- (DN3) -- (DM4) -- (DN4) -- cycle;
+            \foreach \k in {0, ..., 4} { \draw[figBlue] (DP\k) -- (DM\k); }
+        \end{scope}
         \node[anchor=north, align=center, font=\small] at (1.0, -0.2) {\textbf{Dodecahedron}\\$5 \cdot 12 = 60$};
     \end{scope}
 
-    % --- 5. Icosahedron ---
+    % --- 5. Icosahedron, seen along the axis through a face: front triangle (radius 0.556),
+    %        hexagon outline (radius 0.9), and the edges between them; back edges hidden ---
     \begin{scope}[xshift=12.5cm]
-        \draw[figBlue] (1.0, 0.9) circle (0.9cm);
-        \draw[figBlue] (0.5, 0.4) -- (1.5, 0.4) -- (1.0, 1.5) -- cycle;
+        \begin{scope}[shift={(1.0, 0.9)}]
+            \foreach \k in {0, 1, 2} {
+                \coordinate (IF\k) at ({90 + 120*\k}:0.556);
+                \coordinate (IU\k) at ({90 + 120*\k}:0.9);
+                \coordinate (IW\k) at ({30 + 120*\k}:0.9);
+            }
+            \draw[figBlue] (IF0) -- (IF1) -- (IF2) -- cycle;
+            \draw[figBlue] (IW0) -- (IU0) -- (IW1) -- (IU1) -- (IW2) -- (IU2) -- cycle;
+            \draw[figBlue] (IF0) -- (IU0) (IF1) -- (IU1) (IF2) -- (IU2);
+            \draw[figBlue] (IF0) -- (IW0) (IF0) -- (IW1) (IF1) -- (IW1) (IF1) -- (IW2) (IF2) -- (IW2) (IF2) -- (IW0);
+        \end{scope}
         \node[anchor=north, align=center, font=\small] at (1.0, -0.2) {\textbf{Icosahedron}\\$3 \cdot 20 = 60$};
     \end{scope}
 \end{tikzpicture}
 \end{center}
 
 \begin{steps}[The Orbit-Stabilizer Counting Logic for Rotational Symmetries]
-For any polyhedron $P \subset \mathbb{R}^3$, its rotational symmetry group $\operatorname{Rot}(P) \le \mathrm{SO}(3)$ acts transitively on the set of faces. The order of the group satisfies:
+For each Platonic solid $P$, the rotational symmetry group $\operatorname{Rot}(P) \le \mathrm{SO}(3)$ can move any face to any other face (it acts transitively on the faces), and the rotations that keep a chosen face in place are the rotations about the axis through its centre. The order of the group therefore satisfies:
 \[
 |\operatorname{Rot}(P)| = (\text{rotational symmetries preserving a chosen face}) \times (\text{total number of faces}).
 \]
@@ -1022,6 +1056,7 @@ For any polyhedron $P \subset \mathbb{R}^3$, its rotational symmetry group $\ope
     |\operatorname{Rot}(\text{Icosahedron})| = 3 \times 20 = 60.
     \]
 \end{itemize}
+The lecture counts the first three and leaves the dodecahedron and the icosahedron for later; their counts are added here for completeness.
 \end{steps}
 \end{content}
 
@@ -1126,8 +1161,8 @@ The group of rotational symmetries of a cube is isomorphic to the symmetric grou
     \coordinate (V8) at (-2.2, 1.0);
     \coordinate (O) at (-0.35, -0.25);
 
-    % (1) Back edges of the cube (dashed)
-    \draw[thick, figLightGray, dashed] (V5) -- (V6) (V5) -- (V8) (V5) -- (V1);
+    % (1) Hidden edges of the cube (dashed): V7 lies behind the front face V1V2V3V4
+    \draw[thick, figLightGray, dashed] (V7) -- (V3) (V7) -- (V6) (V7) -- (V8);
 
     % (2) Four Long Body Diagonals
     \draw[thick, figRed] (V5) -- (V3);       % Diagonal C
@@ -1138,13 +1173,13 @@ The group of rotational symmetries of a cube is isomorphic to the symmetric grou
     % Origin intersection
     \fill[black] (O) circle (2pt);
 
-    % (3) Front edges of the cube (solid)
+    % (3) Visible edges of the cube (solid)
     \draw[thick, figBlue!80!black] (V1) -- (V2) -- (V3) -- (V4) -- cycle;
-    \draw[thick, figBlue!80!black] (V2) -- (V6) -- (V7) -- (V3);
-    \draw[thick, figBlue!80!black] (V4) -- (V8) -- (V7);
+    \draw[thick, figBlue!80!black] (V2) -- (V6) -- (V5) -- (V8) -- (V4);
+    \draw[thick, figBlue!80!black] (V1) -- (V5);
 
     % (4) Diagonal Labels
-    \node[anchor=south west, figGreen, font=\bfseries] at (V7) {$A$};
+    \node[anchor=south east, figGreen, font=\bfseries] at (V7) {$A$};
     \node[anchor=south east, figOrange, font=\bfseries] at (V8) {$B$};
     \node[anchor=south west, figRed, font=\bfseries] at (V3) {$C$};
     \node[anchor=south east, figBlue, font=\bfseries] at (V4) {$D$};
@@ -1162,8 +1197,8 @@ Every rotation $g \in \operatorname{Rot}(\text{Cube})$ maps vertices to vertices
 \]
 We claim that $\Phi$ is an isomorphism:
 \begin{itemize}
-    \item \textbf{Injectivity:}
-    Suppose $g \in \ker(\Phi)$, meaning $g$ fixes all 4 long diagonals. Since $g$ is a rigid rotation, fixing three linearly independent axes in $\mathbb{R}^3$ forces $g = \operatorname{id}$. Thus, $\ker(\Phi) = \{\operatorname{id}\}$, so $\Phi$ is injective.
+    \item \textbf{Injectivity} (left to the students in the lecture):
+    Suppose $g \in \ker(\Phi)$, so $g$ maps each long diagonal to itself, possibly reversing it. For the cube $[-1, 1]^3$ the diagonals have directions $v_1 = (1, 1, 1)$, $v_2 = (1, 1, -1)$, $v_3 = (1, -1, 1)$, $v_4 = (-1, 1, 1)$, so $g v_i = \varepsilon_i v_i$ with $\varepsilon_i = \pm 1$. Since $v_1, v_2, v_3$ form a basis and $v_4 = v_1 - v_2 - v_3$, comparing $g v_4 = \varepsilon_1 v_1 - \varepsilon_2 v_2 - \varepsilon_3 v_3$ with $\varepsilon_4 v_4$ forces $\varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \varepsilon_4$, so $g = \pm \operatorname{id}$. As $-\operatorname{id}$ has determinant $-1$, it is not a rotation; hence $g = \operatorname{id}$, $\ker(\Phi) = \{\operatorname{id}\}$, and $\Phi$ is injective.
     \item \textbf{Surjectivity:}
     We have established that $|\operatorname{Rot}(\text{Cube})| = 24$ and $|S_4| = 4! = 24$. Since $\Phi$ is an injective homomorphism between two finite groups of the same cardinality:
     \[
@@ -1218,8 +1253,8 @@ The group of rotational symmetries of a regular tetrahedron is isomorphic to the
 
     % Edges
     \draw[figBlue] (V1) -- (V2) -- (V4) -- cycle;
-    \draw[figBlue] (V2) -- (V3) -- (V4);
-    \draw[figBlue, dashed] (V1) -- (V3);
+    % V3 lies behind the front face V1V2V4, so all three of its edges are hidden
+    \draw[figBlue, dashed] (V1) -- (V3) -- (V2) (V3) -- (V4);
 
     % Vertices
     \fill[black] (V1) circle (2pt) (V2) circle (2pt) (V3) circle (2pt) (V4) circle (2pt);
@@ -1235,13 +1270,13 @@ The group of rotational symmetries of a regular tetrahedron is isomorphic to the
 \begin{steps}[Comparison: Cube vs. Tetrahedron Permutations]
 \begin{itemize}
     \item \textbf{Tetrahedron Action on 4 Vertices:}
-    Any rotation of the tetrahedron permutes its 4 vertices $\{1, 2, 3, 4\}$, yielding an injective homomorphism:
+    Any rotation of the tetrahedron permutes its 4 vertices $\{1, 2, 3, 4\}$, yielding a homomorphism, injective because a rotation fixing all four vertices fixes three linearly independent vectors and is the identity:
     \[
     \Psi \colon \operatorname{Rot}(\text{Tetrahedron}) \hookrightarrow S_4.
     \]
-    Since $|\operatorname{Rot}(\text{Tetrahedron})| = 12$ and $|S_4| = 24$, the image is a subgroup of index $2$, which is precisely the \newterm{alternating group} $A_4$ (the group of even permutations).
+    Since $|\operatorname{Rot}(\text{Tetrahedron})| = 12$ and $|S_4| = 24$, the image is a subgroup of index $2$. The lecture only names it, the \newterm{alternating group} $A_4$ (the group of even permutations), and defers the definition. Concretely, the image consists of the identity, the eight 3-cycles (rotations by $\pm 120^\circ$ about the axis through a vertex and the centre of the opposite face) and the three products of two disjoint transpositions such as $(1\,2)(3\,4)$ (rotations by $180^\circ$ about the axis through the midpoints of two opposite edges): $1 + 8 + 3 = 12$ even permutations.
     \item \textbf{Why Not Act on the 8 Vertices of the Cube?}
-    Permuting the 8 vertices of a cube gives an injective homomorphism $\operatorname{Rot}(\text{Cube}) \hookrightarrow S_8$. However, $|S_8| = 8! = 40\,320 \gg 24$, so the image is a tiny subgroup of $S_8$. The 4 long diagonals provide the exact dimensional match $|S_4| = 24$.
+    Permuting the 8 vertices of a cube gives an injective homomorphism $\operatorname{Rot}(\text{Cube}) \hookrightarrow S_8$. However, $|S_8| = 8! = 40\,320 \gg 24$, so the image is a tiny subgroup of $S_8$. The 4 long diagonals give a set whose permutation group has exactly the right size, $|S_4| = 24$.
 \end{itemize}
 \end{steps}
 \end{content}

@@ -795,23 +795,24 @@ Therefore, $q^{-1}(q(I)) \subseteq I$, which proves $q^{-1}(q(I)) = I$.
 % - Canvas: scale=1.1, x-range [-3.0, 6.3], y-range [-2.3, 1.7]
 % - Elements: (1) R, ellipse at (-1, 0), radii 1.8 and 1.4; (2) R/K at (4.5, 0), radii 1.6 and 1.3;
 %   (3) arrow q at y = 0.8 from x = 0.9 to 2.8; (4) I at (-0.8, 0.1), radii 1.1 and 0.9;
-%   (5) K at (-0.8, -0.2), radii 0.5 and 0.4, dashed; (6) q(I) at (4.4, 0), radii 0.9 and 0.7;
+%   (5) K at (-0.6, -0.25), radii 0.5 and 0.4, dashed; (6) q(I) at (4.4, 0), radii 0.9 and 0.7;
 %   (7) points, the two arrows into ImgXY, caption
 % - Key coordinates: y must lie in I but outside K (a point of K would not show the problem).
-%   K spans x in [-1.3, -0.3], so PtY = (-1.45, -0.2). PtX = (-0.5, 0.4) lies in I above K (K's top is y = 0.2).
+%   K spans x in [-1.1, -0.1], so PtY = (-1.45, -0.2). PtX = (-0.5, 0.4) lies in I above K (K's top is y = 0.15).
 %   ImgXY = (4.0, 0) leaves room for its label inside q(I).
 % - Label sizes: node text does not grow with scale=1.1; a letter is about 0.25 wide and 0.3 tall,
 %   "x \in I" and "\bar{x} = \bar{y}" are about 0.9 wide, a footnotesize caption line about 0.32 tall
 % - Label placement: "y" below PtY, x in [-1.55, -1.35], y in [-0.5, -0.3]; "x \in I" left of PtX,
 %   x in [-1.5, -0.6], y in [0.25, 0.55]; "\bar{x} = \bar{y}" right of ImgXY, x in [4.1, 5.0];
-%   "I" above I's top (-0.8, 1.0), y in [1.0, 1.3]; "q(I)" above q(I)'s top (4.4, 0.7), y in [0.7, 1.0];
+%   "I" left of I at (-2.2, -0.45), between the outlines of I and R (2026-10-30: above I's top it sat on
+%   both outlines in the rendered PDF); "q(I)" above q(I)'s top (4.4, 0.7), y in [0.7, 1.0];
 %   caption (two lines) centred at (1.8, -1.95), y in [-2.3, -1.6]
 % - Collisions: an ellipse with centre (cx, cy) and radii rx, ry crosses height h at
 %   x = cx +- rx * sqrt(1 - ((h - cy)/ry)^2).
-%   "y": I at h = -0.5 is x = -1.62 < -1.55, K at h = -0.4 is x = -1.23 > -1.35, clear.
+%   "y": I at h = -0.5 is x = -1.62 < -1.55, K at h = -0.45 is x = -1.03 > -1.35, clear.
 %   "x \in I": I at h = 0.55 is x = -1.75 < -1.5, clear.
 %   "\bar{x} = \bar{y}": q(I) at h = 0 ends at x = 5.3 > 5.0, clear.
-%   "I": R at h = 1.3 spans x in [-1.67, -0.33], so it stays inside R, below the R label (y from 1.4).
+%   "I": at h = -0.45, I's outline is at x = -1.65 and R's at x = -2.70, so x in [-2.3, -2.1] is clear of both.
 %   "q(I)": R/K at h = 1.0 spans x in [3.48, 5.52], and the R/K label starts at y = 1.3, clear.
 %   Caption top -1.6 is below the bottoms of R (-1.4) and R/K (-1.3), clear.
 % \end{hidden}
@@ -829,11 +830,13 @@ Therefore, $q^{-1}(q(I)) \subseteq I$, which proves $q^{-1}(q(I)) = I$.
     
     % Ideal I in R
     \draw[thick, BurntOrange, fill=BurntOrange!10] (-0.8, 0.1) ellipse (1.1cm and 0.9cm);
-    \node[BurntOrange, above] at (-0.8, 1.0) {$I$};
-    
+    % I is labelled at its left, between I and R (above I it sat on both outlines)
+    \node[BurntOrange] at (-2.2, -0.45) {$I$};
+
     % Modulo ideal K nested inside I
-    \draw[dashed, thick, gray!80, fill=gray!20] (-0.8, -0.2) ellipse (0.5cm and 0.4cm);
-    \node[gray!80, font=\footnotesize] at (-0.8, -0.2) {$K$};
+    % K sits right of centre, leaving room for the label of y below its point
+    \draw[dashed, thick, gray!80, fill=gray!20] (-0.6, -0.25) ellipse (0.5cm and 0.4cm);
+    \node[gray!80, font=\footnotesize] at (-0.6, -0.25) {$K$};
     
     % Image q(I) in R/K
     \draw[thick, BurntOrange, fill=BurntOrange!10] (4.4, 0) ellipse (0.9cm and 0.7cm);

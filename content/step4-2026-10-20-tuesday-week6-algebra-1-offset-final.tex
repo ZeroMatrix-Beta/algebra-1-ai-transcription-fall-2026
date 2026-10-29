@@ -1936,13 +1936,14 @@ Equivalently, $p \sim \hat{p} \iff (p) = (\hat{p})$.
     \draw[dashed, thick, BurntOrange, fill=BurntOrange!10] (-1.2, 0.3) ellipse (1.1cm and 0.7cm);
     \fill[black] (-1.5, 0.4) circle (1.5pt) node[left=1pt] {$p$};
     \fill[black] (-0.9, 0.5) circle (1.5pt) node[right=1pt] {$u_1 p$};
-    \fill[black] (-1.1, 0.0) circle (1.5pt) node[below=1pt] {$u_2 p$};
+    \fill[black] (-1.1, 0.0) circle (1.5pt) node[right=1pt] {$u_2 p$}; % below, it sat on the outline
     \node[BurntOrange, font=\footnotesize] at (-1.2, -0.6) {Class of associates of $p$};
 
     % Integer comparison bubble {17, -17}
     \draw[dashed, thick, ForestGreen, fill=ForestGreen!10] (1.4, -0.4) ellipse (1.0cm and 0.6cm);
-    \fill[black] (1.1, -0.4) circle (1.5pt) node[left=1pt] {$17$};
-    \fill[black] (1.7, -0.4) circle (1.5pt) node[right=1pt] {$-17$};
+    % labels above the dots: to the right, -17 crossed the outline
+    \fill[black] (1.0, -0.45) circle (1.5pt) node[above=1pt] {$17$};
+    \fill[black] (1.8, -0.45) circle (1.5pt) node[above=1pt] {$-17$};
     \node[ForestGreen, font=\footnotesize] at (1.4, -1.2) {In $\mathbb{Z}$: $\{17, -17\}$};
 \end{tikzpicture}
 \end{center}
@@ -2156,6 +2157,7 @@ Let $k$ be a field, and let $k[[x]]$ denote the ring of formal power series in o
     \item Prove that $k[[x]]$ is a principal ideal domain (PID).
     \item Deduce from Theorem A (\cref{thm:pid-implies-ufd}) that $k[[x]]$ is a unique factorization domain (UFD).
 \end{enumerate}
+The lecturer sketches the proof in Week~7 (\cref{ex:power-series-pid-ufd}, \cref{exer:ideals-power-series}).
 \end{exercise}
 
 \begin{steps}[{Structure of Ideals in $k[[x]]$}]

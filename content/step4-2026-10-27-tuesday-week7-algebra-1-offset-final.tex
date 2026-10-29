@@ -1,4 +1,11 @@
 % ==========================================
+% Built into the book on 2026-10-30 by Claude (claude-opus-5-5), from the pipeline's step-4
+% output below: week-tagged labels and \recap lines for what Weeks 2 and 6 already stated,
+% recall anchors and cross-references, and the fixes of a review (group axiom numbering in the
+% cancellation proof and the summary, the primitive-divisor intuition replaced by its proof,
+% Z[x] called multivariate, the ring convention, Gauss's 1801 claim, smaller wording fixes).
+% ==========================================
+% ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
 % Output: step4-10-27-2026-tuesday-week7-Algebra_I-offset-final.tex
 % Input: step3-10-27-2026-tuesday-week7-Algebra_I-offset-speech_refined.tex
@@ -110,13 +117,15 @@ This lecture concludes the foundational development of ring theory and initiates
 \subsection{Statement of Gauss's Theorem}
 
 \begin{speech}[00:00:00 - 00:00:39]
-Okay, so, at the last lecture, I was almost at the end of this theorem, which I will state again. So, this is Carl Friedrich... and the theorem is: $R$ is a UFD implies the polynomial ring is also a UFD \inlinemetanote{writes: C.F.G. $R$ is a UFD $\implies R[x]$ is a UFD}.
+Okay, so, at the last lecture, I was almost at the end of this theorem (Recall: \cref{thm:ufd-polynomial-ring-w6wed}), which I will state again. So, this is Carl Friedrich... and the theorem is: $R$ is a UFD implies the polynomial ring is also a UFD \inlinemetanote{writes: C.F.G. $R$ is a UFD $\implies R[x]$ is a UFD}.
 
 And there were many steps in the logic here, and maybe I'll take a chance to review some of the things and also explain some of the ideas. So, this is an intricate proof, and as I said, at the end of the last lecture I came to within five minutes of completing it. But anyway, I'll take some time now.
 \end{speech}
 
+\recap{Theorem~B was stated in Week~6 (\cref{thm:ufd-polynomial-ring}) and restated in the previous lecture (\cref{thm:ufd-polynomial-ring-w6wed}), where the bell cut its proof short. The lecturer restates it and completes the proof below.}
+
 \begin{content}
-\begin{theorem}[Gauss's Theorem on Polynomial Rings]\label[theorem]{thm:gauss-polynomial-ufd}
+\begin{theorem}[Gauss's Theorem on Polynomial Rings]\label[theorem]{thm:ufd-polynomial-ring-w7tue}
 Let $R$ be a unique factorization domain (UFD). Then the polynomial ring $R[x]$ is also a unique factorization domain:
 \begin{equation}\label{eq:gauss-thm}
 R \text{ is a UFD} \implies R[x] \text{ is a UFD}.
@@ -124,7 +133,7 @@ R \text{ is a UFD} \implies R[x] \text{ is a UFD}.
 \end{theorem}
 
 \begin{steps}[Historical Context and Scope of the Theorem]
-Gauss established this fundamental theorem in his \emph{Disquisitiones Arithmeticae} (1801) for the integer polynomial ring $\mathbb{Z}[x]$. By mathematical induction on the number of variables $n$, the theorem extends directly to multivariate polynomial rings:
+Gauss proved a form of the key lemma on primitive polynomials (\cref{lem:gauss-lemma}) for integer polynomials in his \emph{Disquisitiones Arithmeticae} (1801, Art.~42); the statement for an arbitrary UFD $R$ is the modern form of his argument. By induction on the number of variables $n$, the theorem extends to multivariate polynomial rings (as in \cref{ex:multivariate-poly-ufd}):
 \[
 R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
 \]
@@ -134,7 +143,7 @@ R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
 \subsection{Examples: Multivariable Polynomials, Gaussian Integers, and Power Series}
 
 \begin{speech}[00:00:39 - 00:02:17]
-So, the first thing to notice --- so this is not about the proof, this was what was labeled before Theorem B last week \inlinemetanote{writes: \qt{Thm B}} --- the first thing to note, which is not about the proof, it's just about examples \inlinemetanote{writes: \qt{Examples:}}, is that if you know this result, then you can take any UFD you want, like $\mathbb{Z}$ is a UFD. So, this result implies that if I take the polynomial ring in one variable or two variables or any number of variables \inlinemetanote{writes: $\mathbb{Z} \to \mathbb{Z}[x], \mathbb{Z}[x, y], \mathbb{Z}[x_1, x_2, \dots]$} --- which you can just keep applying this, one after the other --- that these are all UFDs.
+So, the first thing to notice --- so this is not about the proof, this was what was labeled before Theorem B last week \inlinemetanote{writes: \qt{Thm B}} (Recall: \cref{thm:ufd-polynomial-ring}) --- the first thing to note, which is not about the proof, it's just about examples \inlinemetanote{writes: \qt{Examples:}}, is that if you know this result, then you can take any UFD you want, like $\mathbb{Z}$ is a UFD. So, this result implies that if I take the polynomial ring in one variable or two variables or any number of variables \inlinemetanote{writes: $\mathbb{Z} \to \mathbb{Z}[x], \mathbb{Z}[x, y], \mathbb{Z}[x_1, x_2, \dots]$} --- which you can just keep applying this, one after the other --- that these are all UFDs.
 
 And also, these are kind of the standard class of examples: if I take the finite field $\mathbb{Z} / p\mathbb{Z}$ \inlinemetanote{writes: $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$}, every field is a UFD. So, that means if I take polynomials in finite fields \inlinemetanote{writes: $\mathbb{F}_p[x], \mathbb{F}_p[x_1, x_2, \dots]$}, these, however many variables you want --- as long as there are finitely many --- these obey all the factorization rules that you are familiar with for the integers: the idea that if you have a polynomial, there is unique factorization into prime polynomials, and whatever you remember about the integers, not every single statement, but the parts about unique factorization, they apply here.
 
@@ -143,7 +152,7 @@ And the other classical examples: you take the fields $\mathbb{Q}$, $\mathbb{C}$
 
 \begin{content}
 \begin{example}[Polynomial Rings as Unique Factorization Domains]\label[example]{ex:ufd-polynomial-rings}
-Applying Gauss's Theorem (\cref{thm:gauss-polynomial-ufd}) inductively yields that multivariate polynomial rings over familiar base rings are UFDs:
+Applying Gauss's Theorem (\cref{thm:ufd-polynomial-ring-w7tue}) inductively yields that multivariate polynomial rings over familiar base rings are UFDs:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Integers:} Since $\mathbb{Z}$ is a UFD, repeated application implies:
     \[
@@ -161,20 +170,20 @@ Applying Gauss's Theorem (\cref{thm:gauss-polynomial-ufd}) inductively yields th
 \end{example}
 
 \begin{steps}[Contrast: UFDs versus PIDs in Multivariate Polynomial Rings]
-While the single-variable polynomial ring $k[x]$ over a field $k$ is a principal ideal domain (PID) due to the polynomial Euclidean algorithm, multivariate polynomial rings such as $\mathbb{Z}[x]$ or $k[x, y]$ are \emph{not} PIDs. For example, the ideals
+While the polynomial ring $k[x]$ in one variable over a field $k$ is a principal ideal domain (PID) by division with remainder (\cref{prop:kx-ideals-principal}), the rings $\mathbb{Z}[x]$ (coefficients not in a field) and $k[x, y]$ (two variables) are \emph{not} PIDs. For example, the ideals
 \[
 I = (2, x) \subset \mathbb{Z}[x] \quad \text{and} \quad J = (x, y) \subset k[x, y]
 \]
-cannot be generated by any single polynomial. Nevertheless, by Gauss's Theorem, they remain unique factorization domains.
+cannot be generated by any single polynomial (\cref{exer:prove-2-x-not-principal}, \cref{ex:non-pids}). Nevertheless, by Gauss's Theorem, both rings are unique factorization domains.
 \end{steps}
 \end{content}
 
 \begin{speech}[00:02:17 - 00:03:57]
-Okay, so, you could say: what about other rings? So, as it was kind of an example in this class, this ring of Gaussian integers \inlinemetanote{writes: $\mathbb{Z}[i]$}. What about this ring? That's not exactly in this context, and it's not... So, it turns out this ring of Gaussian integers is a PID \inlinemetanote{writes: $\mathbb{Z}[i] \text{ is a PID} \implies \mathbb{Z}[i] \text{ is a UFD}$}. We haven't proven it. You can go look in the book. It was not in the topics in the course, but this is a PID, so it implies that this ring, the Gaussian integers, is also a UFD.
+Okay, so, you could say: what about other rings? So, as it was kind of an example in this class, this ring of Gaussian integers \inlinemetanote{writes: $\mathbb{Z}[i]$} (Recall: \cref{def:gaussian-integers}). What about this ring? That's not exactly in this context, and it's not... So, it turns out this ring of Gaussian integers is a PID \inlinemetanote{writes: $\mathbb{Z}[i] \text{ is a PID} \implies \mathbb{Z}[i] \text{ is a UFD}$}. We haven't proven it. You can go look in the book. It was not in the topics in the course, but this is a PID, so it implies that this ring, the Gaussian integers, is also a UFD.
 
 The argument that it's a PID is not hard, it's just a page in the book. There's a notion of Euclidean domains, so you have to look in the book for... there's a notion of a division algorithm here \inlinemetanote{writes: \qt{division alg.}}. Then that shows it's a PID, and so, if you're interested, you can read it; you can find it's a page in the book basically. But that's also a UFD.
 
-What about rings like, if I take a field, let's say $k$, $k$ is a field \inlinemetanote{writes: $k \text{ field}$}. What about the rings... so these are polynomial rings, what about power series \inlinemetanote{writes: $k[[x]]\text{?}$}? That's not covered here, and it's actually an interesting, complicated topic, but in this particular case it's not complicated. And the answer, and I hinted at this, is that actually this power series in a field is a PID, so, it's also a UFD \inlinemetanote{writes: Ans: $k[[x]] \text{ is a PID} \implies k[[x]] \text{ is a UFD}$}.
+What about rings like, if I take a field, let's say $k$, $k$ is a field \inlinemetanote{writes: $k \text{ field}$}. What about the rings... so these are polynomial rings, what about power series \inlinemetanote{writes: $k[[x]]\text{?}$}? That's not covered here, and it's actually an interesting, complicated topic, but in this particular case it's not complicated. And the answer, and I hinted at this (Recall: \cref{exer:power-series-pid}), is that actually this power series in a field is a PID, so, it's also a UFD \inlinemetanote{writes: Ans: $k[[x]] \text{ is a PID} \implies k[[x]] \text{ is a UFD}$}.
 
 And I said that I was not going to give a hint about the proof, but I will now basically give the proof, more or less.
 \end{speech}
@@ -192,11 +201,12 @@ For any field $k$, the ring of formal power series $k[[x]]$ is also a principal 
 \[
 k \text{ is a field} \implies k[[x]] \text{ is a PID} \implies k[[x]] \text{ is a UFD}.
 \]
+This was posed as \cref{exer:power-series-pid}; the lecturer now sketches the proof.
 \end{example}
 \end{content}
 
 \begin{speech}[00:03:57 - 00:05:31]
-So, proof: let $I$... \inlinemetanote{writes: Proof: Let $I \subset k[[x]]$ ideal} So, I have to prove it's a PID, because we proved earlier that PIDs are UFDs. So, let $I$ be any ideal...
+So, proof: let $I$... \inlinemetanote{writes: Proof: Let $I \subset k[[x]]$ ideal} So, I have to prove it's a PID, because we proved earlier that PIDs are UFDs (Recall: \cref{thm:pid-implies-ufd}). So, let $I$ be any ideal...
 
 Then either $I$ could be zero \inlinemetanote{writes: $I = (0)$}, that's one possibility, or $I$ is not the zero ideal \inlinemetanote{writes: $I \neq (0)$}. So, here, well, of course, there's nothing to prove here if it's the zero ideal. So, if it's not the zero ideal, choose a power series in here, so, choose $f$ in here that has minimal lowest degree \inlinemetanote{writes: choose $f \in k[[x]]$ that has min.\ lowest degree}.
 
@@ -210,7 +220,7 @@ Let $I \subseteq k[[x]]$ be an ideal.
     \item \textbf{Case 1 ($I = (0)$):} If $I = (0)$, it is generated by the zero element, so $I$ is principal.
     \item \textbf{Case 2 ($I \neq (0)$):} Since $I$ contains non-zero elements, we define for each non-zero power series $g(x) = \sum_{n=0}^\infty a_n x^n \in I \setminus \{0\}$ its order (lowest degree):
     \[
-    \operatorname{ord}(g) := \min \{ n \in \mathbb{N} \mid a_n \neq 0 \}.
+    \operatorname{ord}(g) := \min \{ n \ge 0 \mid a_n \neq 0 \}.
     \]
     By the well-ordering of $\mathbb{N}$, there exists an element $f \in I \setminus \{0\}$ achieving the minimal lowest degree:
     \[
@@ -220,8 +230,9 @@ Let $I \subseteq k[[x]]$ be an ideal.
     \[
     f(x) = a_m x^m + a_{m+1} x^{m+1} + \dots = x^m \underbrace{(a_m + a_{m+1} x + \dots)}_{=: u(x)}, \quad a_m \in k \setminus \{0\}.
     \]
-    Since $a_m \neq 0$, the series $u(x)$ has an invertible constant term in $k$, which implies that $u(x)$ is a unit in $k[[x]]$ (i.e., $u(x) \in k[[x]]^\times$).
+    Since $a_m \neq 0$, the series $u(x)$ has an invertible constant term in $k$, which implies that $u(x)$ is a unit in $k[[x]]$ (i.e., $u(x) \in k[[x]]^\times$, \cref{thm:units-power-series-ring}).
 \end{itemize}
+The remaining step, $I = (x^m)$, is left to the students (\cref{exer:ideals-power-series}).
 \end{proof}
 \end{content}
 
@@ -260,7 +271,7 @@ In particular, $k[[x]]$ is a discrete valuation ring (DVR), hence a PID and a UF
 \begin{hidden}
 % timestamp: 00:06:53
 % topic: Review of Gauss's Theorem and examples of UFDs and PIDs
-% board_state: thm:gauss-polynomial-ufd, ex:ufd-polynomial-rings, ex:gaussian-integers-ufd, ex:power-series-pid-ufd, exer:ideals-power-series
+% board_state: thm:ufd-polynomial-ring-w7tue, ex:ufd-polynomial-rings, ex:gaussian-integers-ufd, ex:power-series-pid-ufd, exer:ideals-power-series
 % next_goal: Review of content, primitive polynomials, Gauss's Lemma
 % open_loops: none
 \end{hidden}
@@ -272,11 +283,13 @@ In particular, $k[[x]]$ is a discrete valuation ring (DVR), hence a PID and a UF
 \begin{speech}[00:06:53 - 00:08:12]
 Okay, so, now let's go back to the proof. So, the ideas of this proof, there were several new ideas, which I'll just comment on, so, we're going to use them. If I have $f$ as a polynomial \inlinemetanote{writes: $f \in R[x]$}, and $f$ is not zero \inlinemetanote{writes: $f \neq 0$} --- we don't like factoring zeros --- if $f$ is not zero, then we defined the content \inlinemetanote{writes: $C(f) = \operatorname{GCD}(\text{non-zero coeff of } f) \subset R$}. This is the content of $f$, that's the words for it \inlinemetanote{writes: \qt{content of $f$}}, and it equals the GCD of the non-zero coefficients of $f$. Okay? Since $f$ is not zero, it has at least one coefficient that's non-zero, and that's the GCD, and it's only defined up to a unit.
 
-And the ways we think about this is given any $f$ --- always non-zero --- $f$ non-zero, then we can write $f$ is equal to the content, or we just pull out the GCD, and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes: $f \in R[x], f \neq 0 \implies f = C(f) \cdot f_0$ and labels $f_0$ as primitive}. And the definition of the term primitive was the content is equal to $1$, up to a unit \inlinemetanote{writes: $C(f_0) = 1$ up to unit}. Okay? So, this is review from last time.
+And the ways we think about this is given any $f$ --- always non-zero --- $f$ non-zero, then we can write $f$ is equal to the content, or we just pull out the GCD, and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes: $f \in R[x], f \neq 0 \implies f = C(f) \cdot f_0$ and labels $f_0$ as primitive}. And the definition of the term primitive was the content is equal to $1$, up to a unit \inlinemetanote{writes: $C(f_0) = 1$ up to unit}. Okay? So, this is review from last time (Recall: \cref{def:content-poly}, \cref{def:primitive-poly}).
 \end{speech}
 
+\recap{Content and primitive polynomials were defined in the previous lecture (\cref{def:content-poly}, \cref{def:primitive-poly}), with the decomposition $f = c(f) f^*$ of \cref{prop:canonical-decomp}. This lecture writes $C(f)$ for the content and $f_0$ or $m^*$ for the primitive part.}
+
 \begin{content}
-\begin{definition}[Content and Primitive Polynomials]\label[definition]{def:content-primitive}
+\begin{definition}[Content and Primitive Polynomials]\label[definition]{def:content-poly-w7tue}
 Let $R$ be a UFD and let $f \in R[x]$ be a non-zero polynomial, $f(x) = \sum_{i=0}^n a_i x^i$.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item The \newterm{content} of $f$, denoted $C(f)$, is defined as the greatest common divisor of its non-zero coefficients:
@@ -300,7 +313,7 @@ Let $R$ be a UFD and let $f \in R[x]$ be a non-zero polynomial, $f(x) = \sum_{i=
 \subsection{Gauss's Lemma and Divisibility of Primitive Polynomials}
 
 \begin{speech}[00:08:12 - 00:10:18]
-And the two properties that we use about this, which are really important: the first one is another theorem by Carl Friedrich, that says that if $f$ and $g$ are primitive, then their product is primitive \inlinemetanote{writes: $\ast\ \text{CFG: if } f, g \text{ are primitive} \implies fg \text{ primitive}$}. Okay? So, we proved that, and that was a very nice proof actually. It used the fact about polynomial rings over integral domains being integral domains.
+And the two properties that we use about this, which are really important: the first one is another theorem by Carl Friedrich, that says that if $f$ and $g$ are primitive, then their product is primitive \inlinemetanote{writes: $\ast\ \text{CFG: if } f, g \text{ are primitive} \implies fg \text{ primitive}$}. Okay? So, we proved that (Recall: \cref{lem:gauss-lemma}), and that was a very nice proof actually. It used the fact about polynomial rings over integral domains being integral domains (Recall: \cref{thm:domain-poly-power-series}).
 
 And what the content of this is, is if you take something like... let's take the integers: $(2x + 5) \cdot (3x + 17)$ \inlinemetanote{writes: $(2x+5)(3x+17)$}. So, like these two things, these two polynomials, this is $f$ and this is $g$ \inlinemetanote{labels $f$ and $g$ under the factors}. This one's primitive because $2$ and $5$ don't have any common factors. This one's also primitive because $3$ and $17$ don't have any common factors. And what our friend Carl Friedrich is asserting here is if I multiply these, it'll also have that property.
 
@@ -309,8 +322,10 @@ So, then to check it, we can multiply. So, we have to do some multiplication her
 Okay, so, then if you factor this, you get $2 \times 3$, $7^2$, and this is $5 \times 17$ \inlinemetanote{writes: $2 \cdot 3$, $7^2$, $5 \cdot 17$ under the coefficients}. And you see they have no common factors. And that's the assertion he's saying: every single time you do this, that happens. And the thing that's tricky... I mean, we proved it, so I'm not repeating the proof, but the thing that's tricky here is that although these things are relatively prime, when you multiply there's all sorts of addition that happens. And he's saying that doesn't stop his claim from being true. Okay, that's one principle.
 \end{speech}
 
+\recap{Gauss's Lemma was proved in the previous lecture (\cref{lem:gauss-lemma}).}
+
 \begin{content}
-\begin{lemma}[Gauss's Lemma]\label[lemma]{lem:gauss-primitive-product}
+\begin{lemma}[Gauss's Lemma]\label[lemma]{lem:gauss-lemma-w7tue}
 Let $R$ be a UFD. If $f, g \in R[x]$ are primitive polynomials, then their product $f \cdot g$ is also primitive:
 \begin{equation}\label{eq:gauss-lemma-w7tue}
 C(f) = 1 \text{ and } C(g) = 1 \implies C(f \cdot g) = 1.
@@ -338,19 +353,21 @@ Since no prime divides $6$, $49$, and $85$ simultaneously, we have $\operatornam
 \begin{speech}[00:10:18 - 00:11:20]
 The second one was that if $g$ divides $b \cdot f$ \inlinemetanote{writes: $\ast\ g \mid bf$}, and the assumptions are $g$ is primitive \inlinemetanote{writes: $g$ primitive}, so that means $g$ is some primitive polynomial \inlinemetanote{writes: $g \in R[x]$}, $b$ is a scalar not equal to $0$ \inlinemetanote{writes: $b \in R, b \neq 0$}, and $f$ is some polynomial \inlinemetanote{writes: $f \in R[x]$}, the fact that $g$ is primitive implies $g$ actually divides $f$ \inlinemetanote{writes: $\implies g \mid f$}.
 
-So, those are the two things that we're going to use. I'm not going to prove them again; I proved them last time. But if you've never seen the content, it's worth playing with. It's kind of a useful idea.
+So, those are the two things that we're going to use. I'm not going to prove them again; I proved them last time (Recall: \cref{lem:gauss-lemma}, \cref{clm:primitive-divisibility}). But if you've never seen the content, it's worth playing with. It's kind of a useful idea.
 \end{speech}
 
+\recap{This is \cref{clm:primitive-divisibility} of the previous lecture.}
+
 \begin{content}
-\begin{lemma}[Primitive Divisor Lemma]\label[lemma]{lem:primitive-divisor-scalar}
+\begin{lemma}[Primitive Divisor Lemma]\label[lemma]{lem:primitive-divisibility-w7tue}
 Let $R$ be a UFD. Let $g \in R[x]$ be a primitive polynomial, $f \in R[x]$, and $b \in R \setminus \{0\}$. If $g$ divides $b \cdot f$ in $R[x]$, then $g$ divides $f$ in $R[x]$:
 \begin{equation}\label{eq:primitive-divisibility}
 g \mid b \cdot f \quad \text{with } C(g) = 1 \text{ and } b \in R \setminus \{0\} \implies g \mid f.
 \end{equation}
 \end{lemma}
 
-\begin{steps}[Intuition behind the Primitive Divisor Lemma]
-Since $g$ is primitive, none of its irreducible factors can come from the base ring $R$. Therefore, multiplying $f$ by a scalar $b \in R$ cannot introduce any new non-scalar primitive factors, forcing $g$ to divide $f$ directly.
+\begin{steps}[Why the Primitive Divisor Lemma Holds]
+We may assume $f \neq 0$. Write $b f = g h$ with $h \in R[x]$. Taking contents, $C(b f) = b \, C(f)$, while $C(g h) = C(h)$ because $g$ is primitive (\cref{lem:gauss-lemma-w7tue}, applied to $g$ and the primitive part of $h$). Hence $b \mid C(h)$, so $h = b h'$ with $h' \in R[x]$, and cancelling $b \neq 0$ in the domain $R[x]$ gives $f = g h'$.
 \end{steps}
 \end{content}
 
@@ -365,8 +382,10 @@ So, for $R[x]$ we have to prove the existence \inlinemetanote{writes: For $R[x]$
 
 And for uniqueness, we use this principle that we proved last time, and this principle is that if we have $p$ in $R[x]$ is irreducible, if this implies the ideal in $R[x]$ is prime \inlinemetanote{writes: $[p \in R[x] \text{ irred.} \implies (p) \subset R[x] \text{ prime}]$} --- so, if I can prove this statement, then that implies the uniqueness of factorization into irreducibles \inlinemetanote{writes: $\implies !$ factorization into irred.}.
 
-So, this is a principle we proved last Tuesday: that if I have a ring such that the irreducibles are prime, then the uniqueness statement holds, if you remember that. So, we're going to use it now, so, we need to prove this.
+So, this is a principle we proved last Tuesday (Recall: \cref{clm:step1-uniqueness}): that if I have a ring such that the irreducibles are prime, then the uniqueness statement holds, if you remember that. So, we're going to use it now, so, we need to prove this.
 \end{speech}
+
+\recap{The reduction in (2) is \cref{clm:step1-uniqueness} (Week~6 Tuesday); the existence part (1) was proved in the previous lecture.}
 
 \begin{content}
 \begin{proposition}[Reduction of Uniqueness to Prime Ideals]\label[proposition]{prop:irred-implies-prime-uniqueness}
@@ -388,8 +407,10 @@ So, I remind you... reminder: $p$ not equal to $0$ or a unit is irreducible if w
 So, that's just the definition, just to remind you. So, we have to prove that whenever I have an irreducible person here, the ideal generated is prime. That will prove the uniqueness, we already have existence, and then we will have proved Gauss's theorem.
 \end{speech}
 
+\recap{Irreducible elements were defined in Week~6 (\cref{def:irreducible}).}
+
 \begin{content}
-\begin{definition}[Irreducible Element]\label[definition]{def:irreducible-element}
+\begin{definition}[Irreducible Element]\label[definition]{def:irreducible-w7tue}
 Let $R$ be an integral domain. A non-zero, non-unit element $p \in R \setminus (\{0\} \cup R^\times)$ is called \newterm{irreducible} if:
 \[
 p = a \cdot b \implies a \in R^\times \text{ or } b \in R^\times.
@@ -400,12 +421,12 @@ p = a \cdot b \implies a \in R^\times \text{ or } b \in R^\times.
 \begin{hidden}
 % timestamp: 00:13:52
 % topic: Reduction of Gauss's Theorem uniqueness to showing (p) is prime
-% board_state: thm:gauss-polynomial-ufd, def:content-primitive, lem:gauss-primitive-product, lem:primitive-divisor-scalar, prop:irred-implies-prime-uniqueness, def:irreducible-element
+% board_state: thm:ufd-polynomial-ring-w7tue, def:content-poly-w7tue, lem:gauss-lemma-w7tue, lem:primitive-divisibility-w7tue, prop:irred-implies-prime-uniqueness, def:irreducible-w7tue
 % next_goal: Prove p irreducible implies (p) is prime by splitting into deg(p) = 0 and deg(p) > 0
 % open_loops: none
 \end{hidden}
 
-\begin{proofWrapper}[Proof of \cref{thm:gauss-polynomial-ufd}: Primeness of Irreducible Elements]
+\begin{proofWrapper}[Proof of \cref{thm:ufd-polynomial-ring-w7tue}: Primeness of Irreducible Elements]
 
 \subsection{Case 1: Degree Zero Irreducibles}
 
@@ -422,7 +443,7 @@ It's not a problem. So, the interesting case, and it's actually the most interes
 We must show that for any irreducible polynomial $p \in R[x]$, the principal ideal $(p) \subset R[x]$ is prime. We analyze two cases according to $\deg(p)$:
 
 \textbf{Case 1 ($\deg(p) = 0$):}
-If $\deg(p) = 0$, then $p \in R$ is a non-zero, non-unit constant polynomial. Since $p$ is irreducible in $R[x]$, it is also irreducible in $R$. Because $R$ is a UFD, every irreducible element in $R$ is a prime element, which implies that the quotient ring $R/(p)$ is an integral domain.
+If $\deg(p) = 0$, then $p \in R$ is a non-zero, non-unit constant polynomial. Since $p$ is irreducible in $R[x]$, it is also irreducible in $R$. Because $R$ is a UFD, every irreducible element in $R$ is a prime element (\cref{exer:irred-prime-ufd}), which implies that the quotient ring $R/(p)$ is an integral domain (\cref{prop:quotient-integral-domain-prime}).
 
 Consider the canonical reduction homomorphism:
 \[
@@ -432,7 +453,7 @@ The kernel of $\pi$ is precisely the ideal $(p) \subset R[x]$. By the First Isom
 \[
 R[x]/(p) \cong (R/(p))[x].
 \]
-Since $R/(p)$ is an integral domain, the polynomial ring $(R/(p))[x]$ is also an integral domain. Therefore, $R[x]/(p)$ is an integral domain, which proves that $(p)$ is a prime ideal in $R[x]$.
+Since $R/(p)$ is an integral domain, the polynomial ring $(R/(p))[x]$ is also an integral domain (\cref{thm:domain-poly-power-series}). Therefore, $R[x]/(p)$ is an integral domain, which proves that $(p)$ is a prime ideal in $R[x]$.
 \end{proof}
 \end{content}
 
@@ -494,11 +515,11 @@ m \in R \quad (\text{i.e., } \deg(m) = 0).
 \end{content}
 
 \begin{speech}[00:18:50 - 00:21:05]
-Now, what we normally do in the case when we have a field is we use the division algorithm. So, we'd very much like to use the division algorithm, and this is one of the ideas in this proof, and it's part of the reason why the notion of the fraction field was introduced. So, we would like to use the division algorithm \inlinemetanote{writes: We would like to use the division alg.\ in $R[x]$} ... the division algorithm...
+Now, what we normally do in the case when we have a field is we use the division algorithm (Recall: \cref{thm:poly-long-division}). So, we'd very much like to use the division algorithm, and this is one of the ideas in this proof, and it's part of the reason why the notion of the fraction field was introduced. So, we would like to use the division algorithm \inlinemetanote{writes: We would like to use the division alg.\ in $R[x]$} ... the division algorithm...
 
 But we can't because this is not a field. So, the solution here, and this is what I said, one of the ideas in the proof, is that... so, the problem is that $R$ need not be a field \inlinemetanote{writes: But the problem is that $R$ need not be a field.}. And for the division algorithm you need a field because you're dividing.
 
-So, the idea here is to use the field of fractions. As I said, that's kind of why we introduced it. So, let $Q(R)$ be the field of fractions \inlinemetanote{writes: Idea: $Q(R)$ be the field of fractions of $R$}. So, remember, $R$ sits inside... I'm just going to call it $Q$, sits inside $Q$ \inlinemetanote{writes: $R \subset Q = \dots$}, and this is the field of fractions. Every element of $Q$, an element of $Q$ is some kind of $a/b$, where $b$ is not zero \inlinemetanote{writes: $Q \ni \frac{a}{b}, b \neq 0$}.
+So, the idea here is to use the field of fractions. As I said, that's kind of why we introduced it. So, let $Q(R)$ be the field of fractions \inlinemetanote{writes: Idea: $Q(R)$ be the field of fractions of $R$} (Recall: \cref{def:field-of-fractions}). So, remember, $R$ sits inside... I'm just going to call it $Q$, sits inside $Q$ \inlinemetanote{writes: $R \subset Q = \dots$}, and this is the field of fractions. Every element of $Q$, an element of $Q$ is some kind of $a/b$, where $b$ is not zero \inlinemetanote{writes: $Q \ni \frac{a}{b}, b \neq 0$}.
 
 All right? And all of these things we can consider, we can view all of these people, $p, f, g$, to be inside this polynomial ring over this field \inlinemetanote{writes: We can view $p, f, g \in Q[x]$}. Because they live inside $R$, so, we just view them inside the field. Okay? And the advantage of this is we can run the division algorithm in the field. That's the whole purpose of this idea.
 \end{speech}
@@ -522,7 +543,7 @@ Since $Q$ is a field, the Euclidean division algorithm is fully applicable in $Q
 \begin{hidden}
 % timestamp: 00:20:50
 % topic: Passage to fraction field Q(R)[x] and division algorithm setup
-% board_state: thm:gauss-polynomial-ufd, eq:ideal-I-def-w7tue, eq:minimal-m-def, eq:subgoal-m-in-R, eq:field-of-fractions-def-w7tue, eq:polynomials-in-Qx
+% board_state: thm:ufd-polynomial-ring-w7tue, eq:ideal-I-def-w7tue, eq:minimal-m-def, eq:subgoal-m-in-R, eq:field-of-fractions-def-w7tue, eq:polynomials-in-Qx
 % next_goal: Divide f by m in Q[x] and clear denominators
 % open_loops: none
 \end{hidden}
@@ -663,7 +684,7 @@ Equation \eqref{eq:bprime-f-eq-qprime-m} becomes:
 \[
 b' \cdot f = \bigl(q' \cdot C(m)\bigr) \cdot m^* \implies m^* \mid b' \cdot f.
 \]
-Since $m^*$ is primitive and $b' \in R \setminus \{0\}$, the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}) implies:
+Since $m^*$ is primitive and $b' \in R \setminus \{0\}$, the Primitive Divisor Lemma (\cref{lem:primitive-divisibility-w7tue}) implies:
 \begin{equation}\label{eq:mstar-divides-f}
 \boxed{m^* \mid f} \quad \text{in } R[x].
 \end{equation}
@@ -748,7 +769,7 @@ Substituting $r'' = 0$ into \eqref{eq:cleared-div-p}:
 \begin{equation}\label{eq:bdoubleprime-p-eq-qdoubleprime-m}
 b'' \cdot p = q'' \cdot m = \bigl(q'' \cdot C(m)\bigr) \cdot m^*.
 \end{equation}
-Because $m^*$ is primitive and $b'' \in R \setminus \{0\}$, the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}) implies:
+Because $m^*$ is primitive and $b'' \in R \setminus \{0\}$, the Primitive Divisor Lemma (\cref{lem:primitive-divisibility-w7tue}) implies:
 \begin{equation}\label{eq:mstar-divides-p}
 \boxed{m^* \mid p} \quad \text{in } R[x].
 \end{equation}
@@ -777,7 +798,7 @@ From \eqref{eq:mstar-divides-p}, there exists a polynomial $B \in R[x]$ such tha
 \begin{equation}\label{eq:p-eq-mstar-B}
 p = m^* \cdot B.
 \end{equation}
-Since $p$ is assumed to be irreducible in $R[x]$ (\cref{def:irreducible-element}), every factorization of $p$ must contain a unit. This yields a dichotomy:
+Since $p$ is assumed to be irreducible in $R[x]$ (\cref{def:irreducible-w7tue}), every factorization of $p$ must contain a unit. This yields a dichotomy:
 \[
 m^* \in R[x]^\times \quad \text{or} \quad B \in R[x]^\times.
 \]
@@ -806,7 +827,7 @@ How can $m^*$ be a unit? $m^*$ is a polynomial. The only way it can be a unit is
 
 So, this implies... that's the conclusion we were seeking.
 
-Conclusion: $m^*$ is in $R$ \inlinemetanote{writes: Conclude: $m^* \in R \implies m \in R$}. The only way you can be a unit in a polynomial ring over an integral domain is if you're a constant, right?
+Conclusion: $m^*$ is in $R$ \inlinemetanote{writes: Conclude: $m^* \in R \implies m \in R$}. The only way you can be a unit in a polynomial ring over an integral domain is if you're a constant, right? (Recall: \cref{thm:units-polynomial-ring-integral-domain})
 
 And this implies that $m$ was actually in $R$ too, because they differ just by the content \inlinemetanote{writes: $m \in R$}.
 
@@ -816,7 +837,7 @@ So, we're almost done now.
 \end{speech}
 
 \begin{content}[Attainment of the Sub-Goal: $m \in R$]
-Since $R$ is an integral domain, the units of the polynomial ring $R[x]$ are strictly the units of the base ring:
+Since $R$ is an integral domain, the units of the polynomial ring $R[x]$ are exactly the units of the base ring (\cref{thm:units-polynomial-ring-integral-domain}):
 \[
 (R[x])^\times = R^\times.
 \]
@@ -880,7 +901,7 @@ Since $m \in I = (f, p)$, there exist polynomials $A, B \in R[x]$ such that:
 \begin{equation}\label{eq:m-linear-comb}
 m = A \cdot f + B \cdot p, \qquad A, B \in R[x].
 \end{equation}
-By \eqref{eq:m-in-R-established}, $m$ is a non-zero scalar: $m \in R \setminus \{0\}$.
+(This $B$ is new, as on the board; the cofactor $B$ of \eqref{eq:p-eq-mstar-B} is not used again.) By \eqref{eq:m-in-R-established}, $m$ is a non-zero scalar: $m \in R \setminus \{0\}$.
 
 Multiplying both sides of \eqref{eq:m-linear-comb} by the target polynomial $g$:
 \begin{equation}\label{eq:mg-expanded}
@@ -922,7 +943,7 @@ And that's the end of the proof.
 \end{speech}
 
 \begin{content}[Primitiveness of $p$ and Conclusion of Gauss's Theorem]
-To deduce $p \mid g$ from $p \mid m \cdot g$ via the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}), we must establish that $p$ is primitive.
+To deduce $p \mid g$ from $p \mid m \cdot g$ via the Primitive Divisor Lemma (\cref{lem:primitive-divisibility-w7tue}), we must establish that $p$ is primitive.
 
 \textbf{Claim:} If $p \in R[x]$ is irreducible and $\deg(p) > 0$, then $p$ is primitive.
 \begin{proof}[Proof of Claim]
@@ -942,18 +963,18 @@ Therefore, $C(p)$ must be a unit in $R$:
 \[
 C(p) \in R^\times.
 \]
-By definition (\cref{def:content-primitive}), this means that $p$ is primitive:
+By definition (\cref{def:content-poly-w7tue}), this means that $p$ is primitive:
 \[
 C(p) = 1 \quad (\text{up to units}).
 \]
 \end{proof}
 
 \textbf{Final Conclusion of the Proof:}
-Since $p$ is primitive, $m \in R \setminus \{0\}$, and $p \mid m \cdot g$, the Primitive Divisor Lemma (\cref{lem:primitive-divisor-scalar}) implies:
+Since $p$ is primitive, $m \in R \setminus \{0\}$, and $p \mid m \cdot g$, the Primitive Divisor Lemma (\cref{lem:primitive-divisibility-w7tue}) implies:
 \[
 p \mid g \implies g \in (p).
 \]
-This completes Case 2, establishing that $(p)$ is prime whenever $p$ is irreducible. Consequently, by \cref{prop:irred-implies-prime-uniqueness}, uniqueness of factorization holds, and Gauss's Theorem (\cref{thm:gauss-polynomial-ufd}) is proven.
+This completes Case 2, establishing that $(p)$ is prime whenever $p$ is irreducible. Consequently, by \cref{prop:irred-implies-prime-uniqueness}, uniqueness of factorization holds, and Gauss's Theorem (\cref{thm:ufd-polynomial-ring-w7tue}) is proven.
 \end{content}
 
 \end{proofWrapper}
@@ -961,7 +982,7 @@ This completes Case 2, establishing that $(p)$ is prime whenever $p$ is irreduci
 \begin{hidden}
 % timestamp: 00:39:19
 % topic: Gauss's Theorem completed; concluding ring theory; transitioning to pedagogical reflections
-% board_state: thm:gauss-polynomial-ufd (proven)
+% board_state: thm:ufd-polynomial-ring-w7tue (proven)
 % next_goal: Clean board, discuss learning philosophy (Schopenhauer, Confucius), and introduce groups
 % open_loops: none
 \end{hidden}
@@ -1132,7 +1153,7 @@ Because $\deg(p) > 0$, the primitive part $p^*$ has $\deg(p^*) = \deg(p) > 0$, w
 \subsection{Definition and Axioms of a Group}
 
 \begin{speech}[00:44:09 - 00:45:55]
-And we've already seen the definition, so, I don't really say so much about it. A group is... the definition: so, first groups, that's the topic now \inlinemetanote{writes: \qt{Groups}, \qt{Def.}}. So, $G$ with a binary operation and a neutral element is a group \inlinemetanote{writes: $(G, \cdot, e) \text{ is a group}$}.
+And we've already seen the definition (Recall: \cref{def:group}), so, I don't really say so much about it. A group is... the definition: so, first groups, that's the topic now \inlinemetanote{writes: \qt{Groups}, \qt{Def.}}. So, $G$ with a binary operation and a neutral element is a group \inlinemetanote{writes: $(G, \cdot, e) \text{ is a group}$}.
 
 So, here we have associativity, the unit property, and the existence of inverse \inlinemetanote{writes: Associativity, Unit property, Existence of inv.}.
 
@@ -1155,6 +1176,8 @@ And there are many things to say and I leave this to you. You can say that the u
 I will say one thing here because... \inlinemetanote{writes: \qt{[inverse is unique]}} unique...
 \end{speech}
 
+\recap{Groups were defined in Week~2 (\cref{def:group}), together with the uniqueness of the neutral element and of inverses (\cref{prop:uniqueness-neutral-element}, \cref{prop:uniqueness-inverse}). The lecturer reviews them.}
+
 \begin{content}
 \begin{definition}[Group]\label[definition]{def:group-w7tue}
 A \newterm{group} is a triple $(G, \cdot, e)$, where $G$ is a set, $\cdot \colon G \times G \to G$ is a binary operation (often written $x \cdot y$ or $x y$), and $e \in G$ is a distinguished neutral element, satisfying the following axioms:
@@ -1168,22 +1191,13 @@ A \newterm{group} is a triple $(G, \cdot, e)$, where $G$ is a set, $\cdot \colon
     \begin{equation}\label{eq:group-identity}
     e \cdot x = x \cdot e = x \quad \forall x \in G.
     \end{equation}
-    Furthermore, the neutral element $e$ is uniquely determined.
     \item \textbf{Existence of Inverses:} For every $x \in G$, there exists an element $y \in G$ such that:
     \begin{equation}\label{eq:group-inverse}
     x \cdot y = y \cdot x = e.
     \end{equation}
-    Furthermore, for each $x \in G$, the inverse element $y$ is uniquely determined (commonly denoted $x^{-1}$).
 \end{enumerate}
+The axioms only demand existence; the neutral element and the inverse of each $x$ are unique (\cref{prop:uniqueness-neutral-element-w7tue}, \cref{prop:uniqueness-inverse-w7tue}), and the inverse is denoted $x^{-1}$.
 \end{definition}
-
-\begin{steps}[Uniqueness of Identity and Inverses]
-While the axioms only demand the existence of an identity and inverses, their uniqueness follows directly from associativity:
-\begin{itemize}
-    \item \textbf{Uniqueness of $e$:} If $e$ and $e'$ are both identities, then $e = e \cdot e' = e'$.
-    \item \textbf{Uniqueness of Inverse:} If $y$ and $y'$ are both inverses of $x$, then $y = y \cdot e = y \cdot (x \cdot y') = (y \cdot x) \cdot y' = e \cdot y' = y'$.
-\end{itemize}
-\end{steps}
 \end{content}
 
 \subsection{Uniqueness of Identity, Inverses, and Cancellation Laws}
@@ -1203,7 +1217,7 @@ Okay, so, those are the really basic aspects of it.
 \end{speech}
 
 \begin{content}
-\begin{proposition}[Uniqueness of the Identity Element]\label[proposition]{prop:uniqueness-identity}
+\begin{proposition}[Uniqueness of the Identity Element]\label[proposition]{prop:uniqueness-neutral-element-w7tue}
 In any group $(G, \cdot, e)$, the neutral element $e$ is uniquely determined.
 \end{proposition}
 
@@ -1231,12 +1245,12 @@ a x = b x &\implies a = b \qquad \text{(Right Cancellation)}. \label{eq:right-ca
 \end{proposition}
 
 \begin{proof}
-Suppose $x a = x b$. By axiom \textbf{(G2)}, there exists an inverse $y := x^{-1} \in G$ satisfying $y x = e$. Multiplying on the left by $y$:
+Suppose $x a = x b$. By axiom \textbf{(G3)}, there exists an inverse $y := x^{-1} \in G$ satisfying $y x = e$. Multiplying on the left by $y$:
 \begin{align*}
 y (x a) &= y (x b) \\
-(y x) a &= (y x) b && \text{(by Associativity \textbf{(G0)})} \\
+(y x) a &= (y x) b && \text{(by Associativity \textbf{(G1)})} \\
 e a &= e b && \text{(since } y x = e\text{)} \\
-a &= b && \text{(by Identity \textbf{(G1)})}.
+a &= b && \text{(by Identity \textbf{(G2)})}.
 \end{align*}
 Right cancellation is verified analogously by multiplying on the right by $x^{-1}$.
 \end{proof}
@@ -1267,7 +1281,7 @@ y = y \cdot e = y \cdot (x \cdot \hat{y}) = (y \cdot x) \cdot \hat{y} = e \cdot 
 \begin{hidden}
 % timestamp: 00:48:17
 % topic: Group axioms, uniqueness of identity/inverse, cancellation laws proven
-% board_state: def:group-w7tue, prop:uniqueness-identity, prop:cancellation-laws, prop:uniqueness-inverse
+% board_state: def:group-w7tue, prop:uniqueness-neutral-element-w7tue, prop:cancellation-laws, prop:uniqueness-inverse-w7tue
 % next_goal: Discuss contrast between ring theory and group theory (finite vs infinite, non-abelian)
 % open_loops: none
 \end{hidden}
@@ -1290,7 +1304,7 @@ And we will primarily be interested in groups that are not commutative \inlineme
 The transition from ring theory to group theory involves two fundamental shifts in mathematical focus:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Finiteness versus Infinitude:} Ring theory in this course was driven by infinite classical structures ($\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, polynomials $R[x]$, and formal power series $k[[x]]$). In contrast, the study of group theory will focus primarily on \newterm{finite groups}.
-    \item \textbf{Non-Commutativity (Non-Abelian Structures):} Rings were assumed to be commutative with unit ($1 \neq 0$). In group theory, the focus shifts decisively to \newterm{non-commutative} (non-abelian) groups, where the order of factors in a product cannot be altered.
+    \item \textbf{Non-Commutativity (Non-Abelian Structures):} The rings of this course were commutative (\cref{rem:ring-convention}). In group theory, the focus shifts decisively to \newterm{non-commutative} (non-abelian) groups, where the order of factors in a product cannot be altered.
 \end{enumerate}
 \end{content}
 
@@ -1299,7 +1313,7 @@ The transition from ring theory to group theory involves two fundamental shifts 
 \begin{speech}[00:49:46 - 00:51:49]
 So, we have now for this period about groups to be extremely careful never to switch order. I was cavalier about that; I never cared about the order because our rings were commutative, but now when we apply the group operation, you have to be very careful about the order. You're not allowed to switch the order unless you have a special reason for it.
 
-Okay. And the examples, of course, the examples we've seen before: if you take $R$ is any ring \inlinemetanote{writes: $(R, +, \cdot, 0, 1)$}, that's a ring, then you can make a group \inlinemetanote{writes: $\implies (R, +, 0) \text{ is a group}$}. That was our definition of a ring: the additive structure is always a group. These are abelian groups, they're commutative groups, they won't be primarily what we're interested in, but that's a good solid example of a group.
+Okay. And the examples, of course, the examples we've seen before: if you take $R$ is any ring \inlinemetanote{writes: $(R, +, \cdot, 0, 1)$}, that's a ring, then you can make a group \inlinemetanote{writes: $\implies (R, +, 0) \text{ is a group}$}. That was our definition of a ring (Recall: \cref{def:ring}): the additive structure is always a group. These are abelian groups, they're commutative groups, they won't be primarily what we're interested in, but that's a good solid example of a group.
 
 And you see here the notation for the group, it's a good point here: I said $G$ and dot is the standard for the operation in the group, and $e$ is standard for the neutral element \inlinemetanote{writes: $(G, \cdot, e)$}. The neutral element is also sometimes denoted by $1$ \inlinemetanote{writes: $1$ under $e$}, because the dot kind of suggests multiplication, and $1$ psychologically is helpful, I don't know. Sometimes people will write $1_G$ \inlinemetanote{writes: $1_G$}. These are just accepted terms when you use dot.
 
@@ -1309,8 +1323,8 @@ So, there's lots of examples here.
 \end{speech}
 
 \begin{content}
-\begin{example}[Additive Reduct of a Ring]\label[example]{ex:ring-additive-group}
-Let $(R, +, \cdot, 0, 1)$ be any ring. By the ring axioms, the additive structure $(R, +, 0)$ forms an abelian (commutative) group.
+\begin{example}[Additive Group of a Ring]\label[example]{ex:ring-additive-group}
+Let $(R, +, \cdot, 0, 1)$ be any ring. By the ring axioms (\cref{def:ring}), the additive structure $(R, +, 0)$ forms an abelian (commutative) group.
 \end{example}
 
 \begin{notation}[Multiplicative versus Additive Group Notation]\label[notation]{not:group-notation}
@@ -1325,7 +1339,7 @@ Depending on the context, group operations adopt multiplicative or additive conv
 \bottomrule
 \end{tabular}
 \end{center}
-Additive notation is strictly reserved for commutative groups. In general non-commutative groups, multiplicative notation is used exclusively, and the order of multiplication must be preserved: $x y \neq y x$ in general.
+The names are a choice, but by convention additive notation is used only for commutative groups. A possibly non-commutative group is written multiplicatively, and the order of the factors must be kept: $x y \neq y x$ in general.
 \end{notation}
 \end{content}
 
@@ -1469,6 +1483,8 @@ And we have a notion of group homomorphisms \inlinemetanote{writes on the middle
 So, that's the whole definition, just this condition. So, you could wonder: what happens to the neutral element?
 \end{speech}
 
+\recap{Subgroups and group homomorphisms were defined in Week~2 (\cref{def:subgroup}, \cref{def:group-homomorphism}), where $f(e_1) = e_2$ was also shown (\cref{prop:hom-preserves-identity}).}
+
 \begin{content}
 \begin{definition}[Subgroup]\label[definition]{def:subgroup-w7tue}
 Let $(G, \cdot, e)$ be a group. A subset $S \subseteq G$ is called a \newterm{subgroup} of $G$ (denoted $S \le G$) if it satisfies the following three conditions:
@@ -1510,7 +1526,7 @@ So, that's the answer: what happens to the neutral element? It has to go to the 
 
 Then I leave for you to check yourself: what happens to $f$ of an inverse? \inlinemetanote{writes on the right board: What happens to $f(x^{-1})$?} And the answer, it's just the same argument. Answer is that $f$ of an inverse is equal to the inverse here: $f(x^{-1}) = f(x)^{-1}$ \inlinemetanote{writes: Answer: $f(x^{-1}) = f(x)^{-1}$ and boxes it}. I leave this for you to check, okay? It's the same argument. It respects the inverse operation also.
 
-So, we're going to study the kernels and images just as before for groups, and that'll lead to a theorem which is parallel to what we called the First Isomorphism Theorem. But we're not doing that today.
+So, we're going to study the kernels and images just as before for groups, and that'll lead to a theorem which is parallel to what we called the First Isomorphism Theorem (Recall: \cref{thm:first-isomorphism-theorem-statement}). But we're not doing that today.
 \end{speech}
 
 \begin{content}
@@ -1689,27 +1705,27 @@ Although $f$ appears on the left in $f \circ g$, the mapping sequence proceeds r
     \node[anchor=north, figGray] at (0.6, -0.8) {$|S_1| = 1$};
 
     % --- S_2: Identity ---
-    \node[anchor=south, font=\bfseries] at (3.6, 1.5) {$S_2 \text{ (Identity)}$};
+    \node[anchor=south, font=\bfseries] at (3.6, 1.5) {$S_2$};
     \fill (3.0, 0.8) circle (1.8pt) node[anchor=east] {$1$};
     \fill (3.0, 0.0) circle (1.8pt) node[anchor=east] {$2$};
     \fill (4.2, 0.8) circle (1.8pt) node[anchor=west] {$1$};
     \fill (4.2, 0.0) circle (1.8pt) node[anchor=west] {$2$};
     \draw[->, thick, figBlue] (3.0, 0.8) -- (4.2, 0.8);
     \draw[->, thick, figBlue] (3.0, 0.0) -- (4.2, 0.0);
-    \node[anchor=north, figGray] at (3.6, -0.8) {$\operatorname{id}$};
+    \node[anchor=north, figGray] at (3.6, -0.8) {identity};
 
     % --- S_2: Transposition ---
-    \node[anchor=south, font=\bfseries] at (7.1, 1.5) {$S_2 \text{ (Transposition)}$};
+    \node[anchor=south, font=\bfseries] at (7.1, 1.5) {$S_2$};
     \fill (6.5, 0.8) circle (1.8pt) node[anchor=east] {$1$};
     \fill (6.5, 0.0) circle (1.8pt) node[anchor=east] {$2$};
     \fill (7.7, 0.8) circle (1.8pt) node[anchor=west] {$1$};
     \fill (7.7, 0.0) circle (1.8pt) node[anchor=west] {$2$};
     \draw[->, thick, figRed] (6.5, 0.8) -- (7.7, 0.0);
     \draw[->, thick, figRed] (6.5, 0.0) -- (7.7, 0.8);
-    \node[anchor=north, figGray] at (7.1, -0.8) {Swap $1 \leftrightarrow 2$};
+    \node[anchor=north, figGray] at (7.1, -0.8) {swap $1 \leftrightarrow 2$};
 
     % --- S_3: Cyclic Permutation ---
-    \node[anchor=south, font=\bfseries] at (11.1, 1.5) {$S_3 \text{ (Sample Permutation)}$};
+    \node[anchor=south, font=\bfseries] at (11.1, 1.5) {$S_3$};
     \fill (10.5, 1.2) circle (1.8pt) node[anchor=east] {$1$};
     \fill (10.5, 0.4) circle (1.8pt) node[anchor=east] {$2$};
     \fill (10.5, -0.4) circle (1.8pt) node[anchor=east] {$3$};
@@ -1998,7 +2014,7 @@ Comparing \eqref{eq:prod-13-23} and \eqref{eq:prod-23-13}:
 \[
 (1 \, 3)(2 \, 3) = (1 \, 3 \, 2) \neq (1 \, 2 \, 3) = (2 \, 3)(1 \, 3).
 \]
-Consequently, $S_3$ is a non-abelian (non-commutative) group. In fact, $S_3$ is the smallest non-abelian group in mathematics.
+Consequently, $S_3$ is a non-abelian (non-commutative) group. In fact, $S_3$, of order $6$, is the smallest non-abelian group.
 \end{observation}
 \end{content}
 
@@ -2014,7 +2030,7 @@ You could do it for $S_4$ too, but it has more elements. That has $576$ elements
 
 \begin{content}
 \begin{exercise}[Multiplication Table of $S_3$]\label[exercise]{exer:cayley-table-s3}
-Compute the full $6 \times 6$ Cayley table for the symmetric group $S_3$:
+Compute the full $6 \times 6$ Cayley table for the symmetric group $S_3$. The solution, with the entry in row $\sigma$ and column $\tau$ equal to $\sigma \circ \tau$ (first $\tau$, then $\sigma$):
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{c | c c c c c c}
@@ -2149,7 +2165,7 @@ For any $m \in \mathbb{Z}_{>0}$:
 \[
 m \cdot 1 = m \neq 0.
 \]
-Thus, no positive multiple of $1$ equals the neutral element $0$. The Pigeonhole Principle fails because the powers generate an infinite subset $\{1, 2, 3, \dots\} \subset \mathbb{Z}$.
+Thus, no positive multiple of $1$ equals the neutral element $0$. The pigeonhole argument does not apply: the \qt{powers} $1, 2, 3, \dots$ are pairwise distinct.
 \end{example}
 \end{content}
 
@@ -2317,11 +2333,11 @@ For any element $x \in G$ of order $m = \operatorname{ord}(x)$:
 \end{proposition}
 
 \begin{steps}[Subgroup Properties and Isomorphism Map]
-The full verification unfolds as follows:
+The lecturer proves this in the next lecture (\cref{prop:cyclic-subgroup}, \cref{cor:cyclic-subgroup-isomorphism}). In outline:
 \begin{itemize}
     \item \textbf{Closure under Multiplication:} For any $x^i, x^j \in \langle x \rangle$, by Euclidean division $i + j = q m + r$ with $0 \le r < m$. Then $x^i \cdot x^j = x^{i+j} = (x^m)^q \cdot x^r = e^q \cdot x^r = x^r \in \langle x \rangle$.
     \item \textbf{Inverses:} The inverse of $x^i$ is $x^{m-i} \in \langle x \rangle$ because $x^i \cdot x^{m-i} = x^m = e$.
-    \item \textbf{Isomorphism:} The map $\phi \colon \mathbb{Z}/m\mathbb{Z} \to \langle x \rangle$ defined by $[k] \mapsto x^k$ is a well-defined bijective group homomorphism:
+    \item \textbf{Isomorphism:} The map $\phi \colon \mathbb{Z}/m\mathbb{Z} \to \langle x \rangle$ defined by $[k] \mapsto x^k$ is well-defined because $x^m = e$, surjective by the definition of $\langle x \rangle$, hence bijective because both sides have $m$ elements (\cref{lem:cyclic-subgroup-order}), and a homomorphism:
     \[
     \phi([a] + [b]) = x^{a+b} = x^a \cdot x^b = \phi([a]) \cdot \phi([b]).
     \]
@@ -2336,7 +2352,7 @@ This lecture bridged the culmination of ring theory with the foundational princi
     \begin{itemize}
         \item Establishes that $R \text{ UFD} \implies R[x] \text{ UFD}$, extending inductively to multivariate polynomial rings $R[x_1, \dots, x_n]$.
         \item The proof reduces uniqueness of factorization to showing that every irreducible polynomial $p \in R[x]$ generates a prime ideal $(p)$.
-        \item For $\deg(p) > 0$, the proof constructs the ideal $I = (f, p)$, selects a non-zero element $m \in I$ of minimal degree, passes to the fraction field $Q(R)[x]$ to execute the division algorithm, clears denominators to show $m^* \mid f$ and $m^* \mid p$, and uses the irreducibility and $\deg(p) > 0$ hypothesis to deduce that $m \in R \setminus \{0\}$, forcing $p \mid g$ via Gauss's Primitive Divisor Lemma.
+        \item For $\deg(p) > 0$, the proof constructs the ideal $I = (f, p)$, selects a non-zero element $m \in I$ of minimal degree, passes to the fraction field $Q(R)[x]$ to execute the division algorithm, clears denominators to show $m^* \mid f$ and $m^* \mid p$, and uses the irreducibility and $\deg(p) > 0$ hypothesis to deduce that $m \in R \setminus \{0\}$, forcing $p \mid g$ via the Primitive Divisor Lemma.
     \end{itemize}
     \item \textbf{Pedagogical Triad of Algebra:}
     \begin{itemize}
@@ -2344,7 +2360,7 @@ This lecture bridged the culmination of ring theory with the foundational princi
     \end{itemize}
     \item \textbf{Group Axioms and Mechanics:}
     \begin{itemize}
-        \item A group $(G, \cdot, e)$ satisfies associativity \textbf{(G0)}, unique identity $e$ \textbf{(G1)}, and unique two-sided inverses $x^{-1}$ \textbf{(G2)}.
+        \item A group $(G, \cdot, e)$ satisfies associativity \textbf{(G1)}, the identity property \textbf{(G2)}, and existence of two-sided inverses \textbf{(G3)}; identity and inverses are then unique.
         \item Left and right cancellation laws ($xa = xb \implies a = b$) hold universally.
         \item The pedagogical focus shifts to finite, non-commutative (non-abelian) groups.
     \end{itemize}

@@ -522,7 +522,8 @@ Do you understand this statement? This was maybe not said as clearly as possible
     \fill[ForestGreen] (1, 0.0) circle (2pt) node[above, font=\footnotesize] {$1$};
 
     % Vertical guide at origin
-    \draw[dashed, gray!40] (0, -0.2) -- (0, 1.2) node[below=14pt, font=\footnotesize, text=gray] {$0$};
+    \draw[dashed, gray!40] (0, -0.2) -- (0, 1.2);
+    \node[anchor=east, font=\footnotesize, text=gray] at (-0.04, 0.62) {$0$};
 \end{tikzpicture}
 \end{center}
 
@@ -1359,9 +1360,9 @@ I have to teach you some culture, too, you know! Okay, but that's the origin of 
 % - Text vertically centered between y = 0.7 and y = 2.1.
 % \end{hidden}
 \begin{tikzpicture}[scale=1.2]
-    % Gravestone outline
-    \draw[thick, fill=gray!10] (-1.2, 0) -- (-1.2, 2.0) arc (180:0:1.2 and 1.0) -- (1.2, 0) -- cycle;
-    \draw[thick] (-1.4, 0) -- (1.4, 0);
+    % Gravestone outline (half-width 1.6, so the quote clears the sides)
+    \draw[thick, fill=gray!10] (-1.6, 0) -- (-1.6, 2.0) arc (180:0:1.6 and 1.0) -- (1.6, 0) -- cycle;
+    \draw[thick] (-1.8, 0) -- (1.8, 0);
     
     % Inscription
     \node[font=\bfseries\small, text=black] at (0, 2.1) {David Hilbert};
@@ -1676,11 +1677,13 @@ By Heine--Borel, $\operatorname{supp}(f)$ is compact if and only if it is bounde
     \draw[->, thick, gray!70] (-2.8, 0) -- (2.8, 0) node[right, text=black] {$x$};
     
     % Support points on axis
-    \draw[thick, gray] (-1.5, 0.08) -- (-1.5, -0.08) node[below, font=\footnotesize, text=black] {$a$};
-    \draw[thick, gray] (1.5, 0.08) -- (1.5, -0.08) node[below, font=\footnotesize, text=black] {$b$};
-    
-    % Compact support bracket indicator
+    \draw[thick, gray] (-1.5, 0.08) -- (-1.5, -0.08);
+    \draw[thick, gray] (1.5, 0.08) -- (1.5, -0.08);
+
+    % Compact support bracket indicator; a and b sit beside its end bars (below the ticks, the bars crossed them)
     \draw[thick, ForestGreen, |-|] (-1.5, -0.35) -- (1.5, -0.35) node[midway, below, font=\footnotesize] {$\operatorname{supp}(f) \subseteq [a, b]$};
+    \node[anchor=east, font=\footnotesize] at (-1.56, -0.35) {$a$};
+    \node[anchor=west, font=\footnotesize] at (1.56, -0.35) {$b$};
 
     % Bump function profile
     \draw[ultra thick, MidnightBlue] (-2.6, 0) -- (-1.5, 0)
@@ -1758,7 +1761,7 @@ Those are functions that look like... They do whatever they want, and then event
 
     % Labels
     \node[BurntOrange, font=\bfseries] at (-0.8, 1.5) {$f \in J$};
-    \node[font=\footnotesize, ForestGreen] at (1.6, 0.3) {$f(x) = 0 \quad \forall x \ge M$};
+    \node[font=\footnotesize, ForestGreen, anchor=west] at (0.95, 0.4) {$f(x) = 0 \quad \forall x \ge M$};
 \end{tikzpicture}
 \end{center}
 

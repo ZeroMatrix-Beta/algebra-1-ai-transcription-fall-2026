@@ -1035,7 +1035,7 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
     %   (6) arrow f between the ovals; (7) dashed arrow from I to 0_{R_2}
     % - Checks: r = (-1.65,-0.75) lies in R_1 (0.47 + 0.17 < 1) but not in I ((1.85/1.25)^2 > 1);
     %   ra = (-0.35,-0.65) lies in I (0.19 + 0.22 < 1); a = (0.75,-0.55) lies in I (0.19 + 0.14 < 1)
-    % - Labels: a below right, ra below, r below; "multiply by r" above the arc a -> ra, clear of the I label at y = 0.35
+    % - Labels: a below right, ra below, r above (below, it crossed the R_1 outline); "multiply by r" above the arc a -> ra, clear of the I label at y = 0.35
     % - Collisions: none; the kernel arrow leaves I at its right edge (x = 1.45) and runs below f
     % \end{hidden}
     % Ring R_1 (domain)
@@ -1052,7 +1052,7 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
     \coordinate (Relem) at (-1.65, -0.75);
     \fill[Fuchsia] (A) circle (1.8pt) node[below right, font=\footnotesize] {$a$};
     \fill[Fuchsia] (RA) circle (1.8pt) node[below, font=\footnotesize] {$ra$};
-    \fill[MidnightBlue] (Relem) circle (1.8pt) node[below, font=\footnotesize] {$r \in R_1$};
+    \fill[MidnightBlue] (Relem) circle (1.8pt) node[above, font=\footnotesize] {$r \in R_1$};
 
     % Absorption: multiplying a by r stays inside I
     \draw[->, dashed, thick, Fuchsia] (A) to[bend right=40] node[midway, above, font=\scriptsize] {multiply by $r$} (RA);

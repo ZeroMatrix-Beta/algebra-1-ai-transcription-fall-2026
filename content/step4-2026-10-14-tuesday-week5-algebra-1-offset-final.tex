@@ -816,17 +816,18 @@ In $(\operatorname{cl}^*(R), \subseteq)$, there is generally no greatest element
 % \begin{hidden}
 % - Canvas: scale=1.2, width ~6cm, height ~4cm.
 % - Elements: Hasse diagram of a poset showing maximal elements and incomparable branches.
-% - Points: Base 0 at (2,0); elements a at (1,1.3), b at (3,1.3); elements m1 at (0.4,2.7), m2 at (1.6,2.7), m3 at (3.2,2.7).
+% - Points: Base 0 at (2,0); elements a at (0.75,1.3), b at (3,1.3); elements m1 at (0,2.7), m2 at (1.5,2.7), m3 at (3,2.7).
 % - Edges: bot -> a, bot -> b; a -> m1, a -> m2; b -> m3.
 % - Colors: Base gray, internal nodes NavyBlue, maximal elements BrickRed.
 % \end{hidden}
     \node[circle, draw, fill=gray!20, inner sep=1.5pt, label=below:{\footnotesize bottom}] (bot) at (2, 0) {$\bot$};
-    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (a) at (1, 1.3) {$a$};
-    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (b) at (3, 1.3) {$b$};
-    
-    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m1) at (0.4, 2.7) {$m_1$};
-    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m2) at (1.6, 2.7) {$m_2$};
-    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m3) at (3.2, 2.7) {$m_3$};
+    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (a) at (0.75, 1.3) {$a$};
+    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (b) at (3.0, 1.3) {$b$};
+
+    % maximal elements 1.5 apart, so their "maximal" labels do not run together
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m1) at (0.0, 2.7) {$m_1$};
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m2) at (1.5, 2.7) {$m_2$};
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m3) at (3.0, 2.7) {$m_3$};
     
     \draw[thick] (bot) -- (a);
     \draw[thick] (bot) -- (b);
@@ -1077,7 +1078,8 @@ Actually, I don't like the idea that the work in math I do is dependent on these
     \node[draw, thick, rounded corners, fill=BurntOrange!15, inner sep=6pt] (zorn) at (4.2, 1.5) {\textbf{Zorn's Lemma}};
     \node[draw, thick, rounded corners, fill=ForestGreen!15, inner sep=6pt] (krull) at (4.2, 0) {\textbf{Every Ring $R \neq 0$ Has a Maximal Ideal}};
     
-    \draw[<->, ultra thick, MidnightBlue] (ac) -- node[above, font=\footnotesize] {$\text{ZF}$-equivalent} (zorn);
+    % two lines: on one line the label was wider than the gap and ran into both boxes
+    \draw[<->, ultra thick, MidnightBlue] (ac) -- node[above, font=\footnotesize, align=center] {$\text{ZF}$-\\equivalent} (zorn);
     \draw[->, ultra thick, ForestGreen] (zorn) -- node[right, font=\footnotesize] {applied to $(\operatorname{cl}^*(R), \subseteq)$} (krull);
 \end{tikzpicture}
 \end{center}
@@ -1489,7 +1491,9 @@ Is $I = C_c^\infty(\mathbb{R})$ a prime ideal of $C^\infty(\mathbb{R})$?
     % Product (ab)(x) in ForestGreen
     \draw[ultra thick, ForestGreen, domain=1:2, samples=50] 
         plot (\x, {1.8 * 0.25 * (1 + cos(deg(pi * (\x - 1)))) * (1 - cos(deg(pi * (\x - 1))))});
-    \node[ForestGreen, font=\bfseries] at (1.5, 0.75) {$(ab)(x)$};
+    % beside the bump with a pointer (at (1.5, 0.75) it sat on the crossing of a and b)
+    \node[ForestGreen, font=\bfseries, anchor=west] at (2.3, 0.5) {$(ab)(x)$};
+    \draw[->, thin, ForestGreen] (2.3, 0.5) -- (1.72, 0.42);
 \end{tikzpicture}
 \end{center}
 
