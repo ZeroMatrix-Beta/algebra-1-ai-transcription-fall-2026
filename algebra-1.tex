@@ -1393,9 +1393,25 @@ breakable
   \or th\or st\or nd\or rd\or th\or th\or th\or th\or th\or th% 20-29
   \or th\or st\else th\fi}
 
-\newcommand{\formatordinaldate}[1]{\formatordinaldate@i#1\@nil}
-\def\formatordinaldate@i#1 #2\@nil{#1\textsuperscript{\ordinalsuffix{#1}} #2}
 \makeatother
+
+% "17 September 2023" -> 17th September 2023. A date that does not start with a day number
+% ("September 17, 2023", an empty one) is printed unchanged instead of stopping the compile
+% (the pipeline's English preamble is built from this one).
+\ExplSyntaxOn
+\seq_new:N \l__ordinal_date_seq
+\NewDocumentCommand{\formatordinaldate}{m}
+  {
+    \regex_extract_once:nnNTF { \A \s* (\d+) \s+ (.*?) \s* \Z } {#1} \l__ordinal_date_seq
+      {
+        \seq_item:Nn \l__ordinal_date_seq {2}
+        \textsuperscript { \ordinalsuffix { \seq_item:Nn \l__ordinal_date_seq {2} } }
+        \c_space_tl
+        \seq_item:Nn \l__ordinal_date_seq {3}
+      }
+      {#1}
+  }
+\ExplSyntaxOff
 
 % Custom Lecture Chapter Command with Optional Semester/Week Number
 \newif\ifrestorelecturesubcounters
